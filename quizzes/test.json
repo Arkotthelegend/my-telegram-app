@@ -1,1 +1,22 @@
 
+[
+  {
+    "id": 1,
+    "type": "mcq",
+    "q": "SI unit of Power is ______?",
+    "a": ["Watt", "Joule", "Volt"],
+    "c": 0
+  },
+  {
+    "id": 2,
+    "type": "tf",
+    "q": "Light travels faster than sound.",
+    "c": true
+  },
+  {
+    "id": 3,
+    "type": "blank",
+    "q": "The chemical symbol for water is ______.",
+    "c": "H2O"
+  }
+]
