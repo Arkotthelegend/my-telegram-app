@@ -1,111 +1,201 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
+        :root {
+            --bg: #0F172A;
+            --card: #1E293B;
+            --accent: #38BDF8;
+            --white: #ffffff;
+        }
+
         body {
-            background-color: #0F172A;
-            color: white;
+            background-color: var(--bg);
+            color: var(--white);
             font-family: sans-serif;
-            margin: 0;
-            padding: 10px;
-            padding-bottom: 80px;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
         }
+
+        .container { padding: 15px; padding-bottom: 80px; }
+        
+        /* Subject Buttons */
         .subject-card {
-            margin-bottom: 10px;
-            border-radius: 15px;
-            overflow: hidden;
-        }
-        .subject-header {
-            background-color: #38BDF8;
+            background: var(--accent);
             padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: bold;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 20px;
-            font-weight: bold;
             cursor: pointer;
         }
-        .options {
+
+        /* Sub-Menu Drawer */
+        .drawer {
             display: none;
             background: white;
+            border-radius: 0 0 15px 15px;
+            margin-top: -10px;
+            margin-bottom: 10px;
             padding: 10px;
+            animation: slideDown 0.3s ease;
         }
-        .opt-btn {
-            background: #38BDF8;
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            background: var(--accent);
             color: white;
             border: none;
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             margin: 5px 0;
             border-radius: 10px;
             font-weight: bold;
-            font-size: 16px;
+            cursor: pointer;
         }
-        .nav-bar {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            height: 60px;
-            background: #1E293B;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+
+        .back-btn { background: #64748b; margin-top: 10px; }
+
+        .view-title { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
+
+        /* Navigation */
+        .nav {
+            position: fixed; bottom: 0; width: 100%;
+            height: 65px; background: var(--card);
+            display: flex; justify-content: space-around; align-items: center;
             border-top: 1px solid #334155;
         }
+        .nav-item { font-size: 1.5rem; opacity: 0.6; cursor: pointer; }
+        .active-nav { opacity: 1; color: var(--accent); }
     </style>
 </head>
 <body>
 
-    <div id="main-list">
+    <div class="container" id="app">
+        <div id="home-screen">
+            <div class="view-title">ဘာသာရပ်များ</div>
+            <div id="subject-list"></div>
         </div>
 
-    <div class="nav-bar">
-        <span>🏠</span>
-        <span>❓</span>
-        <span>👤</span>
+        <div id="sub-menu-screen" style="display: none;">
+            <div class="view-title" id="menu-title">Sub Menu</div>
+            <div id="menu-content"></div>
+            <button class="btn back-btn" onclick="goBack()">နောက်သို့</button>
+        </div>
+    </div>
+
+    <div class="nav">
+        <div class="nav-item active-nav">🏠</div>
+        <div class="nav-item">❓</div>
+        <div class="nav-item">👤</div>
     </div>
 
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready();
-        tg.expand();
 
         const subjects = [
-            "မြန်မာစာ", "အင်္ဂလိပ်စာ", "သင်္ချာ", 
-            "ဓာတုဗေဒ", "ရူပဗေဒ", "ဘောဂဗေဒ", "ဇီဝဗေဒ"
+            { name: "မြန်မာစာ", type: "mm" },
+            { name: "အင်္ဂလိပ်စာ", type: "en" },
+            { name: "ဓာတုဗေဒ", type: "sci" },
+            { name: "ရူပဗေဒ", type: "phy" },
+            { name: "ဘောဂဗေဒ", type: "eco" },
+            { name: "ဇီဝဗေဒ", type: "sci" }
         ];
 
-        const listContainer = document.getElementById('main-list');
+        const listDiv = document.getElementById('subject-list');
+        const homeScreen = document.getElementById('home-screen');
+        const subMenuScreen = document.getElementById('sub-menu-screen');
+        const menuContent = document.getElementById('menu-content');
+        const menuTitle = document.getElementById('menu-title');
 
-        subjects.forEach(subject => {
-            const container = document.createElement('div');
-            container.className = 'subject-card';
-            container.innerHTML = `
-                <div class="subject-header" onclick="toggle(this)">
-                    <span>${subject}</span>
-                    <span>▼</span>
-                </div>
-                <div class="options">
-                    <button class="opt-btn">ဉာဏ်စမ်းမေးခွန်းများ</button>
-                    <button class="opt-btn">Flashcards</button>
-                </div>
-            `;
-            listContainer.appendChild(container);
+        // Render Home List
+        subjects.forEach(sub => {
+            const div = document.createElement('div');
+            div.className = 'subject-card';
+            div.innerHTML = `<span>${sub.name}</span> <span>➔</span>`;
+            div.onclick = () => showSubjectMenu(sub);
+            listDiv.appendChild(div);
         });
 
-        function toggle(el) {
-            const options = el.nextElementSibling;
-            const isVisible = options.style.display === "block";
-            
-            // Close all others first
-            document.querySelectorAll('.options').forEach(opt => opt.style.display = "none");
-            
-            // Toggle current
-            options.style.display = isVisible ? "none" : "block";
-            
-            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+        function showSubjectMenu(sub) {
+            homeScreen.style.display = 'none';
+            subMenuScreen.style.display = 'block';
+            menuTitle.innerText = sub.name;
+            menuContent.innerHTML = "";
+
+            if (sub.type === "en") {
+                // English Units and Poems
+                for(let i=1; i<=12; i++) createBtn(`Unit ${i}`, () => showActivitySelection('en'));
+                for(let i=1; i<=4; i++) createBtn(`Poem ${i}`, () => showActivitySelection('en'));
+            } else {
+                // Other subjects chapters
+                for(let i=1; i<=5; i++) createBtn(`Chapter ${i}`, () => showActivitySelection(sub.type));
+            }
+        }
+
+        function showActivitySelection(type) {
+            menuContent.innerHTML = `<div class='view-title'>လေ့ကျင့်ခန်းရွေးချယ်ပါ</div>`;
+            createBtn("Quiz", () => showQuizTypes(type));
+            createBtn("Flashcards", () => showFlashcardTypes(type));
+        }
+
+        function showQuizTypes(type) {
+            menuContent.innerHTML = `<div class='view-title'>Quiz ပုံစံရွေးပါ</div>`;
+            if (type === 'en') {
+                createBtn("Initial Letter", () => start('English Initial Letter'));
+                createBtn("MCQ", () => start('English MCQ'));
+                createBtn("Grammar", () => start('English Grammar'));
+            } else if (type === 'mm') {
+                createBtn("မှား/မှန်", () => start('Myanmar True/False'));
+                createBtn("ကွက်လပ်ဖြည့်", () => start('Myanmar Fill Blank'));
+                createBtn("အမှန်ရွေး", () => start('Myanmar MCQ'));
+            } else {
+                createBtn("True or False", () => start('General T/F'));
+                createBtn("Fill in the Blank", () => start('General Blank'));
+                createBtn("MCQ", () => start('General MCQ'));
+            }
+        }
+
+        function showFlashcardTypes(type) {
+            if (type === 'phy') {
+                menuContent.innerHTML = `<div class='view-title'>Flashcard ပုံစံရွေးပါ</div>`;
+                createBtn("Definition", () => start('Physics Definition'));
+                createBtn("Derivation", () => start('Physics Derivation'));
+            } else if (type === 'en') {
+                start('English Q&A Flashcards');
+            } else if (type === 'mm') {
+                start('Myanmar Memory Cards');
+            } else {
+                start('General Definition Cards');
+            }
+        }
+
+        function createBtn(text, action) {
+            const b = document.createElement('button');
+            b.className = 'btn';
+            b.innerText = text;
+            b.onclick = action;
+            menuContent.appendChild(b);
+        }
+
+        function goBack() {
+            homeScreen.style.display = 'block';
+            subMenuScreen.style.display = 'none';
+        }
+
+        function start(msg) {
+            tg.showAlert(msg + " လာပါတော့မည်...");
         }
     </script>
 </body>
