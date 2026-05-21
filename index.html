@@ -2,200 +2,179 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduApp Mini</title>
-    <!-- 1. The Telegram Script that connects your app to Telegram -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg-color: #f5f7fb;
-            --text-color: #333;
-            --primary-color: #2481cc; /* Telegram Blue */
-            --card-bg: #ffffff;
-            --correct-color: #4caf50;
-            --wrong-color: #f44336;
+            --bg-dark: #0F172A;
+            --card-dark: #1E293B;
+            --accent: #38BDF8;
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, sans-serif;
             margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents bouncing on mobile */
+        }
+
+        /* --- VIEWS --- */
+        .view-section {
+            display: none;
+            padding: 20px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+        .active { display: block; }
+
+        /* --- LOBBY/QUIZ UI --- */
+        .locked-card {
+            background: #334155;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px dashed var(--text-dim);
+        }
+
+        .action-btn {
+            background: var(--accent);
+            color: var(--bg-dark);
+            border: none;
+            width: 100%;
             padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* --- PROFILE UI --- */
+        .profile-header {
+            text-align: center;
+            padding: 30px 0;
+        }
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* --- BOTTOM TABS --- */
+        .tab-bar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 60px;
+            background: var(--card-dark);
+            display: flex;
+            border-top: 1px solid #334155;
+        }
+        .tab-item {
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-        }
-
-        #welcome {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-
-        .view-section {
-            display: none;
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .view-section.active {
-            display: block;
-        }
-
-        /* Flashcard Styles */
-        .flashcard {
-            background-color: var(--card-bg);
-            min-height: 200px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            display: flex;
             justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-            font-size: 1.3rem;
-            cursor: pointer;
-            transition: transform 0.2s;
-            border: 2px solid #e0e0e0;
-        }
-
-        /* Quiz Styles */
-        .quiz-card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .option-btn {
-            display: block;
-            width: 100%;
-            background-color: #f0f2f5;
-            border: none;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            text-align: left;
-            transition: background 0.2s;
-        }
-
-        /* Navigation Tabs at bottom */
-        .nav-tabs {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: white;
-            display: flex;
-            border-top: 1px solid #ddd;
-        }
-
-        .tab-btn {
-            flex: 1;
-            background: none;
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #777;
+            font-size: 0.75rem;
+            color: var(--text-dim);
             cursor: pointer;
         }
+        .tab-item.active { color: var(--accent); }
 
-        .tab-btn.active {
-            color: var(--primary-color);
-        }
     </style>
 </head>
 <body>
 
-    <div id="welcome">Loading student profile...</div>
-
-    <!-- FLASHCARD VIEW -->
-    <div id="flashcard-view" class="view-section active">
-        <h3>Flashcards (Tap to flip)</h3>
-        <div class="flashcard" id="card-element" onclick="flipCard()">
-            What is the capital of France?
+    <div id="quiz-view" class="view-section active">
+        <h2>Learning Center</h2>
+        <div id="access-container">
+            <p>Checking permissions...</p>
         </div>
     </div>
 
-    <!-- QUIZ VIEW -->
-    <div id="quiz-view" class="view-section">
-        <h3>Quick Quiz</h3>
-        <div class="quiz-card">
-            <p id="quiz-question">Which language runs natively inside a web browser?</p>
-            <button class="option-btn" onclick="checkAnswer(this, false)">Python</button>
-            <button class="option-btn" onclick="checkAnswer(this, true)">JavaScript</button>
-            <button class="option-btn" onclick="checkAnswer(this, false)">C++</button>
+    <div id="middle-view" class="view-section">
+        <h2>Coming Soon</h2>
+        <p style="color: var(--text-dim)">This section is currently empty.</p>
+    </div>
+
+    <div id="profile-view" class="view-section">
+        <div class="profile-header">
+            <div class="avatar" id="user-initials">?</div>
+            <h3 id="user-full-name">User Name</h3>
+            <p id="user-id-display" style="font-size: 0.8rem; color: var(--text-dim)"></p>
+        </div>
+        
+        <div style="background: var(--card-dark); border-radius: 10px; padding: 10px;">
+            <div style="padding: 10px; border-bottom: 1px solid #334155;">Settings</div>
+            <div style="padding: 10px; border-bottom: 1px solid #334155;">Language: English</div>
+            <div style="padding: 10px;">Notifications: On</div>
         </div>
     </div>
 
-    <!-- BOTTOM NAVIGATION -->
-    <div class="nav-tabs">
-        <button class="tab-btn active" id="tab-flash" onclick="switchTab('flash')">Flashcards</button>
-        <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">Quiz</button>
+    <div class="tab-bar">
+        <div class="tab-item active" onclick="showSection('quiz', this)">📖<br>Learn</div>
+        <div class="tab-item" onclick="showSection('middle', this)">⏳<br>Soon</div>
+        <div class="tab-item" onclick="showSection('profile', this)">👤<br>Profile</div>
     </div>
 
     <script>
-        // Initialize Telegram WebApp
         const tg = window.Telegram.WebApp;
         tg.ready();
-        tg.expand();
 
-        // Personalize using Telegram's native data
+        // 1. YOUR VIP LIST
+        // Put your own Telegram ID here, and any friends you want to allow.
+        // To find your ID, message @userinfobot on Telegram.
+        const allowedUsers = [8432363664]; 
+
+        const userId = tg.initDataUnsafe?.user?.id;
         const firstName = tg.initDataUnsafe?.user?.first_name || "Scholar";
-        document.getElementById('welcome').innerText = `👋 Welcome, ${firstName}!`;
-
-        // Flashcard Logic
-        let isFlipped = false;
-        const cardElement = document.getElementById('card-element');
         
-        function flipCard() {
-            if (!isFlipped) {
-                cardElement.innerText = "Paris";
-                cardElement.style.backgroundColor = "#eef9ff";
-                isFlipped = true;
-            } else {
-                cardElement.innerText = "What is the capital of France?";
-                cardElement.style.backgroundColor = "#ffffff";
-                isFlipped = false;
-            }
-            // Trigger native mobile vibration if inside Telegram
-            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+        // Setup Profile View
+        document.getElementById('user-full-name').innerText = firstName;
+        document.getElementById('user-initials').innerText = firstName.charAt(0);
+        document.getElementById('user-id-display').innerText = "ID: " + (userId || "Unknown");
+
+        // 2. CHECK ACCESS
+        const accessContainer = document.getElementById('access-container');
+        if (allowedUsers.includes(userId)) {
+            accessContainer.innerHTML = `
+                <div class="locked-card" style="border-style: solid; border-color: var(--accent)">
+                    <p>✅ Access Granted!</p>
+                    <button class="action-btn">Start Quiz</button>
+                    <button class="action-btn" style="background: transparent; border: 1px solid var(--accent); color: var(--accent)">Flashcards</button>
+                </div>
+            `;
+        } else {
+            accessContainer.innerHTML = `
+                <div class="locked-card">
+                    <p>🔒 This section is locked.</p>
+                    <p style="font-size: 0.8rem; color: var(--text-dim)">Only authorized students can access lessons.</p>
+                </div>
+            `;
         }
 
-        // Quiz Logic
-        function checkAnswer(button, isCorrect) {
-            // Disable all buttons in this quiz block so they can't multi-click
-            const buttons = document.querySelectorAll('.option-btn');
-            buttons.forEach(btn => btn.disabled = true);
+        // 3. NAVIGATION LOGIC
+        function showSection(id, element) {
+            // Hide all sections
+            document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+            // Show target section
+            document.getElementById(id + '-view').classList.add('active');
+            
+            // Update tab styling
+            document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+            element.classList.add('active');
 
-            if (isCorrect) {
-                button.style.backgroundColor = 'var(--correct-color)';
-                button.style.color = 'white';
-            } else {
-                button.style.backgroundColor = 'var(--wrong-color)';
-                button.style.color = 'white';
-            }
-        }
-
-        // Tab Navigation Logic
-        function switchTab(view) {
-            document.getElementById('flashcard-view').classList.remove('active');
-            document.getElementById('quiz-view').classList.remove('active');
-            document.getElementById('tab-flash').classList.remove('active');
-            document.getElementById('tab-quiz').classList.remove('active');
-
-            if (view === 'flash') {
-                document.getElementById('flashcard-view').classList.add('active');
-                document.getElementById('tab-flash').classList.add('active');
-            } else {
-                document.getElementById('quiz-view').classList.add('active');
-                document.getElementById('tab-quiz').classList.add('active');
-            }
+            if(tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
         }
     </script>
 </body>
