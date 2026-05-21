@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduApp Mini</title>
+    <!-- 1. The Telegram Script that connects your app to Telegram -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        :root {
+            --bg-color: #f5f7fb;
+            --text-color: #333;
+            --primary-color: #2481cc; /* Telegram Blue */
+            --card-bg: #ffffff;
+            --correct-color: #4caf50;
+            --wrong-color: #f44336;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #welcome {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .view-section {
+            display: none;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        /* Flashcard Styles */
+        .flashcard {
+            background-color: var(--card-bg);
+            min-height: 200px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 2px solid #e0e0e0;
+        }
+
+        /* Quiz Styles */
+        .quiz-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            background-color: #f0f2f5;
+            border: none;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: left;
+            transition: background 0.2s;
+        }
+
+        /* Navigation Tabs at bottom */
+        .nav-tabs {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background: white;
+            display: flex;
+            border-top: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            flex: 1;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #777;
+            cursor: pointer;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="welcome">Loading student profile...</div>
+
+    <!-- FLASHCARD VIEW -->
+    <div id="flashcard-view" class="view-section active">
+        <h3>Flashcards (Tap to flip)</h3>
+        <div class="flashcard" id="card-element" onclick="flipCard()">
+            What is the capital of France?
+        </div>
+    </div>
+
+    <!-- QUIZ VIEW -->
+    <div id="quiz-view" class="view-section">
+        <h3>Quick Quiz</h3>
+        <div class="quiz-card">
+            <p id="quiz-question">Which language runs natively inside a web browser?</p>
+            <button class="option-btn" onclick="checkAnswer(this, false)">Python</button>
+            <button class="option-btn" onclick="checkAnswer(this, true)">JavaScript</button>
+            <button class="option-btn" onclick="checkAnswer(this, false)">C++</button>
+        </div>
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <div class="nav-tabs">
+        <button class="tab-btn active" id="tab-flash" onclick="switchTab('flash')">Flashcards</button>
+        <button class="tab-btn" id="tab-quiz" onclick="switchTab('quiz')">Quiz</button>
+    </div>
+
+    <script>
+        // Initialize Telegram WebApp
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+
+        // Personalize using Telegram's native data
+        const firstName = tg.initDataUnsafe?.user?.first_name || "Scholar";
+        document.getElementById('welcome').innerText = `👋 Welcome, ${firstName}!`;
+
+        // Flashcard Logic
+        let isFlipped = false;
+        const cardElement = document.getElementById('card-element');
+        
+        function flipCard() {
+            if (!isFlipped) {
+                cardElement.innerText = "Paris";
+                cardElement.style.backgroundColor = "#eef9ff";
+                isFlipped = true;
+            } else {
+                cardElement.innerText = "What is the capital of France?";
+                cardElement.style.backgroundColor = "#ffffff";
+                isFlipped = false;
+            }
+            // Trigger native mobile vibration if inside Telegram
+            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+        }
+
+        // Quiz Logic
+        function checkAnswer(button, isCorrect) {
+            // Disable all buttons in this quiz block so they can't multi-click
+            const buttons = document.querySelectorAll('.option-btn');
+            buttons.forEach(btn => btn.disabled = true);
+
+            if (isCorrect) {
+                button.style.backgroundColor = 'var(--correct-color)';
+                button.style.color = 'white';
+            } else {
+                button.style.backgroundColor = 'var(--wrong-color)';
+                button.style.color = 'white';
+            }
+        }
+
+        // Tab Navigation Logic
+        function switchTab(view) {
+            document.getElementById('flashcard-view').classList.remove('active');
+            document.getElementById('quiz-view').classList.remove('active');
+            document.getElementById('tab-flash').classList.remove('active');
+            document.getElementById('tab-quiz').classList.remove('active');
+
+            if (view === 'flash') {
+                document.getElementById('flashcard-view').classList.add('active');
+                document.getElementById('tab-flash').classList.add('active');
+            } else {
+                document.getElementById('quiz-view').classList.add('active');
+                document.getElementById('tab-quiz').classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
