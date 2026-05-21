@@ -6,175 +6,189 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg-dark: #0F172A;
-            --card-dark: #1E293B;
-            --accent: #38BDF8;
-            --text-main: #F8FAFC;
-            --text-dim: #94A3B8;
+            --bg-color: #0F172A;
+            --btn-blue: #38BDF8;
+            --nav-bg: #1E293B;
+            --text-white: #ffffff;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
+            background-color: var(--bg-color);
+            color: var(--text-white);
             font-family: -apple-system, sans-serif;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevents bouncing on mobile */
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
-        /* --- VIEWS --- */
-        .view-section {
-            display: none;
-            padding: 20px;
-            height: calc(100vh - 70px);
+        /* --- SCROLLABLE LIST --- */
+        .content-area {
+            flex: 1;
             overflow-y: auto;
-        }
-        .active { display: block; }
-
-        /* --- LOBBY/QUIZ UI --- */
-        .locked-card {
-            background: #334155;
             padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px dashed var(--text-dim);
+            padding-bottom: 80px; /* Space for bottom nav */
         }
 
-        .action-btn {
-            background: var(--accent);
-            color: var(--bg-dark);
+        /* --- SUBJECT BUTTONS --- */
+        .subject-container {
+            margin-bottom: 12px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .subject-header {
+            background-color: var(--btn-blue);
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 20px;
+            transition: border-radius 0.3s;
+        }
+
+        .subject-header.open {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .arrow {
+            width: 0; 
+            height: 0; 
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid white;
+            transition: transform 0.3s;
+        }
+
+        .arrow.up { transform: rotate(180deg); }
+
+        /* --- EXPANDABLE OPTIONS --- */
+        .options-drawer {
+            display: none;
+            background-color: #ffffff;
+            padding: 10px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .option-btn {
+            background-color: var(--btn-blue);
+            color: white;
+            margin: 5px 0;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
             border: none;
             width: 100%;
-            padding: 15px;
-            border-radius: 10px;
-            font-weight: bold;
-            margin-top: 15px;
+            display: block;
         }
 
-        /* --- PROFILE UI --- */
-        .profile-header {
-            text-align: center;
-            padding: 30px 0;
-        }
-        .avatar {
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
-            border-radius: 50%;
-            margin: 0 auto 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-
-        /* --- BOTTOM TABS --- */
-        .tab-bar {
+        /* --- BOTTOM NAVIGATION --- */
+        .bottom-nav {
             position: fixed;
             bottom: 0;
             width: 100%;
-            height: 60px;
-            background: var(--card-dark);
+            height: 70px;
+            background-color: var(--nav-bg);
             display: flex;
+            justify-content: space-around;
+            align-items: center;
             border-top: 1px solid #334155;
         }
-        .tab-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-            color: var(--text-dim);
-            cursor: pointer;
-        }
-        .tab-item.active { color: var(--accent); }
 
+        .nav-item {
+            font-size: 2rem;
+            color: white;
+            opacity: 0.7;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+        }
     </style>
 </head>
 <body>
 
-    <div id="quiz-view" class="view-section active">
-        <h2>Learning Center</h2>
-        <div id="access-container">
-            <p>Checking permissions...</p>
+    <div class="content-area">
+        <div class="subject-container">
+            <div class="subject-header" onclick="toggleSubject(this)">
+                <span>မြန်မာစာ</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="options-drawer">
+                <button class="option-btn" onclick="startActivity('quiz', 'Myanmar')">ဉာဏ်စမ်းမေးခွန်းများ</button>
+                <button class="option-btn" onclick="startActivity('flash', 'Myanmar')">Flashcards</button>
+            </div>
         </div>
+
+        <div class="subject-container">
+            <div class="subject-header" onclick="toggleSubject(this)">
+                <span>အင်္ဂလိပ်စာ</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="options-drawer">
+                <button class="option-btn" onclick="startActivity('quiz', 'English')">Quiz</button>
+                <button class="option-btn" onclick="startActivity('flash', 'English')">Flashcards</button>
+            </div>
+        </div>
+
+        <div class="subject-container">
+            <div class="subject-header" onclick="toggleSubject(this)">
+                <span>ဇီဝဗေဒ</span>
+                <div class="arrow"></div>
+            </div>
+            <div class="options-drawer">
+                <button class="option-btn" onclick="startActivity('quiz', 'Biology')">Quiz</button>
+                <button class="option-btn" onclick="startActivity('flash', 'Biology')">Flashcards</button>
+            </div>
+        </div>
+
     </div>
 
-    <div id="middle-view" class="view-section">
-        <h2>Coming Soon</h2>
-        <p style="color: var(--text-dim)">This section is currently empty.</p>
-    </div>
-
-    <div id="profile-view" class="view-section">
-        <div class="profile-header">
-            <div class="avatar" id="user-initials">?</div>
-            <h3 id="user-full-name">User Name</h3>
-            <p id="user-id-display" style="font-size: 0.8rem; color: var(--text-dim)"></p>
-        </div>
-        
-        <div style="background: var(--card-dark); border-radius: 10px; padding: 10px;">
-            <div style="padding: 10px; border-bottom: 1px solid #334155;">Settings</div>
-            <div style="padding: 10px; border-bottom: 1px solid #334155;">Language: English</div>
-            <div style="padding: 10px;">Notifications: On</div>
-        </div>
-    </div>
-
-    <div class="tab-bar">
-        <div class="tab-item active" onclick="showSection('quiz', this)">📖<br>Learn</div>
-        <div class="tab-item" onclick="showSection('middle', this)">⏳<br>Soon</div>
-        <div class="tab-item" onclick="showSection('profile', this)">👤<br>Profile</div>
+    <div class="bottom-nav">
+        <div class="nav-item active">🏠</div>
+        <div class="nav-item">❓</div>
+        <div class="nav-item">👤</div>
     </div>
 
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready();
 
-        // 1. YOUR VIP LIST
-        // Put your own Telegram ID here, and any friends you want to allow.
-        // To find your ID, message @userinfobot on Telegram.
-        const allowedUsers = [8432363664]; 
+        function toggleSubject(header) {
+            const drawer = header.nextElementSibling;
+            const arrow = header.querySelector('.arrow');
+            
+            // Toggle visibility
+            if (drawer.style.display === "block") {
+                drawer.style.display = "none";
+                header.classList.remove('open');
+                arrow.classList.remove('up');
+            } else {
+                drawer.style.display = "block";
+                header.classList.add('open');
+                arrow.classList.add('up');
+            }
 
-        const userId = tg.initDataUnsafe?.user?.id;
-        const firstName = tg.initDataUnsafe?.user?.first_name || "Scholar";
-        
-        // Setup Profile View
-        document.getElementById('user-full-name').innerText = firstName;
-        document.getElementById('user-initials').innerText = firstName.charAt(0);
-        document.getElementById('user-id-display').innerText = "ID: " + (userId || "Unknown");
-
-        // 2. CHECK ACCESS
-        const accessContainer = document.getElementById('access-container');
-        if (allowedUsers.includes(userId)) {
-            accessContainer.innerHTML = `
-                <div class="locked-card" style="border-style: solid; border-color: var(--accent)">
-                    <p>✅ Access Granted!</p>
-                    <button class="action-btn">Start Quiz</button>
-                    <button class="action-btn" style="background: transparent; border: 1px solid var(--accent); color: var(--accent)">Flashcards</button>
-                </div>
-            `;
-        } else {
-            accessContainer.innerHTML = `
-                <div class="locked-card">
-                    <p>🔒 This section is locked.</p>
-                    <p style="font-size: 0.8rem; color: var(--text-dim)">Only authorized students can access lessons.</p>
-                </div>
-            `;
+            // Haptic Feedback for a premium feel
+            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
         }
 
-        // 3. NAVIGATION LOGIC
-        function showSection(id, element) {
-            // Hide all sections
-            document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
-            // Show target section
-            document.getElementById(id + '-view').classList.add('active');
-            
-            // Update tab styling
-            document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
-            element.classList.add('active');
-
-            if(tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
+        function startActivity(type, subject) {
+            tg.showAlert(`Starting ${type} for ${subject}`);
+            // Later we will build the actual quiz pages here!
         }
     </script>
 </body>
