@@ -5,197 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        :root {
-            --bg: #0F172A;
-            --card: #1E293B;
-            --accent: #38BDF8;
-            --white: #ffffff;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: var(--white);
-            font-family: sans-serif;
-            margin: 0; padding: 0;
-            overflow-x: hidden;
-        }
-
-        .container { padding: 15px; padding-bottom: 80px; }
+        :root { --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; --white: #ffffff; --lock: #475569; }
+        body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
+        .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
         
-        /* Subject Buttons */
         .subject-card {
-            background: var(--accent);
-            padding: 20px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+            background: var(--accent); padding: 20px; border-radius: 18px;
+            margin-bottom: 12px; font-size: 1.2rem; font-weight: bold;
+            display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+            transition: 0.2s;
         }
+        .locked { background: var(--lock); opacity: 0.6; }
+        
+        .screen { display: none; }
+        .active-screen { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Sub-Menu Drawer */
-        .drawer {
-            display: none;
-            background: white;
-            border-radius: 0 0 15px 15px;
-            margin-top: -10px;
-            margin-bottom: 10px;
-            padding: 10px;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .btn {
-            background: var(--accent);
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 12px;
-            margin: 5px 0;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .back-btn { background: #64748b; margin-top: 10px; }
-
-        .view-title { color: var(--accent); margin-bottom: 15px; font-size: 1.2rem; }
-
-        /* Navigation */
-        .nav {
-            position: fixed; bottom: 0; width: 100%;
-            height: 65px; background: var(--card);
-            display: flex; justify-content: space-around; align-items: center;
-            border-top: 1px solid #334155;
-        }
-        .nav-item { font-size: 1.5rem; opacity: 0.6; cursor: pointer; }
-        .active-nav { opacity: 1; color: var(--accent); }
+        .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; }
+        .back-btn { background: #334155; margin-top: 20px; }
+        
+        .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; }
+        .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; }
+        .nav-active { opacity: 1; color: var(--accent); }
     </style>
 </head>
 <body>
 
-    <div class="container" id="app">
-        <div id="home-screen">
-            <div class="view-title">ဘာသာရပ်များ</div>
+    <div class="container">
+        <div id="home-screen" class="screen active-screen">
+            <h2 style="text-align: center; color: var(--accent);">ဘာသာရပ်များ</h2>
             <div id="subject-list"></div>
         </div>
 
-        <div id="sub-menu-screen" style="display: none;">
-            <div class="view-title" id="menu-title">Sub Menu</div>
-            <div id="menu-content"></div>
-            <button class="btn back-btn" onclick="goBack()">နောက်သို့</button>
+        <div id="menu-screen" class="screen">
+            <h2 id="menu-title" style="text-align: center; color: var(--accent);">Menu</h2>
+            <div id="menu-content" style="display: grid; gap: 10px;"></div>
+            <button class="btn back-btn" onclick="showScreen('home')">နောက်သို့</button>
+        </div>
+
+        <div id="profile-screen" class="screen">
+            <div style="text-align: center; padding: 30px 0;">
+                <div style="width: 80px; height: 80px; background: white; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--bg);" id="avatar">?</div>
+                <h1 id="user-name">User</h1>
+                <p id="user-id-text" style="color: #94A3B8;"></p>
+                <div style="background: var(--card); padding: 20px; border-radius: 15px; text-align: left; margin-top: 20px;">
+                    <b>ဝယ်ယူပြီးသော ဘာသာရပ်များ:</b><br>
+                    <span id="bought-items" style="color: var(--accent);">မရှိသေးပါ</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="middle-screen" class="screen">
+             <div style="height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+                <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
+            </div>
         </div>
     </div>
 
     <div class="nav">
-        <div class="nav-item active-nav">🏠</div>
-        <div class="nav-item">❓</div>
-        <div class="nav-item">👤</div>
+        <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
+        <div class="nav-item" onclick="changeTab('middle', this)">❓</div>
+        <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
 
     <script>
         const tg = window.Telegram.WebApp;
         tg.ready();
 
+        // --- သင်တောင်းဆိုထားသော ID နှင့် ဝယ်ယူထားသည့် ဘာသာရပ်များ ---
+        const paidUsers = {
+            "8432363664": ["mm", "en", "phy", "chem"] // Bio (bio) နှင့် Eco (eco) မပါပါ
+        };
+
         const subjects = [
-            { name: "မြန်မာစာ", type: "mm" },
-            { name: "အင်္ဂလိပ်စာ", type: "en" },
-            { name: "ဓာတုဗေဒ", type: "sci" },
-            { name: "ရူပဗေဒ", type: "phy" },
-            { name: "ဘောဂဗေဒ", type: "eco" },
-            { name: "ဇီဝဗေဒ", type: "sci" }
+            { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
+            { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12, poems: 4 },
+            { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
+            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
+            { id: 'eco', name: 'ဘောဂဗေဒ', chapters: 8 },
+            { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 }
         ];
 
-        const listDiv = document.getElementById('subject-list');
-        const homeScreen = document.getElementById('home-screen');
-        const subMenuScreen = document.getElementById('sub-menu-screen');
-        const menuContent = document.getElementById('menu-content');
-        const menuTitle = document.getElementById('menu-title');
+        const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
+        const userBought = paidUsers[userId] || [];
 
-        // Render Home List
-        subjects.forEach(sub => {
-            const div = document.createElement('div');
-            div.className = 'subject-card';
-            div.innerHTML = `<span>${sub.name}</span> <span>➔</span>`;
-            div.onclick = () => showSubjectMenu(sub);
-            listDiv.appendChild(div);
-        });
+        function renderSubjects() {
+            const listDiv = document.getElementById('subject-list');
+            listDiv.innerHTML = '';
+            subjects.forEach(sub => {
+                const isPaid = userBought.includes('all') || userBought.includes(sub.id);
+                const div = document.createElement('div');
+                div.className = `subject-card ${isPaid ? '' : 'locked'}`;
+                div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
+                div.onclick = () => {
+                    if (isPaid) openSubject(sub);
+                    else tg.showAlert("ဤဘာသာရပ်ကို ဝယ်ယူရန် လိုအပ်ပါသည်။");
+                };
+                listDiv.appendChild(div);
+            });
+        }
 
-        function showSubjectMenu(sub) {
-            homeScreen.style.display = 'none';
-            subMenuScreen.style.display = 'block';
-            menuTitle.innerText = sub.name;
-            menuContent.innerHTML = "";
-
-            if (sub.type === "en") {
-                // English Units and Poems
-                for(let i=1; i<=12; i++) createBtn(`Unit ${i}`, () => showActivitySelection('en'));
-                for(let i=1; i<=4; i++) createBtn(`Poem ${i}`, () => showActivitySelection('en'));
+        function openSubject(sub) {
+            showScreen('menu');
+            document.getElementById('menu-title').innerText = sub.name;
+            const content = document.getElementById('menu-content');
+            content.innerHTML = '';
+            
+            if (sub.id === 'mm') {
+                sub.parts.forEach(p => createBtn(p, content, () => showActivities('mm')));
+            } else if (sub.id === 'en') {
+                for(let i=1; i<=sub.units; i++) createBtn(`Unit ${i}`, content, () => showActivities('en'));
+                for(let i=1; i<=sub.poems; i++) createBtn(`Poem ${i}`, content, () => showActivities('en'));
             } else {
-                // Other subjects chapters
-                for(let i=1; i<=5; i++) createBtn(`Chapter ${i}`, () => showActivitySelection(sub.type));
+                for(let i=1; i<=sub.chapters; i++) createBtn(`Chapter ${i}`, content, () => showActivities(sub.id));
             }
         }
 
-        function showActivitySelection(type) {
-            menuContent.innerHTML = `<div class='view-title'>လေ့ကျင့်ခန်းရွေးချယ်ပါ</div>`;
-            createBtn("Quiz", () => showQuizTypes(type));
-            createBtn("Flashcards", () => showFlashcardTypes(type));
+        function showActivities(type) {
+            const content = document.getElementById('menu-content');
+            content.innerHTML = `<h3 style="text-align:center">လေ့ကျင့်ခန်းရွေးပါ</h3>`;
+            createBtn("Quiz", content, () => tg.showAlert("Quiz Section Coming Soon"));
+            createBtn("Flashcards", content, () => tg.showAlert("Flashcards Section Coming Soon"));
         }
 
-        function showQuizTypes(type) {
-            menuContent.innerHTML = `<div class='view-title'>Quiz ပုံစံရွေးပါ</div>`;
-            if (type === 'en') {
-                createBtn("Initial Letter", () => start('English Initial Letter'));
-                createBtn("MCQ", () => start('English MCQ'));
-                createBtn("Grammar", () => start('English Grammar'));
-            } else if (type === 'mm') {
-                createBtn("မှား/မှန်", () => start('Myanmar True/False'));
-                createBtn("ကွက်လပ်ဖြည့်", () => start('Myanmar Fill Blank'));
-                createBtn("အမှန်ရွေး", () => start('Myanmar MCQ'));
-            } else {
-                createBtn("True or False", () => start('General T/F'));
-                createBtn("Fill in the Blank", () => start('General Blank'));
-                createBtn("MCQ", () => start('General MCQ'));
-            }
-        }
-
-        function showFlashcardTypes(type) {
-            if (type === 'phy') {
-                menuContent.innerHTML = `<div class='view-title'>Flashcard ပုံစံရွေးပါ</div>`;
-                createBtn("Definition", () => start('Physics Definition'));
-                createBtn("Derivation", () => start('Physics Derivation'));
-            } else if (type === 'en') {
-                start('English Q&A Flashcards');
-            } else if (type === 'mm') {
-                start('Myanmar Memory Cards');
-            } else {
-                start('General Definition Cards');
-            }
-        }
-
-        function createBtn(text, action) {
+        function createBtn(text, parent, action) {
             const b = document.createElement('button');
             b.className = 'btn';
             b.innerText = text;
             b.onclick = action;
-            menuContent.appendChild(b);
+            parent.appendChild(b);
         }
 
-        function goBack() {
-            homeScreen.style.display = 'block';
-            subMenuScreen.style.display = 'none';
+        function showScreen(id) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+            document.getElementById(id + '-screen').classList.add('active-screen');
         }
 
-        function start(msg) {
-            tg.showAlert(msg + " လာပါတော့မည်...");
+        function changeTab(id, el) {
+            showScreen(id);
+            document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('nav-active'));
+            el.classList.add('nav-active');
+        }
+
+        // Init
+        renderSubjects();
+        const fName = tg.initDataUnsafe?.user?.first_name || "Scholar";
+        document.getElementById('user-name').innerText = fName;
+        document.getElementById('avatar').innerText = fName.charAt(0);
+        document.getElementById('user-id-text').innerText = "ID: " + userId;
+        
+        if (userBought.length > 0) {
+            const names = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
+            document.getElementById('bought-items').innerText = names;
         }
     </script>
 </body>
