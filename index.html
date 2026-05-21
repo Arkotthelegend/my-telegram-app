@@ -21,7 +21,6 @@
             margin: 0; padding: 0; overflow: hidden;
         }
 
-        /* Views Switching */
         .view-section {
             display: none; height: calc(100vh - 70px);
             overflow-y: auto; padding: 20px; box-sizing: border-box;
@@ -30,72 +29,41 @@
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Subjects & Pop-up Animation */
+        /* Subjects & Buttons */
         .subject-container { margin-bottom: 12px; border-radius: 18px; overflow: hidden; }
         
-        .subject-header {
+        .main-btn {
             background-color: var(--btn-blue); color: white;
             padding: 18px 25px; display: flex; justify-content: space-between;
             align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: bold;
             transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
-            user-select: none;
+            user-select: none; border: none; width: 100%;
         }
         
-        .subject-header:active { transform: scale(0.94); } /* Pop-up scale effect */
-
-        .options-drawer {
-            max-height: 0; overflow: hidden; background: #ffffff05;
-            transition: max-height 0.4s ease-out;
-        }
-        .options-drawer.open { max-height: 200px; padding: 10px; }
-
-        .opt-btn {
-            background: var(--btn-blue); color: white; border: none;
-            width: 100%; padding: 15px; border-radius: 12px;
-            margin: 5px 0; font-weight: bold; font-size: 1rem;
-            transition: transform 0.1s;
-        }
-        .opt-btn:active { transform: scale(0.96); }
-
-        /* Locked State UI */
+        .main-btn:active { transform: scale(0.94); }
         .locked { background-color: var(--lock-color) !important; opacity: 0.6; }
 
-        /* Profile Style */
-        .profile-container { text-align: center; padding-top: 40px; }
-        .profile-pic {
-            width: 120px; height: 120px; background: white;
-            border-radius: 50%; margin: 0 auto 20px;
-            display: flex; align-items: center; justify-content: center;
+        .back-btn {
+            color: var(--btn-blue); background: none; border: 1px solid var(--btn-blue);
+            padding: 8px 15px; border-radius: 10px; margin-bottom: 20px; cursor: pointer;
         }
-        .profile-pic svg { width: 80px; fill: var(--bg-dark); }
-        .profile-name { font-size: 2rem; font-weight: bold; margin-bottom: 30px; }
-        
-        .profile-action-btn {
-            background: #1E293B; color: white; border: 1px solid #334155;
-            width: 90%; padding: 18px; border-radius: 15px;
-            margin: 8px auto; font-size: 1.1rem; font-weight: 500;
-            display: block; text-decoration: none;
-            transition: transform 0.1s;
-        }
-        .profile-action-btn:active { transform: scale(0.97); }
 
-        /* Bottom Navigation */
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+        .chapter-item {
+            background: var(--card-dark); padding: 20px; border-radius: 15px;
+            text-align: center; border: 1px solid #334155; cursor: pointer;
+            transition: 0.1s;
+        }
+        .chapter-item:active { transform: scale(0.95); background: #2d3a4f; }
+
+        /* Navigation */
         .tab-bar {
             position: fixed; bottom: 0; width: 100%; height: 70px;
             background: var(--card-dark); display: flex; border-top: 1px solid #334155;
         }
-        .tab-item {
-            flex: 1; display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; cursor: pointer; transition: 0.2s;
-            -webkit-tap-highlight-color: transparent;
-        }
-        .tab-item.active { background: #ffffff05; border-bottom: 3px solid var(--btn-blue); }
-
-        .middle-msg {
-            height: 100%; display: flex; align-items: center;
-            justify-content: center; font-size: 1.2rem; color: var(--text-dim);
-            text-align: center;
-        }
+        .tab-item { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; }
+        .tab-item.active { border-bottom: 3px solid var(--btn-blue); background: #ffffff05; }
     </style>
 </head>
 <body>
@@ -104,19 +72,23 @@
         <div id="subjects-list"></div>
     </div>
 
-    <div id="middle-view" class="view-section">
-        <div class="middle-msg">အာကုတ်မှပြုလုပ်ထားသည်</div>
+    <div id="chapter-view" class="view-section">
+        <button class="back-btn" onclick="showView('learn-view')">← ရှေ့သို့ပြန်သွားမည်</button>
+        <h2 id="selected-subject-name">Subject</h2>
+        <p id="selection-type" style="color: var(--text-dim); margin-bottom: 20px;">တစ်ခုရွေးချယ်ပါ</p>
+        <div id="chapters-grid" class="grid-container"></div>
     </div>
 
     <div id="profile-view" class="view-section">
-        <div class="profile-container">
-            <div class="profile-pic">
-                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-            </div>
-            <div class="profile-name" id="user-name">Scholar</div>
-            <div class="profile-action-btn" id="purchased-count">0 ဘာသာဝယ်ယူပြီး</div>
-            <a href="https://t.me/thearkot" target="_blank" class="profile-action-btn" style="background: #2481cc; border:none;">ဘာသာဝယ်ယူရန်</a>
+        <div style="text-align:center; padding-top:40px;">
+            <div id="user-name" style="font-size:2rem; font-weight:bold;">Scholar</div>
+            <div id="purchased-count" style="margin:20px; color:var(--text-dim);">0 ဘာသာဝယ်ယူပြီး</div>
+            <a href="https://t.me/thearkot" style="display:block; background:var(--btn-blue); color:white; padding:15px; margin:10px; border-radius:15px; text-decoration:none;">ဘာသာဝယ်ယူရန်</a>
         </div>
+    </div>
+
+    <div id="middle-view" class="view-section">
+        <div style="height:100%; display:flex; align-items:center; justify-content:center; color:var(--text-dim);">အာကုတ်မှပြုလုပ်ထားသည်</div>
     </div>
 
     <div class="tab-bar">
@@ -130,71 +102,77 @@
         tg.ready();
         tg.expand();
 
-        // --- ADMIN DATABASE SECTION ---
-        // အသုံးပြုသူရဲ့ ID နဲ့ သူဝယ်ထားတဲ့ ဘာသာရပ်တွေကို ဒီမှာစာရင်းသွင်းပါ
+        // --- DATABASE: ဒီနေရာမှာ ID နဲ့ ဝယ်ထားတဲ့ဘာသာရပ်တွေ ထည့်ရမှာပါ ---
         const userDatabase = {
-            "123456789": ["မြန်မာစာ", "အင်္ဂလိပ်စာ"], // Example User 1
-            "8432363664": ["မြန်မာစာ", "အင်္ဂလိပ်စာ", "သင်္ချာ", "ဓာတုဗေဒ", "ရူပဗေဒ"] // စမ်းသပ်ရန် သင့် ID ကို ဒီမှာထည့်ပါ
+            "8432363664": ["မြန်မာစာ", "အင်္ဂလိပ်စာ", "သင်္ချာ", "ဓာတုဗေဒ", "ရူပဗေဒ"] // သင့် ID အတွက် Bio, Eco လွဲပြီး ကျန်တာဖွင့်ထားပေးပါတယ်
         };
 
         const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || "guest";
         const purchasedSubjects = userDatabase[currentUserId] || [];
-        const allSubjects = ["မြန်မာစာ", "အင်္ဂလိပ်စာ", "သင်္ချာ", "ဓာတုဗေဒ", "ရူပဗေဒ", "ဘောဂဗေဒ", "ဇီဝဗေဒ"];
 
-        // Render Subject List
+        const subjectData = {
+            "မြန်မာစာ": { type: "အပိုင်း", list: ["အပြော", "စကားပြေ", "ကဗျာ", "ရေသည်", "အဖတ်"] },
+            "အင်္ဂလိပ်စာ": { type: "Unit/Poem", list: ["Unit 1", "Unit 2", "Unit 3", "Unit 4", "Unit 5", "Unit 6", "Unit 7", "Unit 8", "Unit 9", "Unit 10", "Unit 11", "Unit 12", "Poem 1", "Poem 2", "Poem 3", "Poem 4"] },
+            "သင်္ချာ": { type: "Chapter", count: 11 },
+            "ဓာတုဗေဒ": { type: "Chapter", count: 8 },
+            "ရူပဗေဒ": { type: "Chapter", count: 13 },
+            "ဘောဂဗေဒ": { type: "Chapter", count: 8 },
+            "ဇီဝဗေဒ": { type: "Chapter", count: 6 }
+        };
+
+        // Render Subjects
         const listContainer = document.getElementById('subjects-list');
-        allSubjects.forEach(sub => {
+        Object.keys(subjectData).forEach(sub => {
             const isPurchased = purchasedSubjects.includes(sub);
-            const container = document.createElement('div');
-            container.className = 'subject-container';
-            
-            container.innerHTML = `
-                <div class="subject-header ${!isPurchased ? 'locked' : ''}" onclick="toggleSub(this, ${isPurchased})">
-                    <span>${sub} ${!isPurchased ? '🔒' : ''}</span>
-                    <span>▼</span>
-                </div>
-                <div class="options-drawer">
-                    <button class="opt-btn" onclick="openAction('Quiz', '${sub}')">Quiz</button>
-                    <button class="opt-btn" onclick="openAction('Flashcards', '${sub}')">Flashcards</button>
-                </div>
-            `;
-            listContainer.appendChild(container);
+            const div = document.createElement('div');
+            div.className = 'subject-container';
+            div.innerHTML = `<button class="main-btn ${!isPurchased ? 'locked' : ''}" onclick="selectSubject('${sub}', ${isPurchased})">
+                <span>${sub} ${!isPurchased ? '🔒' : ''}</span><span>→</span>
+            </button>`;
+            listContainer.appendChild(div);
         });
 
-        // Update Profile
-        document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
-        document.getElementById('purchased-count').innerText = `${purchasedSubjects.length} ဘာသာဝယ်ယူပြီး`;
-
-        // Logic Functions
-        function toggleSub(el, isPurchased) {
+        function selectSubject(sub, isPurchased) {
             if (!isPurchased) {
-                tg.showPopup({
-                    title: 'Access Locked',
-                    message: 'ဒီဘာသာရပ်ကို လေ့လာရန် @thearkot ဆီမှာ ဝယ်ယူပေးပါခင်ဗျာ။',
-                    buttons: [{text: 'OK', type: 'close'}]
-                });
-                if(tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('warning');
+                tg.showPopup({ title: 'Access Locked', message: '@thearkot တွင် ဝယ်ယူပြီးမှသာ ဝင်ရောက်နိုင်ပါမည်။', buttons: [{text: 'OK', type: 'close'}]});
                 return;
             }
-            const drawer = el.nextElementSibling;
-            drawer.classList.toggle('open');
-            el.querySelector('span:last-child').innerText = drawer.classList.contains('open') ? '▲' : '▼';
-            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
+            const data = subjectData[sub];
+            document.getElementById('selected-subject-name').innerText = sub;
+            document.getElementById('selection-type').innerText = `${data.type} ရွေးချယ်ပါ`;
+            
+            const grid = document.getElementById('chapters-grid');
+            grid.innerHTML = '';
+
+            if (data.list) {
+                data.list.forEach(item => createBtn(item, sub));
+            } else {
+                for (let i = 1; i <= data.count; i++) { createBtn(`Chapter ${i}`, sub); }
+            }
+            showView('chapter-view');
         }
 
-        function openAction(type, sub) {
-            tg.showAlert(`${sub} ဘာသာရပ်ရဲ့ ${type} အပိုင်းကို မကြာမီ တင်ပေးတော့မှာဖြစ်ပါတယ်!`);
+        function createBtn(label, sub) {
+            const btn = document.createElement('div');
+            btn.className = 'chapter-item';
+            btn.innerText = label;
+            btn.onclick = () => tg.showAlert(`${sub} - ${label} အတွက် Quiz များကို မကြာမီထည့်သွင်းပေးပါမည်။`);
+            document.getElementById('chapters-grid').appendChild(btn);
+        }
+
+        function showView(id) {
+            document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
         }
 
         function switchTab(viewId, el) {
-            document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
-            document.getElementById(viewId + '-view').classList.add('active');
-            
+            showView(viewId + '-view');
             document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
             el.classList.add('active');
-            
-            if(tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
         }
+
+        document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
+        document.getElementById('purchased-count').innerText = `${purchasedSubjects.length} ဘာသာဝယ်ယူပြီး`;
     </script>
 </body>
 </html>
