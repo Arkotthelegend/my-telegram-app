@@ -12,8 +12,6 @@
             --text-main: #F8FAFC;
             --text-dim: #94A3B8;
             --lock-color: #334155;
-            --success: #22C55E;
-            --error: #EF4444;
         }
 
         body { background-color: var(--bg-dark); color: var(--text-main); font-family: -apple-system, sans-serif; margin: 0; padding: 0; overflow: hidden; }
@@ -21,25 +19,17 @@
         .view-section.active { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* General UI Elements */
-        .subject-container { margin-bottom: 12px; border-radius: 18px; overflow: hidden; }
-        .main-btn { background-color: var(--btn-blue); color: white; padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
+        /* UI Elements */
+        .main-btn { background-color: var(--btn-blue); color: white; padding: 18px 25px; display: flex; justify-content: space-between; align-items: center; border: none; width: 100%; border-radius: 18px; margin-bottom: 12px; font-size: 1.2rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .main-btn:active { transform: scale(0.95); }
         .locked { background-color: var(--lock-color) !important; opacity: 0.6; }
+        
         .back-btn { color: var(--btn-blue); background: none; border: 1px solid var(--btn-blue); padding: 8px 15px; border-radius: 10px; margin-bottom: 20px; cursor: pointer; }
-        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .chapter-item { background: var(--card-dark); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #334155; cursor: pointer; }
-
-        /* Quiz UI */
-        .quiz-card { background: var(--card-dark); padding: 25px; border-radius: 20px; border: 1px solid #334155; }
-        .q-text { font-size: 1.3rem; margin-bottom: 25px; line-height: 1.5; }
-        .opt-btn { background: #334155; color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; margin-bottom: 10px; font-size: 1rem; text-align: left; cursor: pointer; }
-        .opt-btn.correct { background: var(--success); }
-        .opt-btn.wrong { background: var(--error); }
-        .blank-input { width: 100%; padding: 15px; border-radius: 12px; border: 1px solid #334155; background: #0F172A; color: white; font-size: 1.1rem; margin-bottom: 15px; box-sizing: border-box; }
-        .submit-btn { background: var(--btn-blue); color: white; border: none; width: 100%; padding: 15px; border-radius: 12px; font-weight: bold; font-size: 1rem; }
-
-        /* Navigation */
+        
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .choice-card { background: var(--card-dark); padding: 25px; border-radius: 15px; text-align: center; border: 1px solid #334155; cursor: pointer; font-weight: bold; }
+        .choice-card:active { transform: scale(0.95); background: #2d3a4f; }
+        
         .tab-bar { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card-dark); display: flex; border-top: 1px solid #334155; }
         .tab-item { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; cursor: pointer; }
         .tab-item.active { border-bottom: 3px solid var(--btn-blue); background: #ffffff05; }
@@ -53,19 +43,23 @@
 
     <div id="chapter-view" class="view-section">
         <button class="back-btn" onclick="showView('learn-view')">← ရှေ့သို့</button>
-        <h2 id="selected-subject-name">Subject</h2>
+        <h2 id="subj-title">Subject</h2>
         <div id="chapters-grid" class="grid-container"></div>
     </div>
 
-    <div id="quiz-view" class="view-section">
-        <button class="back-btn" onclick="showView('chapter-view')">← ထွက်မည်</button>
-        <div id="quiz-container" class="quiz-card">
-            <div id="question-area">
-                <p class="q-text" id="q-text">မေးခွန်း ပေါ်လာပါမည်...</p>
-                <div id="answer-options"></div>
-            </div>
-            <div id="result-area" style="margin-top: 20px; font-weight: bold;"></div>
+    <div id="mode-view" class="view-section">
+        <button class="back-btn" onclick="showView('chapter-view')">← ရှေ့သို့</button>
+        <h2 id="mode-title">ရွေးချယ်ပါ</h2>
+        <div class="grid-container">
+            <div class="choice-card" onclick="selectType('Quiz')">📝 Quiz</div>
+            <div class="choice-card" onclick="selectType('Flashcards')">🗂️ Flashcards</div>
         </div>
+    </div>
+
+    <div id="sub-type-view" class="view-section">
+        <button class="back-btn" onclick="showView('mode-view')">← ရှေ့သို့</button>
+        <h2 id="type-title">အမျိုးအစားရွေးပါ</h2>
+        <div id="sub-type-grid" class="grid-container"></div>
     </div>
 
     <div id="profile-view" class="view-section">
@@ -85,94 +79,83 @@
         let tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const userDatabase = { "8432363664": ["မြန်မာစာ", "အင်္ဂလိပ်စာ", "သင်္ချာ", "ဓာတုဗေဒ", "ရူပဗေဒ"] };
+        const userDatabase = { "8432363664": ["မြန်မာစာ", "အင်္ဂလိပ်စာ", "ဓာတုဗေဒ", "ရူပဗေဒ"] };
         const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || "guest";
         const purchasedSubjects = userDatabase[currentUserId] || [];
 
-        // Sample Quiz Data (နမူနာ)
-        const quizData = [
-            { type: "mcq", q: "မြန်မာနိုင်ငံ၏ မြို့တော်မှာ မည်သည့်မြို့နည်း?", options: ["ရန်ကုန်", "နေပြည်တော်", "မန္တလေး"], correct: 1 },
-            { type: "tf", q: "ရေသည် အငွေ့ပျံလျှင် အေးသွားသည်။", correct: false },
-            { type: "blank", q: "သင်္ချာတွင် ၁ + ၁ သည် ___ ဖြစ်သည်။", correct: "2" }
-        ];
+        let currentSubject = "";
+        let currentChapter = "";
 
         const subjectData = {
             "မြန်မာစာ": { list: ["အပြော", "စကားပြေ", "ကဗျာ", "ရေသည်", "အဖတ်"] },
-            "အင်္ဂလိပ်စာ": { list: ["Unit 1", "Unit 2", "Poem 1"] },
-            "သင်္ချာ": { count: 11 }, "ဓာတုဗေဒ": { count: 8 }, "ရူပဗေဒ": { count: 13 }, "ဘောဂဗေဒ": { count: 8 }, "ဇီဝဗေဒ": { count: 6 }
+            "အင်္ဂလိပ်စာ": { list: ["Unit 1","Unit 2","Unit 3","Unit 4","Unit 5","Unit 6","Unit 7","Unit 8","Unit 9","Unit 10","Unit 11","Unit 12","Poem 1","Poem 2","Poem 3","Poem 4"] },
+            "ဓာတုဗေဒ": { count: 8 },
+            "ရူပဗေဒ": { count: 13 },
+            "ဘောဂဗေဒ": { count: 8 },
+            "ဇီဝဗေဒ": { count: 6 }
         };
 
         const listContainer = document.getElementById('subjects-list');
         Object.keys(subjectData).forEach(sub => {
             const isPurchased = purchasedSubjects.includes(sub);
-            const div = document.createElement('div');
-            div.className = 'subject-container';
-            div.innerHTML = `<button class="main-btn ${!isPurchased ? 'locked' : ''}" onclick="selectSubject('${sub}', ${isPurchased})">
-                <span>${sub} ${!isPurchased ? '🔒' : ''}</span><span>→</span>
-            </button>`;
-            listContainer.appendChild(div);
+            const btn = document.createElement('button');
+            btn.className = `main-btn ${!isPurchased ? 'locked' : ''}`;
+            btn.innerHTML = `<span>${sub} ${!isPurchased ? '🔒' : ''}</span><span>→</span>`;
+            btn.onclick = () => {
+                if(!isPurchased) return tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
+                openSubject(sub);
+            };
+            listContainer.appendChild(btn);
         });
 
-        function selectSubject(sub, isPurchased) {
-            if (!isPurchased) { tg.showPopup({ title: 'Locked', message: 'ဝယ်ယူရန် လိုအပ်ပါသည်။' }); return; }
-            document.getElementById('selected-subject-name').innerText = sub;
-            const grid = document.getElementById('chapters-grid'); grid.innerHTML = '';
+        function openSubject(sub) {
+            currentSubject = sub;
+            document.getElementById('subj-title').innerText = sub;
+            const grid = document.getElementById('chapters-grid');
+            grid.innerHTML = '';
             const data = subjectData[sub];
-            if (data.list) data.list.forEach(item => createChapterBtn(item));
-            else for (let i = 1; i <= data.count; i++) createChapterBtn(`Chapter ${i}`);
+            if(data.list) data.list.forEach(item => createChapBtn(item));
+            else for(let i=1; i<=data.count; i++) createChapBtn(`Chapter ${i}`);
             showView('chapter-view');
         }
 
-        function createChapterBtn(label) {
-            const btn = document.createElement('div'); btn.className = 'chapter-item'; btn.innerText = label;
-            btn.onclick = () => startQuiz();
-            document.getElementById('chapters-grid').appendChild(btn);
+        function createChapBtn(name) {
+            const div = document.createElement('div');
+            div.className = 'choice-card';
+            div.innerText = name;
+            div.onclick = () => { currentChapter = name; showView('mode-view'); };
+            document.getElementById('chapters-grid').appendChild(div);
         }
 
-        function startQuiz() {
-            showView('quiz-view');
-            loadQuestion(0); // ပထမဆုံးမေးခွန်းကို ပြမည်
-        }
+        function selectType(type) {
+            const grid = document.getElementById('sub-type-grid');
+            grid.innerHTML = '';
+            document.getElementById('type-title').innerText = `${type} အမျိုးအစား`;
 
-        function loadQuestion(index) {
-            const data = quizData[index];
-            const qArea = document.getElementById('q-text');
-            const optArea = document.getElementById('answer-options');
-            const resArea = document.getElementById('result-area');
-            
-            qArea.innerText = data.q;
-            optArea.innerHTML = '';
-            resArea.innerText = '';
-
-            if (data.type === "mcq") {
-                data.options.forEach((opt, i) => {
-                    const btn = document.createElement('button'); btn.className = 'opt-btn'; btn.innerText = opt;
-                    btn.onclick = () => checkAnswer(i === data.correct, btn);
-                    optArea.appendChild(btn);
-                });
-            } else if (data.type === "tf") {
-                ["True", "False"].forEach(val => {
-                    const btn = document.createElement('button'); btn.className = 'opt-btn'; btn.innerText = val;
-                    btn.onclick = () => checkAnswer((val === "True") === data.correct, btn);
-                    optArea.appendChild(btn);
-                });
-            } else if (data.type === "blank") {
-                const input = document.createElement('input'); input.className = 'blank-input'; input.placeholder = 'အဖြေရိုက်ထည့်ပါ...';
-                const subBtn = document.createElement('button'); subBtn.className = 'submit-btn'; subBtn.innerText = 'စစ်ဆေးမည်';
-                subBtn.onclick = () => checkAnswer(input.value.trim().toLowerCase() === data.correct.toLowerCase(), input);
-                optArea.appendChild(input); optArea.appendChild(subBtn);
+            if (type === "Quiz") {
+                if (currentSubject === "အင်္ဂလိပ်စာ") {
+                    ["Initial Letter", "MCQ", "Grammar"].forEach(t => createTypeBtn(t));
+                } else {
+                    ["True or False", "Fill in the Blank", "MCQ"].forEach(t => createTypeBtn(t));
+                }
+            } else { // Flashcards
+                if (currentSubject === "အင်္ဂလိပ်စာ") {
+                    createTypeBtn("Q&A");
+                } else if (currentSubject === "ရူပဗေဒ") {
+                    ["Definition", "Derivation"].forEach(t => createTypeBtn(t));
+                } else {
+                    createTypeBtn("Definition");
+                }
             }
+            showView('sub-type-view');
         }
 
-        function checkAnswer(isCorrect, element) {
-            const resArea = document.getElementById('result-area');
-            if (isCorrect) {
-                resArea.innerText = "✅ မှန်ကန်ပါသည်။!"; resArea.style.color = "var(--success)";
-                if(tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
-            } else {
-                resArea.innerText = "❌ မှားယွင်းနေပါသည်။!"; resArea.style.color = "var(--error)";
-                if(tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('error');
-            }
+        function createTypeBtn(name) {
+            const div = document.createElement('div');
+            div.className = 'choice-card';
+            div.innerText = name;
+            div.onclick = () => tg.showAlert(`${currentSubject} > ${currentChapter} > ${name} ကို မကြာမီတင်ပေးပါမည်။`);
+            document.getElementById('sub-type-grid').appendChild(div);
         }
 
         function showView(id) {
@@ -187,7 +170,7 @@
         }
 
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
-        document.getElementById('purchased-count').innerText = `${purchasedSubjects.length} ဘာသာဝယ်ယူပြီး`;
+        document.getElementById('purchased-count').innerText = `${purchasedSubjects.length} ဝယ်ယူပြီး`;
     </script>
 </body>
 </html>
