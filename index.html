@@ -6,189 +6,156 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg-color: #0F172A;
+            --bg-dark: #0F172A;
             --btn-blue: #38BDF8;
-            --nav-bg: #1E293B;
-            --text-white: #ffffff;
+            --card-dark: #1E293B;
+            --text-main: #F8FAFC;
+            --text-dim: #94A3B8;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-white);
-            font-family: -apple-system, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0; padding: 0; overflow: hidden;
         }
 
-        /* --- SCROLLABLE LIST --- */
-        .content-area {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            padding-bottom: 80px; /* Space for bottom nav */
+        /* Views Switching */
+        .view-section {
+            display: none; height: calc(100vh - 70px);
+            overflow-y: auto; padding: 20px; box-sizing: border-box;
         }
+        .view-section.active { display: block; animation: fadeIn 0.3s ease; }
 
-        /* --- SUBJECT BUTTONS --- */
-        .subject-container {
-            margin-bottom: 12px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
+        /* Subjects Style */
+        .subject-container { margin-bottom: 12px; border-radius: 18px; overflow: hidden; }
+        
         .subject-header {
-            background-color: var(--btn-blue);
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-size: 1.5rem;
-            font-weight: bold;
-            border-radius: 20px;
-            transition: border-radius 0.3s;
+            background-color: var(--btn-blue); color: white;
+            padding: 18px 25px; display: flex; justify-content: space-between;
+            align-items: center; cursor: pointer; font-size: 1.2rem; font-weight: bold;
+            transition: all 0.3s ease;
         }
+        
+        .subject-header:active { transform: scale(0.97); }
 
-        .subject-header.open {
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        .arrow {
-            width: 0; 
-            height: 0; 
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-top: 10px solid white;
-            transition: transform 0.3s;
-        }
-
-        .arrow.up { transform: rotate(180deg); }
-
-        /* --- EXPANDABLE OPTIONS --- */
         .options-drawer {
-            display: none;
-            background-color: #ffffff;
-            padding: 10px;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            max-height: 0; overflow: hidden; background: #ffffff10;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .options-drawer.open { max-height: 200px; padding: 10px; }
+
+        .opt-btn {
+            background: var(--btn-blue); color: white; border: none;
+            width: 100%; padding: 15px; border-radius: 12px;
+            margin: 5px 0; font-weight: bold; font-size: 1rem;
         }
 
-        .option-btn {
-            background-color: var(--btn-blue);
-            color: white;
-            margin: 5px 0;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-            display: block;
+        /* Profile Style */
+        .profile-container { text-align: center; padding-top: 40px; }
+        .profile-pic {
+            width: 120px; height: 120px; background: white;
+            border-radius: 50%; margin: 0 auto 20px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .profile-pic svg { width: 80px; fill: var(--bg-dark); }
+        .profile-name { font-size: 2rem; font-weight: bold; margin-bottom: 30px; }
+        
+        .profile-action-btn {
+            background: #1E293B; color: white; border: 1px solid #334155;
+            width: 90%; padding: 18px; border-radius: 15px;
+            margin: 8px auto; font-size: 1.1rem; font-weight: 500;
         }
 
-        /* --- BOTTOM NAVIGATION --- */
-        .bottom-nav {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            height: 70px;
-            background-color: var(--nav-bg);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-top: 1px solid #334155;
+        /* Navigation */
+        .tab-bar {
+            position: fixed; bottom: 0; width: 100%; height: 70px;
+            background: var(--card-dark); display: flex; border-top: 1px solid #334155;
         }
-
-        .nav-item {
-            font-size: 2rem;
-            color: white;
-            opacity: 0.7;
-            cursor: pointer;
-            padding: 10px 20px;
+        .tab-item {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            font-size: 1.8rem; cursor: pointer; transition: 0.2s;
         }
+        .tab-item.active { background: #ffffff05; border-bottom: 3px solid var(--btn-blue); }
 
-        .nav-item.active {
-            opacity: 1;
-            background-color: rgba(255,255,255,0.1);
-            border-radius: 10px;
+        .middle-msg {
+            height: 100%; display: flex; align-items: center;
+            justify-content: center; font-size: 1.2rem; color: var(--text-dim);
         }
     </style>
 </head>
 <body>
 
-    <div class="content-area">
-        <div class="subject-container">
-            <div class="subject-header" onclick="toggleSubject(this)">
-                <span>မြန်မာစာ</span>
-                <div class="arrow"></div>
-            </div>
-            <div class="options-drawer">
-                <button class="option-btn" onclick="startActivity('quiz', 'Myanmar')">ဉာဏ်စမ်းမေးခွန်းများ</button>
-                <button class="option-btn" onclick="startActivity('flash', 'Myanmar')">Flashcards</button>
-            </div>
+    <div id="learn-view" class="view-section active">
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>မြန်မာစာ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">ဉာဏ်စမ်းမေးခွန်းများ</button><button class="opt-btn">Flashcards</button></div>
         </div>
-
-        <div class="subject-container">
-            <div class="subject-header" onclick="toggleSubject(this)">
-                <span>အင်္ဂလိပ်စာ</span>
-                <div class="arrow"></div>
-            </div>
-            <div class="options-drawer">
-                <button class="option-btn" onclick="startActivity('quiz', 'English')">Quiz</button>
-                <button class="option-btn" onclick="startActivity('flash', 'English')">Flashcards</button>
-            </div>
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>အင်္ဂလိပ်စာ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
         </div>
-
-        <div class="subject-container">
-            <div class="subject-header" onclick="toggleSubject(this)">
-                <span>ဇီဝဗေဒ</span>
-                <div class="arrow"></div>
-            </div>
-            <div class="options-drawer">
-                <button class="option-btn" onclick="startActivity('quiz', 'Biology')">Quiz</button>
-                <button class="option-btn" onclick="startActivity('flash', 'Biology')">Flashcards</button>
-            </div>
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>သင်္ချာ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
         </div>
-
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>ဓာတုဗေဒ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
+        </div>
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>ရူပဗေဒ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
+        </div>
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>ဘောဂဗေဒ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
+        </div>
+        <div class="subject-container"><div class="subject-header" onclick="toggleSub(this)"><span>ဇီဝဗေဒ</span><span>▼</span></div>
+            <div class="options-drawer"><button class="opt-btn">Quiz</button><button class="opt-btn">Flashcards</button></div>
+        </div>
     </div>
 
-    <div class="bottom-nav">
-        <div class="nav-item active">🏠</div>
-        <div class="nav-item">❓</div>
-        <div class="nav-item">👤</div>
+    <div id="middle-view" class="view-section">
+        <div class="middle-msg">အာကုတ်မှပြုလုပ်ထားသည်</div>
+    </div>
+
+    <div id="profile-view" class="view-section">
+        <div class="profile-container">
+            <div class="profile-pic">
+                <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            </div>
+            <div class="profile-name" id="user-name">Name</div>
+            <button class="profile-action-btn">--- ဘာသာဝယ်ယူပြီး</button>
+            <button class="profile-action-btn">ဘာသာဝယ်ယူရန်</button>
+        </div>
+    </div>
+
+    <div class="tab-bar">
+        <div class="tab-item active" onclick="switchTab('learn', this)">🏠</div>
+        <div class="tab-item" onclick="switchTab('middle', this)">❓</div>
+        <div class="tab-item" onclick="switchTab('profile', this)">👤</div>
     </div>
 
     <script>
-        const tg = window.Telegram.WebApp;
+        let tg = window.Telegram.WebApp;
         tg.ready();
+        tg.expand();
 
-        function toggleSubject(header) {
-            const drawer = header.nextElementSibling;
-            const arrow = header.querySelector('.arrow');
-            
-            // Toggle visibility
-            if (drawer.style.display === "block") {
-                drawer.style.display = "none";
-                header.classList.remove('open');
-                arrow.classList.remove('up');
-            } else {
-                drawer.style.display = "block";
-                header.classList.add('open');
-                arrow.classList.add('up');
-            }
+        // Set User Name from Telegram
+        document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
 
-            // Haptic Feedback for a premium feel
-            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('medium');
+        function toggleSub(el) {
+            const drawer = el.nextElementSibling;
+            drawer.classList.toggle('open');
+            el.querySelector('span:last-child').innerText = drawer.classList.contains('open') ? '▲' : '▼';
+            if(tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
         }
 
-        function startActivity(type, subject) {
-            tg.showAlert(`Starting ${type} for ${subject}`);
-            // Later we will build the actual quiz pages here!
+        function switchTab(viewId, el) {
+            document.querySelectorAll('.view-section').forEach(v => v.classList.remove('active'));
+            document.getElementById(viewId + '-view').classList.add('active');
+            
+            document.querySelectorAll('.tab-item').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            
+            if(tg.HapticFeedback) tg.HapticFeedback.selectionChanged();
         }
     </script>
 </body>
