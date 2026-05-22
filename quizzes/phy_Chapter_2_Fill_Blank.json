@@ -115,3 +115,92 @@
     "type": "blank", "q": "A satellite orbiting a planet is supported by the ________ force.",
     "c": "centripetal"
   },
+  {
+    "type": "blank", "q": "Banking of roads is raising the ________ edge of the curved road higher than the inner edge.",
+    "c": "outer"
+  },
+  {
+    "type": "blank", "q": "For uniform circular motion, the acceleration is ________ acceleration.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "An object moving in a circle must have a ________ applied to it to keep it moving in the circle.",
+    "c": "force"
+  },
+  {
+    "type": "blank", "q": "The ________ component of the normal force acts as the required centripetal force.",
+    "c": "horizontal"
+  },
+  {
+    "type": "blank", "q": "If the ________ force is not sufficient, the car going in the unbanked curved road will skid out of the circular path.",
+    "c": "frictional"
+  },
+  {
+    "type": "blank", "q": "On an unbanked road, the ________ force is supplied by friction between the tyres and the road.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "The curved road must be banked to provide the necessary ________ force to the automobiles.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "The direction of the ________ acceleration is towards the centre of the circle.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "When a car makes a turn on an unbanked road, the car will skid out of the circular path if the ________ force is not sufficient.",
+    "c": "frictional"
+  },
+  {
+    "type": "blank", "q": "The upward thrust acting on a flying plane is also known as the ________ force.",
+    "c": "lifting"
+  },
+  {
+    "type": "blank", "q": "The centripetal force is ________ to the direction of the motion of the body in circular motion.",
+    "c": "normal"
+  },
+  {
+    "type": "blank", "q": "When the aeroplane tilts, the horizontal component of the ________ force provides the required centripetal force.",
+    "c": "lifting"
+  },
+  {
+    "type": "blank", "q": "When the aeroplane tilts, the horizontal component of the ________ force acts normally to the motion of the aeroplane.",
+    "c": "lifting"
+  },
+  {
+    "type": "blank", "q": "When a car moves in a circular path which is inclined to the horizontal, the ________ component of the normal force acts as the required centripetal force.",
+    "c": "horizontal"
+  },
+  {
+    "type": "blank", "q": "When a car turns around a level curved path, the frictional force behaves as a ________ force.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "When a car moves around a curve, the person in the car feels an ________ force exerted on him.",
+    "c": "outward"
+  },
+  {
+    "type": "blank", "q": "When a car moves in a curved circular path, the ________ component of the normal force is the required centripetal force.",
+    "c": "horizontal"
+  },
+  {
+    "type": "blank", "q": "The ________ force appears to act in a direction pointing away from the centre.",
+    "c": "centrifugal"
+  },
+  {
+    "type": "blank", "q": "In a washing machine, the washed clothes are spun very fast and excess water is removed completely with the help of ________ force.",
+    "c": "centrifugal"
+  },
+  {
+    "type": "blank", "q": "The centrifugal governor is a device used to measure and regulate the ________ of a machine.",
+    "c": "speed"
+  },
+  {
+    "type": "blank", "q": "The ________ force is the force acting towards the centre of the circular path around which the object is moving.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "________ force is the force acting on an object in circular motion which is directed towards the axis of rotation or centre of curvature.",
+    "c": "Centripetal"
+  }
+]
