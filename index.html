@@ -7,7 +7,7 @@
     <style>
         :root { 
             --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; 
-            --white: #ffffff; --lock: #475569; --success: #10B981;
+            --white: #ffffff; --lock: #475569; --success: #10B981; --error: #EF4444;
         }
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
         .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
@@ -28,6 +28,12 @@
             cursor: pointer; text-decoration: none; display: block; text-align: center; box-sizing: border-box;
         }
         .back-btn { background: #334155; margin-top: 20px; }
+        .next-btn { background: var(--success); display: none; margin-top: 10px; }
+
+        /* Quiz Options Styling */
+        .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; }
+        .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
+        .wrong-opt { background: var(--error) !important; border-color: var(--error) !important; }
 
         /* Profile Elements */
         #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
@@ -69,12 +75,12 @@
         </div>
 
         <div id="quiz-screen" class="screen">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 20px;">
-                <span id="quiz-progress" style="color: var(--accent);">0/0</span>
-                <span id="quiz-score" style="color: var(--success);">Score: 0</span>
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0/0</span>
             </div>
             <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
             <div id="quiz-options"></div>
+            <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
             <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
         </div>
 
@@ -143,7 +149,8 @@
         let currentSubject = null;
         let currentQuestions = [];
         let currentIdx = 0;
-        let score = 0;
+        let isAnswered = false;
+
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
@@ -204,46 +211,82 @@
             try {
                 const res = await fetch(`./quizzes/${fileName}.json`);
                 currentQuestions = await res.json();
-                currentIdx = 0; score = 0;
+                currentIdx = 0;
                 showScreen('quiz');
                 loadQuestion();
                 document.getElementById('quiz-back-btn').onclick = () => showQuizTypes(subId, partName);
             } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName + ".json"); }
         }
 
-        function updateAvatar() {
-            const isFemale = document.getElementById('gender-switch').checked;
-            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
-        }
-
         function loadQuestion() {
+            isAnswered = false;
+            document.getElementById('next-btn').style.display = 'none';
             const q = currentQuestions[currentIdx];
-            document.getElementById('quiz-progress').innerText = `${currentIdx + 1}/${currentQuestions.length}`;
-            document.getElementById('quiz-score').innerText = `Score: ${score}`;
+            document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
             document.getElementById('question-box').innerText = q.q;
             const optDiv = document.getElementById('quiz-options');
             optDiv.innerHTML = '';
+
             if (q.type === 'mcq') {
-                q.a.forEach((a, i) => createBtn(a, optDiv, () => checkAns(i === q.c)));
+                q.a.forEach((a, i) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn option-btn';
+                    btn.innerText = a;
+                    btn.onclick = () => checkAns(i === q.c, btn, q.c);
+                    optDiv.appendChild(btn);
+                });
             } else if (q.type === 'tf') {
-                createBtn("TRUE / မှန်", optDiv, () => checkAns(q.c === true));
-                createBtn("FALSE / မှား", optDiv, () => checkAns(q.c === false));
+                const btnT = document.createElement('button'); btnT.className = 'btn option-btn'; btnT.innerText = "မှန် (TRUE)";
+                btnT.onclick = () => checkAns(q.c === true, btnT, q.c);
+                const btnF = document.createElement('button'); btnF.className = 'btn option-btn'; btnF.innerText = "မှား (FALSE)";
+                btnF.onclick = () => checkAns(q.c === false, btnF, q.c);
+                optDiv.append(btnT, btnF);
             } else if (q.type === 'blank') {
                 const input = document.createElement('input');
-                input.className = 'quiz-input'; input.placeholder = "Answer...";
+                input.className = 'quiz-input'; input.style.width = "100%"; input.style.padding = "15px"; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
                 const sBtn = document.createElement('button');
-                sBtn.className = 'btn'; sBtn.innerText = "Check Answer";
-                sBtn.onclick = () => checkAns(input.value.trim().toLowerCase() === q.c.toString().toLowerCase());
+                sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
+                sBtn.onclick = () => {
+                    const isCorrect = input.value.trim().toLowerCase() === q.c.toString().toLowerCase();
+                    tg.showAlert(isCorrect ? "✅ မှန်ကန်ပါသည်။ အဖြေမှာ: " + q.c : "❌ မှားယွင်းပါသည်။ အဖြေမှန်မှာ: " + q.c);
+                    input.disabled = true; sBtn.disabled = true;
+                    document.getElementById('next-btn').style.display = 'block';
+                };
                 optDiv.append(input, sBtn);
             }
         }
 
-        function checkAns(correct) {
-            if (correct) { score++; tg.showAlert("✅ မှန်ကန်ပါသည်။"); }
-            else { tg.showAlert("❌ မှားယွင်းပါသည်။"); }
+        function checkAns(correct, btn, correctIdx) {
+            if (isAnswered) return;
+            isAnswered = true;
+            
+            const options = document.querySelectorAll('.option-btn');
+            options.forEach((opt, idx) => {
+                if (idx === correctIdx || (btn.innerText.includes("TRUE") && correctIdx === true) || (btn.innerText.includes("FALSE") && correctIdx === false)) {
+                    opt.classList.add('correct-opt');
+                }
+            });
+
+            if (!correct) {
+                btn.classList.add('wrong-opt');
+            }
+
+            document.getElementById('next-btn').style.display = 'block';
+        }
+
+        function nextQuestion() {
             currentIdx++;
-            if (currentIdx < currentQuestions.length) loadQuestion();
-            else { tg.showAlert(`ပြီးဆုံးပါပြီ။ ရမှတ်: ${score}`); document.getElementById('quiz-back-btn').click(); }
+            if (currentIdx < currentQuestions.length) {
+                loadQuestion();
+            } else {
+                tg.showAlert("မေးခွန်းများအားလုံး ပြီးဆုံးသွားပါပြီ။");
+                document.getElementById('quiz-back-btn').click();
+            }
+        }
+
+        function updateAvatar() {
+            const isFemale = document.getElementById('gender-switch').checked;
+            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
         }
 
         function createBtn(txt, parent, act) {
