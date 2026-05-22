@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The _______ viscosity is also known as absolute viscosity.",
+    "c": "dynamic"
+  },
+  {
+    "type": "blank",
+    "q": "In an intake stroke of a gasoline engine, a mixture of gasoline vapour and _______ is drawn into the cylinder.",
+    "c": "air"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is an object that absorbs all radiation that falls on it.",
+    "c": "blackbody"
+  },
+  {
+    "type": "blank",
+    "q": "The first law of thermodynamics is a statement of the conservation of _______.",
+    "c": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "In _______, heat is transferred from one place to another by the actual motion of the fluid.",
+    "c": "convection"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of thermal conductivity is _______.",
+    "c": "watt per metre kelvin"
+  },
+  {
+    "type": "blank",
+    "q": "Internal energy is the sum of the _______ and potential energies of the molecules in a system.",
+    "c": "kinetic"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ process occurs at a constant temperature.",
+    "c": "isothermal"
+  },
+  {
+    "type": "blank",
+    "q": "In an _______ process, there is no heat transfer into or out of the system.",
+    "c": "adiabatic"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a heat engine is the ratio of net work done to the heat absorbed.",
+    "c": "efficiency"
+  },
+  {
+    "type": "blank",
+    "q": "Metals are generally very good _______ of heat.",
+    "c": "conductors"
+  },
+  {
+    "type": "blank",
+    "q": "A high value for thermal conductivity indicates the material is a good thermal _______.",
+    "c": "conductor"
+  },
+  {
+    "type": "blank",
+    "q": "Radiation can be transferred through a _______.",
+    "c": "vacuum"
+  },
+  {
+    "type": "blank",
+    "q": "In an _______ process, the pressure of the system remains constant.",
+    "c": "isobaric"
+  },
+  {
+    "type": "blank",
+    "q": "In an _______ process, the volume of the system remains constant.",
+    "c": "isochoric"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ engine is a device that converts heat into work.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "Gasoline engines are _______ combustion engines.",
+    "c": "internal"
+  },
+  {
+    "type": "blank",
+    "q": "The gasoline engine is also called a _______ engine.",
+    "c": "four-stroke"
+  },
+  {
+    "type": "blank",
+    "q": "During the _______ stroke of a gasoline engine, the spark plug ignites the mixture.",
+    "c": "power"
+  },
+  {
+    "type": "blank",
+    "q": "In a diesel engine, only _______ is drawn into the cylinder during the intake stroke.",
+    "c": "air"
+  },
+  {
+    "type": "blank",
+    "q": "A refrigerator is a heat engine operating in _______.",
+    "c": "reverse"
+  },
+  {
+    "type": "blank",
+    "q": "The Carnot cycle consists of two isothermal and two _______ processes.",
+    "c": "adiabatic"
+  },
+  {
+    "type": "blank",
+    "q": "Heat flux density is proportional to the magnitude of the _______ gradient.",
+    "c": "temperature"
+  },
+  {
+    "type": "blank",
+    "q": "The thermodynamics concerns the relationships between heat and other forms of _______.",
+    "c": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of heat is _______.",
+    "c": "joule"
+  },
+  {
+    "type": "blank",
+    "q": "Materials that are good electric conductors are also good _______ conductors.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ viscosity is the resistive flow of a fluid due to gravity.",
+    "c": "kinematic"
+  },
+  {
+    "type": "blank",
+    "q": "In fluids, heat is mainly transferred by _______.",
+    "c": "convection"
+  },
+  {
+    "type": "blank",
+    "q": "Absolute zero is equal to _______ degrees Celsius.",
+    "c": "-273.15"
+  },
+  {
+    "type": "blank",
+    "q": "The work done by a gas during expansion is equal to the area under the _______ curve.",
+    "c": "P-V"
+  },
+  {
+    "type": "blank",
+    "q": "If heat is added to the system, Q is _______.",
+    "c": "positive"
+  },
+  {
+    "type": "blank",
+    "q": "If work is done by the system, W is _______.",
+    "c": "positive"
+  },
+  {
+    "type": "blank",
+    "q": "For a _______ engine, the work done equals heat absorbed minus heat rejected.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ ratio of a diesel engine is usually between 15 and 20.",
+    "c": "compression"
+  },
+  {
+    "type": "blank",
+    "q": "In a gasoline engine, the petrol-air mixture enters through the _______ valve.",
+    "c": "intake"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is a perfect absorber and a perfect emitter of radiation.",
+    "c": "blackbody"
+  },
+  {
+    "type": "blank",
+    "q": "Conduction is the transfer of heat through a material without any _______ motion of the material.",
+    "c": "bulk"
+  },
+  {
+    "type": "blank",
+    "q": "The surroundings of a system are everything _______ the system.",
+    "c": "outside"
+  },
+  {
+    "type": "blank",
+    "q": "Thermal _______ is the property of a material to conduct heat.",
+    "c": "conductivity"
+  },
+  {
+    "type": "blank",
+    "q": "Silver is a better thermal conductor than _______.",
+    "c": "gold"
+  },
+  {
+    "type": "blank",
+    "q": "The entropy of an _______ system never decreases.",
+    "c": "isolated"
+  },
+  {
+    "type": "blank",
+    "q": "In an isothermal process, the change in internal energy is _______.",
+    "c": "zero"
+  },
+  {
+    "type": "blank",
+    "q": "The intake stroke of a gasoline engine is also called the _______ stroke.",
+    "c": "suction"
+  },
+  {
+    "type": "blank",
+    "q": "For a diesel engine, the _______ is sprayed into the cylinder by the injector.",
+    "c": "fuel"
+  },
+  {
+    "type": "blank",
+    "q": "Isothermal expansion is a process where the volume increases at constant _______.",
+    "c": "temperature"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ process is one in which the volume of the system is kept constant.",
+    "c": "isochoric"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ engine has no spark plugs.",
+    "c": "diesel"
+  },
+  {
+    "type": "blank",
+    "q": "A system is in _______ equilibrium if its macroscopic properties do not change with time.",
+    "c": "thermodynamic"
+  },
+  {
+    "type": "blank",
+    "q": "The transformation of heat into work is usually accomplished by _______.",
+    "c": "heat engines"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ law of thermodynamics defines the concept of temperature.",
+    "c": "zeroth"
+  }
+]
