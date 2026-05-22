@@ -53,26 +53,11 @@
             <div id="subject-list"></div>
         </div>
 
-        <div id="menu-screen" class="screen">
-            <h2 id="menu-title" style="text-align: center; color: var(--accent);">Menu</h2>
-            <div id="menu-content"></div>
-            <button class="btn back-btn" id="menu-back-btn">ပင်မစာမျက်နှာသို့</button>
-        </div>
-
-        <div id="activity-screen" class="screen">
-            <h2 id="activity-title" style="text-align: center; color: var(--accent);">ရွေးချယ်ပါ</h2>
-            <div id="activity-content"></div>
-            <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
-        </div>
-
-        <div id="quiz-screen" class="screen">
-            <div style="text-align: center; margin-bottom: 20px;">
-                <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0 / 0</span>
+        <div id="middle-screen" class="screen">
+            <div style="height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
+                <p style="color: #94A3B8; margin-top: 10px;">ပညာရေးကို လူတိုင်းလက်လှမ်းမီစေရန်</p>
             </div>
-            <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
-            <div id="quiz-options"></div>
-            <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
-            <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
         </div>
 
         <div id="profile-screen" class="screen">
@@ -105,10 +90,33 @@
                 </div>
             </div>
         </div>
+
+        <div id="menu-screen" class="screen">
+            <h2 id="menu-title" style="text-align: center; color: var(--accent);">Menu</h2>
+            <div id="menu-content"></div>
+            <button class="btn back-btn" id="menu-back-btn">ပင်မစာမျက်နှာသို့</button>
+        </div>
+
+        <div id="activity-screen" class="screen">
+            <h2 id="activity-title" style="text-align: center; color: var(--accent);">ရွေးချယ်ပါ</h2>
+            <div id="activity-content"></div>
+            <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0 / 0</span>
+            </div>
+            <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
+            <div id="quiz-options"></div>
+            <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
+            <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
+        </div>
     </div>
 
     <div class="nav">
         <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
+        <div class="nav-item" onclick="changeTab('middle', this)">❓</div>
         <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
 
@@ -116,7 +124,7 @@
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] , "5593040432": ["mm", "en", "math", "phy", "chem", "bio", "eco"]};
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ' },
             { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
@@ -136,6 +144,7 @@
 
         function renderSubjects() {
             const list = document.getElementById('subject-list');
+            if(!list) return;
             list.innerHTML = '';
             subjects.forEach(sub => {
                 const isPaid = userBought.includes('all') || userBought.includes(sub.id);
@@ -147,7 +156,6 @@
             });
         }
 
-        // ဘာသာရပ်ကိုနှိပ်လိုက်လျှင် ပေါ်လာမည့် ပထမအဆင့် Menu
         function openSubjectMenu(sub) {
             showScreen('menu');
             document.getElementById('menu-title').innerText = sub.name;
@@ -177,7 +185,6 @@
             }
         }
 
-        // မြန်မာစာ Quiz အမျိုးအစားရွေးပြီးရင်ပြမည့် (အပြော၊ အရေး၊ အဖတ်)
         function showMMQuizOptions(typeName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = typeName;
@@ -194,7 +201,6 @@
             });
         }
 
-        // မြန်မာစာ Flashcard အမျိုးအစားရွေးပြီးရင်ပြမည့် (စကားပြေ၊ ကဗျာ၊ ရေသည်)
         function showMMFlashcardOptions(typeName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = typeName;
@@ -207,7 +213,6 @@
             createBtn("ရေသည်", content, () => tg.showAlert("ရေသည်ပြဇာတ် Flashcards မကြာမီလာမည်..."));
         }
 
-        // စကားပြေ/ကဗျာ အောက်က ခေါင်းစဉ် ၈ ခု
         function showMMSubTopics(typeName, category) {
             const content = document.getElementById('activity-content');
             content.innerHTML = `<h3 style="text-align:center">${category} (${typeName})</h3>`;
@@ -225,7 +230,6 @@
             });
         }
 
-        // အခြားဘာသာရပ်များအတွက် Quiz/Flashcard ရွေးချယ်မှု
         function showGeneralActivities(subId, partName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = partName;
@@ -318,7 +322,8 @@
 
         function showScreen(id) {
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-            document.getElementById(id + '-screen').classList.add('active-screen');
+            const target = document.getElementById(id + '-screen');
+            if(target) target.classList.add('active-screen');
         }
 
         function changeTab(id, el) {
@@ -328,7 +333,7 @@
             if(id === 'home') renderSubjects();
         }
 
-        // Initialization
+        // Init
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
         document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
