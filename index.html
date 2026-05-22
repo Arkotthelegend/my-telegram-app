@@ -29,11 +29,13 @@
         }
         .back-btn { background: #334155; margin-top: 20px; }
 
-        /* Stickman Styling */
-        #profile-avatar { width: 120px; height: 120px; margin: 0 auto; display: block; }
+        /* Profile Elements */
+        #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
+        .profile-info-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; }
+        .buy-btn { background: var(--success); margin-top: 15px; }
         
-        /* Gender Switch Styling */
-        .gender-container { margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 15px; }
+        /* Gender Switch */
+        .gender-container { margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
@@ -77,7 +79,7 @@
         </div>
 
         <div id="profile-screen" class="screen">
-            <div style="text-align: center; padding: 20px 0;">
+            <div style="text-align: center; padding: 10px 0;">
                 <svg id="profile-avatar" viewBox="0 0 100 100">
                     <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
                     <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
@@ -88,8 +90,8 @@
                     <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
                 </svg>
                 
-                <h1 id="user-name">User</h1>
-                <p id="user-id-text" style="color: #94A3B8;"></p>
+                <h2 id="user-name" style="margin: 10px 0 5px;">User</h2>
+                <p id="user-id-text" style="color: #94A3B8; margin: 0 0 15px;"></p>
 
                 <div class="gender-container">
                     <span>ကျား</span>
@@ -98,6 +100,14 @@
                         <span class="slider"></span>
                     </label>
                     <span>မ</span>
+                </div>
+
+                <div class="profile-info-card">
+                    <div style="text-align: left; font-size: 0.9rem;">
+                        <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ:</b><br>
+                        <span id="bought-items" style="color: var(--white);">မရှိသေးပါ</span>
+                    </div>
+                    <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
                 </div>
             </div>
         </div>
@@ -119,15 +129,21 @@
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "math", "phy"] };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] };
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
             { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
             { id: 'math', name: 'သင်္ချာ', chapters: 11 },
-            { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 }
+            { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
+            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
+            { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 },
+            { id: 'eco', name: 'ဘောဂဗေဒ', chapters: 8 }
         ];
 
         let currentSubject = null;
+        let currentQuestions = [];
+        let currentIdx = 0;
+        let score = 0;
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
@@ -140,12 +156,8 @@
                 div.className = `subject-card ${isPaid ? '' : 'locked'}`;
                 div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
                 div.onclick = () => {
-                    if(isPaid) {
-                        currentSubject = sub;
-                        openMenu(sub);
-                    } else {
-                        tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
-                    }
+                    if(isPaid) { currentSubject = sub; openMenu(sub); }
+                    else { tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။"); }
                 };
                 list.appendChild(div);
             });
@@ -156,7 +168,6 @@
             document.getElementById('menu-title').innerText = sub.name;
             const content = document.getElementById('menu-content');
             content.innerHTML = '';
-            
             if (sub.id === 'mm') {
                 sub.parts.forEach(p => createBtn(p, content, () => showActivityOptions(sub.id, p)));
             } else {
@@ -172,26 +183,20 @@
             document.getElementById('activity-title').innerText = partName;
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
-            
             createBtn("Quiz", content, () => showQuizTypes(subId, partName));
-            createBtn("Flashcards", content, () => tg.showAlert("Flashcards မကြာမီလာမည်..."));
-
-            // Back button logic: Go back to the specific subject menu (not Home)
+            createBtn("Flashcards", content, () => tg.showAlert("Coming Soon..."));
             document.getElementById('activity-back-btn').onclick = () => openMenu(currentSubject);
         }
 
         function showQuizTypes(subId, partName) {
             const content = document.getElementById('activity-content');
             content.innerHTML = `<h3 style="text-align:center">${partName} Quiz</h3>`;
-            
             let types = (subId === 'math') ? ['1_Mark', '2_Mark', '3_Mark', '5_Mark'] : ['True_False', 'Fill_Blank', 'MCQ'];
             if(subId === 'mm') types = ['မှား_မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'];
-
             types.forEach(t => {
                 const fileName = `${subId}_${partName}_${t}`.replace(/ /g, "_");
                 createBtn(t.replace(/_/g, " "), content, () => initQuiz(fileName, subId, partName));
             });
-
             document.getElementById('activity-back-btn').onclick = () => showActivityOptions(subId, partName);
         }
 
@@ -203,18 +208,14 @@
                 showScreen('quiz');
                 loadQuestion();
                 document.getElementById('quiz-back-btn').onclick = () => showQuizTypes(subId, partName);
-            } catch (e) {
-                tg.showAlert("File not found: " + fileName + ".json");
-            }
+            } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName + ".json"); }
         }
 
-        // --- Avatar Logic ---
         function updateAvatar() {
             const isFemale = document.getElementById('gender-switch').checked;
             document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
         }
 
-        // --- Utility Functions ---
         function loadQuestion() {
             const q = currentQuestions[currentIdx];
             document.getElementById('quiz-progress').innerText = `${currentIdx + 1}/${currentQuestions.length}`;
@@ -222,7 +223,6 @@
             document.getElementById('question-box').innerText = q.q;
             const optDiv = document.getElementById('quiz-options');
             optDiv.innerHTML = '';
-
             if (q.type === 'mcq') {
                 q.a.forEach((a, i) => createBtn(a, optDiv, () => checkAns(i === q.c)));
             } else if (q.type === 'tf') {
@@ -266,6 +266,7 @@
 
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
+        document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
         renderSubjects();
     </script>
 </body>
