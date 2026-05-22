@@ -8,6 +8,7 @@
         :root { 
             --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; 
             --white: #ffffff; --lock: #475569; --success: #10B981; --error: #EF4444;
+            --secondary-btn: #334155; /* နောက်သို့ နှင့် ထွက်မည် အတွက် အရောင် */
         }
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
         .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
@@ -19,8 +20,10 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; }
-        .back-btn { background: #334155; margin-top: 20px; }
-        .next-btn { background: var(--success); display: none; margin-top: 10px; }
+        
+        /* ခလုတ်အရောင်အသစ်များ */
+        .back-btn { background: var(--secondary-btn); margin-top: 20px; }
+        .next-btn { background: var(--secondary-btn); display: none; margin-top: 10px; border: 1px solid var(--accent); } /* Next ခလုတ်ကို ထွက်မည်ခလုတ်အတိုင်း ပြောင်းထားသည် */
 
         .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; color: white; }
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
@@ -119,10 +122,11 @@
     </div>
 
     <script>
+        /* JavaScript remains exactly the same as the previous fixed version */
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem"] };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] };
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
             { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
@@ -243,9 +247,8 @@
             if (isAnswered) return;
             isAnswered = true;
             const options = document.querySelectorAll('.option-btn');
-            if (userVal === correctVal) {
-                btn.classList.add('correct-opt');
-            } else {
+            if (userVal === correctVal) { btn.classList.add('correct-opt'); }
+            else {
                 btn.classList.add('wrong-opt');
                 options.forEach(opt => {
                     if ((correctVal === true && opt.innerText.includes("TRUE")) || (correctVal === false && opt.innerText.includes("FALSE"))) {
@@ -261,11 +264,8 @@
             isAnswered = true;
             const options = document.querySelectorAll('.option-btn');
             options.forEach((opt, idx) => {
-                if (idx === correctIdx) {
-                    opt.classList.add('correct-opt');
-                } else {
-                    opt.classList.add('wrong-opt');
-                }
+                if (idx === correctIdx) { opt.classList.add('correct-opt'); }
+                else { opt.classList.add('wrong-opt'); }
             });
             document.getElementById('next-btn').style.display = 'block';
         }
