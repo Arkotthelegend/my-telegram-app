@@ -8,7 +8,7 @@
         :root { 
             --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; 
             --white: #ffffff; --lock: #475569; --success: #10B981; --error: #EF4444;
-            --secondary-btn: #334155; /* နောက်သို့ နှင့် ထွက်မည် အတွက် အရောင် */
+            --secondary-btn: #334155;
         }
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
         .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
@@ -20,10 +20,8 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; }
-        
-        /* ခလုတ်အရောင်အသစ်များ */
         .back-btn { background: var(--secondary-btn); margin-top: 20px; }
-        .next-btn { background: var(--secondary-btn); display: none; margin-top: 10px; border: 1px solid var(--accent); } /* Next ခလုတ်ကို ထွက်မည်ခလုတ်အတိုင်း ပြောင်းထားသည် */
+        .next-btn { background: var(--secondary-btn); display: none; margin-top: 10px; border: 1px solid var(--accent); }
 
         .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; color: white; }
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
@@ -58,11 +56,11 @@
         <div id="menu-screen" class="screen">
             <h2 id="menu-title" style="text-align: center; color: var(--accent);">Menu</h2>
             <div id="menu-content"></div>
-            <button class="btn back-btn" onclick="showScreen('home')">ပင်မစာမျက်နှာသို့</button>
+            <button class="btn back-btn" id="menu-back-btn">ပင်မစာမျက်နှာသို့</button>
         </div>
 
         <div id="activity-screen" class="screen">
-            <h2 id="activity-title" style="text-align: center; color: var(--accent);">လုပ်ဆောင်ချက်ရွေးပါ</h2>
+            <h2 id="activity-title" style="text-align: center; color: var(--accent);">ရွေးချယ်ပါ</h2>
             <div id="activity-content"></div>
             <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
         </div>
@@ -107,28 +105,20 @@
                 </div>
             </div>
         </div>
-
-        <div id="middle-screen" class="screen">
-            <div style="height: 60vh; display: flex; align-items: center; justify-content: center; text-align: center;">
-               <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
-           </div>
-       </div>
     </div>
 
     <div class="nav">
         <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
-        <div class="nav-item" onclick="changeTab('middle', this)">❓</div>
         <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
 
     <script>
-        /* JavaScript remains exactly the same as the previous fixed version */
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] , "5593040432" :["mm", "en", "math", "phy", "chem", "bio", "eco"]  };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] };
         const subjects = [
-            { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
+            { id: 'mm', name: 'မြန်မာစာ' },
             { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
             { id: 'math', name: 'သင်္ချာ', chapters: 11 },
             { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
@@ -152,57 +142,117 @@
                 const div = document.createElement('div');
                 div.className = `subject-card ${isPaid ? '' : 'locked'}`;
                 div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
-                div.onclick = () => { if(isPaid) { currentSubject = sub; openMenu(sub); } else { tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။"); } };
+                div.onclick = () => { if(isPaid) { currentSubject = sub; openSubjectMenu(sub); } else { tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။"); } };
                 list.appendChild(div);
             });
         }
 
-        function openMenu(sub) {
+        // ဘာသာရပ်ကိုနှိပ်လိုက်လျှင် ပေါ်လာမည့် ပထမအဆင့် Menu
+        function openSubjectMenu(sub) {
             showScreen('menu');
             document.getElementById('menu-title').innerText = sub.name;
             const content = document.getElementById('menu-content');
             content.innerHTML = '';
+            document.getElementById('menu-back-btn').onclick = () => showScreen('home');
+
             if (sub.id === 'mm') {
-                sub.parts.forEach(p => createBtn(p, content, () => showActivityOptions(sub.id, p)));
+                const mmTypes = [
+                    { name: 'မှား/မှန်', type: 'quiz' },
+                    { name: 'ကွက်လပ်ဖြည့်', type: 'quiz' },
+                    { name: 'အမှန်ရွေး', type: 'quiz' },
+                    { name: 'ခက်ဆစ်', type: 'flashcard' },
+                    { name: 'အလင်္ကာ', type: 'flashcard' }
+                ];
+                mmTypes.forEach(m => {
+                    createBtn(m.name, content, () => {
+                        if (m.type === 'quiz') showMMQuizOptions(m.name);
+                        else showMMFlashcardOptions(m.name);
+                    });
+                });
             } else {
                 const label = sub.id === 'en' ? 'Unit' : 'Chapter';
                 for(let i=1; i<=(sub.units || sub.chapters); i++) {
-                    createBtn(`${label} ${i}`, content, () => showActivityOptions(sub.id, `${label} ${i}`));
+                    createBtn(`${label} ${i}`, content, () => showGeneralActivities(sub.id, `${label} ${i}`));
                 }
             }
         }
 
-        function showActivityOptions(subId, partName) {
+        // မြန်မာစာ Quiz အမျိုးအစားရွေးပြီးရင်ပြမည့် (အပြော၊ အရေး၊ အဖတ်)
+        function showMMQuizOptions(typeName) {
+            showScreen('activity');
+            document.getElementById('activity-title').innerText = typeName;
+            const content = document.getElementById('activity-content');
+            content.innerHTML = '';
+            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+            ['အပြော', 'အရေး', 'အဖတ်'].forEach(cat => {
+                createBtn(cat, content, () => {
+                    const fileName = `mm_${cat}_${typeName}`.replace(/\//g, "_").replace(/ /g, "_");
+                    initQuiz(fileName);
+                    document.getElementById('quiz-back-btn').onclick = () => showMMQuizOptions(typeName);
+                });
+            });
+        }
+
+        // မြန်မာစာ Flashcard အမျိုးအစားရွေးပြီးရင်ပြမည့် (စကားပြေ၊ ကဗျာ၊ ရေသည်)
+        function showMMFlashcardOptions(typeName) {
+            showScreen('activity');
+            document.getElementById('activity-title').innerText = typeName;
+            const content = document.getElementById('activity-content');
+            content.innerHTML = '';
+            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+            createBtn("စကားပြေ", content, () => showMMSubTopics(typeName, "စကားပြေ"));
+            createBtn("ကဗျာ", content, () => showMMSubTopics(typeName, "ကဗျာ"));
+            createBtn("ရေသည်", content, () => tg.showAlert("ရေသည်ပြဇာတ် Flashcards မကြာမီလာမည်..."));
+        }
+
+        // စကားပြေ/ကဗျာ အောက်က ခေါင်းစဉ် ၈ ခု
+        function showMMSubTopics(typeName, category) {
+            const content = document.getElementById('activity-content');
+            content.innerHTML = `<h3 style="text-align:center">${category} (${typeName})</h3>`;
+            document.getElementById('activity-back-btn').onclick = () => showMMFlashcardOptions(typeName);
+
+            let topics = [];
+            if (category === "စကားပြေ") {
+                topics = ["ညောင်ရမ်းကြီးသမီး", "သစ္စာနှင့်ပညာ", "ခေတ်", "မလုပ်မစား", "စာဘူးတောင်း", "ဦးဖေမောင်တင်", "အဖြူနှင့်အနက်", "စိတ်ဓာတ်ရင့်ကျက်တည်ငြိမ်ခြင်း"];
+            } else {
+                topics = ["ပေါ်နွေလလျှင်", "ငါ့ကိုလွယ်အမယ်ကြီးနှင့်", "ဩဝါဒထူးပျို့", "ပေါင်းရှစ်ယောက် ကောက်စိုက်သူ", "အညာမင်္ဂလာဆောင်", "ကမ္ဗောဇသို့", "လက်ဖက်ရည်ကြမ်းဝိုင်း", "ပဒေသာလက်ရာ"];
+            }
+
+            topics.forEach(t => {
+                createBtn(t, content, () => tg.showAlert(t + " Flashcards မကြာမီလာမည်..."));
+            });
+        }
+
+        // အခြားဘာသာရပ်များအတွက် Quiz/Flashcard ရွေးချယ်မှု
+        function showGeneralActivities(subId, partName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = partName;
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
-            createBtn("Quiz", content, () => showQuizTypes(subId, partName));
-            createBtn("Flashcards", content, () => tg.showAlert("Coming Soon..."));
-            document.getElementById('activity-back-btn').onclick = () => openMenu(currentSubject);
-        }
+            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
 
-        function showQuizTypes(subId, partName) {
-            const content = document.getElementById('activity-content');
-            content.innerHTML = `<h3 style="text-align:center">${partName} Quiz</h3>`;
-            let types = (subId === 'math') ? ['1_Mark', '2_Mark', '3_Mark', '5_Mark'] : ['True_False', 'Fill_Blank', 'MCQ'];
-            if(subId === 'mm') types = ['မှား_မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'];
-            types.forEach(t => {
-                const fileName = `${subId}_${partName}_${t}`.replace(/ /g, "_");
-                createBtn(t.replace(/_/g, " "), content, () => initQuiz(fileName, subId, partName));
+            createBtn("Quiz", content, () => {
+                content.innerHTML = `<h3 style="text-align:center">${partName} Quiz Type</h3>`;
+                ['True_False', 'Fill_Blank', 'MCQ'].forEach(type => {
+                    createBtn(type.replace('_',' '), content, () => {
+                        initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+                        document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
+                    });
+                });
             });
-            document.getElementById('activity-back-btn').onclick = () => showActivityOptions(subId, partName);
+            createBtn("Flashcards", content, () => tg.showAlert("Coming Soon..."));
         }
 
-        async function initQuiz(fileName, subId, partName) {
+        async function initQuiz(fileName) {
             try {
                 const res = await fetch(`./quizzes/${fileName}.json`);
                 currentQuestions = await res.json();
                 currentIdx = 0;
                 showScreen('quiz');
                 loadQuestion();
-                document.getElementById('quiz-back-btn').onclick = () => openMenu(currentSubject);
-            } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName + ".json"); }
+            } catch (e) { tg.showAlert("မေးခွန်းဖိုင်မတွေ့သေးပါ- " + fileName + ".json"); }
         }
 
         function loadQuestion() {
@@ -219,55 +269,35 @@
                     const btn = document.createElement('button');
                     btn.className = 'btn option-btn';
                     btn.innerText = a;
-                    btn.onclick = () => checkAnsMCQ(i, q.c, btn);
+                    btn.onclick = () => {
+                        if(isAnswered) return; isAnswered = true;
+                        document.querySelectorAll('.option-btn').forEach((b, idx) => {
+                            if(idx === q.c) b.classList.add('correct-opt');
+                            else b.classList.add('wrong-opt');
+                        });
+                        document.getElementById('next-btn').style.display = 'block';
+                    };
                     optDiv.appendChild(btn);
                 });
             } else if (q.type === 'tf') {
-                const btnT = document.createElement('button'); btnT.className = 'btn option-btn'; btnT.innerText = "မှန် (TRUE)";
-                btnT.onclick = () => checkAnsTF(true, q.c, btnT);
-                const btnF = document.createElement('button'); btnF.className = 'btn option-btn'; btnF.innerText = "မှား (FALSE)";
-                btnF.onclick = () => checkAnsTF(false, q.c, btnF);
-                optDiv.append(btnT, btnF);
-            } else if (q.type === 'blank') {
-                const input = document.createElement('input');
-                input.className = 'quiz-input'; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
-                const sBtn = document.createElement('button');
-                sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
-                sBtn.onclick = () => {
-                    const isCorrect = input.value.trim().toLowerCase() === q.c.toString().toLowerCase();
-                    tg.showAlert(isCorrect ? "✅ မှန်ကန်ပါသည်။" : "❌ မှားယွင်းပါသည်။ အဖြေမှန်: " + q.c);
-                    input.disabled = true; sBtn.disabled = true;
-                    document.getElementById('next-btn').style.display = 'block';
-                };
-                optDiv.append(input, sBtn);
-            }
-        }
-
-        function checkAnsTF(userVal, correctVal, btn) {
-            if (isAnswered) return;
-            isAnswered = true;
-            const options = document.querySelectorAll('.option-btn');
-            if (userVal === correctVal) { btn.classList.add('correct-opt'); }
-            else {
-                btn.classList.add('wrong-opt');
-                options.forEach(opt => {
-                    if ((correctVal === true && opt.innerText.includes("TRUE")) || (correctVal === false && opt.innerText.includes("FALSE"))) {
-                        opt.classList.add('correct-opt');
-                    }
+                [true, false].forEach(val => {
+                    const btn = document.createElement('button');
+                    btn.className = 'btn option-btn';
+                    btn.innerText = val ? "မှန် (TRUE)" : "မှား (FALSE)";
+                    btn.onclick = () => {
+                        if(isAnswered) return; isAnswered = true;
+                        if(val === q.c) btn.classList.add('correct-opt');
+                        else {
+                            btn.classList.add('wrong-opt');
+                            document.querySelectorAll('.option-btn').forEach(b => {
+                                if((q.c === true && b.innerText.includes("TRUE")) || (q.c === false && b.innerText.includes("FALSE"))) b.classList.add('correct-opt');
+                            });
+                        }
+                        document.getElementById('next-btn').style.display = 'block';
+                    };
+                    optDiv.append(btn);
                 });
             }
-            document.getElementById('next-btn').style.display = 'block';
-        }
-
-        function checkAnsMCQ(userIdx, correctIdx, btn) {
-            if (isAnswered) return;
-            isAnswered = true;
-            const options = document.querySelectorAll('.option-btn');
-            options.forEach((opt, idx) => {
-                if (idx === correctIdx) { opt.classList.add('correct-opt'); }
-                else { opt.classList.add('wrong-opt'); }
-            });
-            document.getElementById('next-btn').style.display = 'block';
         }
 
         function nextQuestion() {
@@ -280,14 +310,6 @@
             const isFemale = document.getElementById('gender-switch').checked;
             document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
             if(save) localStorage.setItem('userGender', isFemale ? 'female' : 'male');
-        }
-
-        function loadSavedGender() {
-            const saved = localStorage.getItem('userGender');
-            if(saved === 'female') {
-                document.getElementById('gender-switch').checked = true;
-                updateAvatar();
-            }
         }
 
         function createBtn(txt, parent, act) {
@@ -306,10 +328,14 @@
             if(id === 'home') renderSubjects();
         }
 
+        // Initialization
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
         document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
-        loadSavedGender();
+        if(localStorage.getItem('userGender') === 'female') {
+            document.getElementById('gender-switch').checked = true;
+            updateAvatar();
+        }
         renderSubjects();
     </script>
 </body>
