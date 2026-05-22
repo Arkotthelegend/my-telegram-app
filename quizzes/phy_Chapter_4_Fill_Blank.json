@@ -1,6 +1,5 @@
 
-[
-  {"type": "fill", "q": "In a wind turbine, two or three blades are mounted on a shaft to form a __________.", "c": "rotor"},
+[ {"type": "fill", "q": "In a wind turbine, two or three blades are mounted on a shaft to form a __________.", "c": "rotor"},
   {"type": "fill", "q": "A large amount of __________ energy is stored in the fossil fuels.", "c": "chemical"},
   {"type": "fill", "q": "A water turbine converts the kinetic energy of falling water into __________ energy.", "c": "mechanical"},
   {"type": "fill", "q": "Fossil fuel liquids are refined into __________ products.", "c": "petroleum"},
