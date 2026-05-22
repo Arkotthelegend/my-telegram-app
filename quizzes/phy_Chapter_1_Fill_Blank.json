@@ -1,1 +1,13 @@
 
+[
+  {"type": "blank", "q": "The centers of the circles described by all particles of a rotating rigid body lie on a line called the _______.", "c": "axis of rotation"},
+  {"type": "blank", "q": "The SI unit for angular displacement is _______.", "c": "radian"},
+  {"type": "blank", "q": "The magnitude of the angular velocity is called _______.", "c": "angular speed"},
+  {"type": "blank", "q": "The component of acceleration tangent to the path is called _______.", "c": "tangential acceleration"},
+  {"type": "blank", "q": "The direction of the angular velocity vector is given by the _______ rule.", "c": "right-hand"},
+  {"type": "blank", "q": "One radian is the angle subtended at the center of a circle by an arc with a length equal to the _______ of the circle.", "c": "radius"},
+  {"type": "blank", "q": "For a rigid body rotating about a fixed axis, every particle of the body has the same _______.", "c": "angular velocity"},
+  {"type": "blank", "q": "The _______ acceleration is always directed towards the center of the circle.", "c": "centripetal"},
+  {"type": "blank", "q": "The unit of angular acceleration is _______.", "c": "rad/s^2"},
+  {"type": "blank", "q": "The relation between linear velocity and angular velocity is v = _______.", "c": "rω"}
+]
