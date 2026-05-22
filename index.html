@@ -12,35 +12,24 @@
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
         .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
         
-        .subject-card {
-            background: var(--accent); padding: 20px; border-radius: 18px;
-            margin-bottom: 12px; font-size: 1.2rem; font-weight: bold;
-            display: flex; justify-content: space-between; align-items: center; cursor: pointer;
-        }
+        .subject-card { background: var(--accent); padding: 20px; border-radius: 18px; margin-bottom: 12px; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         .locked { background: var(--lock); opacity: 0.6; }
         .screen { display: none; }
         .active-screen { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .btn { 
-            background: var(--accent); color: white; border: none; padding: 16px; 
-            border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; 
-            cursor: pointer; text-decoration: none; display: block; text-align: center; box-sizing: border-box;
-        }
+        .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; }
         .back-btn { background: #334155; margin-top: 20px; }
         .next-btn { background: var(--success); display: none; margin-top: 10px; }
 
-        /* Quiz Options Styling */
-        .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; }
+        .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; color: white; }
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
         .wrong-opt { background: var(--error) !important; border-color: var(--error) !important; }
 
-        /* Profile Elements */
         #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
         .profile-info-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; }
-        .buy-btn { background: var(--success); margin-top: 15px; }
+        .buy-btn { background: var(--success); margin-top: 15px; text-decoration: none; display: block; }
         
-        /* Gender Switch */
         .gender-container { margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -52,6 +41,7 @@
         .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; }
         .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; }
         .nav-active { opacity: 1; color: var(--accent); }
+        .quiz-input { width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #334155; background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; }
     </style>
 </head>
 <body>
@@ -76,7 +66,7 @@
 
         <div id="quiz-screen" class="screen">
             <div style="text-align: center; margin-bottom: 20px;">
-                <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0/0</span>
+                <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0 / 0</span>
             </div>
             <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
             <div id="quiz-options"></div>
@@ -95,19 +85,16 @@
                     <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
                     <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
                 </svg>
-                
                 <h2 id="user-name" style="margin: 10px 0 5px;">User</h2>
                 <p id="user-id-text" style="color: #94A3B8; margin: 0 0 15px;"></p>
-
                 <div class="gender-container">
                     <span>ကျား</span>
                     <label class="switch">
-                        <input type="checkbox" id="gender-switch" onchange="updateAvatar()">
+                        <input type="checkbox" id="gender-switch" onchange="updateAvatar(true)">
                         <span class="slider"></span>
                     </label>
                     <span>မ</span>
                 </div>
-
                 <div class="profile-info-card">
                     <div style="text-align: left; font-size: 0.9rem;">
                         <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ:</b><br>
@@ -135,7 +122,7 @@
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem", "bio", "eco"] };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy", "chem"] };
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
             { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
@@ -150,7 +137,6 @@
         let currentQuestions = [];
         let currentIdx = 0;
         let isAnswered = false;
-
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
@@ -162,10 +148,7 @@
                 const div = document.createElement('div');
                 div.className = `subject-card ${isPaid ? '' : 'locked'}`;
                 div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
-                div.onclick = () => {
-                    if(isPaid) { currentSubject = sub; openMenu(sub); }
-                    else { tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။"); }
-                };
+                div.onclick = () => { if(isPaid) { currentSubject = sub; openMenu(sub); } else { tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။"); } };
                 list.appendChild(div);
             });
         }
@@ -214,7 +197,7 @@
                 currentIdx = 0;
                 showScreen('quiz');
                 loadQuestion();
-                document.getElementById('quiz-back-btn').onclick = () => showQuizTypes(subId, partName);
+                document.getElementById('quiz-back-btn').onclick = () => openMenu(currentSubject);
             } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName + ".json"); }
         }
 
@@ -232,23 +215,23 @@
                     const btn = document.createElement('button');
                     btn.className = 'btn option-btn';
                     btn.innerText = a;
-                    btn.onclick = () => checkAns(i === q.c, btn, q.c);
+                    btn.onclick = () => checkAnsMCQ(i, q.c, btn);
                     optDiv.appendChild(btn);
                 });
             } else if (q.type === 'tf') {
                 const btnT = document.createElement('button'); btnT.className = 'btn option-btn'; btnT.innerText = "မှန် (TRUE)";
-                btnT.onclick = () => checkAns(q.c === true, btnT, q.c);
+                btnT.onclick = () => checkAnsTF(true, q.c, btnT);
                 const btnF = document.createElement('button'); btnF.className = 'btn option-btn'; btnF.innerText = "မှား (FALSE)";
-                btnF.onclick = () => checkAns(q.c === false, btnF, q.c);
+                btnF.onclick = () => checkAnsTF(false, q.c, btnF);
                 optDiv.append(btnT, btnF);
             } else if (q.type === 'blank') {
                 const input = document.createElement('input');
-                input.className = 'quiz-input'; input.style.width = "100%"; input.style.padding = "15px"; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
+                input.className = 'quiz-input'; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
                 const sBtn = document.createElement('button');
                 sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
                 sBtn.onclick = () => {
                     const isCorrect = input.value.trim().toLowerCase() === q.c.toString().toLowerCase();
-                    tg.showAlert(isCorrect ? "✅ မှန်ကန်ပါသည်။ အဖြေမှာ: " + q.c : "❌ မှားယွင်းပါသည်။ အဖြေမှန်မှာ: " + q.c);
+                    tg.showAlert(isCorrect ? "✅ မှန်ကန်ပါသည်။" : "❌ မှားယွင်းပါသည်။ အဖြေမှန်: " + q.c);
                     input.disabled = true; sBtn.disabled = true;
                     document.getElementById('next-btn').style.display = 'block';
                 };
@@ -256,43 +239,59 @@
             }
         }
 
-        function checkAns(correct, btn, correctIdx) {
+        function checkAnsTF(userVal, correctVal, btn) {
             if (isAnswered) return;
             isAnswered = true;
-            
+            const options = document.querySelectorAll('.option-btn');
+            if (userVal === correctVal) {
+                btn.classList.add('correct-opt');
+            } else {
+                btn.classList.add('wrong-opt');
+                options.forEach(opt => {
+                    if ((correctVal === true && opt.innerText.includes("TRUE")) || (correctVal === false && opt.innerText.includes("FALSE"))) {
+                        opt.classList.add('correct-opt');
+                    }
+                });
+            }
+            document.getElementById('next-btn').style.display = 'block';
+        }
+
+        function checkAnsMCQ(userIdx, correctIdx, btn) {
+            if (isAnswered) return;
+            isAnswered = true;
             const options = document.querySelectorAll('.option-btn');
             options.forEach((opt, idx) => {
-                if (idx === correctIdx || (btn.innerText.includes("TRUE") && correctIdx === true) || (btn.innerText.includes("FALSE") && correctIdx === false)) {
+                if (idx === correctIdx) {
                     opt.classList.add('correct-opt');
+                } else {
+                    opt.classList.add('wrong-opt');
                 }
             });
-
-            if (!correct) {
-                btn.classList.add('wrong-opt');
-            }
-
             document.getElementById('next-btn').style.display = 'block';
         }
 
         function nextQuestion() {
             currentIdx++;
-            if (currentIdx < currentQuestions.length) {
-                loadQuestion();
-            } else {
-                tg.showAlert("မေးခွန်းများအားလုံး ပြီးဆုံးသွားပါပြီ။");
-                document.getElementById('quiz-back-btn').click();
+            if (currentIdx < currentQuestions.length) loadQuestion();
+            else { tg.showAlert("ပြီးဆုံးပါပြီ။"); document.getElementById('quiz-back-btn').click(); }
+        }
+
+        function updateAvatar(save = false) {
+            const isFemale = document.getElementById('gender-switch').checked;
+            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
+            if(save) localStorage.setItem('userGender', isFemale ? 'female' : 'male');
+        }
+
+        function loadSavedGender() {
+            const saved = localStorage.getItem('userGender');
+            if(saved === 'female') {
+                document.getElementById('gender-switch').checked = true;
+                updateAvatar();
             }
         }
 
-        function updateAvatar() {
-            const isFemale = document.getElementById('gender-switch').checked;
-            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
-        }
-
         function createBtn(txt, parent, act) {
-            const b = document.createElement('button');
-            b.className = 'btn'; b.innerText = txt; b.onclick = act;
-            parent.appendChild(b);
+            const b = document.createElement('button'); b.className = 'btn'; b.innerText = txt; b.onclick = act; parent.appendChild(b);
         }
 
         function showScreen(id) {
@@ -310,6 +309,7 @@
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
         document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
+        loadSavedGender();
         renderSubjects();
     </script>
 </body>
