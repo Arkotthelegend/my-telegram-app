@@ -11,6 +11,7 @@
         }
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
         .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
+        
         .subject-card {
             background: var(--accent); padding: 20px; border-radius: 18px;
             margin-bottom: 12px; font-size: 1.2rem; font-weight: bold;
@@ -20,18 +21,26 @@
         .screen { display: none; }
         .active-screen { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
         .btn { 
             background: var(--accent); color: white; border: none; padding: 16px; 
             border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; 
             cursor: pointer; text-decoration: none; display: block; text-align: center; box-sizing: border-box;
         }
         .back-btn { background: #334155; margin-top: 20px; }
-        .profile-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 20px; }
-        .buy-btn { background: var(--success); margin: 15px auto 0 auto; width: 90%; }
-        .quiz-input {
-            width: 100%; padding: 15px; border-radius: 12px; border: 2px solid var(--accent);
-            background: var(--card); color: white; font-size: 1.1rem; margin-bottom: 10px; outline: none;
-        }
+
+        /* Stickman Styling */
+        #profile-avatar { width: 120px; height: 120px; margin: 0 auto; display: block; }
+        
+        /* Gender Switch Styling */
+        .gender-container { margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 15px; }
+        .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 34px; }
+        .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
+        input:checked + .slider { background-color: var(--accent); }
+        input:checked + .slider:before { transform: translateX(26px); }
+
         .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; }
         .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; }
         .nav-active { opacity: 1; color: var(--accent); }
@@ -48,7 +57,13 @@
         <div id="menu-screen" class="screen">
             <h2 id="menu-title" style="text-align: center; color: var(--accent);">Menu</h2>
             <div id="menu-content"></div>
-            <button class="btn back-btn" onclick="showScreen('home')">နောက်သို့</button>
+            <button class="btn back-btn" onclick="showScreen('home')">ပင်မစာမျက်နှာသို့</button>
+        </div>
+
+        <div id="activity-screen" class="screen">
+            <h2 id="activity-title" style="text-align: center; color: var(--accent);">လုပ်ဆောင်ချက်ရွေးပါ</h2>
+            <div id="activity-content"></div>
+            <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
         </div>
 
         <div id="quiz-screen" class="screen">
@@ -58,20 +73,31 @@
             </div>
             <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
             <div id="quiz-options"></div>
-            <button class="btn back-btn" onclick="showScreen('home')">ထွက်မည်</button>
+            <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
         </div>
 
         <div id="profile-screen" class="screen">
             <div style="text-align: center; padding: 20px 0;">
-                <div style="width: 80px; height: 80px; background: white; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: var(--bg); font-weight: bold;" id="avatar">?</div>
+                <svg id="profile-avatar" viewBox="0 0 100 100">
+                    <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
+                    <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
+                    <line x1="50" y1="45" x2="30" y2="60" stroke="white" stroke-width="3" />
+                    <line x1="50" y1="45" x2="70" y2="60" stroke="white" stroke-width="3" />
+                    <line x1="50" y1="70" x2="35" y2="90" stroke="white" stroke-width="3" />
+                    <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
+                    <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
+                </svg>
+                
                 <h1 id="user-name">User</h1>
                 <p id="user-id-text" style="color: #94A3B8;"></p>
-                <div class="profile-card">
-                    <div style="text-align: left; margin-bottom: 15px;">
-                        <b>ဝယ်ယူပြီးသော ဘာသာရပ်များ:</b><br>
-                        <span id="bought-items" style="color: var(--accent);">မရှိသေးပါ</span>
-                    </div>
-                    <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန်</a>
+
+                <div class="gender-container">
+                    <span>ကျား</span>
+                    <label class="switch">
+                        <input type="checkbox" id="gender-switch" onchange="updateAvatar()">
+                        <span class="slider"></span>
+                    </label>
+                    <span>မ</span>
                 </div>
             </div>
         </div>
@@ -93,20 +119,15 @@
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { "8432363664": ["mm", "en", "phy", "chem", "math"] };
+        const paidUsers = { "8432363664": ["mm", "en", "math", "phy"] };
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ', parts: ['အပြော', 'စကားပြေ', 'ကဗျာ', 'ရေသည်', 'အဖတ်'] },
-            { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12, poems: 4 },
-            { id: 'math', name: 'သင်္ချာ', chapters: 11 }, // Math added
-            { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
-            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
-            { id: 'eco', name: 'ဘောဂဗေဒ', chapters: 8 },
-            { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 }
+            { id: 'en', name: 'အင်္ဂလိပ်စာ', units: 12 },
+            { id: 'math', name: 'သင်္ချာ', chapters: 11 },
+            { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 }
         ];
 
-        let currentQuestions = [];
-        let currentIdx = 0;
-        let score = 0;
+        let currentSubject = null;
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
@@ -118,7 +139,14 @@
                 const div = document.createElement('div');
                 div.className = `subject-card ${isPaid ? '' : 'locked'}`;
                 div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
-                div.onclick = () => isPaid ? openMenu(sub) : tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
+                div.onclick = () => {
+                    if(isPaid) {
+                        currentSubject = sub;
+                        openMenu(sub);
+                    } else {
+                        tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
+                    }
+                };
                 list.appendChild(div);
             });
         }
@@ -131,53 +159,62 @@
             
             if (sub.id === 'mm') {
                 sub.parts.forEach(p => createBtn(p, content, () => showActivityOptions(sub.id, p)));
-            } else if (sub.id === 'en') {
-                for(let i=1; i<=sub.units; i++) createBtn(`Unit ${i}`, content, () => showActivityOptions(sub.id, `Unit ${i}`));
             } else {
-                for(let i=1; i<=sub.chapters; i++) createBtn(`Chapter ${i}`, content, () => showActivityOptions(sub.id, `Chapter ${i}`));
+                const label = sub.id === 'en' ? 'Unit' : 'Chapter';
+                for(let i=1; i<=(sub.units || sub.chapters); i++) {
+                    createBtn(`${label} ${i}`, content, () => showActivityOptions(sub.id, `${label} ${i}`));
+                }
             }
         }
 
         function showActivityOptions(subId, partName) {
-            const content = document.getElementById('menu-content');
-            content.innerHTML = `<h3 style="text-align:center">${partName}</h3>`;
+            showScreen('activity');
+            document.getElementById('activity-title').innerText = partName;
+            const content = document.getElementById('activity-content');
+            content.innerHTML = '';
+            
             createBtn("Quiz", content, () => showQuizTypes(subId, partName));
-            createBtn("Flashcards", content, () => tg.showAlert(partName + " Flashcards Coming Soon"));
+            createBtn("Flashcards", content, () => tg.showAlert("Flashcards မကြာမီလာမည်..."));
+
+            // Back button logic: Go back to the specific subject menu (not Home)
+            document.getElementById('activity-back-btn').onclick = () => openMenu(currentSubject);
         }
 
         function showQuizTypes(subId, partName) {
-            const content = document.getElementById('menu-content');
+            const content = document.getElementById('activity-content');
             content.innerHTML = `<h3 style="text-align:center">${partName} Quiz</h3>`;
             
-            let types = [];
-            if (subId === 'math') {
-                types = ['1_Mark', '2_Mark', '3_Mark', '5_Mark'];
-            } else if (subId === 'mm') {
-                types = ['မှား_မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'];
-            } else if (subId === 'en') {
-                types = ['Initial_Letter', 'MCQ', 'Grammar'];
-            } else {
-                types = ['True_False', 'Fill_Blank', 'MCQ'];
-            }
+            let types = (subId === 'math') ? ['1_Mark', '2_Mark', '3_Mark', '5_Mark'] : ['True_False', 'Fill_Blank', 'MCQ'];
+            if(subId === 'mm') types = ['မှား_မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'];
 
             types.forEach(t => {
                 const fileName = `${subId}_${partName}_${t}`.replace(/ /g, "_");
-                createBtn(t.replace(/_/g, " "), content, () => initQuiz(fileName));
+                createBtn(t.replace(/_/g, " "), content, () => initQuiz(fileName, subId, partName));
             });
+
+            document.getElementById('activity-back-btn').onclick = () => showActivityOptions(subId, partName);
         }
 
-        async function initQuiz(fileName) {
+        async function initQuiz(fileName, subId, partName) {
             try {
                 const res = await fetch(`./quizzes/${fileName}.json`);
                 currentQuestions = await res.json();
                 currentIdx = 0; score = 0;
                 showScreen('quiz');
                 loadQuestion();
+                document.getElementById('quiz-back-btn').onclick = () => showQuizTypes(subId, partName);
             } catch (e) {
                 tg.showAlert("File not found: " + fileName + ".json");
             }
         }
 
+        // --- Avatar Logic ---
+        function updateAvatar() {
+            const isFemale = document.getElementById('gender-switch').checked;
+            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
+        }
+
+        // --- Utility Functions ---
         function loadQuestion() {
             const q = currentQuestions[currentIdx];
             document.getElementById('quiz-progress').innerText = `${currentIdx + 1}/${currentQuestions.length}`;
@@ -202,11 +239,11 @@
         }
 
         function checkAns(correct) {
-            if (correct) { score++; tg.showAlert("✅ Correct!"); }
-            else { tg.showAlert("❌ Incorrect!"); }
+            if (correct) { score++; tg.showAlert("✅ မှန်ကန်ပါသည်။"); }
+            else { tg.showAlert("❌ မှားယွင်းပါသည်။"); }
             currentIdx++;
             if (currentIdx < currentQuestions.length) loadQuestion();
-            else { tg.showAlert(`Finished! Score: ${score}`); showScreen('home'); }
+            else { tg.showAlert(`ပြီးဆုံးပါပြီ။ ရမှတ်: ${score}`); document.getElementById('quiz-back-btn').click(); }
         }
 
         function createBtn(txt, parent, act) {
@@ -229,9 +266,6 @@
 
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
-        if (userBought.length > 0) {
-            document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
-        }
         renderSubjects();
     </script>
 </body>
