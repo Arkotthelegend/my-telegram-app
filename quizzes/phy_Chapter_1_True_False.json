@@ -1,1 +1,13 @@
 
+[
+  {"type": "tf", "q": "In a circular motion, the object moves in a circle.", "c": true},
+  {"type": "tf", "q": "In rotational motion, the object rotates about an axis.", "c": true},
+  {"type": "tf", "q": "The motion of the tip of a blade of a fan is a circular motion.", "c": true},
+  {"type": "tf", "q": "A rigid body is a body that does not deform or change shape.", "c": true},
+  {"type": "tf", "q": "Angular velocity is the rate of change of angular displacement with respect to time.", "c": true},
+  {"type": "tf", "q": "The SI unit for angular displacement is the degree.", "c": false},
+  {"type": "tf", "q": "An object can have an angular acceleration even if its angular speed is constant.", "c": false},
+  {"type": "tf", "q": "The tangential acceleration is related to the change in the magnitude of the velocity.", "c": true},
+  {"type": "tf", "q": "All points on a rotating rigid body have the same linear velocity.", "c": false},
+  {"type": "tf", "q": "The centripetal acceleration is directed towards the center of the circular path.", "c": true}
+]
