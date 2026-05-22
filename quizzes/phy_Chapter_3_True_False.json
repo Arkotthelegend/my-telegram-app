@@ -1,4 +1,252 @@
-
 [
-  { "type": "mcq", "q": "SI unit of Force?", "a": ["Newton", "Joule"], "c": 0 }
+  {
+    "type": "tf",
+    "q": "The sea breeze is a laminar flow.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Fluid is liquid only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The density of the liquid is constant for any pressure at a constant temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mercury wets the glass capillary tubes.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The internal friction in the fluids is called viscosity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an ideal laminar flow tube, the flow speed is always constant.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The studying of liquid at rest is called hydrodynamics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "For a flying plane, the air pressure is higher above the wing than below the wing.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Gases are compressible.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the flow of the fluid particles are always changing their directions, it is laminar flow.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "During cyclones, moving air gains speed above the roof of a house.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The volume of a liquid varies with pressure at a constant temperature.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Most of the fluids are ideal ones.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Fluid is a substance that offers permanent resistance to deforming forces.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Viscosity can be thought of as a measure of a fluid's thickness.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a turbulent flow, each layer of the fluid moves smoothly past the adjacent layers separately.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Cohesion refers to forces between molecules of different substances.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The smaller the area of the pipe, the faster the speed of the fluid.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The viscosity of liquids increases rapidly with an increase in temperature.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Adhesion refers to forces between molecules of the same substance.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Motor car brake oil is incompressible.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "For ideal laminar fluid flow, the fluid flow has friction.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The volume of a gas depends on the temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The study of the flow of liquid is called hydrostatics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Capillary action is the rise or depression of a liquid in a narrow tube.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an ideal laminar flow tube, the mass flow rate is constant.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the flow or the path of the fluid particles is irregular, it is a laminar flow.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Gases do not exhibit viscosity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The fluid dynamics concerns the fluid in motion.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Surface tension is due to the attractive forces called adhesion only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Viscosity is an extensive property.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The work done is equal to the change in total mechanical energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The larger the area of the pipe, the slower the speed of the fluid.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Upon heating, liquids flow more easily.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In turbulent flow, the streamlines do not cross each other.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The fluid statics concentrates on the fluids in motion.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Capillarity does not occur for non-wetting liquids.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The study of liquid at rest is called hydrostatics.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "For ideal laminar fluid flow, the friction may be neglected.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "During cyclones, the pressure on the roof is higher than the pressure inside the house.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "For ideal laminar fluid flow, the fluid is incompressible.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Water wets the glass capillary tubes.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The storm is a laminar flow.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The surface tension is a concept of hydrodynamics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Fluid is either liquid or gas.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The density of a paperclip is greater than that of water.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In laminar flow, the velocity of the fluid at a point is continuously changing.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Mechanical energy is the sum of potential energy and kinetic energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the flow or the path of the fluid particles is always whirling, it is turbulent flow.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The volume of a gas depends on the pressure.",
+    "c": true
+  }
 ]
