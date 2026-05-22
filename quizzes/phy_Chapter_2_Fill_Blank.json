@@ -1,1 +1,117 @@
-
+[
+  {
+    "type": "blank",
+    "q": "The concept of the centrifugal force can be applied in ________ devices.",
+    "c": "rotating"
+  },
+  {
+    "type": "blank",
+    "q": "An attractive force exists between the sun and the earth in a direction ________ to the path of the earth.",
+    "c": "perpendicular"
+  },
+  {
+    "type": "blank",
+    "q": "The process that causes denser particles to settle to the bottom is called ________ principle.",
+    "c": "sedimentation"
+  },
+  {
+    "type": "blank",
+    "q": "In a banked curved road, the ________ component of the normal force provides the required centripetal force.",
+    "c": "horizontal"
+  },
+  {
+    "type": "blank", "q": "The centrifugal governor is a device that uses the advantage of the ________ force.",
+    "c": "centrifugal"
+  },
+  {
+    "type": "blank", "q": "When whirling a body attached to a string, a ________ force is originated.",
+    "c": "tension"
+  },
+  {
+    "type": "blank", "q": "The upward thrust acts ________ to a flying aeroplane body.",
+    "c": "normally"
+  },
+  {
+    "type": "blank", "q": "When a car turns around a level curved path, the frictional force acts ________ to the direction of the motion of the car.",
+    "c": "normally"
+  },
+  {
+    "type": "blank", "q": "When a car moves in a circular path which is inclined to the horizontal, the reaction force of the road acts ________ to the car.",
+    "c": "normally"
+  },
+  {
+    "type": "blank", "q": "The normal force exerted by a banked road is ________ to the road.",
+    "c": "perpendicular"
+  },
+  {
+    "type": "blank", "q": "The centrifugal force is an apparent or ________ force which is equal and opposite to the centripetal force.",
+    "c": "fictitious"
+  },
+  {
+    "type": "blank", "q": "In a banked curved road, the angle that the inclined track makes with the ________ is called the angle of banking.",
+    "c": "horizontal"
+  },
+  {
+    "type": "blank", "q": "An object that is accelerating must have a ________ acting on it.",
+    "c": "net force"
+  },
+  {
+    "type": "blank", "q": "When a car turns around a level curved path, the ________ force provides the required centripetal force.",
+    "c": "frictional"
+  },
+  {
+    "type": "blank", "q": "When an automobile drives round a curve, it must have a force exerted towards the ________ of the curve.",
+    "c": "centre"
+  },
+  {
+    "type": "blank", "q": "The centrifugal force is caused by the effect of ________.",
+    "c": "inertia"
+  },
+  {
+    "type": "blank", "q": "When a car turns in a circular path or a curve, a ________ force exists between the road and the car tyres.",
+    "c": "frictional"
+  },
+  {
+    "type": "blank", "q": "For uniform circular motion, the centripetal acceleration vector points towards the ________ of the circular path.",
+    "c": "centre"
+  },
+  {
+    "type": "blank", "q": "The ________ action of a washing machine is used in spin drying the clothes.",
+    "c": "centrifugal"
+  },
+  {
+    "type": "blank", "q": "When we swing a ball on the end of a string in a circle, the ________ in the string provides the required centripetal force.",
+    "c": "tension"
+  },
+  {
+    "type": "blank", "q": "In a laboratory centrifuge, the ________ acceleration causes the denser particles to settle to the bottom.",
+    "c": "radial"
+  },
+  {
+    "type": "blank", "q": "A centrifugal pump converts mechanical energy into ________ energy.",
+    "c": "hydraulic/pressure"
+  },
+  {
+    "type": "blank", "q": "Removing the excess water by spin drying clothes in a washing machine is done with the help of ________ force.",
+    "c": "centrifugal"
+  },
+  {
+    "type": "blank", "q": "The force that enables an object to keep it moving in the circle is the ________ force.",
+    "c": "centripetal"
+  },
+  {
+    "type": "blank", "q": "The banking angle of a road is chosen so that this condition holds for the ________ speed.",
+    "c": "limiting"
+  },
+  {
+    "type": "blank", "q": "When a car makes a turn on an unbanked road, the ________ force acting upon the tyres of the car provides the required centripetal force for circular motion.",
+    "c": "frictional"
+  },
+  {
+    "type": "blank", "q": "A ________ is a piece of equipment that puts an object in rotation around a fixed axis.",
+    "c": "centrifuge"
+  },
+  {
+    "type": "blank", "q": "A satellite orbiting a planet is supported by the ________ force.",
+    "c": "centripetal"
+  },
