@@ -1,1 +1,303 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "The solar radiation intensity above the earth's atmosphere is about",
+    "options": ["1351 W m⁻²", "1361 W m⁻²", "1371 W m⁻²", "1381 W m⁻²"],
+    "c": "1361 W m⁻²"
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is a non-renewable energy source?",
+    "options": ["Wind energy", "Solar energy", "Nuclear energy", "Biomass energy"],
+    "c": "Nuclear energy"
+  },
+  {
+    "type": "mcq",
+    "q": "The conversion of light energy into electrical energy is called",
+    "options": ["Photovoltaic effect", "Photoelectric effect", "Thermal effect", "Chemical effect"],
+    "c": "Photovoltaic effect"
+  },
+  {
+    "type": "mcq",
+    "q": "What is the main constituent of fossil fuels?",
+    "options": ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"],
+    "c": "Carbon"
+  },
+  {
+    "type": "mcq",
+    "q": "Which energy resource occurs in exhaustible quantities?",
+    "options": ["Solar energy", "Wind energy", "Fossil fuels", "Hydroelectric energy"],
+    "c": "Fossil fuels"
+  },
+  {
+    "type": "mcq",
+    "q": "A solar cell is basically a",
+    "options": ["Semiconductor diode", "Resistor", "Capacitor", "Inductor"],
+    "c": "Semiconductor diode"
+  },
+  {
+    "type": "mcq",
+    "q": "Wind turbines catch the wind energy with their propeller-like",
+    "options": ["Towers", "Blades", "Generators", "Shafts"],
+    "c": "Blades"
+  },
+  {
+    "type": "mcq",
+    "q": "When wind speed doubles, the wind power potential increases by a factor of",
+    "options": ["2", "4", "6", "8"],
+    "c": "8"
+  },
+  {
+    "type": "mcq",
+    "q": "The individual solar cells can be combined to form modules known as",
+    "options": ["Solar arrays", "Solar panels", "Solar battery", "Solar system"],
+    "c": "Solar panels"
+  },
+  {
+    "type": "mcq",
+    "q": "The most common type of hydroelectric power plant is the",
+    "options": ["Impoundment facility", "Diversion facility", "Pumped storage facility", "Tidal facility"],
+    "c": "Impoundment facility"
+  },
+  {
+    "type": "mcq",
+    "q": "In a hydroelectric plant, the closed conduit that channels water flow to turbines is a",
+    "options": ["Head", "Rotor", "Penstock", "Barrage"],
+    "c": "Penstock"
+  },
+  {
+    "type": "mcq",
+    "q": "The tide is due to the gravitational pull of mainly the",
+    "options": ["Sun", "Moon", "Stars", "Mars"],
+    "c": "Moon"
+  },
+  {
+    "type": "mcq",
+    "q": "A tidal barrage is placed at the entrance to a",
+    "options": ["River", "Bay or estuary", "Lake", "Ocean trench"],
+    "c": "Bay or estuary"
+  },
+  {
+    "type": "mcq",
+    "q": "The earth's atmosphere and clouds absorb or scatter as much as how many percent of the incoming sunlight?",
+    "options": ["34%", "44%", "54%", "64%"],
+    "c": "54%"
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is NOT an example of biomass?",
+    "options": ["Wood", "Animal manure", "Uranium", "Human sewage"],
+    "c": "Uranium"
+  },
+  {
+    "type": "mcq",
+    "q": "The biological conversion of biomass produces liquid and gaseous",
+    "options": ["Fuels", "Oxides", "Acids", "Minerals"],
+    "c": "Fuels"
+  },
+  {
+    "type": "mcq",
+    "q": "Transesterification is a kind of",
+    "options": ["Biological conversion process", "Chemical conversion process", "Direct combustion process", "Physical conversion process"],
+    "c": "Chemical conversion process"
+  },
+  {
+    "type": "mcq",
+    "q": "Which gas is a by-product of animals' digestive systems?",
+    "options": ["Oxygen", "Methane", "Nitrogen", "Carbon dioxide"],
+    "c": "Methane"
+  },
+  {
+    "type": "mcq",
+    "q": "Coal is formed through a process called",
+    "options": ["Sedimentation", "Coalification", "Transesterification", "Combustion"],
+    "c": "Coalification"
+  },
+  {
+    "type": "mcq",
+    "q": "Fossil fuel liquids are refined into",
+    "options": ["Biomass products", "Petroleum products", "Nuclear products", "Gaseous products"],
+    "c": "Petroleum products"
+  },
+  {
+    "type": "mcq",
+    "q": "Renewable energy resources can be used",
+    "options": ["Only once", "Twice", "Again and again", "Never"],
+    "c": "Again and again"
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following requires more expenditure?",
+    "options": ["Renewable energy sources", "Non-renewable energy sources", "Solar energy", "Wind energy"],
+    "c": "Renewable energy sources"
+  },
+  {
+    "type": "mcq",
+    "q": "The supply of non-renewable energy resources is",
+    "options": ["Infinite", "Limited", "Unlimited", "Virtually unlimited"],
+    "c": "Limited"
+  },
+  {
+    "type": "mcq",
+    "q": "Energy demand forecasting is crucial for ensuring future",
+    "options": ["Population growth", "Economic growth", "Industrial decline", "Urbanization reduction"],
+    "c": "Economic growth"
+  },
+  {
+    "type": "mcq",
+    "q": "What is a commonly used term for the irradiance of sunlight?",
+    "options": ["Isolation", "Insolation", "Incineration", "Illumination"],
+    "c": "Insolation"
+  },
+  {
+    "type": "mcq",
+    "q": "In a wind turbine, two or three blades are mounted on a shaft to form a",
+    "options": ["Tower", "Generator", "Rotor", "Nacelle"],
+    "c": "Rotor"
+  },
+  {
+    "type": "mcq",
+    "q": "A water turbine converts the kinetic energy of falling water into",
+    "options": ["Electrical energy", "Mechanical energy", "Chemical energy", "Thermal energy"],
+    "c": "Mechanical energy"
+  },
+  {
+    "type": "mcq",
+    "q": "A generator converts mechanical energy into",
+    "options": ["Heat", "Electricity", "Light", "Chemical energy"],
+    "c": "Electricity"
+  },
+  {
+    "type": "mcq",
+    "q": "In Concentrated Solar Power (CSP) systems, sunlight is converted into",
+    "options": ["Electricity directly", "Heat", "Biomass", "Fossil fuels"],
+    "c": "Heat"
+  },
+  {
+    "type": "mcq",
+    "q": "Which CSP system uses a central receiver?",
+    "options": ["Parabolic trough", "Linear Fresnel reflector", "Power tower", "Parabolic dish"],
+    "c": "Power tower"
+  },
+  {
+    "type": "mcq",
+    "q": "In ocean-thermal-energy conversion (OTEC), warm surface water is used to boil a",
+    "options": ["Heavy water", "Volatile liquid", "Saline solution", "Crude oil"],
+    "c": "Volatile liquid"
+  },
+  {
+    "type": "mcq",
+    "q": "The height water has to come down in an impoundment facility is known as the",
+    "options": ["Penstock", "Barrage", "Head", "Rotor"],
+    "c": "Head"
+  },
+  {
+    "type": "mcq",
+    "q": "Ocean waves are generated by strong",
+    "options": ["Tides", "Winds blowing across the sea", "Earthquakes", "Temperature differences"],
+    "c": "Winds blowing across the sea"
+  },
+  {
+    "type": "mcq",
+    "q": "Direct combustion or burning of biomass produces",
+    "options": ["Electricity directly", "Heat", "Methane", "Ethanol"],
+    "c": "Heat"
+  },
+  {
+    "type": "mcq",
+    "q": "The energy produced in a nuclear reactor can be harnessed to produce",
+    "options": ["Biomass", "Electricity", "Petroleum", "Natural gas"],
+    "c": "Electricity"
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is one of the oldest and cleanest forms of energy?",
+    "options": ["Coal energy", "Petroleum energy", "Wind energy", "Nuclear energy"],
+    "c": "Wind energy"
+  },
+  {
+    "type": "mcq",
+    "q": "The wind power is proportional to which power of the wind speed?",
+    "options": ["Square", "Cube", "Fourth power", "First power"],
+    "c": "Cube"
+  },
+  {
+    "type": "mcq",
+    "q": "A large amount of chemical energy is stored in",
+    "options": ["Wind energy", "Fossil fuels", "Solar cells", "Hydroelectric dams"],
+    "c": "Fossil fuels"
+  },
+  {
+    "type": "mcq",
+    "q": "The value 1361 W m⁻² is known as the",
+    "options": ["Wind constant", "Solar constant", "Hydro constant", "Thermal constant"],
+    "c": "Solar constant"
+  },
+  {
+    "type": "mcq",
+    "q": "Ethanol is widely used as a",
+    "options": ["Lubricant", "Vehicle fuel", "Plastic component", "Coolant"],
+    "c": "Vehicle fuel"
+  },
+  {
+    "type": "mcq",
+    "q": "In the impoundment facility, what pulls the water downward through large pipes?",
+    "options": ["Magnetism", "Gravity", "Atmospheric pressure", "Centrifugal force"],
+    "c": "Gravity"
+  },
+  {
+    "type": "mcq",
+    "q": "The useful power output of hydropower is proportional to the",
+    "options": ["Volume flow rate of water", "Temperature of water", "Density of air", "Length of the blades"],
+    "c": "Volume flow rate of water"
+  },
+  {
+    "type": "mcq",
+    "q": "Which collectors are the most common type of solar collector?",
+    "options": ["Concentrating collectors", "Flat-plate collectors", "Evacuated tube collectors", "Photovoltaic collectors"],
+    "c": "Flat-plate collectors"
+  },
+  {
+    "type": "mcq",
+    "q": "Solar energy is the radiant light and heat from the",
+    "options": ["Moon", "Earth's core", "Sun", "Stars"],
+    "c": "Sun"
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is NOT a reason for the increase in global energy demand?",
+    "options": ["Population growth", "Industrial development", "Urbanization", "Decrease in technology development"],
+    "c": "Decrease in technology development"
+  },
+  {
+    "type": "mcq",
+    "q": "The generator is connected to the turbine by a",
+    "options": ["Penstock", "Shaft", "Blade", "Barrage"],
+    "c": "Shaft"
+  },
+  {
+    "type": "mcq",
+    "q": "Biogas or biomethane is a form of",
+    "options": ["Fossil fuel", "Renewable energy", "Nuclear fuel", "Non-replenishable energy"],
+    "c": "Renewable energy"
+  },
+  {
+    "type": "mcq",
+    "q": "When electron-hole pairs are produced in a solar cell, a current flows in the external circuit connected to the",
+    "options": ["n-type layer only", "p-type layer only", "p-n junction", "Rotor"],
+    "c": "p-n junction"
+  },
+  {
+    "type": "mcq",
+    "q": "The amount of power that can be harvested from wind depends on the",
+    "options": ["Length of the blades", "Color of the tower", "Weight of the generator", "Type of battery used"],
+    "c": "Length of the blades"
+  },
+  {
+    "type": "mcq",
+    "q": "Which energy sources do not pollute the environment and natural surroundings?",
+    "options": ["Coal and Petroleum", "Renewable energy sources", "Non-renewable energy sources", "Nuclear resources"],
+    "c": "Renewable energy sources"
+  }
+]
