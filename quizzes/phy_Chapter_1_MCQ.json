@@ -1,1 +1,12 @@
-
+[
+  {"type": "mcq", "q": "Which of the following is an example of rotational motion?", "a": ["Motion of a car on a straight road", "The motion of a Ferris wheel", "The motion of a sliding block"], "c": 1},
+  {"type": "mcq", "q": "The angle 1 radian is approximately equal to -", "a": ["57.3 degrees", "60.0 degrees", "90.0 degrees"], "c": 0},
+  {"type": "mcq", "q": "If the angular velocity of a rotating body is constant, its angular acceleration is -", "a": ["Maximum", "Zero", "Changing"], "c": 1},
+  {"type": "mcq", "q": "The SI unit of angular velocity is -", "a": ["m/s", "rad/s", "rad/s^2"], "c": 1},
+  {"type": "mcq", "q": "The centripetal acceleration a_c can be expressed as -", "a": ["rω", "rω^2", "r^2ω"], "c": 1},
+  {"type": "mcq", "q": "The right-hand rule is used to determine the direction of -", "a": ["Linear displacement", "Angular velocity vector", "Radius"], "c": 1},
+  {"type": "mcq", "q": "Which of the following is a dimensionless unit of angle?", "a": ["Degree", "Radian", "None"], "c": 1},
+  {"type": "mcq", "q": "In circular motion, the tangential acceleration is zero when the -", "a": ["Angular speed is constant", "Radius is constant", "Angular speed is changing"], "c": 0},
+  {"type": "mcq", "q": "The relation between the angular acceleration (α) and linear tangential acceleration (a_t) is -", "a": ["a_t = rα", "α = ra_t", "a_t = r/α"], "c": 0},
+  {"type": "mcq", "q": "A rigid body is one in which the distance between any two points -", "a": ["Changes with time", "Remains constant", "Depends on the axis"], "c": 1}
+]
