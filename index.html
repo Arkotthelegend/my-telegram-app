@@ -10,8 +10,10 @@
             --white: #ffffff; --lock: #475569; --success: #10B981; --error: #EF4444;
             --secondary-btn: #334155;
         }
-        body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; overflow: hidden; }
-        .container { padding: 15px; height: calc(100vh - 70px); overflow-y: auto; box-sizing: border-box; }
+        body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; }
+        
+        /* Container ကို စာရိုက်တဲ့အခါ keyboard နဲ့ မလွတ်မှာစိုးလို့ auto scroll ပေးထားပါတယ် */
+        .container { padding: 15px; flex: 1; overflow-y: auto; box-sizing: border-box; padding-bottom: 80px; }
         
         .subject-card { background: var(--accent); padding: 20px; border-radius: 18px; margin-bottom: 12px; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
         .locked { background: var(--lock); opacity: 0.6; }
@@ -19,7 +21,7 @@
         .active-screen { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; }
+        .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; -webkit-tap-highlight-color: transparent; }
         .back-btn { background: var(--secondary-btn); margin-top: 20px; }
         .next-btn { background: var(--secondary-btn); display: none; margin-top: 10px; border: 1px solid var(--accent); }
 
@@ -27,10 +29,32 @@
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
         .wrong-opt { background: var(--error) !important; border-color: var(--error) !important; }
 
+        /* Input Box ကို စာရိုက်လို့ရအောင် ပြင်ဆင်ထားမှု */
+        .quiz-input { 
+            width: 100%; 
+            padding: 18px; 
+            border-radius: 12px; 
+            border: 2px solid var(--accent); 
+            background: var(--card); 
+            color: white; 
+            margin-bottom: 10px; 
+            box-sizing: border-box; 
+            font-size: 1.1rem;
+            outline: none;
+        }
+        .quiz-input:focus { border-color: var(--success); background: #26334d; }
+
+        .check-btn { background: var(--success); }
+
+        /* Navigation Bar */
+        .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; z-index: 100; }
+        .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; }
+        .nav-active { opacity: 1; color: var(--accent); }
+
+        /* Profile & Avatar */
         #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
         .profile-info-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; }
         .buy-btn { background: var(--success); margin-top: 15px; text-decoration: none; display: block; }
-        
         .gender-container { margin: 20px 0; display: flex; align-items: center; justify-content: center; gap: 15px; }
         .switch { position: relative; display: inline-block; width: 60px; height: 34px; }
         .switch input { opacity: 0; width: 0; height: 0; }
@@ -38,11 +62,6 @@
         .slider:before { position: absolute; content: ""; height: 26px; width: 26px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
         input:checked + .slider { background-color: var(--accent); }
         input:checked + .slider:before { transform: translateX(26px); }
-
-        .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; }
-        .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; }
-        .nav-active { opacity: 1; color: var(--accent); }
-        .quiz-input { width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #334155; background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; }
     </style>
 </head>
 <body>
@@ -107,7 +126,7 @@
             <div style="text-align: center; margin-bottom: 20px;">
                 <span id="quiz-progress" style="color: var(--accent); font-weight: bold; font-size: 1.2rem;">0 / 0</span>
             </div>
-            <div id="question-box" style="font-size: 1.3rem; text-align: center; margin: 30px 0; line-height: 1.5;"></div>
+            <div id="question-box" style="font-size: 1.2rem; text-align: center; margin: 20px 0; line-height: 1.6; background: var(--card); padding: 15px; border-radius: 12px;"></div>
             <div id="quiz-options"></div>
             <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
             <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
@@ -165,18 +184,11 @@
 
             if (sub.id === 'mm') {
                 const mmTypes = [
-                    { name: 'မှား/မှန်', type: 'quiz' },
-                    { name: 'ကွက်လပ်ဖြည့်', type: 'quiz' },
-                    { name: 'အမှန်ရွေး', type: 'quiz' },
-                    { name: 'ခက်ဆစ်', type: 'flashcard' },
+                    { name: 'မှား/မှန်', type: 'quiz' }, { name: 'ကွက်လပ်ဖြည့်', type: 'quiz' },
+                    { name: 'အမှန်ရွေး', type: 'quiz' }, { name: 'ခက်ဆစ်', type: 'flashcard' },
                     { name: 'အလင်္ကာ', type: 'flashcard' }
                 ];
-                mmTypes.forEach(m => {
-                    createBtn(m.name, content, () => {
-                        if (m.type === 'quiz') showMMQuizOptions(m.name);
-                        else showMMFlashcardOptions(m.name);
-                    });
-                });
+                mmTypes.forEach(m => createBtn(m.name, content, () => m.type === 'quiz' ? showMMQuizOptions(m.name) : showMMFlashcardOptions(m.name)));
             } else {
                 const label = sub.id === 'en' ? 'Unit' : 'Chapter';
                 for(let i=1; i<=(sub.units || sub.chapters); i++) {
@@ -191,11 +203,9 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-
             ['အပြော', 'အရေး', 'အဖတ်'].forEach(cat => {
                 createBtn(cat, content, () => {
-                    const fileName = `mm_${cat}_${typeName}`.replace(/\//g, "_").replace(/ /g, "_");
-                    initQuiz(fileName);
+                    initQuiz(`mm_${cat}_${typeName}`.replace(/\//g, "_").replace(/ /g, "_"));
                     document.getElementById('quiz-back-btn').onclick = () => showMMQuizOptions(typeName);
                 });
             });
@@ -207,7 +217,6 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-
             createBtn("စကားပြေ", content, () => showMMSubTopics(typeName, "စကားပြေ"));
             createBtn("ကဗျာ", content, () => showMMSubTopics(typeName, "ကဗျာ"));
             createBtn("ရေသည်", content, () => tg.showAlert("ရေသည်ပြဇာတ် Flashcards မကြာမီလာမည်..."));
@@ -217,17 +226,10 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = `<h3 style="text-align:center">${category} (${typeName})</h3>`;
             document.getElementById('activity-back-btn').onclick = () => showMMFlashcardOptions(typeName);
-
-            let topics = [];
-            if (category === "စကားပြေ") {
-                topics = ["ညောင်ရမ်းကြီးသမီး", "သစ္စာနှင့်ပညာ", "ခေတ်", "မလုပ်မစား", "စာဘူးတောင်း", "ဦးဖေမောင်တင်", "အဖြူနှင့်အနက်", "စိတ်ဓာတ်ရင့်ကျက်တည်ငြိမ်ခြင်း"];
-            } else {
-                topics = ["ပေါ်နွေလလျှင်", "ငါ့ကိုလွယ်အမယ်ကြီးနှင့်", "ဩဝါဒထူးပျို့", "ပေါင်းရှစ်ယောက် ကောက်စိုက်သူ", "အညာမင်္ဂလာဆောင်", "ကမ္ဗောဇသို့", "လက်ဖက်ရည်ကြမ်းဝိုင်း", "ပဒေသာလက်ရာ"];
-            }
-
-            topics.forEach(t => {
-                createBtn(t, content, () => tg.showAlert(t + " Flashcards မကြာမီလာမည်..."));
-            });
+            let topics = category === "စကားပြေ" ? 
+                ["ညောင်ရမ်းကြီးသမီး", "သစ္စာနှင့်ပညာ", "ခေတ်", "မလုပ်မစား", "စာဘူးတောင်း", "ဦးဖေမောင်တင်", "အဖြူနှင့်အနက်", "စိတ်ဓာတ်ရင့်ကျက်တည်ငြိမ်ခြင်း"] :
+                ["ပေါ်နွေလလျှင်", "ငါ့ကိုလွယ်အမယ်ကြီးနှင့်", "ဩဝါဒထူးပျို့", "ပေါင်းရှစ်ယောက် ကောက်စိုက်သူ", "အညာမင်္ဂလာဆောင်", "ကမ္ဗောဇသို့", "လက်ဖက်ရည်ကြမ်းဝိုင်း", "ပဒေသာလက်ရာ"];
+            topics.forEach(t => createBtn(t, content, () => tg.showAlert(t + " Flashcards မကြာမီလာမည်...")));
         }
 
         function showGeneralActivities(subId, partName) {
@@ -236,7 +238,6 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-
             createBtn("Quiz", content, () => {
                 content.innerHTML = `<h3 style="text-align:center">${partName} Quiz Type</h3>`;
                 ['True_False', 'Fill_Blank', 'MCQ'].forEach(type => {
@@ -268,39 +269,43 @@
             const optDiv = document.getElementById('quiz-options');
             optDiv.innerHTML = '';
 
-            if (q.type === 'mcq') {
-                q.a.forEach((a, i) => {
+            if (q.type === 'mcq' || q.type === 'tf') {
+                let options = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
+                options.forEach((a, i) => {
                     const btn = document.createElement('button');
                     btn.className = 'btn option-btn';
                     btn.innerText = a;
                     btn.onclick = () => {
                         if(isAnswered) return; isAnswered = true;
+                        let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
                         document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                            if(idx === q.c) b.classList.add('correct-opt');
-                            else b.classList.add('wrong-opt');
+                            if(idx === correctIdx) b.classList.add('correct-opt');
+                            else if(idx === i) b.classList.add('wrong-opt');
                         });
                         document.getElementById('next-btn').style.display = 'block';
                     };
                     optDiv.appendChild(btn);
                 });
-            } else if (q.type === 'tf') {
-                [true, false].forEach(val => {
-                    const btn = document.createElement('button');
-                    btn.className = 'btn option-btn';
-                    btn.innerText = val ? "မှန် (TRUE)" : "မှား (FALSE)";
-                    btn.onclick = () => {
-                        if(isAnswered) return; isAnswered = true;
-                        if(val === q.c) btn.classList.add('correct-opt');
-                        else {
-                            btn.classList.add('wrong-opt');
-                            document.querySelectorAll('.option-btn').forEach(b => {
-                                if((q.c === true && b.innerText.includes("TRUE")) || (q.c === false && b.innerText.includes("FALSE"))) b.classList.add('correct-opt');
-                            });
-                        }
-                        document.getElementById('next-btn').style.display = 'block';
-                    };
-                    optDiv.append(btn);
-                });
+            } else if (q.type === 'blank' || q.type.includes('ကွက်လပ်')) {
+                const input = document.createElement('input');
+                input.type = "text";
+                input.className = 'quiz-input';
+                input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
+                const sBtn = document.createElement('button');
+                sBtn.className = 'btn check-btn';
+                sBtn.innerText = "အဖြေစစ်မည်";
+                sBtn.onclick = () => {
+                    if(isAnswered) return;
+                    const uAns = input.value.trim().toLowerCase();
+                    const cAns = q.c.toString().toLowerCase();
+                    if(uAns === cAns) { input.style.borderColor = "var(--success)"; tg.showAlert("မှန်ကန်ပါသည်။ ✅"); }
+                    else { input.style.borderColor = "var(--error)"; tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c); }
+                    isAnswered = true; input.readOnly = true;
+                    document.getElementById('next-btn').style.display = 'block';
+                };
+                optDiv.append(input, sBtn);
+                // Input ထဲမှာ keyboard ပေါ်လာအောင် လုပ်ဆောင်ချက်
+                setTimeout(() => input.focus(), 300);
             }
         }
 
@@ -333,14 +338,10 @@
             if(id === 'home') renderSubjects();
         }
 
-        // Init
         document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
         document.getElementById('user-id-text').innerText = "ID: " + userId;
         document.getElementById('bought-items').innerText = subjects.filter(s => userBought.includes(s.id)).map(s => s.name).join(', ');
-        if(localStorage.getItem('userGender') === 'female') {
-            document.getElementById('gender-switch').checked = true;
-            updateAvatar();
-        }
+        if(localStorage.getItem('userGender') === 'female') { document.getElementById('gender-switch').checked = true; updateAvatar(); }
         renderSubjects();
     </script>
 </body>
