@@ -1,1 +1,303 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "The SI unit of electrical resistance is _______.",
+    "a": ["volt", "ampere", "ohm"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The rate at which electrical energy is dissipated in a resistor is called _______.",
+    "a": ["electrical power", "electromotive force", "current"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Kirchhoff's first rule is based on the law of conservation of _______.",
+    "a": ["energy", "charge", "mass"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A source of electromotive force has an _______ resistance.",
+    "a": ["external", "internal", "infinite"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The internal resistance of a battery depends on its _______.",
+    "a": ["size", "color", "weight"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The potential difference across each resistor is the same in a _______ circuit.",
+    "a": ["series", "parallel", "closed"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The resistivity of a material depends on its _______.",
+    "a": ["length", "cross-sectional area", "temperature"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is used to measure an unknown resistance.",
+    "a": ["Wheatstone bridge", "voltmeter", "ammeter"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "One kilowatt-hour (kWh) is equal to _______ Joules.",
+    "a": ["3.6 x 10^5", "3.6 x 10^6", "1000"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The resistance of a conductor is _______ proportional to its length.",
+    "a": ["directly", "inversely", "not"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Kirchhoff's second rule is based on the law of conservation of _______.",
+    "a": ["charge", "power", "energy"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The electromotive force (emf) is measured in _______.",
+    "a": ["Newtons", "Volts", "Ohms"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The heating coil in an electric iron is usually insulated with _______.",
+    "a": ["plastic", "mica", "rubber"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is a thin short wire of tin-lead alloy.",
+    "a": ["fuse", "switch", "resistor"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The voltage of a simple light bulb used in Myanmar is _______.",
+    "a": ["110 V", "220 V", "240 V"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which material is used as a filament in an incandescent light bulb?",
+    "a": ["Nichrome", "Copper", "Tungsten"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In a series circuit, the _______ is the same through all parts of the circuit.",
+    "a": ["voltage", "current", "resistance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The equivalent resistance R of resistors in series is _______.",
+    "a": ["R1 + R2 + ...", "1/R1 + 1/R2 + ...", "R1 x R2"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "An ammeter is always connected in _______ with the circuit component.",
+    "a": ["series", "parallel", "bridge"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A voltmeter is always connected in _______ with the circuit component.",
+    "a": ["series", "parallel", "nodes"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The unit of electrical resistivity is _______.",
+    "a": ["ohm", "ohm-metre", "volt/metre"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which alloy is commonly used for heating elements?",
+    "a": ["Brass", "Bronze", "Nichrome"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A bridge is balanced when the current through the galvanometer is _______.",
+    "a": ["maximum", "zero", "constant"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The resistance of a semiconductor _______ with increasing temperature.",
+    "a": ["increases", "decreases", "stays same"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Superconductors have _______ resistance below a critical temperature.",
+    "a": ["very high", "zero", "moderate"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The kilowatt-hour is a unit of _______.",
+    "a": ["power", "force", "electrical energy"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Internal resistance of a battery increases with its _______.",
+    "a": ["lifetime", "brightness", "height"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ switches the current on and off to maintain a selected temperature.",
+    "a": ["fuse", "thermostat", "galvanometer"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The potential difference V across a resistor is V = _______.",
+    "a": ["I/R", "R/I", "IR"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The internal resistance is regarded as being connected in _______ to the battery.",
+    "a": ["parallel", "series", "circle"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Electrical power P is equal to _______.",
+    "a": ["V/I", "VI", "I/V"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "For a balanced Wheatstone bridge, the ratio is P/Q = _______.",
+    "a": ["S/R", "R/S", "R+S"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The resistance of a conductor is inversely proportional to its _______.",
+    "a": ["length", "cross-sectional area", "mass"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Tungsten emits white light at about _______.",
+    "a": ["1000 °C", "2500 °C", "5000 °C"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The inert gas in a light bulb reduces the _______ of the filament.",
+    "a": ["melting", "evaporation", "resistance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ shunt connected to a galvanometer converts it into an ammeter.",
+    "a": ["high resistance", "low resistance", "infinite resistance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The terminal voltage V of a battery is V = _______.",
+    "a": ["E + Ir", "E - Ir", "E / Ir"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The node is a point where _______ or more conductors meet.",
+    "a": ["two", "three", "five"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Electrical energy can be transformed into _______ energy in a motor.",
+    "a": ["chemical", "mechanical", "nuclear"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What happens to the resistance of a metal when temperature increases?",
+    "a": ["It increases", "It decreases", "It becomes zero"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is used to measure emf without drawing any current.",
+    "a": ["voltmeter", "potentiometer", "ammeter"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Nichrome is an alloy of nickel and _______.",
+    "a": ["copper", "tin", "chromium"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The electrical power of an electric iron is usually _______.",
+    "a": ["10-50 W", "100-200 W", "750-1000 W"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The equivalent resistance of parallel resistors is _______ than any individual resistance.",
+    "a": ["smaller", "larger", "equal"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of these is a unit of electrical energy?",
+    "a": ["Watt", "Kilowatt-hour", "Ampere"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Electrical energy changed to heat energy in time t is W = _______.",
+    "a": ["VIt", "V/It", "I/Vt"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A fuse wire is fitted in a _______ or on a porcelain block.",
+    "a": ["metal box", "glass cartridge", "plastic bag"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The Greek letter ρ (rho) represents _______.",
+    "a": ["resistance", "resistivity", "conductance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The internal resistance of a battery also depends on its _______.",
+    "a": ["temperature", "color", "label"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Ohm's law relates voltage, current, and _______.",
+    "a": ["power", "energy", "resistance"],
+    "c": 2
+  }
+]
