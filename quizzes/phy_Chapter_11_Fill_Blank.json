@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The SI unit of magnetic flux is the _______.",
+    "c": "weber"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is a device for generating alternating current.",
+    "c": "generator"
+  },
+  {
+    "type": "blank",
+    "q": "The process of inducing an emf in a circuit by changing the magnetic flux is called _______ induction.",
+    "c": "electromagnetic"
+  },
+  {
+    "type": "blank",
+    "q": "The direction of the induced current is given by _______ law.",
+    "c": "Lenz's"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is used to change the voltage of an alternating current.",
+    "c": "transformer"
+  },
+  {
+    "type": "blank",
+    "q": "The core of a transformer is built up of thin iron sheets called _______.",
+    "c": "lamination"
+  },
+  {
+    "type": "blank",
+    "q": "A transformer that increases the voltage is called a _______ transformer.",
+    "c": "step-up"
+  },
+  {
+    "type": "blank",
+    "q": "A transformer that decreases the voltage is called a _______ transformer.",
+    "c": "step-down"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of self-inductance is the _______.",
+    "c": "henry"
+  },
+  {
+    "type": "blank",
+    "q": "Lenz's law is based on the law of conservation of _______.",
+    "c": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "The frequency of alternating current in Myanmar is _______.",
+    "c": "50 Hz"
+  },
+  {
+    "type": "blank",
+    "q": "In a DC, the _______ flow steadily in the same direction all the time.",
+    "c": "electrons"
+  },
+  {
+    "type": "blank",
+    "q": "The current delivered by a battery is a _______ current.",
+    "c": "direct"
+  },
+  {
+    "type": "blank",
+    "q": "An electric _______ converts electrical energy into mechanical energy.",
+    "c": "motor"
+  },
+  {
+    "type": "blank",
+    "q": "The magnetic flux Φ is equal to _______ cos θ.",
+    "c": "BA"
+  },
+  {
+    "type": "blank",
+    "q": "Induced emf is proportional to the rate of change of _______.",
+    "c": "magnetic flux"
+  },
+  {
+    "type": "blank",
+    "q": "Eddy currents cause energy loss in the form of _______.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ emf in a motor opposes the applied voltage.",
+    "c": "back"
+  },
+  {
+    "type": "blank",
+    "q": "The transformer coil connected to an alternating voltage source is called the _______ coil.",
+    "c": "primary"
+  },
+  {
+    "type": "blank",
+    "q": "The transformer coil connected to an electrical device is called the _______ coil.",
+    "c": "secondary"
+  },
+  {
+    "type": "blank",
+    "q": "The self-induced emf is also known as _______.",
+    "c": "back emf"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of magnetic flux density is the _______.",
+    "c": "tesla"
+  },
+  {
+    "type": "blank",
+    "q": "One Weber is equal to one Tesla-metre _______.",
+    "c": "squared"
+  },
+  {
+    "type": "blank",
+    "q": "Self-induction is sometimes called the _______ of electricity.",
+    "c": "inertia"
+  },
+  {
+    "type": "blank",
+    "q": "The current flowing in power lines is _______ current.",
+    "c": "alternating"
+  },
+  {
+    "type": "blank",
+    "q": "Mutual induction occurs between _______ coils.",
+    "c": "two"
+  },
+  {
+    "type": "blank",
+    "q": "In an _______ transformer, the efficiency is 100%.",
+    "c": "ideal"
+  },
+  {
+    "type": "blank",
+    "q": "The ignition system of motor cars uses an _______ coil.",
+    "c": "induction"
+  },
+  {
+    "type": "blank",
+    "q": "The voltage used in Myanmar is between 220 V and _______.",
+    "c": "240 V"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is used to measure very small current.",
+    "c": "galvanometer"
+  },
+  {
+    "type": "blank",
+    "q": "AC generators work on _______ law of electromagnetic induction.",
+    "c": "Faraday's"
+  },
+  {
+    "type": "blank",
+    "q": "A generator converts _______ energy into electrical energy.",
+    "c": "mechanical"
+  },
+  {
+    "type": "blank",
+    "q": "If the magnetic field is perpendicular to the surface, the magnetic flux is _______.",
+    "c": "maximum"
+  },
+  {
+    "type": "blank",
+    "q": "If the magnetic field is parallel to the surface, the magnetic flux is _______.",
+    "c": "zero"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ current changes its direction periodically.",
+    "c": "alternating"
+  },
+  {
+    "type": "blank",
+    "q": "The secondary wavelets have the same _______ as the primary wavelets.",
+    "c": "frequency"
+  },
+  {
+    "type": "blank",
+    "q": "The secondary wavelets have the same _______ as the primary wavelets.",
+    "c": "speed"
+  },
+  {
+    "type": "blank",
+    "q": "The efficiency of a transformer is the ratio of output power to _______ power.",
+    "c": "input"
+  },
+  {
+    "type": "blank",
+    "q": "The self-inductance L is given by the formula L = _______ / I.",
+    "c": "Φ"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ core of a transformer is used to provide a path for magnetic flux.",
+    "c": "soft iron"
+  },
+  {
+    "type": "blank",
+    "q": "One _______ is equivalent to one Weber per Ampere.",
+    "c": "henry"
+  },
+  {
+    "type": "blank",
+    "q": "Transformers can only work with _______ current.",
+    "c": "alternating"
+  },
+  {
+    "type": "blank",
+    "q": "The power loss in a transformer due to resistance of coils is called _______ loss.",
+    "c": "copper"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of the core reduces the energy loss due to eddy currents.",
+    "c": "lamination"
+  },
+  {
+    "type": "blank",
+    "q": "The ignition system sparking occurs between the two terminals of the _______.",
+    "c": "sparking plug"
+  },
+  {
+    "type": "blank",
+    "q": "In generators, mechanical energy is used to rotate the _______.",
+    "c": "armature"
+  },
+  {
+    "type": "blank",
+    "q": "The alternating current induced in a rotating coil varies _______ with time.",
+    "c": "sinusoidally"
+  },
+  {
+    "type": "blank",
+    "q": "The transformer ratio is given by Vs / Vp = _______ / Np.",
+    "c": "Ns"
+  },
+  {
+    "type": "blank",
+    "q": "The emf is induced only when there is a _______ in magnetic flux.",
+    "c": "change"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ uses direct current from a battery.",
+    "c": "flashlight"
+  }
+]
