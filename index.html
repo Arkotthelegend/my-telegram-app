@@ -28,6 +28,14 @@
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
         .wrong-opt { background: var(--error) !important; border-color: var(--error) !important; }
 
+        /* Flashcard Styling */
+        .flash-container { perspective: 1000px; height: 320px; cursor: pointer; margin: 20px 0; }
+        .flash-card { width: 100%; height: 100%; position: relative; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 20px; }
+        .flash-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; border-radius: 20px; padding: 25px; text-align: center; box-sizing: border-box; border: 3px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .flash-front { background: var(--card); color: var(--white); }
+        .flash-back { background: var(--accent); color: white; transform: rotateY(180deg); font-size: 1.1rem; }
+        .is-flipped { transform: rotateY(180deg); }
+
         #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
         .profile-info-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; border: 1px solid #334155; }
         .bought-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
@@ -108,6 +116,24 @@
             <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
         </div>
 
+        <div id="flashcard-screen" class="screen">
+            <h2 id="flash-title" style="text-align: center; color: var(--accent); margin-bottom: 5px;">Flashcard</h2>
+            <p id="flash-count" style="text-align: center; color: #94A3B8; margin: 0;">1 / 1</p>
+            
+            <div class="flash-container" onclick="flipCard()">
+                <div id="flash-card" class="flash-card">
+                    <div class="flash-face flash-front" id="flash-front-content"></div>
+                    <div class="flash-face flash-back" id="flash-back-content"></div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 10px;">
+                <button class="btn" style="background: var(--secondary-btn);" onclick="prevFlash()">⬅️ ရှေ့သို့</button>
+                <button class="btn" onclick="nextFlash()">နောက်သို့ ➡️</button>
+            </div>
+            <button class="btn back-btn" onclick="showScreen('activity')">ထွက်မည်</button>
+        </div>
+
         <div id="quiz-screen" class="screen">
             <div id="quiz-progress" style="text-align: center; color: var(--accent); font-weight: bold; margin-bottom: 10px;"></div>
             <div id="question-box" style="font-size: 1.2rem; text-align: center; margin: 20px 0; line-height: 1.5;"></div>
@@ -152,6 +178,8 @@
         let currentSubject = null;
         let currentQuestions = [];
         let currentIdx = 0;
+        let flashIdx = 0;
+        let flashCards = [];
         let isAnswered = false;
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
@@ -235,7 +263,7 @@
             }));
         }
 
-        // --- Myanmar Specific (Updated Logic) ---
+        // --- Myanmar Specific (Flashcard Support) ---
         function showMMQuizOptions(typeName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = typeName;
@@ -277,9 +305,43 @@
 
             topics.forEach(t => {
                 createBtn(t, content, () => {
-                    tg.showAlert(t + " အတွက် Quiz များ ထည့်သွင်းရန်ကျန်ရှိသေးပါသည်။");
+                    // FileName format: mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး.json
+                    const fName = `${currentSubject.id}_${category}_${typeName}_${t}`.replace(/ /g, "_");
+                    initFlashcards(fName);
                 });
             });
+        }
+
+        // --- Flashcard Engine ---
+        async function initFlashcards(fileName) {
+            try {
+                const res = await fetch(`./quizzes/${fileName}.json`);
+                if(!res.ok) throw new Error();
+                flashCards = await res.json();
+                flashIdx = 0;
+                showScreen('flashcard');
+                updateFlashUI();
+            } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName); }
+        }
+
+        function updateFlashUI() {
+            const card = document.getElementById('flash-card');
+            card.classList.remove('is-flipped');
+            document.getElementById('flash-front-content').innerText = flashCards[flashIdx].q;
+            document.getElementById('flash-back-content').innerText = flashCards[flashIdx].a;
+            document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
+        }
+
+        function flipCard() {
+            document.getElementById('flash-card').classList.toggle('is-flipped');
+        }
+
+        function nextFlash() {
+            if (flashIdx < flashCards.length - 1) { flashIdx++; updateFlashUI(); }
+        }
+
+        function prevFlash() {
+            if (flashIdx > 0) { flashIdx--; updateFlashUI(); }
         }
 
         // --- General Subjects ---
