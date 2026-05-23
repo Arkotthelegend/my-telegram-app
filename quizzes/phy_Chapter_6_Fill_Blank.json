@@ -1,1 +1,252 @@
-
+[
+  {
+    "type": "blank",
+    "q": "The _______ of a wave is the distance between two consecutive crests or troughs.",
+    "c": "wavelength"
+  },
+  {
+    "type": "blank",
+    "q": "Sound waves are _______ waves because the particles of the medium vibrate parallel to the direction of energy transport.",
+    "c": "longitudinal"
+  },
+  {
+    "type": "blank",
+    "q": "The speed of sound in _______ is generally higher than in liquids or gases.",
+    "c": "solids"
+  },
+  {
+    "type": "blank",
+    "q": "The frequency range of _______ sound is between 20 Hz and 20,000 Hz.",
+    "c": "audible"
+  },
+  {
+    "type": "blank",
+    "q": "Sound waves with frequencies above 20,000 Hz are called _______.",
+    "c": "ultrasound"
+  },
+  {
+    "type": "blank",
+    "q": "Sound waves with frequencies below 20 Hz are called _______.",
+    "c": "infrasound"
+  },
+  {
+    "type": "blank",
+    "q": "The speed of sound in air at 0°C is approximately _______ m/s.",
+    "c": "331"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of sound increases as the temperature of the air increases.",
+    "c": "speed"
+  },
+  {
+    "type": "blank",
+    "q": "The change in observed frequency due to the relative motion of the source and observer is the _______ effect.",
+    "c": "Doppler"
+  },
+  {
+    "type": "blank",
+    "q": "When a source of sound approaches a stationary observer, the observed frequency _______.",
+    "c": "increases"
+  },
+  {
+    "type": "blank",
+    "q": "When a source of sound moves away from a stationary observer, the observed frequency _______.",
+    "c": "decreases"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ is a reflected sound wave that arrives at the listener after a delay.",
+    "c": "echo"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a sound wave is determined by its frequency.",
+    "c": "pitch"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of sound depends on the amplitude of the vibration.",
+    "c": "loudness"
+  },
+  {
+    "type": "blank",
+    "q": "The unit used to measure sound intensity level is the _______.",
+    "c": "decibel"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ frequency is the lowest frequency at which a system vibrates naturally.",
+    "c": "fundamental"
+  },
+  {
+    "type": "blank",
+    "q": "Frequencies that are integral multiples of the fundamental frequency are called _______.",
+    "c": "harmonics"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ wave is formed by the superposition of two waves of the same frequency traveling in opposite directions.",
+    "c": "standing"
+  },
+  {
+    "type": "blank",
+    "q": "In a standing wave, points of zero displacement are called _______.",
+    "c": "nodes"
+  },
+  {
+    "type": "blank",
+    "q": "In a standing wave, points of maximum displacement are called _______.",
+    "c": "antinodes"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ pipe has antinodes at both of its ends.",
+    "c": "open"
+  },
+  {
+    "type": "blank",
+    "q": "A pipe _______ at one end has a node at the closed end and an antinode at the open end.",
+    "c": "closed"
+  },
+  {
+    "type": "blank",
+    "q": "A pipe closed at one end can only produce _______ harmonics.",
+    "c": "odd"
+  },
+  {
+    "type": "blank",
+    "q": "The phenomena of _______ occurs when the frequency of a periodic force matches the natural frequency of a system.",
+    "c": "resonance"
+  },
+  {
+    "type": "blank",
+    "q": "_______ are periodic variations in sound intensity caused by the interference of two nearly equal frequencies.",
+    "c": "Beats"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ number is the ratio of the speed of an object to the speed of sound in the medium.",
+    "c": "Mach"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ boom is the loud noise heard when an object breaks the sound barrier.",
+    "c": "sonic"
+  },
+  {
+    "type": "blank",
+    "q": "_______ waves are conical waves produced by an object moving faster than sound.",
+    "c": "Shock"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a sound allows us to distinguish between two sounds of the same pitch and loudness.",
+    "c": "quality"
+  },
+  {
+    "type": "blank",
+    "q": "Ultrasonic waves have a frequency _______ than 20 kHz.",
+    "c": "greater"
+  },
+  {
+    "type": "blank",
+    "q": "Medical imaging using ultrasound is commonly called _______.",
+    "c": "echocardiography"
+  },
+  {
+    "type": "blank",
+    "q": "Bats use _______ to navigate and catch prey in the dark.",
+    "c": "echolocation"
+  },
+  {
+    "type": "blank",
+    "q": "The threshold of hearing corresponds to _______ decibels.",
+    "c": "0"
+  },
+  {
+    "type": "blank",
+    "q": "The distance between a node and the adjacent antinode is _______ of a wavelength.",
+    "c": "one-fourth"
+  },
+  {
+    "type": "blank",
+    "q": "The distance between two consecutive nodes in a standing wave is _______ of a wavelength.",
+    "c": "half"
+  },
+  {
+    "type": "blank",
+    "q": "_______ is the bending of sound waves around corners or obstacles.",
+    "c": "Diffraction"
+  },
+  {
+    "type": "blank",
+    "q": "The speed of sound is higher in _______ air than in dry air at the same temperature.",
+    "c": "humid"
+  },
+  {
+    "type": "blank",
+    "q": "In a longitudinal wave, a _______ is a region where the medium is compressed.",
+    "c": "compression"
+  },
+  {
+    "type": "blank",
+    "q": "In a longitudinal wave, a _______ is a region where the medium is spread out.",
+    "c": "rarefaction"
+  },
+  {
+    "type": "blank",
+    "q": "If an observer and source move in the same direction at the same speed, the Doppler shift is _______.",
+    "c": "zero"
+  },
+  {
+    "type": "blank",
+    "q": "The number of beats per second is equal to the _______ in frequencies of the two sound sources.",
+    "c": "difference"
+  },
+  {
+    "type": "blank",
+    "q": "The speed of sound in water is approximately _______ times faster than in air.",
+    "c": "four"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ frequency is any frequency higher than the fundamental frequency.",
+    "c": "overtone"
+  },
+  {
+    "type": "blank",
+    "q": "The loudness level that causes physical pain to the human ear is around _______ dB.",
+    "c": "120"
+  },
+  {
+    "type": "blank",
+    "q": "Ultrasound can reveal _______ in blood flow within arteries.",
+    "c": "blockages"
+  },
+  {
+    "type": "blank",
+    "q": "The speed of a wave is the product of its frequency and its _______.",
+    "c": "wavelength"
+  },
+  {
+    "type": "blank",
+    "q": "_______ is the objective measurement of the energy carried by a sound wave per unit area per unit time.",
+    "c": "Intensity"
+  },
+  {
+    "type": "blank",
+    "q": "In an open pipe, the first overtone is the _______ harmonic.",
+    "c": "second"
+  },
+  {
+    "type": "blank",
+    "q": "In a closed pipe, the first overtone is the _______ harmonic.",
+    "c": "third"
+  },
+  {
+    "type": "blank",
+    "q": "A stationary observer perceives a _______ frequency when a source moves away.",
+    "c": "smaller"
+  }
+]
