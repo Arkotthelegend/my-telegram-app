@@ -1,1 +1,303 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "The current delivered by a battery is a _______ current.",
+    "a": ["alternating", "direct", "induced"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is a device for generating alternating current.",
+    "a": ["motor", "battery", "AC generator"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The process of inducing an emf in a circuit by changing the magnetic flux is called _______.",
+    "a": ["self-induction", "electromagnetic induction", "mutual induction"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is used to change the voltage of an alternating current.",
+    "a": ["resistor", "transformer", "capacitor"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The core of a transformer is built up of thin iron sheets called _______.",
+    "a": ["lamination", "insulation", "induction"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The transformer coil connected to an alternating voltage source is called the _______ coil.",
+    "a": ["secondary", "primary", "output"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If the number of turns in the secondary coil is greater than the primary, it is a _______ transformer.",
+    "a": ["step-up", "step-down", "ideal"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The SI unit of magnetic flux is the _______.",
+    "a": ["Tesla", "Weber", "Henry"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "An electric motor converts electrical energy into _______ energy.",
+    "a": ["chemical", "mechanical", "heat"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The phenomenon of production of induced emf in a coil due to change of current in the same coil is _______.",
+    "a": ["mutual induction", "self-induction", "capacitance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Lenz's law is based on the law of conservation of _______.",
+    "a": ["charge", "momentum", "energy"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The frequency of AC used in Myanmar is _______.",
+    "a": ["50 Hz", "60 Hz", "100 Hz"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In an ideal transformer, the output power is _______ the input power.",
+    "a": ["less than", "greater than", "equal to"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Eddy currents are produced in a _______ block when it is placed in a changing magnetic field.",
+    "a": ["non-metallic", "metallic", "insulating"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The direction of induced current is given by _______.",
+    "a": ["Ohm's law", "Lenz's law", "Coulomb's law"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is used to measure very small current.",
+    "a": ["voltmeter", "galvanometer", "ammeter"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The alternating current is universally used for _______ electricity.",
+    "a": ["industrial", "household", "chemical"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The SI unit of self-inductance is the _______.",
+    "a": ["Weber", "Tesla", "Henry"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A generator converts _______ energy into electrical energy.",
+    "a": ["heat", "mechanical", "chemical"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The voltage used in Myanmar is between _______.",
+    "a": ["110V - 120V", "220V - 240V", "440V - 480V"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which law states that the induced emf is proportional to the rate of change of magnetic flux?",
+    "a": ["Newton's law", "Faraday's law", "Lenz's law"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A step-down transformer _______ the voltage.",
+    "a": ["increases", "decreases", "maintains"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Magnetic flux Φ is equal to _______.",
+    "a": ["BA cos θ", "B/A", "A/B"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The back emf in a motor _______ as the speed increases.",
+    "a": ["decreases", "increases", "remains zero"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Transformers only work with _______ current.",
+    "a": ["direct", "alternating", "steady"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a DC, the electrons flow steadily in the _______ direction.",
+    "a": ["same", "opposite", "random"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The secondary coil of a transformer is connected to an _______ device.",
+    "a": ["voltage source", "electrical", "magnetic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A changing magnetic field could produce a _______.",
+    "a": ["resistance", "current", "mass"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The current flowing in power lines is _______ current.",
+    "a": ["direct", "alternating", "transient"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Mutual induction occurs between _______ coils.",
+    "a": ["one", "two", "three"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "One Weber is equal to one _______.",
+    "a": ["Tesla-metre", "Tesla per metre", "Tesla-metre squared"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The _______ of a transformer reduces energy loss due to eddy currents.",
+    "a": ["primary coil", "laminated core", "secondary coil"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a rotating coil, the maximum emf is induced when the coil is _______ to the magnetic field.",
+    "a": ["parallel", "perpendicular", "at 45 degrees"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The current in a cell phone is _______ current.",
+    "a": ["alternating", "direct", "pulsating"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "An induction coil is used to produce _______ voltage from a low voltage source.",
+    "a": ["low", "high", "zero"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Self-inductance L is defined as L = _______.",
+    "a": ["Φ / I", "I / Φ", "Φ x I"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A coil has a self-inductance of 1 Henry if an emf of 1 Volt is induced by a current change of _______.",
+    "a": ["1 A/s", "10 A/s", "0.1 A/s"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In the ignition system of motor cars, sparking occurs at the _______.",
+    "a": ["battery", "sparking plug", "carburetor"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "An AC generator is also called an _______.",
+    "a": ["alternator", "inductor", "rectifier"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Magnetic flux density B is measured in _______.",
+    "a": ["Weber", "Tesla", "Henry"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The transformer ratio Vs/Vp is equal to _______.",
+    "a": ["Np/Ns", "Ns/Np", "Is/Ip"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "For an ideal transformer, the current ratio Is/Ip is equal to _______.",
+    "a": ["Ns/Np", "Np/Ns", "Vs/Vp"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The alternating current induced in a rotating coil varies _______ with time.",
+    "a": ["linearly", "sinusoidally", "not at all"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If Φ = 0, the magnetic field is _______ to the surface area.",
+    "a": ["perpendicular", "parallel", "tilted"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The coil of an AC generator is rotated in a _______ magnetic field.",
+    "a": ["uniform", "variable", "circular"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The power loss in a transformer is mainly due to _______.",
+    "a": ["resistance of coils", "eddy currents", "both A and B"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Mechanical energy is used to rotate the _______ in a generator.",
+    "a": ["brushes", "armature", "battery"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of these devices uses direct current?",
+    "a": ["Refrigerator", "Flashlight", "Washing machine"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Electromagnetic induction was discovered by _______.",
+    "a": ["Newton", "Faraday", "Ohm"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a step-up transformer, the current in the secondary is _______ than in the primary.",
+    "a": ["larger", "smaller", "same"],
+    "c": 1
+  }
+]
