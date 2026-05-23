@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The speed of sound depends on the temperature of the medium.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Sound waves travel faster in solids than in gases.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The Doppler effect occurs only when the source of sound is moving.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "When a source of sound approaches a stationary observer, the observed frequency increases.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The frequency of sound is measured in units of Hertz (Hz).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a longitudinal wave, particles of the medium vibrate parallel to the direction of wave motion.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Sound waves are electromagnetic waves.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The pitch of a sound is determined primarily by its frequency.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ultrasound has a frequency lower than the audible range for humans.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The audible range of frequency for the human ear is roughly 20 Hz to 20,000 Hz.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When the observer moves away from a stationary source, the observed frequency becomes smaller.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The speed of sound in air at 0°C is approximately 331 m/s.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Echoes are produced by the reflection of sound waves.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The intensity of sound is related to the amplitude of the sound wave.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beats are produced by the interference of two sound waves of slightly different frequencies.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A stationary observer perceives a lower frequency when a source moves away.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Sound cannot travel through a vacuum.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The speed of sound is independent of the density of the medium.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Diffraction of sound is the bending of sound waves around obstacles.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ultrasound can be used to examine internal organs like the heart and kidney.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The Doppler effect is used in police radar to measure the speed of cars.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the observer and the source move in the same direction at the same speed, there is no Doppler shift.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Resonance occurs when the frequency of forced vibrations matches the natural frequency of an object.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The quality or timbre of sound allows us to distinguish between different musical instruments.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Infrasound refers to sound waves with frequencies above 20,000 Hz.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Sound waves in air are transverse waves.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The wavelength of sound increases as the frequency decreases, assuming speed is constant.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A decibel (dB) is a unit used to measure sound intensity level.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ultrasonic waves can help reveal blockages to blood flow in arteries.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The loudness of sound is purely an objective physical quantity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Mach number is the ratio of the speed of an object to the speed of sound.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Shock waves are produced when an object moves faster than the speed of sound.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fundamental frequency is the lowest frequency of a vibrating object.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Harmonics are integral multiples of the fundamental frequency.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Standing waves are formed by the superposition of two waves of the same frequency traveling in opposite directions.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An open pipe has antinodes at both ends.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A pipe closed at one end can produce all even and odd harmonics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A pipe closed at one end produces only odd harmonics.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The speed of sound in water is higher than the speed of sound in air.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Sound intensity decreases as the square of the distance from the source.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Echocardiography uses ultrasound to create images of the heart.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The Doppler effect applies to light waves as well as sound waves.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The frequency of a sound wave changes when it passes from one medium to another.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The speed of sound increases with an increase in humidity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Sonic boom is the sound associated with shock waves.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Bats use ultrasound for navigation and locating prey.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The threshold of hearing is defined as 0 dB.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Compression is a region in a longitudinal wave where the particles are closest together.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Rarefaction is a region where the density and pressure are minimum.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nodes are points in a standing wave where the displacement is maximum.",
+    "c": false
+  }
+]
