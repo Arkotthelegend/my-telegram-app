@@ -1,8 +1,12 @@
-
 [
   {
     "type": "tf",
-    "q": "The core of a transformer is built up of thin iron sheets called lamination.",
+    "q": "A changing magnetic field could produce a current.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a DC, the electrons flow steadily in the same direction all the time.",
     "c": true
   },
   {
@@ -12,13 +16,23 @@
   },
   {
     "type": "tf",
-    "q": "A changing magnetic field could produce a current.",
+    "q": "The current delivered by a generator is an alternating current.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "An AC generator is a device for generating direct current.",
+    "q": "The current that flows in a flashlight is a direct current.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The current that flows in a cell phone is an alternating current.",
     "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The current that flows in a laptop is a direct current.",
+    "c": true
   },
   {
     "type": "tf",
@@ -27,13 +41,8 @@
   },
   {
     "type": "tf",
-    "q": "Lenz's law is based on the law of conservation of energy.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In a DC, the electrons flow steadily in the same direction all the time.",
-    "c": true
+    "q": "The normal household electricity from a wall outlet is direct current.",
+    "c": false
   },
   {
     "type": "tf",
@@ -47,82 +56,17 @@
   },
   {
     "type": "tf",
+    "q": "The alternating current induced in a rotating coil is constant with time.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "An AC generator is a device for generating direct current.",
+    "c": false
+  },
+  {
+    "type": "tf",
     "q": "The alternating current is universally used for household electricity.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The magnetic flux through a surface area is Φ = BA cos θ.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The SI unit of magnetic flux is the Tesla.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "One Weber is equal to one Tesla-metre squared.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "If the magnetic field is parallel to the surface, the magnetic flux is maximum.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The induced emf is proportional to the rate of change of magnetic flux.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A transformer can change the voltage of a direct current.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The transformer coil connected to an electrical device is called the secondary coil.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In a step-up transformer, the number of turns in the secondary coil is less than the primary.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Eddy currents cause energy loss in the form of heat in the transformer core.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The self-inductance of a coil depends on the shape and size of the coil.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The SI unit of self-inductance is the Henry.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "An electric motor converts mechanical energy into electrical energy.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The frequency of alternating current in Myanmar is 50 Hz.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Mutual induction is the production of induced emf in one coil due to current change in another.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The back emf in a motor is zero when the motor is at rest.",
     "c": true
   },
   {
@@ -132,112 +76,57 @@
   },
   {
     "type": "tf",
-    "q": "In an ideal transformer, the efficiency is 100%.",
+    "q": "The SI unit of magnetic flux is the weber (Wb).",
     "c": true
   },
   {
     "type": "tf",
-    "q": "The lamination of the core increases the effect of eddy currents.",
+    "q": "One weber is equal to one tesla-metre squared.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the magnetic field is perpendicular to the surface area, the magnetic flux is zero.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "The current in a cell phone is an alternating current.",
+    "q": "If the magnetic field is parallel to the surface area, the magnetic flux is zero.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The induced emf is proportional to the rate of change of magnetic flux.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The direction of the induced current is given by Lenz's law.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Lenz's law is based on the law of conservation of energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The frequency of alternating current used in Myanmar is 50 Hz.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Self-induction is sometimes called the inertia of electricity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An electric motor converts mechanical energy into electrical energy.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "A step-down transformer decreases the voltage and increases the current.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The primary coil of a transformer is connected to an alternating voltage source.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Self-induction is sometimes called the 'inertia of electricity'.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The direction of the induced current is such as to oppose the change that produces it.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The induced emf depends on the resistance of the coil.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "A rotating coil in a magnetic field produces a sinusoidal alternating emf.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Transformers are used to provide different voltage requirements from the mains supply.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A DC generator uses slip rings to deliver current.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The ignition system of motor cars uses an induction coil.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The unit Henry is equivalent to Weber per Ampere.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Soft iron is used for the core of a transformer because it is easily magnetized.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "If the magnetic flux through a coil is constant, an emf is induced.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The output power of a transformer can never exceed the input power.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The alternating current changes its direction periodically.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The induced current in a circuit is larger if the circuit resistance is higher.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Secondary wavelets travel at the same speed as the primary wave.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The transformer ratio is given by Vs/Vp = Ns/Np.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A flashlight works on alternating current.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Faraday discovered that a moving magnet can induce a current in a coil.",
+    "q": "A generator converts mechanical energy into electrical energy.",
     "c": true
   },
   {
@@ -247,7 +136,117 @@
   },
   {
     "type": "tf",
-    "q": "The self-induced emf is also known as back emf.",
+    "q": "The back emf in a motor is zero when the motor is at rest.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mutual induction is the induction of an emf in one coil by the changing current in another coil.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Transformers can change the voltage of a direct current.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The core of a transformer is built up of thin iron sheets called lamination.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The lamination of the core increases the effect of eddy currents.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A step-up transformer increases the voltage and decreases the current.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A step-down transformer increases the voltage.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In an ideal transformer, the output power is equal to the input power.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Soft iron is used for the core of a transformer because it is easily magnetized.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Eddy currents cause energy loss in the form of heat in the transformer core.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The secondary wavelets have the same speed as the primary wavelets.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The secondary wavelets have the same frequency as the primary wavelets.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The transformer coil connected to an alternating voltage source is called the secondary coil.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The transformer coil connected to an electrical device is called the secondary coil.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "AC generators are also called alternators.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an electric motor, electrical energy is used to rotate the armature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The ignition system of motor cars uses an induction coil.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In the ignition system, sparking occurs at the sparking plug.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The alternating current changes its direction periodically.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The emf is induced only when there is a change in magnetic flux.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The transformer ratio is given by Vs / Vp = Ns / Np.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a step-up transformer, Ns is greater than Np.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mechanical energy is used to rotate the armature in a generator.",
     "c": true
   }
 ]
