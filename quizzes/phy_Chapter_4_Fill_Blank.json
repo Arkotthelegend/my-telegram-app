@@ -1,52 +1,252 @@
-
-[ {"type": "fill", "q": "In a wind turbine, two or three blades are mounted on a shaft to form a __________.", "c": "rotor"},
-  {"type": "fill", "q": "A large amount of __________ energy is stored in the fossil fuels.", "c": "chemical"},
-  {"type": "fill", "q": "A water turbine converts the kinetic energy of falling water into __________ energy.", "c": "mechanical"},
-  {"type": "fill", "q": "Fossil fuel liquids are refined into __________ products.", "c": "petroleum"},
-  {"type": "fill", "q": "The individuals solar cells can be combined to form modules known as __________.", "c": "solar panels"},
-  {"type": "fill", "q": "A __________ converts mechanical energy into electricity.", "c": "generator"},
-  {"type": "fill", "q": "The individual solar cells can be combined to form modules known as __________.", "c": "solar panels"},
-  {"type": "fill", "q": "The __________ facility collects and stores water at a higher elevation.", "c": "impoundment"},
-  {"type": "fill", "q": "A __________ barrage is placed at the entrance to a bay or estuary.", "c": "tidal"},
-  {"type": "fill", "q": "__________ energy sources do not pollute the environment.", "c": "Renewable"},
-  {"type": "fill", "q": "In a Concentrated Solar Power system, sunlight is converted into __________.", "c": "heat"},
-  {"type": "fill", "q": "__________ energy sources require less expenditure.", "c": "Non-renewable"},
-  {"type": "fill", "q": "The earth's atmosphere and clouds absorb or scatter as much as __________ of the incoming sunlight.", "c": "54%"},
-  {"type": "fill", "q": "The value __________ is known as the solar constant.", "c": "1361"},
-  {"type": "fill", "q": "The individual solar cells can be combined to form modules known as __________.", "c": "solar panels"},
-  {"type": "fill", "q": "The individual solar cells can be combined to form modules known as __________.", "c": "solar panels"},
-  {"type": "fill", "q": "In ocean-thermal-energy conversion, the warm surface water is used to boil a __________.", "c": "volatile liquid"},
-  {"type": "fill", "q": "The fossil fuel industry extracts crude oil from the ground and converts it to __________.", "c": "petroleum products"},
-  {"type": "fill", "q": "__________ energy sources are continuously replenished by natural processes.", "c": "Renewable"},
-  {"type": "fill", "q": "Wind turbines catch the wind energy with their propeller-like __________.", "c": "blades"},
-  {"type": "fill", "q": "The tide is due to the gravitational pull of mainly the __________ on the spinning earth.", "c": "moon"},
-  {"type": "fill", "q": "__________ are excellent sources of energy for our transportation needs.", "c": "Petroleum products"},
-  {"type": "fill", "q": "A solar cell is basically a __________ diode.", "c": "semiconductor"},
-  {"type": "fill", "q": "In a Concentrated Solar Power system, the heat is used to create __________.", "c": "steam"},
-  {"type": "fill", "q": "In the impoundment facility, the pipe that channels the water is known as the __________.", "c": "penstock"},
-  {"type": "fill", "q": "The generator is connected to the turbine by the __________.", "c": "shaft"},
-  {"type": "fill", "q": "The __________ systems have a central receiver.", "c": "power tower"},
-  {"type": "fill", "q": "The conversion of light energy into electrical energy is called the __________ effect.", "c": "photovoltaic"},
-  {"type": "fill", "q": "Above the earth's atmosphere, solar radiation intensity is about __________ W m⁻².", "c": "1361"},
-  {"type": "fill", "q": "The height water has to come down in the impoundment facility is known as the __________.", "c": "head"},
-  {"type": "fill", "q": "The individual solar cells can be combined to form modules known as __________.", "c": "solar panels"},
-  {"type": "fill", "q": "The flowing water or water stored in huge dams is known as __________ energy.", "c": "hydroelectric"},
-  {"type": "fill", "q": "Coal is formed through a process called __________.", "c": "coalification"},
-  {"type": "fill", "q": "__________ is the main constituent of fossil fuels.", "c": "Carbon"},
-  {"type": "fill", "q": "A turbine fixed at the opening of the tidal barrage converts tidal energy to __________ energy.", "c": "electrical"},
-  {"type": "fill", "q": "The wind power is proportional to the __________ of the wind speed.", "c": "cube"},
-  {"type": "fill", "q": "__________ energy sources are available only in limited supply.", "c": "Non-renewable"},
-  {"type": "fill", "q": "When wind speed doubles, wind power potential increases by a factor of __________.", "c": "8"},
-  {"type": "fill", "q": "A __________ converts light energy into electrical energy.", "c": "solar cell"},
-  {"type": "fill", "q": "A solar cell is also known as a __________ cell.", "c": "photovoltaic"},
-  {"type": "fill", "q": "When electron-hole pairs are produced in the solar cell, a __________ flows in the external circuit connected to the p-n junction.", "c": "current"},
-  {"type": "fill", "q": "Wind turbines are mounted on a __________ to capture the most energy.", "c": "tower"},
-  {"type": "fill", "q": "A __________ is a closed conduit that channels water flow to turbines.", "c": "penstock"},
-  {"type": "fill", "q": "The most common type of hydroelectric power plant is the __________ facility.", "c": "impoundment"},
-  {"type": "fill", "q": "The waves are generated by strong __________ blowing across the sea.", "c": "winds"},
-  {"type": "fill", "q": "In the impoundment facility, __________ pulls the water downward through large pipes or tunnels.", "c": "gravity"},
-  {"type": "fill", "q": "Solar energy is the __________ light and heat from the sun.", "c": "radiant"},
-  {"type": "fill", "q": "__________ collectors are the most common type of solar collector.", "c": "Flat-plate"},
-  {"type": "fill", "q": "In OTEC plants, the vapours of the liquid are used to run the __________ of the generator.", "c": "turbine"},
-  {"type": "fill", "q": "The energy produced in a nuclear reactor can be harnessed to produce __________.", "c": "electricity"}
+[
+  {
+    "type": "blank",
+    "q": "Energy resources are all forms of _______ used in the modern world.",
+    "c": "fuel"
+  },
+  {
+    "type": "blank",
+    "q": "Renewable energy sources are also known as _______ energy sources.",
+    "c": "alternative"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is the concern that the world's demands on limited natural resources are diminishing as the demand rises.",
+    "c": "energy crisis"
+  },
+  {
+    "type": "blank",
+    "q": "Renewable energy has huge potential to provide energy with zero or little emissions of _______.",
+    "c": "air pollutants"
+  },
+  {
+    "type": "blank",
+    "q": "The solar panel needs little _______.",
+    "c": "maintenance"
+  },
+  {
+    "type": "blank",
+    "q": "Solar energy systems can be expensive for the initial _______.",
+    "c": "installation"
+  },
+  {
+    "type": "blank",
+    "q": "Wind energy is a clean and _______ source of energy.",
+    "c": "renewable"
+  },
+  {
+    "type": "blank",
+    "q": "Geothermal energy is one of the newest types of natural sources of _______.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "Thermal energy from _______ can be used to generate electricity.",
+    "c": "magma"
+  },
+  {
+    "type": "blank",
+    "q": "Animal manure is a form of _______.",
+    "c": "biomass"
+  },
+  {
+    "type": "blank",
+    "q": "Direct combustion or burning of biomass produces _______.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "Thermochemical conversion of biomass produces solid, gaseous, and _______ fuels.",
+    "c": "liquid"
+  },
+  {
+    "type": "blank",
+    "q": "Chemical conversion of biomass produces _______ fuels.",
+    "c": "liquid"
+  },
+  {
+    "type": "blank",
+    "q": "The biological conversion of biomass produces liquid and _______ fuels.",
+    "c": "gaseous"
+  },
+  {
+    "type": "blank",
+    "q": "Pyrolysis and gasification are _______ decomposition processes.",
+    "c": "thermal"
+  },
+  {
+    "type": "blank",
+    "q": "Transesterification is a kind of _______ conversion process.",
+    "c": "chemical"
+  },
+  {
+    "type": "blank",
+    "q": "Fermentation is a kind of _______ conversion of biomass.",
+    "c": "biological"
+  },
+  {
+    "type": "blank",
+    "q": "_______ is used as a vehicle fuel.",
+    "c": "Ethanol"
+  },
+  {
+    "type": "blank",
+    "q": "Biogas or biomethane is produced in _______ digesters at sewage treatment plants.",
+    "c": "anaerobic"
+  },
+  {
+    "type": "blank",
+    "q": "Properly treated renewable natural gas has the same uses as _______ natural gas.",
+    "c": "fossil fuel"
+  },
+  {
+    "type": "blank",
+    "q": "Energy is a basic _______ for life.",
+    "c": "necessity"
+  },
+  {
+    "type": "blank",
+    "q": "Energy demand depends on the _______.",
+    "c": "population"
+  },
+  {
+    "type": "blank",
+    "q": "Energy demand forecasting is crucial for ensuring future _______ growth.",
+    "c": "economic"
+  },
+  {
+    "type": "blank",
+    "q": "Wells up to a mile deep or more are drilled into _______ reservoirs to tap into geothermal resources.",
+    "c": "underground"
+  },
+  {
+    "type": "blank",
+    "q": "Human sewage is a form of _______.",
+    "c": "biomass"
+  },
+  {
+    "type": "blank",
+    "q": "Renewable energy sources do not _______ the environment and natural surroundings.",
+    "c": "pollute"
+  },
+  {
+    "type": "blank",
+    "q": "Non-renewable energy resources are also called _______ energy resources.",
+    "c": "conventional"
+  },
+  {
+    "type": "blank",
+    "q": "Industrial development is a reason for the increase in global energy _______.",
+    "c": "demand"
+  },
+  {
+    "type": "blank",
+    "q": "Population growth is a reason for the increase in global energy _______.",
+    "c": "demand"
+  },
+  {
+    "type": "blank",
+    "q": "Renewable energy sources are generally _______ expensive than non-renewable ones in terms of initial cost.",
+    "c": "more"
+  },
+  {
+    "type": "blank",
+    "q": "Energy demand depends on the development of _______.",
+    "c": "technologies"
+  },
+  {
+    "type": "blank",
+    "q": "Energy demand depends on _______ income.",
+    "c": "net capital"
+  },
+  {
+    "type": "blank",
+    "q": "Geothermal power plants are usually located near tectonic _______ boundaries.",
+    "c": "plate"
+  },
+  {
+    "type": "blank",
+    "q": "Tidal energy is harvested from the movement of ocean _______.",
+    "c": "tides"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroelectric power plants rely on the flow of _______.",
+    "c": "water"
+  },
+  {
+    "type": "blank",
+    "q": "Solar energy can be used for water _______.",
+    "c": "heating"
+  },
+  {
+    "type": "blank",
+    "q": "All biomass can be burned _______ for heating.",
+    "c": "directly"
+  },
+  {
+    "type": "blank",
+    "q": "Energy demand forecasting is crucial for _______ security.",
+    "c": "environmental"
+  },
+  {
+    "type": "blank",
+    "q": "The non-renewable energy resources will _______ out eventually.",
+    "c": "run"
+  },
+  {
+    "type": "blank",
+    "q": "The supply of energy is _______ than the actual demand.",
+    "c": "less"
+  },
+  {
+    "type": "blank",
+    "q": "All energy sources have some impact on the _______.",
+    "c": "environment"
+  },
+  {
+    "type": "blank",
+    "q": "Urbanization is a factor that influences energy _______.",
+    "c": "demand"
+  },
+  {
+    "type": "blank",
+    "q": "Industrialization is a factor that influences energy _______.",
+    "c": "demand"
+  },
+  {
+    "type": "blank",
+    "q": "Magma is _______ rock located under the earth's surface.",
+    "c": "molten"
+  },
+  {
+    "type": "blank",
+    "q": "Wood and wood waste are forms of _______.",
+    "c": "biomass"
+  },
+  {
+    "type": "blank",
+    "q": "Biodiesel is produced through the _______ process.",
+    "c": "transesterification"
+  },
+  {
+    "type": "blank",
+    "q": "Biogas consists mainly of _______.",
+    "c": "methane"
+  },
+  {
+    "type": "blank",
+    "q": "Ethanol is produced by _______ of sugars.",
+    "c": "fermentation"
+  },
+  {
+    "type": "blank",
+    "q": "Renewable natural gas can be used as a vehicle _______.",
+    "c": "fuel"
+  },
+  {
+    "type": "blank",
+    "q": "Solar cells convert sunlight into _______.",
+    "c": "electricity"
+  }
 ]
