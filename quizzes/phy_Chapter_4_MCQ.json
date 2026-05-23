@@ -1,304 +1,302 @@
-
-
 [
   {
     "type": "mcq",
-    "q": "The solar radiation intensity above the earth's atmosphere is about",
-    "options": ["1351 W m⁻²", "1361 W m⁻²", "1371 W m⁻²", "1381 W m⁻²"],
-    "c": "1361 W m⁻²"
+    "q": "Renewable energy sources are also known as _______ energy sources.",
+    "a": ["conventional", "alternative", "non-renewable"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following is a non-renewable energy source?",
-    "options": ["Wind energy", "Solar energy", "Nuclear energy", "Biomass energy"],
-    "c": "Nuclear energy"
+    "q": "Which of the following is a factor that influences global energy demand?",
+    "a": ["Population growth", "Urbanization", "All of the above"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The conversion of light energy into electrical energy is called",
-    "options": ["Photovoltaic effect", "Photoelectric effect", "Thermal effect", "Chemical effect"],
-    "c": "Photovoltaic effect"
+    "q": "The concern that world demands on limited natural resources are diminishing as demand rises is called _______.",
+    "a": ["energy surplus", "energy crisis", "energy conservation"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "What is the main constituent of fossil fuels?",
-    "options": ["Oxygen", "Hydrogen", "Carbon", "Nitrogen"],
-    "c": "Carbon"
+    "q": "Solar cells convert sunlight directly into _______.",
+    "a": ["heat", "electricity", "mechanical energy"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which energy resource occurs in exhaustible quantities?",
-    "options": ["Solar energy", "Wind energy", "Fossil fuels", "Hydroelectric energy"],
-    "c": "Fossil fuels"
+    "q": "Wind energy is considered a _______ source of energy.",
+    "a": ["clean and renewable", "polluting", "non-renewable"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "A solar cell is basically a",
-    "options": ["Semiconductor diode", "Resistor", "Capacitor", "Inductor"],
-    "c": "Semiconductor diode"
+    "q": "Geothermal energy is derived from _______.",
+    "a": ["the sun", "the earth's internal heat", "ocean tides"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Wind turbines catch the wind energy with their propeller-like",
-    "options": ["Towers", "Blades", "Generators", "Shafts"],
-    "c": "Blades"
+    "q": "Magma is _______ located beneath the earth's surface.",
+    "a": ["frozen ice", "molten rock", "liquid nitrogen"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "When wind speed doubles, the wind power potential increases by a factor of",
-    "options": ["2", "4", "6", "8"],
-    "c": "8"
+    "q": "Which of the following is a form of biomass?",
+    "a": ["Wood", "Animal manure", "All of the above"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The individual solar cells can be combined to form modules known as",
-    "options": ["Solar arrays", "Solar panels", "Solar battery", "Solar system"],
-    "c": "Solar panels"
+    "q": "Direct combustion of biomass primarily produces _______.",
+    "a": ["electricity", "heat", "liquid fuel"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The most common type of hydroelectric power plant is the",
-    "options": ["Impoundment facility", "Diversion facility", "Pumped storage facility", "Tidal facility"],
-    "c": "Impoundment facility"
+    "q": "Thermochemical conversion of biomass can produce _______ fuels.",
+    "a": ["solid only", "gaseous only", "solid, gaseous, and liquid"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "In a hydroelectric plant, the closed conduit that channels water flow to turbines is a",
-    "options": ["Head", "Rotor", "Penstock", "Barrage"],
-    "c": "Penstock"
+    "q": "The process used to produce biodiesel from oils and fats is called _______.",
+    "a": ["fermentation", "transesterification", "pyrolysis"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The tide is due to the gravitational pull of mainly the",
-    "options": ["Sun", "Moon", "Stars", "Mars"],
-    "c": "Moon"
+    "q": "Ethanol is typically produced through the _______ of sugars.",
+    "a": ["gasification", "fermentation", "combustion"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "A tidal barrage is placed at the entrance to a",
-    "options": ["River", "Bay or estuary", "Lake", "Ocean trench"],
-    "c": "Bay or estuary"
+    "q": "Biogas or biomethane is produced in _______ digesters.",
+    "a": ["aerobic", "anaerobic", "thermal"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The earth's atmosphere and clouds absorb or scatter as much as how many percent of the incoming sunlight?",
-    "options": ["34%", "44%", "54%", "64%"],
-    "c": "54%"
+    "q": "Which of the following has the same uses as fossil fuel natural gas when treated properly?",
+    "a": ["Renewable natural gas", "Liquid ethanol", "Biodiesel"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "Which of the following is NOT an example of biomass?",
-    "options": ["Wood", "Animal manure", "Uranium", "Human sewage"],
-    "c": "Uranium"
+    "q": "Energy demand forecasting is crucial for _______.",
+    "a": ["economic growth", "environmental security", "both a and b"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The biological conversion of biomass produces liquid and gaseous",
-    "options": ["Fuels", "Oxides", "Acids", "Minerals"],
-    "c": "Fuels"
+    "q": "Solar energy systems usually require _______ maintenance.",
+    "a": ["high", "little", "constant"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Transesterification is a kind of",
-    "options": ["Biological conversion process", "Chemical conversion process", "Direct combustion process", "Physical conversion process"],
-    "c": "Chemical conversion process"
+    "q": "A disadvantage of solar energy is the high _______.",
+    "a": ["maintenance cost", "initial installation cost", "fuel cost"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which gas is a by-product of animals' digestive systems?",
-    "options": ["Oxygen", "Methane", "Nitrogen", "Carbon dioxide"],
-    "c": "Methane"
+    "q": "Hydroelectric power plants harness the energy of _______.",
+    "a": ["moving air", "flowing water", "burning wood"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Coal is formed through a process called",
-    "options": ["Sedimentation", "Coalification", "Transesterification", "Combustion"],
-    "c": "Coalification"
+    "q": "Tidal energy is generated by the _______.",
+    "a": ["heat of the earth", "rise and fall of ocean levels", "wind"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Fossil fuel liquids are refined into",
-    "options": ["Biomass products", "Petroleum products", "Nuclear products", "Gaseous products"],
-    "c": "Petroleum products"
+    "q": "Pyrolysis and gasification are _______ processes.",
+    "a": ["biological", "chemical", "thermal decomposition"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "Renewable energy resources can be used",
-    "options": ["Only once", "Twice", "Again and again", "Never"],
-    "c": "Again and again"
+    "q": "Geothermal power plants are usually located near _______.",
+    "a": ["rivers", "tectonic plate boundaries", "deserts"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following requires more expenditure?",
-    "options": ["Renewable energy sources", "Non-renewable energy sources", "Solar energy", "Wind energy"],
-    "c": "Renewable energy sources"
+    "q": "Non-renewable energy resources are also called _______ energy resources.",
+    "a": ["alternative", "conventional", "sustainable"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The supply of non-renewable energy resources is",
-    "options": ["Infinite", "Limited", "Unlimited", "Virtually unlimited"],
-    "c": "Limited"
+    "q": "Which of the following does NOT influence energy demand?",
+    "a": ["Net capital income", "Industrialization", "Moon phases"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "Energy demand forecasting is crucial for ensuring future",
-    "options": ["Population growth", "Economic growth", "Industrial decline", "Urbanization reduction"],
-    "c": "Economic growth"
+    "q": "Renewable energy sources have _______ emissions of air pollutants.",
+    "a": ["high", "zero or little", "extreme"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "What is a commonly used term for the irradiance of sunlight?",
-    "options": ["Isolation", "Insolation", "Incineration", "Illumination"],
-    "c": "Insolation"
+    "q": "Biological conversion of biomass produces _______ fuels.",
+    "a": ["solid", "liquid and gaseous", "solid only"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "In a wind turbine, two or three blades are mounted on a shaft to form a",
-    "options": ["Tower", "Generator", "Rotor", "Nacelle"],
-    "c": "Rotor"
+    "q": "The primary component of biogas is _______.",
+    "a": ["oxygen", "methane", "nitrogen"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "A water turbine converts the kinetic energy of falling water into",
-    "options": ["Electrical energy", "Mechanical energy", "Chemical energy", "Thermal energy"],
-    "c": "Mechanical energy"
+    "q": "Ethanol is commonly used as a _______.",
+    "a": ["lubricant", "vehicle fuel", "coolant"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "A generator converts mechanical energy into",
-    "options": ["Heat", "Electricity", "Light", "Chemical energy"],
-    "c": "Electricity"
+    "q": "Solar energy can be used for _______.",
+    "a": ["water heating", "lighting", "all of the above"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "In Concentrated Solar Power (CSP) systems, sunlight is converted into",
-    "options": ["Electricity directly", "Heat", "Biomass", "Fossil fuels"],
-    "c": "Heat"
+    "q": "Which process converts oils into biodiesel?",
+    "a": ["Fermentation", "Transesterification", "Gasification"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which CSP system uses a central receiver?",
-    "options": ["Parabolic trough", "Linear Fresnel reflector", "Power tower", "Parabolic dish"],
-    "c": "Power tower"
+    "q": "Energy demand forecasting helps in ensuring _______.",
+    "a": ["future economic growth", "current waste", "lower population"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "In ocean-thermal-energy conversion (OTEC), warm surface water is used to boil a",
-    "options": ["Heavy water", "Volatile liquid", "Saline solution", "Crude oil"],
-    "c": "Volatile liquid"
+    "q": "Human sewage can be used to produce _______.",
+    "a": ["solar energy", "biomass-derived fuel", "wind energy"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The height water has to come down in an impoundment facility is known as the",
-    "options": ["Penstock", "Barrage", "Head", "Rotor"],
-    "c": "Head"
+    "q": "Geothermal wells are often drilled _______ deep.",
+    "a": ["a few inches", "a mile or more", "ten feet"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Ocean waves are generated by strong",
-    "options": ["Tides", "Winds blowing across the sea", "Earthquakes", "Temperature differences"],
-    "c": "Winds blowing across the sea"
+    "q": "Renewable energy sources _______ the environment.",
+    "a": ["pollute heavily", "do not pollute", "destroy"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Direct combustion or burning of biomass produces",
-    "options": ["Electricity directly", "Heat", "Methane", "Ethanol"],
-    "c": "Heat"
+    "q": "Energy resources include all forms of _______.",
+    "a": ["fuel", "water", "soil"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "The energy produced in a nuclear reactor can be harnessed to produce",
-    "options": ["Biomass", "Electricity", "Petroleum", "Natural gas"],
-    "c": "Electricity"
+    "q": "Urbanization leads to an _______ in energy demand.",
+    "a": ["decrease", "increase", "stabilization"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following is one of the oldest and cleanest forms of energy?",
-    "options": ["Coal energy", "Petroleum energy", "Wind energy", "Nuclear energy"],
-    "c": "Wind energy"
+    "q": "Industrial development is a major reason for _______ global energy demand.",
+    "a": ["reducing", "increasing", "ignoring"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The wind power is proportional to which power of the wind speed?",
-    "options": ["Square", "Cube", "Fourth power", "First power"],
-    "c": "Cube"
+    "q": "Thermochemical conversion involves _______.",
+    "a": ["low temperatures", "thermal decomposition", "no heat"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "A large amount of chemical energy is stored in",
-    "options": ["Wind energy", "Fossil fuels", "Solar cells", "Hydroelectric dams"],
-    "c": "Fossil fuels"
+    "q": "Biofuels can exist in which state?",
+    "a": ["Solid", "Liquid", "All of the above"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The value 1361 W m⁻² is known as the",
-    "options": ["Wind constant", "Solar constant", "Hydro constant", "Thermal constant"],
-    "c": "Solar constant"
+    "q": "Renewable natural gas is often collected from _______.",
+    "a": ["windmills", "landfills", "solar farms"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Ethanol is widely used as a",
-    "options": ["Lubricant", "Vehicle fuel", "Plastic component", "Coolant"],
-    "c": "Vehicle fuel"
+    "q": "The sun is the source of _______ energy.",
+    "a": ["geothermal", "solar", "nuclear"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "In the impoundment facility, what pulls the water downward through large pipes?",
-    "options": ["Magnetism", "Gravity", "Atmospheric pressure", "Centrifugal force"],
-    "c": "Gravity"
+    "q": "Wind turbines convert kinetic energy into _______ energy.",
+    "a": ["chemical", "electrical", "thermal"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The useful power output of hydropower is proportional to the",
-    "options": ["Volume flow rate of water", "Temperature of water", "Density of air", "Length of the blades"],
-    "c": "Volume flow rate of water"
+    "q": "An anaerobic digester operates _______ oxygen.",
+    "a": ["with", "without", "using high pressure"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which collectors are the most common type of solar collector?",
-    "options": ["Concentrating collectors", "Flat-plate collectors", "Evacuated tube collectors", "Photovoltaic collectors"],
-    "c": "Flat-plate collectors"
+    "q": "Non-renewable resources like coal and oil _______.",
+    "a": ["replenish quickly", "will run out eventually", "are unlimited"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Solar energy is the radiant light and heat from the",
-    "options": ["Moon", "Earth's core", "Sun", "Stars"],
-    "c": "Sun"
+    "q": "Magma is found _______.",
+    "a": ["in the atmosphere", "under the earth's surface", "in the ocean"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following is NOT a reason for the increase in global energy demand?",
-    "options": ["Population growth", "Industrial development", "Urbanization", "Decrease in technology development"],
-    "c": "Decrease in technology development"
+    "q": "Biodiesel is a type of _______ fuel.",
+    "a": ["fossil", "liquid bio-", "gaseous"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The generator is connected to the turbine by a",
-    "options": ["Penstock", "Shaft", "Blade", "Barrage"],
-    "c": "Shaft"
+    "q": "Energy is considered a _______ for modern life.",
+    "a": ["luxury", "basic necessity", "option"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Biogas or biomethane is a form of",
-    "options": ["Fossil fuel", "Renewable energy", "Nuclear fuel", "Non-replenishable energy"],
-    "c": "Renewable energy"
+    "q": "Which conversion process uses yeast or bacteria?",
+    "a": ["Pyrolysis", "Fermentation", "Combustion"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "When electron-hole pairs are produced in a solar cell, a current flows in the external circuit connected to the",
-    "options": ["n-type layer only", "p-type layer only", "p-n junction", "Rotor"],
-    "c": "p-n junction"
+    "q": "Landfill gas is a source of _______.",
+    "a": ["renewable natural gas", "solar power", "geothermal heat"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "The amount of power that can be harvested from wind depends on the",
-    "options": ["Length of the blades", "Color of the tower", "Weight of the generator", "Type of battery used"],
-    "c": "Length of the blades"
+    "q": "Energy demand depends on the development of _______.",
+    "a": ["technologies", "ancient history", "fossils"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "Which energy sources do not pollute the environment and natural surroundings?",
-    "options": ["Coal and Petroleum", "Renewable energy sources", "Non-renewable energy sources", "Nuclear resources"],
-    "c": "Renewable energy sources"
+    "q": "Which energy source is harvested from the movement of ocean tides?",
+    "a": ["Geothermal", "Tidal", "Biomass"],
+    "c": 1
   }
 ]
