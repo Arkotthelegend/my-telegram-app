@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "Spectacles are optical instruments that employ lenses.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In cameras, the image can only be recorded on films and not digitally.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The camera uses a concave lens to form an image.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The image formed on the film of a camera is real and inverted.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The image formed on the film of a camera is enlarged.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The diaphragm in a camera is a circular opening that controls the amount of light.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The smaller the f-number, the narrower the aperture is.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "When taking a photograph in bright light, a small aperture must be used.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A shutter is used in a camera to control the time the light falls on the film.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A simple microscope consists of a single converging lens of short focal length.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The magnifying power of a simple microscope is always less than 1.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In a simple microscope, the object is placed between the focus and the optical center.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The image formed by a simple microscope is virtual, erect, and magnified.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A compound microscope consists of two converging lenses.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The lens near the object in a compound microscope is called the eyepiece.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The focal length of the objective lens in a compound microscope is very large.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The objective of a compound microscope forms a real, inverted, and magnified image.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The final image formed by a compound microscope is virtual and inverted with respect to the object.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The magnifying power of a compound microscope is the product of the magnification of the objective and the magnifying power of the eyepiece.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The astronomical telescope is used to view objects on the Earth's surface.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "An astronomical telescope consists of two converging lenses.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an astronomical telescope, the objective lens has a larger focal length than the eyepiece.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The final image in an astronomical telescope is virtual and erect.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In normal adjustment of a telescope, the final image is formed at infinity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The length of an astronomical telescope in normal adjustment is fo + fe.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A terrestrial telescope produces a final image that is erect with respect to the object.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A terrestrial telescope uses an erecting lens between the objective and the eyepiece.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The erecting lens in a terrestrial telescope increases the magnifying power.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The Galilean telescope uses a diverging lens as the eyepiece.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The final image in a Galilean telescope is virtual and inverted.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The length of a Galilean telescope is fo - fe.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The eye is very similar to a camera in its optical function.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The crystalline lens of the eye is a converging lens.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The retina acts as a screen on which the image is formed.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Accommodation is the process by which the eye changes its focal length.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The near point for a normal human eye is approximately 25 cm.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Myopia is a defect where the eye cannot see distant objects clearly.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Myopia is corrected using a convex lens.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Hypermetropia is a defect where the eye cannot see nearby objects clearly.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Hypermetropia is corrected using a converging lens.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a myopic eye, the image of a distant object is formed behind the retina.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Presbyopia is a defect that usually occurs with old age.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The power of a lens is measured in diopters.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The power of a converging lens is negative.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The magnification of a lens is the ratio of image height to object height.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Refracting telescopes use mirrors to gather light.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The objective of a camera is usually a single simple lens.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A prism binocular uses total internal reflection to fold the light path.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The resolving power of a telescope increases with the diameter of the objective.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Chromatice aberration occurs in lenses but not in mirrors.",
+    "c": true
+  }
+]
