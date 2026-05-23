@@ -1,23 +1,12 @@
-
 [
   {
     "type": "tf",
-    "q": "Spectacles are optical instruments that employ lenses.",
+    "q": "The objective of an astronomical telescope has a large focal length fo and the eyepiece has a small focal length fe.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "In cameras, the image can only be recorded on films and not digitally.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The camera uses a concave lens to form an image.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The image formed on the film of a camera is real and inverted.",
+    "q": "In a camera, the diaphragm is placed in front of the convex lens.",
     "c": true
   },
   {
@@ -27,23 +16,18 @@
   },
   {
     "type": "tf",
-    "q": "The diaphragm in a camera is a circular opening that controls the amount of light.",
+    "q": "Myopia is the defect of vision in which the eye can see nearby objects clearly but cannot see distant objects clearly.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "The smaller the f-number, the narrower the aperture is.",
+    "q": "The crystalline lens of the eye is a diverging lens.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "When taking a photograph in bright light, a small aperture must be used.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A shutter is used in a camera to control the time the light falls on the film.",
-    "c": true
+    "q": "The image formed in the film by a camera is virtual.",
+    "c": false
   },
   {
     "type": "tf",
@@ -52,147 +36,12 @@
   },
   {
     "type": "tf",
-    "q": "The magnifying power of a simple microscope is always less than 1.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In a simple microscope, the object is placed between the focus and the optical center.",
+    "q": "For a normal human eye, the near point is about 25 cm.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "The image formed by a simple microscope is virtual, erect, and magnified.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A compound microscope consists of two converging lenses.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The lens near the object in a compound microscope is called the eyepiece.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The focal length of the objective lens in a compound microscope is very large.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The objective of a compound microscope forms a real, inverted, and magnified image.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The final image formed by a compound microscope is virtual and inverted with respect to the object.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The magnifying power of a compound microscope is the product of the magnification of the objective and the magnifying power of the eyepiece.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The astronomical telescope is used to view objects on the Earth's surface.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "An astronomical telescope consists of two converging lenses.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In an astronomical telescope, the objective lens has a larger focal length than the eyepiece.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The final image in an astronomical telescope is virtual and erect.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In normal adjustment of a telescope, the final image is formed at infinity.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The length of an astronomical telescope in normal adjustment is fo + fe.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A terrestrial telescope produces a final image that is erect with respect to the object.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A terrestrial telescope uses an erecting lens between the objective and the eyepiece.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The erecting lens in a terrestrial telescope increases the magnifying power.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The Galilean telescope uses a diverging lens as the eyepiece.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The final image in a Galilean telescope is virtual and inverted.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The length of a Galilean telescope is fo - fe.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The eye is very similar to a camera in its optical function.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The crystalline lens of the eye is a converging lens.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The retina acts as a screen on which the image is formed.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Accommodation is the process by which the eye changes its focal length.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The near point for a normal human eye is approximately 25 cm.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Myopia is a defect where the eye cannot see distant objects clearly.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Myopia is corrected using a convex lens.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Hypermetropia is a defect where the eye cannot see nearby objects clearly.",
+    "q": "In a compound microscope, the first image is inverted.",
     "c": true
   },
   {
@@ -202,52 +51,202 @@
   },
   {
     "type": "tf",
-    "q": "In a myopic eye, the image of a distant object is formed behind the retina.",
+    "q": "The smaller the f-number, the narrower the aperture is.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "Presbyopia is a defect that usually occurs with old age.",
+    "q": "The image formed by a simple microscope is virtual, erect and magnified.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "The power of a lens is measured in diopters.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The power of a converging lens is negative.",
+    "q": "In cameras, the images can only be recorded on the films.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "The magnification of a lens is the ratio of image height to object height.",
+    "q": "An astronomical telescope consists of two converging lenses.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "Refracting telescopes use mirrors to gather light.",
+    "q": "In an astronomical telescope, the first image is erect.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "The objective of a camera is usually a single simple lens.",
+    "q": "The eyepiece of a compound microscope is a converging lens of short focal length.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The focal length of the objective lens is smaller than the focal length of the eyepiece lens in a compound microscope.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "All cameras form the images in the same basic way.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The retina acts as a screen on which the image is formed.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a simple microscope, the object is placed at the focus of the lens.",
     "c": false
   },
   {
     "type": "tf",
-    "q": "A prism binocular uses total internal reflection to fold the light path.",
+    "q": "When a telescope is in normal adjustment, the final image is formed at infinity.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "The resolving power of a telescope increases with the diameter of the objective.",
+    "q": "In a camera, the diaphragm is a circular opening through which the light passes.",
     "c": true
   },
   {
     "type": "tf",
-    "q": "Chromatice aberration occurs in lenses but not in mirrors.",
+    "q": "The magnifying power of a telescope in normal adjustment is M = fo / fe.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a compound microscope, the final image is inverted with respect to the first object.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When taking a photograph in bright light a small f-number must be used.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Spectacles are optical instruments employing lenses.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The eye is very similar to a camera in its optical function.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a compound microscope, the first image is real, inverted and magnified.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The size or the diameter of the aperture is expressed in terms of the f-number.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Many different types of lenses play an important part in our daily lives.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The magnifying power of a simple microscope is always less than 1.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In a compound microscope, the first image must fall within the focal length of the eyepiece.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A compound microscope consists of two converging lenses.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The camera uses a concave lens to form an image.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In an astronomical telescope, the objective lens has a short focal length.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Hypermetropia is the defect of vision in which the eye can see distant objects clearly but cannot see nearby objects clearly.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When photographing in dim light a narrow aperture must be used.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In a compound microscope, the final image is virtual.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The image formed on the film of a camera is erect.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Myopia is corrected using a diverging lens.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a compound microscope, the object is placed between Fo and 2Fo of the objective lens.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The focal length of the objective lens is much larger than that of the eyepiece lens in an astronomical telescope.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an astronomical telescope, the first image is real and inverted.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The magnifying power of a simple microscope is M = 1 + D/f.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The lens near the object in a compound microscope is called the eyepiece.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The separation between the two lenses of an astronomical telescope in normal adjustment is L = fo + fe.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When photographing in bright light a wide aperture must be used.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A person with a myopic eye can see nearby objects clearly.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a camera, the diaphragm controls the amount of light energy falling on the film.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The image formed on the retina is real and inverted.",
     "c": true
   }
 ]
