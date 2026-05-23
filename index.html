@@ -14,48 +14,26 @@
         }
         body { background-color: var(--bg); color: var(--white); font-family: sans-serif; margin: 0; padding: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
         .container { padding: 15px; flex: 1; overflow-y: auto; box-sizing: border-box; padding-bottom: 90px; }
-        
         .subject-card { background: var(--accent); padding: 20px; border-radius: 18px; margin-bottom: 12px; font-size: 1.2rem; font-weight: bold; display: flex; justify-content: space-between; align-items: center; cursor: pointer; color: white; }
         .locked { background: var(--lock); opacity: 0.6; }
-        
         .screen { display: none; }
         .active-screen { display: block; animation: fadeIn 0.3s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
         .btn { background: var(--accent); color: white; border: none; padding: 16px; border-radius: 12px; font-weight: bold; width: 100%; margin: 8px 0; cursor: pointer; text-align: center; box-sizing: border-box; font-size: 1rem; -webkit-tap-highlight-color: transparent; }
         .back-btn { background: var(--secondary-btn); margin-top: 20px; }
         .next-btn { background: var(--success); display: none; margin-top: 10px; }
-
         .option-btn { background: var(--card); border: 2px solid #334155; transition: 0.2s; color: white; }
         .correct-opt { background: var(--success) !important; border-color: var(--success) !important; }
         .wrong-opt { background: var(--error) !important; border-color: var(--error) !important; }
-
-        /* Flashcard Styling */
         .flash-container { perspective: 1000px; height: 320px; cursor: pointer; margin: 20px 0; }
         .flash-card { width: 100%; height: 100%; position: relative; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 20px; }
         .flash-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; border-radius: 20px; padding: 25px; text-align: center; box-sizing: border-box; border: 3px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .flash-front { background: var(--card); color: var(--white); }
         .flash-back { background: var(--accent); color: white; transform: rotateY(180deg); font-size: 1.1rem; }
         .is-flipped { transform: rotateY(180deg); }
-
-        #profile-avatar { width: 100px; height: 100px; margin: 0 auto; display: block; }
-        .profile-info-card { background: var(--card); padding: 20px; border-radius: 15px; text-align: center; margin-top: 15px; border: 1px solid #334155; }
-        .bought-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 15px 0; }
-        .bought-badge { background: rgba(56, 189, 248, 0.15); color: var(--accent); padding: 6px 12px; border-radius: 8px; font-size: 0.85rem; border: 1px solid var(--accent); font-weight: bold; }
-        .buy-btn { background: var(--success); text-decoration: none; display: block; margin-top: 10px; }
-        
-        .gender-container { margin: 15px 0; display: flex; align-items: center; justify-content: center; gap: 15px; font-weight: bold; }
-        .switch { position: relative; display: inline-block; width: 60px; height: 30px; }
-        .switch input { opacity: 0; width: 0; height: 0; }
-        .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #475569; transition: .4s; border-radius: 30px; }
-        .slider:before { position: absolute; content: ""; height: 22px; width: 22px; left: 4px; bottom: 4px; background-color: white; transition: .4s; border-radius: 50%; }
-        input:checked + .slider { background-color: var(--accent); }
-        input:checked + .slider:before { transform: translateX(30px); }
-
         .nav { position: fixed; bottom: 0; width: 100%; height: 70px; background: var(--card); display: flex; justify-content: space-around; align-items: center; border-top: 1px solid #334155; z-index: 100; }
         .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; transition: 0.3s; }
         .nav-active { opacity: 1; color: var(--accent); transform: scale(1.1); }
-        
         .quiz-input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--accent); background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; font-size: 1rem; outline: none; }
         .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1.8; white-space: pre-line; text-align: center; }
     </style>
@@ -67,75 +45,29 @@
             <h2 style="text-align: center; color: var(--accent);">ဘာသာရပ်များ</h2>
             <div id="subject-list"></div>
         </div>
-
         <div id="middle-screen" class="screen">
             <div style="height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
-                <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
+                <h2 style="color: var(--accent);">The Arkot</h2>
                 <p style="color: #94A3B8;">Digital Education for Everyone</p>
             </div>
         </div>
-
         <div id="profile-screen" class="screen">
             <div style="text-align: center;">
-                <svg id="profile-avatar" viewBox="0 0 100 100">
-                    <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
-                    <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="45" x2="30" y2="60" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="45" x2="70" y2="60" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="70" x2="35" y2="90" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
-                    <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
-                </svg>
                 <h2 id="user-name" style="margin: 10px 0 5px;">Scholar</h2>
-                <p id="user-id-text" style="color: #94A3B8; margin-bottom: 10px;"></p>
-                
-                <div class="gender-container">
-                    <span>ကျား</span>
-                    <label class="switch">
-                        <input type="checkbox" id="gender-switch" onchange="updateAvatar(true)">
-                        <span class="slider"></span>
-                    </label>
-                    <span>မ</span>
-                </div>
-
-                <div class="profile-info-card">
-                    <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
-                    <div id="bought-items-container" class="bought-container"></div>
-                    <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
-                </div>
+                <p id="user-id-text" style="color: #94A3B8;"></p>
+                <button class="btn back-btn" onclick="tg.close()">အက်ပ်မှထွက်မည်</button>
             </div>
         </div>
-
         <div id="menu-screen" class="screen">
             <h2 id="menu-title" style="text-align: center; color: var(--accent);"></h2>
             <div id="menu-content"></div>
             <button class="btn back-btn" onclick="showScreen('home')">ပင်မစာမျက်နှာသို့</button>
         </div>
-
         <div id="activity-screen" class="screen">
             <h2 id="activity-title" style="text-align: center; color: var(--accent);"></h2>
             <div id="activity-content"></div>
             <button class="btn back-btn" id="activity-back-btn">နောက်သို့</button>
         </div>
-
-        <div id="flashcard-screen" class="screen">
-            <h2 id="flash-title" style="text-align: center; color: var(--accent); margin-bottom: 5px;">Flashcard</h2>
-            <p id="flash-count" style="text-align: center; color: #94A3B8; margin: 0;">1 / 1</p>
-            
-            <div class="flash-container" onclick="flipCard()">
-                <div id="flash-card" class="flash-card">
-                    <div class="flash-face flash-front" id="flash-front-content"></div>
-                    <div class="flash-face flash-back" id="flash-back-content"></div>
-                </div>
-            </div>
-
-            <div style="display: flex; gap: 10px;">
-                <button class="btn" style="background: var(--secondary-btn);" onclick="prevFlash()">⬅️ ရှေ့သို့</button>
-                <button class="btn" onclick="nextFlash()">နောက်သို့ ➡️</button>
-            </div>
-            <button class="btn back-btn" onclick="showScreen('activity')">ထွက်မည်</button>
-        </div>
-
         <div id="quiz-screen" class="screen">
             <div id="quiz-progress" style="text-align: center; color: var(--accent); font-weight: bold; margin-bottom: 10px;"></div>
             <div id="question-box" style="font-size: 1.2rem; text-align: center; margin: 20px 0; line-height: 1.5;"></div>
@@ -143,11 +75,20 @@
             <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
             <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
         </div>
-
-        <div id="poem-screen" class="screen">
-            <h2 id="poem-title" style="text-align: center; color: var(--accent);"></h2>
-            <div id="poem-body" class="poem-content"></div>
-            <button class="btn back-btn" onclick="showENPoemOptions()">နောက်သို့</button>
+        <div id="flashcard-screen" class="screen">
+            <h2 id="flash-title" style="text-align: center; color: var(--accent); margin-bottom: 5px;">Flashcard</h2>
+            <p id="flash-count" style="text-align: center; color: #94A3B8; margin: 0;">1 / 1</p>
+            <div class="flash-container" onclick="flipCard()">
+                <div id="flash-card" class="flash-card">
+                    <div class="flash-face flash-front" id="flash-front-content"></div>
+                    <div class="flash-face flash-back" id="flash-back-content"></div>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn" style="background: var(--secondary-btn);" onclick="prevFlash()">⬅️ ရှေ့သို့</button>
+                <button class="btn" onclick="nextFlash()">နောက်သို့ ➡️</button>
+            </div>
+            <button class="btn back-btn" onclick="showScreen('activity')">ထွက်မည်</button>
         </div>
     </div>
 
@@ -161,21 +102,13 @@
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { 
-            "8432363664": ["all"],
-            "5593040432": ["all"],
-            "6912601908": ["phy"],
-            "1625758870": ["all"]
-        };
-
+        const paidUsers = { "8432363664": ["all"], "1625758870": ["all"] };
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ' },
             { id: 'en', name: 'အင်္ဂလိပ်စာ' },
             { id: 'math', name: 'သင်္ချာ', chapters: 11 },
             { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
-            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
-            { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 },
-            { id: 'eco', name: 'ဘောဂဗေဒ', chapters: 8 }
+            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 }
         ];
 
         let currentSubject = null;
@@ -207,22 +140,7 @@
             const content = document.getElementById('menu-content');
             content.innerHTML = '';
 
-            if (sub.id === 'en') {
-                ['Initial Letter', 'MCQ', 'Grammar', 'Poem'].forEach(type => {
-                    createBtn(type, content, () => {
-                        if (type === 'Initial Letter' || type === 'MCQ') showENUnits(type);
-                        else if (type === 'Grammar') showENGrammarOptions();
-                        else if (type === 'Poem') showENPoemOptions();
-                    });
-                });
-            } else if (sub.id === 'mm') {
-                ['မှား/မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး', 'ခက်ဆစ်', 'အလင်္ကာ'].forEach(m => {
-                    createBtn(m, content, () => {
-                        if (['မှား/မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'].includes(m)) showMMQuizOptions(m);
-                        else showMMFlashcardOptions(m);
-                    });
-                });
-            } else if (sub.id === 'phy' || sub.id === 'chem') {
+            if (sub.id === 'phy' || sub.id === 'chem') {
                 for(let i=1; i<=sub.chapters; i++) {
                     createBtn(`Chapter ${i}`, content, () => showPhyChemActivities(sub.id, `Chapter ${i}`));
                 }
@@ -233,238 +151,85 @@
             }
         }
 
-        // --- English Specific ---
-        function showENUnits(typeName) {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = typeName;
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            for (let i = 1; i <= 12; i++) {
-                createBtn(`Unit ${i}`, content, () => {
-                    initQuiz(`en_unit${i}_${typeName.toLowerCase().replace(' ', '_')}`);
-                    document.getElementById('quiz-back-btn').onclick = () => showENUnits(typeName);
-                });
-            }
-        }
-
-        function showENGrammarOptions() {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = "Grammar";
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ["Tense", "Passive Voice", "Direct Indirect"].forEach(t => createBtn(t, content, () => tg.showAlert(t + " Coming Soon...")));
-        }
-
-        function showENPoemOptions() {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = "Poems";
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ["Poem 1", "Poem 2", "Poem 3", "Poem 4"].forEach(p => createBtn(p, content, () => {
-                showScreen('poem');
-                document.getElementById('poem-title').innerText = p;
-                document.getElementById('poem-body').innerText = "ကဗျာစာသားများကို ဤနေရာတွင် ဖတ်ရှုနိုင်ပါသည်။";
-            }));
-        }
-
-        // --- Myanmar Specific ---
-        function showMMQuizOptions(typeName) {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = typeName;
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ['အပြော', 'အရေး', 'အဖတ်'].forEach(cat => {
-                createBtn(cat, content, () => {
-                    initQuiz(`mm_${cat}_${typeName}`.replace(/\//g, "_").replace(/ /g, "_"));
-                    document.getElementById('quiz-back-btn').onclick = () => showMMQuizOptions(typeName);
-                });
-            });
-        }
-
-        function showMMFlashcardOptions(typeName) {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = typeName;
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            
-            createBtn("စကားပြေ", content, () => showMMSubTopics(typeName, "စကားပြေ"));
-            createBtn("ကဗျာ", content, () => showMMSubTopics(typeName, "ကဗျာ"));
-            createBtn("ရေသည်", content, () => tg.showAlert("ရေသည်ပြဇာတ် မကြာမီလာမည်..."));
-        }
-
-        function showMMSubTopics(typeName, category) {
-            showScreen('activity');
-            const content = document.getElementById('activity-content');
-            content.innerHTML = `<h3 style="text-align:center">${category} (${typeName})</h3>`;
-            document.getElementById('activity-back-btn').onclick = () => showMMFlashcardOptions(typeName);
-
-            let topics = [];
-            if (category === "စကားပြေ") {
-                topics = ["ညောင်ရမ်းကြီးသမီး", "သစ္စာနှင့်ပညာ", "ခေတ်", "မလုပ်မစား", "စာဘူးတောင်း", "ဦးဖေမောင်တင်", "အဖြူနှင့်အနက်", "စိတ်ဓာတ်ရင့်ကျက်တည်ငြိမ်ခြင်း"];
-            } else if (category === "ကဗျာ") {
-                topics = ["ပေါ်နွေလလျှင်", "ငါ့ကိုလွယ်အမယ်ကြီးနှင့်", "ဩဝါဒထူးပျို့", "ပေါင်းရှစ်ယောက် ကောက်စိုက်သူ", "အညာမင်္ဂလာဆောင်", "ကမ္ဗောဇသို့", "လက်ဖက်ရည်ကြမ်းဝိုင်း", "ပဒေသာလက်ရာ"];
-            }
-
-            topics.forEach(t => {
-                createBtn(t, content, () => {
-                    const fName = `${currentSubject.id}_${category}_${typeName}_${t}`.replace(/ /g, "_");
-                    initFlashcards(fName);
-                });
-            });
-        }
-
-        // --- Phy/Chem Special Menu ---
         function showPhyChemActivities(subId, partName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = partName;
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            
-            // Standard Quizzes
-            ['True_False', 'Fill_Blank', 'MCQ'].forEach(type => {
+            ['True_False', 'Fill_Blank', 'MCQ', 'Definition', 'Formula'].forEach(type => {
                 createBtn(type.replace('_', ' '), content, () => {
-                    initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
-                    document.getElementById('quiz-back-btn').onclick = () => showPhyChemActivities(subId, partName);
+                    if(type === 'Definition' || type === 'Formula') initFlashcards(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+                    else initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
                 });
             });
-
-            // Flashcards Division
-            createBtn('Flashcard (Definition)', content, () => {
-                initFlashcards(`${subId}_${partName}_Definition`.replace(/ /g, "_"));
-                document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
-            });
-            createBtn('Flashcard (Formula)', content, () => {
-                initFlashcards(`${subId}_${partName}_Formula`.replace(/ /g, "_"));
-                document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
-            });
         }
 
-        // --- Flashcard Engine ---
-        async function initFlashcards(fileName) {
-            try {
-                const res = await fetch(`./quizzes/${fileName}.json`);
-                if(!res.ok) throw new Error();
-                flashCards = await res.json();
-                flashIdx = 0;
-                showScreen('flashcard');
-                updateFlashUI();
-            } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName); }
-        }
-
-        function updateFlashUI() {
-            const card = document.getElementById('flash-card');
-            card.classList.remove('is-flipped');
-            document.getElementById('flash-front-content').innerText = flashCards[flashIdx].q;
-            document.getElementById('flash-back-content').innerText = flashCards[flashIdx].a;
-            document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
-            // Render Math Symbols if present
-            if (window.MathJax) MathJax.typesetPromise();
-        }
-
-        function flipCard() {
-            document.getElementById('flash-card').classList.toggle('is-flipped');
-        }
-
-        function nextFlash() {
-            if (flashIdx < flashCards.length - 1) { flashIdx++; updateFlashUI(); }
-        }
-
-        function prevFlash() {
-            if (flashIdx > 0) { flashIdx--; updateFlashUI(); }
-        }
-
-        // --- General Subjects ---
         function showGeneralActivities(subId, partName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = partName;
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            
-            let types = ['True_False', 'Fill_Blank', 'MCQ'];
-            // If Math, add Mark divisions
-            if(subId === 'math') {
-                types = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
-            }
-
+            let types = subId === 'math' ? ['1_Mark', '2_Marks', '3_Marks', '5_Marks'] : ['True_False', 'Fill_Blank', 'MCQ'];
             types.forEach(type => {
-                createBtn(type.replace('_', ' '), content, () => {
-                    initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
-                    document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
-                });
+                createBtn(type.replace('_', ' '), content, () => initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_")));
             });
         }
 
-        // --- Quiz Engine ---
         async function initQuiz(fileName) {
             try {
                 const res = await fetch(`./quizzes/${fileName}.json`);
                 if(!res.ok) throw new Error();
                 currentQuestions = await res.json();
                 currentIdx = 0; showScreen('quiz'); loadQuestion();
-            } catch (e) { tg.showAlert("မေးခွန်းဖိုင်မတွေ့သေးပါ- " + fileName); }
+            } catch (e) { tg.showAlert("ဖိုင်မတွေ့ပါ- " + fileName); }
         }
 
         function loadQuestion() {
             isAnswered = false; document.getElementById('next-btn').style.display = 'none';
             const q = currentQuestions[currentIdx];
+            const questionText = q.q || q.question || "No Question";
             document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
-            document.getElementById('question-box').innerText = q.q;
+            document.getElementById('question-box').innerText = questionText;
             const optDiv = document.getElementById('quiz-options'); optDiv.innerHTML = '';
 
-            if (q.type === 'mcq' || q.type === 'tf') {
-                let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
+            if (q.type === 'blank' || !q.a) { // ၂ မှတ်တန်ကဲ့သို့ အဖြေတိုက်ရုံပုံစံ
+                const input = document.createElement('input');
+                input.className = 'quiz-input'; input.placeholder = "အဖြေကို စဉ်းစားထားပါ...";
+                const sBtn = document.createElement('button');
+                sBtn.className = 'btn'; sBtn.innerText = "အဖြေမှန်ကြည့်မည်";
+                sBtn.onclick = () => {
+                    if(isAnswered) return; isAnswered = true;
+                    input.value = q.c || q.answer;
+                    input.style.color = 'var(--success)';
+                    document.getElementById('next-btn').style.display = 'block';
+                    if (window.MathJax) MathJax.typesetPromise();
+                };
+                optDiv.append(input, sBtn);
+            } else { // MCQ / True-False
+                const opts = q.a || [];
                 opts.forEach((a, i) => {
                     const btn = document.createElement('button'); btn.className = 'btn option-btn'; btn.innerText = a;
                     btn.onclick = () => {
                         if(isAnswered) return; isAnswered = true;
-                        let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
+                        const correct = q.c;
                         document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                            if(idx === correctIdx) b.classList.add('correct-opt');
+                            if(idx === correct) b.classList.add('correct-opt');
                             else if(idx === i) b.classList.add('wrong-opt');
                         });
                         document.getElementById('next-btn').style.display = 'block';
                     };
                     optDiv.appendChild(btn);
                 });
-            } else if (q.type === 'blank') {
-                const input = document.createElement('input');
-                input.className = 'quiz-input'; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
-                const sBtn = document.createElement('button');
-                sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
-                sBtn.onclick = () => {
-                    if(isAnswered) return; isAnswered = true;
-                    if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) tg.showAlert("မှန်ကန်ပါသည်။ ✅");
-                    else tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
-                    document.getElementById('next-btn').style.display = 'block';
-                };
-                optDiv.append(input, sBtn);
             }
-            // Render Math Symbols if present
             if (window.MathJax) MathJax.typesetPromise();
         }
 
         function nextQuestion() {
             currentIdx++;
             if (currentIdx < currentQuestions.length) loadQuestion();
-            else { tg.showAlert("ပြီးဆုံးပါပြီ။"); document.getElementById('quiz-back-btn').click(); }
-        }
-
-        // --- UI Utils ---
-        function updateAvatar(save = false) {
-            const isFemale = document.getElementById('gender-switch').checked;
-            document.getElementById('hair').style.display = isFemale ? 'block' : 'none';
-            if(save) localStorage.setItem('userGender', isFemale ? 'female' : 'male');
-        }
-
-        function createBtn(txt, parent, act) {
-            const b = document.createElement('button'); b.className = 'btn'; b.innerText = txt; b.onclick = act; parent.appendChild(b);
+            else { tg.showAlert("ပြီးဆုံးပါပြီ။"); showScreen('activity'); }
         }
 
         function showScreen(id) {
@@ -477,30 +242,12 @@
             document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('nav-active'));
             el.classList.add('nav-active');
             if(id === 'home') renderSubjects();
-            if(id === 'profile') renderProfileData();
         }
 
-        function renderProfileData() {
-            document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
-            document.getElementById('user-id-text').innerText = "ID: " + userId;
-            const container = document.getElementById('bought-items-container');
-            container.innerHTML = '';
-            const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
-            if(bought.length > 0) {
-                bought.forEach(s => {
-                    const span = document.createElement('span');
-                    span.className = 'bought-badge';
-                    span.innerText = s.name;
-                    container.appendChild(span);
-                });
-            } else { container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; }
+        function createBtn(txt, parent, act) {
+            const b = document.createElement('button'); b.className = 'btn'; b.innerText = txt; b.onclick = act; parent.appendChild(b);
         }
 
-        // --- Init ---
-        if(localStorage.getItem('userGender') === 'female') {
-            document.getElementById('gender-switch').checked = true;
-            updateAvatar();
-        }
         renderSubjects();
     </script>
 </body>
