@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The world's reliance on _______ is very great.",
+    "c": "electronics"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ receiver is an electronic appliance.",
+    "c": "television"
+  },
+  {
+    "type": "blank",
+    "q": "Electronic circuits contain _______ electrical components and associated passive interconnection technologies.",
+    "c": "active"
+  },
+  {
+    "type": "blank",
+    "q": "Passive electrical components do not require a _______ to operate.",
+    "c": "power source"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is an active electrical component.",
+    "c": "transistor"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is a passive electrical component.",
+    "c": "resistor"
+  },
+  {
+    "type": "blank",
+    "q": "The most important material in the electronic industry is the _______.",
+    "c": "semiconductor"
+  },
+  {
+    "type": "blank",
+    "q": "The process of adding a tiny amount of impurity to an intrinsic semiconductor is called _______.",
+    "c": "doping"
+  },
+  {
+    "type": "blank",
+    "q": "Pentavalent impurities are also called _______ impurities.",
+    "c": "donor"
+  },
+  {
+    "type": "blank",
+    "q": "Trivalent impurities are also called _______ impurities.",
+    "c": "acceptor"
+  },
+  {
+    "type": "blank",
+    "q": "The majority charge carriers in n-type semiconductors are _______.",
+    "c": "electrons"
+  },
+  {
+    "type": "blank",
+    "q": "The majority charge carriers in p-type semiconductors are _______.",
+    "c": "holes"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ allows current to flow in one direction only.",
+    "c": "diode"
+  },
+  {
+    "type": "blank",
+    "q": "A diode is in _______ bias when the p-type is connected to the positive terminal.",
+    "c": "forward"
+  },
+  {
+    "type": "blank",
+    "q": "A diode is in _______ bias when the p-type is connected to the negative terminal.",
+    "c": "reverse"
+  },
+  {
+    "type": "blank",
+    "q": "The process of converting AC into DC is called _______.",
+    "c": "rectification"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ rectifier uses four diodes.",
+    "c": "bridge"
+  },
+  {
+    "type": "blank",
+    "q": "LED stands for _______.",
+    "c": "light-emitting diode"
+  },
+  {
+    "type": "blank",
+    "q": "LEDs convert electrical energy into _______ energy.",
+    "c": "light"
+  },
+  {
+    "type": "blank",
+    "q": "The _______'s resistance decreases as light intensity increases.",
+    "c": "LDR"
+  },
+  {
+    "type": "blank",
+    "q": "The resistance of a _______ changes with temperature.",
+    "c": "thermistor"
+  },
+  {
+    "type": "blank",
+    "q": "The transistor was invented in _______.",
+    "c": "1947"
+  },
+  {
+    "type": "blank",
+    "q": "An n-p-n transistor has three regions: emitter, _______, and collector.",
+    "c": "base"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a transistor is heavily doped compared to the base.",
+    "c": "emitter"
+  },
+  {
+    "type": "blank",
+    "q": "A transistor can act as an electronic _______.",
+    "c": "switch"
+  },
+  {
+    "type": "blank",
+    "q": "Logic gates are the basic building blocks of _______ systems.",
+    "c": "digital"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ gate is also known as an inverter.",
+    "c": "NOT"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ gate output is high only if all inputs are high.",
+    "c": "AND"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ gate output is high if any input is high.",
+    "c": "OR"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ gate is a combination of an AND gate and a NOT gate.",
+    "c": "NAND"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ gate output is high only if all inputs are low.",
+    "c": "NOR"
+  },
+  {
+    "type": "blank",
+    "q": "LCD stands for _______.",
+    "c": "liquid crystal display"
+  },
+  {
+    "type": "blank",
+    "q": "LCDs produce an image using a _______.",
+    "c": "backlight"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ diode is designed to operate in the breakdown region.",
+    "c": "Zener"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ stores electrical energy in an electric field.",
+    "c": "capacitor"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ circuit contains many electronic components on a single chip.",
+    "c": "integrated"
+  },
+  {
+    "type": "blank",
+    "q": "In n-type material, the pentavalent atoms provide free _______.",
+    "c": "electrons"
+  },
+  {
+    "type": "blank",
+    "q": "In p-type material, the trivalent atoms provide _______.",
+    "c": "holes"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ bias p-n junction has a very high resistance.",
+    "c": "reverse"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ region is formed at the junction of p-type and n-type semiconductors.",
+    "c": "depletion"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ diode can be used for voltage regulation.",
+    "c": "Zener"
+  },
+  {
+    "type": "blank",
+    "q": "In a transistor, the _______ current is the sum of base and collector currents.",
+    "c": "emitter"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is the thinnest layer in a transistor.",
+    "c": "base"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ signal is a continuous signal.",
+    "c": "analog"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ signal consists of discrete values, usually 0 and 1.",
+    "c": "digital"
+  },
+  {
+    "type": "blank",
+    "q": "The Boolean expression for an OR gate is Y = _______.",
+    "c": "A + B"
+  },
+  {
+    "type": "blank",
+    "q": "The Boolean expression for an AND gate is Y = _______.",
+    "c": "A . B"
+  },
+  {
+    "type": "blank",
+    "q": "Liquid crystals are a state of _______.",
+    "c": "matter"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ can convert unpolarized light into polarized light.",
+    "c": "polarizer"
+  },
+  {
+    "type": "blank",
+    "q": "Modern smartphones commonly use _______ displays.",
+    "c": "LCD"
+  }
+]
