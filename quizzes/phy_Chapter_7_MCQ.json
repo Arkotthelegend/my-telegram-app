@@ -1,303 +1,302 @@
-
 [
   {
     "type": "mcq",
+    "q": "When the compound microscope is in a normal setting, the final image is at _______.",
+    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
     "q": "The image formed on the film of a camera is _______.",
-    "a": ["Real, erect, and enlarged", "Virtual, inverted, and diminished", "Real, inverted, and diminished"],
+    "a": ["real, erect and enlarged", "virtual, inverted and diminished", "real, inverted and diminished"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The component in a camera that controls the time the light falls on the film is the _______.",
-    "a": ["Diaphragm", "Shutter", "Convex lens"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A simple microscope consists of a single _______.",
-    "a": ["Diverging lens", "Converging lens", "Concave mirror"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a simple microscope, the object is placed _______.",
-    "a": ["At the focus", "Between the focus and the optical center", "Beyond the focus"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The final image formed by a simple microscope is _______.",
-    "a": ["Real and inverted", "Virtual and erect", "Real and erect"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A compound microscope uses two lenses known as the _______.",
-    "a": ["Objective and eyepiece", "Primary and secondary", "Convex and concave"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In a compound microscope, the objective lens has a _______ focal length.",
-    "a": ["Long", "Short", "Variable"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The first image formed by the objective of a compound microscope is _______.",
-    "a": ["Virtual, erect, and diminished", "Real, inverted, and magnified", "Virtual, inverted, and magnified"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The magnifying power of a compound microscope is the _______ of the magnifications of its lenses.",
-    "a": ["Sum", "Difference", "Product"],
+    "q": "If the magnification of the objective is p and the magnifying power of the eyepiece is q, then the magnifying power of the compound microscope is _______.",
+    "a": ["p + q", "p^q", "pq"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The astronomical telescope is primarily used to view _______.",
-    "a": ["Microscopic organisms", "Distant celestial objects", "Nearby terrestrial objects"],
+    "q": "In a compound microscope, the first object must be placed _______ of the objective.",
+    "a": ["at 2Fo", "beyond 2Fo", "between Fo and 2Fo"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "For a normal human eye, the near point is about _______.",
+    "a": ["10 cm", "25 cm", "50 cm"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "In an astronomical telescope, the objective has a _______ focal length than the eyepiece.",
-    "a": ["Smaller", "Larger", "Equal"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Normal adjustment for a telescope means the final image is formed at _______.",
-    "a": ["The near point", "Infinity", "The focal point"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The length of an astronomical telescope in normal adjustment is _______.",
+    "q": "The separation of the lenses of the astronomical telescope in normal adjustment is _______.",
     "a": ["fo - fe", "fo + fe", "fo / fe"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which telescope uses an erecting lens to provide an upright image?",
-    "a": ["Astronomical", "Terrestrial", "Galilean"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A Galilean telescope uses a _______ lens as an eyepiece.",
-    "a": ["Converging", "Diverging", "Bifocal"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The length of a Galilean telescope is given by _______.",
-    "a": ["fo + fe", "fo - fe", "fo + 2fe"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The crystalline lens of the human eye is a _______.",
-    "a": ["Converging lens", "Diverging lens", "Cylindrical lens"],
+    "q": "The camera uses a _______ lens to form an image.",
+    "a": ["convex", "concave", "bifocal"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The ability of the eye to focus on both near and far objects is called _______.",
-    "a": ["Magnification", "Accommodation", "Resolution"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The near point for a normal human eye is roughly _______.",
-    "a": ["10 cm", "25 cm", "100 cm"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A person who cannot see distant objects clearly suffers from _______.",
-    "a": ["Hypermetropia", "Presbyopia", "Myopia"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Myopia is corrected using a _______ lens.",
-    "a": ["Converging", "Diverging", "Cylindrical"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Hypermetropia is corrected using a _______ lens.",
-    "a": ["Converging", "Diverging", "Concave"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The power of a lens is measured in _______.",
-    "a": ["Meters", "Watts", "Diopters"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A converging lens with a focal length of 0.5m has a power of _______.",
-    "a": ["+0.5 D", "+2.0 D", "-2.0 D"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The separation of lenses in a compound microscope is _______.",
-    "a": ["vo + ue", "fo + fe", "vo + fo"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The f-number of a camera is the ratio of focal length to _______.",
-    "a": ["Object distance", "Aperture diameter", "Image height"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A small f-number in a camera indicates a _______ aperture.",
-    "a": ["Wide", "Narrow", "Fixed"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The magnifying power of a telescope in normal adjustment is _______.",
+    "q": "In an astronomical telescope, the magnifying power is M = _______.",
     "a": ["fe / fo", "fo / fe", "fo + fe"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "In a compound microscope, the final image is _______.",
-    "a": ["Virtual and erect", "Virtual and inverted", "Real and inverted"],
+    "q": "A simple microscope consists of a single _______ lens of short focal length.",
+    "a": ["diverging", "converging", "concave"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Myopia is corrected by using a _______ lens.",
+    "a": ["converging", "diverging", "cylindrical"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The separation of the lenses of the compound microscope is _______.",
+    "a": ["vo + uo", "ve + ue", "vo + ue"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The image formed by a simple microscope is _______.",
+    "a": ["real, inverted and magnified", "virtual, erect and magnified", "real, erect and diminished"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Hypermetropia is corrected by using a _______ lens.",
+    "a": ["converging", "diverging", "concave"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The component in a camera that controls the time the light falls on the film is the _______.",
+    "a": ["diaphragm", "shutter", "aperture"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In an astronomical telescope, the final image is _______ with respect to the first object.",
+    "a": ["erect", "inverted", "laterally inverted"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a compound microscope, the first image must be adjusted _______ of the eyepiece.",
+    "a": ["at 2Fe", "beyond 2Fe", "between Fe and P"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The magnifying power of a simple microscope in normal use is M = _______.",
+    "a": ["D / f", "1 + D/f", "f / D"],
     "c": 1
   },
   {
     "type": "mcq",
     "q": "Which part of the eye acts like the diaphragm of a camera?",
-    "a": ["Retina", "Iris", "Optic nerve"],
+    "a": ["Retina", "Iris", "Pupil"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The retina of the eye corresponds to the _______ of a camera.",
-    "a": ["Lens", "Shutter", "Film/Sensor"],
+    "q": "The focal length of the objective lens in an astronomical telescope is _______ than that of the eyepiece.",
+    "a": ["much larger", "much smaller", "equal"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "When photographing in bright light, a _______ f-number must be used.",
+    "a": ["small", "large", "zero"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a Galilean telescope, the eyepiece is a _______ lens.",
+    "a": ["converging", "diverging", "plano-convex"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The first image formed by the objective of a compound microscope is _______.",
+    "a": ["virtual and erect", "real and inverted", "virtual and inverted"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "When a telescope is in normal adjustment, the final image is formed at _______.",
+    "a": ["the focus", "25 cm", "infinity"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "In a hypermetropic eye, the image of a nearby object forms _______.",
-    "a": ["In front of the retina", "On the retina", "Behind the retina"],
+    "q": "The separation of lenses in a Galilean telescope is L = _______.",
+    "a": ["fo + fe", "fo - fe", "fo / fe"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The power of a lens P is given by _______.",
+    "a": ["1 / f", "f", "v / u"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In a myopic eye, the image of a distant object is formed _______ the retina.",
+    "a": ["on", "behind", "in front of"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Presbyopia is generally caused by _______.",
-    "a": ["Aging", "Infection", "Bright light"],
-    "c": 0
+    "q": "The _______ acts as a screen in the human eye.",
+    "a": ["cornea", "iris", "retina"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "A lens with negative power is a _______.",
-    "a": ["Convex lens", "Concave lens", "Plano-convex lens"],
+    "q": "The magnifying power of a compound microscope in normal setting is _______.",
+    "a": ["mo x 0.25 Pe", "mo x 25 Pe", "mo x Pe"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The objective of a telescope should have a large diameter for _______.",
-    "a": ["Higher magnification", "Better light gathering", "Lighter weight"],
+    "q": "A terrestrial telescope uses an _______ lens to produce an erect image.",
+    "a": ["objective", "eyepiece", "erecting"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "When the compound microscope is in a normal setting, the first image is at _______.",
+    "a": ["infinity", "25 cm", "the focus of the eyepiece"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The crystalline lens of the eye is a _______ lens.",
+    "a": ["converging", "diverging", "concave"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The size of the aperture in a camera is expressed in terms of _______.",
+    "a": ["metres", "f-number", "diopters"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The magnifying power of a simple microscope is M = _______.",
-    "a": ["1 + (D/f)", "D/f", "f/D"],
+    "q": "In a hypermetropic eye, the image of a nearby object is formed _______ the retina.",
+    "a": ["in front of", "on", "behind"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "To focus a camera on a near object, the distance between the lens and the film must be _______.",
+    "a": ["increased", "decreased", "kept constant"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a terrestrial telescope, the erecting lens has a magnification of _______.",
-    "a": ["-1", "1", "2"],
+    "q": "The power of a lens is measured in _______.",
+    "a": ["Watts", "Diopters", "Metres"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In an astronomical telescope, the objective lens forms a _______ image.",
+    "a": ["virtual and erect", "real and inverted", "real and erect"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The magnification of the objective of a compound microscope is mo = _______.",
+    "a": ["vo / uo", "uo / vo", "fo / fe"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The total length of a terrestrial telescope is _______.",
+    "q": "The ability of the eye to change its focal length is called _______.",
+    "a": ["magnification", "accommodation", "resolution"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a camera, the _______ is a circular opening that controls light.",
+    "a": ["shutter", "diaphragm", "lens"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A person suffering from _______ cannot see nearby objects clearly.",
+    "a": ["Myopia", "Hypermetropia", "Cataract"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The eyepiece of any optical instrument is the lens _______.",
+    "a": ["near the object", "near the eye", "in the middle"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The image formed on the retina is _______.",
+    "a": ["real and erect", "virtual and inverted", "real and inverted"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A magnifying glass is another name for a _______.",
+    "a": ["compound microscope", "simple microscope", "telescope"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The final image in a Galilean telescope is _______.",
+    "a": ["erect", "inverted", "diminished"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "When photographing in dim light, a _______ aperture must be used.",
+    "a": ["narrow", "wide", "fixed"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The objective lens of a compound microscope has a _______ focal length.",
+    "a": ["long", "short", "very large"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The near point of the eye is also called the least distance of _______ vision.",
+    "a": ["clear", "distinct", "blurred"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In an astronomical telescope, the first image is formed at _______.",
+    "a": ["the focus of the objective", "the focus of the eyepiece", "infinity"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The length of a terrestrial telescope in normal adjustment is _______.",
     "a": ["fo + fe", "fo + 4f + fe", "fo - fe"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "A prism binocular produces an erect image using _______.",
-    "a": ["Concave lenses", "Total internal reflection", "Refraction only"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The optical instrument used to see very small objects is the _______.",
-    "a": ["Telescope", "Microscope", "Camera"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A person uses a +2.5 D lens; they are correcting for _______.",
-    "a": ["Myopia", "Hypermetropia", "Astigmatism"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a camera, focusing is done by changing the distance between _______.",
-    "a": ["Lens and object", "Lens and film", "Diaphragm and shutter"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The objective of a compound microscope forms a _______ image.",
-    "a": ["Magnified", "Diminished", "Virtual"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The eyepiece of a microscope or telescope acts as a _______.",
-    "a": ["Simple microscope", "Objective lens", "Camera"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The resolving power of a telescope depends on _______.",
-    "a": ["Focal length", "Diameter of objective", "Length of tube"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A Galilean telescope provides a _______ field of view.",
-    "a": ["Wide", "Narrow", "Circular"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In normal adjustment of a compound microscope, the final image is at _______.",
-    "a": ["The focus", "Infinity", "The near point"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The power of a diverging lens of focal length 20 cm is _______.",
-    "a": ["+5 D", "-5 D", "-0.05 D"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of these is NOT an optical instrument?",
-    "a": ["Camera", "Spectacles", "Tuning fork"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The magnification produced by a camera is usually _______.",
-    "a": ["Greater than 1", "Less than 1", "Equal to 1"],
+    "q": "Which instrument employs total internal reflection using prisms?",
+    "a": ["Galilean telescope", "Prism binocular", "Simple microscope"],
     "c": 1
   }
 ]
