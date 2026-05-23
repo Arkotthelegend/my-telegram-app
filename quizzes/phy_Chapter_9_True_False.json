@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The failure of the electrolytic capacitors can cause an explosion or a fire.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance of a parallel-plate capacitor is inversely proportional to the area of the plates.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A resistor is a circuit component that stores electrical energy.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Capacitors in series all have the same charge.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitor was originally known as a condenser.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The potential difference across each capacitor in parallel is the same.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Film capacitors use plastic film as the conductors.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The SI unit of capacitance is the farad (F).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A capacitor stores electrical energy in the form of a magnetic field.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The thicker the ceramic disc, the greater the capacitance of the ceramic capacitor.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Electrolytic capacitors have a wide tolerance capacity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A dielectric is an insulating material.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The energy stored in a capacitor is U = 1/2 CV².",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ceramic capacitors use ceramic as the conductors.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In ceramic capacitors, one can develop both high capacitance and low capacitance.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance of a variable capacitor can be mechanically adjusted.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The equivalent capacitance of capacitors in parallel is always less than any individual capacitance.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A capacitor consists of two conductors separated by an insulator.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The failure of the electrolytic capacitors can be hazardous.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Electrolytic capacitors use the oxide layer as the dielectric.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance of a parallel-plate capacitor depends on the material between the plates.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Capacitors in parallel all have the same potential difference.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The unit of electric field strength is V m⁻¹.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance values of ceramic capacitors are stable with respect to the applied voltage.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The total charge of capacitors in series is the sum of individual charges.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Air is often used as a dielectric in variable capacitors.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitor is similar to a fixed battery.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The equivalent capacitance of series capacitors is 1/Cs = 1/C1 + 1/C2 + ...",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A dielectric constant is a dimensionless quantity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The electric field inside a conductor in electrostatic equilibrium is zero.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Capacitors are used to block direct current while allowing alternating current to pass.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When a dielectric is inserted, the capacitance decreases.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The charge on a capacitor is directly proportional to the potential difference.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Paper capacitors use thin sheets of metal foil as electrodes.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance of a parallel-plate capacitor is directly proportional to the distance between the plates.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "One farad is equal to one coulomb per volt.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mica capacitors are used in high-frequency circuits.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A lightning conductor is an application of the discharge of electricity from points.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The potential at a point due to a charge depends on the distance from the charge.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Work must be done to charge a capacitor.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The electric potential is a vector quantity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Film capacitors are available in nearly any value.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Surface charge density is charge per unit volume.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The capacitance is always a positive quantity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An electric dipole consists of two equal and opposite charges.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Electric field lines never cross each other.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The equivalent capacitance of parallel capacitors is Cp = C1 + C2 + ...",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Coulomb's law applies to stationary point charges.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The force between two charges is independent of the medium.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The potential on the surface of a charged conductor is the same at all points.",
+    "c": true
+  }
+]
