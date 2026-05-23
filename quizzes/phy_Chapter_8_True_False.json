@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The study of interference and diffraction deals with geometrical optics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Coherent sources must have the same frequency.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The secondary wavelets have the same frequency as the primary wavelets.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A diffraction grating consists of a large number of equally spaced parallel slits.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The ray approximation of geometrical optics is valid for the interference of light.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The wave model of light is necessary to explain interference and diffraction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Constructive interference occurs when the path difference is an integer multiple of the wavelength.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the phase difference is 0, 2π, 4π, 6π, the two positions are in phase.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The secondary wavelets spread out in all directions at the same speed as the primary wavelet.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The wavefront is always parallel to the direction of propagation.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "If the path difference is λ/2, 3λ/2, 5λ/2, it is said to be completely out of phase.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Light waves are longitudinal waves.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In Young's experiment, the central fringe is always bright.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Diffraction is the bending of light around the corners of an obstacle.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The study of physical optics includes the wave characteristics of light.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Destructive interference occurs when the path difference is an odd multiple of λ/2.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The phase angle is one of the important characteristics of the periodic wave.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Newton's rings are an example of interference in thin films.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the phase difference is π, 3π, 5π, the two positions are in phase.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The central maximum in a single-slit diffraction pattern is twice as wide as the secondary maxima.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Interference is the superposition of two or more waves.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Two light sources can be coherent if they are independent light bulbs.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "For diffraction to be significant, the size of the slit must be comparable to the wavelength of light.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The width of the interference fringes increases if the distance between the slits is increased.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The fringes produced by a diffraction grating are much sharper than those produced by two slits.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A wavefront is a surface of constant phase.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Geometrical optics is also known as wave optics.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The secondary wavelets have the same speed as the primary wavelets.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The study of interference deals with wave optics.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "If the path difference is 0, λ, 2λ, 3λ, it is said to be in phase.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A point source of light produces a plane wavefront.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Huygens's principle can be used to derive the law of reflection.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The ray approximation is valid when the wavelength is very large compared to the opening.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Huygens's principle can be used to derive the law of refraction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In interference, the energy is redistributed.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The condition for constructive interference is d sin θ = mλ.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The central fringe in the interference pattern of white light is colored.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A soap bubble appears colored due to diffraction of light.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The resolving power of an optical instrument depends on diffraction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Diffraction fringes are all of the same intensity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Polarization is a property of longitudinal waves.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The distance between two consecutive bright fringes is called fringe width.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fringe width is directly proportional to the wavelength of light.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Thin film interference depends on the thickness of the film.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An oil film on water shows colors due to interference.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The number of lines per unit length of a grating is the grating constant.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Light is an electromagnetic wave.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The frequency of light changes when it travels from one medium to another.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Interference occurs for both transverse and longitudinal waves.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The color of light is determined by its frequency.",
+    "c": true
+  }
+]
