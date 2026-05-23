@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The SI unit of electrical resistance is the _______.",
+    "c": "ohm"
+  },
+  {
+    "type": "blank",
+    "q": "The rate at which electrical energy is dissipated in a resistor is called electrical _______.",
+    "c": "power"
+  },
+  {
+    "type": "blank",
+    "q": "Kirchhoff's _______ rule is based on the law of conservation of charge.",
+    "c": "first"
+  },
+  {
+    "type": "blank",
+    "q": "The electromotive force is not actually a _______.",
+    "c": "force"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is an instrument used to measure an unknown resistance.",
+    "c": "Wheatstone bridge"
+  },
+  {
+    "type": "blank",
+    "q": "The internal resistance of a battery depends on its _______.",
+    "c": "size"
+  },
+  {
+    "type": "blank",
+    "q": "Electrical resistivity is a property of the _______ of the conductor.",
+    "c": "material"
+  },
+  {
+    "type": "blank",
+    "q": "The resistance of a conductor is _______ proportional to its length.",
+    "c": "directly"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of electrical resistivity is _______.",
+    "c": "ohm-metre"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is used to prevent excessive current from passing through electrical appliances.",
+    "c": "fuse"
+  },
+  {
+    "type": "blank",
+    "q": "The equivalent resistance of resistors in _______ is R = R1 + R2 + R3 + ...",
+    "c": "series"
+  },
+  {
+    "type": "blank",
+    "q": "Kirchhoff's _______ rule is based on the law of conservation of energy.",
+    "c": "second"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a battery is the potential difference across its terminals when no current is drawn.",
+    "c": "electromotive force"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ switches the current on and off to maintain a selected temperature.",
+    "c": "thermostat"
+  },
+  {
+    "type": "blank",
+    "q": "The resistance of a conductor is inversely proportional to its _______ area.",
+    "c": "cross-sectional"
+  },
+  {
+    "type": "blank",
+    "q": "In a _______ circuit, the potential difference across each resistor is the same.",
+    "c": "parallel"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of electromotive force is the _______.",
+    "c": "volt"
+  },
+  {
+    "type": "blank",
+    "q": "Tungsten filament emits white light at a temperature of about _______.",
+    "c": "2500 °C"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ gas reduces the evaporation of the filament in a light bulb.",
+    "c": "inert"
+  },
+  {
+    "type": "blank",
+    "q": "A source of emf has an _______ resistance.",
+    "c": "internal"
+  },
+  {
+    "type": "blank",
+    "q": "The electrical power P is given by the product of _______ and current.",
+    "c": "voltage"
+  },
+  {
+    "type": "blank",
+    "q": "One kilowatt-hour is equal to _______ Joules.",
+    "c": "3.6 x 10^6"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ bridge is balanced when the galvanometer shows zero deflection.",
+    "c": "Wheatstone"
+  },
+  {
+    "type": "blank",
+    "q": "Materials that have zero resistance at very low temperatures are called _______.",
+    "c": "superconductors"
+  },
+  {
+    "type": "blank",
+    "q": "In an electric iron, the heating coil is insulated with _______.",
+    "c": "mica"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ resistance connected in parallel to a galvanometer converts it into an ammeter.",
+    "c": "shunt"
+  },
+  {
+    "type": "blank",
+    "q": "The internal resistance of a battery increases with its _______.",
+    "c": "lifetime"
+  },
+  {
+    "type": "blank",
+    "q": "The resistivity of most metals _______ with increasing temperature.",
+    "c": "increases"
+  },
+  {
+    "type": "blank",
+    "q": "The potential difference V across a resistor is equal to _______.",
+    "c": "IR"
+  },
+  {
+    "type": "blank",
+    "q": "Most of the electrical energy supplied to a resistor is converted into _______.",
+    "c": "heat"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ is an instrument used to measure current.",
+    "c": "ammeter"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is an instrument used to measure potential difference.",
+    "c": "voltmeter"
+  },
+  {
+    "type": "blank",
+    "q": "In a series circuit, the _______ is the same through all parts of the circuit.",
+    "c": "current"
+  },
+  {
+    "type": "blank",
+    "q": "The symbol for electrical resistivity is the Greek letter _______.",
+    "c": "rho"
+  },
+  {
+    "type": "blank",
+    "q": "The equivalent resistance of parallel resistors is always _______ than any individual resistance.",
+    "c": "smaller"
+  },
+  {
+    "type": "blank",
+    "q": "Nichrome is an alloy of nickel and _______.",
+    "c": "chromium"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ point is a junction where three or more conductors meet.",
+    "c": "node"
+  },
+  {
+    "type": "blank",
+    "q": "The kilowatt-hour is the unit of electrical _______.",
+    "c": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ can measure emf without drawing any current from the source.",
+    "c": "potentiometer"
+  },
+  {
+    "type": "blank",
+    "q": "The resistivity of a semiconductor _______ as temperature increases.",
+    "c": "decreases"
+  },
+  {
+    "type": "blank",
+    "q": "The total resistance of a circuit is called _______ resistance.",
+    "c": "equivalent"
+  },
+  {
+    "type": "blank",
+    "q": "A fuse wire is usually made of a _______ alloy.",
+    "c": "tin-lead"
+  },
+  {
+    "type": "blank",
+    "q": "The voltage used for domestic supply in Myanmar is _______.",
+    "c": "220 V"
+  },
+  {
+    "type": "blank",
+    "q": "Energy transformed is equal to Power multiplied by _______.",
+    "c": "time"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ light bulb also produces heat energy.",
+    "c": "incandescent"
+  },
+  {
+    "type": "blank",
+    "q": "The reciprocal of resistance is called _______.",
+    "c": "conductance"
+  },
+  {
+    "type": "blank",
+    "q": "For a balanced bridge, the ratio of resistances P/Q = _______.",
+    "c": "R/S"
+  },
+  {
+    "type": "blank",
+    "q": "The terminal voltage V is equal to E - _______.",
+    "c": "Ir"
+  },
+  {
+    "type": "blank",
+    "q": "Internal resistance is regarded as being connected in _______ to the battery.",
+    "c": "series"
+  },
+  {
+    "type": "blank",
+    "q": "Electrical energy can be transformed into _______ energy in a motor.",
+    "c": "mechanical"
+  }
+]
