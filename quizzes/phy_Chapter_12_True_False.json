@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The world's reliance on electronics is very great.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A television receiver is an electronic appliance.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Electronic circuits contain active electrical components only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Passive electrical components require a power source to operate.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The vacuum tube is an active electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The transistor is an active electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Integrated circuits are active electrical components.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The resistor is a passive electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The capacitor is a passive electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The inductor is an active electrical component.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The transformer is a passive electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The LDR is an active electrical component.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The thermistor is a passive electrical component.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The most important material in the electronic industry is the semiconductor.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The process of adding a tiny amount of impurity to an intrinsic semiconductor is called doping.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The conductivity of a semiconductor can be increased by doping.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Pentavalent impurities are also called donor impurities.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Trivalent impurities are also called acceptor impurities.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The majority charge carriers in n-type semiconductors are electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The majority charge carriers in p-type semiconductors are holes.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A p-n junction diode allows current to flow in both directions.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A diode is in forward bias when the p-type is connected to the positive terminal.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A diode is in reverse bias when the p-type is connected to the negative terminal.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A diode can be used as a rectifier.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The process of converting AC into DC is called rectification.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A half-wave rectifier uses at least two diodes.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A full-wave bridge rectifier uses four diodes.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "LEDs convert electrical energy into light energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An LED must be connected in reverse bias to emit light.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The LDR's resistance increases as light intensity increases.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The resistance of a thermistor changes with temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "NTC thermistors' resistance decreases as temperature increases.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The transistor was invented in 1947.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An n-p-n transistor has three regions: emitter, base, and collector.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The emitter is heavily doped compared to the base.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The base of a transistor is very thick and heavily doped.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A transistor can act as an electronic switch.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A transistor can be used as an amplifier.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Logic gates are the basic building blocks of digital systems.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The NOT gate is also known as an inverter.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An AND gate output is high only if all inputs are high.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An OR gate output is low if any input is high.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A NAND gate is a combination of an AND gate and a NOT gate.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A NOR gate output is high only if all inputs are low.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "LCDs emit light directly.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "LCDs use a backlight to produce an image.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "LCDs consume much less power than LEDs.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The Zener diode is designed to operate in the breakdown region.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A capacitor allows DC to pass through it easily.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The integrated circuit (IC) contains many electronic components on a single chip.",
+    "c": true
+  }
+]
