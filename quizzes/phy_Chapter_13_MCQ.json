@@ -1,1 +1,303 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "Who discovered radioactivity?",
+    "a": ["Isaac Newton", "Henry Becquerel", "Albert Einstein"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The term radioactivity is also known as _______.",
+    "a": ["Nuclear decay", "Chemical reaction", "Electronic flow"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is a radioactive element?",
+    "a": ["Hydrogen", "Uranium", "Oxygen"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In which process is an electron emitted from the nucleus?",
+    "a": ["Alpha decay", "Beta minus decay", "Gamma decay"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The mass number is _______ in the nuclear decay process.",
+    "a": ["conserved", "doubled", "lost"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The atomic number is _______ in the nuclear decay process.",
+    "a": ["ignored", "conserved", "tripled"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Nuclear radiation causes _______ when it passes through matter.",
+    "a": ["evaporation", "ionization", "solidification"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which rays have the highest ionizing power?",
+    "a": ["Alpha rays", "Beta rays", "Gamma rays"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which rays have the highest penetrating power?",
+    "a": ["Alpha rays", "Beta rays", "Gamma rays"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Alpha rays are streams of _______.",
+    "a": ["Electrons", "Helium nuclei", "Photons"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Beta rays are streams of _______.",
+    "a": ["Protons", "Neutrons", "Electrons"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Gamma rays are _______.",
+    "a": ["Charged particles", "Electromagnetic waves", "Heavy nuclei"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The charge of an alpha particle is _______.",
+    "a": ["-1e", "0", "+2e"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The charge of a beta minus particle is _______.",
+    "a": ["-1e", "+1e", "0"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The charge of a gamma photon is _______.",
+    "a": ["+1e", "-1e", "0"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which particle is identical to a helium nucleus?",
+    "a": ["Beta", "Alpha", "Gamma"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Radioactive decay is a _______ process.",
+    "a": ["Random", "Controlled", "Predictable"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The time required for half of the radioactive nuclei to decay is called _______.",
+    "a": ["Full-life", "Half-life", "Quarter-life"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The unit of activity of a radioactive source is the _______.",
+    "a": ["Newton", "Becquerel", "Joule"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "One Becquerel (Bq) is equal to _______ disintegration per second.",
+    "a": ["One", "Ten", "One hundred"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The activity of a radioactive sample _______ with time.",
+    "a": ["Increases", "Decreases", "Remains constant"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which instrument is used to detect nuclear radiation?",
+    "a": ["Ammeter", "G-M counter", "Voltmeter"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In industry, _______ are used to detect leaks in pipes.",
+    "a": ["Insulators", "Radioactive tracers", "Conductors"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which isotope is used in radiotherapy to treat cancer?",
+    "a": ["Carbon-12", "Cobalt-60", "Oxygen-16"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Radioactive dating is used to measure the _______ of ancient objects.",
+    "a": ["Weight", "Age", "Temperature"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The background radiation comes from _______.",
+    "a": ["Cosmic rays", "Only man-made sources", "Only batteries"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which rays are deflected most by a magnetic field?",
+    "a": ["Alpha", "Beta", "Gamma"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Gamma rays are _______ by electric fields.",
+    "a": ["Deflected", "Not deflected", "Stopped"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The source of energy in the sun is nuclear _______.",
+    "a": ["Fission", "Fusion", "Combustion"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Nuclear _______ is the splitting of a heavy nucleus into lighter nuclei.",
+    "a": ["Fusion", "Fission", "Ionization"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which particle triggers the fission of Uranium-235?",
+    "a": ["Proton", "Neutron", "Electron"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A _______ is used to control the rate of fission in a nuclear reactor.",
+    "a": ["Turbine", "Control rod", "Generator"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Radioisotopes used in medicine should have a _______ half-life.",
+    "a": ["Very long", "Short", "Infinite"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The symbol for an alpha particle is _______.",
+    "a": ["0e-1", "4He2", "0y0"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The symbol for a beta minus particle is _______.",
+    "a": ["4He2", "0e-1", "1n0"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Nuclear radiation can be used to _______ medical equipment.",
+    "a": ["Melt", "Sterilize", "Cool"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a cloud chamber, alpha particles produce _______ tracks.",
+    "a": ["Thin and straight", "Thick and straight", "Short and curly"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a cloud chamber, beta particles produce _______ tracks.",
+    "a": ["Thick", "Thin and thin", "No"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Safety precautions must be taken when handling _______ materials.",
+    "a": ["Magnetic", "Radioactive", "Insulating"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Radioactive waste must be stored in _______ containers.",
+    "a": ["Plastic", "Lead-lined", "Wooden"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Carbon-14 is used for dating _______.",
+    "a": ["Metals", "Organic materials", "Plastic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The mass of an alpha particle is approximately _______ times the mass of a proton.",
+    "a": ["Two", "Four", "One"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Gamma radiation is emitted when a nucleus is in an _______ state.",
+    "a": ["Excited", "Ground", "Stable"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which type of radiation is stopped by a sheet of paper?",
+    "a": ["Alpha", "Beta", "Gamma"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which type of radiation is stopped by a few millimetres of aluminium?",
+    "a": ["Alpha", "Beta", "Gamma"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The process where a neutron changes into a proton and an electron is _______.",
+    "a": ["Alpha decay", "Beta minus decay", "Fusion"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A moderator in a nuclear reactor _______ down neutrons.",
+    "a": ["Speeds", "Slows", "Stops"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The energy released in nuclear reactions comes from _______.",
+    "a": ["Mass defect", "Chemical bonds", "Gravity"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Isotopes are atoms of the same element with different numbers of _______.",
+    "a": ["Protons", "Neutrons", "Electrons"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which radiation is used to monitor the thickness of paper in a factory?",
+    "a": ["Alpha", "Beta", "Gamma"],
+    "c": 1
+  }
+]
