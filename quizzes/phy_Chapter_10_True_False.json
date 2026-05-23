@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The electromotive force is actually a force.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A source of electromotive force has an internal resistance.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The internal resistance of a battery depends on its size.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The internal resistance of a battery does not depend on its temperature.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Work has to be done in moving a unit positive charge through the internal resistor.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A fuse is made of a thick short wire of tin-lead alloy.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A potentiometer can be used to measure the emf of a cell.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The resistance of a conductor is directly proportional to its length.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mica cannot withstand very high temperatures.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The voltage of a simple light bulb used in Myanmar is 220 V.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An electric iron has an electrical power of 750-1000 W.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A thermostat switches the current on and off to maintain the selected temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The internal resistance must be regarded as being connected in series to the battery.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The electrical resistivity of a material depends on its temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Kirchhoff's first rule is based on the law of conservation of charge.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The terminal voltage of a battery is always equal to its emf.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Wheatstone bridge is used to measure unknown resistance.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The sum of the currents entering a junction is equal to the sum of the currents leaving it.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The internal resistance of a battery does not depend on the chemicals used in it.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Kirchhoff's second rule is based on the law of conservation of energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The resistivity of a semiconductor decreases with increasing temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Superconductors have zero resistance below a certain critical temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Electrical energy can be transformed into light energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The power dissipated in a resistor is P = VI.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A fuse prevents electrical appliances from being passed through by excessive current.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The heating effect of electric current is used in an electric stove.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Tungsten filament in a bulb emits white light at about 2500 °C.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The inert gas reduces the evaporation of the filament in the light bulb.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a series circuit, the current is the same through all components.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a parallel circuit, the potential difference is the same across all branches.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The internal resistance of a battery increases with its lifetime.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ohmmeter is an instrument used to measure electrical resistance.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Electrical power is the rate at which electrical energy is dissipated.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The kilowatt-hour (kWh) is a unit of electrical power.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "One kilowatt-hour is equal to 3.6 x 10^6 Joules.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The resistance of a wire is inversely proportional to its cross-sectional area.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ohm's law is valid for all types of conductors under all conditions.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Ammeter should always be connected in parallel with the circuit component.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Voltmeter should always be connected in series with the circuit component.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A bridge is balanced when no current flows through the galvanometer.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nichrome is commonly used as a heating element.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The potential difference across a resistor is V = IR.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The unit of resistivity is Ohm-metre (Ω m).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An electric light bulb produces light energy only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A battery provides electrical power.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fuse wire may be fitted in a glass cartridge.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Resistivity is a property of the material of the conductor.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The equivalent resistance of resistors in series is R = R1 + R2 + ...",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The equivalent resistance of resistors in parallel is always greater than any individual resistance.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A galvanometer can be converted into an ammeter by connecting a low resistance in parallel.",
+    "c": true
+  }
+]
