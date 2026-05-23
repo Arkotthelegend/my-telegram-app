@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The SI unit of capacitance is the _______.",
+    "c": "farad"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is a circuit component that stores electrical energy.",
+    "c": "capacitor"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitor was originally known as a _______.",
+    "c": "condenser"
+  },
+  {
+    "type": "blank",
+    "q": "A capacitor stores electrical energy in the form of an _______ field.",
+    "c": "electric"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitance of a parallel-plate capacitor is _______ proportional to the area of the plates.",
+    "c": "directly"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitance of a parallel-plate capacitor is _______ proportional to the distance between the plates.",
+    "c": "inversely"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ is a material that does not conduct electricity.",
+    "c": "insulator"
+  },
+  {
+    "type": "blank",
+    "q": "The insulating material between the plates of a capacitor is called a _______.",
+    "c": "dielectric"
+  },
+  {
+    "type": "blank",
+    "q": "The equivalent capacitance of capacitors in _______ is Cp = C1 + C2 + C3 + ...",
+    "c": "parallel"
+  },
+  {
+    "type": "blank",
+    "q": "The equivalent capacitance of capacitors in _______ is 1/Cs = 1/C1 + 1/C2 + 1/C3 + ...",
+    "c": "series"
+  },
+  {
+    "type": "blank",
+    "q": "The energy stored in a capacitor is U = _______.",
+    "c": "1/2 CV^2"
+  },
+  {
+    "type": "blank",
+    "q": "Electrolytic capacitors use the _______ layer as the dielectric.",
+    "c": "oxide"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitance of the _______ capacitor can be mechanically adjusted.",
+    "c": "variable"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of electric potential is the _______.",
+    "c": "volt"
+  },
+  {
+    "type": "blank",
+    "q": "Electric field strength is a _______ quantity.",
+    "c": "vector"
+  },
+  {
+    "type": "blank",
+    "q": "The potential at a point is a _______ quantity.",
+    "c": "scalar"
+  },
+  {
+    "type": "blank",
+    "q": "Coulomb's law states that the force between two point charges is inversely proportional to the _______ of the distance between them.",
+    "c": "square"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a conductor is the ratio of the charge on it to its potential.",
+    "c": "capacitance"
+  },
+  {
+    "type": "blank",
+    "q": "One farad is equal to one _______ per volt.",
+    "c": "coulomb"
+  },
+  {
+    "type": "blank",
+    "q": "_______ capacitors use thin sheets of metal foil as electrodes.",
+    "c": "Paper"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitance values of _______ capacitors are stable with respect to the applied voltage.",
+    "c": "ceramic"
+  },
+  {
+    "type": "blank",
+    "q": "The failure of the _______ capacitors can cause an explosion or a fire.",
+    "c": "electrolytic"
+  },
+  {
+    "type": "blank",
+    "q": "In _______ capacitors, air is often used as a dielectric.",
+    "c": "variable"
+  },
+  {
+    "type": "blank",
+    "q": "The electric field inside a charged _______ is zero.",
+    "c": "conductor"
+  },
+  {
+    "type": "blank",
+    "q": "The surface charge density is denoted by the Greek letter _______.",
+    "c": "sigma"
+  },
+  {
+    "type": "blank",
+    "q": "_______ is the charge per unit area of a surface.",
+    "c": "Surface charge density"
+  },
+  {
+    "type": "blank",
+    "q": "The potential difference between two points is the _______ done in moving a unit positive charge.",
+    "c": "work"
+  },
+  {
+    "type": "blank",
+    "q": "Electric field lines start from _______ charges and end on negative charges.",
+    "c": "positive"
+  },
+  {
+    "type": "blank",
+    "q": "The ratio of the capacitance with a dielectric to the capacitance with a vacuum is called the _______.",
+    "c": "dielectric constant"
+  },
+  {
+    "type": "blank",
+    "q": "Capacitors in parallel all have the same _______.",
+    "c": "potential difference"
+  },
+  {
+    "type": "blank",
+    "q": "Capacitors in series all have the same _______.",
+    "c": "charge"
+  },
+  {
+    "type": "blank",
+    "q": "Mica capacitors are often used in _______ circuits.",
+    "c": "high-frequency"
+  },
+  {
+    "type": "blank",
+    "q": "The breakdown of a dielectric is called _______.",
+    "c": "dielectric breakdown"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is used to store large amounts of charge at a relatively low potential.",
+    "c": "capacitor"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of electric field strength is _______ per metre.",
+    "c": "volt"
+  },
+  {
+    "type": "blank",
+    "q": "Coulomb's law is valid for _______ point charges.",
+    "c": "stationary"
+  },
+  {
+    "type": "blank",
+    "q": "The work done to charge a capacitor is stored as _______ energy.",
+    "c": "electrostatic"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ constant of vacuum is 1.",
+    "c": "dielectric"
+  },
+  {
+    "type": "blank",
+    "q": "Like charges _______ and unlike charges attract.",
+    "c": "repel"
+  },
+  {
+    "type": "blank",
+    "q": "The electric potential at an _______ distance is zero.",
+    "c": "infinite"
+  },
+  {
+    "type": "blank",
+    "q": "Surface charge density is highest at _______ points of a conductor.",
+    "c": "sharp"
+  },
+  {
+    "type": "blank",
+    "q": "An electric _______ consists of two equal and opposite charges separated by a distance.",
+    "c": "dipole"
+  },
+  {
+    "type": "blank",
+    "q": "The capacitance C is equal to _______ / V.",
+    "c": "Q"
+  },
+  {
+    "type": "blank",
+    "q": "_______ capacitors use plastic film such as polyester or polycarbonate.",
+    "c": "Film"
+  },
+  {
+    "type": "blank",
+    "q": "The total charge of capacitors in parallel is the _______ of the individual charges.",
+    "c": "sum"
+  },
+  {
+    "type": "blank",
+    "q": "The reciprocal of the equivalent capacitance in series is the sum of the _______ of individual capacitances.",
+    "c": "reciprocals"
+  },
+  {
+    "type": "blank",
+    "q": "The value of 1/4πε₀ is approximately _______ N m^2 C^-2.",
+    "c": "9 x 10^9"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ is an insulating material that can be polarized by an electric field.",
+    "c": "dielectric"
+  },
+  {
+    "type": "blank",
+    "q": "Work must be done to _______ a capacitor.",
+    "c": "charge"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of the capacitor depends on the geometry of the conductors.",
+    "c": "capacitance"
+  }
+]
