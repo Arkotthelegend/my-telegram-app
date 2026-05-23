@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The _______ in a camera is a circular opening that controls the amount of light entering the lens.",
+    "c": "diaphragm"
+  },
+  {
+    "type": "blank",
+    "q": "The image formed on the film of a camera is real, inverted, and _______.",
+    "c": "diminished"
+  },
+  {
+    "type": "blank",
+    "q": "The size or diameter of the aperture is expressed in terms of the _______.",
+    "c": "f-number"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ microscope consists of a single converging lens of short focal length.",
+    "c": "simple"
+  },
+  {
+    "type": "blank",
+    "q": "In a simple microscope, the object is placed between the focus and the _______.",
+    "c": "optical center"
+  },
+  {
+    "type": "blank",
+    "q": "The image formed by a simple microscope is virtual, erect, and _______.",
+    "c": "magnified"
+  },
+  {
+    "type": "blank",
+    "q": "A compound microscope consists of two converging lenses: the objective and the _______.",
+    "c": "eyepiece"
+  },
+  {
+    "type": "blank",
+    "q": "The lens near the object in a compound microscope is called the _______ lens.",
+    "c": "objective"
+  },
+  {
+    "type": "blank",
+    "q": "The final image formed by a compound microscope is virtual and _______ with respect to the original object.",
+    "c": "inverted"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ telescope is used to view very distant objects like stars and planets.",
+    "c": "astronomical"
+  },
+  {
+    "type": "blank",
+    "q": "In an astronomical telescope, the objective lens has a _______ focal length than the eyepiece.",
+    "c": "larger"
+  },
+  {
+    "type": "blank",
+    "q": "When a telescope is in _______ adjustment, the final image is formed at infinity.",
+    "c": "normal"
+  },
+  {
+    "type": "blank",
+    "q": "The length of an astronomical telescope in normal adjustment is the sum of the _______ of the two lenses.",
+    "c": "focal lengths"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ telescope produces a final image that is erect with respect to the object.",
+    "c": "terrestrial"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ telescope uses a diverging lens as the eyepiece to provide an erect image.",
+    "c": "Galilean"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of the human eye acts as a screen where the image is formed.",
+    "c": "retina"
+  },
+  {
+    "type": "blank",
+    "q": "The process by which the eye changes its focal length to focus on objects at different distances is called _______.",
+    "c": "accommodation"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ point is the closest distance at which an eye can see an object clearly.",
+    "c": "near"
+  },
+  {
+    "type": "blank",
+    "q": "A person with _______ can see nearby objects clearly but cannot see distant objects clearly.",
+    "c": "myopia"
+  },
+  {
+    "type": "blank",
+    "q": "Myopia is corrected by using a _______ lens.",
+    "c": "diverging"
+  },
+  {
+    "type": "blank",
+    "q": "A person with _______ can see distant objects clearly but cannot see nearby objects clearly.",
+    "c": "hypermetropia"
+  },
+  {
+    "type": "blank",
+    "q": "Hypermetropia is corrected by using a _______ lens.",
+    "c": "converging"
+  },
+  {
+    "type": "blank",
+    "q": "The unit of power of a lens is the _______.",
+    "c": "diopter"
+  },
+  {
+    "type": "blank",
+    "q": "The power of a lens is the _______ of its focal length in meters.",
+    "c": "reciprocal"
+  },
+  {
+    "type": "blank",
+    "q": "Spectacles are optical instruments that employ _______.",
+    "c": "lenses"
+  },
+  {
+    "type": "blank",
+    "q": "In a camera, the _______ controls the time for which light falls on the film.",
+    "c": "shutter"
+  },
+  {
+    "type": "blank",
+    "q": "The magnification of a compound microscope is the _______ of the magnifications of the objective and eyepiece.",
+    "c": "product"
+  },
+  {
+    "type": "blank",
+    "q": "The distance between the objective and eyepiece in a compound microscope is called the _______.",
+    "c": "separation"
+  },
+  {
+    "type": "blank",
+    "q": "For a normal eye, the near point distance is approximately _______ cm.",
+    "c": "25"
+  },
+  {
+    "type": "blank",
+    "q": "In a myopic eye, the image of a distant object is formed _______ the retina.",
+    "c": "in front of"
+  },
+  {
+    "type": "blank",
+    "q": "In a hypermetropic eye, the image of a nearby object is formed _______ the retina.",
+    "c": "behind"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ lens in a terrestrial telescope is used to make the final image erect.",
+    "c": "erecting"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ lens has a positive power.",
+    "c": "converging"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ lens has a negative power.",
+    "c": "diverging"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is the colored part of the eye that regulates the size of the pupil.",
+    "c": "iris"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ binocular uses prisms to fold the light path and provide a wider field of view.",
+    "c": "prism"
+  },
+  {
+    "type": "blank",
+    "q": "The magnifying power of a telescope is the ratio of the focal length of the _______ to that of the eyepiece.",
+    "c": "objective"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ number is defined as the ratio of focal length to the diameter of the aperture.",
+    "c": "f-"
+  },
+  {
+    "type": "blank",
+    "q": "When photographing in dim light, a _______ aperture must be used.",
+    "c": "wide"
+  },
+  {
+    "type": "blank",
+    "q": "A camera’s image is recorded on a film or a digital _______.",
+    "c": "sensor"
+  },
+  {
+    "type": "blank",
+    "q": "The objective of a compound microscope must have a _______ focal length.",
+    "c": "short"
+  },
+  {
+    "type": "blank",
+    "q": "The separation of lenses in a Galilean telescope is given by _______.",
+    "c": "fo - fe"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ defect of vision occurs when the crystalline lens becomes milky and cloudy.",
+    "c": "cataract"
+  },
+  {
+    "type": "blank",
+    "q": "The ability of the eye to see clearly both near and far objects is called its power of _______.",
+    "c": "accommodation"
+  },
+  {
+    "type": "blank",
+    "q": "A converging lens used as a magnifier produces an image at the _______ distance of distinct vision.",
+    "c": "least"
+  },
+  {
+    "type": "blank",
+    "q": "In a telescope, the _______ gather light from the distant object.",
+    "c": "objective"
+  },
+  {
+    "type": "blank",
+    "q": "The final image in a simple microscope is _______.",
+    "c": "erect"
+  },
+  {
+    "type": "blank",
+    "q": "The image formed on the retina is _______.",
+    "c": "inverted"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ nerves carry the image signals from the retina to the brain.",
+    "c": "optic"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a lens system is the reciprocal of its equivalent focal length.",
+    "c": "power"
+  }
+]
