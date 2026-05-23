@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "tf",
+    "q": "Henry Becquerel discovered radioactivity.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The term radioactivity is also known as nuclear disintegration.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nuclear radiation is emitted from the nuclei of stable nuclides.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Uranium is a radioactive element.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Radioactive elements cannot be artificially produced.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The atomic number is conserved in the nuclear decay process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The mass number is conserved in the nuclear decay process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An electron is emitted in the beta minus decay process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Radioactive decay is a random process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Alpha rays are streams of helium nuclei.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beta rays are streams of fast-moving electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Gamma rays are electromagnetic waves of very short wavelength.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Alpha particles have a positive charge of +2e.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beta minus particles have a negative charge of -1e.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Gamma rays are deflected by electric fields.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Alpha particles have the greatest ionizing power.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Gamma rays have the greatest penetrating power.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Alpha radiation can be stopped by a thin sheet of paper.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beta radiation is stopped by a few millimetres of aluminium.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Gamma radiation is never completely absorbed by matter.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The activity of a radioactive source increases with time.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The SI unit of activity is the Becquerel (Bq).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The half-life of a radioactive isotope is constant.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Isotopes are atoms with the same number of protons but different number of neutrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A G-M counter is used to detect nuclear radiation.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Alpha particles produce thick, straight tracks in a cloud chamber.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beta particles produce thin, curly tracks in a cloud chamber.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Cosmic rays are a source of background radiation.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Radioactive tracers are used in industry to detect leaks in pipes.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Cobalt-60 is used in radiotherapy to treat cancer.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Radioactive materials can be handled with bare hands safely.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Radioactive waste must be stored in lead-lined containers.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nuclear fission is the splitting of a heavy nucleus into two lighter nuclei.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nuclear fusion is the combining of two light nuclei to form a heavier nucleus.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A chain reaction occurs in nuclear fission.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Control rods in a nuclear reactor are used to speed up the reaction.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The energy of the sun comes from nuclear fusion.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nuclear fusion requires very high temperatures.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Carbon-14 is used for dating ancient organic materials.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The mass of an alpha particle is approximately four times the mass of a proton.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Gamma radiation is emitted from an excited nucleus.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Beta particles are more penetrating than alpha particles.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Nuclear radiation can cause genetic mutations.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Radioisotopes used in medical imaging should have a very long half-life.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Radon gas is a natural source of background radiation.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "One Becquerel is one disintegration per second.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In alpha decay, the mass number decreases by four.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In beta decay, the atomic number increases by one.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The speed of gamma rays is equal to the speed of light.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A moderator in a nuclear reactor slows down neutrons.",
+    "c": true
+  }
+]
