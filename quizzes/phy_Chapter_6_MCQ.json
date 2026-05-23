@@ -1,1 +1,303 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "The speed of sound in air at 0°C is approximately _______.",
+    "a": ["300 m/s", "331 m/s", "344 m/s"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Sound waves are classified as _______ waves.",
+    "a": ["Transverse", "Longitudinal", "Electromagnetic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The frequency range of audible sound for humans is _______.",
+    "a": ["2 Hz - 2,000 Hz", "20 Hz - 20,000 Hz", "200 Hz - 200,000 Hz"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Sound waves with frequencies above 20,000 Hz are called _______.",
+    "a": ["Infrasound", "Ultrasound", "Supersonic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The speed of sound is fastest in _______.",
+    "a": ["Solids", "Liquids", "Gases"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The pitch of a sound is determined by its _______.",
+    "a": ["Amplitude", "Frequency", "Speed"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The loudness of sound depends on the _______ of the wave.",
+    "a": ["Frequency", "Wavelength", "Amplitude"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The unit of sound intensity level is the _______.",
+    "a": ["Hertz", "Watt", "Decibel"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The change in frequency due to relative motion between source and observer is the _______.",
+    "a": ["Photoelectric effect", "Doppler effect", "Compton effect"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "When a sound source approaches a stationary observer, the observed frequency _______.",
+    "a": ["Increases", "Decreases", "Stays the same"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "When a sound source moves away from a stationary observer, the observed frequency _______.",
+    "a": ["Increases", "Decreases", "Stays the same"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If both the source and observer move in the same direction at the same speed, the Doppler shift is _______.",
+    "a": ["Maximum", "Minimum", "Zero"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A reflected sound wave is called an _______.",
+    "a": ["Echo", "Rarefaction", "Compression"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The distance between two consecutive nodes in a standing wave is _______.",
+    "a": ["λ", "λ/2", "λ/4"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The distance between a node and the adjacent antinode is _______.",
+    "a": ["λ", "λ/2", "λ/4"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Standing waves are produced by the _______ of two waves traveling in opposite directions.",
+    "a": ["Refraction", "Diffraction", "Superposition"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Points of zero displacement in a standing wave are called _______.",
+    "a": ["Nodes", "Antinodes", "Crests"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "An open organ pipe has _______ at both ends.",
+    "a": ["Nodes", "Antinodes", "Rarefactions"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A pipe closed at one end produces only _______ harmonics.",
+    "a": ["Even", "Odd", "Fundamental"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The fundamental frequency is also known as the _______.",
+    "a": ["First overtone", "First harmonic", "Second harmonic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In an open pipe, the third harmonic is the _______ overtone.",
+    "a": ["First", "Second", "Third"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The ratio of object speed to the speed of sound is the _______.",
+    "a": ["Reynolds number", "Mach number", "Frequency"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Shock waves are produced when an object moves _______ the speed of sound.",
+    "a": ["Slower than", "At", "Faster than"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The loud noise caused by a shock wave is called a _______.",
+    "a": ["Beat", "Sonic boom", "Resonance"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Beats are produced by the interference of two waves of _______ frequencies.",
+    "a": ["Identical", "Slightly different", "Widely different"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Resonance occurs when a driving frequency matches the _______ of the system.",
+    "a": ["Amplitude", "Natural frequency", "Mach number"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The quality of sound, which allows us to distinguish between instruments, is called _______.",
+    "a": ["Pitch", "Loudness", "Timbre"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Echocardiography uses _______ to examine the heart.",
+    "a": ["X-rays", "Infrasound", "Ultrasound"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Bats navigate using a process called _______.",
+    "a": ["Refraction", "Echolocation", "Diffraction"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Sound waves _______ around corners and obstacles.",
+    "a": ["Polarize", "Diffract", "Stop"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The threshold of human hearing is defined as _______.",
+    "a": ["0 dB", "10 dB", "120 dB"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The threshold of pain for the human ear is approximately _______.",
+    "a": ["60 dB", "120 dB", "200 dB"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a longitudinal wave, the high-pressure regions are called _______.",
+    "a": ["Crests", "Compressions", "Rarefactions"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a longitudinal wave, the low-pressure regions are called _______.",
+    "a": ["Troughs", "Compressions", "Rarefactions"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "As the temperature of air increases, the speed of sound _______.",
+    "a": ["Increases", "Decreases", "Remains constant"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In a pipe closed at one end, the first overtone is the _______ harmonic.",
+    "a": ["Second", "Third", "Fourth"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The number of beats per second is equal to the _______ of the two frequencies.",
+    "a": ["Sum", "Average", "Difference"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Sound cannot travel through _______.",
+    "a": ["Water", "Steel", "A vacuum"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Ultrasonic waves can be used to detect _______ in metal castings.",
+    "a": ["Color", "Flaws", "Weight"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A sonic boom is associated with _______ waves.",
+    "a": ["Transverse", "Shock", "Audible"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following describes the bending of waves around an obstacle?",
+    "a": ["Reflection", "Refraction", "Diffraction"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A stationary source and an observer moving toward each other results in _______ frequency.",
+    "a": ["Higher", "Lower", "Constant"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The fundamental frequency of an open pipe of length L is _______.",
+    "a": ["v/2L", "v/4L", "2v/L"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The fundamental frequency of a closed pipe of length L is _______.",
+    "a": ["v/2L", "v/4L", "v/L"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The intensity of sound _______ as the distance from the source increases.",
+    "a": ["Increases", "Decreases", "Remains constant"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Mach 2 means the object is moving at _______ the speed of sound.",
+    "a": ["Half", "Double", "Triple"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "High-frequency sounds that can reveal blockages in blood flow are _______.",
+    "a": ["Infrasonic", "Audible", "Ultrasonic"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The period of a wave is the _______ of its frequency.",
+    "a": ["Product", "Reciprocal", "Square root"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a standing wave, points of maximum displacement are called _______.",
+    "a": ["Nodes", "Antinodes", "Troughs"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The speed of sound in air _______ with an increase in humidity.",
+    "a": ["Increases", "Decreases", "Remains constant"],
+    "c": 0
+  }
+]
