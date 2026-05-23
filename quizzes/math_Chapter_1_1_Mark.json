@@ -1,0 +1,142 @@
+[
+  {
+    "question_number": 1,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "The solutions of x² + 9 = 0 are",
+    "options": {
+      "A": "3",
+      "B": "-3",
+      "C": "±3",
+      "D": "±3i"
+    },
+    "answer": "D",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 2,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "The solutions of x² + 2x + 5 = 0 are",
+    "options": {
+      "A": "1 ± 2i",
+      "B": "±1 + 2i",
+      "C": "-1 ± 2i",
+      "D": "±2i"
+    },
+    "answer": "C",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 3,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "The solutions of -x² - 1 = 0 are",
+    "options": {
+      "A": "±1",
+      "B": "±i",
+      "C": "1 ± i",
+      "D": "0"
+    },
+    "answer": "B",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 4,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "The value of i²⁴ is equal to",
+    "options": {
+      "A": "1",
+      "B": "-1",
+      "C": "-i",
+      "D": "i"
+    },
+    "answer": "A",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 5,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "i⁴¹ + i⁴² + i⁴³ + i⁴⁴ =",
+    "options": {
+      "A": "i",
+      "B": "0",
+      "C": "-i",
+      "D": "-42"
+    },
+    "answer": "B",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 6,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "i⁷³ + 1/i¹⁰⁰ =",
+    "options": {
+      "A": "1 + i",
+      "B": "1 - i",
+      "C": "i",
+      "D": "-i"
+    },
+    "answer": "A",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 7,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Section (A)",
+    "question": "If n is a positive integer, then the value of (i⁴ⁿ⁺¹ - i⁴ⁿ⁻¹)/2 equals",
+    "options": {
+      "A": "1",
+      "B": "-1",
+      "C": "i",
+      "D": "2i"
+    },
+    "answer": "C",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 23, 24], Fresh Guide Maths Ans Key.pdf [cite: 533]"
+  },
+  {
+    "question_number": 8,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Example/A",
+    "question": "The value of i⁶⁴ is",
+    "options": {
+      "A": "i",
+      "B": "-i",
+      "C": "1",
+      "D": "-1"
+    },
+    "answer": "C",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 22]"
+  },
+  {
+    "question_number": 9,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Example/A",
+    "question": "The solutions of x² + 25 = 0 are",
+    "options": {
+      "A": "±5",
+      "B": "5",
+      "C": "-5",
+      "D": "±5i"
+    },
+    "answer": "D",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 22]"
+  },
+  {
+    "question_number": 10,
+    "chapter": "Chapter 1 Complex Numbers",
+    "section": "Example/A",
+    "question": "The solutions of 2x² + 3 = 0 are",
+    "options": {
+      "A": "±3/2",
+      "B": "±(3/2)i",
+      "C": "±(√3/2)i",
+      "D": "±(√6/2)i"
+    },
+    "answer": "D",
+    "source": "Fresh Guide Maths Section A B.pdf [cite: 22]"
+  }
+]
