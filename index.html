@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root { 
             --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; 
@@ -220,6 +222,10 @@
                         else showMMFlashcardOptions(m);
                     });
                 });
+            } else if (sub.id === 'phy' || sub.id === 'chem') {
+                for(let i=1; i<=sub.chapters; i++) {
+                    createBtn(`Chapter ${i}`, content, () => showPhyChemActivities(sub.id, `Chapter ${i}`));
+                }
             } else {
                 for(let i=1; i<=sub.chapters; i++) {
                     createBtn(`Chapter ${i}`, content, () => showGeneralActivities(sub.id, `Chapter ${i}`));
@@ -264,7 +270,7 @@
             }));
         }
 
-        // --- Myanmar Specific (Flashcard Support) ---
+        // --- Myanmar Specific ---
         function showMMQuizOptions(typeName) {
             showScreen('activity');
             document.getElementById('activity-title').innerText = typeName;
@@ -306,10 +312,36 @@
 
             topics.forEach(t => {
                 createBtn(t, content, () => {
-                    // FileName format: mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး.json
                     const fName = `${currentSubject.id}_${category}_${typeName}_${t}`.replace(/ /g, "_");
                     initFlashcards(fName);
                 });
+            });
+        }
+
+        // --- Phy/Chem Special Menu ---
+        function showPhyChemActivities(subId, partName) {
+            showScreen('activity');
+            document.getElementById('activity-title').innerText = partName;
+            const content = document.getElementById('activity-content');
+            content.innerHTML = '';
+            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+            
+            // Standard Quizzes
+            ['True_False', 'Fill_Blank', 'MCQ'].forEach(type => {
+                createBtn(type.replace('_', ' '), content, () => {
+                    initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+                    document.getElementById('quiz-back-btn').onclick = () => showPhyChemActivities(subId, partName);
+                });
+            });
+
+            // Flashcards Division
+            createBtn('Flashcard (Definition)', content, () => {
+                initFlashcards(`${subId}_${partName}_Definition`.replace(/ /g, "_"));
+                document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
+            });
+            createBtn('Flashcard (Formula)', content, () => {
+                initFlashcards(`${subId}_${partName}_Formula`.replace(/ /g, "_"));
+                document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
             });
         }
 
@@ -331,6 +363,8 @@
             document.getElementById('flash-front-content').innerText = flashCards[flashIdx].q;
             document.getElementById('flash-back-content').innerText = flashCards[flashIdx].a;
             document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
+            // Render Math Symbols if present
+            if (window.MathJax) MathJax.typesetPromise();
         }
 
         function flipCard() {
@@ -352,7 +386,14 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ['True_False', 'Fill_Blank', 'MCQ'].forEach(type => {
+            
+            let types = ['True_False', 'Fill_Blank', 'MCQ'];
+            // If Math, add Mark divisions
+            if(subId === 'math') {
+                types = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
+            }
+
+            types.forEach(type => {
                 createBtn(type.replace('_', ' '), content, () => {
                     initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
                     document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
@@ -405,6 +446,8 @@
                 };
                 optDiv.append(input, sBtn);
             }
+            // Render Math Symbols if present
+            if (window.MathJax) MathJax.typesetPromise();
         }
 
         function nextQuestion() {
