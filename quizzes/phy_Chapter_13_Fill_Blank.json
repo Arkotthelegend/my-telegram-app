@@ -1,1 +1,253 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The term radioactivity is also known as nuclear _______.",
+    "c": "disintegration"
+  },
+  {
+    "type": "blank",
+    "q": "Radioactivity was discovered by _______.",
+    "c": "Henry Becquerel"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of activity is the _______.",
+    "c": "Becquerel"
+  },
+  {
+    "type": "blank",
+    "q": "Alpha rays are streams of _______ nuclei.",
+    "c": "helium"
+  },
+  {
+    "type": "blank",
+    "q": "Beta rays are streams of fast-moving _______.",
+    "c": "electrons"
+  },
+  {
+    "type": "blank",
+    "q": "Gamma rays are _______ waves of very short wavelength.",
+    "c": "electromagnetic"
+  },
+  {
+    "type": "blank",
+    "q": "The time taken for half of the radioactive nuclei to decay is called its _______.",
+    "c": "half-life"
+  },
+  {
+    "type": "blank",
+    "q": "The atomic number is _______ in the nuclear decay process.",
+    "c": "conserved"
+  },
+  {
+    "type": "blank",
+    "q": "The mass number is _______ in the nuclear decay process.",
+    "c": "conserved"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear radiation causes _______ when it passes through matter.",
+    "c": "ionization"
+  },
+  {
+    "type": "blank",
+    "q": "Alpha particles have a positive charge of _______.",
+    "c": "+2e"
+  },
+  {
+    "type": "blank",
+    "q": "Beta minus particles have a negative charge of _______.",
+    "c": "-1e"
+  },
+  {
+    "type": "blank",
+    "q": "Gamma rays have _______ charge.",
+    "c": "no"
+  },
+  {
+    "type": "blank",
+    "q": "Which rays have the greatest ionizing power? _______ rays.",
+    "c": "Alpha"
+  },
+  {
+    "type": "blank",
+    "q": "Which rays have the greatest penetrating power? _______ rays.",
+    "c": "Gamma"
+  },
+  {
+    "type": "blank",
+    "q": "Alpha radiation can be stopped by a thin sheet of _______.",
+    "c": "paper"
+  },
+  {
+    "type": "blank",
+    "q": "Beta radiation is stopped by a few millimetres of _______.",
+    "c": "aluminium"
+  },
+  {
+    "type": "blank",
+    "q": "One Becquerel (Bq) is one _______ per second.",
+    "c": "disintegration"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ counter is used to detect nuclear radiation.",
+    "c": "G-M"
+  },
+  {
+    "type": "blank",
+    "q": "The constant background radiation comes from _______ rays.",
+    "c": "cosmic"
+  },
+  {
+    "type": "blank",
+    "q": "Isotopes are atoms of the same element with different numbers of _______.",
+    "c": "neutrons"
+  },
+  {
+    "type": "blank",
+    "q": "Radioactive tracers are used in industry to detect _______ in pipes.",
+    "c": "leaks"
+  },
+  {
+    "type": "blank",
+    "q": "The isotope _______ is used in radiotherapy to treat cancer.",
+    "c": "Cobalt-60"
+  },
+  {
+    "type": "blank",
+    "q": "Radioactive dating is used to determine the _______ of ancient organic materials.",
+    "c": "age"
+  },
+  {
+    "type": "blank",
+    "q": "The isotope _______ is used for radioactive dating of organic materials.",
+    "c": "Carbon-14"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear _______ is the splitting of a heavy nucleus into two lighter nuclei.",
+    "c": "fission"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear _______ is the combining of two light nuclei to form a heavier nucleus.",
+    "c": "fusion"
+  },
+  {
+    "type": "blank",
+    "q": "The process where one fission event leads to others is called a _______ reaction.",
+    "c": "chain"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ in a nuclear reactor slows down fast-moving neutrons.",
+    "c": "moderator"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ rods in a nuclear reactor are used to control the reaction rate.",
+    "c": "control"
+  },
+  {
+    "type": "blank",
+    "q": "Energy of the sun and stars is produced by nuclear _______.",
+    "c": "fusion"
+  },
+  {
+    "type": "blank",
+    "q": "Radioactive decay is a _______ process.",
+    "c": "random"
+  },
+  {
+    "type": "blank",
+    "q": "Gamma radiation is emitted when a nucleus is in an _______ state.",
+    "c": "excited"
+  },
+  {
+    "type": "blank",
+    "q": "The symbol for an alpha particle is _______.",
+    "c": "4He2"
+  },
+  {
+    "type": "blank",
+    "q": "Radioactive waste must be stored in _______ containers.",
+    "c": "lead-lined"
+  },
+  {
+    "type": "blank",
+    "q": "In a cloud chamber, _______ particles produce thick and straight tracks.",
+    "c": "alpha"
+  },
+  {
+    "type": "blank",
+    "q": "In a cloud chamber, _______ particles produce thin and curly tracks.",
+    "c": "beta"
+  },
+  {
+    "type": "blank",
+    "q": "The mass of an alpha particle is about _______ times the mass of a proton.",
+    "c": "four"
+  },
+  {
+    "type": "blank",
+    "q": "In _______ decay, a neutron changes into a proton and an electron.",
+    "c": "beta minus"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear radiation can cause genetic _______.",
+    "c": "mutations"
+  },
+  {
+    "type": "blank",
+    "q": "One _______ (Bq) is the unit of activity.",
+    "c": "Becquerel"
+  },
+  {
+    "type": "blank",
+    "q": "High energy _______ radiation is emitted during gamma decay.",
+    "c": "photon"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of a radioactive isotope does not depend on physical conditions.",
+    "c": "half-life"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ source is used in thickness monitoring systems.",
+    "c": "beta"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear energy is released due to the _______ defect.",
+    "c": "mass"
+  },
+  {
+    "type": "blank",
+    "q": "An _______ particle is the same as a helium nucleus.",
+    "c": "alpha"
+  },
+  {
+    "type": "blank",
+    "q": "Heavy elements like _______ are often unstable.",
+    "c": "uranium"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ radiation is not deflected by magnetic fields.",
+    "c": "gamma"
+  },
+  {
+    "type": "blank",
+    "q": "Radioisotopes used in medicine should have a _______ half-life.",
+    "c": "short"
+  },
+  {
+    "type": "blank",
+    "q": "Nuclear radiation can be used to _______ medical instruments.",
+    "c": "sterilize"
+  }
+]
