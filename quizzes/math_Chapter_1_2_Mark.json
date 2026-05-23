@@ -1,0 +1,52 @@
+[
+  {
+    "q": "If \\( z = 3 - 2i \\), then find the conjugate \\( \\bar{z} \\).",
+    "type": "blank",
+    "c": "3 + 2i"
+  },
+  {
+    "q": "Find the value of \\( i^{10} \\).",
+    "type": "blank",
+    "c": "-1"
+  },
+  {
+    "q": "Find the additive inverse of the complex number \\( z = -5 + 4i \\).",
+    "type": "blank",
+    "c": "5 - 4i"
+  },
+  {
+    "q": "If \\( z = 1 + i \\), find the value of \\( z^2 \\).",
+    "type": "blank",
+    "c": "2i"
+  },
+  {
+    "q": "Find the real part of the complex number \\( z = (2 + i)(3 - i) \\).",
+    "type": "blank",
+    "c": "7"
+  },
+  {
+    "q": "Solve for \\( x \\) if \\( x^2 + 16 = 0 \\).",
+    "type": "blank",
+    "c": "\\pm 4i"
+  },
+  {
+    "q": "If \\( z = 4 + 3i \\), find the modulus \\( |z| \\).",
+    "type": "blank",
+    "c": "5"
+  },
+  {
+    "q": "Simplify the expression \\( (1 - i)^2 \\).",
+    "type": "blank",
+    "c": "-2i"
+  },
+  {
+    "q": "Find the multiplicative inverse of \\( i \\).",
+    "type": "blank",
+    "c": "-i"
+  },
+  {
+    "q": "Express the complex number \\( z = i(2 - i) \\) in the form \\( a + bi \\).",
+    "type": "blank",
+    "c": "1 + 2i"
+  }
+]
