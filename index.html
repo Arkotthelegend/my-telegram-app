@@ -35,7 +35,6 @@
         .nav-item { font-size: 1.8rem; opacity: 0.4; cursor: pointer; transition: 0.3s; }
         .nav-active { opacity: 1; color: var(--accent); transform: scale(1.1); }
         .quiz-input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--accent); background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; font-size: 1rem; outline: none; }
-        .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1.8; white-space: pre-line; text-align: center; }
     </style>
 </head>
 <body>
@@ -108,7 +107,9 @@
             { id: 'en', name: 'အင်္ဂလိပ်စာ' },
             { id: 'math', name: 'သင်္ချာ', chapters: 11 },
             { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
-            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 }
+            { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
+            { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 },
+            { id: 'eco', name: 'ဘောဂဗေဒ', chapters: 8 }
         ];
 
         let currentSubject = null;
@@ -140,29 +141,9 @@
             const content = document.getElementById('menu-content');
             content.innerHTML = '';
 
-            if (sub.id === 'phy' || sub.id === 'chem') {
-                for(let i=1; i<=sub.chapters; i++) {
-                    createBtn(`Chapter ${i}`, content, () => showPhyChemActivities(sub.id, `Chapter ${i}`));
-                }
-            } else {
-                for(let i=1; i<=sub.chapters; i++) {
-                    createBtn(`Chapter ${i}`, content, () => showGeneralActivities(sub.id, `Chapter ${i}`));
-                }
+            for(let i=1; i<=sub.chapters; i++) {
+                createBtn(`Chapter ${i}`, content, () => showGeneralActivities(sub.id, `Chapter ${i}`));
             }
-        }
-
-        function showPhyChemActivities(subId, partName) {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = partName;
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ['True_False', 'Fill_Blank', 'MCQ', 'Definition', 'Formula'].forEach(type => {
-                createBtn(type.replace('_', ' '), content, () => {
-                    if(type === 'Definition' || type === 'Formula') initFlashcards(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
-                    else initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
-                });
-            });
         }
 
         function showGeneralActivities(subId, partName) {
@@ -171,11 +152,49 @@
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            let types = subId === 'math' ? ['1_Mark', '2_Marks', '3_Marks', '5_Marks'] : ['True_False', 'Fill_Blank', 'MCQ'];
+
+            let types = [];
+            if(subId === 'math') {
+                types = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
+            } else if(subId === 'phy' || subId === 'chem') {
+                types = ['True_False', 'Fill_Blank', 'MCQ', 'Definition', 'Formula'];
+            } else if(subId === 'eco' || subId === 'bio') {
+                types = ['True_False', 'Fill_Blank', 'MCQ', 'Definition'];
+            } else {
+                types = ['True_False', 'Fill_Blank', 'MCQ'];
+            }
+
             types.forEach(type => {
-                createBtn(type.replace('_', ' '), content, () => initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_")));
+                createBtn(type.replace('_', ' '), content, () => {
+                    if(type === 'Definition' || type === 'Formula') {
+                        initFlashcards(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+                    } else {
+                        initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+                    }
+                });
             });
         }
+
+        async function initFlashcards(fileName) {
+            try {
+                const res = await fetch(`./quizzes/${fileName}.json`);
+                if(!res.ok) throw new Error();
+                flashCards = await res.json();
+                flashIdx = 0; showScreen('flashcard'); updateFlashUI();
+            } catch (e) { tg.showAlert("ဖိုင်မတွေ့ပါ- " + fileName); }
+        }
+
+        function updateFlashUI() {
+            document.getElementById('flash-card').classList.remove('is-flipped');
+            document.getElementById('flash-front-content').innerText = flashCards[flashIdx].q;
+            document.getElementById('flash-back-content').innerText = flashCards[flashIdx].a;
+            document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
+            if (window.MathJax) MathJax.typesetPromise();
+        }
+
+        function flipCard() { document.getElementById('flash-card').classList.toggle('is-flipped'); }
+        function nextFlash() { if (flashIdx < flashCards.length - 1) { flashIdx++; updateFlashUI(); } }
+        function prevFlash() { if (flashIdx > 0) { flashIdx--; updateFlashUI(); } }
 
         async function initQuiz(fileName) {
             try {
@@ -189,12 +208,11 @@
         function loadQuestion() {
             isAnswered = false; document.getElementById('next-btn').style.display = 'none';
             const q = currentQuestions[currentIdx];
-            const questionText = q.q || q.question || "No Question";
             document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
-            document.getElementById('question-box').innerText = questionText;
+            document.getElementById('question-box').innerText = q.q || q.question;
             const optDiv = document.getElementById('quiz-options'); optDiv.innerHTML = '';
 
-            if (q.type === 'blank' || !q.a) { // ၂ မှတ်တန်ကဲ့သို့ အဖြေတိုက်ရုံပုံစံ
+            if (q.type === 'blank' || !q.a) {
                 const input = document.createElement('input');
                 input.className = 'quiz-input'; input.placeholder = "အဖြေကို စဉ်းစားထားပါ...";
                 const sBtn = document.createElement('button');
@@ -207,17 +225,16 @@
                     if (window.MathJax) MathJax.typesetPromise();
                 };
                 optDiv.append(input, sBtn);
-            } else { // MCQ / True-False
-                const opts = q.a || [];
-                opts.forEach((a, i) => {
+            } else {
+                q.a.forEach((a, i) => {
                     const btn = document.createElement('button'); btn.className = 'btn option-btn'; btn.innerText = a;
                     btn.onclick = () => {
                         if(isAnswered) return; isAnswered = true;
-                        const correct = q.c;
-                        document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                            if(idx === correct) b.classList.add('correct-opt');
-                            else if(idx === i) b.classList.add('wrong-opt');
-                        });
+                        if(i === q.c) btn.classList.add('correct-opt');
+                        else {
+                            btn.classList.add('wrong-opt');
+                            optDiv.children[q.c].classList.add('correct-opt');
+                        }
                         document.getElementById('next-btn').style.display = 'block';
                     };
                     optDiv.appendChild(btn);
@@ -229,7 +246,7 @@
         function nextQuestion() {
             currentIdx++;
             if (currentIdx < currentQuestions.length) loadQuestion();
-            else { tg.showAlert("ပြီးဆုံးပါပြီ။"); showScreen('activity'); }
+            else showScreen('activity');
         }
 
         function showScreen(id) {
