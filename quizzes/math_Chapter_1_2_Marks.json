@@ -1,17 +1,17 @@
 [
   {
-    "q": "Find x: \\( 2x = 10 \\)",
     "type": "math_show",
-    "c": "Divide both sides by 2: <br> \\( x = \\frac{10}{2} \\) <br> \\( x = 5 \\)"
+    "q": "Find x: \\( 2x = 10 \\)",
+     "c": "Divide both sides by 2: <br> \\( x = \\frac{10}{2} \\) <br> \\( x = 5 \\)"
   },
   {
-    "q": "Simplify: \\( (x+y)^2 \\)",
     "type": "math_show",
+    "q": "Simplify: \\( (x+y)^2 \\)",
     "c": "Expansion formula: <br> \\( x^2 + 2xy + y^2 \\)"
   },
   {
+    "type": "math_show",
   "q": "Find x: 2x = 10",
-  "type": "math_show",
   "c": "x = 5"
 }
 ]
