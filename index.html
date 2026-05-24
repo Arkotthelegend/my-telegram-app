@@ -234,28 +234,26 @@
             }
         }
 
- function loadQuestion() {
+function loadQuestion() {
     isAnswered = false; 
     document.getElementById('next-btn').style.display = 'none';
     const q = currentQuestions[currentIdx];
     
-    // Debug လုပ်ရန် (Browser Console မှာ ကြည့်နိုင်သည်)
-    console.log("Current Subject ID:", currentSubject.id);
-    console.log("Question Type:", q.type);
-
+    // မေးခွန်းအရေအတွက်ပြသခြင်း
     document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
     document.getElementById('question-box').innerText = q.q;
+    
     const optDiv = document.getElementById('quiz-options'); 
     optDiv.innerHTML = '';
 
-    // အရေးကြီးဆုံးအပိုင်း - သင်္ချာ ဖြစ်မဖြစ် စစ်ဆေးခြင်း
-    if (currentSubject.id === 'math' || q.type === 'math_show') {
-        // "အဖြေကြည့်ရန်" ခလုတ်ကို ဖန်တီးခြင်း
+    // --- သင်္ချာ (Math) အတွက် အဖြေကြည့်ရန် စနစ် ---
+    // JSON ထဲမှာ type: "math_show" ပါရင် သို့မဟုတ် လက်ရှိဘာသာရပ်က math ဖြစ်နေရင်
+    if (q.type === 'math_show' || (currentSubject && currentSubject.id === 'math')) {
+        
         const showBtn = document.createElement('button');
-        showBtn.className = 'btn'; // သင်သုံးထားတဲ့ CSS class
+        showBtn.className = 'btn'; 
         showBtn.innerText = "အဖြေကြည့်ရန်";
         
-        // အဖြေပြမည့် Box ကို ဖန်တီးခြင်း
         const answerDiv = document.createElement('div');
         answerDiv.style.display = 'none'; 
         answerDiv.style.background = '#334155';
@@ -264,18 +262,22 @@
         answerDiv.style.marginTop = '10px';
         answerDiv.style.borderLeft = '5px solid #10B981';
         answerDiv.style.textAlign = 'left';
-        answerDiv.innerHTML = `<b style="color:#38BDF8;">အဖြေ:</b><br>${q.c}`;
+        answerDiv.style.color = 'white';
+        // q.c ထဲမှာ အဖြေရှိရပါမယ်
+        answerDiv.innerHTML = `<b style="color:#38BDF8;">အဖြေ:</b><br>${q.c || 'အဖြေမသတ်မှတ်ရသေးပါ။'}`;
 
         showBtn.onclick = () => {
             answerDiv.style.display = 'block';
             showBtn.style.display = 'none';
             document.getElementById('next-btn').style.display = 'block';
+            // MathJax သင်္ကေတများ ပြန်လည် Render လုပ်ခြင်း
             if (window.MathJax) MathJax.typesetPromise();
         };
 
         optDiv.append(showBtn, answerDiv);
+
     } 
-    // အခြား Quiz Type များ (MCQ, TF, Blank)
+    // --- ပုံမှန် MCQ နှင့် True/False စနစ် ---
     else if (q.type === 'mcq' || q.type === 'tf') {
         let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
         opts.forEach((a, i) => {
@@ -294,7 +296,9 @@
             };
             optDiv.appendChild(btn);
         });
-    } else if (q.type === 'blank') {
+    } 
+    // --- ကွက်လပ်ဖြည့် (Blank) စနစ် ---
+    else if (q.type === 'blank') {
         const input = document.createElement('input');
         input.className = 'quiz-input'; 
         input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
@@ -304,13 +308,17 @@
         sBtn.onclick = () => {
             if(isAnswered) return; 
             isAnswered = true;
-            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) tg.showAlert("မှန်ကန်ပါသည်။ ✅");
-            else tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
+                tg.showAlert("မှန်ကန်ပါသည်။ ✅");
+            } else {
+                tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+            }
             document.getElementById('next-btn').style.display = 'block';
         };
         optDiv.append(input, sBtn);
     }
     
+    // စာမျက်နှာစဖွင့်ချင်း MathJax Render လုပ်ပေးခြင်း
     if (window.MathJax) MathJax.typesetPromise();
 }
         
