@@ -8,5 +8,10 @@
     "q": "Simplify: \\( (x+y)^2 \\)",
     "type": "math_show",
     "c": "Expansion formula: <br> \\( x^2 + 2xy + y^2 \\)"
-  }
+  },
+  {
+  "q": "Find x: 2x = 10",
+  "type": "math_show",
+  "c": "x = 5"
+}
 ]
