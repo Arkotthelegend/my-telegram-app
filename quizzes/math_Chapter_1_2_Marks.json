@@ -1,17 +1,17 @@
 [
   {
-    "q": "Find x: \\( 2x = 10 \\)",
     "type": "math_show",
-    "c": "Divide both sides by 2: <br> \\( x = \\frac{10}{2} \\) <br> \\( x = 5 \\)"
+    "q": "Find x: \\( 3x = 10 \\)",
+     "c": "Divide both sides by 2: <br> \\( x = \\frac{10}{2} \\) <br> \\( x = 5 \\)"
   },
   {
-    "q": "Simplify: \\( (x+y)^2 \\)",
     "type": "math_show",
+    "q": "Simplify: \\( (x+y)^2 \\)",
     "c": "Expansion formula: <br> \\( x^2 + 2xy + y^2 \\)"
   },
   {
-    "q": "If \\( f(x) = 3x + 2 \\), find \\( f(4) \\).",
     "type": "math_show",
+    "q": "If \\( f(x) = 3x + 2 \\), find \\( f(4) \\).",
     "c": "\\( f(4) = 3(4) + 2 \\) <br> \\( f(4) = 12 + 2 \\) <br> \\( f(4) = 14 \\)"
   }
 ]
