@@ -71,7 +71,7 @@
         <div id="middle-screen" class="screen">
             <div style="height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
                 <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
-                <p style="color: #94A3B8;">just</p>
+                <p style="color: #94A3B8;">if</p>
             </div>
         </div>
 
@@ -238,31 +238,39 @@ function loadQuestion() {
     isAnswered = false; 
     document.getElementById('next-btn').style.display = 'none';
     const q = currentQuestions[currentIdx];
+    
+    // Progress နှင့် မေးခွန်းပြသခြင်း
     document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
     document.getElementById('question-box').innerText = q.q;
+    
     const optDiv = document.getElementById('quiz-options'); 
     optDiv.innerHTML = '';
 
-    // အဖြေကြည့်ရန် ခလုတ် ပေါ်လာစေမည့် Logic
+    // --- အရေးကြီးဆုံးအပိုင်း: သင်္ချာမေးခွန်းဖြစ်မဖြစ် စစ်ဆေးခြင်း ---
+    // JSON ထဲမှာ type: "math_show" လို့ ရေးထားရင် ဒီထဲကို ဝင်ပါမယ်
     if (q.type === 'math_show') {
+        // ၁။ အဖြေကြည့်ရန် ခလုတ်ကို အရင်ဖန်တီးမယ်
         const showBtn = document.createElement('button');
         showBtn.className = 'btn';
         showBtn.innerText = "အဖြေကြည့်ရန်";
         
+        // ၂။ အဖြေပြမယ့် Box ကို ဖန်တီးမယ် (စစချင်း ဖျောက်ထားမယ်)
         const answerDiv = document.createElement('div');
-        answerDiv.style.cssText = "display:none; background:#334155; padding:15px; border-radius:10px; margin-top:10px; border-left:5px solid var(--success); text-align:left; color:white;";
-        answerDiv.innerHTML = `<b>အဖြေ:</b><br>${q.c}`;
+        answerDiv.style.cssText = "display:none; background:#334155; padding:15px; border-radius:10px; margin-top:10px; border-left:5px solid #10B981; text-align:left; color:white;";
+        answerDiv.innerHTML = `<b style="color:#38BDF8;">အဖြေ:</b><br>${q.c}`;
 
-        showBtn.onclick = () => {
+        // ၃။ ခလုတ်နှိပ်လိုက်ရင် အဖြေပေါ်လာအောင် လုပ်မယ်
+        showBtn.onclick = function() {
             answerDiv.style.display = 'block';
             showBtn.style.display = 'none';
             document.getElementById('next-btn').style.display = 'block';
             if (window.MathJax) MathJax.typesetPromise();
         };
 
-        optDiv.append(showBtn, answerDiv);
+        optDiv.appendChild(showBtn);
+        optDiv.appendChild(answerDiv);
     } 
-    // အခြား Quiz အမျိုးအစားများ
+    // --- အခြားပုံမှန် မေးခွန်းများ (MCQ, True/False) ---
     else if (q.type === 'mcq' || q.type === 'tf') {
         let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
         opts.forEach((a, i) => {
@@ -270,7 +278,8 @@ function loadQuestion() {
             btn.className = 'btn option-btn'; 
             btn.innerText = a;
             btn.onclick = () => {
-                if(isAnswered) return; isAnswered = true;
+                if(isAnswered) return; 
+                isAnswered = true;
                 let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
                 document.querySelectorAll('.option-btn').forEach((b, idx) => {
                     if(idx === correctIdx) b.classList.add('correct-opt');
@@ -280,7 +289,9 @@ function loadQuestion() {
             };
             optDiv.appendChild(btn);
         });
-    } else if (q.type === 'blank') {
+    } 
+    // --- ကွက်လပ်ဖြည့် ---
+    else if (q.type === 'blank') {
         const input = document.createElement('input');
         input.className = 'quiz-input'; 
         input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
@@ -288,9 +299,13 @@ function loadQuestion() {
         sBtn.className = 'btn'; 
         sBtn.innerText = "အဖြေစစ်မည်";
         sBtn.onclick = () => {
-            if(isAnswered) return; isAnswered = true;
-            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) tg.showAlert("မှန်ကန်ပါသည်။ ✅");
-            else tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+            if(isAnswered) return; 
+            isAnswered = true;
+            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
+                tg.showAlert("မှန်ကန်ပါသည်။ ✅");
+            } else {
+                tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+            }
             document.getElementById('next-btn').style.display = 'block';
         };
         optDiv.append(input, sBtn);
