@@ -233,31 +233,37 @@
             }
         }
 
-  function loadQuestion() {
+ function loadQuestion() {
     isAnswered = false; 
     document.getElementById('next-btn').style.display = 'none';
     const q = currentQuestions[currentIdx];
+    
+    // Debug လုပ်ရန် (Browser Console မှာ ကြည့်နိုင်သည်)
+    console.log("Current Subject ID:", currentSubject.id);
+    console.log("Question Type:", q.type);
+
     document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
     document.getElementById('question-box').innerText = q.q;
     const optDiv = document.getElementById('quiz-options'); 
     optDiv.innerHTML = '';
 
-    // သင်္ချာဘာသာရပ်ဖြစ်ပြီး type က math_show ဖြစ်နေရင် (သို့မဟုတ် သင်္ချာဘာသာရပ်တိုင်းအတွက်)
+    // အရေးကြီးဆုံးအပိုင်း - သင်္ချာ ဖြစ်မဖြစ် စစ်ဆေးခြင်း
     if (currentSubject.id === 'math' || q.type === 'math_show') {
+        // "အဖြေကြည့်ရန်" ခလုတ်ကို ဖန်တီးခြင်း
         const showBtn = document.createElement('button');
-        showBtn.className = 'btn';
+        showBtn.className = 'btn'; // သင်သုံးထားတဲ့ CSS class
         showBtn.innerText = "အဖြေကြည့်ရန်";
         
+        // အဖြေပြမည့် Box ကို ဖန်တီးခြင်း
         const answerDiv = document.createElement('div');
-        answerDiv.className = 'math-answer-box'; // CSS မှာ ဒါလေးရှိနေဖို့လိုပါတယ်
-        answerDiv.id = 'math-ans';
-        answerDiv.style.display = 'none'; // စစချင်းမှာ ဖျောက်ထားမယ်
+        answerDiv.style.display = 'none'; 
         answerDiv.style.background = '#334155';
         answerDiv.style.padding = '15px';
         answerDiv.style.borderRadius = '10px';
         answerDiv.style.marginTop = '10px';
         answerDiv.style.borderLeft = '5px solid #10B981';
-        answerDiv.innerHTML = `<b>အဖြေ:</b><br>${q.c}`;
+        answerDiv.style.textAlign = 'left';
+        answerDiv.innerHTML = `<b style="color:#38BDF8;">အဖြေ:</b><br>${q.c}`;
 
         showBtn.onclick = () => {
             answerDiv.style.display = 'block';
@@ -268,14 +274,16 @@
 
         optDiv.append(showBtn, answerDiv);
     } 
-    // ကျန်တဲ့ MCQ, TF, Blank တွေအတွက် (မူလ code အတိုင်း)
+    // အခြား Quiz Type များ (MCQ, TF, Blank)
     else if (q.type === 'mcq' || q.type === 'tf') {
         let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
         opts.forEach((a, i) => {
             const btn = document.createElement('button'); 
-            btn.className = 'btn option-btn'; btn.innerText = a;
+            btn.className = 'btn option-btn'; 
+            btn.innerText = a;
             btn.onclick = () => {
-                if(isAnswered) return; isAnswered = true;
+                if(isAnswered) return; 
+                isAnswered = true;
                 let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
                 document.querySelectorAll('.option-btn').forEach((b, idx) => {
                     if(idx === correctIdx) b.classList.add('correct-opt');
@@ -287,11 +295,14 @@
         });
     } else if (q.type === 'blank') {
         const input = document.createElement('input');
-        input.className = 'quiz-input'; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
+        input.className = 'quiz-input'; 
+        input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
         const sBtn = document.createElement('button');
-        sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
+        sBtn.className = 'btn'; 
+        sBtn.innerText = "အဖြေစစ်မည်";
         sBtn.onclick = () => {
-            if(isAnswered) return; isAnswered = true;
+            if(isAnswered) return; 
+            isAnswered = true;
             if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) tg.showAlert("မှန်ကန်ပါသည်။ ✅");
             else tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
             document.getElementById('next-btn').style.display = 'block';
