@@ -81,21 +81,37 @@
        <div id="middle-screen" class="screen">
     <div style="padding: 20px; padding-bottom: 100px;">
         <h2 style="color: var(--accent); text-align: center;">Study Tracker</h2>
-        <p style="color: #94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 20px;">ဒီနေ့အတွက် ရည်မှန်းချက်များကို မှတ်သားပါ</p>
+        <p style="color: #94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 20px;">ဒီနေ့ဘာတွေလုပ်ပြီးပြီလဲ 😉</p>
         
         <div class="profile-info-card" style="text-align: left; padding: 15px;">
             <div id="checklist-container">
                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
                     <input type="checkbox" id="goal1" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal1" style="font-size: 1rem;">သင်္ချာ (၂) မှတ်တန် လေ့ကျင့်ခန်းများ</label>
+                    <label for="goal1" style="font-size: 1rem;">မြန်မာစာ</label>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
                     <input type="checkbox" id="goal2" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal2" style="font-size: 1rem;">ရူပဗေဒ ပုံသေနည်းများ ပြန်နွှေးရန်</label>
+                    <label for="goal2" style="font-size: 1rem;">အင်္ဂလိပ်စာ</label>
                 </div>
                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
                     <input type="checkbox" id="goal3" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal3" style="font-size: 1rem;">အင်္ဂလိပ်စာ Unit 1 MCQ ဖြေရန်</label>
+                    <label for="goal3" style="font-size: 1rem;">သင်္ချာ</label>
+                </div>
+                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal4" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal4" style="font-size: 1rem;">ရူပဗေဒ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal5" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal5" style="font-size: 1rem;">ဓာတုဗေဒ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal6" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal6" style="font-size: 1rem;">ဘောဂဗေဒ</label>
+                </div>
+                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal7" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal7" style="font-size: 1rem;">ဇီဝဗေဒ</label>
                 </div>
             </div>
             <button class="btn" style="background: var(--lock); padding: 10px; font-size: 0.8rem;" onclick="resetGoals()">Reset List</button>
@@ -103,7 +119,7 @@
 
         <div style="margin-top: 30px; text-align: center; padding: 20px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 20px;">
             <span style="font-size: 1.5rem;">💡</span>
-            <h4 style="color: var(--accent); margin: 10px 0 5px 0;">Daily Motivation</h4>
+            <h4 style="color: var(--accent); margin: 10px 0 5px 0;">Motivation စာစုလေးတွေ</h4>
             <p id="daily-quote" style="font-style: italic; font-size: 0.95rem; color: #CBD5E1; line-height: 1.5;">
                 "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။"
             </p>
@@ -649,7 +665,17 @@ const quotes = [
     "မနက်ဖြန်အတွက် အကောင်းဆုံး ပြင်ဆင်မှုက ဒီနေ့မှာ အကောင်းဆုံး ကြိုးစားခြင်းပဲ။",
     "အခက်အခဲဆိုတာ ကျော်ဖြတ်ဖို့အတွက်ပဲ ဖြစ်ပါတယ်။",
     "မရပ်မနား ကြိုးစားနေသရွေ့ မင်းဟာ အရှုံးမပေးသေးပါဘူး။",
-    "ပညာဆိုတာ မင်းဘယ်သူ့ဆီကမှ ခိုးယူလို့မရတဲ့ ရတနာတစ်ခုပဲ။"
+    "ပညာဆိုတာ မင်းဘယ်သူ့ဆီကမှ ခိုးယူလို့မရတဲ့ ရတနာတစ်ခုပဲ။",
+    "မင်းရဲ့ အနာဂတ်ဟာ မင်းဒီနေ့လုပ်ဆောင်တဲ့ အရာတွေအပေါ်မှာပဲ မူတည်တယ်။",
+    "ရှုံးနိမ့်ခြင်းဆိုတာ အောင်မြင်မှုအတွက် သင်ခန်းစာတစ်ခု ရလိုက်တာပါပဲ။",
+    "အိပ်မက်တွေကို အကောင်အထည်ဖော်ဖို့ အကောင်းဆုံးအချိန်ဟာ အခုအချိန်ပဲ။",
+    "မဖြစ်နိုင်ဘူးဆိုတာ ဇွဲမရှိတဲ့သူတွေ ပြောတဲ့ စကားလုံးသက်သက်ပါ။",
+    "သေးငယ်တဲ့ ခြေလှမ်းတွေကနေ ကြီးမားတဲ့ အောင်မြင်မှုတွေ ဖြစ်လာတတ်တယ်။",
+    "ကိုယ့်ကိုယ်ကိုယ် ယုံကြည်မှုရှိခြင်းဟာ အောင်မြင်မှုရဲ့ ပထမဆုံး လျှို့ဝှက်ချက်ပဲ။",
+    "ပန်းတိုင်ကို ရောက်ဖို့ ဖြတ်လမ်းမရှိဘူး၊ ကြိုးစားမှုပဲ ရှိတယ်။",
+    "အကောင်းဆုံးဖြစ်အောင် လုပ်ပါ၊ ကျန်တာကို ကံကြမ္မာအပေါ် ပုံချမထားပါနဲ့။",
+    "သူများထက် ပိုသိချင်ရင် သူများထက် ပိုကြိုးစားရမယ်။",
+    "ရင်းနှီးမြုပ်နှံမှုတွေထဲမှာအကောင်းဆုံးက ပညာရေးမှာရင်းနှီးမြုပ်နှံခြင်းပါပဲ"
 ];
 
 // Checkbox အခြေအနေ သိမ်းဆည်းရန်
@@ -657,7 +683,11 @@ function saveGoals() {
     const goals = {
         goal1: document.getElementById('goal1').checked,
         goal2: document.getElementById('goal2').checked,
-        goal3: document.getElementById('goal3').checked
+        goal3: document.getElementById('goal3').checked,
+        goal4: document.getElementById('goal4').checked,
+        goal5: document.getElementById('goal5').checked,
+        goal6: document.getElementById('goal6').checked,
+        goal7: document.getElementById('goal7').checked
     };
     localStorage.setItem('studyGoals', JSON.stringify(goals));
 }
@@ -669,6 +699,10 @@ function loadGoals() {
         document.getElementById('goal1').checked = saved.goal1;
         document.getElementById('goal2').checked = saved.goal2;
         document.getElementById('goal3').checked = saved.goal3;
+        document.getElementById('goal4').checked = saved.goal4;
+        document.getElementById('goal5').checked = saved.goal5;
+        document.getElementById('goal6').checked = saved.goal6;
+        document.getElementById('goal7').checked = saved.goal7;
     }
     // Random Quote တစ်ခု ပြသရန်
     const randomIdx = Math.floor(Math.random() * quotes.length);
@@ -679,6 +713,10 @@ function resetGoals() {
     document.getElementById('goal1').checked = false;
     document.getElementById('goal2').checked = false;
     document.getElementById('goal3').checked = false;
+    document.getElementById('goal4').checked = false;
+    document.getElementById('goal5').checked = false;
+    document.getElementById('goal6').checked = false;
+    document.getElementById('goal7').checked = false;
     saveGoals();
 }
 
