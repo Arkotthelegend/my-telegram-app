@@ -81,7 +81,7 @@
         <div id="middle-screen" class="screen">
             <div style="height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 20px;">
                 <h2 style="color: var(--accent);">အာကုတ်မှပြုလုပ်ထားသည်</h2>
-                <p style="color: #94A3B8;">mgmgarkot</p>
+                <p style="color: #94A3B8;">letsego</p>
             </div>
         </div>
 
@@ -437,24 +437,32 @@ function loadQuestion() {
         }
 
         // --- Flashcard Engine ---
-        async function initFlashcards(fileName) {
-            try {
-                const res = await fetch(`./quizzes/${fileName}.json`);
-                if(!res.ok) throw new Error();
-                flashCards = await res.json();
-                flashIdx = 0;
-                showScreen('flashcard');
-                updateFlashUI();
-            } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName); }
-        }
+  let currentFlashMark = ""; // ခေါင်းစဉ်မှတ်ရန် variable အသစ်
+
+async function initFlashcards(fileName, markTitle = "Flashcard") {
+    currentFlashMark = markTitle; // လက်ရှိနှိပ်လိုက်တဲ့ Mark နာမည်ကို သိမ်းမယ်
+    try {
+        const res = await fetch(`./quizzes/${fileName}.json`);
+        if(!res.ok) throw new Error();
+        flashCards = await res.json();
+        flashIdx = 0;
+        showScreen('flashcard');
+        updateFlashUI();
+    } catch (e) { tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName); }
+}
+
 function updateFlashUI() {
     const card = document.getElementById('flash-card');
     card.classList.remove('is-flipped');
-    // innerText ကို innerHTML သို့ ပြောင်းလဲခြင်း
+    
+    // ခေါင်းစဉ်ကို ပြောင်းလဲပေးခြင်း
+    document.getElementById('flash-title').innerText = currentFlashMark;
+    
+    // innerText ကို innerHTML သို့ ပြောင်းလဲခြင်း (Messy ဖြစ်တာကို ရှင်းဖို့)
     document.getElementById('flash-front-content').innerHTML = flashCards[flashIdx].q;
     document.getElementById('flash-back-content').innerHTML = flashCards[flashIdx].a;
-    document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
     
+    document.getElementById('flash-count').innerText = `${flashIdx + 1} / ${flashCards.length}`;
     if (window.MathJax) MathJax.typesetPromise();
 }
 
@@ -471,41 +479,37 @@ function updateFlashUI() {
         }
 
         // --- General Subjects ---
- function showGeneralActivities(subId, partName) {
+function showGeneralActivities(subId, partName) {
     showScreen('activity');
     document.getElementById('activity-title').innerText = partName;
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
     document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
     
-    // သင်္ချာဖြစ်လျှင်
-    if (subId === 'math') {
+    if(subId === 'math') {
         const mathMarks = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
         mathMarks.forEach(mark => {
             createBtn(mark.replace('_', ' '), content, () => {
-                // Flashcard စနစ်ကို တိုက်ရိုက်ခေါ်သုံးခြင်း
-                initFlashcards(`math_${partName}_${mark}`.replace(/ /g, "_"));
-                document.getElementById('activity-back-btn').onclick = () => showGeneralActivities(subId, partName);
+                const fileName = `math_${partName}_${mark}`.replace(/ /g, "_");
+                if (mark === '1_Mark') {
+                    // ၁ မှတ်တန်ကို MCQ/Quiz အနေနဲ့ ပြမယ်
+                    initQuiz(fileName);
+                    document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
+                } else {
+                    // ကျန်တဲ့ Marks တွေကို Flashcard အနေနဲ့ ပြမယ်
+                    initFlashcards(fileName, mark.replace('_', ' '));
+                }
             });
         });
-    } 
-    // အခြားဘာသာရပ်များအတွက်
-    else {
-        const types = ['True_False', 'Fill_Blank', 'MCQ'];
+    } else {
+        // အခြားဘာသာရပ်များအတွက် မူလအတိုင်း
+        let types = ['True_False', 'Fill_Blank', 'MCQ'];
         types.forEach(type => {
             createBtn(type.replace('_', ' '), content, () => {
                 initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
                 document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
             });
         });
-
-        // Bio/Eco အတွက် Flashcard (Definition) ထည့်ခြင်း
-        if (subId === 'bio' || subId === 'eco') {
-            createBtn('Flashcard (Definition)', content, () => {
-                initFlashcards(`${subId}_${partName}_Definition`.replace(/ /g, "_"));
-                document.getElementById('activity-back-btn').onclick = () => showGeneralActivities(subId, partName);
-            });
-        }
     }
 }
         // --- Quiz Engine ---
