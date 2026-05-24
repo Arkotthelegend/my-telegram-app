@@ -233,6 +233,41 @@
             }
         }
 
+        function loadQuestion() {
+    isAnswered = false; 
+    document.getElementById('next-btn').style.display = 'none';
+    const q = currentQuestions[currentIdx];
+    document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
+    document.getElementById('question-box').innerText = q.q;
+    const optDiv = document.getElementById('quiz-options'); 
+    optDiv.innerHTML = '';
+
+    // --- သင်္ချာ Marks မေးခွန်းများအတွက် ပုံစံသစ် ---
+    if (q.type === 'math_show') {
+        const showBtn = document.createElement('button');
+        showBtn.className = 'btn';
+        showBtn.innerText = "အဖြေကြည့်ရန်";
+        
+        const answerDiv = document.createElement('div');
+        answerDiv.className = 'math-answer-box';
+        answerDiv.id = 'math-ans';
+        answerDiv.innerHTML = `<b>အဖြေ:</b><br>${q.c}`;
+
+        showBtn.onclick = () => {
+            answerDiv.style.display = 'block'; // အဖြေပြမယ်
+            showBtn.style.display = 'none';    // ခလုတ်ဖျောက်မယ်
+            document.getElementById('next-btn').style.display = 'block'; // 'နောက်တစ်ပုဒ်' ပြမယ်
+            if (window.MathJax) MathJax.typesetPromise();
+        };
+
+        optDiv.append(showBtn, answerDiv);
+    } 
+    // --- မူလရှိပြီးသား MCQ, TF, Blank များ (မပြောင်းလဲပါ) ---
+    else if (q.type === 'mcq' || q.type === 'tf') {
+        // ... (မူလ code အတိုင်းထားပါ) ...
+    }
+}
+        
         // --- English Specific ---
         function showENUnits(typeName) {
             showScreen('activity');
@@ -380,32 +415,42 @@
         }
 
         // --- General Subjects ---
-       function showGeneralActivities(subId, partName) {
+    function showGeneralActivities(subId, partName) {
     showScreen('activity');
     document.getElementById('activity-title').innerText = partName;
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
+    
+    // နောက်သို့ပြန်သွားရန် logic ကို currentSubject ပေါ်မူတည်ပြီး သတ်မှတ်ခြင်း
     document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
     
-    let types = ['True_False', 'Fill_Blank', 'MCQ'];
+    let types = [];
 
-    // Math အတွက် Mark အလိုက်ခွဲခြင်း
-    if(subId === 'math') {
+    // ဘာသာရပ်အလိုက် ပြသမည့် ခလုတ်များကို သတ်မှတ်ခြင်း
+    if (subId === 'math') {
+        // သင်္ချာအတွက် Mark အလိုက်ခွဲခြင်း
         types = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
+    } else {
+        // အခြားဘာသာရပ်များအတွက် standard ပုံစံ
+        types = ['True_False', 'Fill_Blank', 'MCQ'];
     }
 
     // Quiz ခလုတ်များ ဖန်တီးခြင်း
     types.forEach(type => {
         createBtn(type.replace('_', ' '), content, () => {
             initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
+            
+            // Quiz Screen မှ ပြန်ထွက်လျှင် လက်ရှိ Activity (Chapter) Screen သို့ ပြန်လာရန်
             document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
         });
     });
 
-    // --- အသစ်ထည့်သွင်းရမည့် အပိုင်း (Bio နှင့် Eco အတွက် Flashcard ထည့်ခြင်း) ---
-    if(subId === 'bio' || subId === 'eco') {
+    // Bio နှင့် Eco အတွက် Definition Flashcard ထည့်သွင်းခြင်း
+    if (subId === 'bio' || subId === 'eco') {
         createBtn('Flashcard (Definition)', content, () => {
             initFlashcards(`${subId}_${partName}_Definition`.replace(/ /g, "_"));
+            
+            // Flashcard Screen မှ ထွက်လျှင် လက်ရှိ Activity Screen သို့ ပြန်လာရန်
             document.getElementById('activity-back-btn').onclick = () => showGeneralActivities(subId, partName);
         });
     }
