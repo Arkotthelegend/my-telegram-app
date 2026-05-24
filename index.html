@@ -472,6 +472,9 @@
             document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
             document.getElementById('question-box').innerText = q.q;
             const optDiv = document.getElementById('quiz-options'); optDiv.innerHTML = '';
+            if (currentSubject.id === 'math' && (q.type === undefined || q.type === 'math_show')) {
+    q.type = 'math_show'; // math ဆိုရင် auto 'math_show' ပုံစံပြောင်းခိုင်းခြင်း
+}
 
             if (q.type === 'mcq' || q.type === 'tf') {
                 let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
