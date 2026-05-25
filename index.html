@@ -141,6 +141,8 @@
     <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
         🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
     </button>
+	<div id="admin-announcement" style="margin-top: 20px; padding: 15px; background: rgba(56, 189, 248, 0.1); border-radius: 12px; border: 1px solid var(--accent); color: var(--accent); font-size: 0.9rem; text-align: center; display: none;">
+    </div>
 </div>
         </div>
 
@@ -961,27 +963,16 @@ dynamicArea.innerHTML = `
     </button>
 `;
 if (tg.initDataUnsafe.user.id === ADMIN_ID) {
-    dynamicArea.innerHTML += `
-        <div style="margin-top: 20px; padding: 15px; border: 2px dashed var(--accent); border-radius: 12px;">
-            <h3 style="color: var(--accent); margin: 0 0 10px 0;">Admin Control</h3>
-            <input type="number" id="new-user-id" placeholder="User ID ရိုက်ပါ" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--lock); background: var(--bg); color: white; box-sizing: border-box;">
-            
-            <select id="subject-select" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--lock); background: var(--bg); color: white;">
-                <option value="all">ဘာသာရပ်အားလုံး (All)</option>
-                <option value="mm">မြန်မာစာ</option>
-                <option value="en">အင်္ဂလိပ်စာ</option>
-                <option value="math">သင်္ချာ</option>
-                <option value="phy">ရူပဗေဒ</option>
-                <option value="chem">ဓာတုဗေဒ</option>
-                <option value="bio">ဇီဝဗေဒ</option>
-                <option value="eco">ဘောဂဗေဒ</option>
-            </select>
-
-            <button onclick="addPaidUser()" style="width: 100%; background: var(--accent); color: var(--bg); padding: 10px; border-radius: 8px; font-weight: bold;">✅ ခွင့်ပြုချက်ပေးမည်</button>
-            <div id="admin-user-list" style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8; word-break: break-all;"></div>
-        </div>
-    `;
-    setTimeout(showAdminUserList, 100);
+    // Admin Control Panel ထဲမှာ ဒါလေး ထပ်ဖြည့်ပါ
+dynamicArea.innerHTML += `
+    <div style="margin-top: 15px; padding: 10px; border-top: 1px solid var(--lock);">
+        <h4 style="color: var(--accent); margin-bottom: 8px;">📢 အရေးကြီးသတင်းစာစောင်</h4>
+        <textarea id="announcement-text" placeholder="ဒီမှာ စာရိုက်ပါ..." style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg); color: white; border: 1px solid var(--lock); min-height: 60px;"></textarea>
+        <button onclick="postAnnouncement()" style="width: 100%; background: #10B981; color: white; border: none; padding: 10px; border-radius: 8px; margin-top: 8px; font-weight: bold;">
+            🚀 Update တင်မည်
+        </button>
+    </div>
+`;
 
 }
 
@@ -1195,30 +1186,34 @@ function contactDeveloper() {
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
 setInterval(updateStreak, 600);
 
-function addPaidUser() {
-    const idInput = document.getElementById('new-user-id');
-    const subSelect = document.getElementById('subject-select');
-    const newId = idInput.value.trim();
-    const subId = subSelect.value;
+// Admin က Update တင်လိုက်သည့်အခါ
+function postAnnouncement() {
+    const text = document.getElementById('announcement-text').value;
+    if (!text) return tg.showAlert("စာသားထည့်ပါ");
 
-    if (!newId) return tg.showAlert("User ID ထည့်ပါ");
-
-    // Telegram Cloud ပေါ်သို့ ဒေတာလှမ်းမ်းသိမ်းခြင်း
-    const key = `p_${newId}_${subId}`;
-    tg.CloudStorage.setItem(key, "true", (err, success) => {
+    tg.CloudStorage.setItem('app_announcement', text, (err, success) => {
         if (success) {
-            tg.showAlert(`User ${newId} အတွက် ${subId.toUpperCase()} ကို Cloud တွင် ခွင့်ပြုပြီးပါပြီ`);
-            idInput.value = '';
-        } else {
-            tg.showAlert("Error: CloudStorage သို့ သိမ်းမရပါ");
+            tg.showAlert("Announcement ကို Update လုပ်ပြီးပါပြီ။");
+            loadAnnouncement(); // ကိုယ့်ဆီမှာပါ ချက်ချင်းပြရန်
         }
     });
 }
-function showAdminUserList() {
-    const list = JSON.parse(localStorage.getItem('admin_paid_users')) || [];
-    const listDiv = document.getElementById('admin-user-list');
-    if (listDiv) listDiv.innerText = "ဝယ်ယူထားသူများ ID: " + list.join(', ');
+
+// Home Screen ကိုဖွင့်တိုင်း စာသားကို လှမ်းယူပြသရန်
+function loadAnnouncement() {
+    tg.CloudStorage.getItem('app_announcement', (err, value) => {
+        const announceDiv = document.getElementById('admin-announcement');
+        if (!err && value && value.trim() !== "") {
+            announceDiv.innerText = "📢 " + value;
+            announceDiv.style.display = 'block';
+        } else {
+            announceDiv.style.display = 'none';
+        }
+    });
 }
+
+// Window load ဖြစ်တဲ့အခါ ခေါ်ပေးရန်
+window.addEventListener('load', loadAnnouncement);
       
     </script>
 </body>
