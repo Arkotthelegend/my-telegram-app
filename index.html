@@ -954,69 +954,70 @@ function selectOption(index) {
         }
         renderSubjects();
 
-        // အားပေးစာစုများ
-const quotes = [
-    "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။",
-    "မနက်ဖြန်အတွက် အကောင်းဆုံး ပြင်ဆင်မှုက ဒီနေ့မှာ အကောင်းဆုံး ကြိုးစားခြင်းပဲ။",
-    "အခက်အခဲဆိုတာ ကျော်ဖြတ်ဖို့အတွက်ပဲ ဖြစ်ပါတယ်။",
-    "မရပ်မနား ကြိုးစားနေသရွေ့ မင်းဟာ အရှုံးမပေးသေးပါဘူး။",
-    "ပညာဆိုတာ မင်းဘယ်သူ့ဆီကမှ ခိုးယူလို့မရတဲ့ ရတနာတစ်ခုပဲ။",
-    "မင်းရဲ့ အနာဂတ်ဟာ မင်းဒီနေ့လုပ်ဆောင်တဲ့ အရာတွေအပေါ်မှာပဲ မူတည်တယ်။",
-    "ရှုံးနိမ့်ခြင်းဆိုတာ အောင်မြင်မှုအတွက် သင်ခန်းစာတစ်ခု ရလိုက်တာပါပဲ။",
-    "အိပ်မက်တွေကို အကောင်အထည်ဖော်ဖို့ အကောင်းဆုံးအချိန်ဟာ အခုအချိန်ပဲ။",
-    "မဖြစ်နိုင်ဘူးဆိုတာ ဇွဲမရှိတဲ့သူတွေ ပြောတဲ့ စကားလုံးသက်သက်ပါ။",
-    "သေးငယ်တဲ့ ခြေလှမ်းတွေကနေ ကြီးမားတဲ့ အောင်မြင်မှုတွေ ဖြစ်လာတတ်တယ်။",
-    "ကိုယ့်ကိုယ်ကိုယ် ယုံကြည်မှုရှိခြင်းဟာ အောင်မြင်မှုရဲ့ ပထမဆုံး လျှို့ဝှက်ချက်ပဲ။",
-    "ပန်းတိုင်ကို ရောက်ဖို့ ဖြတ်လမ်းမရှိဘူး၊ ကြိုးစားမှုပဲ ရှိတယ်။",
-    "အကောင်းဆုံးဖြစ်အောင် လုပ်ပါ၊ ကျန်တာကို ကံကြမ္မာအပေါ် ပုံချမထားပါနဲ့။",
-    "သူများထက် ပိုသိချင်ရင် သူများထက် ပိုကြိုးစားရမယ်။",
-    "ရင်းနှီးမြုပ်နှံမှုတွေထဲမှာအကောင်းဆုံးက ပညာရေးမှာရင်းနှီးမြုပ်နှံခြင်းပါပဲ"
-];
 
-// Checkbox အခြေအနေ သိမ်းဆည်းရန်
+// ၂။ Checkbox အားလုံးကို Save လုပ်ခြင်း
 function saveGoals() {
-    const goals = {
-        goal1: document.getElementById('goal1').checked,
-        goal2: document.getElementById('goal2').checked,
-        goal3: document.getElementById('goal3').checked,
-        goal4: document.getElementById('goal4').checked,
-        goal5: document.getElementById('goal5').checked,
-        goal6: document.getElementById('goal6').checked,
-        goal7: document.getElementById('goal7').checked
-    };
-    localStorage.setItem('studyGoals', JSON.stringify(goals));
-}
-
-// Checkbox အခြေအနေ ပြန်ဖတ်ရန်
-function loadGoals() {
-    const saved = JSON.parse(localStorage.getItem('studyGoals'));
-    if (saved) {
-        document.getElementById('goal1').checked = saved.goal1;
-        document.getElementById('goal2').checked = saved.goal2;
-        document.getElementById('goal3').checked = saved.goal3;
-        document.getElementById('goal4').checked = saved.goal4;
-        document.getElementById('goal5').checked = saved.goal5;
-        document.getElementById('goal6').checked = saved.goal6;
-        document.getElementById('goal7').checked = saved.goal7;
+    const goals = {};
+    for(let i=1; i<=7; i++) {
+        goals[`goal${i}`] = document.getElementById(`goal${i}`).checked;
     }
-    // Random Quote တစ်ခု ပြသရန်
-    const randomIdx = Math.floor(Math.random() * quotes.length);
-    document.getElementById('daily-quote').innerText = `"${quotes[randomIdx]}"`;
+    // ယနေ့ ရက်စွဲကိုပါ သိမ်းမည်
+    const data = {
+        date: new Date().toLocaleDateString(),
+        values: goals
+    };
+    localStorage.setItem('dailyStudyData', JSON.stringify(data));
 }
 
-function resetGoals() {
-    document.getElementById('goal1').checked = false;
-    document.getElementById('goal2').checked = false;
-    document.getElementById('goal3').checked = false;
-    document.getElementById('goal4').checked = false;
-    document.getElementById('goal5').checked = false;
-    document.getElementById('goal6').checked = false;
-    document.getElementById('goal7').checked = false;
-    saveGoals();
-}
+function loadGoals() {
+    const today = new Date().toLocaleDateString();
+    let savedData = JSON.parse(localStorage.getItem('dailyStudyData'));
 
-// App စဖွင့်ချိန်မှာ load လုပ်ရန်
-window.addEventListener('load', loadGoals);
+    // ၁။ နေ့ရက်အသစ်ရောက်မရောက် စစ်ဆေးပြီး Reset ချခြင်း
+    if (!savedData || savedData.date !== today) {
+        // Data အသစ်တည်ဆောက်ပြီး Checkbox အားလုံးကို အလွတ် (false) ထားမည်
+        savedData = {
+            date: today,
+            values: {
+                goal1: false, goal2: false, goal3: false,
+                goal4: false, goal5: false, goal6: false, goal7: false
+            }
+        };
+        localStorage.setItem('dailyStudyData', JSON.stringify(savedData));
+    }
+
+    // ၂။ Checkbox အခြေအနေများကို UI တွင် ပြန်လည်ပြသခြင်း
+    for (let i = 1; i <= 7; i++) {
+        const checkbox = document.getElementById(`goal${i}`);
+        if (checkbox) {
+            checkbox.checked = savedData.values[`goal${i}`] || false;
+        }
+    }
+
+    // ၃။ Motivation Quote ပြောင်းလဲခြင်း (၁၅ ခုအနက်မှ တစ်ရက်တစ်ခု)
+    const quotes = [
+        "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။",
+        "မနက်ဖြန်အတွက် အကောင်းဆုံး ပြင်ဆင်မှုက ဒီနေ့မှာ အကောင်းဆုံး ကြိုးစားခြင်းပဲ။",
+        "အခက်အခဲဆိုတာ ကျော်ဖြတ်ဖို့အတွက်ပဲ ဖြစ်ပါတယ်။",
+        "မရပ်မနား ကြိုးစားနေသရွေ့ မင်းဟာ အရှုံးမပေးသေးပါဘူး။",
+        "ပညာဆိုတာ မင်းဘယ်သူ့ဆီကမှ ခိုးယူလို့မရတဲ့ ရတနာတစ်ခုပဲ။",
+        "မင်းရဲ့ အနာဂတ်ဟာ မင်းဒီနေ့လုပ်ဆောင်တဲ့ အရာတွေအပေါ်မှာပဲ မူတည်တယ်။",
+        "ရှုံးနိမ့်ခြင်းဆိုတာ အောင်မြင်မှုအတွက် သင်ခန်းစာတစ်ခု ရလိုက်တာပါပဲ။",
+        "အိပ်မက်တွေကို အကောင်အထည်ဖော်ဖို့ အကောင်းဆုံးအချိန်ဟာ အခုအချိန်ပဲ။",
+        "မဖြစ်နိုင်ဘူးဆိုတာ ဇွဲမရှိတဲ့သူတွေ ပြောတဲ့ စကားလုံးသက်သက်ပါ။",
+        "သေးငယ်တဲ့ ခြေလှမ်းတွေကနေ ကြီးမားတဲ့ အောင်မြင်မှုတွေ ဖြစ်လာတတ်တယ်။",
+        "ကိုယ့်ကိုယ်ကိုယ် ယုံကြည်မှုရှိခြင်းဟာ အောင်မြင်မှုရဲ့ ပထမဆုံး လျှို့ဝှက်ချက်ပဲ။",
+        "ပန်းတိုင်ကို ရောက်ဖို့ ဖြတ်လမ်းမရှိဘူး၊ ကြိုးစားမှုပဲ ရှိတယ်။",
+        "အကောင်းဆုံးဖြစ်အောင် လုပ်ပါ၊ ကျန်တာကို ကံကြမ္မာအပေါ် ပုံချမထားပါနဲ့။",
+        "သူများထက် ပိုသိချင်ရင် သူများထက် ပိုကြိုးစားရမယ်။",
+        "ရင်းနှီးမြုပ်နှံမှုတွေထဲမှာအကောင်းဆုံးက ပညာရေးမှာရင်းနှီးမြုပ်နှံခြင်းပါပဲ"
+    ];
+
+    const d = new Date();
+    const dayOfYear = Math.floor((d - new Date(d.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24);
+    const quoteIdx = dayOfYear % quotes.length;
+    document.getElementById('daily-quote').innerText = `"${quotes[quoteIdx]}"`;
+}
 
         // ၁။ Exam Date သတ်မှတ်ရန် (ဥပမာ - ၂၀၂၇ မတ်လ ၁ ရက်)
 
@@ -1057,39 +1058,8 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000);
 
-// ၂။ Checkbox အားလုံးကို Save လုပ်ခြင်း
-function saveGoals() {
-    const goals = {};
-    for(let i=1; i<=7; i++) {
-        goals[`goal${i}`] = document.getElementById(`goal${i}`).checked;
-    }
-    // ယနေ့ ရက်စွဲကိုပါ သိမ်းမည်
-    const data = {
-        date: new Date().toLocaleDateString(),
-        values: goals
-    };
-    localStorage.setItem('dailyStudyData', JSON.stringify(data));
-}
 
-// ၃။ Load လုပ်ခြင်းနှင့် နေ့သစ်ဖြစ်ပါက Reset လုပ်ခြင်း
-function loadGoals() {
-    const savedData = JSON.parse(localStorage.getItem('dailyStudyData'));
-    const today = new Date().toLocaleDateString();
 
-    if (savedData) {
-        // ရက်စွဲမတူတော့လျှင် (နေ့သစ်ဖြစ်သွားလျှင်) အကုန် reset လုပ်မည်
-        if (savedData.date !== today) {
-            resetGoals();
-        } else {
-            // ရက်စွဲတူနေသေးလျှင် အရင်က နှိပ်ထားတာတွေ ပြန်ပြမည်
-            for(let i=1; i<=7; i++) {
-                if(document.getElementById(`goal${i}`)) {
-                    document.getElementById(`goal${i}`).checked = savedData.values[`goal${i}`] || false;
-                }
-            }
-        }
-    }
-}
 
 function resetGoals() {
     for(let i=1; i<=7; i++) {
@@ -1100,9 +1070,9 @@ function resetGoals() {
 
 // App စဖွင့်ချိန်မှာ function တွေကို ခေါ်ခြင်း
 window.onload = () => {
-    loadGoals();
+    loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
     updateCountdown();
-    // Quote ပြောင်းလဲခြင်း logic (အရင်က ပေးထားသည့်အတိုင်း)
+    renderStreakUI(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
 };
         let startTime = Date.now();
 const STREAK_REQUIRED_MINUTES = 15;
@@ -1129,6 +1099,16 @@ function updateStreak() {
         localStorage.setItem('streakData', JSON.stringify(streakData));
         renderStreakUI();
     }
+}
+		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
+function displayDailyQuote() {
+    const today = new Date();
+    // နေ့၊ လ၊ ခုနှစ်ကို ပေါင်းပြီး နံပါတ်တစ်ခုထုတ်ယူခြင်း (ဥပမာ - ၂၆၅၂၀၂၆)
+    const daySeed = today.getDate() + (today.getMonth() + 1) * 100 + today.getFullYear();
+    
+    // နေ့ရက်အပေါ် မူတည်ပြီး array ထဲက quote တစ်ခုကို ပုံသေရွေးချယ်ခြင်း
+    const quoteIdx = daySeed % quotes.length;
+    document.getElementById('daily-quote').innerText = `"${quotes[quoteIdx]}"`;
 }
 
 function renderStreakUI() {
@@ -1158,7 +1138,7 @@ function contactDeveloper() {
 }
 
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
-setInterval(updateStreak, 60000);
+setInterval(updateStreak, 600);
       
     </script>
 </body>
