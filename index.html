@@ -144,7 +144,7 @@
         🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
     </button>
             </div>
-            </div>
+        </div>
     </div>
 
     <div id="middle-screen" class="screen">
@@ -862,28 +862,6 @@ function showGeneralActivities(subId, partName) {
         } else { 
             container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
         }
-        // renderProfileData() ထဲတွင် ထည့်ရန်
-const sessionMins = Math.floor((Date.now() - startTime) / 60000);
-if (sessionMins < STREAK_REQUIRED_MINUTES) {
-    document.getElementById('streak-text').innerText = `ယနေ့အတွက် ${(STREAK_REQUIRED_MINUTES - sessionMins)} မိနစ် ထပ်မံအသုံးပြုရန်`;
-}
-renderStreakUI();
-    }
-
-    // Streak နှင့် Contact UI
-    if (extraSection) {
-        extraSection.innerHTML = `
-            <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-                <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
-                <div id="streak-text" style="font-weight: bold; color: var(--accent);">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-                <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
-            </div>
-            <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-                📧 Developer သို့ ဆက်သွယ်ရန်
-            </button>
-        `;
-        renderStreakUI(); // UI ကို update လုပ်ရန် ခေါ်ခြင်း
-    }
 }
 
         // အားပေးစာစုများ
@@ -1037,61 +1015,7 @@ window.onload = () => {
     // Quote ပြောင်းလဲခြင်း logic (အရင်က ပေးထားသည့်အတိုင်း)
 };
 
-   let startTime = Date.now();
-const STREAK_REQUIRED_MINUTES = 15;
-
-function updateStreak() {
-    const today = new Date().toLocaleDateString();
-    let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
-    
-    // App ထဲမှာ ၁၅ မိနစ်ပြည့်မပြည့် စစ်ဆေးခြင်း
-    let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
-    
-    if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
-        // မနေ့ကမှ နောက်ဆုံးသုံးထားတာဆိုရင် Count တိုးမယ်၊ ရက်ကျော်သွားရင် ၁ ကပြန်စမယ်
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        
-        if (streakData.lastDate === yesterday.toLocaleDateString()) {
-            streakData.count++;
-        } else {
-            streakData.count = 1;
-        }
-        
-        streakData.lastDate = today;
-        localStorage.setItem('streakData', JSON.stringify(streakData));
-        renderStreakUI();
-    }
-}
-
-function renderStreakUI() {
-    const streakData = JSON.parse(localStorage.getItem('streakData')) || { count: 0 };
-    const icon = document.getElementById('streak-icon');
-    const text = document.getElementById('streak-text');
-    const countText = document.getElementById('streak-count');
-    
-    if (streakData.count >= 30) {
-        icon.innerText = "💎"; // တစ်လပြည့်ရင် အရောင်ပြောင်း (Blue Flame/Diamond)
-        text.innerText = "Legendary Streak!";
-    } else if (streakData.count >= 7) {
-        icon.innerText = "🔥"; // တစ်ပတ်ပြည့်ရင် မီးတောက်
-        text.innerText = "On Fire!";
-    } else {
-        icon.innerText = "🌑"; 
-        text.innerText = "စာကြိုးစားဆဲ...";
-    }
-    countText.innerText = `Streak: ${streakData.count} Days`;
-}
-
-// Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
-function contactDeveloper() {
-    const devUsername = "YOUR_BOT_OR_USERNAME"; // သင့် Telegram Username ပြောင်းပါ
-    const message = encodeURIComponent("မေးခွန်းအမှား တိုင်ကြားရန် ရှိပါသည်။");
-    window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
-}
-
-// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
-setInterval(updateStreak, 60000);
+ 
     </script>
 </body>
 </html>
