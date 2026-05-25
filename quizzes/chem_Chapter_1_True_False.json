@@ -59,3 +59,203 @@
     "q": "The d-subshell has five dumbbell-shaped orbitals.",
     "c": false
   },
+{
+    "type": "tf",
+    "q": "The two electrons with the same spin can occupy the same orbital.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Hund's rule states that an electron occupies the lowest energy orbital first.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The shape of BF₃ is a trigonal planar geometry, so it is considered nonpolar.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The higher the value of the electronegativity, the greater is the atom's attraction to electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Some compounds have both ionic and covalent character.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The s-subshell has only one spherical-shaped orbital.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a covalent bond there are complete transfer of electrons between two atoms.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "VSEPR theory is a theory to predict the three-dimensional shapes of molecules.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "All the inorganic and organic materials are not created with chemical bonds.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Graphite contains unbonded electrons which move through the structure.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The amount of energy required to add an electron from a gaseous atom.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "According to Pauli's exclusion principle, no more two electrons in an atom can have same orbital.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Metallic bond is a strong force of attraction between the metal ions and the electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The covalent bonds can be polar or non-polar.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Ion-dipole interactions are formed between a metal and a non-metal.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Hydrogen bonding can occur in intermolecular forces only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Silicon dioxide is a giant covalent molecule with four oxygen atoms bonded to each silicon atom.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Hydrogen bonds involve hydrogen bonded to carbon, hydrogen, oxygen, or fluorine.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "H₂O molecule is an example of the formation of dative bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The structure of silicon dioxide is similar to graphite.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Metals conduct electricity when molten because negative ions are free to move.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The elements having high electron affinity easily lose electrons.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Silicon(IV) oxide, SiO₂ (silica or quartz) is a giant covalent molecule.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A hydrogen bond is a special type of dipole-dipole interaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Everything around us is made up of elements, molecules, or compounds.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "CO₂ molecule has no dipole moment since C-O bonds are nonpolar.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "A metal loses electrons to form positively charged ions (cations).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In a graphite, each carbon atom is joined to four other carbon atoms by covalent bonds.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The strength of metallic bond is higher than that of an ionic bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The elements having high ionisation energy results in the formation of the cations.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "An ionic bond is the attractive force between a positive ion and a negative ion.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Atoms will lose, gain, or share electrons to obtain an octet.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Carbon is in Group VI and has 6 valence electrons.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "According to Pauli's principle, all the electrons in singly occupied orbitals have the same spin.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The water molecule is a non-polar molecule.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "HCN is a linear molecule, therefore it is a nonpolar molecule.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In ionic compounds, the cations and anions are held together by strong electrostatic attraction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The covalent bond is the electrostatic attraction between the nuclei of the atoms and the transferred electrons.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "CO molecule has a triple bond that consists of two covalent bonds and one coordinate bond.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Metals consist of giant structures of atoms.",
+    "c": true
+  },
