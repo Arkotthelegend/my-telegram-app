@@ -280,6 +280,9 @@
     </div>
 
     <script>
+		
+		const ADMIN_ID = 8432363664;
+		
 		function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -296,7 +299,6 @@
             "5593040432": ["all"],
             "6912601908": ["phy"],
             "1625758870": ["all"],
-            "7273479209": ["all"]
         };
 
         const subjects = [
@@ -319,17 +321,35 @@
         const userBought = paidUsers[userId] || [];
 
         function renderSubjects() {
-            const list = document.getElementById('subject-list');
-            list.innerHTML = '';
-            subjects.forEach(sub => {
-                const isPaid = userBought.includes('all') || userBought.includes(sub.id);
-                const div = document.createElement('div');
-                div.className = `subject-card ${isPaid ? '' : 'locked'}`;
-                div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
-                div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
-                list.appendChild(div);
-            });
-        }
+    const list = document.getElementById('subject-list');
+    list.innerHTML = '';
+    
+    // Admin ထည့်ပေးထားတဲ့ Paid Users စာရင်းကို LocalStorage ကနေ ယူမယ်
+    const adminPaidUsers = JSON.parse(localStorage.getItem('admin_paid_users')) || [];
+    const userId = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : null;
+
+    subjects.forEach(sub => {
+        // ၁။ Code ထဲမှာပါပြီးသားလား (သို့မဟုတ်) Admin က ID ထည့်ပေးထားလား စစ်ဆေးခြင်း
+        const isPaid = userBought.includes('all') || 
+                       userBought.includes(sub.id) || 
+                       adminPaidUsers.includes(userId);
+
+        const div = document.createElement('div');
+        div.className = `subject-card ${isPaid ? '' : 'locked'}`;
+        div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
+        
+        // နှိပ်လိုက်တဲ့အခါ လုပ်ဆောင်ချက်
+        div.onclick = () => {
+            if (isPaid) {
+                openSubjectMenu(sub);
+            } else {
+                tg.showAlert(`ဝယ်ယူရန်လိုအပ်ပါသည်။\nသင်၏ ID: ${userId}`);
+            }
+        };
+        
+        list.appendChild(div);
+    });
+}
 
         function openSubjectMenu(sub) {
             const isPaid = userBought.includes('all') || userBought.includes(sub.id);
@@ -947,6 +967,18 @@ dynamicArea.innerHTML = `
         အမှားများတိုင်ကြားရန်
     </button>
 `;
+if (tg.initDataUnsafe.user.id === ADMIN_ID) {
+    dynamicArea.innerHTML += `
+        <div style="margin-top: 20px; padding: 15px; border: 2px dashed var(--accent); border-radius: 12px;">
+            <h3 style="color: var(--accent); margin: 0 0 10px 0;">Admin Control</h3>
+            <input type="number" id="new-user-id" placeholder="User ID ရိုက်ပါ" style="width: 100%; padding: 10px; margin-bottom: 10px; border-radius: 8px; border: 1px solid var(--lock); background: var(--bg); color: white;">
+            <button onclick="addPaidUser()" style="width: 100%; background: var(--accent); color: var(--bg); padding: 10px; border-radius: 8px; font-weight: bold;">✅ လူသစ်ထည့်မည်</button>
+            <div id="admin-user-list" style="margin-top: 10px; font-size: 0.8rem; color: #94a3b8;"></div>
+        </div>
+    `;
+    // လက်ရှိ ဝယ်ထားသူများစာရင်းကို ပြသရန်
+    setTimeout(showAdminUserList, 100);
+}
 
     renderStreakUI(); // UI ကို refresh လုပ်ရန်
 }
@@ -1157,6 +1189,27 @@ function contactDeveloper() {
 
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
 setInterval(updateStreak, 600);
+
+function addPaidUser() {
+    const idInput = document.getElementById('new-user-id');
+    const newId = parseInt(idInput.value);
+    if (!newId) return tg.showAlert("ID ထည့်ပါ");
+
+    let adminPaidUsers = JSON.parse(localStorage.getItem('admin_paid_users')) || [];
+    if (!adminPaidUsers.includes(newId)) {
+        adminPaidUsers.push(newId);
+        localStorage.setItem('admin_paid_users', JSON.stringify(adminPaidUsers));
+        tg.showAlert("User ID: " + newId + " ကို ခွင့်ပြုပြီးပါပြီ");
+        idInput.value = '';
+        showAdminUserList();
+    }
+}
+
+function showAdminUserList() {
+    const list = JSON.parse(localStorage.getItem('admin_paid_users')) || [];
+    const listDiv = document.getElementById('admin-user-list');
+    if (listDiv) listDiv.innerText = "ဝယ်ယူထားသူများ ID: " + list.join(', ');
+}
       
     </script>
 </body>
