@@ -78,51 +78,57 @@
             <div id="subject-list"></div>
         </div>
 
-       <div id="middle-screen" class="screen">
+    <div id="middle-screen" class="screen">
     <div style="padding: 20px; padding-bottom: 100px;">
-        <h2 style="color: var(--accent); text-align: center;">Study Tracker</h2>
-        <p style="color: #94A3B8; text-align: center; font-size: 0.9rem; margin-bottom: 20px;">ဒီနေ့ဘာတွေလုပ်ပြီးပြီလဲ 😉</p>
         
-        <div class="profile-info-card" style="text-align: left; padding: 15px;">
-            <div id="checklist-container">
-                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal1" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal1" style="font-size: 1rem;">မြန်မာစာ</label>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal2" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal2" style="font-size: 1rem;">အင်္ဂလိပ်စာ</label>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal3" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal3" style="font-size: 1rem;">သင်္ချာ</label>
-                </div>
-                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal4" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal4" style="font-size: 1rem;">ရူပဗေဒ</label>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal5" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal5" style="font-size: 1rem;">ဓာတုဗေဒ</label>
-                </div>
-                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal6" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal6" style="font-size: 1rem;">ဘောဂဗေဒ</label>
-                </div>
-                 <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
-                    <input type="checkbox" id="goal7" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
-                    <label for="goal7" style="font-size: 1rem;">ဇီဝဗေဒ</label>
-                </div>
-            </div>
-            <button class="btn" style="background: var(--lock); padding: 10px; font-size: 0.8rem;" onclick="resetGoals()">Reset List</button>
-        </div>
-
-        <div style="margin-top: 30px; text-align: center; padding: 20px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 20px;">
+        <div style="margin-bottom: 25px; text-align: center; padding: 20px; background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 20px;">
             <span style="font-size: 1.5rem;">💡</span>
-            <h4 style="color: var(--accent); margin: 10px 0 5px 0;">Motivation စာစုလေးတွေ</h4>
+            <h4 style="color: var(--accent); margin: 10px 0 5px 0;">Daily Motivation</h4>
             <p id="daily-quote" style="font-style: italic; font-size: 0.95rem; color: #CBD5E1; line-height: 1.5;">
                 "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။"
             </p>
+        </div>
+
+        <h3 style="color: var(--accent); text-align: center; margin-bottom: 15px;">Daily Study Tracker</h3>
+        <div class="profile-info-card" style="text-align: left; padding: 15px; margin-bottom: 25px;">
+            <div id="checklist-container">
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal1" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal1">မြန်မာစာ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal2" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal2">အင်္ဂလိပ်စာ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal3" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal3">သင်္ချာ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal4" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal4">ရူပဗေဒ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal5" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal5">ဓာတုဗေဒ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal6" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal6">ဘောဂဗေဒ</label>
+                </div>
+                <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 10px;">
+                    <input type="checkbox" id="goal7" style="width: 20px; height: 20px;" onchange="saveGoals()"> 
+                    <label for="goal7">ဇီဝဗေဒ</label>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 20px; background: linear-gradient(135deg, #1e293b, #0f172a); border-radius: 20px; border: 1px solid var(--lock);">
+            <h4 style="color: var(--error); margin: 0 0 10px 0;">🚀 Exam Countdown</h4>
+            <div id="exam-timer" style="font-size: 1.5rem; font-weight: bold; color: var(--white); font-family: monospace;">
+                00d : 00h : 00m : 00s
+            </div>
+            <p style="font-size: 0.8rem; color: #94A3B8; margin-top: 10px;">တက္ကသိုလ်ဝင်စာမေးပွဲကြီးအထိ ကျန်ရှိချိန်</p>
         </div>
     </div>
 </div>
@@ -722,6 +728,71 @@ function resetGoals() {
 
 // App စဖွင့်ချိန်မှာ load လုပ်ရန်
 window.addEventListener('load', loadGoals);
+
+        // ၁။ Exam Date သတ်မှတ်ရန် (ဥပမာ - ၂၀၂၇ မတ်လ ၁ ရက်)
+const examDate = new Date("March 1, 2027 09:00:00").getTime();
+
+function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = examDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('exam-timer').innerText = 
+        `${days}d : ${hours}h : ${mins}m : ${secs}s`;
+}
+setInterval(updateCountdown, 1000);
+
+// ၂။ Checkbox အားလုံးကို Save လုပ်ခြင်း
+function saveGoals() {
+    const goals = {};
+    for(let i=1; i<=7; i++) {
+        goals[`goal${i}`] = document.getElementById(`goal${i}`).checked;
+    }
+    // ယနေ့ ရက်စွဲကိုပါ သိမ်းမည်
+    const data = {
+        date: new Date().toLocaleDateString(),
+        values: goals
+    };
+    localStorage.setItem('dailyStudyData', JSON.stringify(data));
+}
+
+// ၃။ Load လုပ်ခြင်းနှင့် နေ့သစ်ဖြစ်ပါက Reset လုပ်ခြင်း
+function loadGoals() {
+    const savedData = JSON.parse(localStorage.getItem('dailyStudyData'));
+    const today = new Date().toLocaleDateString();
+
+    if (savedData) {
+        // ရက်စွဲမတူတော့လျှင် (နေ့သစ်ဖြစ်သွားလျှင်) အကုန် reset လုပ်မည်
+        if (savedData.date !== today) {
+            resetGoals();
+        } else {
+            // ရက်စွဲတူနေသေးလျှင် အရင်က နှိပ်ထားတာတွေ ပြန်ပြမည်
+            for(let i=1; i<=7; i++) {
+                if(document.getElementById(`goal${i}`)) {
+                    document.getElementById(`goal${i}`).checked = savedData.values[`goal${i}`] || false;
+                }
+            }
+        }
+    }
+}
+
+function resetGoals() {
+    for(let i=1; i<=7; i++) {
+        if(document.getElementById(`goal${i}`)) document.getElementById(`goal${i}`).checked = false;
+    }
+    saveGoals();
+}
+
+// App စဖွင့်ချိန်မှာ function တွေကို ခေါ်ခြင်း
+window.onload = () => {
+    loadGoals();
+    updateCountdown();
+    // Quote ပြောင်းလဲခြင်း logic (အရင်က ပေးထားသည့်အတိုင်း)
+};
     </script>
 </body>
 </html>
