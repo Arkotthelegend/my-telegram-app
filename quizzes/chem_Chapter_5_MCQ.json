@@ -1,1 +1,618 @@
-
+[
+  {
+    "type": "mcq",
+    "q": "The relative strengths of acids may be determined by measuring _________.",
+    "a": [
+      "the acid dissociation constant",
+      "the acid ionisation constant",
+      "the acid equilibrium constant",
+      "all of these"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Arrhenius defined an acid as a species that _________.",
+    "a": [
+      "can donate a proton",
+      "can accept a proton",
+      "can produce OH⁻ ions in water",
+      "can produce H⁺ ions in water"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "In a dilute aqueous solution of ammonia, which of the following ions are present?",
+    "a": [
+      "NH₂⁻ and OH⁻",
+      "NH₃ and OH⁻",
+      "NH₄⁺ and OH⁻",
+      "NH₄⁺ and H⁺"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following relation between pH and pOH is correct?",
+    "a": [
+      "pH – pOH = 14",
+      "pH + pOH = 7",
+      "pH – pOH = 0",
+      "pH + pOH = 14"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following pair is a buffer solution?",
+    "a": [
+      "HCl/NaCl",
+      "H₂CO₃/HCO₃⁻",
+      "H₂SO₄/Na₂SO₄",
+      "NH₃/NaOH"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The concentration of H⁺ ion in water is 10⁻⁷ mol dm⁻³, what is the pH of water?",
+    "a": [
+      "1",
+      "14",
+      "7",
+      "5"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is a weak base?",
+    "a": [
+      "NaOH",
+      "KOH",
+      "Ca(OH)₂",
+      "NH₄OH"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following solutions has the lowest pH at 25°C?",
+    "a": [
+      "0.2 M sodium hydroxide",
+      "0.2 M hydrochloric acid",
+      "0.2 M ammonia",
+      "pure water"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In the reaction NH₃ + H₂O ⇌ NH₄⁺ + OH⁻, the conjugate acid-base pair is in the reaction is _________",
+    "a": [
+      "NH₃ and H₂O",
+      "NH₃ and NH₄⁺",
+      "NH₄⁺ and OH⁻",
+      "H₂O and NH₄⁺"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which statements about the following reaction are correct?\nHCl(aq) + H₂O(l) ⇌ H₃O⁺(aq) + Cl⁻(aq)",
+    "a": [
+      "conjugate acid of HCl is Cl⁻",
+      "conjugate acid-base pair is H₂O and H₃O⁺",
+      "conjugate base of H₂O is H₃O⁺",
+      "conjugate acid-base pair is HCl and H₃O⁺"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the concentration (in mol dm⁻³) of hydroxide ions in a solution at 25.0 °C with pH = 4.282?",
+    "a": [
+      "4.28",
+      "9.72",
+      "1.92 x 10⁻¹⁰",
+      "5.22 x 10⁻⁵"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The dissociation constant K_b for a base B is given by the expression _________",
+    "a": [
+      "K_b = [B] / ([HB⁺][OH⁻])",
+      "K_b = ([B][H₂O]) / ([HB⁺][OH⁻])",
+      "K_b = ([HB⁺][OH⁻]) / [B]",
+      "K_b = ([HB⁺][OH⁻]) / ([B][H₂O])"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The pH of the solution on mixing a 50 cm³ solution of 0.1 mol dm⁻³ a strong monobasic acid with a 50 cm³ solution of strong monacidic base of 0.01 mol dm⁻³ will be _________.",
+    "a": [
+      "1",
+      "1.35",
+      "7",
+      "12.65"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which one of the following is NOT base?",
+    "a": [
+      "Mg(OH)₂",
+      "NH₄OH",
+      "CH₃OH",
+      "Na₂CO₃"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which statement about a buffer solution is correct?",
+    "a": [
+      "A buffer solution rapidly changes pH due to small addition of an acid.",
+      "A buffer solution resists changes in pH.",
+      "A buffer solution does change pH with dilution of water.",
+      "A buffer solution changes pH only with the small addition of acid."
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A strong acid is _________ ionized in water while a weak acid is only _________ ionized.",
+    "a": [
+      "partially, partially",
+      "completely, completely",
+      "partially, completely",
+      "completely, partially"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The pH of an aqueous solution of a particular ionic compound has pH = 5. The compound is _________.",
+    "a": [
+      "a basic salt",
+      "an acidic salt",
+      "a neutral salt",
+      "a pure salt"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The conjugate acid of NH₃ is _________.",
+    "a": [
+      "NH₃",
+      "NH₂⁻",
+      "NH₃⁺",
+      "NH₄⁺"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following can act both as a Bronsted acid and a Bronsted base?",
+    "a": [
+      "CH₃COO⁻",
+      "HCl",
+      "HCO₃⁻",
+      "Na₂CO₃"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "According to the Lewis theory, a base is _________.",
+    "a": [
+      "a proton acceptor",
+      "a proton donor.",
+      "a species that can accept an electron pair",
+      "a species that can donate an electron pair"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "In the Bronsted-Lowry theory, a base is defined as _________.",
+    "a": [
+      "a proton donor",
+      "a hydroxide donor",
+      "a lone pair electron acceptor",
+      "a proton acceptor"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is a Lewis acid?",
+    "a": [
+      "NH₃",
+      "BF₃",
+      "HCl",
+      "PCl₃"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The gastric juice in a stomach has a pH of about _________.",
+    "a": [
+      "1.0",
+      "1.3",
+      "1.5",
+      "1.7"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The ionic product of water will increase if _________.",
+    "a": [
+      "temperature is decreased",
+      "temperature is increased",
+      "pressure is decreased",
+      "pressure is increased"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is NOT a Bronsted-Lowry acid?",
+    "a": [
+      "NH₄⁺",
+      "CH₃COO⁻",
+      "H₂O",
+      "HSO₄⁻"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Consider the following salts.\n1. NaCN\n2. K₂CO₃\n3. NH₄Cl\n4. KNO₃\nWhich salt(s) when dissolved in water will produce an acid solution?",
+    "a": [
+      "1 and 2",
+      "2 and 3",
+      "2 and 4",
+      "3 only"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The Bronsted-Lowry acid base theory fails to explain between _________.",
+    "a": [
+      "HCl and H₂O",
+      "CO₂ and BaO",
+      "CH₃COOH and H₂O",
+      "NH₃ and H₂O"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The [H⁺] in a 0.050 M solution of Ba(OH)₂ is _________.",
+    "a": [
+      "0.025 M",
+      "0.05 M",
+      "0.25 M",
+      "0.10 M"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following substances is a Bronsted-Lowry acid?",
+    "a": [
+      "NaOH",
+      "CH₄",
+      "H₂",
+      "H₂O"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is NOT a salt?",
+    "a": [
+      "Sodium chloride",
+      "Slaked lime",
+      "Zinc sulphide",
+      "potassium nitrate"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following substance is the basic in aqueous solution?",
+    "a": [
+      "Na₂CO₃",
+      "NaNO₃",
+      "KCl",
+      "NH₄Cl"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The pH of a solution increases from 5 to 7, the concertation of H⁺ ions _________.",
+    "a": [
+      "increases",
+      "decreases",
+      "remains the same",
+      "becomes zero"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Of the following acids, _________ is a weak acid.",
+    "a": [
+      "HCl",
+      "HClO₄",
+      "HNO₃",
+      "HF"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is only Bronsted - Lowry acid but not an Arrhenius acid",
+    "a": [
+      "HCl",
+      "NH₄⁺",
+      "BF₃",
+      "CH₃COOH"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Of the following acids, _________ is a strong acid.",
+    "a": [
+      "H₂CO₃",
+      "HCOOH",
+      "HNO₃",
+      "HF"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following does not undergo hydrolysis in water?",
+    "a": [
+      "(NH₄)₂SO₄",
+      "K₂CO₃",
+      "CH₃COONH₄",
+      "Na₂SO₄"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which one of the following is NOT a Lewis acid?",
+    "a": [
+      "BCl₃",
+      "AlCl₃",
+      "BeCl₂",
+      "H⁺"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A weak acid partially dissociates to give a _________.",
+    "a": [
+      "hydroxide",
+      "cation",
+      "proton",
+      "anion"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following mixture is not a buffer solution?",
+    "a": [
+      "NH₄Cl/NH₄OH",
+      "HCN/NaCN",
+      "HF/NaF",
+      "HCl/NaOH"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "What is the value of K_w at 298 K?",
+    "a": [
+      "1 x 10⁻¹⁴ mol dm⁻³",
+      "1 x 10⁻¹⁴ mol² dm⁻⁶",
+      "1 x 10⁻⁷ mol dm⁻³",
+      "1 x 10⁻⁷ mol² dm⁻⁶"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following could be added to a solution of sodium ethanoate to produce a buffer?",
+    "a": [
+      "acetic acid or hydrochloric acid",
+      "acetic acid only",
+      "hydrochloric acid only",
+      "potassium ethanoate only"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "HA is a weak acid.\nWhich equilibrium corresponds to the equilibrium constant K_b for A⁻?",
+    "a": [
+      "HA(aq) + H₂O(l) ⇌ H₂A⁺(aq) + OH⁻(aq)",
+      "A⁻(aq) + H₃O⁺(aq) ⇌ HA(aq) + H₂O(l)",
+      "HA(aq) + OH⁻(aq) ⇌ H₂O(l) + H⁺(aq)",
+      "A⁻(aq) + H₂O(l) ⇌ HA(aq) + OH⁻(aq)"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "A weak base has _________ conjugate acid and a weak acid has a _________ conjugate base.",
+    "a": [
+      "strong, strong",
+      "weak, weak",
+      "strong, weak",
+      "weak, strong"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The pH of 0.01 mol dm⁻³ of NaOH solution will be _________.",
+    "a": [
+      "0.2",
+      "2",
+      "12",
+      "13"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The molar aqueous solution of _________ is not affected by the pH of the solution",
+    "a": [
+      "Na₂CO₃",
+      "NaCl",
+      "NaF",
+      "NaCN"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In acidic solution, _________ at 298K.",
+    "a": [
+      "[H⁺] > [OH⁻]",
+      "[H⁺] = [OH⁻]",
+      "[H⁺] < [OH⁻]",
+      "[OH⁻] > 7.00"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The pH in the human body varies greatly from one fluid to another. The pH of blood is about _________.",
+    "a": [
+      "7.0",
+      "7.2",
+      "7.4",
+      "7.6"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of acid contains in lemon juice?",
+    "a": [
+      "Acetic acid",
+      "Citric acid",
+      "Formic acid",
+      "Ascorbic acid"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following salts undergoes hydrolysis in water and gives basic solution.?",
+    "a": [
+      "CH₃COONa",
+      "KNO₃",
+      "NaCl",
+      "K₂SO₄"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which salt is not derived from a strong acid and a strong base?",
+    "a": [
+      "MgCl₂",
+      "Mg(NO₃)₂",
+      "MgF₂",
+      "NaCl"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The pH of a solution prepared by mixing 50.0 cm³ of 0.1 M KOH and 50.0 cm³ of 0.1 M HCl is _________.",
+    "a": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "K_b for CH₃COO⁻ is 1.8 ×10⁻⁵ and K_a for NH₄⁺ is 1.8×10⁻⁵. The pH of ammonium acetate solution will be _________.",
+    "a": [
+      "7.08",
+      "6.75",
+      "7.0",
+      "between 6 and 7"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Acetic acid is weak acid because it is _________ in aqueous solution.",
+    "a": [
+      "an acidic",
+      "completely ionised",
+      "partially ionised",
+      "containing the COOH group"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which one of the following is the weakest acid?",
+    "a": [
+      "HF (K_a = 6.8 x 10⁻⁴)",
+      "HClO (K_a = 3.0 x 10⁻⁸)",
+      "HNO₂ (K_a = 4.5 x 10⁻⁴)",
+      "HCN (K_a = 4.9 x 10⁻¹⁰)"
+    ],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "_________ is used as an antacid?",
+    "a": [
+      "Ca(OH)₂",
+      "Mg(OH)₂",
+      "NaOH",
+      "KOH"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following are NOT conjugate acid-base pairs.",
+    "a": [
+      "HCO₃²⁻, CO₃²⁻",
+      "NH₄⁺, NH₃",
+      "H₂C₂O₄, HC₂O₄⁻",
+      "OH⁻, H⁺"
+    ],
+    "c": 3
+  }
+]
