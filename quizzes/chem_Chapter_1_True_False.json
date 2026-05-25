@@ -1,1 +1,61 @@
-
+[
+  {
+    "type": "tf",
+    "q": "The electrons are filled in the lower energy atomic orbitals after filling higher energy ones.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Silicon dioxide conducts electricity because it contains free electrons.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Electronegativity is the ability of an atom to attract electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In solid ionic compounds, their ions are held in variable positions and cannot move.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "London dispersion forces can be formed between non-polar molecules.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Metals conduct electricity when solid because positive ions are free to move.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The single bonds are the longest and stronger than double and triple bonds.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A coordinate bond is a special type of covalent bond.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Hydrogen bonding can occur in liquid water.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An ionic bond involves electron sharing between two atoms.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "According to Pauli's exclusion principle, the two electrons in the same orbital will have parallel spins.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The d-subshell has five dumbbell-shaped orbitals.",
+    "c": false
+  },
