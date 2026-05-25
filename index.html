@@ -930,19 +930,23 @@ function selectOption(index) {
             container.appendChild(span);
         });
     }
+// renderProfileData function ထဲက dynamicArea အပိုင်းကို ဒီလိုပြင်ပါ
+const dynamicArea = document.getElementById('dynamic-content-area');
+dynamicArea.innerHTML = `
+    <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-bottom: -10px; margin-top: 20px;">
+        "တစ်ရက်စာ Streak ရဖို့အတွက် အနည်းဆုံး ၁၅ မိနစ် အသုံးပြုဖို့ လိုအပ်ပါတယ်"
+    </p>
 
-    // ၂။ Streak နှင့် Button ဧရိယာကို ရှင်းထုတ်ပြီးမှ အသစ်ပြန်ထည့်ခြင်း (အရေးကြီးဆုံးအပိုင်း)
-    const dynamicArea = document.getElementById('dynamic-content-area');
-    dynamicArea.innerHTML = `
-        <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-            <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
-            <div id="streak-text" style="font-weight: bold; color: var(--accent);">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-            <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
-        </div>
-        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-            အမှားများတိုင်ကြားရန်
-        </button>
-    `;
+    <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+        <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
+        <div id="streak-text" style="font-weight: bold; color: var(--accent);">စာကြိုးစားဆဲ...</div>
+        <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
+    </div>
+    
+    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
+        အမှားများတိုင်ကြားရန်
+    </button>
+`;
 
     renderStreakUI(); // UI ကို refresh လုပ်ရန်
 }
@@ -1079,26 +1083,35 @@ const STREAK_REQUIRED_MINUTES = 15;
 
 function updateStreak() {
     const today = new Date().toLocaleDateString();
-    let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
     
-    // App ထဲမှာ ၁၅ မိနစ်ပြည့်မပြည့် စစ်ဆေးခြင်း
-    let sessionMinutes = Math.floor((Date.now() - startTime) / 600);
-    
-    if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
-        // မနေ့ကမှ နောက်ဆုံးသုံးထားတာဆိုရင် Count တိုးမယ်၊ ရက်ကျော်သွားရင် ၁ ကပြန်စမယ်
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        
-        if (streakData.lastDate === yesterday.toLocaleDateString()) {
-            streakData.count++;
-        } else {
-            streakData.count = 1;
+    // Telegram Cloud ကနေ Data ကို အရင်လှမ်းယူပါမယ်
+    tg.CloudStorage.getItem('streakData', (err, value) => {
+        let streakData = { lastDate: '', count: 0 };
+        if (!err && value) {
+            streakData = JSON.parse(value);
         }
-        
-        streakData.lastDate = today;
-        localStorage.setItem('streakData', JSON.stringify(streakData));
-        renderStreakUI();
-    }
+
+        let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
+
+        if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
+            const yesterday = new Date();
+            yesterday.setDate(yesterday.getDate() - 1);
+            const yesterdayStr = yesterday.toLocaleDateString();
+
+            if (streakData.lastDate === yesterdayStr) {
+                streakData.count++;
+            } else {
+                streakData.count = 1;
+            }
+
+            streakData.lastDate = today;
+
+            // Telegram Cloud ပေါ်သို့ သိမ်းဆည်းခြင်း
+            tg.CloudStorage.setItem('streakData', JSON.stringify(streakData), (err, success) => {
+                if (success) renderStreakUI();
+            });
+        }
+    });
 }
 		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
 function displayDailyQuote() {
@@ -1112,24 +1125,29 @@ function displayDailyQuote() {
 }
 
 function renderStreakUI() {
-    const streakData = JSON.parse(localStorage.getItem('streakData')) || { count: 0 };
-    const icon = document.getElementById('streak-icon');
-    const text = document.getElementById('streak-text');
-    const countText = document.getElementById('streak-count');
-    
-    if (streakData.count >= 30) {
-        icon.innerText = "💎"; // တစ်လပြည့်ရင် အရောင်ပြောင်း (Blue Flame/Diamond)
-        text.innerText = "Legendary Streak!";
-    } else if (streakData.count >= 7) {
-        icon.innerText = "🔥"; // တစ်ပတ်ပြည့်ရင် မီးတောက်
-        text.innerText = "On Fire!";
-    } else {
-        icon.innerText = "🌑"; 
-        text.innerText = "စာကြိုးစားဆဲ...";
-    }
-    countText.innerText = `Streak: ${streakData.count} Days`;
-}
+    tg.CloudStorage.getItem('streakData', (err, value) => {
+        let streakData = { count: 0 };
+        if (!err && value) {
+            streakData = JSON.parse(value);
+        }
 
+        const icon = document.getElementById('streak-icon');
+        const text = document.getElementById('streak-text');
+        const countText = document.getElementById('streak-count');
+
+        if (streakData.count >= 30) {
+            icon.innerText = "💎";
+            text.innerText = "Legendary Streak!";
+        } else if (streakData.count >= 7) {
+            icon.innerText = "🔥";
+            text.innerText = "On Fire!";
+        } else {
+            icon.innerText = "🌑";
+            text.innerText = "စာကြိုးစားဆဲ...";
+        }
+        countText.innerText = `Streak: ${streakData.count} Days`;
+    });
+}
 // Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
 function contactDeveloper() {
     const devUsername = "minaphayarkot"; // သင့် Telegram Username ပြောင်းပါ
