@@ -68,48 +68,34 @@
     word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
     line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
 }
-/* Animation အတွက် */
-@keyframes shake {
-    0% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    75% { transform: translateX(-5px); }
-    100% { transform: translateX(0); }
-}
-
-/* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျညှိခြင်း */
-.next-btn-styled {
-    background: rgba(255, 255, 255, 0.05) !important; /* ပတ်ဝန်းကျင်နဲ့ တစ်သားတည်းဖြစ်သော အမှောင်ရောင် */
-    color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    padding: 10px 20px;
-    border-radius: 10px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    width: fit-content;
-    margin-top: 15px;
-    margin-left: auto; /* ညာဘက်သို့ ကပ်ထားရန် */
-    display: block;
-    transition: all 0.2s;
-}
-
-.next-btn-styled:active {
-    background: rgba(255, 255, 255, 0.1) !important;
-    transform: scale(0.98);
-}
-
 /* အဖြေမှန် Outline */
 .correct-answer {
     border: 2px solid #10b981 !important;
-    background: rgba(16, 185, 129, 0.05) !important;
+    background: rgba(16, 185, 129, 0.1) !important;
     color: #10b981 !important;
 }
 
 /* အဖြေမှား Outline */
 .wrong-answer {
     border: 2px solid #ef4444 !important;
-    background: rgba(239, 68, 68, 0.05) !important;
+    background: rgba(239, 68, 68, 0.1) !important;
     color: #ef4444 !important;
+}
+
+/* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျညှိခြင်း */
+.next-btn-styled {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding: 14px 20px; /* ထွက်မည် ခလုတ်လို ခပ်ကြီးကြီး */
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%; /* အလယ်ဗဟိုမှာ အပြည့်ပေါ်ရန် */
+    margin-top: 20px;
+    display: block;
+    text-align: center;
 }
 		
         #exam-countdown {
@@ -786,33 +772,39 @@ function showGeneralActivities(subId, partName) {
     if (q.type === 'mcq' || q.type === 'tf') {
         let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
         opts.forEach((a, i) => {
-            const btn = document.createElement('button'); 
-            btn.className = 'btn option-btn'; 
-            btn.innerText = a;
+    const btn = document.createElement('button'); 
+    btn.className = 'btn option-btn'; 
+    btn.innerText = a;
+    
+    btn.onclick = () => {
+        if(isAnswered) return; 
+        isAnswered = true;
 
-            btn.onclick = () => {
-                if(isAnswered) return; 
-                isAnswered = true;
+        let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
+        const options = document.querySelectorAll('.option-btn');
 
-                let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
-                
-                // အဖြေအားလုံးကို အနီ/အစိမ်း ခွဲပြခြင်း
-                document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                    b.disabled = true; // ထပ်နှိပ်လို့မရအောင် ပိတ်ခြင်း
-                    if(idx === correctIdx) {
-                        b.classList.add('correct-answer'); // အဖြေမှန်ကို အစိမ်းပြ
-                    } else {
-                        b.classList.add('wrong-answer'); // အဖြေမှားအားလုံးကို အနီပြ
-                    }
-                });
+        // Logic အသစ်- အဖြေမှန်ရင် အစိမ်းပဲပြ၊ မှားမှ အကုန်ပြ
+        if (i === correctIdx) {
+            options[i].classList.add('correct-answer');
+        } else {
+            options.forEach((b, idx) => {
+                if(idx === correctIdx) b.classList.add('correct-answer');
+                else if(idx === i) b.classList.add('wrong-answer');
+                else b.classList.add('wrong-answer');
+            });
+        }
 
-                // "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ပုံစံပြောင်းပြီး ပြခြင်း
-                nextBtn.style.display = 'block';
-                nextBtn.className = 'next-btn'; // ကျွန်တော်တို့ CSS မှာ ရေးထားတဲ့ အပြာရောင် class
-                nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
-            };
-            optDiv.appendChild(btn);
-        });
+        // ခလုတ်အားလုံးကို ပိတ်မည်
+        options.forEach(b => b.disabled = true);
+
+        // Next Button ကို Display ပေးပြီး ပုံစံပြောင်းမည်
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.style.display = 'block';
+        nextBtn.className = 'next-btn-styled'; 
+        nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+    };
+    optDiv.appendChild(btn);
+});
     } else if (q.type === 'blank') {
         const input = document.createElement('input');
         input.className = 'quiz-input'; 
