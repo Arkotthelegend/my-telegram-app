@@ -275,7 +275,7 @@
 
     <div class="nav">
         <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
-        <div class="nav-item" onclick="changeTab('middle', this)">❓</div>
+        <div class="nav-item" onclick="changeTab('middle', this)">⏳</div>
         <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
 
@@ -940,7 +940,7 @@ function selectOption(index) {
             <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
         </div>
         <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-            📧 Developer သို့ ဆက်သွယ်ရန်
+            အမှားများတိုင်ကြားရန်
         </button>
     `;
 
@@ -1112,7 +1112,7 @@ function updateStreak() {
     let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
     
     // App ထဲမှာ ၁၅ မိနစ်ပြည့်မပြည့် စစ်ဆေးခြင်း
-    let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
+    let sessionMinutes = Math.floor((Date.now() - startTime) / 600);
     
     if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
         // မနေ့ကမှ နောက်ဆုံးသုံးထားတာဆိုရင် Count တိုးမယ်၊ ရက်ကျော်သွားရင် ၁ ကပြန်စမယ်
@@ -1153,7 +1153,7 @@ function renderStreakUI() {
 // Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
 function contactDeveloper() {
     const devUsername = "minaphayarkot"; // သင့် Telegram Username ပြောင်းပါ
-    const message = encodeURIComponent("မေးခွန်းအမှား တိုင်ကြားရန် ရှိပါသည်။");
+    const message = encodeURIComponent("မေးခွန်းမှားနေတာ / ထပ်နေတာ / အဖြေမှားနေတာလေးပြောချင်လို့ပါ");
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
