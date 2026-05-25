@@ -76,6 +76,11 @@
         <div id="home-screen" class="screen active-screen">
             <h2 style="text-align: center; color: var(--accent);">ဘာသာရပ်များ</h2>
             <div id="subject-list"></div>
+            <div style="padding: 20px; margin-top: 10px;">
+    <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
+        🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
+    </button>
+</div>
         </div>
 
     <div id="middle-screen" class="screen">
@@ -484,6 +489,62 @@ function loadQuestion() {
             });
         }
 
+        function openTrialMenu() {
+    showScreen('activity');
+    document.getElementById('activity-title').innerText = "Free Trial (Chapter 1)";
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '';
+    
+    document.getElementById('activity-back-btn').onclick = () => showScreen('home');
+
+    subjects.forEach(sub => {
+        // မြန်မာစာအတွက် ခက်ဆစ် Menu ခွဲထုတ်ခြင်း
+     // ... openTrialMenu ထဲက mm အပိုင်း ...
+if (sub.id === 'mm') {
+    createBtn(`🇲🇲 မြန်မာစာ ခက်ဆစ် (စမ်းသုံးရန်)`, content, () => {
+        // မူလရှိပြီးသား ခက်ဆစ် Menu ကို လှမ်းခေါ်မယ်
+        // subId = 'mm', partName = 'Definition'
+        showMyanmarTrialParts(); 
+    });
+}
+        // အခြားဘာသာရပ်များ (မူလအတိုင်း)
+        else {
+            createBtn(`${sub.icon} ${sub.name} (Chapter 1)`, content, () => {
+                const trialFile = sub.id === 'math' ? `${sub.id}_Chapter_1_2_Marks` : `${sub.id}_Chapter_1_MCQ`;
+                if (sub.id === 'math') {
+                    initFlashcards(trialFile, `${sub.name} (Trial)`);
+                } else {
+                    initQuiz(trialFile);
+                }
+            });
+        }
+    });
+}
+
+function showMyanmarTrialParts() {
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '';
+    document.getElementById('activity-title').innerText = "မြန်မာစာ ခက်ဆစ် (Trial)";
+    document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
+
+    // သင်ပြချင်တဲ့ Trial ခေါင်းစဉ်တွေကို ဒီမှာ စာရင်းလုပ်ပေးပါ
+    const mmTrialItems = [
+        { name: "စကားပြေ (ညောင်ရမ်းကြီးသမီး)", file: "mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး" },
+        { name: "ကဗျာ (ကျေးစေတမန်)", file: "mm_ကဗျာ_ခက်ဆစ်_ကျေးစေတမန်" },
+        { name: "ရေသည်ပြဇာတ် (ခက်ဆစ်)", file: "mm_ရေသည်ပြဇာတ်_ခက်ဆစ်_ရေသည်" }
+    ];
+
+    mmTrialItems.forEach(item => {
+        createBtn(item.name, content, () => {
+            // Flashcard ကို ခေါ်မယ် (Definition စနစ်အတိုင်း)
+            initFlashcards(item.file, item.name);
+            
+            // ပြန်ထွက်ရင် ဒီ Trial Menu ကို ပြန်လာမယ်
+            document.getElementById('activity-back-btn').onclick = () => showMyanmarTrialParts();
+        });
+    });
+}
+        
         // --- Flashcard Engine ---
   let currentFlashMark = ""; // ခေါင်းစဉ်မှတ်ရန် variable အသစ်
 
