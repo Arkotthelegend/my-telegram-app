@@ -805,41 +805,49 @@ function showGeneralActivities(subId, partName) {
         }
 
         function renderProfileData() {
-            document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
-            document.getElementById('user-id-text').innerText = "ID: " + userId;
-            const container = document.getElementById('bought-items-container');
-            container.innerHTML = '';
-            const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
-            if(bought.length > 0) {
-                bought.forEach(s => {
-                    const span = document.createElement('span');
-                    span.className = 'bought-badge';
-                    span.innerText = s.name;
-                    container.appendChild(span);
-                });
-            } else { container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; }
-            // renderProfileData function ထဲရှိ container.appendChild(span) များအောက်တွင် ထည့်ရန်
-const streakHTML = `
-    <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-        <div id="streak-icon" style="font-size: 3.5rem; margin-bottom: 10px; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));">🌑</div>
-        <div id="streak-text" style="font-weight: bold; color: var(--accent); font-size: 1.1rem;">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-        <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px; letter-spacing: 1px;">Streak: 0 Days</div>
-    </div>
+    const userName = tg.initDataUnsafe?.user?.first_name || "Scholar";
+    document.getElementById('user-name').innerText = userName;
+    document.getElementById('user-id-text').innerText = "ID: " + userId;
+    
+    const container = document.getElementById('bought-items-container');
+    container.innerHTML = ''; // အဟောင်းများကို ရှင်းထုတ်သည်
+    
+    // ဝယ်ယူထားသော ဘာသာရပ်များ ပြသရန်
+    const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
+    if(bought.length > 0) {
+        bought.forEach(s => {
+            const span = document.createElement('span');
+            span.className = 'bought-badge';
+            span.innerText = s.name;
+            container.appendChild(span);
+        });
+    } else { 
+        container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
+    }
 
-    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; cursor: pointer;">
-        <span style="font-size: 1.2rem;">📧</span> Developer သို့ ဆက်သွယ်ရန်
-    </button>
-`;
-container.insertAdjacentHTML('afterend', streakHTML);
-renderStreakUI(); // UI ကို ချက်ချင်း update လုပ်ရန်
-        }
+    // --- Streak & Contact UI ကို ဒီနေရာမှာ သေချာထည့်ပါ ---
+    // အကယ်၍ ရှိပြီးသားဆိုရင် ထပ်မတိုးအောင် အရင်စစ်ပါမယ်
+    let streakDiv = document.getElementById('streak-section-wrapper');
+    if(!streakDiv) {
+        streakDiv = document.createElement('div');
+        streakDiv.id = 'streak-section-wrapper';
+        container.parentNode.insertBefore(streakDiv, container.nextSibling);
+    }
 
-        // --- Init ---
-        if(localStorage.getItem('userGender') === 'female') {
-            document.getElementById('gender-switch').checked = true;
-            updateAvatar();
-        }
-        renderSubjects();
+    streakDiv.innerHTML = `
+        <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+            <div id="streak-icon" style="font-size: 3.5rem; margin-bottom: 10px;">🌑</div>
+            <div id="streak-text" style="font-weight: bold; color: var(--accent); font-size: 1.1rem;">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
+            <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
+        </div>
+
+        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold; cursor: pointer; display: block;">
+            📧 Developer သို့ ဆက်သွယ်ရန်
+        </button>
+    `;
+    
+    renderStreakUI(); // UI ကို Refresh လုပ်ပေးသည်
+}
 
         // အားပေးစာစုများ
 const quotes = [
