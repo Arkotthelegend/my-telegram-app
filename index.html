@@ -913,35 +913,62 @@ function updateCountdown() {
 }
 setInterval(updateCountdown, 1000);
 
+		function updateAvatar(save = false) {
+    const isFemale = document.getElementById('gender-switch').checked;
+    const hair = document.getElementById('hair');
+    const userId = tg.initDataUnsafe?.user?.id || "guest"; // User ID ယူခြင်း
+
+    if(hair) {
+        hair.style.display = isFemale ? 'block' : 'none';
+    }
+    
+    if(save) {
+        // User ID ကို Key ထဲမှာ ထည့်ပြီး သိမ်းပါ
+        localStorage.setItem(`user_gender_${userId}`, isFemale ? 'female' : 'male');
+    }
+}
+
+// Profile Load လုပ်တဲ့အခါ ပြန်ခေါ်ဖို့ (renderProfileData ထဲမှာ ထည့်ရန်)
+function loadUserGender() {
+    const userId = tg.initDataUnsafe?.user?.id || "guest";
+    const savedGender = localStorage.getItem(`user_gender_${userId}`);
+    const genderSwitch = document.getElementById('gender-switch');
+    
+    if (savedGender && genderSwitch) {
+        genderSwitch.checked = (savedGender === 'female');
+        updateAvatar(false); // UI ကို update လုပ်ပေးရန်
+    }
+}
+		
 // ၂။ Checkbox အားလုံးကို Save လုပ်ခြင်း
 function saveGoals() {
+    const userId = tg.initDataUnsafe?.user?.id || "guest";
     const goals = {};
     for(let i=1; i<=7; i++) {
-        goals[`goal${i}`] = document.getElementById(`goal${i}`).checked;
+        const el = document.getElementById(`goal${i}`);
+        if(el) goals[`goal${i}`] = el.checked;
     }
-    // ယနေ့ ရက်စွဲကိုပါ သိမ်းမည်
+    
     const data = {
         date: new Date().toLocaleDateString(),
         values: goals
     };
-    localStorage.setItem('dailyStudyData', JSON.stringify(data));
+    // Key ကို user_goals_12345678 ပုံစံမျိုး သိမ်းပါမည်
+    localStorage.setItem(`dailyStudyData_${userId}`, JSON.stringify(data));
 }
 
-// ၃။ Load လုပ်ခြင်းနှင့် နေ့သစ်ဖြစ်ပါက Reset လုပ်ခြင်း
 function loadGoals() {
-    const savedData = JSON.parse(localStorage.getItem('dailyStudyData'));
+    const userId = tg.initDataUnsafe?.user?.id || "guest";
+    const savedData = JSON.parse(localStorage.getItem(`dailyStudyData_${userId}`));
     const today = new Date().toLocaleDateString();
 
     if (savedData) {
-        // ရက်စွဲမတူတော့လျှင် (နေ့သစ်ဖြစ်သွားလျှင်) အကုန် reset လုပ်မည်
         if (savedData.date !== today) {
             resetGoals();
         } else {
-            // ရက်စွဲတူနေသေးလျှင် အရင်က နှိပ်ထားတာတွေ ပြန်ပြမည်
             for(let i=1; i<=7; i++) {
-                if(document.getElementById(`goal${i}`)) {
-                    document.getElementById(`goal${i}`).checked = savedData.values[`goal${i}`] || false;
-                }
+                const el = document.getElementById(`goal${i}`);
+                if(el) el.checked = savedData.values[`goal${i}`] || false;
             }
         }
     }
@@ -965,26 +992,32 @@ const STREAK_REQUIRED_MINUTES = 15;
 
 function updateStreak() {
     const today = new Date().toLocaleDateString();
-    let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
+    // Telegram User ID ကို ယူပါတယ် (အကောင့်ခွဲခြားရန်)
+    const userId = tg.initDataUnsafe?.user?.id || "guest";
+    
+    // localStorage key မှာ userId ကို တွဲသုံးလိုက်ပါတယ်
+    const storageKey = `streakData_${userId}`;
+    let streakData = JSON.parse(localStorage.getItem(storageKey)) || { lastDate: '', count: 0 };
     
     // App ထဲမှာ ၁၅ မိနစ်ပြည့်မပြည့် စစ်ဆေးခြင်း
     let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
     
     if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
-        // မနေ့ကမှ နောက်ဆုံးသုံးထားတာဆိုရင် Count တိုးမယ်၊ ရက်ကျော်သွားရင် ၁ ကပြန်စမယ်
         const yesterday = new Date();
         yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toLocaleDateString();
         
-        if (streakData.lastDate === yesterday.toLocaleDateString()) {
+        if (streakData.lastDate === yesterdayStr) {
             streakData.count++;
         } else {
             streakData.count = 1;
         }
         
         streakData.lastDate = today;
-        localStorage.setItem('streakData', JSON.stringify(streakData));
-        renderStreakUI();
+        // သိမ်းတဲ့အခါမှာလည်း သက်ဆိုင်ရာ userId key နဲ့ပဲ သိမ်းပါတယ်
+        localStorage.setItem(storageKey, JSON.stringify(streakData));
     }
+    renderStreakUI();
 }
 
 function renderStreakUI() {
