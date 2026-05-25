@@ -777,15 +777,6 @@ function showGeneralActivities(subId, partName) {
             document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
             document.getElementById('user-id-text').innerText = "ID: " + userId;
             const container = document.getElementById('bought-items-container');
-            <div id="streak-container" style="background: var(--card); padding: 15px; border-radius: 12px; margin-top: 15px; text-align: center;">
-    <div id="streak-icon" style="font-size: 3rem; margin-bottom: 5px;">🌑</div>
-    <div id="streak-text" style="font-weight: bold; color: var(--accent);">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-    <div id="streak-count" style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Streak: 0 Days</div>
-</div>
-
-<button onclick="contactDeveloper()" style="width: 100%; background: var(--secondary-btn); color: white; border: none; padding: 12px; border-radius: 8px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-    📧 Developer သို့ အကြံပြုရန် / တိုင်ကြားရန်
-</button>
             container.innerHTML = '';
             const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
             if(bought.length > 0) {
@@ -1010,6 +1001,7 @@ function contactDeveloper() {
 
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
 setInterval(updateStreak, 60000);
+      
     </script>
 </body>
 </html>
