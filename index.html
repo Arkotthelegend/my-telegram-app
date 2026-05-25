@@ -199,36 +199,19 @@
 </div>
 
         <div id="profile-screen" class="screen">
-            <div style="text-align: center;">
-                <svg id="profile-avatar" viewBox="0 0 100 100">
-                    <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
-                    <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="45" x2="30" y2="60" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="45" x2="70" y2="60" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="70" x2="35" y2="90" stroke="white" stroke-width="3" />
-                    <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
-                    <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
-                </svg>
-                <h2 id="user-name" style="margin: 10px 0 5px;">Scholar</h2>
-                <p id="user-id-text" style="color: #94A3B8; margin-bottom: 10px;"></p>
-                
-                <div class="gender-container">
-                    <span>ကျား</span>
-                    <label class="switch">
-                        <input type="checkbox" id="gender-switch" onchange="updateAvatar(true)">
-                        <span class="slider"></span>
-                    </label>
-                    <span>မ</span>
-                </div>
-
-                <div class="profile-info-card">
-                    <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
-                    <div id="bought-items-container" class="bought-container"></div>
-                    <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
-                </div>
-            </div>
+    <div style="text-align: center; padding: 15px;">
+        <h2 id="user-name" style="margin: 10px 0;">Scholar</h2>
+        <p id="user-id-text" style="color: #94A3B8; margin-bottom: 20px;"></p>
+        
+        <div class="profile-info-card" style="background: var(--card); padding: 15px; border-radius: 12px; text-align: left; margin-bottom: 20px;">
+            <b style="color: var(--accent); display: block; margin-bottom: 10px;">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
+            <div id="bought-items-container" class="bought-container"></div>
         </div>
 
+        <div id="extra-profile-section"></div>
+    </div>
+        </div>
+        
         <div id="menu-screen" class="screen">
             <h2 id="menu-title" style="text-align: center; color: var(--accent);"></h2>
             <div id="menu-content"></div>
@@ -804,49 +787,45 @@ function showGeneralActivities(subId, partName) {
             if(id === 'profile') renderProfileData();
         }
 
-        function renderProfileData() {
+       function renderProfileData() {
     const userName = tg.initDataUnsafe?.user?.first_name || "Scholar";
-    document.getElementById('user-name').innerText = userName;
-    document.getElementById('user-id-text').innerText = "ID: " + userId;
-    
+    const nameElem = document.getElementById('user-name');
+    const idElem = document.getElementById('user-id-text');
     const container = document.getElementById('bought-items-container');
-    container.innerHTML = ''; // အဟောင်းများကို ရှင်းထုတ်သည်
+    const extraSection = document.getElementById('extra-profile-section');
+
+    if (nameElem) nameElem.innerText = userName;
+    if (idElem) idElem.innerText = "ID: " + userId;
     
-    // ဝယ်ယူထားသော ဘာသာရပ်များ ပြသရန်
-    const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
-    if(bought.length > 0) {
-        bought.forEach(s => {
-            const span = document.createElement('span');
-            span.className = 'bought-badge';
-            span.innerText = s.name;
-            container.appendChild(span);
-        });
-    } else { 
-        container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
+    if (container) {
+        container.innerHTML = ''; 
+        const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
+        if(bought.length > 0) {
+            bought.forEach(s => {
+                const span = document.createElement('span');
+                span.className = 'bought-badge';
+                span.innerText = s.name;
+                container.appendChild(span);
+            });
+        } else { 
+            container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
+        }
     }
 
-    // --- Streak & Contact UI ကို ဒီနေရာမှာ သေချာထည့်ပါ ---
-    // အကယ်၍ ရှိပြီးသားဆိုရင် ထပ်မတိုးအောင် အရင်စစ်ပါမယ်
-    let streakDiv = document.getElementById('streak-section-wrapper');
-    if(!streakDiv) {
-        streakDiv = document.createElement('div');
-        streakDiv.id = 'streak-section-wrapper';
-        container.parentNode.insertBefore(streakDiv, container.nextSibling);
+    // Streak နှင့် Contact UI
+    if (extraSection) {
+        extraSection.innerHTML = `
+            <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+                <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
+                <div id="streak-text" style="font-weight: bold; color: var(--accent);">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
+                <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
+            </div>
+            <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
+                📧 Developer သို့ ဆက်သွယ်ရန်
+            </button>
+        `;
+        renderStreakUI(); // UI ကို update လုပ်ရန် ခေါ်ခြင်း
     }
-
-    streakDiv.innerHTML = `
-        <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-            <div id="streak-icon" style="font-size: 3.5rem; margin-bottom: 10px;">🌑</div>
-            <div id="streak-text" style="font-weight: bold; color: var(--accent); font-size: 1.1rem;">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-            <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
-        </div>
-
-        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold; cursor: pointer; display: block;">
-            📧 Developer သို့ ဆက်သွယ်ရန်
-        </button>
-    `;
-    
-    renderStreakUI(); // UI ကို Refresh လုပ်ပေးသည်
 }
 
         // အားပေးစာစုများ
@@ -1085,8 +1064,12 @@ function renderStreakUI() {
 }
 
 function contactDeveloper() {
-    const message = encodeURIComponent("မင်္ဂလာပါ Developer ခင်ဗျာ... \n\n[ID: " + (tg.initDataUnsafe?.user?.id || 'N/A') + "]\nတိုင်ကြားလိုသည့်အကြောင်းအရာ - ");
-    window.open(`https://t.me/thearkot?text=${message}`, '_blank');
+    window.open(`https://t.me/thearkot?text=${encodeURIComponent("မင်္ဂလာပါ Developer ခင်ဗျာ...")}`, '_blank');
+}
+
+// အကယ်၍ HTML မှာ updateAvatar ပါနေသေးရင် ဒါလေးပါ ထည့်ထားပါ
+function updateAvatar() {
+    console.log("Avatar Updated");
 }
 
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် နောက်ကွယ်ကနေ စစ်ပေးနေမည်
