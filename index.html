@@ -226,22 +226,6 @@
                     <div id="bought-items-container" class="bought-container"></div>
                     <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
                 </div>
-                <div id="streak-container" style="background: var(--card); padding: 15px; border-radius: 12px; margin-top: 15px; text-align: center;">
-    <div id="streak-icon" style="font-size: 3rem; margin-bottom: 5px;">🌑</div>
-    <div id="streak-text" style="font-weight: bold; color: var(--accent);">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
-    <div id="streak-count" style="font-size: 0.8rem; color: #94a3b8; margin-top: 5px;">Streak: 0 Days</div>
-</div>
-
-<button onclick="contactDeveloper()" style="width: 100%; background: var(--secondary-btn); color: white; border: none; padding: 12px; border-radius: 8px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-    📧 Developer သို့ အကြံပြုရန် / တိုင်ကြားရန်
-</button>
-                // renderProfileData() ထဲတွင် ထည့်ရန်
-const sessionMins = Math.floor((Date.now() - startTime) / 60000);
-if (sessionMins < STREAK_REQUIRED_MINUTES) {
-    document.getElementById('streak-text').innerText = `ယနေ့အတွက် ${(STREAK_REQUIRED_MINUTES - sessionMins)} မိနစ် ထပ်မံအသုံးပြုရန်`;
-}
-renderStreakUI();
-    
             </div>
         </div>
 
@@ -834,6 +818,20 @@ function showGeneralActivities(subId, partName) {
                     container.appendChild(span);
                 });
             } else { container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; }
+            // renderProfileData function ထဲရှိ container.appendChild(span) များအောက်တွင် ထည့်ရန်
+const streakHTML = `
+    <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+        <div id="streak-icon" style="font-size: 3.5rem; margin-bottom: 10px; filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5));">🌑</div>
+        <div id="streak-text" style="font-weight: bold; color: var(--accent); font-size: 1.1rem;">အနည်းဆုံး ၁၅ မိနစ် စာလုပ်ပါ</div>
+        <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px; letter-spacing: 1px;">Streak: 0 Days</div>
+    </div>
+
+    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px; font-weight: bold; cursor: pointer;">
+        <span style="font-size: 1.2rem;">📧</span> Developer သို့ ဆက်သွယ်ရန်
+    </button>
+`;
+container.insertAdjacentHTML('afterend', streakHTML);
+renderStreakUI(); // UI ကို ချက်ချင်း update လုပ်ရန်
         }
 
         // --- Init ---
@@ -1021,35 +1019,70 @@ function updateStreak() {
     }
 }
 
+let startTime = Date.now();
+const STREAK_REQUIRED_MINUTES = 15;
+
+function updateStreak() {
+    const today = new Date().toLocaleDateString();
+    let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
+    
+    // App စဖွင့်ချိန်ကနေ ခုထိ ဘယ်နှစ်မိနစ်ရှိပြီလဲ တွက်ခြင်း
+    let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
+    
+    if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        const yesterdayStr = yesterday.toLocaleDateString();
+
+        if (streakData.lastDate === yesterdayStr) {
+            streakData.count++; // ရက်ဆက်ရင် တိုးမယ်
+        } else if (streakData.lastDate === '') {
+            streakData.count = 1; // ပထမဆုံးအကြိမ်
+        } else {
+            streakData.count = 1; // ရက်ပျက်သွားရင် ၁ ကပြန်စမယ်
+        }
+        
+        streakData.lastDate = today;
+        localStorage.setItem('streakData', JSON.stringify(streakData));
+    }
+    renderStreakUI();
+}
+
 function renderStreakUI() {
     const streakData = JSON.parse(localStorage.getItem('streakData')) || { count: 0 };
     const icon = document.getElementById('streak-icon');
     const text = document.getElementById('streak-text');
     const countText = document.getElementById('streak-count');
     
+    if(!icon) return; // Profile tab မှာ မဟုတ်ရင် ကျော်သွားမယ်
+
     if (streakData.count >= 30) {
-        icon.innerText = "💎"; // တစ်လပြည့်ရင် အရောင်ပြောင်း (Blue Flame/Diamond)
-        text.innerText = "Legendary Streak!";
+        icon.innerText = "💎"; // တစ်လပြည့်ရင် စိန်ရောင်မီးတောက်
+        text.innerText = "Legendary Achievement!";
+        icon.style.filter = "drop-shadow(0 0 15px #38BDF8)";
     } else if (streakData.count >= 7) {
         icon.innerText = "🔥"; // တစ်ပတ်ပြည့်ရင် မီးတောက်
-        text.innerText = "On Fire!";
+        text.innerText = "You're on Fire!";
+        icon.style.filter = "drop-shadow(0 0 15px #FBBF24)";
     } else {
         icon.innerText = "🌑"; 
-        text.innerText = "စာကြိုးစားဆဲ...";
+        const sessionMins = Math.floor((Date.now() - startTime) / 60000);
+        if (sessionMins < STREAK_REQUIRED_MINUTES) {
+            text.innerText = `နောက်ထပ် ${STREAK_REQUIRED_MINUTES - sessionMins} မိနစ် သုံးပေးပါ`;
+        } else {
+            text.innerText = "ယနေ့အတွက် Streak ရရှိပါပြီ";
+        }
     }
     countText.innerText = `Streak: ${streakData.count} Days`;
 }
 
-// Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
 function contactDeveloper() {
-    const devUsername = "YOUR_BOT_OR_USERNAME"; // သင့် Telegram Username ပြောင်းပါ
-    const message = encodeURIComponent("မေးခွန်းအမှား တိုင်ကြားရန် ရှိပါသည်။");
-    window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
+    const message = encodeURIComponent("မင်္ဂလာပါ Developer ခင်ဗျာ... \n\n[ID: " + (tg.initDataUnsafe?.user?.id || 'N/A') + "]\nတိုင်ကြားလိုသည့်အကြောင်းအရာ - ");
+    window.open(`https://t.me/thearkot?text=${message}`, '_blank');
 }
 
-// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
+// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် နောက်ကွယ်ကနေ စစ်ပေးနေမည်
 setInterval(updateStreak, 60000);
-        
     </script>
 </body>
 </html>
