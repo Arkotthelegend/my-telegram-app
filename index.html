@@ -250,7 +250,7 @@
         tg.ready(); tg.expand();
 
         const paidUsers = { 
-            "8432363664": ["mm"],
+            "8432363664": ["mm","en","math","phy"],
             "5593040432": ["all"],
             "6912601908": ["phy"],
             "1625758870": ["all"],
@@ -857,10 +857,10 @@ function resetGoals() {
 window.addEventListener('load', loadGoals);
 
         // ၁။ Exam Date သတ်မှတ်ရန် (ဥပမာ - ၂၀၂၇ မတ်လ ၁ ရက်)
-const examDate = new Date("March 1, 2027 09:00:00").getTime();
 
 function updateCountdown() {
-    const examDate = new Date('2026-03-01T09:00:00').getTime(); // စာမေးပွဲရက် သတ်မှတ်ချက်
+    const examDate = new Date("March 1, 2027 09:00:00").getTime();
+ // စာမေးပွဲရက် သတ်မှတ်ချက်
     const now = new Date().getTime();
     const diff = examDate - now;
 
