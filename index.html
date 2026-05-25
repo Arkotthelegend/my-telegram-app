@@ -93,20 +93,19 @@
     animation: shake 0.3s ease-in-out;
 }
 
-/* နောက်တစ်ပုဒ်သို့ ခလုတ် - ပုံမှန်အရွယ်အစားနှင့် Background အရောင် */
+/* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျ ပြင်ခြင်း */
 .next-btn-styled {
-    background-color: var(--bg) !important; /* App ရဲ့ နောက်ခံအရောင် */
+    background: rgba(255, 255, 255, 0.05) !important;
     color: white !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 10px 20px;
-    border-radius: 8px;
-    margin-top: 15px;
+    border-radius: 10px;
     font-size: 0.9rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    width: fit-content;
+    margin-top: 15px;
+    margin-left: auto; /* ညာဘက်ကပ်ရန် */
     display: block;
-    width: fit-content; /* စာသားအရှည်အတိုင်းပဲရှိမည့် ပုံမှန်အရွယ်အစား */
-    margin-left: auto; /* ညာဘက်ကပ်ထားရန် */
 }
 
 .next-btn-styled:active {
@@ -422,23 +421,32 @@ function loadQuestion() {
             const btn = document.createElement('button'); 
             btn.className = 'btn option-btn'; 
             btn.innerText = a;
-           // loadQuestion() ထဲက MCQ ပိုင်းကို ဒီလိုပြင်ပါ
+          // loadQuestion() ထဲက MCQ logic အပိုင်း
 btn.onclick = () => {
     if(isAnswered) return; 
     isAnswered = true;
 
     let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
-    
-    document.querySelectorAll('.option-btn').forEach((b, idx) => {
-        b.disabled = true;
-        if(idx === correctIdx) {
-            b.classList.add('correct-answer'); // အစိမ်းရောင် Outline
-        } else {
-            b.classList.add('wrong-answer'); // အနီရောင် Outline
-        }
-    });
+    const options = document.querySelectorAll('.option-btn');
 
-    // Next Button ပုံစံသစ်
+    if (i === correctIdx) {
+        // ၁။ အဖြေမှန်ရင် - အဖြေမှန် တစ်ခုတည်းကိုပဲ အစိမ်းပြမည်
+        options[correctIdx].classList.add('correct-answer');
+    } else {
+        // ၂။ အဖြေမှားရင် - အဖြေမှားများကို အနီပြပြီး အဖြေမှန်ကိုပါ အစိမ်းပြမည်
+        options.forEach((b, idx) => {
+            if(idx === correctIdx) {
+                b.classList.add('correct-answer');
+            } else {
+                b.classList.add('wrong-answer');
+            }
+        });
+    }
+
+    // ခလုတ်အားလုံးကို ပိတ်ထားရန်
+    options.forEach(b => b.disabled = true);
+
+    // "နောက်တစ်ပုဒ်သို့" ခလုတ်ပြခြင်း
     nextBtn.style.display = 'block';
     nextBtn.className = 'next-btn-styled'; 
     nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
