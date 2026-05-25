@@ -225,7 +225,7 @@
         tg.ready(); tg.expand();
 
         const paidUsers = { 
-            "8432363664": ["all"],
+            "8432363664": ["mm"],
             "5593040432": ["all"],
             "6912601908": ["phy"],
             "1625758870": ["all"],
@@ -489,11 +489,15 @@ function loadQuestion() {
             });
         }
 
-     function openTrialMenu() {
+  // --- Trial System Functions ---
+
+function openTrialMenu() {
     showScreen('activity');
     document.getElementById('activity-title').innerText = "Free Trial (စမ်းသုံးရန်)";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
+    
+    // Back button ကို Home ပြန်သွားအောင် လုပ်မယ်
     document.getElementById('activity-back-btn').onclick = () => showScreen('home');
 
     subjects.forEach(sub => {
@@ -503,32 +507,36 @@ function loadQuestion() {
                 showMyanmarTrialParts(); 
             });
         } 
-        // ၂။ အင်္ဂလိပ်စာ (မူလ Poem Menu သို့)
-        else if (sub.id === 'eng') {
+        // ၂။ အင်္ဂလိပ်စာ (Poem အပိုင်းသို့ တိုက်ရိုက်သွားမည်)
+        else if (sub.id === 'en') {
             createBtn(`🇬🇧 English (Poem Trial)`, content, () => {
-                // English ရဲ့ Poem အပိုင်းကို တိုက်ရိုက်ပြမယ်
-                showGeneralActivities('eng', 'Poem');
+                showENPoemOptions();
+                // Back button ကို Trial Menu ဆီ ပြန်လှည့်မယ်
                 document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
             });
         }
         // ၃။ အခြားဘာသာရပ်များ (Chapter 1 သို့)
         else {
-            createBtn(`${sub.icon} ${sub.name} (Chapter 1)`, content, () => {
-                // အဆိုပါဘာသာရပ်၏ Chapter 1 Menu ထဲသို့ တိုက်ရိုက်သွားမည်
-                showGeneralActivities(sub.id, 'Chapter 1');
+            createBtn(`${sub.id.toUpperCase()} (Chapter 1 Trial)`, content, () => {
+                if (sub.id === 'math' || sub.id === 'bio' || sub.id === 'eco') {
+                    showGeneralActivities(sub.id, 'Chapter 1');
+                } else if (sub.id === 'phy' || sub.id === 'chem') {
+                    showPhyChemActivities(sub.id, 'Chapter 1');
+                }
+                // Back button ကို Trial Menu ဆီ ပြန်လှည့်မယ်
                 document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
             });
         }
     });
 }
-        
+
 function showMyanmarTrialParts() {
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
     document.getElementById('activity-title').innerText = "မြန်မာစာ ခက်ဆစ် (Trial)";
     document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
 
-    // သင်ပြချင်တဲ့ Trial ခေါင်းစဉ်တွေကို ဒီမှာ စာရင်းလုပ်ပေးပါ
+    // သင်အသုံးပြုသည့် Format: mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး.json
     const mmTrialItems = [
         { name: "စကားပြေ (ညောင်ရမ်းကြီးသမီး)", file: "mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး" },
          { name: "စကားပြေ (သစ္စာနှင့်ပညာ)", file: "mm_စကားပြေ_ခက်ဆစ်_သစ္စာနှင့်ပညာ" },
@@ -541,11 +549,10 @@ function showMyanmarTrialParts() {
 
     mmTrialItems.forEach(item => {
         createBtn(item.name, content, () => {
-            // Flashcard ကို ခေါ်မယ် (Definition စနစ်အတိုင်း)
-            initFlashcards(item.file, item.name);
-            
-            // ပြန်ထွက်ရင် ဒီ Trial Menu ကို ပြန်လာမယ်
-            document.getElementById('activity-back-btn').onclick = () => showMyanmarTrialParts();
+            initFlashcards(item.file);
+            // Flashcard Screen မှ ထွက်လျှင် မြန်မာစာ Trial Menu သို့ ပြန်လာရန်
+            const flashBackBtn = document.querySelector('#flashcard-screen .back-btn');
+            if(flashBackBtn) flashBackBtn.onclick = () => showMyanmarTrialParts();
         });
     });
 }
