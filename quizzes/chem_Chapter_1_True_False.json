@@ -259,3 +259,244 @@
     "q": "Metals consist of giant structures of atoms.",
     "c": true
   },
+  {
+    "type": "tf",
+    "q": "An ionic bond is stronger than a covalent bond.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Solid ionic compounds can conduct electricity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The octet rule can apply to d-block elements.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The electronegativity difference value is less than 1.8 for an ionic bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Atoms of element are rarely found in nature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fullerene (C₆₀), carbon nanotubes, and graphene are bulky covalent molecules.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Covalent bonding usually occurs between non-metals.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The higher the number of bonded electrons, the longer the bond length.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The valence electrons of elements represented using Lewis symbols are in s orbitals only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Atoms can only gain electrons to obtain an octet.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Chemical bond is formed only when by sharing the valence electrons between the atoms involved in the bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Covalent bonding can occur between identical atoms only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The p-subshell has five dumbbell-shaped orbitals.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Graphite conducts electricity because it contains free electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In single covalent bonds, only two pair of electrons is shared between two atoms.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The electrons transfer from one atom having large ionisation energy to another atom having small electron affinity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The higher the number of bonded electrons, the weaker the attraction between the two atoms.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "All metals are solids at room temperature.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The hydrogen bond is stronger than a covalent bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The structure of a metallic bond is the same from that of covalent or ionic bonds.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The amount of energy released when an electron is added to a gaseous atom.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The end of partial positive charge of a dipole is the atom with the highest electronegativity.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Coordination number is the number of atoms or ions surrounding a central atom in a crystal lattice.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The force of attraction between the constituent particles in any form of matter is the intermolecular force.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The electrons in the valence shells of an atom are known as the valence.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The intermolecular forces are strong forces.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The standard structure of metallic bonding increases with the decreasing positive charge on the ions in the metal lattice.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In a metallic bond, the atoms do share or transfer electrons to bond together.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "London dispersion forces are the strongest in intermolecular forces.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The length of the bond is determined by the number of non-bonded electrons.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The positively charged metallic nuclei are surrounded by free-moving electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "There are two main types of chemical bonding.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Hund's rule states that every orbital in a sub-shell is singly occupied before any orbital is doubly occupied.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The bond strength of the triple bond is the highest.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When electrons are not shared equally between two atoms, a polar covalent bond occurs.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The valency of an element is the number of electrons lost only by an atom to form an ionic bond.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "A Lewis structure is only three-dimensional representation of a molecule.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The melting points of the ionic compounds with the smaller charge on the ions are higher.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Diamond and graphite contain covalent bonds between carbon atoms.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Mg²⁺ and O²⁻ ions have the electronic configuration of stable noble gas of Ar.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The outermost shell of electrons are called valence electrons.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fullerene (C₆₀), carbon nanotubes, and graphene are giant molecules.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Ionic bonding depends on the difference in electronegativity between two atoms.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "van der Waals forces are strong intermolecular forces that bind molecules together.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Graphite and silica have layered structures.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The greater the charge on the ions, the greater the electrostatic attraction and the stronger the ionic bond will be.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Giant structure is a three-dimensional structure of atoms that are joined by a network of bonds.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Lewis dot structure of He is :He:",
+    "c": false
+  }
+]
