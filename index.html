@@ -496,43 +496,41 @@ function openTrialMenu() {
     document.getElementById('activity-title').innerText = "Free Trial (စမ်းသုံးရန်)";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-    document.getElementById('activity-back-btn').onclick = () => showScreen('home');
+    
+    // ပင်မစာမျက်နှာသို့ ပြန်သွားရန် logic ကို အသစ်ပြန်သတ်မှတ်
+    const backBtn = document.getElementById('activity-back-btn');
+    backBtn.onclick = () => showScreen('home');
 
     subjects.forEach(sub => {
-        if (sub.id === 'mm') {
-            createBtn(`မြန်မာစာ (ခက်ဆစ်စမ်းရန်)`, content, () => {
-                currentSubject = sub; // ဘာသာရပ်ကို သတ်မှတ်ပေးရန်
-                showMyanmarTrialParts(); 
-            });
-        } 
-        else if (sub.id === 'en') {
-            createBtn(`English (Poem)`, content, () => {
-                currentSubject = sub; // ဘာသာရပ်ကို သတ်မှတ်ပေးရန်
+        createBtn(`${sub.name} (Trial)`, content, () => {
+            currentSubject = sub; // currentSubject ကို သတ်မှတ်မှ math_show အလုပ်လုပ်မည်
+            
+            if (sub.id === 'mm') {
+                showMyanmarTrialParts();
+            } else if (sub.id === 'en') {
                 showENPoemOptions();
+                // English Poem ကနေပြန်ထွက်ရင် Trial Menu ကိုပြန်လာရန်
                 document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
-            });
-        }
-        else {
-            createBtn(`${sub.name} (Chapter 1)`, content, () => {
-                currentSubject = sub; // ဘာသာရပ်ကို သတ်မှတ်ပေးရန်
-                if (sub.id === 'math' || sub.id === 'bio' || sub.id === 'eco') {
-                    showGeneralActivities(sub.id, 'Chapter 1');
-                } else if (sub.id === 'phy' || sub.id === 'chem') {
+            } else {
+                // ရှိပြီးသား Chapter Menu တွေကို တိုက်ရိုက်ခေါ်သုံး
+                if (sub.id === 'phy' || sub.id === 'chem') {
                     showPhyChemActivities(sub.id, 'Chapter 1');
+                } else {
+                    showGeneralActivities(sub.id, 'Chapter 1');
                 }
-                // Quiz Screen ရဲ့ Back Button ကို Trial Menu ဆီ ပြန်လှည့်မယ်
-                document.getElementById('quiz-back-btn').onclick = () => openTrialMenu();
+                // Chapter Menu ကနေပြန်ထွက်ရင် Trial Menu ကိုပြန်လာရန်
                 document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
-            });
-        }
+            }
+        });
     });
 }
+
 function showMyanmarTrialParts() {
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
     document.getElementById('activity-title').innerText = "မြန်မာစာ ခက်ဆစ် (Trial)";
     
-    // Activity Screen ရဲ့ Back Button
+    // Trial Menu သို့ ပြန်သွားရန် logic
     document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
 
     const mmTrialItems = [
@@ -544,15 +542,15 @@ function showMyanmarTrialParts() {
     mmTrialItems.forEach(item => {
         createBtn(item.name, content, () => {
             initFlashcards(item.file);
-            
-            // Flashcard Screen ထဲက "ထွက်မည်" ခလုတ်ကို နှိပ်ရင် Trial Menu ကို ပြန်သွားဖို့
-            // ခလုတ်ကို ရှာပြီး onclick ပြန်ပြင်ပေးရပါတယ်
+            // Flashcard ထဲက "ထွက်မည်" ခလုတ်ကို Trial Menu ဆီ ပြန်လှည့်
             const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
-            flashExitBtn.onclick = () => showMyanmarTrialParts();
+            flashExitBtn.onclick = () => {
+                showScreen('activity'); // activity screen ကိုအရင်ပြ
+                showMyanmarTrialParts(); // ပြီးမှ menu ပြန်ဆွဲ
+            };
         });
     });
 }
-        
         // --- Flashcard Engine ---
   let currentFlashMark = ""; // ခေါင်းစဉ်မှတ်ရန် variable အသစ်
 
