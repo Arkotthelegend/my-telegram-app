@@ -68,6 +68,38 @@
     word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
     line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
 }
+
+        #exam-countdown {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.countdown-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 55px;
+}
+
+.countdown-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--accent);
+}
+
+.countdown-label {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
     </style>
 </head>
 <body>
@@ -835,16 +867,38 @@ window.addEventListener('load', loadGoals);
 const examDate = new Date("March 1, 2027 09:00:00").getTime();
 
 function updateCountdown() {
+    const examDate = new Date('2026-03-01T09:00:00').getTime(); // စာမေးပွဲရက် သတ်မှတ်ချက်
     const now = new Date().getTime();
     const diff = examDate - now;
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+    if (diff <= 0) {
+        document.getElementById('exam-countdown').innerHTML = "စာမေးပွဲရက်သို့ ရောက်ရှိပါပြီ";
+        return;
+    }
 
-    document.getElementById('exam-timer').innerText = 
-        `${days}d : ${hours}h : ${mins}m : ${secs}s`;
+    const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('exam-countdown').innerHTML = `
+        <div class="countdown-unit">
+            <span class="countdown-value">${d}</span>
+            <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-unit">
+            <span class="countdown-value">${h}</span>
+            <span class="countdown-label">Hrs</span>
+        </div>
+        <div class="countdown-unit">
+            <span class="countdown-value">${m}</span>
+            <span class="countdown-label">Mins</span>
+        </div>
+        <div class="countdown-unit">
+            <span class="countdown-value">${s}</span>
+            <span class="countdown-label">Secs</span>
+        </div>
+    `;
 }
 setInterval(updateCountdown, 1000);
 
