@@ -68,20 +68,50 @@
     word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
     line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
 }
-/* Next Button နှင့် အဖြေအရောင်များ - ဤနေရာတွင် ထည့်ပါ */
-.next-btn { 
-    background-color: var(--accent) !important; 
-    color: var(--bg) !important; 
-    margin-top: 15px; 
-    width: 100%; 
-    padding: 12px; 
-    border-radius: 8px; 
-    border: none; 
-    font-weight: bold; 
-    cursor: pointer; 
+/* Animation အတွက် */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
 }
-.correct-answer { background-color: var(--success) !important; color: white !important; }
-.wrong-answer { background-color: var(--error) !important; color: white !important; }
+
+/* အဖြေမှန် - အစိမ်းရောင် Outline နှင့် Glow */
+.correct-answer {
+    border: 2px solid #10b981 !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+    color: #10b981 !important;
+    font-weight: bold;
+}
+
+/* အဖြေမှား - အနီရောင် Outline နှင့် တုန်ခါမှု Effect */
+.wrong-answer {
+    border: 2px solid #ef4444 !important;
+    background: rgba(239, 68, 68, 0.1) !important;
+    color: #ef4444 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+/* နောက်တစ်ပုဒ်သို့ ခလုတ် - ပုံမှန်အရွယ်အစားနှင့် Background အရောင် */
+.next-btn-styled {
+    background-color: var(--bg) !important; /* App ရဲ့ နောက်ခံအရောင် */
+    color: white !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: block;
+    width: fit-content; /* စာသားအရှည်အတိုင်းပဲရှိမည့် ပုံမှန်အရွယ်အစား */
+    margin-left: auto; /* ညာဘက်ကပ်ထားရန် */
+}
+
+.next-btn-styled:active {
+    transform: scale(0.95);
+}
 		
         #exam-countdown {
     background: rgba(30, 41, 59, 0.7);
@@ -392,16 +422,27 @@ function loadQuestion() {
             const btn = document.createElement('button'); 
             btn.className = 'btn option-btn'; 
             btn.innerText = a;
-            btn.onclick = () => {
-                if(isAnswered) return; 
-                isAnswered = true;
-                let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
-                document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                    if(idx === correctIdx) b.classList.add('correct-opt');
-                    else if(idx === i) b.classList.add('wrong-opt');
-                });
-                document.getElementById('next-btn').style.display = 'block';
-            };
+           // loadQuestion() ထဲက MCQ ပိုင်းကို ဒီလိုပြင်ပါ
+btn.onclick = () => {
+    if(isAnswered) return; 
+    isAnswered = true;
+
+    let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
+    
+    document.querySelectorAll('.option-btn').forEach((b, idx) => {
+        b.disabled = true;
+        if(idx === correctIdx) {
+            b.classList.add('correct-answer'); // အစိမ်းရောင် Outline
+        } else {
+            b.classList.add('wrong-answer'); // အနီရောင် Outline
+        }
+    });
+
+    // Next Button ပုံစံသစ်
+    nextBtn.style.display = 'block';
+    nextBtn.className = 'next-btn-styled'; 
+    nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+};
             optDiv.appendChild(btn);
         });
     } 
