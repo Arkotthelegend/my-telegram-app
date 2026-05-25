@@ -795,9 +795,10 @@ function showGeneralActivities(subId, partName) {
             updateAvatar();
         }
         renderSubjects();
-function renderSubjects() {
-    const quotes = [
-           "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။",
+
+        // အားပေးစာစုများ
+const quotes = [
+    "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။",
     "မနက်ဖြန်အတွက် အကောင်းဆုံး ပြင်ဆင်မှုက ဒီနေ့မှာ အကောင်းဆုံး ကြိုးစားခြင်းပဲ။",
     "အခက်အခဲဆိုတာ ကျော်ဖြတ်ဖို့အတွက်ပဲ ဖြစ်ပါတယ်။",
     "မရပ်မနား ကြိုးစားနေသရွေ့ မင်းဟာ အရှုံးမပေးသေးပါဘူး။",
@@ -812,15 +813,7 @@ function renderSubjects() {
     "အကောင်းဆုံးဖြစ်အောင် လုပ်ပါ၊ ကျန်တာကို ကံကြမ္မာအပေါ် ပုံချမထားပါနဲ့။",
     "သူများထက် ပိုသိချင်ရင် သူများထက် ပိုကြိုးစားရမယ်။",
     "ရင်းနှီးမြုပ်နှံမှုတွေထဲမှာအကောင်းဆုံးက ပညာရေးမှာရင်းနှီးမြုပ်နှံခြင်းပါပဲ"
-    ];
-      const today = new Date();
-    const dateSeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
-    const quoteIndex = dateSeed % quotes.length;
-    
-    document.getElementById('daily-quote').innerText = quotes[quoteIndex];
-    // ...
-}
-        // အားပေးစာစုများ
+];
 
 // Checkbox အခြေအနေ သိမ်းဆည်းရန်
 function saveGoals() {
@@ -848,8 +841,10 @@ function loadGoals() {
         document.getElementById('goal6').checked = saved.goal6;
         document.getElementById('goal7').checked = saved.goal7;
     }
-
-  
+    // Random Quote တစ်ခု ပြသရန်
+    const randomIdx = Math.floor(Math.random() * quotes.length);
+    document.getElementById('daily-quote').innerText = `"${quotes[randomIdx]}"`;
+}
 
 function resetGoals() {
     document.getElementById('goal1').checked = false;
