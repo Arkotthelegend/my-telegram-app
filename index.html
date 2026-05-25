@@ -68,7 +68,21 @@
     word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
     line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
 }
-
+/* Next Button နှင့် အဖြေအရောင်များ - ဤနေရာတွင် ထည့်ပါ */
+.next-btn { 
+    background-color: var(--accent) !important; 
+    color: var(--bg) !important; 
+    margin-top: 15px; 
+    width: 100%; 
+    padding: 12px; 
+    border-radius: 8px; 
+    border: none; 
+    font-weight: bold; 
+    cursor: pointer; 
+}
+.correct-answer { background-color: var(--success) !important; color: white !important; }
+.wrong-answer { background-color: var(--error) !important; color: white !important; }
+		
         #exam-countdown {
     background: rgba(30, 41, 59, 0.7);
     border: 1px solid rgba(56, 189, 248, 0.3);
@@ -702,47 +716,109 @@ function showGeneralActivities(subId, partName) {
             } catch (e) { tg.showAlert("မေးခွန်းဖိုင်မတွေ့သေးပါ- " + fileName); }
         }
 
-        function loadQuestion() {
-            isAnswered = false; document.getElementById('next-btn').style.display = 'none';
-            const q = currentQuestions[currentIdx];
-            document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
-            document.getElementById('question-box').innerText = q.q;
-            const optDiv = document.getElementById('quiz-options'); optDiv.innerHTML = '';
-            if (currentSubject.id === 'math' && (q.type === undefined || q.type === 'math_show')) {
-    q.type = 'math_show'; // math ဆိုရင် auto 'math_show' ပုံစံပြောင်းခိုင်းခြင်း
-}
+       function loadQuestion() {
+    isAnswered = false; 
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.style.display = 'none';
+    nextBtn.className = 'btn'; // Reset to default class first
 
-            if (q.type === 'mcq' || q.type === 'tf') {
-                let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
-                opts.forEach((a, i) => {
-                    const btn = document.createElement('button'); btn.className = 'btn option-btn'; btn.innerText = a;
-                    btn.onclick = () => {
-                        if(isAnswered) return; isAnswered = true;
-                        let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
-                        document.querySelectorAll('.option-btn').forEach((b, idx) => {
-                            if(idx === correctIdx) b.classList.add('correct-opt');
-                            else if(idx === i) b.classList.add('wrong-opt');
-                        });
-                        document.getElementById('next-btn').style.display = 'block';
-                    };
-                    optDiv.appendChild(btn);
+    const q = currentQuestions[currentIdx];
+    document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
+    document.getElementById('question-box').innerText = q.q;
+    
+    const optDiv = document.getElementById('quiz-options'); 
+    optDiv.innerHTML = '';
+
+    if (currentSubject.id === 'math' && (q.type === undefined || q.type === 'math_show')) {
+        q.type = 'math_show';
+    }
+
+    if (q.type === 'mcq' || q.type === 'tf') {
+        let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
+        opts.forEach((a, i) => {
+            const btn = document.createElement('button'); 
+            btn.className = 'btn option-btn'; 
+            btn.innerText = a;
+
+            btn.onclick = () => {
+                if(isAnswered) return; 
+                isAnswered = true;
+
+                let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
+                
+                // အဖြေအားလုံးကို အနီ/အစိမ်း ခွဲပြခြင်း
+                document.querySelectorAll('.option-btn').forEach((b, idx) => {
+                    b.disabled = true; // ထပ်နှိပ်လို့မရအောင် ပိတ်ခြင်း
+                    if(idx === correctIdx) {
+                        b.classList.add('correct-answer'); // အဖြေမှန်ကို အစိမ်းပြ
+                    } else {
+                        b.classList.add('wrong-answer'); // အဖြေမှားအားလုံးကို အနီပြ
+                    }
                 });
-            } else if (q.type === 'blank') {
-                const input = document.createElement('input');
-                input.className = 'quiz-input'; input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
-                const sBtn = document.createElement('button');
-                sBtn.className = 'btn'; sBtn.innerText = "အဖြေစစ်မည်";
-                sBtn.onclick = () => {
-                    if(isAnswered) return; isAnswered = true;
-                    if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) tg.showAlert("မှန်ကန်ပါသည်။ ✅");
-                    else tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
-                    document.getElementById('next-btn').style.display = 'block';
-                };
-                optDiv.append(input, sBtn);
+
+                // "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ပုံစံပြောင်းပြီး ပြခြင်း
+                nextBtn.style.display = 'block';
+                nextBtn.className = 'next-btn'; // ကျွန်တော်တို့ CSS မှာ ရေးထားတဲ့ အပြာရောင် class
+                nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+            };
+            optDiv.appendChild(btn);
+        });
+    } else if (q.type === 'blank') {
+        const input = document.createElement('input');
+        input.className = 'quiz-input'; 
+        input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
+        const sBtn = document.createElement('button');
+        sBtn.className = 'btn'; 
+        sBtn.innerText = "အဖြေစစ်မည်";
+        
+        sBtn.onclick = () => {
+            if(isAnswered) return; 
+            isAnswered = true;
+            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
+                tg.showAlert("မှန်ကန်ပါသည်။ ✅");
+            } else {
+                tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
             }
-            // Render Math Symbols if present
-            if (window.MathJax) MathJax.typesetPromise();
+            nextBtn.style.display = 'block';
+            nextBtn.className = 'next-btn';
+            nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+        };
+        optDiv.append(input, sBtn);
+    }
+
+    if (window.MathJax) MathJax.typesetPromise();
+}
+		// loadQuestion() { ... } ရဲ့ အောက်မှာ ထည့်ပါ
+function selectOption(index) {
+    const q = currentQuestions[currentQuestionIndex];
+    const options = document.querySelectorAll('.option-btn');
+    
+    // အကုန်လုံးကို အရင်ပိတ်လိုက်ပါ (ထပ်နှိပ်လို့မရအောင်)
+    options.forEach(btn => btn.disabled = true);
+
+    // အဖြေမှန်ကို အစိမ်းရောင်ပြပါ
+    options[q.answer].classList.add('correct-answer');
+
+    // ရွေးလိုက်တဲ့အဖြေက မှားနေရင် အနီရောင်ပြပါ
+    if (index !== q.answer) {
+        options[index].classList.add('wrong-answer');
+    }
+    
+    // ကျန်တဲ့ အဖြေမှားတွေကိုပါ အနီရောင်ပြရန်
+    options.forEach((btn, i) => {
+        if (i !== q.answer) {
+            btn.classList.add('wrong-answer');
         }
+    });
+
+    // "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ပြသခြင်း
+    const nextBtn = document.getElementById('next-btn');
+    if (nextBtn) {
+        nextBtn.style.display = 'block';
+        nextBtn.className = 'next-btn'; // CSS class ချိတ်ခြင်း
+        nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+    }
+}
 
         function nextQuestion() {
             currentIdx++;
