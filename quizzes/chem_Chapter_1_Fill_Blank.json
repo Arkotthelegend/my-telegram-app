@@ -1,1 +1,503 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The octa rule does not apply to ________ elements.",
+    "c": "d-block"
+  },
+  {
+    "type": "blank",
+    "q": "The simple ratio of Na⁺ ion to Cl⁻ ion in NaCl crystalline structure is ________.",
+    "c": "1 : 1"
+  },
+  {
+    "type": "blank",
+    "q": "All electrons in doubly occupied orbitals have the ________ spin.",
+    "c": "opposite"
+  },
+  {
+    "type": "blank",
+    "q": "An optimum distance between two nuclei is called the ________.",
+    "c": "bond length"
+  },
+  {
+    "type": "blank",
+    "q": "The term ________ is used to express the number of ions surrounding the central ion in the lattice.",
+    "c": "coordination number"
+  },
+  {
+    "type": "blank",
+    "q": "The elements having low ionisation energy easily lose electrons, resulting in the formation of the ________.",
+    "c": "cations."
+  },
+  {
+    "type": "blank",
+    "q": "The electronic structure of Cl⁻ is the same as ________.",
+    "c": "Ar"
+  },
+  {
+    "type": "blank",
+    "q": "Silicon(IV) oxide has a similar structure to a ________.",
+    "c": "diamond"
+  },
+  {
+    "type": "blank",
+    "q": "Ionic compounds are compounds that consist of ________.",
+    "c": "ions"
+  },
+  {
+    "type": "blank",
+    "q": "In solid ionic compounds, their ions are held in ________ positions and cannot move.",
+    "c": "fixed"
+  },
+  {
+    "type": "blank",
+    "q": "A water (H₂O) molecule that possesses ________ lone pair electrons on the oxygen atom.",
+    "c": "two"
+  },
+  {
+    "type": "blank",
+    "q": "The strength of sharing or transferring the valence electrons depends on the ________ of the atoms involved in the chemical bonding.",
+    "c": "electronegativity"
+  },
+  {
+    "type": "blank",
+    "q": "In a graphite, there are weak van der Waals forces between the layers, which give rise to a ________ structure.",
+    "c": "Giant"
+  },
+  {
+    "type": "blank",
+    "q": "A coordinate bond, or dative bond, is a special type of ________ bond.",
+    "c": "covalent"
+  },
+  {
+    "type": "blank",
+    "q": "A metal loses electrons to form ________.",
+    "c": "cation"
+  },
+  {
+    "type": "blank",
+    "q": "The angle between two bonds in a linear molecule is ________.",
+    "c": "180°"
+  },
+  {
+    "type": "blank",
+    "q": "When atoms share an equal number of electrons, a ________ covalent bond is formed.",
+    "c": "non-polar"
+  },
+  {
+    "type": "blank",
+    "q": "The elements having high electron affinity easily gain electrons, resulting in the formation of the ________.",
+    "c": "anions"
+  },
+  {
+    "type": "blank",
+    "q": "In a graphite, each carbon atom joins to the other ________ carbon atoms by covalent bonds.",
+    "c": "three"
+  },
+  {
+    "type": "blank",
+    "q": "According to the Aufbau principle, the electron occupies that sub-shell with the ________ energy.",
+    "c": "lowest"
+  },
+  {
+    "type": "blank",
+    "q": "A covalent bond formed is polar if the two atoms have different ________.",
+    "c": "electronegativity"
+  },
+  {
+    "type": "blank",
+    "q": "The type of chemical bonding depends on the types of ________ that are involved.",
+    "c": "elements"
+  },
+  {
+    "type": "blank",
+    "q": "In ionic compounds, the cations and anions are held together by strong ________.",
+    "c": "electrostatic attraction"
+  },
+  {
+    "type": "blank",
+    "q": "In quartz, each silicon atom is bonded to ________ oxygen atoms.",
+    "c": "four"
+  },
+  {
+    "type": "blank",
+    "q": "The shape of CH₄ according to VSEPR model is ________.",
+    "c": "tetrahedral"
+  },
+  {
+    "type": "blank",
+    "q": "In BeCl₂, there are ________ bonding pairs without lone pairs.",
+    "c": "two"
+  },
+  {
+    "type": "blank",
+    "q": "Van der Waals forces are ________ forces.",
+    "c": "weak"
+  },
+  {
+    "type": "blank",
+    "q": "The ________ valence electrons in each of the bonding atoms are involved in covalent bond.",
+    "c": "unpaired"
+  },
+  {
+    "type": "blank",
+    "q": "No more than two electrons can occupy the same orbital and must have ________ spins.",
+    "c": "opposite"
+  },
+  {
+    "type": "blank",
+    "q": "According to ________, no more two electrons in an atom can have same orbital.",
+    "c": "Pauli's exclusion"
+  },
+  {
+    "type": "blank",
+    "q": "In quartz, each oxygen atom is bonded to ________ silicon atoms.",
+    "c": "two"
+  },
+  {
+    "type": "blank",
+    "q": "London dispersion force is also called ________ interaction.",
+    "c": "induced dipole-induced dipole"
+  },
+  {
+    "type": "blank",
+    "q": "A triple bond is formed by sharing ________ pairs of electrons.",
+    "c": "three"
+  },
+  {
+    "type": "blank",
+    "q": "The direction of the dipole can also be shown by the sign ________.",
+    "c": "+\u2192"
+  },
+  {
+    "type": "blank",
+    "q": "Graphite has ________ electrons in each layer.",
+    "c": "free-moving"
+  },
+  {
+    "type": "blank",
+    "q": "In covalent bonding, the ________ valence electrons are not involved in bonding.",
+    "c": "paired"
+  },
+  {
+    "type": "blank",
+    "q": "An ionic bond is formed by ________ of electrons between two atoms.",
+    "c": "transfer"
+  },
+  {
+    "type": "blank",
+    "q": "The coordination ratio of Na⁺ ion to Cl⁻ ion in NaCl crystalline structure is ________.",
+    "c": "6 : 6"
+  },
+  {
+    "type": "blank",
+    "q": "Fullerene (C\u2086\u2080), carbon nanotubes, and graphene are allotropes of ________.",
+    "c": "carbon"
+  },
+  {
+    "type": "blank",
+    "q": "The central atom in an electron-deficient molecule has valence electrons of ________ than 8.",
+    "c": "less"
+  },
+  {
+    "type": "blank",
+    "q": "In some substances in solids, atoms are joined together by single covalent bonds, exciting ________ structures.",
+    "c": "giant"
+  },
+  {
+    "type": "blank",
+    "q": "Covalent bonds are formed when electrons are ________.",
+    "c": "shared"
+  },
+  {
+    "type": "blank",
+    "q": "The molecular shape of BeCl\u2082 is ________.",
+    "c": "linear"
+  },
+  {
+    "type": "blank",
+    "q": "The attractive forces that hold atoms together in compounds are also known as ________.",
+    "c": "chemical bonds"
+  },
+  {
+    "type": "blank",
+    "q": "The length of the bond is determined by the number of ________ electrons.",
+    "c": "bonded"
+  },
+  {
+    "type": "blank",
+    "q": "The shape of the molecule of NH\u2083 is ________ by VSEPR model.",
+    "c": "trigonal pyramidal"
+  },
+  {
+    "type": "blank",
+    "q": "The hydrogen bond is ________ than a covalent bond.",
+    "c": "weaker"
+  },
+  {
+    "type": "blank",
+    "q": "Each carbon bonded layer is formed with ________ rings of carbon atoms, in graphite.",
+    "c": "hexagonal"
+  },
+  {
+    "type": "blank",
+    "q": "The non-metal atom readily gains electrons to form ________.",
+    "c": "anion"
+  },
+  {
+    "type": "blank",
+    "q": "A crystal lattice that shows the ________ pattern of the entire crystal.",
+    "c": "three-dimensional"
+  },
+  {
+    "type": "blank",
+    "q": "The shape of water is ________.",
+    "c": "bent or V-shaped"
+  },
+  {
+    "type": "blank",
+    "q": "The crystalline structure of an ionic solid is called a ________.",
+    "c": "crystal lattice"
+  },
+  {
+    "type": "blank",
+    "q": "________ is a pair of equal in magnitude and opposite charges separated by a distance.",
+    "c": "Dipole"
+  },
+  {
+    "type": "blank",
+    "q": "A graphite has a layer and ________ structure.",
+    "c": "planar"
+  },
+  {
+    "type": "blank",
+    "q": "The greater the charge on the ions, the ________ electrostatic attraction.",
+    "c": "greater"
+  },
+  {
+    "type": "blank",
+    "q": "The higher the number of bonded electrons, the ________ the bond length.",
+    "c": "shorter"
+  },
+  {
+    "type": "blank",
+    "q": "The VSEPR theory is used to predict the ________ of covalent molecules.",
+    "c": "shape"
+  },
+  {
+    "type": "blank",
+    "q": "The higher the value of the electronegativity, the ________ is the atom's attraction to electrons.",
+    "c": "greater"
+  },
+  {
+    "type": "blank",
+    "q": "Fullerene (C\u2086\u2080), carbon nanotubes, and graphene do not exist as ________ structures.",
+    "c": "giant"
+  },
+  {
+    "type": "blank",
+    "q": "The degree of bond polarity is measured as a ________ of a bond.",
+    "c": "dipole moment"
+  },
+  {
+    "type": "blank",
+    "q": "A covalent bond formed is non-polar if the two atoms have ________ electronegativity.",
+    "c": "same"
+  },
+  {
+    "type": "blank",
+    "q": "The bond length of the single bond is the ________.",
+    "c": "longest"
+  },
+  {
+    "type": "blank",
+    "q": "In the CO\u2082 molecule, there are ________ bonding pairs without lone pairs.",
+    "c": "four"
+  },
+  {
+    "type": "blank",
+    "q": "________ unit cell is a cubic cell with an atom in each corner and another in the centre of the cube.",
+    "c": "Body-centred"
+  },
+  {
+    "type": "blank",
+    "q": "The hydrogen bond is the ________ of all intermolecular forces.",
+    "c": "strongest"
+  },
+  {
+    "type": "blank",
+    "q": "When atoms share an unequal number of electrons between two atoms, a ________ covalent bond is formed.",
+    "c": "non-polar"
+  },
+  {
+    "type": "blank",
+    "q": "The greater the charge on the ions, the ________ ionic bond.",
+    "c": "stronger"
+  },
+  {
+    "type": "blank",
+    "q": "________ is a measure of the ability of an atom to attract the shared electrons to itself.",
+    "c": "Electronegativity"
+  },
+  {
+    "type": "blank",
+    "q": "In expanded valence shell molecule has valence electrons of more than ________.",
+    "c": "8"
+  },
+  {
+    "type": "blank",
+    "q": "________ unit cell is a cubic cell with an atom in each corner of the cube.",
+    "c": "Simple cubic"
+  },
+  {
+    "type": "blank",
+    "q": "The strength of metallic bond is ________ than that of an ionic bond.",
+    "c": "lower"
+  },
+  {
+    "type": "blank",
+    "q": "BF\u2083 has a ________ shape.",
+    "c": "triangular planar"
+  },
+  {
+    "type": "blank",
+    "q": "The ammonia molecule possesses a ________ of electrons on the nitrogen atom.",
+    "c": "lone pair"
+  },
+  {
+    "type": "blank",
+    "q": "The higher the number of bonded electrons, the ________ the attraction between the two atoms.",
+    "c": "stronger"
+  },
+  {
+    "type": "blank",
+    "q": "The forces of attraction and repulsion between interaction molecules are known as ________.",
+    "c": "intermolecular forces"
+  },
+  {
+    "type": "blank",
+    "q": "In metallic bond, the positively charged metallic nuclei are surrounded by ________ electrons.",
+    "c": "free-moving"
+  },
+  {
+    "type": "blank",
+    "q": "Ionic bonding occurs between reactive metals and reactive ________.",
+    "c": "non-metals"
+  },
+  {
+    "type": "blank",
+    "q": "Fullerene (C\u2086\u2080), carbon nanotubes, and graphene are ________ covalent molecules.",
+    "c": "bulky"
+  },
+  {
+    "type": "blank",
+    "q": "Dipole-Dipole forces are ________ than London dispersion forces.",
+    "c": "stronger"
+  },
+  {
+    "type": "blank",
+    "q": "Dipole-Dipole forces are ________ than ion-dipole interactions.",
+    "c": "weaker"
+  },
+  {
+    "type": "blank",
+    "q": "Face-centred cubic unit cell is a cubic cell with an atom on each corner, and an atom at the ________ of each face.",
+    "c": "center"
+  },
+  {
+    "type": "blank",
+    "q": "The amount of energy required to ________ an electron from a gaseous atom.",
+    "c": "remove"
+  },
+  {
+    "type": "blank",
+    "q": "The shape of CO\u2082 according to VSEPR theory is ________.",
+    "c": "linear"
+  },
+  {
+    "type": "blank",
+    "q": "Bond angle is an angle between any two bonds that include a common atom, usually measured in ________.",
+    "c": "degrees."
+  },
+  {
+    "type": "blank",
+    "q": "The bond angle of F-B-F in BF\u2083 molecule is ________.",
+    "c": "120°"
+  },
+  {
+    "type": "blank",
+    "q": "Molecular orbital theory is a method for describing the electronic structure of molecules based on ________ energy levels.",
+    "c": "quantized"
+  },
+  {
+    "type": "blank",
+    "q": "The electrons in the valence shells (outermost shells) of an atom are known as the ________.",
+    "c": "valence electrons"
+  },
+  {
+    "type": "blank",
+    "q": "A hydrogen bond is a special type of ________ interaction that occurs between polar molecules.",
+    "c": "dipole-dipole"
+  },
+  {
+    "type": "blank",
+    "q": "________ is the smallest repeating unit of a crystal lattice.",
+    "c": "Unit cell"
+  },
+  {
+    "type": "blank",
+    "q": "________ cubic unit cell is a cubic cell with an atom on each corner and another in the centre of the cube.",
+    "c": "Body-centred"
+  },
+  {
+    "type": "blank",
+    "q": "Molecular shape is the ________ arrangement of the atoms that constitute a molecule.",
+    "c": "three-dimensional"
+  },
+  {
+    "type": "blank",
+    "q": "Ionic bonding depends on the difference in ________ between two atoms.",
+    "c": "electronegativity"
+  },
+  {
+    "type": "blank",
+    "q": "The higher the first ionisation energy of an element, the ________ is its electronegativity.",
+    "c": "greater"
+  },
+  {
+    "type": "blank",
+    "q": "NaCl crystal has a ________ structure.",
+    "c": "cubic"
+  },
+  {
+    "type": "blank",
+    "q": "________ are weak intermolecular forces that bind molecules together.",
+    "c": "van der Waals forces"
+  },
+  {
+    "type": "blank",
+    "q": "Simple cubic unit cell is a cubic cell with an atom in each ________ of the cube.",
+    "c": "corner"
+  },
+  {
+    "type": "blank",
+    "q": "Silica does not conduct electricity because it has no free moving ________.",
+    "c": "electrons"
+  },
+  {
+    "type": "blank",
+    "q": "Diamond and graphite are ________ molecules.",
+    "c": "giant"
+  },
+  {
+    "type": "blank",
+    "q": "Dipole moment is the measure of ________ in a molecule.",
+    "c": "polarity"
+  },
+  {
+    "type": "blank",
+    "q": "Ionic bonding takes place when the difference in electronegativity is greater than ________.",
+    "c": "1.8"
+  }
+]
