@@ -1,1 +1,358 @@
 
+[
+  {
+    "type": "tf",
+    "q": "The total chemical energy of a substance is called its enthalpy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Chemical energy is the energy that is stored in the bonds of chemical compounds.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an endothermic reaction, total energy absorbed for bond breaking is greater than total energy released for bond making.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Exothermic reaction is heat absorbing process.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Heat is evolved when a substance is burned in oxygen.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Enthalpy is measured directly.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "An endothermic process decreases the surrounding temperature.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Standard condition chosen for enthalpy change is 0°C and 1 atm.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The energy can neither be created nor destroyed.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When sulphuric acid is slowly poured into water, the flask or beaker becomes hot.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The fireworks display illustrates a spectacular release of energy in a chemical reaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Initial temperature is less than the final temperature, 'q' value will also be positive.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Standard conditions for enthalpy change are 0K and 1 atm.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The reaction between magnesium and oxygen is non-spontaneous reaction.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The burning candle and the combustion of a fuel are exothermic reactions.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Plants store chemical energy in carbohydrates formed during respiration.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Kinetic energy is the energy due to position of a body.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The energy is released when bonds are formed during the chemical reaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In battery, chemical energy is converted into electrical energy.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When ammonium chloride is dissolved in water, the flask becomes quite hot to the touch.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The neutralization reaction, respiration, and rusting of iron are endothermic reactions.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Non-spontaneous processes not need the energy to take place.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Dissolving ammonium chloride in water, the solution id cold to touch.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Combustion of fuels is endothermic.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Energy changes take place during chemical reactions.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Dilution of sulphuric acid is an endothermic reaction.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Bond breaking is an endothermic process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The surrounding temperature is increased by the endothermic process.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The burning wood in the air releases heat energies only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "An endothermic reaction released heat to the surrounding.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The higher the bond enthalpy, the more energy is needed to break the bond.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Heat of combustion of a substance is always positive.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Heat of formation of sulphur dioxide can also be expressed as heat of combustion of sulphur.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The heat change of a chemical reaction is change in heat content of the chemical reaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Energy can change from one form to another with a net loss of gain.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "When the ice melts at room temperature, that is a spontaneous and exothermic process.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "During a chemical reaction, the change in enthalpy is the amount of heat transferred at constant pressure.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The heat liberated by the combustion of one mole of graphite is greater than that of one mole of carbon monoxide.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "An endothermic reaction increases the surrounding temperature.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Heat of formation of a compound is always negative.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The chemical reactions involve changes in energy due to the breaking of bonds only.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "All heats of neutralization are found to be endothermic.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Standard enthalpy change is measured at 25°C (298 K) and 1 atm (760 mmHg).",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The energy is released to break bonds during the chemical reaction.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Iron rusting is exothermic and spontaneous reaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The energy change in a reaction can be calculated using bond energies.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "In an exothermic reaction, total energy absorbed for bond breaking is greater than total energy released for bond making.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The cooking an egg, evaporating liquid water, and thermal decomposition of limestone are exothermic reactions.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Energy is given out so the temperature of the surroundings decreases.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "For an exothermic reaction, ΔH is always negative.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The potential energy is the energy due to the position of a body.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Standard enthalpy change is measured at -273 K and 760 mmHg.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "The reaction between copper and oxygen is non-spontaneous reaction.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "The surrounding temperature is decreased by the endothermic process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Endothermic reactions take in energy from the surroundings.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Energy is taken in so the temperature of the surroundings increases.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "In exothermic reactions, the energy of the product is higher than the energy of the reactants.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Spontaneous process may be exothermic or endothermic.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Enthalpy change of a chemical reaction is represented by ΔH.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Positive value of ΔH indicates heat gain by the system.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Enthalpy changes are due to breaking and forming of bonds.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Melting of ice is endothermic process.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Total enthalpy change for a chemical reaction is independent on the route by which reaction take place.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Heat of combustion of a substance is always negative.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "When an instant cold pack and a hot pack have been activated, the change in pressure occurs.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Bond making is an endothermic process.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Energy is released when new bonds form.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Exothermic reactions take in energy.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "Photosynthesis is chemical reactions that occurs when plants use energy from the sun.",
+    "c": true
+  },
+  {
+    "type": "tf",
+    "q": "Heat is absorbed when a substance is burned in oxygen.",
+    "c": false
+  },
+  {
+    "type": "tf",
+    "q": "ΔH is the difference in the mass content of the products and reactants.",
+    "c": false
+  }
+]
