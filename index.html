@@ -143,8 +143,9 @@
     <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
         🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
     </button>
-</div>
-        </div>
+            </div>
+            </div>
+    </div>
 
     <div id="middle-screen" class="screen">
     <div style="padding: 20px; padding-bottom: 100px;">
@@ -810,6 +811,12 @@ function showGeneralActivities(subId, partName) {
         } else { 
             container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
         }
+        // renderProfileData() ထဲတွင် ထည့်ရန်
+const sessionMins = Math.floor((Date.now() - startTime) / 60000);
+if (sessionMins < STREAK_REQUIRED_MINUTES) {
+    document.getElementById('streak-text').innerText = `ယနေ့အတွက် ${(STREAK_REQUIRED_MINUTES - sessionMins)} မိနစ် ထပ်မံအသုံးပြုရန်`;
+}
+renderStreakUI();
     }
 
     // Streak နှင့် Contact UI
@@ -979,7 +986,7 @@ window.onload = () => {
     // Quote ပြောင်းလဲခြင်း logic (အရင်က ပေးထားသည့်အတိုင်း)
 };
 
-        let startTime = Date.now();
+   let startTime = Date.now();
 const STREAK_REQUIRED_MINUTES = 15;
 
 function updateStreak() {
@@ -1006,73 +1013,33 @@ function updateStreak() {
     }
 }
 
-let startTime = Date.now();
-const STREAK_REQUIRED_MINUTES = 15;
-
-function updateStreak() {
-    const today = new Date().toLocaleDateString();
-    let streakData = JSON.parse(localStorage.getItem('streakData')) || { lastDate: '', count: 0 };
-    
-    // App စဖွင့်ချိန်ကနေ ခုထိ ဘယ်နှစ်မိနစ်ရှိပြီလဲ တွက်ခြင်း
-    let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
-    
-    if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yesterdayStr = yesterday.toLocaleDateString();
-
-        if (streakData.lastDate === yesterdayStr) {
-            streakData.count++; // ရက်ဆက်ရင် တိုးမယ်
-        } else if (streakData.lastDate === '') {
-            streakData.count = 1; // ပထမဆုံးအကြိမ်
-        } else {
-            streakData.count = 1; // ရက်ပျက်သွားရင် ၁ ကပြန်စမယ်
-        }
-        
-        streakData.lastDate = today;
-        localStorage.setItem('streakData', JSON.stringify(streakData));
-    }
-    renderStreakUI();
-}
-
 function renderStreakUI() {
     const streakData = JSON.parse(localStorage.getItem('streakData')) || { count: 0 };
     const icon = document.getElementById('streak-icon');
     const text = document.getElementById('streak-text');
     const countText = document.getElementById('streak-count');
     
-    if(!icon) return; // Profile tab မှာ မဟုတ်ရင် ကျော်သွားမယ်
-
     if (streakData.count >= 30) {
-        icon.innerText = "💎"; // တစ်လပြည့်ရင် စိန်ရောင်မီးတောက်
-        text.innerText = "Legendary Achievement!";
-        icon.style.filter = "drop-shadow(0 0 15px #38BDF8)";
+        icon.innerText = "💎"; // တစ်လပြည့်ရင် အရောင်ပြောင်း (Blue Flame/Diamond)
+        text.innerText = "Legendary Streak!";
     } else if (streakData.count >= 7) {
         icon.innerText = "🔥"; // တစ်ပတ်ပြည့်ရင် မီးတောက်
-        text.innerText = "You're on Fire!";
-        icon.style.filter = "drop-shadow(0 0 15px #FBBF24)";
+        text.innerText = "On Fire!";
     } else {
         icon.innerText = "🌑"; 
-        const sessionMins = Math.floor((Date.now() - startTime) / 60000);
-        if (sessionMins < STREAK_REQUIRED_MINUTES) {
-            text.innerText = `နောက်ထပ် ${STREAK_REQUIRED_MINUTES - sessionMins} မိနစ် သုံးပေးပါ`;
-        } else {
-            text.innerText = "ယနေ့အတွက် Streak ရရှိပါပြီ";
-        }
+        text.innerText = "စာကြိုးစားဆဲ...";
     }
     countText.innerText = `Streak: ${streakData.count} Days`;
 }
 
+// Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
 function contactDeveloper() {
-    window.open(`https://t.me/thearkot?text=${encodeURIComponent("မင်္ဂလာပါ Developer ခင်ဗျာ...")}`, '_blank');
+    const devUsername = "YOUR_BOT_OR_USERNAME"; // သင့် Telegram Username ပြောင်းပါ
+    const message = encodeURIComponent("မေးခွန်းအမှား တိုင်ကြားရန် ရှိပါသည်။");
+    window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-// အကယ်၍ HTML မှာ updateAvatar ပါနေသေးရင် ဒါလေးပါ ထည့်ထားပါ
-function updateAvatar() {
-    console.log("Avatar Updated");
-}
-
-// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် နောက်ကွယ်ကနေ စစ်ပေးနေမည်
+// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
 setInterval(updateStreak, 60000);
     </script>
 </body>
