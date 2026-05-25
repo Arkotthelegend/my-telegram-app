@@ -489,38 +489,39 @@ function loadQuestion() {
             });
         }
 
-        function openTrialMenu() {
+     function openTrialMenu() {
     showScreen('activity');
-    document.getElementById('activity-title').innerText = "Free Trial (Chapter 1)";
+    document.getElementById('activity-title').innerText = "Free Trial (စမ်းသုံးရန်)";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-    
     document.getElementById('activity-back-btn').onclick = () => showScreen('home');
 
     subjects.forEach(sub => {
-        // မြန်မာစာအတွက် ခက်ဆစ် Menu ခွဲထုတ်ခြင်း
-     // ... openTrialMenu ထဲက mm အပိုင်း ...
-if (sub.id === 'mm') {
-    createBtn(`🇲🇲 မြန်မာစာ ခက်ဆစ် (စမ်းသုံးရန်)`, content, () => {
-        // မူလရှိပြီးသား ခက်ဆစ် Menu ကို လှမ်းခေါ်မယ်
-        // subId = 'mm', partName = 'Definition'
-        showMyanmarTrialParts(); 
-    });
-}
-        // အခြားဘာသာရပ်များ (မူလအတိုင်း)
+        // ၁။ မြန်မာစာ (မူလ ခက်ဆစ် Menu သို့)
+        if (sub.id === 'mm') {
+            createBtn(`🇲🇲 မြန်မာစာ (ခက်ဆစ်စမ်းရန်)`, content, () => {
+                showMyanmarTrialParts(); 
+            });
+        } 
+        // ၂။ အင်္ဂလိပ်စာ (မူလ Poem Menu သို့)
+        else if (sub.id === 'eng') {
+            createBtn(`🇬🇧 English (Poem Trial)`, content, () => {
+                // English ရဲ့ Poem အပိုင်းကို တိုက်ရိုက်ပြမယ်
+                showGeneralActivities('eng', 'Poem');
+                document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
+            });
+        }
+        // ၃။ အခြားဘာသာရပ်များ (Chapter 1 သို့)
         else {
             createBtn(`${sub.icon} ${sub.name} (Chapter 1)`, content, () => {
-                const trialFile = sub.id === 'math' ? `${sub.id}_Chapter_1_2_Marks` : `${sub.id}_Chapter_1_MCQ`;
-                if (sub.id === 'math') {
-                    initFlashcards(trialFile, `${sub.name} (Trial)`);
-                } else {
-                    initQuiz(trialFile);
-                }
+                // အဆိုပါဘာသာရပ်၏ Chapter 1 Menu ထဲသို့ တိုက်ရိုက်သွားမည်
+                showGeneralActivities(sub.id, 'Chapter 1');
+                document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
             });
         }
     });
 }
-
+        
 function showMyanmarTrialParts() {
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
@@ -530,7 +531,11 @@ function showMyanmarTrialParts() {
     // သင်ပြချင်တဲ့ Trial ခေါင်းစဉ်တွေကို ဒီမှာ စာရင်းလုပ်ပေးပါ
     const mmTrialItems = [
         { name: "စကားပြေ (ညောင်ရမ်းကြီးသမီး)", file: "mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး" },
-        { name: "ကဗျာ (ကျေးစေတမန်)", file: "mm_ကဗျာ_ခက်ဆစ်_ကျေးစေတမန်" },
+         { name: "စကားပြေ (သစ္စာနှင့်ပညာ)", file: "mm_စကားပြေ_ခက်ဆစ်_သစ္စာနှင့်ပညာ" },
+         { name: "စကားပြေ (ခေတ်)", file: "mm_စကားပြေ_ခက်ဆစ်_ခေတ်" },
+          { name: "ကဗျာ (ပေါ်နွေလလျှင်)", file: "mm_ကဗျာ_ခက်ဆစ်_ပေါ်နွေလလျှင်" },
+          { name: "ကဗျာ (ငါ့ကိုလွယ်အမယ်ကြီးနှင့်)", file: "mm_ကဗျာ_ခက်ဆစ်_ငါ့ကိုလွယ်အမယ်ကြီးနှင့်" },
+          { name: "ကဗျာ (ဩဝါဒထူးပျို့)", file: "mm_ကဗျာ_ခက်ဆစ်_ဩဝါဒထူးပျို့" },
         { name: "ရေသည်ပြဇာတ် (ခက်ဆစ်)", file: "mm_ရေသည်ပြဇာတ်_ခက်ဆစ်_ရေသည်" }
     ];
 
