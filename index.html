@@ -269,7 +269,7 @@
     
     // အကယ်၍ ဝယ်မထားဘဲ Menu ထဲရောက်နေလျှင် (Trial မဟုတ်လျှင်) ပြန်ထုတ်ရန်
     if (!isPaid) {
-        tg.showAlert("ဤအပိုင်းကို အသုံးပြုရန် ဝယ်ယူရန်လိုအပ်ပါသည်။");
+        tg.showAlert("တစ်ဘာသာလုံးကို‌လေ့ကျင့်ဖို့ ဒီဘာသာရပ်ကိုဝယ်ယူလိုက်ပါ");
         showScreen('home');
         return;
     }
@@ -537,8 +537,12 @@ function showMyanmarTrialParts() {
     document.getElementById('activity-back-btn').onclick = () => openTrialMenu();
 
     const mmTrialItems = [
-        { name: "စကားပြေ (ညောင်ရမ်းကြီးသမီး)", file: "mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး" },
-        { name: "ကဗျာ (ကျေးစေတမန်)", file: "mm_ကဗျာ_ခက်ဆစ်_ကျေးစေတမန်" },
+       { name: "စကားပြေ (ညောင်ရမ်းကြီးသမီး)", file: "mm_စကားပြေ_ခက်ဆစ်_ညောင်ရမ်းကြီးသမီး" },
+         { name: "စကားပြေ (သစ္စာနှင့်ပညာ)", file: "mm_စကားပြေ_ခက်ဆစ်_သစ္စာနှင့်ပညာ" },
+         { name: "စကားပြေ (ခေတ်)", file: "mm_စကားပြေ_ခက်ဆစ်_ခေတ်" },
+          { name: "ကဗျာ (ပေါ်နွေလလျှင်)", file: "mm_ကဗျာ_ခက်ဆစ်_ပေါ်နွေလလျှင်" },
+          { name: "ကဗျာ (ငါ့ကိုလွယ်အမယ်ကြီးနှင့်)", file: "mm_ကဗျာ_ခက်ဆစ်_ငါ့ကိုလွယ်အမယ်ကြီးနှင့်" },
+          { name: "ကဗျာ (ဩဝါဒထူးပျို့)", file: "mm_ကဗျာ_ခက်ဆစ်_ဩဝါဒထူးပျို့" },
         { name: "ရေသည်ပြဇာတ် (ခက်ဆစ်)", file: "mm_ရေသည်ပြဇာတ်_ခက်ဆစ်_ရေသည်" }
     ];
 
@@ -602,7 +606,17 @@ function showGeneralActivities(subId, partName) {
     document.getElementById('activity-title').innerText = partName;
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-    document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+    // --- Back Button Logic ပြင်ဆင်ခြင်း ---
+    document.getElementById('activity-back-btn').onclick = () => {
+        // User က ဝယ်ထားတဲ့သူဆိုရင် မူလ Subject Menu ကိုသွားမယ်၊ Trial ကနေဝင်တာဆိုရင် Trial Menu ကိုပြန်သွားမယ်
+        const isPaid = userBought.includes('all') || userBought.includes(subId);
+        if (isPaid) {
+            openSubjectMenu(currentSubject);
+        } else {
+            openTrialMenu();
+        }
+    };
     
     if(subId === 'math') {
         const mathMarks = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
@@ -610,22 +624,40 @@ function showGeneralActivities(subId, partName) {
             createBtn(mark.replace('_', ' '), content, () => {
                 const fileName = `math_${partName}_${mark}`.replace(/ /g, "_");
                 if (mark === '1_Mark') {
-                    // ၁ မှတ်တန်ကို MCQ/Quiz အနေနဲ့ ပြမယ်
                     initQuiz(fileName);
                     document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
                 } else {
-                    // ကျန်တဲ့ Marks တွေကို Flashcard အနေနဲ့ ပြမယ်
                     initFlashcards(fileName, mark.replace('_', ' '));
+                    // Flashcard ကနေထွက်ရင် ဒီ Menu ကိုပြန်လာဖို့
+                    const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
+                    flashExitBtn.onclick = () => { showScreen('activity'); showGeneralActivities(subId, partName); };
                 }
             });
         });
     } else {
-        // အခြားဘာသာရပ်များအတွက် မူလအတိုင်း
+        // အခြားဘာသာရပ်များအတွက် (Bio, Eco, etc.)
         let types = ['True_False', 'Fill_Blank', 'MCQ'];
+        
+        // Bio နဲ့ Eco ဖြစ်ပါက Definition (Flashcard) ခလုတ်ကို types ထဲ ထည့်ပေးမယ်
+        if (subId === 'bio' || subId === 'eco') {
+            types.push('Definition');
+        }
+
         types.forEach(type => {
             createBtn(type.replace('_', ' '), content, () => {
-                initQuiz(`${subId}_${partName}_${type}`.replace(/ /g, "_"));
-                document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
+                const fileName = `${subId}_${partName}_${type}`.replace(/ /g, "_");
+                
+                if (type === 'Definition') {
+                    // Definition ဆိုရင် Flashcard နဲ့ပြမယ်
+                    initFlashcards(fileName, "Definition");
+                    // Flashcard ထဲက "ထွက်မည်" ကိုနှိပ်ရင် ဒီ Menu ကိုပြန်လာဖို့
+                    const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
+                    flashExitBtn.onclick = () => { showScreen('activity'); showGeneralActivities(subId, partName); };
+                } else {
+                    // ကျန်တာတွေကို Quiz နဲ့ပြမယ်
+                    initQuiz(fileName);
+                    document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
+                }
             });
         });
     }
