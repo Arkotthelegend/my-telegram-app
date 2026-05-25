@@ -320,30 +320,36 @@
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
-        function renderSubjects() {
+       function renderSubjects() {
     const list = document.getElementById('subject-list');
     list.innerHTML = '';
     const userId = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : null;
 
     subjects.forEach(sub => {
-        // ၁။ Code (JSON) ထဲမှာ ပါပြီးသားလား
-        const isPaidInCode = userBought.includes('all') || userBought.includes(sub.id);
+        const isFreeInCode = userBought.includes('all') || userBought.includes(sub.id);
         
-        // ၂။ Admin က Local မှာ သိမ်းပေးထားတာလား (ID အလိုက်၊ ဘာသာရပ်အလိုက်)
-        const isPaidByAdmin = localStorage.getItem(`admin_paid_${userId}_${sub.id}`) === "true" || 
-                             localStorage.getItem(`admin_paid_${userId}_all`) === "true";
-
-        const isPaid = isPaidInCode || isPaidByAdmin;
-
         const div = document.createElement('div');
-        div.className = `subject-card ${isPaid ? '' : 'locked'}`;
-        div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
+        div.className = 'subject-card'; // အရင် lock တန်းမပြသေးဘဲ နှိပ်မှစစ်မည်
+        div.innerHTML = `<span>${sub.name}</span> <span>➔</span>`;
         
         div.onclick = () => {
-            if (isPaid) {
+            if (isFreeInCode) {
                 openSubjectMenu(sub);
             } else {
-                tg.showAlert(`ဝယ်ယူရန်လိုအပ်ပါသည်။\nသင်၏ ID: ${userId}`);
+                // CloudStorage တွင် ဝယ်ထားသလား စစ်ဆေးခြင်း
+                const key = `p_${userId}_${sub.id}`;
+                const allKey = `p_${userId}_all`;
+
+                // တစ်ခုချင်းစီရော All ရော စစ်မည်
+                tg.CloudStorage.getItem(key, (err, val1) => {
+                    tg.CloudStorage.getItem(allKey, (err, val2) => {
+                        if (val1 === "true" || val2 === "true") {
+                            openSubjectMenu(sub);
+                        } else {
+                            tg.showAlert(`ဝယ်ယူရန်လိုအပ်ပါသည်။\nသင်၏ ID: ${userId}`);
+                        }
+                    });
+                });
             }
         };
         list.appendChild(div);
@@ -1209,15 +1215,17 @@ function addPaidUser() {
 
     if (!newId) return tg.showAlert("User ID ထည့်ပါ");
 
-    // LocalStorage ထဲတွင် သိမ်းမည့် Key ပုံစံ - purchase_ID_SUBJECT
-    const storageKey = `admin_paid_${newId}_${subId}`;
-    localStorage.setItem(storageKey, "true");
-
-    tg.showAlert(`User: ${newId} အတွက် ${subId.toUpperCase()} ကို ခွင့်ပြုပြီးပါပြီ`);
-    idInput.value = '';
-    showAdminUserList();
+    // Telegram Cloud ပေါ်သို့ ဒေတာလှမ်းမ်းသိမ်းခြင်း
+    const key = `p_${newId}_${subId}`;
+    tg.CloudStorage.setItem(key, "true", (err, success) => {
+        if (success) {
+            tg.showAlert(`User ${newId} အတွက် ${subId.toUpperCase()} ကို Cloud တွင် ခွင့်ပြုပြီးပါပြီ`);
+            idInput.value = '';
+        } else {
+            tg.showAlert("Error: CloudStorage သို့ သိမ်းမရပါ");
+        }
+    });
 }
-
 function showAdminUserList() {
     const list = JSON.parse(localStorage.getItem('admin_paid_users')) || [];
     const listDiv = document.getElementById('admin-user-list');
