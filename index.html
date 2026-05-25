@@ -100,37 +100,6 @@
     text-transform: uppercase;
     margin-top: 2px;
 }
-        /* စာသားများ ထပ်နေမှုကို ဖြေရှင်းရန် */
-#daily-quote {
-    line-height: 1.6 !important;
-    margin-bottom: 25px !important;
-    display: block;
-    padding: 10px;
-}
-
-.question-text {
-    line-height: 1.8 !important; /* စာကြောင်းများ ခွာလိုက်သည် */
-    margin-bottom: 20px !important;
-    display: block;
-}
-
-/* Math Answer ကွက်အတွက် */
-#flashcard-screen .back-btn, #quiz-screen .back-btn {
-    margin-bottom: 15px;
-}
-
-/* Countdown အပေါ်ကစာသား ခွာရန် */
-#countdown-label {
-    margin-top: 15px !important;
-    display: block;
-}
-
-/* Option ခလုတ်များ ကြားထဲ ခွာရန် */
-.option-btn {
-    margin-bottom: 12px !important;
-    line-height: 1.4 !important;
-    padding: 12px !important;
-}
     </style>
 </head>
 <body>
@@ -143,9 +112,8 @@
     <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
         🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
     </button>
-            </div>
+</div>
         </div>
-    </div>
 
     <div id="middle-screen" class="screen">
     <div style="padding: 20px; padding-bottom: 100px;">
@@ -199,71 +167,37 @@
     </div>
 </div>
 
-         <div id="profile-screen" class="screen">
-
+        <div id="profile-screen" class="screen">
             <div style="text-align: center;">
-
                 <svg id="profile-avatar" viewBox="0 0 100 100">
-
                     <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
-
                     <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
-
                     <line x1="50" y1="45" x2="30" y2="60" stroke="white" stroke-width="3" />
-
                     <line x1="50" y1="45" x2="70" y2="60" stroke="white" stroke-width="3" />
-
                     <line x1="50" y1="70" x2="35" y2="90" stroke="white" stroke-width="3" />
-
                     <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
-
                     <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
-
                 </svg>
-
                 <h2 id="user-name" style="margin: 10px 0 5px;">Scholar</h2>
-
                 <p id="user-id-text" style="color: #94A3B8; margin-bottom: 10px;"></p>
-
                 
-
                 <div class="gender-container">
-
                     <span>ကျား</span>
-
                     <label class="switch">
-
                         <input type="checkbox" id="gender-switch" onchange="updateAvatar(true)">
-
                         <span class="slider"></span>
-
                     </label>
-
                     <span>မ</span>
-
                 </div>
-
-
 
                 <div class="profile-info-card">
-
                     <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
-
                     <div id="bought-items-container" class="bought-container"></div>
-
                     <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
-
                 </div>
-
             </div>
-
-        </div> 
-
-
-        <div id="extra-profile-section"></div>
-    </div>
         </div>
-        
+
         <div id="menu-screen" class="screen">
             <h2 id="menu-title" style="text-align: center; color: var(--accent);"></h2>
             <div id="menu-content"></div>
@@ -839,30 +773,28 @@ function showGeneralActivities(subId, partName) {
             if(id === 'profile') renderProfileData();
         }
 
-       function renderProfileData() {
-    const userName = tg.initDataUnsafe?.user?.first_name || "Scholar";
-    const nameElem = document.getElementById('user-name');
-    const idElem = document.getElementById('user-id-text');
-    const container = document.getElementById('bought-items-container');
-    const extraSection = document.getElementById('extra-profile-section');
-
-    if (nameElem) nameElem.innerText = userName;
-    if (idElem) idElem.innerText = "ID: " + userId;
-    
-    if (container) {
-        container.innerHTML = ''; 
-        const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
-        if(bought.length > 0) {
-            bought.forEach(s => {
-                const span = document.createElement('span');
-                span.className = 'bought-badge';
-                span.innerText = s.name;
-                container.appendChild(span);
-            });
-        } else { 
-            container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; 
+        function renderProfileData() {
+            document.getElementById('user-name').innerText = tg.initDataUnsafe?.user?.first_name || "Scholar";
+            document.getElementById('user-id-text').innerText = "ID: " + userId;
+            const container = document.getElementById('bought-items-container');
+            container.innerHTML = '';
+            const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
+            if(bought.length > 0) {
+                bought.forEach(s => {
+                    const span = document.createElement('span');
+                    span.className = 'bought-badge';
+                    span.innerText = s.name;
+                    container.appendChild(span);
+                });
+            } else { container.innerText = 'ဝယ်ယူထားခြင်းမရှိသေးပါ'; }
         }
-}
+
+        // --- Init ---
+        if(localStorage.getItem('userGender') === 'female') {
+            document.getElementById('gender-switch').checked = true;
+            updateAvatar();
+        }
+        renderSubjects();
 
         // အားပေးစာစုများ
 const quotes = [
@@ -1013,9 +945,7 @@ window.onload = () => {
     loadGoals();
     updateCountdown();
     // Quote ပြောင်းလဲခြင်း logic (အရင်က ပေးထားသည့်အတိုင်း)
-}
-
- 
+};
     </script>
 </body>
 </html>
