@@ -84,7 +84,7 @@
 
 /* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျညှိခြင်း */
 .next-btn-styled {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgb(1, 167, 248) !important;
     color: white !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 14px 20px; /* ထွက်မည် ခလုတ်လို ခပ်ကြီးကြီး */
@@ -806,27 +806,35 @@ function showGeneralActivities(subId, partName) {
     optDiv.appendChild(btn);
 });
     } else if (q.type === 'blank') {
-        const input = document.createElement('input');
-        input.className = 'quiz-input'; 
-        input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
-        const sBtn = document.createElement('button');
-        sBtn.className = 'btn'; 
-        sBtn.innerText = "အဖြေစစ်မည်";
+    const input = document.createElement('input');
+    input.className = 'quiz-input'; 
+    input.placeholder = "အဖြေရိုက်ထည့်ပါ...";
+    
+    const sBtn = document.createElement('button');
+    sBtn.className = 'btn'; 
+    sBtn.style.width = '100%'; // အဖြေစစ်မည် ခလုတ်ကို အပြည့်ထားခြင်း
+    sBtn.innerText = "အဖြေစစ်မည်";
+    
+    sBtn.onclick = () => {
+        if(isAnswered) return; 
+        isAnswered = true;
         
-        sBtn.onclick = () => {
-            if(isAnswered) return; 
-            isAnswered = true;
-            if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
-                tg.showAlert("မှန်ကန်ပါသည်။ ✅");
-            } else {
-                tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
-            }
-            nextBtn.style.display = 'block';
-            nextBtn.className = 'next-btn';
-            nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
-        };
-        optDiv.append(input, sBtn);
-    }
+        // အဖြေစစ်ဆေးခြင်း
+        if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
+            tg.showAlert("မှန်ကန်ပါသည်။ ✅");
+        } else {
+            tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+        }
+
+        // "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ပုံစံသစ်ဖြင့် ပြသခြင်း
+        const nextBtn = document.getElementById('next-btn');
+        nextBtn.style.display = 'block';
+        nextBtn.className = 'next-btn-styled'; // CSS class နာမည်အသစ် ချိတ်ခြင်း
+        nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+    };
+    
+    optDiv.append(input, sBtn);
+}
 
     if (window.MathJax) MathJax.typesetPromise();
 }
