@@ -77,25 +77,9 @@
     100% { transform: translateX(0); }
 }
 
-/* အဖြေမှန် - အစိမ်းရောင် Outline နှင့် Glow */
-.correct-answer {
-    border: 2px solid #10b981 !important;
-    background: rgba(16, 185, 129, 0.1) !important;
-    color: #10b981 !important;
-    font-weight: bold;
-}
-
-/* အဖြေမှား - အနီရောင် Outline နှင့် တုန်ခါမှု Effect */
-.wrong-answer {
-    border: 2px solid #ef4444 !important;
-    background: rgba(239, 68, 68, 0.1) !important;
-    color: #ef4444 !important;
-    animation: shake 0.3s ease-in-out;
-}
-
-/* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျ ပြင်ခြင်း */
+/* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျညှိခြင်း */
 .next-btn-styled {
-    background: rgba(255, 255, 255, 0.05) !important;
+    background: rgba(255, 255, 255, 0.05) !important; /* ပတ်ဝန်းကျင်နဲ့ တစ်သားတည်းဖြစ်သော အမှောင်ရောင် */
     color: white !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 10px 20px;
@@ -104,12 +88,28 @@
     cursor: pointer;
     width: fit-content;
     margin-top: 15px;
-    margin-left: auto; /* ညာဘက်ကပ်ရန် */
+    margin-left: auto; /* ညာဘက်သို့ ကပ်ထားရန် */
     display: block;
+    transition: all 0.2s;
 }
 
 .next-btn-styled:active {
-    transform: scale(0.95);
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: scale(0.98);
+}
+
+/* အဖြေမှန် Outline */
+.correct-answer {
+    border: 2px solid #10b981 !important;
+    background: rgba(16, 185, 129, 0.05) !important;
+    color: #10b981 !important;
+}
+
+/* အဖြေမှား Outline */
+.wrong-answer {
+    border: 2px solid #ef4444 !important;
+    background: rgba(239, 68, 68, 0.05) !important;
+    color: #ef4444 !important;
 }
 		
         #exam-countdown {
@@ -165,7 +165,7 @@
             <span style="font-size: 1.5rem;">💡</span>
             <h4 style="color: var(--accent); margin: 10px 0 5px 0;">Daily Motivation</h4>
             <p id="daily-quote" style="font-style: italic; font-size: 0.95rem; color: #CBD5E1; line-height: 1.5;">
-                "အောင်မြင်မှုဆီသို့ သွားရာလမ်းသည် ကြိုးစားအားထုတ်မှုဖြင့် စတင်သည်။"
+                "ရင်းနှီးမြုပ်နှံမှုတွေထဲမှာအကောင်းဆုံးက ပညာရေးမှာရင်းနှီးမြုပ်နှံခြင်းပါပဲ""
             </p>
         </div>
 
@@ -421,7 +421,7 @@ function loadQuestion() {
             const btn = document.createElement('button'); 
             btn.className = 'btn option-btn'; 
             btn.innerText = a;
-          // loadQuestion() ထဲက MCQ logic အပိုင်း
+       // loadQuestion() ထဲက MCQ/TF နှိပ်သည့်နေရာကို ဒီလိုပြင်ပါ
 btn.onclick = () => {
     if(isAnswered) return; 
     isAnswered = true;
@@ -430,10 +430,10 @@ btn.onclick = () => {
     const options = document.querySelectorAll('.option-btn');
 
     if (i === correctIdx) {
-        // ၁။ အဖြေမှန်ရင် - အဖြေမှန် တစ်ခုတည်းကိုပဲ အစိမ်းပြမည်
+        // အဖြေမှန်ကို နှိပ်ခဲ့လျှင် - အဖြေမှန် တစ်ခုတည်းကိုသာ အစိမ်းပြမည်
         options[correctIdx].classList.add('correct-answer');
     } else {
-        // ၂။ အဖြေမှားရင် - အဖြေမှားများကို အနီပြပြီး အဖြေမှန်ကိုပါ အစိမ်းပြမည်
+        // အဖြေမှားကို နှိပ်ခဲ့လျှင် - အဖြေမှားများကို အနီပြပြီး အဖြေမှန်ကို အစိမ်းပြမည်
         options.forEach((b, idx) => {
             if(idx === correctIdx) {
                 b.classList.add('correct-answer');
@@ -443,10 +443,11 @@ btn.onclick = () => {
         });
     }
 
-    // ခလုတ်အားလုံးကို ပိတ်ထားရန်
+    // နောက်ထပ် နှိပ်လို့မရအောင် အကုန်ပိတ်မည်
     options.forEach(b => b.disabled = true);
 
-    // "နောက်တစ်ပုဒ်သို့" ခလုတ်ပြခြင်း
+    // ခလုတ်ကို "ထွက်မည်" ပုံစံအတိုင်း ပြသမည်
+    const nextBtn = document.getElementById('next-btn');
     nextBtn.style.display = 'block';
     nextBtn.className = 'next-btn-styled'; 
     nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
