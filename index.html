@@ -199,15 +199,66 @@
     </div>
 </div>
 
-        <div id="profile-screen" class="screen">
-    <div style="text-align: center; padding: 15px;">
-        <h2 id="user-name" style="margin: 10px 0;">Scholar</h2>
-        <p id="user-id-text" style="color: #94A3B8; margin-bottom: 20px;"></p>
-        
-        <div class="profile-info-card" style="background: var(--card); padding: 15px; border-radius: 12px; text-align: left; margin-bottom: 20px;">
-            <b style="color: var(--accent); display: block; margin-bottom: 10px;">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
-            <div id="bought-items-container" class="bought-container"></div>
-        </div>
+         <div id="profile-screen" class="screen">
+
+            <div style="text-align: center;">
+
+                <svg id="profile-avatar" viewBox="0 0 100 100">
+
+                    <circle cx="50" cy="25" r="10" stroke="white" stroke-width="3" fill="none" />
+
+                    <line x1="50" y1="35" x2="50" y2="70" stroke="white" stroke-width="3" />
+
+                    <line x1="50" y1="45" x2="30" y2="60" stroke="white" stroke-width="3" />
+
+                    <line x1="50" y1="45" x2="70" y2="60" stroke="white" stroke-width="3" />
+
+                    <line x1="50" y1="70" x2="35" y2="90" stroke="white" stroke-width="3" />
+
+                    <line x1="50" y1="70" x2="65" y2="90" stroke="white" stroke-width="3" />
+
+                    <path id="hair" d="M38,20 Q35,5 45,15 M62,20 Q65,5 55,15" stroke="white" stroke-width="2" fill="none" style="display:none;" />
+
+                </svg>
+
+                <h2 id="user-name" style="margin: 10px 0 5px;">Scholar</h2>
+
+                <p id="user-id-text" style="color: #94A3B8; margin-bottom: 10px;"></p>
+
+                
+
+                <div class="gender-container">
+
+                    <span>ကျား</span>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="gender-switch" onchange="updateAvatar(true)">
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                    <span>မ</span>
+
+                </div>
+
+
+
+                <div class="profile-info-card">
+
+                    <b style="color: var(--accent);">ဝယ်ယူပြီးသော ဘာသာရပ်များ</b>
+
+                    <div id="bought-items-container" class="bought-container"></div>
+
+                    <a href="https://t.me/thearkot" target="_blank" class="btn buy-btn">ဘာသာရပ်ဝယ်ယူရန် ဆက်သွယ်ရန်</a>
+
+                </div>
+
+            </div>
+
+        </div> 
+
 
         <div id="extra-profile-section"></div>
     </div>
