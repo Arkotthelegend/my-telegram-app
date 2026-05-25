@@ -280,6 +280,14 @@
     </div>
 
     <script>
+		function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+		
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
@@ -743,15 +751,20 @@ function showGeneralActivities(subId, partName) {
     }
 }
         // --- Quiz Engine ---
-        async function initQuiz(fileName) {
-            try {
-                const res = await fetch(`./quizzes/${fileName}.json`);
-                if(!res.ok) throw new Error();
-                currentQuestions = await res.json();
-                currentIdx = 0; showScreen('quiz'); loadQuestion();
-            } catch (e) { tg.showAlert("မေးခွန်းဖိုင်မတွေ့သေးပါ- " + fileName); }
-        }
-
+      async function initQuiz(fileName) {
+    try {
+        const res = await fetch(`./quizzes/${fileName}.json`);
+        if(!res.ok) throw new Error();
+        let data = await res.json();
+        
+        // မေးခွန်းများကို မွှေနှောက်လိုက်ခြင်း (Randomize)
+        currentQuestions = shuffleArray(data); 
+        
+        currentIdx = 0; 
+        showScreen('quiz'); 
+        loadQuestion();
+    } catch (e) { tg.showAlert("မေးခွန်းဖိုင်မတွေ့သေးပါ- " + fileName); }
+}
        function loadQuestion() {
     isAnswered = false; 
     const nextBtn = document.getElementById('next-btn');
