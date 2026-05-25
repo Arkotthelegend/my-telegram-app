@@ -1,1 +1,321 @@
 
+[
+  {
+    "type": "mcq",
+    "q": "What will be the bond angle of H-N-H in $\\text{NH}_3$ molecule?",
+    "a": ["$180^\\circ$", "$120^\\circ$", "$< 120^\\circ$", "$< 109.5^\\circ$"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The following electron configuration is incorrect:",
+    "a": ["$1s^2 2s^2$", "$1s^2 2s^3 2p^1$", "$1s^2 2s^2 2p^3$", "$1s^2 2s^2 2p^4$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the maximum number of electrons that can occupy d atomic orbital?",
+    "a": ["14", "2", "10", "6"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "According to ________, no more two electrons in an atom can have same orbital.",
+    "a": ["Pauli exclusion principle", "Heisenberg uncertainty principle", "Hund's rule", "Aufbau principle"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The VSEPR model is used for predicting the ________ of the molecules.",
+    "a": ["bond length", "shapes", "density", "bond order"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Oxygen is in Group VI and has ________ valence electrons.",
+    "a": ["2", "4", "6", "8"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Ionic bonding takes place when the difference in electronegativity is ________ 1.8.",
+    "a": ["smaller than", "greater than", "the same", "none of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The octet rule does not apply to ________ block elements.",
+    "a": ["s", "p", "d", "none of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which molecule is an expanded valence shell molecule?",
+    "a": ["$\\text{PF}_5$", "$\\text{CCl}_4$", "$\\text{BeCl}_2$", "$\\text{NH}_3$"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "An ammonia molecule can combine with boron trifluoride, $\\text{BF}_3$. What type of bond is formed between these two molecules?",
+    "a": ["ionic bond", "covalent bond", "dative bond", "both ionic and covalent bonds"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following has a linear shape?",
+    "a": ["$\\text{CO}_2$", "$\\text{SO}_2$", "$\\text{H}_2\\text{O}$", "$\\text{CH}_4$"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In the HCl molecule, there are ________ unshared pair electrons on the Cl atom.",
+    "a": ["six", "four", "three", "two"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A coordinate bond is formed when one of the participating atoms possesses a/an ________ of electrons.",
+    "a": ["shared pair", "lone pair", "transfer", "mobile"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The length of the bond is determined by the number of bonded ________.",
+    "a": ["protons", "neutrons", "electrons", "atoms"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The coordination number ratio of $\\text{Na}^+$ ion and $\\text{Cl}^-$ ion is ________.",
+    "a": ["1 : 1", "3 : 3", "5 : 5", "6 : 6"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The electrons located in the outer shell of an atom are known as ________ of the atom.",
+    "a": ["valency", "valence electrons", "the sea of mobile electrons", "free electrons"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which molecule is NOT an expanded valence shell molecule?",
+    "a": ["$\\text{PF}_5$", "$\\text{CH}_4$", "$\\text{ICl}_3$", "$\\text{SF}_6$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The ammonia molecule possesses a/an ________ of electrons on the nitrogen atom.",
+    "a": ["shared pair", "lone pair", "transfer", "mobile"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The elements having ________ result the formation of the anions.",
+    "a": ["high electron affinity", "low electron affinity", "high electronegativity", "low electronegativity"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which substance has a similar structure to silicon(IV) oxide?",
+    "a": ["carbon dioxide", "diamond", "graphite", "sodium oxide"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the shape of d-orbitals?",
+    "a": ["spherical-shaped", "dumbbell-shaped", "double dumbbell-shapes", "none of theses"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "A water ($\\text{H}_2\\text{O}$) molecule that possesses ________ lone pair electrons on the oxygen atom.",
+    "a": ["one", "two", "three", "four"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which molecule is NOT a linear molecule?",
+    "a": ["CO", "$\\text{H}_2\\text{O}$", "$\\text{CO}_2$", "$\\text{BeCl}_2$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Number of bond pair and lone pair electrons present on N atom in $\\text{NH}_3$ are ________.",
+    "a": ["3, 1", "4, 0", "3, 0", "1, 3"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following species has a trigonal planar shape?",
+    "a": ["$\\text{CO}_2$", "$\\text{SO}_2$", "$\\text{CH}_4$", "$\\text{H}_2\\text{O}$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The elements having low electron affinity result the formation of a/an ________.",
+    "a": ["atoms", "ions", "cations", "anions"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The repulsion between lone pairs of electrons is ________ as compared to the lone pair-bonding pair.",
+    "a": ["smaller", "greater", "the same", "lesser"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The repulsion between bonding pairs of electrons is ________ as compared to lone pair-lone pair repulsions.",
+    "a": ["smaller", "greater", "the same", "as much as"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which bond is formed between $\\text{NH}_3$ and $\\text{H}^+$ ion?",
+    "a": ["ionic bond", "metallic bond", "dative bond", "both ionic and covalent bonds"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Find the molecule in which the central atom is having one lone pair of electrons.",
+    "a": ["$\\text{NH}_3$", "$\\text{PCl}_5$", "$\\text{H}_2\\text{O}$", "$\\text{CH}_4$"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Ionic bonding (electrovalent bonding) results from the ________ of electrons.",
+    "a": ["transfer", "sharing", "free", "lone pair"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "According to ________, every orbital in a subshell is singly occupied with one electron before any one orbital is doubly occupied with opposite spins?",
+    "a": ["Pauli exclusion principle", "Heisenberg uncertainty principle", "Hund's rule", "Aufbau principle"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "What is the shape of p-orbitals?",
+    "a": ["spherical-shaped", "dumbbell-shaped", "double dumbbell-shapes", "none of theses"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The bond strength of the ________ bond is the highest.",
+    "a": ["single", "double", "triple", "none of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "There are ________ main types of chemical bonding.",
+    "a": ["two", "three", "four", "five"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The bond length of the single bond is the ________.",
+    "a": ["longest", "shortest", "neither the shortest nor the longest", "intermediate"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The molecule with the least bond angle is ________.",
+    "a": ["$\\text{BeF}_2$", "$\\text{CH}_4$", "$\\text{SO}_2$", "$\\text{H}_2\\text{O}$"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "________ is a measure of the ability of an atom to attract the shared electrons to itself.",
+    "a": ["Electronegativity (EN)", "Electropositivity (EP)", "Ionization energy (IE)", "Electron affinity (EA)"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which molecule is NOT an electron-deficient molecule?",
+    "a": ["$\\text{BeCl}_2$", "$\\text{BF}_3$", "$\\text{AlCl}_3$", "$\\text{NH}_3$"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following species has $120^\\circ$ bond angles?",
+    "a": ["$\\text{NH}_3$", "$\\text{PH}_3$", "$\\text{ClF}_3$", "$\\text{BF}_3$"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "In carbon monoxide, the CO molecule has a ________ bond.",
+    "a": ["single", "double", "triple", "none of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "According to ________, electrons are filled in the lower energy atomic orbitals before filling higher energy ones.",
+    "a": ["Pauli exclusion principle", "Heisenberg uncertainty principle", "Hund's rule", "Aufbau principle"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Lewis structures are only ________ dimensional representations.",
+    "a": ["one", "two", "three", "four"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If $\\text{AX}_3$ is a triangular planar molecule, then the bond angle of X-A-X is ________.",
+    "a": ["$180^\\circ$", "$120^\\circ$", "$109.5^\\circ$", "$< 109.5^\\circ$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a diamond, each carbon atom is joined to ________ other carbon atoms forming a giant covalent structure.",
+    "a": ["two", "three", "four", "five"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The p subshell can be filled with ________ electrons.",
+    "a": ["2", "6", "10", "14"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What will be the bond angle of F-B-F in $\\text{BF}_3$ molecule?",
+    "a": ["$180^\\circ$", "$120^\\circ$", "$< 120^\\circ$", "$< 109.5^\\circ$"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A coordinate bond, or dative bond, is a special type of ________ bond.",
+    "a": ["ionic", "covalent", "metallic", "non-metallic"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "________ are filled in the lower energy atomic orbitals before filling higher energy ones.",
+    "a": ["Electrons", "Protons", "Neutrons", "Atoms"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Carbon is in Group IV and has ________ valence electrons.",
+    "a": ["2", "4", "6", "8"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Ionic bonding depends on the difference in ________ between two atoms.",
+    "a": ["electropositivity", "electronegativity", "polarity", "non-polarity"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which molecule is an electron-deficient molecule?",
+    "a": ["$\\text{CH}_4$", "$\\text{NH}_3$", "$\\text{BF}_3$", "$\\text{PF}_5$"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Nitrogen oxide, NO is a ________ covalent molecule.",
+    "a": ["polar", "polyatomic", "non-polar", "triatomic"],
+    "c": 0
+  }
+]
