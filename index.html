@@ -1017,27 +1017,27 @@ function renderProfileData() {
     }
 
    // renderProfileData function ထဲမှာ အစားထိုးရန်
-const dynamicArea = document.getElementById('dynamic-content-area');
-dynamicArea.innerHTML = `
-    <div id="level-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-        <div id="level-icon" style="font-size: 3rem; margin-bottom: 10px;">🏆</div>
-        <div id="level-name" style="font-weight: bold; color: var(--accent); font-size: 1.2rem;">Scholar Level 1</div>
-        <div id="total-points" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Total XP: 0</div>
-        
-        <div style="width: 100%; background: #242F3D; height: 10px; border-radius: 5px; margin-top: 15px; overflow: hidden;">
-            <div id="level-progress" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.5s;"></div>
+// XP UI ကို Dynamic Area ထဲထည့်ခြင်း
+    const dynamicArea = document.getElementById('dynamic-content-area');
+    dynamicArea.innerHTML = `
+        <div id="level-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+            <div id="level-icon" style="font-size: 3rem; margin-bottom: 10px;">🏆</div>
+            <div id="level-name" style="font-weight: bold; color: var(--accent); font-size: 1.2rem;">Scholar Level 1</div>
+            <div id="total-points" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Total XP: 0</div>
+            
+            <div style="width: 100%; background: #242F3D; height: 10px; border-radius: 5px; margin-top: 15px; overflow: hidden;">
+                <div id="level-progress" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.5s;"></div>
+            </div>
         </div>
-    </div>
-    
-    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-        အမှားများတိုင်ကြားရန်
-    </button>
-`;
+        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
+            အမှားများတိုင်ကြားရန်
+        </button>
+    `;
+
+    // 💡 အရေးကြီးဆုံးအချက်: UI ဆောက်ပြီးတာနဲ့ XP ကို LocalStorage ကနေ ဆွဲတင်ရန်
+    loadUserProgress();
 
 
-
-    dynamicArea.innerHTML = htmlContent;
-    renderStreakUI(); // Streak data ကို ပြန်လည်ပြသရန်
 }
 
         // --- Init ---
@@ -1241,26 +1241,20 @@ function updateLevelUI(points) {
 }
 function finishQuiz() {
     let totalEarned = 0;
-    let correctCount = 0;
-
-    // အဖြေမှန်အရေအတွက်ကို တွက်ချက်ခြင်း (လက်ရှိ Logic အရ correctCount variable တစ်ခုထားရန်လိုနိုင်သည်)
-    // ဤနေရာတွင် ဥပမာအနေဖြင့် မေးခွန်းအားလုံးပြီးဆုံးလျှင် ရမှတ်ပေးသည့်ပုံစံကို သုံးထားသည်
-    
+    // မေးခွန်းအရေအတွက်ပေါ်မူတည်ပြီး XP ပေးခြင်း
     if (currentSubject.id === 'math') {
-        totalEarned = currentQuestions.length * 20; // သင်္ချာက ပိုခက်သဖြင့် တစ်ပုဒ် ၂၀
-    } else if (currentQuestions[0].type === 'mcq') {
+        totalEarned = currentQuestions.length * 20;
+    } else if (currentQuestions[0]?.type === 'mcq') {
         totalEarned = currentQuestions.length * 10;
-    } else if (currentQuestions[0].type === 'tf') {
-        totalEarned = currentQuestions.length * 5;
     } else {
-        totalEarned = currentQuestions.length * 15;
+        totalEarned = currentQuestions.length * 5;
     }
 
-    addPoints(totalEarned); 
-    tg.showAlert(`ဂုဏ်ယူပါတယ်! သင်ခန်းစာပြီးဆုံးလို့ +${totalEarned} XP ရရှိပါတယ် 🎉`);
+    addPoints(totalEarned); // Point သိမ်းဆည်းရန် ခေါ်ခြင်း
+    tg.showAlert(`သင်ခန်းစာပြီးဆုံးလို့ +${totalEarned} XP ရရှိပါတယ် 🎉`);
     
-    // မူလ screen သို့ ပြန်သွားခြင်း
-    document.getElementById('quiz-back-btn').click(); 
+    // Quiz screen မှ ထွက်ရန်
+    document.getElementById('quiz-back-btn').click();
 }
 
 
