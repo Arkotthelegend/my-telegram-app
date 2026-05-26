@@ -84,7 +84,7 @@
 
 /* "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို "ထွက်မည်" ခလုတ်အတိုင်း အတိအကျညှိခြင်း */
 .next-btn-styled {
-    background: rgb(255, 165, 0) !important;
+    background: rgb(1, 167, 248) !important;
     color: white !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;
     padding: 14px 20px; /* ထွက်မည် ခလုတ်လို ခပ်ကြီးကြီး */
@@ -129,6 +129,27 @@
     text-transform: uppercase;
     margin-top: 2px;
 }
+
+/* Premium User များအတွက် နောက်ခံအရောင် */
+.premium-bg {
+    background: linear-gradient(135.2deg, #0F172A 0%, #1E1B4B 50%, #312E81 100%) !important;
+}
+
+.premium-card {
+    border: 1px solid #F59E0B !important; /* ရွှေရောင် Border */
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.premium-tag {
+    background: #F59E0B;
+    color: #0F172A;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
     </style>
 </head>
 <body>
@@ -301,7 +322,6 @@
             "5593040432": ["all"],
             "6912601908": ["phy"],
             "1625758870": ["all"],
-			"7273479209": ["all"]
         };
 
         const subjects = [
@@ -323,18 +343,29 @@
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
 
-       function renderSubjects() {
+   function renderSubjects() {
     const list = document.getElementById('subject-list');
     list.innerHTML = '';
+    const userId = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : 0;
+    const isSpecial = specialUsers.includes(userId);
+
     subjects.forEach(sub => {
-        // နဂိုအတိုင်း userBought (JSON ထဲကစာရင်း) ကိုပဲ ပြန်ကြည့်ပါမယ်
-        const isPaid = userBought.includes('all') || userBought.includes(sub.id);
+        let isPaid = userBought.includes('all') || userBought.includes(sub.id);
+
+        // Special User ဆိုလျှင် ၆ ဘာသာ ပွင့်ပေးမည်
+        if (isSpecial) {
+            const fiveSubjects = ['mm', 'en', 'math', 'phy', 'chem'];
+            // ရှေ့ ၅ ဘာသာ (သို့မဟုတ်) Bio/Eco တစ်ခုခု ဖြစ်ပါက ပွင့်မည်
+            if (fiveSubjects.includes(sub.id) || sub.id === 'bio' || sub.id === 'eco') {
+                isPaid = true;
+            }
+        }
+
         const div = document.createElement('div');
-        div.className = `subject-card ${isPaid ? '' : 'locked'}`;
+        div.className = `subject-card ${isPaid ? '' : 'locked'} ${isSpecial && isPaid ? 'premium-card' : ''}`;
         div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
         
-        // ဝယ်မထားရင် Alert ပြပြီး ဝယ်ထားရင် Menu ဖွင့်ပေးတဲ့ မူလ logic
-        div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("ဝယ်ယူရန်လိုအပ်ပါသည်။");
+        div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("Special User များသာ အသုံးပြုနိုင်ပါသည်။");
         list.appendChild(div);
     });
 }
@@ -928,56 +959,79 @@ function selectOption(index) {
             if(id === 'home') renderSubjects();
             if(id === 'profile') renderProfileData();
         }
+// Special Users ID များစာရင်း (ဒီမှာ ID ထည့်ရုံနဲ့ Premium ဖြစ်ပြီး ၆ ဘာသာပွင့်ပါမယ်)
+const specialUsers = [7273479209]; 
 
-       function renderProfileData() {
+function renderProfileData() {
+    const userId = tg.initDataUnsafe?.user?.id || 0;
     const userName = tg.initDataUnsafe?.user?.first_name || "Scholar";
+    const isSpecial = specialUsers.includes(userId);
+    
+    // UI Elements များကို သတ်မှတ်ခြင်း
     document.getElementById('user-name').innerText = userName;
     document.getElementById('user-id-text').innerText = "ID: " + userId;
     
-    // ၁။ ဘာသာရပ်ကွက်ကို ရှင်းထုတ်ခြင်း
+    // Premium ဖြစ်ပါက Body ကို class ထည့်ပြီး အရောင်ပြောင်းရန်
+    if (isSpecial) {
+        document.body.classList.add('premium-bg');
+    } else {
+        document.body.classList.remove('premium-bg');
+    }
+
+    // ၁။ ဝယ်ယူထားသည့် ဘာသာရပ်ကွက် (Bought Badges) ပြသခြင်း
     const container = document.getElementById('bought-items-container');
     container.innerHTML = ''; 
-    const bought = subjects.filter(s => userBought.includes('all') || userBought.includes(s.id));
+    
+    const bought = subjects.filter(s => {
+        // ပုံမှန်ဝယ်ထားသူ (သို့မဟုတ်) Special User ဖြစ်ပြီး သတ်မှတ်ထားသော ၆ ဘာသာထဲမှ ဖြစ်သူ
+        const isPaidInCode = userBought.includes('all') || userBought.includes(s.id);
+        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(s.id) || s.id === 'bio' || s.id === 'eco');
+        return isPaidInCode || isSpecialSubject;
+    });
+
     if(bought.length > 0) {
         bought.forEach(s => {
             const span = document.createElement('span');
             span.className = 'bought-badge';
+            if (isSpecial) span.style.border = "1px solid #F59E0B"; // Premium badge style
             span.innerText = s.name;
             container.appendChild(span);
         });
     }
-// renderProfileData function ထဲက dynamicArea အပိုင်းကို ဒီလိုပြင်ပါ
-const dynamicArea = document.getElementById('dynamic-content-area');
-dynamicArea.innerHTML = `
-    <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-bottom: -10px; margin-top: 20px;">
-        "တစ်ရက်စာ Streak ရဖို့အတွက် အနည်းဆုံး ၁၅ မိနစ် အသုံးပြုဖို့ လိုအပ်ပါတယ်"
-    </p>
 
-    <div id="streak-container" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-        <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
-        <div id="streak-text" style="font-weight: bold; color: var(--accent);">စာကြိုးစားဆဲ...</div>
-        <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
-    </div>
+    // ၂။ Dynamic Content (Streak နှင့် Admin Panel)
+    const dynamicArea = document.getElementById('dynamic-content-area');
     
-    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-        အမှားများတိုင်ကြားရန်
-    </button>
-`;
-if (tg.initDataUnsafe.user.id === ADMIN_ID) {
-    // Admin Control Panel ထဲမှာ ဒါလေး ထပ်ဖြည့်ပါ
-dynamicArea.innerHTML += `
-    <div style="margin-top: 15px; padding: 10px; border-top: 1px solid var(--lock);">
-        <h4 style="color: var(--accent); margin-bottom: 8px;">📢 အရေးကြီးသတင်းစာစောင်</h4>
-        <textarea id="announcement-text" placeholder="ဒီမှာ စာရိုက်ပါ..." style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg); color: white; border: 1px solid var(--lock); min-height: 60px;"></textarea>
-        <button onclick="postAnnouncement()" style="width: 100%; background: #10B981; color: white; border: none; padding: 10px; border-radius: 8px; margin-top: 8px; font-weight: bold;">
-            🚀 Update တင်မည်
+    let htmlContent = `
+        <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-bottom: -10px; margin-top: 20px;">
+            "တစ်ရက်စာ Streak ရဖို့အတွက် အနည်းဆုံး ၁၅ မိနစ် အသုံးပြုဖို့ လိုအပ်ပါတယ်"
+        </p>
+
+        <div id="streak-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+            <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
+            <div id="streak-text" style="font-weight: bold; color: ${isSpecial ? '#F59E0B' : 'var(--accent)'};">
+                ${isSpecial ? 'PREMIUM USER' : 'စာကြိုးစားဆဲ...'}
+            </div>
+            <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
+        </div>
+        
+        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
+            အမှားများတိုင်ကြားရန်
         </button>
-    </div>
-`;
+    `;
 
-}
+    // Admin Control Panel (သင့် ID ဖြစ်မှသာ ပေါ်မည်)
+    if (userId === 8432363664) {
+        htmlContent += `
+            <div style="margin-top: 20px; padding: 15px; border: 1px dashed var(--accent); border-radius: 12px; background: rgba(0,0,0,0.2);">
+                <h4 style="margin: 0 0 10px 0; color: var(--accent);">Admin Panel</h4>
+                <p style="font-size: 0.7rem; color: #94a3b8;">User ID များကို GitHub မှာ update လုပ်ပါ။</p>
+            </div>
+        `;
+    }
 
-    renderStreakUI(); // UI ကို refresh လုပ်ရန်
+    dynamicArea.innerHTML = htmlContent;
+    renderStreakUI(); // Streak data ကို ပြန်လည်ပြသရန်
 }
 
         // --- Init ---
@@ -1103,10 +1157,9 @@ function resetGoals() {
 
 // App စဖွင့်ချိန်မှာ function တွေကို ခေါ်ခြင်း
 window.onload = () => {
-    loadGoals();
+    loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
     updateCountdown();
-    renderStreakUI();
-    loadAnnouncement(); // 👈 ဒီ line လေး ပါဖို့ အရေးကြီးဆုံးပါ
+    renderStreakUI(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
 };
         let startTime = Date.now();
 const STREAK_REQUIRED_MINUTES = 15;
