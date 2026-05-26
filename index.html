@@ -1212,26 +1212,33 @@ function updateLevelUI(points) {
     const progressBar = document.getElementById('level-progress');
     const levelIcon = document.getElementById('level-icon');
 
-    let level = "Beginner";
+    let levelTitle = "Beginner";
     let icon = "🌱";
+    let levelNum = 1; // Level ဂဏန်းအတွက်
     let nextLevelPoints = 500;
     
-    if (points >= 5000) { level = "Legend"; icon = "👑"; nextLevelPoints = 10000; }
-    else if (points >= 2000) { level = "Expert"; icon = "🧠"; nextLevelPoints = 5000; }
-    else if (points >= 1000) { level = "Pro Scholar"; icon = "⚡"; nextLevelPoints = 2000; }
-    else if (points >= 500) { level = "Amateur"; icon = "📚"; nextLevelPoints = 1000; }
+    // Level သတ်မှတ်ချက်များ
+    if (points >= 5000) { 
+        levelTitle = "Legend"; icon = "👑"; levelNum = 5; nextLevelPoints = 10000; 
+    } else if (points >= 20000) { 
+        levelTitle = "Expert"; icon = "🧠"; levelNum = 4; nextLevelPoints = 5000; 
+    } else if (points >= 10000) { 
+        levelTitle = "Pro Scholar"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
+    } else if (points >= 5000) { 
+        levelTitle = "Amateur"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
+    }
 
     if (levelName) {
-        levelName.innerText = level;
+        // "Scholar Level 1" အစား နာမည်နဲ့ level ဂဏန်းတွဲပြခြင်း
+        levelName.innerText = `${levelTitle} (Level ${levelNum})`;
         levelIcon.innerText = icon;
         totalPointsText.innerText = `Total XP: ${points}`;
         
-        // Progress Bar တွက်ချက်ခြင်း
+        // Progress Bar တွက်ချက်ခြင်း (လက်ရှိ level ထဲမှာ ဘယ်လောက်ခရီးပေါက်လဲပြရန်)
         const progress = (points / nextLevelPoints) * 100;
         progressBar.style.width = `${Math.min(progress, 100)}%`;
     }
 }
-
 function finishQuiz() {
     let totalEarned = 0;
     let correctCount = 0;
