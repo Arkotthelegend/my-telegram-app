@@ -943,13 +943,18 @@ function selectOption(index) {
     }
 }
 
-        function nextQuestion() {
+function nextQuestion() {
     currentIdx++;
     if (currentIdx < currentQuestions.length) {
         loadQuestion();
     } else {
-        // မူလ showAlert နေရာမှာ finishQuiz() ကို အစားထိုးလိုက်ခြင်း
-        finishQuiz(); 
+        // ဒီနေရာမှာ finishQuiz() ကို ခေါ်တာ သေချာပါစေ
+        try {
+            finishQuiz();
+        } catch (e) {
+            console.error("Finish Quiz Error:", e);
+            showScreen('home'); // Error တက်ရင်တောင် Home ကို ပြန်သွားအောင် လုပ်ထားခြင်း
+        }
     }
 }
 
@@ -1245,42 +1250,52 @@ function finishQuiz() {
     let totalEarned = 0;
     let correctCount = 0;
 
-    // ၁။ User ဖြေခဲ့တဲ့ အဖြေတွေကို စစ်ဆေးပြီး အဖြေမှန်အရေအတွက်ကို အရင်တွက်မယ်
+    // ၁။ အဖြေမှန်အရေအတွက်ကို စစ်ဆေးခြင်း
     currentQuestions.forEach((q, index) => {
-        if (userAnswers[index] === q.c) {
-            correctCount++;
+        const userAns = userAnswers[index];
+        
+        if (q.type === 'blank') {
+            // ကွက်လပ်ဖြည့်အတွက် စာသားချင်းတူမတူစစ်ဆေးခြင်း (Space တွေဖယ်ပြီး Small letter ပြောင်းစစ်ပါမည်)
+            if (userAns && q.a[0] && userAns.trim().toLowerCase() === q.a[0].trim().toLowerCase()) {
+                correctCount++;
+            }
+        } else {
+            // MCQ နှင့် T/F အတွက် Index တူမတူစစ်ဆေးခြင်း
+            if (userAns === q.c) {
+                correctCount++;
+            }
         }
     });
 
-    // ၂။ အဖြေမှန်တဲ့ အရေအတွက်ပေါ် မူတည်ပြီး Point ပေးမယ်
-    const userId = tg.initDataUnsafe?.user?.id || 'guest';
-    const isMath = currentSubject.id === 'math';
+    // ၂။ XP အမှတ်သတ်မှတ်ချက်များ
+    const subjectId = currentSubject ? currentSubject.id : '';
     const qType = currentQuestions[0]?.type;
 
-    if (isMath) {
-        totalEarned = correctCount * 20; // သင်္ချာ အဖြေမှန်တစ်ပုဒ် ၂၀ XP
+    if (subjectId === 'math') {
+        totalEarned = correctCount * 20; // သင်္ချာ ၂၀ XP
+    } else if (qType === 'blank') {
+        totalEarned = correctCount * 15; // ကွက်လပ်ဖြည့် ၁၅ XP
     } else if (qType === 'mcq') {
-        totalEarned = correctCount * 10; // MCQ အဖြေမှန်တစ်ပုဒ် ၁၀ XP
+        totalEarned = correctCount * 10; // MCQ ၁၀ XP
     } else {
-        totalEarned = correctCount * 5;  // တခြား (T/F) အဖြေမှန်တစ်ပုဒ် ၅ XP
+        totalEarned = correctCount * 5;  // T/F ၅ XP
     }
 
-    // ၃။ အကုန်လုံးမှန်ရင် Bonus XP ပေးမယ်
+    // ၃။ Bonus ပေးခြင်း
     if (correctCount === currentQuestions.length && correctCount > 0) {
         totalEarned += 20;
-        tg.showAlert(`Perfect! အကုန်လုံးမှန်လို့ Bonus +20 XP အပါအဝင် စုစုပေါင်း +${totalEarned} XP ရရှိပါတယ် 🎉`);
+        tg.showAlert(`Perfect! အကုန်လုံးမှန်လို့ Bonus +20 အပါအဝင် စုစုပေါင်း +${totalEarned} XP ရရှိပါတယ် 🎉`);
     } else if (totalEarned > 0) {
-        tg.showAlert(`ဂုဏ်ယူပါတယ်! သင် ${correctCount} ပုဒ်မှန်လို့ +${totalEarned} XP ရရှိပါတယ် 🌟`);
+        tg.showAlert(`သင် ${correctCount} ပုဒ်မှန်လို့ +${totalEarned} XP ရရှိပါတယ် 🌟`);
     } else {
-        tg.showAlert(`ကြိုးစားပါဦး! အဖြေမှန်မရှိသဖြင့် XP မရရှိပါ 💡`);
+        tg.showAlert(`ထပ်မံကြိုးစားပါဦး! XP မရရှိပါ 💡`);
     }
 
-    // XP ပေါင်းထည့်ပြီး UI update လုပ်မယ်
+    // ၄။ Point သိမ်းဆည်းခြင်းနှင့် Home သို့ပြန်ခြင်း
     if (totalEarned > 0) {
         addPoints(totalEarned);
     }
     
-    // Quiz screen မှ ထွက်ရန်
     showScreen('home');
 }
 
