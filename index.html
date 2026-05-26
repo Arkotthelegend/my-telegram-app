@@ -1187,22 +1187,24 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-// XP သိမ်းဆည်းခြင်း (Local)
+// XP သိမ်းဆည်းခြင်း (Telegram User ID အလိုက် ခွဲသိမ်းမည်)
 function addPoints(earned) {
-    // လက်ရှိ XP ကို ယူခြင်း (မရှိရင် 0)
-    let currentPoints = parseInt(localStorage.getItem('user_xp')) || 0;
+    const userId = tg.initDataUnsafe?.user?.id || 'guest'; // User ID ယူခြင်း
+    const storageKey = `user_xp_${userId}`; // အကောင့်တစ်ခုစီအတွက် Key ခွဲလိုက်ခြင်း
+    
+    let currentPoints = parseInt(localStorage.getItem(storageKey)) || 0;
     let newPoints = currentPoints + earned;
     
-    // XP အသစ်ကို LocalStorage ထဲ ပြန်သိမ်းခြင်း
-    localStorage.setItem('user_xp', newPoints);
-    
-    // UI ကို Update လုပ်ခြင်း
+    localStorage.setItem(storageKey, newPoints);
     updateLevelUI(newPoints);
 }
 
-// App စဖွင့်ချိန်မှာ XP ကို ပြန်ခေါ်ခြင်း
+// App စဖွင့်ချိန် (သို့မဟုတ်) Profile ဖွင့်ချိန်မှာ လက်ရှိအကောင့်ရဲ့ XP ကိုပဲ ခေါ်ခြင်း
 function loadUserProgress() {
-    let savedXP = parseInt(localStorage.getItem('user_xp')) || 0;
+    const userId = tg.initDataUnsafe?.user?.id || 'guest';
+    const storageKey = `user_xp_${userId}`;
+    
+    let savedXP = parseInt(localStorage.getItem(storageKey)) || 0;
     updateLevelUI(savedXP);
 }
 
@@ -1218,13 +1220,13 @@ function updateLevelUI(points) {
     let nextLevelPoints = 500;
     
     // Level သတ်မှတ်ချက်များ
-    if (points >= 5000) { 
+    if (points >= 500) { 
         levelTitle = "Legend"; icon = "👑"; levelNum = 5; nextLevelPoints = 10000; 
-    } else if (points >= 20000) { 
+    } else if (points >= 2000) { 
         levelTitle = "Expert"; icon = "🧠"; levelNum = 4; nextLevelPoints = 5000; 
-    } else if (points >= 10000) { 
+    } else if (points >= 1000) { 
         levelTitle = "Pro Scholar"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
-    } else if (points >= 5000) { 
+    } else if (points >= 500) { 
         levelTitle = "Amateur"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
     }
 
