@@ -1031,15 +1031,7 @@ function renderProfileData() {
         </button>
     `;
 
-    // Admin Control Panel (သင့် ID ဖြစ်မှသာ ပေါ်မည်)
-    if (userId === 8432363664) {
-        htmlContent += `
-            <div style="margin-top: 20px; padding: 15px; border: 1px dashed var(--accent); border-radius: 12px; background: rgba(0,0,0,0.2);">
-                <h4 style="margin: 0 0 10px 0; color: var(--accent);">Admin Panel</h4>
-                <p style="font-size: 0.7rem; color: #94a3b8;">User ID များကို GitHub မှာ update လုပ်ပါ။</p>
-            </div>
-        `;
-    }
+
 
     dynamicArea.innerHTML = htmlContent;
     renderStreakUI(); // Streak data ကို ပြန်လည်ပြသရန်
@@ -1252,34 +1244,6 @@ function contactDeveloper() {
 // ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
 setInterval(updateStreak, 600);
 
-// Admin က Update တင်လိုက်သည့်အခါ
-function postAnnouncement() {
-    const text = document.getElementById('announcement-text').value;
-    if (!text) return tg.showAlert("စာသားထည့်ပါ");
-
-    tg.CloudStorage.setItem('app_announcement', text, (err, success) => {
-        if (success) {
-            tg.showAlert("Announcement ကို Update လုပ်ပြီးပါပြီ။");
-            loadAnnouncement(); // ကိုယ့်ဆီမှာပါ ချက်ချင်းပြရန်
-        }
-    });
-}
-
-// Home Screen ကိုဖွင့်တိုင်း စာသားကို လှမ်းယူပြသရန်
-function loadAnnouncement() {
-    tg.CloudStorage.getItem('app_announcement', (err, value) => {
-        const announceDiv = document.getElementById('admin-announcement');
-        if (!err && value && value.trim() !== "") {
-            announceDiv.innerText = "📢 " + value;
-            announceDiv.style.display = 'block';
-        } else {
-            announceDiv.style.display = 'none';
-        }
-    });
-}
-
-// Window load ဖြစ်တဲ့အခါ ခေါ်ပေးရန်
-window.addEventListener('load', loadAnnouncement);
       
     </script>
 </body>
