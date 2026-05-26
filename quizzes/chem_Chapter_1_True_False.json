@@ -99,4 +99,5 @@
   { "type": "tf", "q": "The units of specific heat are $$\\text{J g}^{-1} \\text{K}^{-1}$$.", "a": ["True", "False"], "c": 0 },
   { "type": "tf", "q": "Work done by the system on surroundings is taken as positive.", "a": ["True", "False"], "c": 1 },
   { "type": "tf", "q": "The first law of thermodynamics is $$\\Delta\\text{U} = \\text{q} + \\text{w}$$.", "a": ["True", "False"], "c": 0 }
+   { "type": "tf", "q": "The first law of thermodynamics is $$\\Delta\\text{U} = \\text{q} + \\text{w}$$.", "a": ["True", "False"], "c": 0 }
 ]
