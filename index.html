@@ -379,14 +379,37 @@ function unlockCard(div, sub) {
 }
 
         function openSubjectMenu(sub) {
-            const isPaid = userBought.includes('all') || userBought.includes(sub.id);
+    const userId = tg.initDataUnsafe?.user?.id || 0;
+    const isSpecial = specialUsers.includes(userId);
     
-    // အကယ်၍ ဝယ်မထားဘဲ Menu ထဲရောက်နေလျှင် (Trial မဟုတ်လျှင်) ပြန်ထုတ်ရန်
-    if (!isPaid) {
+    // ပုံမှန်ဝယ်ထားသူလား (သို့မဟုတ်) Special User ဖြစ်ပြီး ၆ ဘာသာထဲက တစ်ခုလား စစ်ဆေးခြင်း
+    const isPaidInCode = userBought.includes('all') || userBought.includes(sub.id);
+    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(s.id) || s.id === 'bio' || s.id === 'eco');
+    
+    const canAccess = isPaidInCode || isSpecialSubject;
+
+    // အကယ်၍ ခွင့်ပြုချက်မရှိဘဲ Menu ထဲရောက်နေလျှင် (Trial မဟုတ်လျှင်) ပြန်ထုတ်ရန်
+    if (!canAccess) {
         tg.showAlert("တစ်ဘာသာလုံးကို‌လေ့ကျင့်ဖို့ ဒီဘာသာရပ်ကိုဝယ်ယူလိုက်ပါ");
         showScreen('home');
         return;
     }
+
+    // ကျန်တဲ့ Menu ပြသတဲ့ code များ (မူလအတိုင်းထားပါ)
+    document.getElementById('subject-title').innerText = sub.name;
+    const menu = document.getElementById('subject-menu');
+    menu.innerHTML = '';
+
+    sub.chapters.forEach(ch => {
+        const btn = document.createElement('button');
+        btn.className = 'chapter-btn';
+        btn.innerText = ch.title;
+        btn.onclick = () => initQuiz(ch.file);
+        menu.appendChild(btn);
+    });
+
+    showScreen('subject-detail');
+}
             currentSubject = sub;
             showScreen('menu');
             document.getElementById('menu-title').innerText = sub.name;
