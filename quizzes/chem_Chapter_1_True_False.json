@@ -1,502 +1,102 @@
 [
-  {
-    "type": "tf",
-    "q": "The electrons are filled in the lower energy atomic orbitals after filling higher energy ones.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Silicon dioxide conducts electricity because it contains free electrons.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Electronegativity is the ability of an atom to attract electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In solid ionic compounds, their ions are held in variable positions and cannot move.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "London dispersion forces can be formed between non-polar molecules.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Metals conduct electricity when solid because positive ions are free to move.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The single bonds are the longest and stronger than double and triple bonds.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "A coordinate bond is a special type of covalent bond.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Hydrogen bonding can occur in liquid water.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "An ionic bond involves electron sharing between two atoms.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "According to Pauli's exclusion principle, the two electrons in the same orbital will have parallel spins.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The d-subshell has five dumbbell-shaped orbitals.",
-    "c": false
-  },
-{
-    "type": "tf",
-    "q": "The two electrons with the same spin can occupy the same orbital.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Hund's rule states that an electron occupies the lowest energy orbital first.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The shape of BF₃ is a trigonal planar geometry, so it is considered nonpolar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The higher the value of the electronegativity, the greater is the atom's attraction to electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Some compounds have both ionic and covalent character.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The s-subshell has only one spherical-shaped orbital.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In a covalent bond there are complete transfer of electrons between two atoms.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "VSEPR theory is a theory to predict the three-dimensional shapes of molecules.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "All the inorganic and organic materials are not created with chemical bonds.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Graphite contains unbonded electrons which move through the structure.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The amount of energy required to add an electron from a gaseous atom.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "According to Pauli's exclusion principle, no more two electrons in an atom can have same orbital.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Metallic bond is a strong force of attraction between the metal ions and the electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The covalent bonds can be polar or non-polar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Ion-dipole interactions are formed between a metal and a non-metal.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Hydrogen bonding can occur in intermolecular forces only.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Silicon dioxide is a giant covalent molecule with four oxygen atoms bonded to each silicon atom.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Hydrogen bonds involve hydrogen bonded to carbon, hydrogen, oxygen, or fluorine.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "H₂O molecule is an example of the formation of dative bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The structure of silicon dioxide is similar to graphite.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Metals conduct electricity when molten because negative ions are free to move.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The elements having high electron affinity easily lose electrons.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Silicon(IV) oxide, SiO₂ (silica or quartz) is a giant covalent molecule.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A hydrogen bond is a special type of dipole-dipole interaction.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Everything around us is made up of elements, molecules, or compounds.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "CO₂ molecule has no dipole moment since C-O bonds are nonpolar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A metal loses electrons to form positively charged ions (cations).",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In a graphite, each carbon atom is joined to four other carbon atoms by covalent bonds.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The strength of metallic bond is higher than that of an ionic bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The elements having high ionisation energy results in the formation of the cations.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "An ionic bond is the attractive force between a positive ion and a negative ion.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Atoms will lose, gain, or share electrons to obtain an octet.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Carbon is in Group VI and has 6 valence electrons.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "According to Pauli's principle, all the electrons in singly occupied orbitals have the same spin.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The water molecule is a non-polar molecule.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "HCN is a linear molecule, therefore it is a nonpolar molecule.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In ionic compounds, the cations and anions are held together by strong electrostatic attraction.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The covalent bond is the electrostatic attraction between the nuclei of the atoms and the transferred electrons.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "CO molecule has a triple bond that consists of two covalent bonds and one coordinate bond.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Metals consist of giant structures of atoms.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "An ionic bond is stronger than a covalent bond.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Solid ionic compounds can conduct electricity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The octet rule can apply to d-block elements.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The electronegativity difference value is less than 1.8 for an ionic bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Atoms of element are rarely found in nature.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The fullerene (C₆₀), carbon nanotubes, and graphene are bulky covalent molecules.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Covalent bonding usually occurs between non-metals.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The higher the number of bonded electrons, the longer the bond length.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The valence electrons of elements represented using Lewis symbols are in s orbitals only.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Atoms can only gain electrons to obtain an octet.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Chemical bond is formed only when by sharing the valence electrons between the atoms involved in the bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Covalent bonding can occur between identical atoms only.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The p-subshell has five dumbbell-shaped orbitals.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Graphite conducts electricity because it contains free electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In single covalent bonds, only two pair of electrons is shared between two atoms.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The electrons transfer from one atom having large ionisation energy to another atom having small electron affinity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The higher the number of bonded electrons, the weaker the attraction between the two atoms.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "All metals are solids at room temperature.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The hydrogen bond is stronger than a covalent bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The structure of a metallic bond is the same from that of covalent or ionic bonds.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The amount of energy released when an electron is added to a gaseous atom.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The end of partial positive charge of a dipole is the atom with the highest electronegativity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Coordination number is the number of atoms or ions surrounding a central atom in a crystal lattice.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The force of attraction between the constituent particles in any form of matter is the intermolecular force.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The electrons in the valence shells of an atom are known as the valence.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The intermolecular forces are strong forces.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The standard structure of metallic bonding increases with the decreasing positive charge on the ions in the metal lattice.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In a metallic bond, the atoms do share or transfer electrons to bond together.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "London dispersion forces are the strongest in intermolecular forces.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The length of the bond is determined by the number of non-bonded electrons.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The positively charged metallic nuclei are surrounded by free-moving electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "There are two main types of chemical bonding.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Hund's rule states that every orbital in a sub-shell is singly occupied before any orbital is doubly occupied.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The bond strength of the triple bond is the highest.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "When electrons are not shared equally between two atoms, a polar covalent bond occurs.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The valency of an element is the number of electrons lost only by an atom to form an ionic bond.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "A Lewis structure is only three-dimensional representation of a molecule.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The melting points of the ionic compounds with the smaller charge on the ions are higher.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Diamond and graphite contain covalent bonds between carbon atoms.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Mg²⁺ and O²⁻ ions have the electronic configuration of stable noble gas of Ar.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The outermost shell of electrons are called valence electrons.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The fullerene (C₆₀), carbon nanotubes, and graphene are giant molecules.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Ionic bonding depends on the difference in electronegativity between two atoms.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "van der Waals forces are strong intermolecular forces that bind molecules together.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Graphite and silica have layered structures.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The greater the charge on the ions, the greater the electrostatic attraction and the stronger the ionic bond will be.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Giant structure is a three-dimensional structure of atoms that are joined by a network of bonds.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Lewis dot structure of He is :He:",
-    "c": false
-  }
+  { "type": "tf", "q": "Atoms of elements are usually found by themselves in nature.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The attractive forces that hold atoms together in compounds are also known as chemical bonds.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Chemical bonds also play an important role in all living things.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The outershell electrons are known as valence electrons.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "According to Aufbu principle, electrons are filled in the higher energy atomic orbitals before filling lower energy ones.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The order of filling the orbitals is given as $$1\\text{s } 2\\text{s } 2\\text{p } 3\\text{s } 3\\text{p } 3\\text{d } 4\\text{s } 4\\text{p}$$.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "According to Aufbu principle, two electrons with the same spin cannot occupy the same orbital.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Two electrons in the same orbital must have the same spin.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "For an atom, the number of valence electrons is equal to its group number in the Periodic Table.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The octet rule does not apply to p-block elements.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "A chemical bond is formed when atoms are held together by the repulsive forces between them.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The strength of sharing or transferring the valence electrons depends in the electronegativity of the atoms.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Electronegativity (EN) is a measure of the ability of an atom to attract the shared electrons to itself.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The greater an element's electronegativity, the stronger its attractive power to electrons will be.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The elements having low electron affinity easily gain electrons, resulting in the formation of anions.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The elements having high ionization energy easily lose electrons, resulting in the formation of the cations.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The higher the first ionization energy of an element, the greater is its electronegativity.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The higher the value of the electronegativity, the less is the atom's attraction to electrons.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "There are two main types of chemical bonding, such as ionic bonding and covalent bonding.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The atoms within molecules are kept together stronger forces.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The forces between molecules are weak.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Intermolecular forces are hydrogen bonding and van der Waals forces such as ion-diople interaction, dipole-dipole interaction, and London dispersion forces.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "In general, an ionic bond is not as strong as a covalent bond.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The hydrogen bond is the strongest intermolecular force followed by Van der Waals forces.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Among the Van der Waals forces, London dispersion forces are strongest intermolecular forces that can be found in all substances.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Ionic bonding does not depend on the difference in electronegativity between two atoms.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "When the difference in electronegativity is greater than 1.6, ionic compounds are formed.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Ionic bonding generally occurs between reactive metals and reactive non-metals.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "When ionic bond forms, a metal loses electrons to form negatively charged ions.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The number of lost or gained electrons by an atom during ionic bonding is the same as the valency of that element.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "In ionic compounds, the cations and anions are held together by weak intermolecular electrostatic attraction.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The greater the charge in the ions, the greater the electrostatic attraction and the stronger the covalent bond will be.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The melting points of the ionic compounds with the greater charge on the ions are lower.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "In solid ionic compounds, their ions are held in fixed positions and they can conduct electricity.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "An ionic bond is formed by sharing one or more pairs of valence electrons between atoms.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The covalent bond is the electrostatic attraction between the nuclei of the atoms and the shared electrons.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Covalent bonding usually occurs between metals.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "A double covalent bond is formed by sharing two pair electrons between two atoms.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "A triple covalent bond is formed by sharing three pair electrons between two atoms.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The length of the bond is determined by the number of unshared electrons.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The higher the bonded electrons, the stronger the attraction between the two atoms.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The higher the bonded electrons, the shorter the bond length.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The bond length of the single bond is the shortest.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The bond strength of the triple bond is the strongest.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "A coordinate bond is not a special type of covalent bond.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "A coordinate bond is formed when one of the participant atoms possesses a lone pair electron.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The chemical forming between $$\\text{Be}$$ and $$\\text{Cl}$$ is the ionic bonding.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Covalent bonding occurs only by transferring valence electrons between the atoms involved in the bond.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "To transfer a valence electron, the atom must have higher electronegativity than another atom.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The molecular shape of water molecule, $$\\text{H}_2\\text{O}$$, is linear.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Beryllium chloride, $$\\text{BeCl}_2$$, is a stable molecule that follows the octet rule.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Carbon tetrachloride is a polar covalent molecule.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The London dispersion forces are instantaneous dipole-dipole interaction.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The London dispersion forces exists only in polar molecules.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Metals can conduct electricity easily due to a sea of electrons.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "$$\\text{HCN}$$ is a polar covalent molecule.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "$$\\text{CO}$$ is a non-polar covalent molecule.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The shape of ammonia is V-shaped.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Graphite can conduct electricity.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "In quartz, each silicon atom is bonded to four oxygen atoms.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The melting of some metals become lower compared within the ionic compounds.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The strength of a metallic bond is higher than that of an ionic bond.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Thermodynamics is the study of energy and its transformations.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Thermochemistry is the study of heat changes in chemical reactions.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Energy can be defined as the capacity to do work.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The SI unit for energy is the Joule ($$\\text{J}$$).", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "One calorie is equal to 4.184 Joules.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Exothermic reactions absorb heat from the surroundings.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Endothermic reactions release heat to the surroundings.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "The law of conservation of energy states that energy cannot be created or destroyed.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Kinetic energy is the energy of motion.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Potential energy is the energy of position or composition.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Enthalpy ($$\\text{H}$$) is a measure of the total energy of a system.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "For an exothermic reaction, the change in enthalpy ($$\\Delta\\text{H}$$) is positive.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "For an endothermic reaction, the change in enthalpy ($$\\Delta\\text{H}$$) is positive.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Standard enthalpy of formation is the heat change when one mole of a compound is formed from its elements.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Hess's Law states that the total enthalpy change for a reaction is the same regardless of the path taken.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Specific heat is the amount of heat required to raise the temperature of 1 gram of a substance by 1 degree Celsius.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Heat capacity is an intensive property.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "A system is the part of the universe being studied.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Surroundings include everything outside the system.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "An isolated system can exchange both energy and matter with its surroundings.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "An open system can exchange both energy and matter with its surroundings.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "A closed system can exchange energy but not matter with its surroundings.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Work and heat are state functions.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Internal energy is a state function.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Entropy is a measure of the disorder or randomness of a system.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Spontaneous processes always occur rapidly.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Gibbs free energy ($$\\text{G}$$) combines enthalpy and entropy.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "A reaction is spontaneous if $$\\Delta\\text{G}$$ is negative.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Burning wood is an example of an endothermic process.", "a": ["True", "False"], "c": 1 },
+  { "type": "tf", "q": "Freezing water is an exothermic process.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Melting ice is an endothermic process.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The first law of thermodynamics is also known as the law of conservation of energy.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The enthalpy of all elements in their standard states is zero.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Bond enthalpy is the energy required to break a chemical bond.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Calorimetry is the measurement of heat flow.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "A bomb calorimeter is used to measure heat of combustion at constant volume.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "Sublimation is the process where a solid turns directly into a gas.", "a": ["True", "False"], "c": 0 },
+  { "type": "tf", "q": "The enthalpy of vaporization is usually smaller than the enthalpy of fusion for the same substance.", "a": ["True", "False"], "c": 1 }
 ]
