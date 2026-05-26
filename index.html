@@ -1220,7 +1220,7 @@ function updateLevelUI(points) {
     let nextLevelPoints = 500;
     
     // Level သတ်မှတ်ချက်များ
-    if (points >= 500) { 
+    if (points >= 5000) { 
         levelTitle = "Legend"; icon = "👑"; levelNum = 5; nextLevelPoints = 10000; 
     } else if (points >= 2000) { 
         levelTitle = "Expert"; icon = "🧠"; levelNum = 4; nextLevelPoints = 5000; 
@@ -1243,20 +1243,45 @@ function updateLevelUI(points) {
 }
 function finishQuiz() {
     let totalEarned = 0;
-    // မေးခွန်းအရေအတွက်ပေါ်မူတည်ပြီး XP ပေးခြင်း
-    if (currentSubject.id === 'math') {
-        totalEarned = currentQuestions.length * 20;
-    } else if (currentQuestions[0]?.type === 'mcq') {
-        totalEarned = currentQuestions.length * 10;
+    let correctCount = 0;
+
+    // ၁။ User ဖြေခဲ့တဲ့ အဖြေတွေကို စစ်ဆေးပြီး အဖြေမှန်အရေအတွက်ကို အရင်တွက်မယ်
+    currentQuestions.forEach((q, index) => {
+        if (userAnswers[index] === q.c) {
+            correctCount++;
+        }
+    });
+
+    // ၂။ အဖြေမှန်တဲ့ အရေအတွက်ပေါ် မူတည်ပြီး Point ပေးမယ်
+    const userId = tg.initDataUnsafe?.user?.id || 'guest';
+    const isMath = currentSubject.id === 'math';
+    const qType = currentQuestions[0]?.type;
+
+    if (isMath) {
+        totalEarned = correctCount * 20; // သင်္ချာ အဖြေမှန်တစ်ပုဒ် ၂၀ XP
+    } else if (qType === 'mcq') {
+        totalEarned = correctCount * 10; // MCQ အဖြေမှန်တစ်ပုဒ် ၁၀ XP
     } else {
-        totalEarned = currentQuestions.length * 5;
+        totalEarned = correctCount * 5;  // တခြား (T/F) အဖြေမှန်တစ်ပုဒ် ၅ XP
     }
 
-    addPoints(totalEarned); // Point သိမ်းဆည်းရန် ခေါ်ခြင်း
-    tg.showAlert(`သင်ခန်းစာပြီးဆုံးလို့ +${totalEarned} XP ရရှိပါတယ် 🎉`);
+    // ၃။ အကုန်လုံးမှန်ရင် Bonus XP ပေးမယ်
+    if (correctCount === currentQuestions.length && correctCount > 0) {
+        totalEarned += 20;
+        tg.showAlert(`Perfect! အကုန်လုံးမှန်လို့ Bonus +20 XP အပါအဝင် စုစုပေါင်း +${totalEarned} XP ရရှိပါတယ် 🎉`);
+    } else if (totalEarned > 0) {
+        tg.showAlert(`ဂုဏ်ယူပါတယ်! သင် ${correctCount} ပုဒ်မှန်လို့ +${totalEarned} XP ရရှိပါတယ် 🌟`);
+    } else {
+        tg.showAlert(`ကြိုးစားပါဦး! အဖြေမှန်မရှိသဖြင့် XP မရရှိပါ 💡`);
+    }
+
+    // XP ပေါင်းထည့်ပြီး UI update လုပ်မယ်
+    if (totalEarned > 0) {
+        addPoints(totalEarned);
+    }
     
     // Quiz screen မှ ထွက်ရန်
-    document.getElementById('quiz-back-btn').click();
+    showScreen('home');
 }
 
 
