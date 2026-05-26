@@ -944,17 +944,12 @@ function selectOption(index) {
 }
 
 function nextQuestion() {
-    currentIdx++;
-    if (currentIdx < currentQuestions.length) {
+    if (currentIdx < currentQuestions.length - 1) {
+        currentIdx++;
         loadQuestion();
     } else {
-        // ဒီနေရာမှာ finishQuiz() ကို ခေါ်တာ သေချာပါစေ
-        try {
-            finishQuiz();
-        } catch (e) {
-            console.error("Finish Quiz Error:", e);
-            showScreen('home'); // Error တက်ရင်တောင် Home ကို ပြန်သွားအောင် လုပ်ထားခြင်း
-        }
+        // မေးခွန်းကုန်ပြီဆိုရင် finishQuiz ကိုသွားမယ်
+        finishQuiz();
     }
 }
 
@@ -1192,13 +1187,21 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-// XP သိမ်းဆည်းခြင်း (Telegram User ID အလိုက် ခွဲသိမ်းမည်)
 function addPoints(earned) {
-    const userId = tg.initDataUnsafe?.user?.id || 'guest';
-    const storageKey = `user_xp_${userId}`;
-    let currentPoints = parseInt(localStorage.getItem(storageKey)) || 0;
-    localStorage.setItem(storageKey, currentPoints + earned);
-    updateLevelUI(currentPoints + earned);
+    try {
+        const userId = tg.initDataUnsafe?.user?.id || 'guest';
+        const storageKey = `user_xp_${userId}`;
+        
+        let currentXP = parseInt(localStorage.getItem(storageKey)) || 0;
+        let newXP = currentXP + earned;
+        
+        localStorage.setItem(storageKey, newXP);
+        
+        // UI ကိုချက်ချင်း Update လုပ်ဖို့ (Profile screen ရှိနေရင်)
+        updateLevelUI(newXP);
+    } catch (e) {
+        console.error("Add Points Error:", e);
+    }
 }
 
 // App စဖွင့်ချိန် (သို့မဟုတ်) Profile ဖွင့်ချိန်မှာ လက်ရှိအကောင့်ရဲ့ XP ကိုပဲ ခေါ်ခြင်း
@@ -1216,7 +1219,7 @@ function updateLevelUI(points) {
     const progressBar = document.getElementById('level-progress');
     const levelIcon = document.getElementById('level-icon');
 
-    let levelTitle = "Beginner";
+    let levelTitle = "Beginner Lay";
     let icon = "🌱";
     let levelNum = 1; // Level ဂဏန်းအတွက်
     let nextLevelPoints = 500;
@@ -1229,7 +1232,7 @@ function updateLevelUI(points) {
     } else if (points >= 1000) { 
         levelTitle = "Pro Scholar"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
     } else if (points >= 500) { 
-        levelTitle = "Amateur"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
+        levelTitle = "Amateure"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
     }
 
     if (levelName) {
@@ -1243,64 +1246,63 @@ function updateLevelUI(points) {
         progressBar.style.width = `${Math.min(progress, 100)}%`;
     }
 }
+
 function finishQuiz() {
-    try {
-        let totalEarned = 0;
-        let correctCount = 0;
+    console.log("Finishing Quiz..."); // စစ်ဆေးရန်
+    let totalEarned = 0;
+    let correctCount = 0;
 
-        // ၁။ အဖြေမှန်အရေအတွက်ကို ပိုမိုတိကျစွာ စစ်ဆေးခြင်း
-        if (Array.isArray(currentQuestions)) {
-            currentQuestions.forEach((q, index) => {
-                const userAns = userAnswers[index];
-                
-                if (q.type === 'blank') {
-                    // Blank အတွက် စာသားချင်းတူမတူစစ်ခြင်း
-                    if (userAns && q.a && q.a[0] && userAns.toString().trim().toLowerCase() === q.a[0].toString().trim().toLowerCase()) {
-                        correctCount++;
-                    }
-                } else {
-                    // MCQ နှင့် T/F အတွက် Index စစ်ခြင်း
-                    if (userAns !== undefined && userAns !== null && userAns === q.c) {
-                        correctCount++;
-                    }
-                }
-            });
-        }
+    // ၁။ မေးခွန်းတွေ ရှိမရှိ အရင်စစ်မယ်
+    if (!currentQuestions || currentQuestions.length === 0) {
+        console.error("No questions found!");
+        showScreen('home');
+        return;
+    }
 
-        // ၂။ XP အမှတ်များကို အမျိုးအစားအလိုက် တွက်ချက်ခြင်း
-        const subjectId = currentSubject ? currentSubject.id : '';
-        // ပထမမေးခွန်းရဲ့ type ကိုကြည့်ပြီး အမှတ်ပေးနှုန်းသတ်မှတ်ခြင်း
-        const firstQuestionType = currentQuestions[0]?.type || 'mcq';
+    // ၂။ အဖြေမှန်အရေအတွက် စစ်ဆေးခြင်း
+    for (let i = 0; i < currentQuestions.length; i++) {
+        let q = currentQuestions[i];
+        let userAns = userAnswers[i];
 
-        if (subjectId === 'math') {
-            totalEarned = correctCount * 20;
+        if (q.type === 'blank') {
+            // Blank: စာသားချင်းတူမတူစစ် (Case insensitive)
+            if (userAns && q.a && userAns.toString().trim().toLowerCase() === q.a[0].toString().trim().toLowerCase()) {
+                correctCount++;
+            }
         } else {
-            switch(firstQuestionType) {
-                case 'blank': totalEarned = correctCount * 15; break;
-                case 'mcq': totalEarned = correctCount * 10; break;
-                case 'tf': totalEarned = correctCount * 5; break;
-                default: totalEarned = correctCount * 10;
+            // MCQ/TF: Index တူမတူစစ်
+            if (userAns !== undefined && userAns !== null && userAns === q.c) {
+                correctCount++;
             }
         }
+    }
 
-        // ၃။ Bonus အမှတ် (အကုန်မှန်ရင်)
-        if (correctCount === currentQuestions.length && correctCount > 0) {
-            totalEarned += 20;
-        }
+    // ၃။ အမှတ်ပေးနှုန်း သတ်မှတ်ခြင်း
+    const firstQ = currentQuestions[0];
+    if (currentSubject && currentSubject.id === 'math') {
+        totalEarned = correctCount * 20;
+    } else if (firstQ.type === 'blank') {
+        totalEarned = correctCount * 15;
+    } else if (firstQ.type === 'mcq') {
+        totalEarned = correctCount * 10;
+    } else {
+        totalEarned = correctCount * 5;
+    }
 
-        // ၄။ အမှတ်ရကြောင်း Message ပြသခြင်း
-        if (totalEarned > 0) {
-            addPoints(totalEarned); // XP ပေါင်းထည့်ခြင်း
-            tg.showAlert(`ဂုဏ်ယူပါတယ်! သင် ${correctCount} ပုဒ်မှန်လို့ စုစုပေါင်း +${totalEarned} XP ရရှိပါတယ် 🌟`);
-        } else {
-            tg.showAlert(`ထပ်မံကြိုးစားပါဦး! အဖြေမှန်မရှိသဖြင့် XP မရရှိပါ 💡`);
-        }
+    // Bonus
+    if (correctCount === currentQuestions.length) totalEarned += 20;
 
-    } catch (error) {
-        console.error("XP Calculation Error:", error);
-    } finally {
-        // နောက်ဆုံးမှ Home ကိုပြန်သွားရန်
-        showScreen('home');
+    // ၄။ အမှတ်ပေးပြီး Alert ပြခြင်း
+    if (totalEarned > 0) {
+        addPoints(totalEarned);
+        // Alert ပြပြီးမှ Home ကိုသွားရန် callback သုံးပါမယ်
+        tg.showAlert(`ဂုဏ်ယူပါတယ်! သင် ${correctCount} ပုဒ်မှန်လို့ +${totalEarned} XP ရရှိပါတယ် 🌟`, () => {
+            showScreen('home');
+        });
+    } else {
+        tg.showAlert(`ထပ်မံကြိုးစားပါဦး! အဖြေမှန်မရှိသဖြင့် XP မရရှိပါ 💡`, () => {
+            showScreen('home');
+        });
     }
 }
 
