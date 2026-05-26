@@ -1225,13 +1225,13 @@ function updateLevelUI(points) {
     let nextLevelPoints = 500;
     
     // Level သတ်မှတ်ချက်များ
-    if (points >= 1100) { 
+    if (points >= 5000) { 
         levelTitle = "Legend"; icon = "👑"; levelNum = 5; nextLevelPoints = 10000; 
-    } else if (points >= 800) { 
+    } else if (points >= 2000) { 
         levelTitle = "Expert"; icon = "🧠"; levelNum = 4; nextLevelPoints = 5000; 
+    } else if (points >= 1000) { 
+        levelTitle = "Pro"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
     } else if (points >= 500) { 
-        levelTitle = "Pro Scholar"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
-    } else if (points >= 200) { 
         levelTitle = "Amateur"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
     }
 
@@ -1251,11 +1251,11 @@ function finishQuiz() {
     let totalEarned = 0;
     // မေးခွန်းအရေအတွက်ပေါ်မူတည်ပြီး XP ပေးခြင်း
     if (currentSubject.id === 'math') {
-        totalEarned = currentQuestions.length * 20;
+        totalEarned = currentQuestions.length * 8;
     } else if (currentQuestions[0]?.type === 'blank') {
-        totalEarned = currentQuestions.length * 10;
+        totalEarned = currentQuestions.length * 6;
     } else {
-        totalEarned = currentQuestions.length * 5;
+        totalEarned = currentQuestions.length * 2;
     }
 
     addPoints(totalEarned); // Point သိမ်းဆည်းရန် ခေါ်ခြင်း
