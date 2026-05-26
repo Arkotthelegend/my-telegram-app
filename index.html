@@ -530,6 +530,16 @@ btn.onclick = () => {
     
     if (window.MathJax) MathJax.typesetPromise();
 }
+
+function nextQuestion() {
+    currentIdx++;
+    if (currentIdx < currentQuestions.length) {
+        loadQuestion();
+    } else {
+        // မူလ showAlert နေရာမှာ finishQuiz() ကို အစားထိုးလိုက်ခြင်း
+        finishQuiz(); 
+    }
+}
         
         // --- English Specific ---
         function showENUnits(typeName) {
@@ -1159,6 +1169,7 @@ function resetGoals() {
 window.onload = () => {
     loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
     updateCountdown(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
+	loadUserProgress();
 };
        
 		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
@@ -1180,17 +1191,23 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
+// XP သိမ်းဆည်းခြင်း (Local)
 function addPoints(earned) {
-    tg.CloudStorage.getItem('user_points', (err, value) => {
-        let currentPoints = parseInt(value) || 0;
-        let newPoints = currentPoints + earned;
-        
-        tg.CloudStorage.setItem('user_points', newPoints.toString(), (err, success) => {
-            if (success) {
-                updateLevelUI(newPoints);
-            }
-        });
-    });
+    // လက်ရှိ XP ကို ယူခြင်း (မရှိရင် 0)
+    let currentPoints = parseInt(localStorage.getItem('user_xp')) || 0;
+    let newPoints = currentPoints + earned;
+    
+    // XP အသစ်ကို LocalStorage ထဲ ပြန်သိမ်းခြင်း
+    localStorage.setItem('user_xp', newPoints);
+    
+    // UI ကို Update လုပ်ခြင်း
+    updateLevelUI(newPoints);
+}
+
+// App စဖွင့်ချိန်မှာ XP ကို ပြန်ခေါ်ခြင်း
+function loadUserProgress() {
+    let savedXP = parseInt(localStorage.getItem('user_xp')) || 0;
+    updateLevelUI(savedXP);
 }
 
 function updateLevelUI(points) {
@@ -1217,6 +1234,30 @@ function updateLevelUI(points) {
         const progress = (points / nextLevelPoints) * 100;
         progressBar.style.width = `${Math.min(progress, 100)}%`;
     }
+}
+
+function finishQuiz() {
+    let totalEarned = 0;
+    let correctCount = 0;
+
+    // အဖြေမှန်အရေအတွက်ကို တွက်ချက်ခြင်း (လက်ရှိ Logic အရ correctCount variable တစ်ခုထားရန်လိုနိုင်သည်)
+    // ဤနေရာတွင် ဥပမာအနေဖြင့် မေးခွန်းအားလုံးပြီးဆုံးလျှင် ရမှတ်ပေးသည့်ပုံစံကို သုံးထားသည်
+    
+    if (currentSubject.id === 'math') {
+        totalEarned = currentQuestions.length * 20; // သင်္ချာက ပိုခက်သဖြင့် တစ်ပုဒ် ၂၀
+    } else if (currentQuestions[0].type === 'mcq') {
+        totalEarned = currentQuestions.length * 10;
+    } else if (currentQuestions[0].type === 'tf') {
+        totalEarned = currentQuestions.length * 5;
+    } else {
+        totalEarned = currentQuestions.length * 15;
+    }
+
+    addPoints(totalEarned); 
+    tg.showAlert(`ဂုဏ်ယူပါတယ်! သင်ခန်းစာပြီးဆုံးလို့ +${totalEarned} XP ရရှိပါတယ် 🎉`);
+    
+    // မူလ screen သို့ ပြန်သွားခြင်း
+    document.getElementById('quiz-back-btn').click(); 
 }
 
 
