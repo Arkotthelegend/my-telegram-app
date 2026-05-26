@@ -98,6 +98,6 @@
   { "type": "tf", "q": "Combustion of methane is an endothermic process.",  "c": 1 },
   { "type": "tf", "q": "The units of specific heat are $$\\text{J g}^{-1} \\text{K}^{-1}$$.",  "c": 0 },
   { "type": "tf", "q": "Work done by the system on surroundings is taken as positive.",  "c": 1 },
-  { "type": "tf", "q": "The first law of thermodynamics is $$\\Delta\\text{U} = \\text{q} + \\text{w}$$.",  "c": 0 }
+  { "type": "tf", "q": "The first law of thermodynamics is $$\\Delta\\text{U} = \\text{q} + \\text{w}$$.",  "c": 0 },
    { "type": "tf", "q": "The first law of thermodynamics is $$\\Delta\\text{U} = \\text{q} + \\text{w}$$.",  "c": 0 }
 ]
