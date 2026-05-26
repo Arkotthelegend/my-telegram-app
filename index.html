@@ -1010,26 +1010,23 @@ function renderProfileData() {
         });
     }
 
-    // ၂။ Dynamic Content (Streak နှင့် Admin Panel)
-    const dynamicArea = document.getElementById('dynamic-content-area');
-    
-    let htmlContent = `
-        <p style="text-align: center; color: #94a3b8; font-size: 0.85rem; margin-bottom: -10px; margin-top: 20px;">
-            "တစ်ရက်စာ Streak ရဖို့အတွက် အနည်းဆုံး ၁၅ မိနစ် အသုံးပြုဖို့ လိုအပ်ပါတယ်"
-        </p>
-
-        <div id="streak-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-            <div id="streak-icon" style="font-size: 3rem; margin-bottom: 10px;">🌑</div>
-            <div id="streak-text" style="font-weight: bold; color: ${isSpecial ? '#F59E0B' : 'var(--accent)'};">
-                ${isSpecial ? 'PREMIUM USER' : 'စာကြိုးစားဆဲ...'}
-            </div>
-            <div id="streak-count" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Streak: 0 Days</div>
-        </div>
+   // renderProfileData function ထဲမှာ အစားထိုးရန်
+const dynamicArea = document.getElementById('dynamic-content-area');
+dynamicArea.innerHTML = `
+    <div id="level-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
+        <div id="level-icon" style="font-size: 3rem; margin-bottom: 10px;">🏆</div>
+        <div id="level-name" style="font-weight: bold; color: var(--accent); font-size: 1.2rem;">Scholar Level 1</div>
+        <div id="total-points" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Total XP: 0</div>
         
-        <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
-            အမှားများတိုင်ကြားရန်
-        </button>
-    `;
+        <div style="width: 100%; background: #242F3D; height: 10px; border-radius: 5px; margin-top: 15px; overflow: hidden;">
+            <div id="level-progress" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.5s;"></div>
+        </div>
+    </div>
+    
+    <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
+        အမှားများတိုင်ကြားရန်
+    </button>
+`;
 
 
 
@@ -1161,44 +1158,9 @@ function resetGoals() {
 // App စဖွင့်ချိန်မှာ function တွေကို ခေါ်ခြင်း
 window.onload = () => {
     loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
-    updateCountdown();
-    renderStreakUI(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
+    updateCountdown(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
 };
-        let startTime = Date.now();
-const STREAK_REQUIRED_MINUTES = 15;
-
-function updateStreak() {
-    const today = new Date().toLocaleDateString();
-    
-    // Telegram Cloud ကနေ Data ကို အရင်လှမ်းယူပါမယ်
-    tg.CloudStorage.getItem('streakData', (err, value) => {
-        let streakData = { lastDate: '', count: 0 };
-        if (!err && value) {
-            streakData = JSON.parse(value);
-        }
-
-        let sessionMinutes = Math.floor((Date.now() - startTime) / 60000);
-
-        if (sessionMinutes >= STREAK_REQUIRED_MINUTES && streakData.lastDate !== today) {
-            const yesterday = new Date();
-            yesterday.setDate(yesterday.getDate() - 1);
-            const yesterdayStr = yesterday.toLocaleDateString();
-
-            if (streakData.lastDate === yesterdayStr) {
-                streakData.count++;
-            } else {
-                streakData.count = 1;
-            }
-
-            streakData.lastDate = today;
-
-            // Telegram Cloud ပေါ်သို့ သိမ်းဆည်းခြင်း
-            tg.CloudStorage.setItem('streakData', JSON.stringify(streakData), (err, success) => {
-                if (success) renderStreakUI();
-            });
-        }
-    });
-}
+       
 		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
 function displayDailyQuote() {
     const today = new Date();
@@ -1210,30 +1172,7 @@ function displayDailyQuote() {
     document.getElementById('daily-quote').innerText = `"${quotes[quoteIdx]}"`;
 }
 
-function renderStreakUI() {
-    tg.CloudStorage.getItem('streakData', (err, value) => {
-        let streakData = { count: 0 };
-        if (!err && value) {
-            streakData = JSON.parse(value);
-        }
 
-        const icon = document.getElementById('streak-icon');
-        const text = document.getElementById('streak-text');
-        const countText = document.getElementById('streak-count');
-
-        if (streakData.count >= 30) {
-            icon.innerText = "💎";
-            text.innerText = "Legendary Streak!";
-        } else if (streakData.count >= 7) {
-            icon.innerText = "🔥";
-            text.innerText = "On Fire!";
-        } else {
-            icon.innerText = "🌑";
-            text.innerText = "စာကြိုးစားဆဲ...";
-        }
-        countText.innerText = `Streak: ${streakData.count} Days`;
-    });
-}
 // Developer ကို ဆက်သွယ်ရန် (Telegram သို့ တိုက်ရိုက်ပို့ပေးမည်)
 function contactDeveloper() {
     const devUsername = "minaphayarkot"; // သင့် Telegram Username ပြောင်းပါ
@@ -1241,8 +1180,45 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-// ၁ မိနစ်တစ်ခါ Streak ပြည့်မပြည့် စစ်ပေးမည်
-setInterval(updateStreak, 600);
+function addPoints(earned) {
+    tg.CloudStorage.getItem('user_points', (err, value) => {
+        let currentPoints = parseInt(value) || 0;
+        let newPoints = currentPoints + earned;
+        
+        tg.CloudStorage.setItem('user_points', newPoints.toString(), (err, success) => {
+            if (success) {
+                updateLevelUI(newPoints);
+            }
+        });
+    });
+}
+
+function updateLevelUI(points) {
+    const levelName = document.getElementById('level-name');
+    const totalPointsText = document.getElementById('total-points');
+    const progressBar = document.getElementById('level-progress');
+    const levelIcon = document.getElementById('level-icon');
+
+    let level = "Beginner";
+    let icon = "🌱";
+    let nextLevelPoints = 500;
+    
+    if (points >= 5000) { level = "Legend"; icon = "👑"; nextLevelPoints = 10000; }
+    else if (points >= 2000) { level = "Expert"; icon = "🧠"; nextLevelPoints = 5000; }
+    else if (points >= 1000) { level = "Pro Scholar"; icon = "⚡"; nextLevelPoints = 2000; }
+    else if (points >= 500) { level = "Amateur"; icon = "📚"; nextLevelPoints = 1000; }
+
+    if (levelName) {
+        levelName.innerText = level;
+        levelIcon.innerText = icon;
+        totalPointsText.innerText = `Total XP: ${points}`;
+        
+        // Progress Bar တွက်ချက်ခြင်း
+        const progress = (points / nextLevelPoints) * 100;
+        progressBar.style.width = `${Math.min(progress, 100)}%`;
+    }
+}
+
 
       
     </script>
