@@ -1,19 +1,19 @@
 [
   {
     "type": "mcq",
-    "q": "What will be the bond angle of H-N-H in $\\text{NH}_3$ molecule?",
-    "a": ["$180^\\circ$", "$120^\\circ$", "$< 120^\\circ$", "$< 109.5^\\circ$"],
+    "q": "What will be the bond angle of H-N-H in $$\\text{NH}_3$$ molecule?",
+    "a": ["$$180^\\circ$$", "$$120^\\circ$$", "$$< 120^\\circ$$", "$$< 109.5^\\circ$$"],
     "c": 3
   },
   {
     "type": "mcq",
     "q": "The following electron configuration is incorrect:",
-    "a": ["$1s^2 2s^2$", "$1s^2 2s^3 2p^1$", "$1s^2 2s^2 2p^3$", "$1s^2 2s^2 2p^4$"],
+    "a": ["$$1s^2 2s^2$$", "$$1s^2 2s^3 2p^1$$", "$$1s^2 2s^2 2p^3$$", "$$1s^2 2s^2 2p^4$$"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "What is the maximum number of electrons that can occupy $d$ atomic orbital?",
+    "q": "What is the maximum number of electrons that can occupy $$d$$ atomic orbital?",
     "a": ["14", "2", "10", "6"],
     "c": 2
   },
@@ -37,37 +37,37 @@
   },
   {
     "type": "mcq",
-    "q": "Ionic bonding takes place when the difference in electronegativity is ________ $1.8$.",
+    "q": "Ionic bonding takes place when the difference in electronegativity is ________ 1.8.",
     "a": ["smaller than", "greater than", "the same", "none of these"],
     "c": 1
   },
   {
     "type": "mcq",
     "q": "The octet rule does not apply to ________ block elements.",
-    "a": ["$s$", "$p$", "$d$", "none of these"],
+    "a": ["$$s$$", "$$p$$", "$$d$$", "none of these"],
     "c": 2
   },
   {
     "type": "mcq",
     "q": "Which molecule is an expanded valence shell molecule?",
-    "a": ["$\\text{PF}_5$", "$\\text{CCl}_4$", "$\\text{BeCl}_2$", "$\\text{NH}_3$"],
+    "a": ["$$\\text{PF}_5$$", "$$\\text{CCl}_4$$", "$$\\text{BeCl}_2$$", "$$\\text{NH}_3$$"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "An ammonia molecule can combine with boron trifluoride, $\\text{BF}_3$. What type of bond is formed between these two molecules?",
+    "q": "An ammonia molecule can combine with boron trifluoride, $$\\text{BF}_3$$. What type of bond is formed between these two molecules?",
     "a": ["ionic bond", "covalent bond", "dative bond", "both ionic and covalent bonds"],
     "c": 2
   },
   {
     "type": "mcq",
     "q": "Which of the following has a linear shape?",
-    "a": ["$\\text{CO}_2$", "$\\text{SO}_2$", "$\\text{H}_2\\text{O}$", "$\\text{CH}_4$"],
+    "a": ["$$\\text{CO}_2$$", "$$\\text{SO}_2$$", "$$\\text{H}_2\\text{O}$$", "$$\\text{CH}_4$$"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In the $\\text{HCl}$ molecule, there are ________ unshared pair electrons on the $\\text{Cl}$ atom.",
+    "q": "In the $$\\text{HCl}$$ molecule, there are ________ unshared pair electrons on the $$\\text{Cl}$$ atom.",
     "a": ["six", "four", "three", "two"],
     "c": 2
   },
@@ -85,8 +85,8 @@
   },
   {
     "type": "mcq",
-    "q": "The coordination number ratio of $\\text{Na}^+$ ion and $\\text{Cl}^-$ ion is ________.",
-    "a": ["$1 : 1$", "$3 : 3$", "$5 : 5$", "$6 : 6$"],
+    "q": "The coordination number ratio of $$\\text{Na}^+$$ ion and $$\\text{Cl}^-$$ ion is ________.",
+    "a": ["$$1 : 1$$", "$$3 : 3$$", "$$5 : 5$$", "$$6 : 6$$"],
     "c": 3
   },
   {
@@ -98,7 +98,7 @@
   {
     "type": "mcq",
     "q": "Which molecule is NOT an expanded valence shell molecule?",
-    "a": ["$\\text{PF}_5$", "$\\text{CH}_4$", "$\\text{ICl}_3$", "$\\text{SF}_6$"],
+    "a": ["$$\\text{PF}_5$$", "$$\\text{CH}_4$$", "$$\\text{ICl}_3$$", "$$\\text{SF}_6$$"],
     "c": 1
   },
   {
@@ -121,32 +121,32 @@
   },
   {
     "type": "mcq",
-    "q": "What is the shape of $d$-orbitals?",
+    "q": "What is the shape of $$d$$-orbitals?",
     "a": ["spherical-shaped", "dumbbell-shaped", "double dumbbell-shapes", "none of these"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "A water ($\\text{H}_2\\text{O}$) molecule possesses ________ lone pair electrons on the oxygen atom.",
+    "q": "A water ($$\\text{H}_2\\text{O}$$) molecule possesses ________ lone pair electrons on the oxygen atom.",
     "a": ["one", "two", "three", "four"],
     "c": 1
   },
   {
     "type": "mcq",
     "q": "Which molecule is NOT a linear molecule?",
-    "a": ["$\\text{CO}$", "$\\text{H}_2\\text{O}$", "$\\text{CO}_2$", "$\\text{BeCl}_2$"],
+    "a": ["$$\\text{CO}$$", "$$\\text{H}_2\\text{O}$$", "$$\\text{CO}_2$$", "$$\\text{BeCl}_2$$"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Number of bond pair and lone pair electrons present on $\\text{N}$ atom in $\\text{NH}_3$ are ________.",
-    "a": ["$3, 1$", "$4, 0$", "$3, 0$", "$1, 3$"],
+    "q": "Number of bond pair and lone pair electrons present on $$N$$ atom in $$\\text{NH}_3$$ are ________.",
+    "a": ["$$3, 1$$", "$$4, 0$$", "$$3, 0$$", "$$1, 3$$"],
     "c": 0
   },
   {
     "type": "mcq",
     "q": "Which of the following species has a trigonal planar shape?",
-    "a": ["$\\text{CO}_2$", "$\\text{SO}_2$", "$\\text{CH}_4$", "$\\text{H}_2\\text{O}$"],
+    "a": ["$$\\text{CO}_2$$", "$$\\text{SO}_2$$", "$$\\text{CH}_4$$", "$$\\text{H}_2\\text{O}$$"],
     "c": 1
   },
   {
@@ -169,14 +169,14 @@
   },
   {
     "type": "mcq",
-    "q": "Which bond is formed between $\\text{NH}_3$ and $\\text{H}^+$ ion?",
+    "q": "Which bond is formed between $$\\text{NH}_3$$ and $$\\text{H}^+$$ ion?",
     "a": ["ionic bond", "metallic bond", "dative bond", "both ionic and covalent bonds"],
     "c": 2
   },
   {
     "type": "mcq",
     "q": "Find the molecule in which the central atom has one lone pair of electrons.",
-    "a": ["$\\text{NH}_3$", "$\\text{PCl}_5$", "$\\text{H}_2\\text{O}$", "$\\text{CH}_4$"],
+    "a": ["$$\\text{NH}_3$$", "$$\\text{PCl}_5$$", "$$\\text{H}_2\\text{O}$$", "$$\\text{CH}_4$$"],
     "c": 0
   },
   {
@@ -193,7 +193,7 @@
   },
   {
     "type": "mcq",
-    "q": "What is the shape of $p$-orbitals?",
+    "q": "What is the shape of $$p$$-orbitals?",
     "a": ["spherical-shaped", "dumbbell-shaped", "double dumbbell-shapes", "none of these"],
     "c": 1
   },
@@ -218,7 +218,7 @@
   {
     "type": "mcq",
     "q": "The molecule with the least bond angle is ________.",
-    "a": ["$\\text{BeF}_2$", "$\\text{CH}_4$", "$\\text{SO}_2$", "$\\text{H}_2\\text{O}$"],
+    "a": ["$$\\text{BeF}_2$$", "$$\\text{CH}_4$$", "$$\\text{SO}_2$$", "$$\\text{H}_2\\text{O}$$"],
     "c": 3
   },
   {
@@ -230,18 +230,18 @@
   {
     "type": "mcq",
     "q": "Which molecule is NOT an electron-deficient molecule?",
-    "a": ["$\\text{BeCl}_2$", "$\\text{BF}_3$", "$\\text{AlCl}_3$", "$\\text{NH}_3$"],
+    "a": ["$$\\text{BeCl}_2$$", "$$\\text{BF}_3$$", "$$\\text{AlCl}_3$$", "$$\\text{NH}_3$$"],
     "c": 3
   },
   {
     "type": "mcq",
-    "q": "Which of the following species has $120^\\circ$ bond angles?",
-    "a": ["$\\text{NH}_3$", "$\\text{PH}_3$", "$\\text{ClF}_3$", "$\\text{BF}_3$"],
+    "q": "Which of the following species has $$120^\\circ$$ bond angles?",
+    "a": ["$$\\text{NH}_3$$", "$$\\text{PH}_3$$", "$$\\text{ClF}_3$$", "$$\\text{BF}_3$$"],
     "c": 3
   },
   {
     "type": "mcq",
-    "q": "In carbon monoxide, the $\\text{CO}$ molecule has a ________ bond.",
+    "q": "In carbon monoxide, the $$\\text{CO}$$ molecule has a ________ bond.",
     "a": ["single", "double", "triple", "none of these"],
     "c": 2
   },
@@ -259,8 +259,8 @@
   },
   {
     "type": "mcq",
-    "q": "If $\\text{AX}_3$ is a triangular planar molecule, then the bond angle of X-A-X is ________.",
-    "a": ["$180^\\circ$", "$120^\\circ$", "$109.5^\\circ$", "$< 109.5^\\circ$"],
+    "q": "If $$\\text{AX}_3$$ is a triangular planar molecule, then the bond angle of X-A-X is ________.",
+    "a": ["$$180^\\circ$$", "$$120^\\circ$$", "$$109.5^\\circ$$", "$$< 109.5^\\circ$$"],
     "c": 1
   },
   {
@@ -271,14 +271,14 @@
   },
   {
     "type": "mcq",
-    "q": "The $p$ subshell can be filled with ________ electrons.",
+    "q": "The $$p$$ subshell can be filled with ________ electrons.",
     "a": ["2", "6", "10", "14"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "What will be the bond angle of F-B-F in $\\text{BF}_3$ molecule?",
-    "a": ["$180^\\circ$", "$120^\\circ$", "$< 120^\\circ$", "$< 109.5^\\circ$"],
+    "q": "What will be the bond angle of F-B-F in $$\\text{BF}_3$$ molecule?",
+    "a": ["$$180^\\circ$$", "$$120^\\circ$$", "$$< 120^\\circ$$", "$$< 109.5^\\circ$$"],
     "c": 1
   },
   {
@@ -308,12 +308,12 @@
   {
     "type": "mcq",
     "q": "Which molecule is an electron-deficient molecule?",
-    "a": ["$\\text{CH}_4$", "$\\text{NH}_3$", "$\\text{BF}_3$", "$\\text{PF}_5$"],
+    "a": ["$$\\text{CH}_4$$", "$$\\text{NH}_3$$", "$$\\text{BF}_3$$", "$$\\text{PF}_5$$"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Nitrogen oxide, $\\text{NO}$, is a ________ covalent molecule.",
+    "q": "Nitrogen oxide, $$\\text{NO}$$, is a ________ covalent molecule.",
     "a": ["polar", "polyatomic", "non-polar", "triatomic"],
     "c": 0
   }
