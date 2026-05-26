@@ -531,15 +531,7 @@ btn.onclick = () => {
     if (window.MathJax) MathJax.typesetPromise();
 }
 
-function nextQuestion() {
-    currentIdx++;
-    if (currentIdx < currentQuestions.length) {
-        loadQuestion();
-    } else {
-        // မူလ showAlert နေရာမှာ finishQuiz() ကို အစားထိုးလိုက်ခြင်း
-        finishQuiz(); 
-    }
-}
+
         
         // --- English Specific ---
         function showENUnits(typeName) {
@@ -952,10 +944,14 @@ function selectOption(index) {
 }
 
         function nextQuestion() {
-            currentIdx++;
-            if (currentIdx < currentQuestions.length) loadQuestion();
-            else { tg.showAlert("ပြီးဆုံးပါပြီ။"); document.getElementById('quiz-back-btn').click(); }
-        }
+    currentIdx++;
+    if (currentIdx < currentQuestions.length) {
+        loadQuestion();
+    } else {
+        // မူလ showAlert နေရာမှာ finishQuiz() ကို အစားထိုးလိုက်ခြင်း
+        finishQuiz(); 
+    }
+}
 
         // --- UI Utils ---
         function updateAvatar(save = false) {
