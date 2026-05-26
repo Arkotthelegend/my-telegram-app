@@ -1102,9 +1102,10 @@ function resetGoals() {
 
 // App စဖွင့်ချိန်မှာ function တွေကို ခေါ်ခြင်း
 window.onload = () => {
-    loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
+    loadGoals();
     updateCountdown();
-    renderStreakUI(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
+    renderStreakUI();
+    loadAnnouncement(); // 👈 ဒီ line လေး ပါဖို့ အရေးကြီးဆုံးပါ
 };
         let startTime = Date.now();
 const STREAK_REQUIRED_MINUTES = 15;
