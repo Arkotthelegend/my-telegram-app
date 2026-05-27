@@ -166,7 +166,35 @@
     </div>
 </div>
         </div>
+		
+	<div id="scroll-screen" class="screen">
+    
+    <div id="old-q-years" style="padding: 15px;">
+        <h2 style="text-align: center; color: var(--accent);">Old Question</h2>
+        <button class="btn" onclick="openOldYear('2024')">📅 2024 Questions</button>
+        <button class="btn" onclick="openOldYear('2025')">📅 2025 Questions (Coming Soon)</button>
+    </div>
 
+    <div id="old-q-subjects" style="display:none; padding: 15px;">
+        <h3 id="old-year-title" style="text-align: center; color: var(--accent);"></h3>
+        <div id="old-subject-btns"></div>
+        <button class="btn back-btn" onclick="backToOldYears()">နောက်သို့</button>
+    </div>
+
+    <div id="old-q-sets" style="display:none; padding: 15px;">
+        <h3 id="old-set-title" style="text-align: center; color: var(--accent);"></h3>
+        <div id="old-set-btns"></div>
+        <button class="btn back-btn" onclick="backToOldSubjects()">နောက်သို့</button>
+    </div>
+
+    <div id="old-q-types" style="display:none; padding: 15px;">
+        <h3 id="old-sub-title" style="text-align: center; color: var(--accent);"></h3>
+        <div id="old-type-btns"></div>
+        <button class="btn back-btn" onclick="backToOldSets()">နောက်သို့</button>
+    </div>
+
+</div>
+		
     <div id="middle-screen" class="screen">
     <div style="padding: 20px; padding-bottom: 100px;">
         
@@ -298,6 +326,7 @@
 
     <div class="nav">
         <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
+		<div class="nav-item" onclick="changeTab('scroll', this)">📜</div>
         <div class="nav-item" onclick="changeTab('middle', this)">⏳</div>
         <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
@@ -313,6 +342,16 @@
     }
     return array;
 }
+// ဘာသာရပ်အလိုက် ရှိမယ့် Set အရေအတွက်ကို ဒီမှာ စိတ်ကြိုက်ပြင်ပါ
+const subjectSetsConfig = {
+    'mm': 5,    // မြန်မာစာအတွက် ၅ set
+    'en': 3,    // အင်္ဂလိပ်စာအတွက် ၃ set
+    'math': 10, // သင်္ချာအတွက် ၁၀ set
+    'phy': 4,
+    'chem': 2,
+    'bio': 6,
+    'default': 2 // config ထဲမှာ မပါတဲ့ ဘာသာရပ်တွေအတွက် default ၂ set ထားမယ်
+};
 		
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
@@ -342,6 +381,154 @@
         let isAnswered = false;
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
         const userBought = paidUsers[userId] || [];
+
+// State မှတ်သားရန် Variables
+let selectedOldYear = "";
+let selectedOldSubject = null;
+let selectedOldSet = "";
+
+// 📌 [အရေးကြီး] ဝယ်ယူထားမှု စစ်ဆေးသည့် Function
+// သင့်ရဲ့ ရှိပြီးသား User Data ဒါမှမဟုတ် LocalStorage နဲ့ ချိတ်ဆက်ပါ
+function checkSubjectUnlock(subId) {
+    // subjects array ထဲမှာ ရှာပြီး locked ဖြစ်နေလား စစ်မယ်
+    const subject = subjects.find(s => s.id === subId);
+    if (subject) {
+        // locked က false ဖြစ်နေမှ (ဆိုလိုတာက ပွင့်နေမှ) true ပြန်ပေးမယ်
+        return !subject.isLocked; 
+    }
+    return false;
+}
+
+// 📌 Button နာမည် (Display) နှင့် ဖိုင်နာမည် (ID) ခွဲခြားသတ်မှတ်ခြင်း
+const oldQuestionTypes = {
+    'mm': [
+        { id: 'tf', name: 'မှား/မှန်' },
+        { id: 'blank', name: 'ကွက်လပ်ဖြည့်' },
+        { id: 'mcq', name: 'ရွေးချယ်' }
+    ],
+    'en': [
+        { id: 'initial_letter', name: 'Initial Letter' },
+        { id: 'mcq', name: 'MCQ' },
+        { id: 'grammar', name: 'Grammar' }
+    ],
+    'math': [
+        { id: '1_mark', name: '1 Mark' },
+        { id: '2_marks', name: '2 Marks' },
+        { id: '3_marks', name: '3 Marks' },
+        { id: '5_marks', name: '5 Marks' }
+    ],
+    'default': [
+        { id: 'tf', name: 'True False' },
+        { id: 'blank', name: 'Fill Blank' },
+        { id: 'mcq', name: 'MCQ' }
+    ]
+};
+
+// ၁။ ဘာသာရပ်စာရင်းပြသခြင်း (Unlock စစ်ဆေးချက်ပါဝင်သည်)
+function openOldYear(year) {
+    selectedOldYear = year;
+    document.getElementById('old-q-years').style.display = 'none';
+    document.getElementById('old-q-subjects').style.display = 'block';
+    document.getElementById('old-year-title').innerText = year + " Questions";
+    
+    const list = document.getElementById('old-subject-btns');
+    list.innerHTML = '';
+    
+    subjects.forEach(sub => {
+        // သက်ဆိုင်ရာ ဘာသာရပ်ကို ဝယ်ထားခြင်း ရှိ/မရှိ စစ်ဆေးခြင်း
+        // (မှတ်ချက် - th_id သည် သင့် Telegram Bot မှ ပေးလိုက်သော ID သို့မဟုတ် sub.id ဖြစ်နိုင်သည်)
+        const isUnlocked = checkSubjectUnlock(sub.id); 
+        
+        const b = document.createElement('button');
+        b.className = 'btn';
+        // ဝယ်မထားရင် သော့ခလောက်ပုံနဲ့ပြမယ်၊ ဝယ်ထားရင် ပုံမှန်ပြမယ်
+        b.innerText = isUnlocked ? sub.name : `🔒 ${sub.name}`;
+        
+        b.onclick = () => {
+            if (isUnlocked) {
+                // ဝယ်ထားမှသာ Set Screen သို့ ပေးဝင်မည်
+                openOldSets(sub);
+            } else {
+                // ဝယ်မထားရင် လုံးဝ ပေးမဝင်ဘဲ Alert ပြမည်
+                alert(`⚠️ Access Denied: "${sub.name}" ဘာသာရပ်ကို ဝယ်ယူထားခြင်း မရှိသေးပါ။ ရှေ့ဆက်ရန် ကျေးဇူးပြု၍ ဝယ်ယူပေးပါ။`);
+            }
+        };
+        list.appendChild(b);
+    });
+}
+
+// ၂။ Set များကို စိတ်ကြိုက်အရေအတွက်အတိုင်း ဖန်တီးခြင်း
+function openOldSets(sub) {
+    selectedOldSubject = sub;
+    document.getElementById('old-q-subjects').style.display = 'none';
+    document.getElementById('old-q-sets').style.display = 'block';
+    document.getElementById('old-set-title').innerText = `${selectedOldYear} - ${sub.name}`;
+    
+    const list = document.getElementById('old-set-btns');
+    list.innerHTML = '';
+    
+    // config ထဲက အရေအတွက်ကို ယူမယ်၊ မရှိရင် default ကို ယူမယ်
+    const setCount = subjectSetsConfig[sub.id] || subjectSetsConfig['default'];
+    
+    // သတ်မှတ်ထားတဲ့ အရေအတွက်အတိုင်း loop ပတ်ပြီး ခလုပ်တွေ ဆောက်မယ်
+    for (let i = 1; i <= setCount; i++) {
+        const b = document.createElement('button');
+        b.className = 'btn';
+        b.innerText = `Set ${i}`;
+        b.onclick = () => openOldTypes(sub, `Set ${i}`);
+        list.appendChild(b);
+    }
+}
+
+// ၃။ Set အလိုက် မေးခွန်းအမျိုးအစား (Quiz Types) ရွေးချယ်ရန်
+function openOldTypes(sub, set) {
+    selectedOldSet = set;
+    document.getElementById('old-q-sets').style.display = 'none';
+    document.getElementById('old-q-types').style.display = 'block';
+    document.getElementById('old-sub-title').innerText = `${sub.name} (${set})`;
+    
+    const list = document.getElementById('old-type-btns');
+    list.innerHTML = '';
+    
+    // ဘာသာရပ်အလိုက် သတ်မှတ်ထားသော Type ကို ယူခြင်း (မရှိပါက Default ကိုယူမည်)
+    let types = oldQuestionTypes[sub.id] || oldQuestionTypes['default'];
+
+    types.forEach(t => {
+        const b = document.createElement('button');
+        b.className = 'btn';
+        b.innerText = t.name; // Display Name ကိုသာ ပြမည် (ဥပမာ - True False)
+        
+        b.onclick = () => {
+            // "Set 1" ကို "set1" ပုံစံပြောင်းခြင်း
+            const setFormatted = set.replace(/ /g, '').toLowerCase(); 
+            // ဖိုင်နာမည် အတိအကျ တည်ဆောက်ခြင်း (e.g., old_2024_math_set1_1_mark)
+            const fileName = `old_${selectedOldYear}_${sub.id}_${setFormatted}_${t.id}`;
+            
+            console.log("Loading quiz file:", fileName); // Error ရှင်းလွယ်အောင် ထည့်ပေးထားပါတယ်
+            initQuiz(fileName); 
+            
+            // Quiz ပြီးရင် ပြန်ထွက်လာမယ့်နေရာကို 📜 Tab ဆီ ညွှန်းပေးခြင်း
+            document.getElementById('quiz-back-btn').onclick = () => { showScreen('scroll'); };
+        };
+        list.appendChild(b);
+    });
+}
+
+// ၄။ Back Buttons များအတွက် Functions
+function backToOldYears() {
+    document.getElementById('old-q-subjects').style.display = 'none';
+    document.getElementById('old-q-years').style.display = 'block';
+}
+
+function backToOldSubjects() {
+    document.getElementById('old-q-sets').style.display = 'none';
+    document.getElementById('old-q-subjects').style.display = 'block';
+}
+
+function backToOldSets() {
+    document.getElementById('old-q-types').style.display = 'none';
+    document.getElementById('old-q-sets').style.display = 'block';
+}
 
    function renderSubjects() {
     const list = document.getElementById('subject-list');
@@ -973,6 +1160,12 @@ function nextQuestion() {
             showScreen(id);
             document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('nav-active'));
             el.classList.add('nav-active');
+			if(id === 'scroll') {
+        // Tab ကို ပြန်နှိပ်ရင် Year selection ပြန်ရောက်အောင်
+        document.getElementById('old-q-years').style.display = 'block';
+        document.getElementById('old-q-subjects').style.display = 'none';
+        document.getElementById('old-q-types').style.display = 'none';
+    }
             if(id === 'home') renderSubjects();
             if(id === 'profile') renderProfileData();
         }
