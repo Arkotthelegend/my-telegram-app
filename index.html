@@ -580,15 +580,54 @@ function unlockCard(div, sub) {
                 else showMMFlashcardOptions(m);
             });
         });
-    } else if (sub.id === 'phy' || sub.id === 'chem') {
-        for(let i=1; i<=sub.chapters; i++) {
-            createBtn(`Chapter ${i}`, content, () => showPhyChemActivities(sub.id, `Chapter ${i}`));
-        }
-    } else {
-        for(let i=1; i<=sub.chapters; i++) {
-            createBtn(`Chapter ${i}`, content, () => showGeneralActivities(sub.id, `Chapter ${i}`));
-        }
-    }
+    }// သင့် Code အဟောင်းနေရာတွင် ဤ Code ဖြင့် အစားထိုးပါ
+else if (sub.id === 'mm') {
+    ['မှား/မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး', 'ခက်ဆစ်', 'အလင်္ကာ'].forEach(m => {
+        createBtn(m, content, () => {
+            if (['မှား/မှန်', 'ကွက်လပ်ဖြည့်', 'အမှန်ရွေး'].includes(m)) {
+                showMMQuizOptions(m);
+            } else if (m === 'အလင်္ကာ') {
+                // အလင်္ကာအတွက် သီးသန့် Function ကို ခေါ်မည်
+                showMMAlankarOptions(m); 
+            } else {
+                // ခက်ဆစ် အတွက် မူလ Flashcard Options ကို ခေါ်မည်
+                showMMFlashcardOptions(m); 
+            }
+        });
+    });
+}
+
+// အလင်္ကာအတွက် သီးသန့် Option များ ပြသရန် Function
+function showMMAlankarOptions(typeName) {
+    showScreen('activity');
+    document.getElementById('activity-title').innerText = typeName;
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '';
+    
+    // နောက်သို့ခလုတ်နှိပ်လျှင် မြန်မာစာ Main Menu သို့ ပြန်သွားရန်
+    document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+    // သင်တောင်းဆိုထားသော အလင်္ကာ ၄ မျိုး
+    const alankarTypes = ['ဥပမာအလင်္ကာ', 'ရူပကအလင်္ကာ', 'ဝင်္ကဝုတ္တိအလင်္ကာ', 'အတိဿယဝုတ္တိအလင်္ကာ'];
+
+    alankarTypes.forEach(t => {
+        createBtn(t, content, () => {
+            // ဖိုင်နာမည် ဥပမာ - mm_အလင်္ကာ_ဥပမာအလင်္ကာ.json
+            const fileName = `mm_${typeName}_${t}`.replace(/ /g, "_");
+            
+            // အလင်္ကာကို Flashcard ဖြင့် ပြသမည် (Quiz ပြောင်းလိုပါက initQuiz(fileName) ဟု ပြင်ပါ)
+            initFlashcards(fileName, t);
+            
+            // Flashcard မှ "ထွက်မည်/နောက်သို့" နှိပ်လျှင် အလင်္ကာ Menu သို့ ပြန်လာစေရန်
+            const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
+            if (flashExitBtn) {
+                flashExitBtn.onclick = () => { 
+                    showScreen('activity'); 
+                    showMMAlankarOptions(typeName); 
+                };
+            }
+        });
+    });
 }
 
 function loadQuestion() {
