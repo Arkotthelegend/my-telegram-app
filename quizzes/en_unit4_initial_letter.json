@@ -1,4 +1,3 @@
-
 [
   { "q": "Time does not heal e________ pain. You need to learn how to let go.", "c": "emotional", "type": "blank" },
   { "q": "People often express their e_______ nonverbally.", "c": "emotions", "type": "blank" },
@@ -39,3 +38,12 @@
   { "q": "He was h_____ enough to admit that he made a mistake.", "c": "honest", "type": "blank" },
   { "q": "Our teacher has a reputation for her honesty and i_______.", "c": "integrity", "type": "blank" },
   { "q": "We need to find a p_______ alternative to war.", "c": "peaceful", "type": "blank" },
+  { "q": "She looked as calm and s_____ as she always did even though she faced difficult situations.", "c": "serene", "type": "blank" },
+  { "q": "They said they were g_______ for the support that was given by the community.", "c": "grateful", "type": "blank" },
+  { "q": "My grandfather was a very m_____ and humble person.", "c": "modest", "type": "blank" },
+  { "q": "Take time to deliberate, but when the time for an action has arrived, stop thinking and go in.", "c": "deliberate", "type": "blank" },
+  { "q": "Staying i__________ is one of the ways to be happy in life.", "c": "intentional", "type": "blank" },
+  { "q": "We need a b_______ long term energy policy to protect natural environment.", "c": "balanced", "type": "blank" },
+  { "q": "Doing something that we enjoy can provide emotional r_______ if we feel emotional pain.", "c": "recovery", "type": "blank" },
+  { "q": "This paper can greatly c_________ to the field of education especially higher education.", "c": "contribute", "type": "blank" }
+]
