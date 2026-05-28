@@ -1074,7 +1074,7 @@ function showGeneralActivities(subId, partName) {
         if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
             tg.showAlert("မှန်ကန်ပါသည်။ ✅");
         } else {
-            tg.showAlert("မှားယွင်းပါသည်။ ❌ အဖြေမှန်မှာ: " + q.c);
+            tg.showAlert("အဖြေမှန်မှာ: " + q.c);
         }
 
         // "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ပုံစံသစ်ဖြင့် ပြသခြင်း
@@ -1126,8 +1126,11 @@ function nextQuestion() {
         currentIdx++;
         loadQuestion();
     } else {
-        // မေးခွန်းကုန်ပြီဆိုရင် finishQuiz ကိုသွားမယ်
-        finishQuiz();
+        // မေးခွန်းကုန်ပြီဆိုရင် finishQuiz ကိုမသွားတော့ဘဲ ဂုဏ်ယူကြောင်းစာ ပြမည်
+        tg.showAlert("ဂုဏ်ယူပါသည်။ မေးခွန်းများအားလုံး ဖြေဆိုပြီးပါပြီ 🎉");
+        
+        // နောက်ထပ်နှိပ်စရာ မေးခွန်းမရှိတော့တဲ့အတွက် "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ဖျောက်ထားလိုက်ပါမည်
+        document.getElementById('next-btn').style.display = 'none';
     }
 }
 
@@ -1205,13 +1208,7 @@ function renderProfileData() {
     const dynamicArea = document.getElementById('dynamic-content-area');
     dynamicArea.innerHTML = `
         <div id="level-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-            <div id="level-icon" style="font-size: 3rem; margin-bottom: 10px;">🏆</div>
-            <div id="level-name" style="font-weight: bold; color: var(--accent); font-size: 1.2rem;">Scholar Level 1</div>
-            <div id="total-points" style="font-size: 0.9rem; color: #94a3b8; margin-top: 8px;">Total XP: 0</div>
             
-            <div style="width: 100%; background: #242F3D; height: 10px; border-radius: 5px; margin-top: 15px; overflow: hidden;">
-                <div id="level-progress" style="width: 0%; height: 100%; background: var(--accent); transition: width 0.5s;"></div>
-            </div>
         </div>
         <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
             အမှားများတိုင်ကြားရန်
@@ -1299,7 +1296,7 @@ function loadGoals() {
         // ၁။ Exam Date သတ်မှတ်ရန် (ဥပမာ - ၂၀၂၇ မတ်လ ၁ ရက်)
 
 function updateCountdown() {
-    const examDate = new Date("March 1, 2027 09:00:00").getTime();
+    const examDate = new Date("March 9, 2027 09:00:00").getTime();
  // စာမေးပွဲရက် သတ်မှတ်ချက်
     const now = new Date().getTime();
     const diff = examDate - now;
@@ -1349,7 +1346,6 @@ function resetGoals() {
 window.onload = () => {
     loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
     updateCountdown(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
-	loadUserProgress();
 };
        
 		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
@@ -1371,83 +1367,10 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-function addPoints(earned) {
-    try {
-        const userId = tg.initDataUnsafe?.user?.id || 'guest';
-        const storageKey = `user_xp_${userId}`;
-        
-        let currentXP = parseInt(localStorage.getItem(storageKey)) || 0;
-        let newXP = currentXP + earned;
-        
-        localStorage.setItem(storageKey, newXP);
-        
-        // UI ကိုချက်ချင်း Update လုပ်ဖို့ (Profile screen ရှိနေရင်)
-        updateLevelUI(newXP);
-    } catch (e) {
-        console.error("Add Points Error:", e);
-    }
-}
 
-// App စဖွင့်ချိန် (သို့မဟုတ်) Profile ဖွင့်ချိန်မှာ လက်ရှိအကောင့်ရဲ့ XP ကိုပဲ ခေါ်ခြင်း
-function loadUserProgress() {
-    const userId = tg.initDataUnsafe?.user?.id || 'guest';
-    const storageKey = `user_xp_${userId}`;
+
+
     
-    let savedXP = parseInt(localStorage.getItem(storageKey)) || 0;
-    updateLevelUI(savedXP);
-}
-
-function updateLevelUI(points) {
-    const levelName = document.getElementById('level-name');
-    const totalPointsText = document.getElementById('total-points');
-    const progressBar = document.getElementById('level-progress');
-    const levelIcon = document.getElementById('level-icon');
-
-    let levelTitle = "Beginner";
-    let icon = "🌱";
-    let levelNum = 1; // Level ဂဏန်းအတွက်
-    let nextLevelPoints = 500;
-    
-    // Level သတ်မှတ်ချက်များ
-    if (points >= 5000) { 
-        levelTitle = "Legend"; icon = "👑"; levelNum = 5; nextLevelPoints = 10000; 
-    } else if (points >= 2000) { 
-        levelTitle = "Expert"; icon = "🧠"; levelNum = 4; nextLevelPoints = 5000; 
-    } else if (points >= 1000) { 
-        levelTitle = "Pro"; icon = "⚡"; levelNum = 3; nextLevelPoints = 2000; 
-    } else if (points >= 500) { 
-        levelTitle = "Amateur"; icon = "📚"; levelNum = 2; nextLevelPoints = 1000; 
-    }
-
-    if (levelName) {
-        // "Scholar Level 1" အစား နာမည်နဲ့ level ဂဏန်းတွဲပြခြင်း
-        levelName.innerText = `${levelTitle} (Level ${levelNum})`;
-        levelIcon.innerText = icon;
-        totalPointsText.innerText = `Total XP: ${points}`;
-        
-        // Progress Bar တွက်ချက်ခြင်း (လက်ရှိ level ထဲမှာ ဘယ်လောက်ခရီးပေါက်လဲပြရန်)
-        const progress = (points / nextLevelPoints) * 100;
-        progressBar.style.width = `${Math.min(progress, 100)}%`;
-    }
-}
-
-function finishQuiz() {
-    let totalEarned = 0;
-    // မေးခွန်းအရေအတွက်ပေါ်မူတည်ပြီး XP ပေးခြင်း
-    if (currentSubject.id === 'math') {
-        totalEarned = currentQuestions.length * 8;
-    } else if (currentQuestions[0]?.type === 'blank') {
-        totalEarned = currentQuestions.length * 6;
-    } else {
-        totalEarned = currentQuestions.length * 2;
-    }
-
-    addPoints(totalEarned); // Point သိမ်းဆည်းရန် ခေါ်ခြင်း
-    tg.showAlert(`သင်ခန်းစာပြီးဆုံးလို့ +${totalEarned} XP ရရှိပါတယ် 🎉`);
-    
-    // Quiz screen မှ ထွက်ရန်
-    document.getElementById('quiz-back-btn').click();
-}
       
     </script>
 </body>
