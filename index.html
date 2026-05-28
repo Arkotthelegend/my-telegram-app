@@ -176,28 +176,28 @@
 	<div id="scroll-screen" class="screen">
     
     <div id="old-questions-main" style="padding: 15px;">
-    <h2 style="text-align: center;">Old Questions</h2>
-    <button class="btn" onclick="showOldSubjects('2024')">📅 2024</button>
-    <button class="btn" onclick="showOldSubjects('2025')">📅 2025</button>
-</div>
+        <h2 style="text-align: center;">Old Questions</h2>
+        <button class="btn" onclick="showOldSubjects('2024')">📅 2024</button>
+        <button class="btn" onclick="showOldSubjects('2025')">📅 2025</button>
+    </div>
 
-<div id="old-subjects-screen" style="display:none; padding: 15px;">
-    <h3 id="selected-year-title" style="text-align: center;"></h3>
-    <div id="old-subject-list"></div>
-    <button class="btn back-btn" onclick="backToYears()">နောက်သို့</button>
-</div>
+    <div id="old-subjects-screen" style="display:none; padding: 15px;">
+        <h3 id="selected-year-title" style="text-align: center;"></h3>
+        <div id="old-subject-list"></div>
+        <button class="btn back-btn" onclick="backToOldYears()">နောက်သို့</button> 
+    </div>
 
-<div id="old-sets-screen" style="display:none; padding: 15px;">
-    <h3 id="old-set-title" style="text-align: center;"></h3>
-    <div id="old-set-list"></div>
-    <button class="btn back-btn" onclick="backToOldSubjectsFromSets()">နောက်သို့</button>
-</div>
+    <div id="old-sets-screen" style="display:none; padding: 15px;">
+        <h3 id="old-set-title" style="text-align: center;"></h3>
+        <div id="old-set-list"></div>
+        <button class="btn back-btn" onclick="backToOldSubjects()">နောက်သို့</button>
+    </div>
 
-<div id="old-types-screen" style="display:none; padding: 15px;">
-    <h3 id="selected-sub-title" style="text-align: center;"></h3>
-    <div id="old-type-list"></div>
-    <button class="btn back-btn" onclick="backToOldSets()">နောက်သို့</button>
-</div>
+    <div id="old-types-screen" style="display:none; padding: 15px;">
+        <h3 id="selected-sub-title" style="text-align: center;"></h3>
+        <div id="old-type-list"></div>
+        <button class="btn back-btn" onclick="backToOldSets()">နောက်သို့</button>
+    </div>
 
 </div>
 		
@@ -483,19 +483,20 @@ function showOldTypes(sub, setName) {
 }
 
 // ၄။ Back Buttons များအတွက် Functions
+// ၄။ Back Buttons များအတွက် Functions
 function backToOldYears() {
-    document.getElementById('old-q-subjects').style.display = 'none';
-    document.getElementById('old-q-years').style.display = 'block';
+    document.getElementById('old-subjects-screen').style.display = 'none';
+    document.getElementById('old-questions-main').style.display = 'block';
 }
 
 function backToOldSubjects() {
-    document.getElementById('old-q-sets').style.display = 'none';
-    document.getElementById('old-q-subjects').style.display = 'block';
+    document.getElementById('old-sets-screen').style.display = 'none';
+    document.getElementById('old-subjects-screen').style.display = 'block';
 }
 
 function backToOldSets() {
-    document.getElementById('old-q-types').style.display = 'none';
-    document.getElementById('old-q-sets').style.display = 'block';
+    document.getElementById('old-types-screen').style.display = 'none';
+    document.getElementById('old-sets-screen').style.display = 'block';
 }
 
    function renderSubjects() {
