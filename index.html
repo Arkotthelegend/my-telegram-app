@@ -710,7 +710,17 @@ btn.onclick = () => {
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ["Tense", "Passive Voice", "Direct Indirect"].forEach(t => createBtn(t, content, () => tg.showAlert(t + " Coming Soon...")));
+            ["When → By the time", "Using Participle (When → V-ing)", "After", "Without", "But - Although - In spite of", 
+    "Emphasis", "No sooner ... than", "Inversion", "Nouns in Apposition", "Double Negative Pattern", 
+    "If → Unless (Unless = if + not)", "Paired Conjunctions", "The Parallel Structure", "Degrees of comparison", 
+    "too ... to / (not) enough to / so ... that / such ... that", "Active → Passive", "Passive → Active", 
+    "People → No one", "Reported Speech", "Indirect → Direct Speech", "no ⇌ not any", "Reason Conjunctions", 
+    "Relative Pronouns", "It takes / It took", "'So' and 'Neither'", "as if / as though", "No matter", 
+    "cause and effect", "Linking Phrases for Purpose (to / in order to / so as to / so that / in order that)", 
+    "Introductory Phrases", "Relative Pronouns and Relative Adverbs", "Relative Clauses", "Participle Phrases", 
+    "Adjectives with Prepositions", "Subordinating Conjunctions in Adverbial Clauses", "Conditionals (If-Clauses)", 
+    "Verbs followed by a noun group and a bare infinitive", "Verbs followed by a noun group and a to-infinitive", 
+    "can, should & must", "used to / be used to / get used to"].forEach(t => createBtn(t, content, () => tg.showAlert(t + " Coming Soon...")));
         }
 
        function showENPoemOptions() {
