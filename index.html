@@ -419,33 +419,41 @@ const subjectSetsConfig = {
 let selectedYear = "";
 let selectedOldSub = null;
 
-function showOldQuestions(year) {
+function showOldSubjects(year) {
+    selectedYear = year; // ရွေးလိုက်တဲ့ ခုနှစ်ကို မှတ်ထားရန်
+    
+    // ၁။ Screen အကူးအပြောင်း လုပ်ခြင်း
+    document.getElementById('old-questions-main').style.display = 'none';
+    document.getElementById('old-subjects-screen').style.display = 'block';
+    document.getElementById('selected-year-title').innerText = year + " Questions";
+    
     const list = document.getElementById('old-subject-list');
     list.innerHTML = '';
     
     subjects.forEach(sub => {
         const isSpecial = specialUsers.includes(userId);
         
-        // ဒီနေရာလေး ပြောင်းသွားတာပါ (အရင်က .includes() နေရာမှာ checkAccess ကို သုံးလိုက်တာပါ)
         let isPaid = checkAccess(sub.id); 
         
+        // Special User အတွက် စစ်ဆေးခြင်း
         if (isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(sub.id) || sub.id === 'bio' || sub.id === 'eco')) {
             isPaid = true;
         }
 
+        // ၂။ ဘာသာရပ်ကတ်လေးများ ဖန်တီးခြင်း
         const card = document.createElement('div');
         card.className = `subject-card ${isPaid ? '' : 'locked'}`;
         card.innerHTML = `
-            <h3>${sub.name}</h3>
-            ${isPaid ? '' : '<div class="lock-icon">🔒</div>'}
+            <span>${sub.name}</span>
+            ${isPaid ? '<span>➔</span>' : '<span class="lock-icon">🔒</span>'}
         `;
         
+        // ၃။ နှိပ်လိုက်ရင် အလုပ်လုပ်မည့် စနစ်
         if (isPaid) {
             card.onclick = () => {
                 currentSubject = sub;
                 isAnswered = false;
-                // Old questions data လှမ်းယူမည့် logic (ဥပမာ- json file မှ)
-                tg.showAlert(`${year} ${sub.name} မေးခွန်းဟောင်းများ မကြာမီ လာမည်!`);
+                showOldSets(sub); // သော့ပွင့်နေရင် Set ရွေးတဲ့ မျက်နှာပြင်ကို ဆက်သွားမည်
             };
         } else {
             card.onclick = () => {
