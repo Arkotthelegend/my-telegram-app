@@ -538,22 +538,31 @@ function backToOldSets() {
     document.getElementById('old-sets-screen').style.display = 'block';
 }
 
-// သက်တမ်းကုန်ဆုံးမှု ရှိ/မရှိ စစ်ဆေးပေးမည့် Function
 function checkAccess(subId) {
-    // ယနေ့ ရက်စွဲကို ယူမည် (ဥပမာ - "2026-05-29")
-    const today = new Date().toISOString().split('T')[0]; 
+    // ၁။ ဒီနေ့ ရက်စွဲကို အချိန် (Time) မပါဘဲ ယူမည်
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
 
-    // 'all' (ဘာသာစုံ) ဝယ်ထားပြီး သက်တမ်းမကုန်သေးရင် ခွင့်ပြုမည်
-    if (userBought['all'] && userBought['all'] >= today) {
-        return true;
+    // ၂။ ရက်စွဲ စစ်ဆေးမည့် အတွင်းပိုင်း Function
+    function isValid(expiryStr) {
+        if (!expiryStr) return false;
+        
+        // စာသားကို Date Object အဖြစ် ပြောင်းမည်
+        const expiryDate = new Date(expiryStr);
+        
+        // အကယ်၍ ရက်စွဲ မဟုတ်ခဲ့လျှင် (ဥပမာ- စာသားအမှား ဖြစ်နေလျှင်) False ပြန်မည်
+        if (isNaN(expiryDate.getTime())) return false;
+        
+        expiryDate.setHours(0, 0, 0, 0);
+        
+        // Expire Date က ဒီနေ့ထက် ကြီးရင် (သို့) ညီရင် True (ပွင့်မည်)
+        return expiryDate >= today;
     }
 
-    // သက်ဆိုင်ရာ ဘာသာရပ်ကို ဝယ်ထားပြီး သက်တမ်းမကုန်သေးရင် ခွင့်ပြုမည်
-    if (userBought[subId] && userBought[subId] >= today) {
-        return true;
-    }
+    // ၃။ 'all' သို့မဟုတ် သက်ဆိုင်ရာ 'subId' ကို စစ်ဆေးခြင်း
+    if (isValid(userBought['all'])) return true;
+    if (isValid(userBought[subId])) return true;
 
-    // သက်တမ်းကုန်သွားလျှင် (သို့) ဝယ်မထားလျှင် False ပြန်ပေးမည်
     return false;
 }
 
