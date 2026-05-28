@@ -1121,17 +1121,22 @@ function updateFlashUI() {
         }
 
         // --- General Subjects ---
+// --- General Subjects ---
 function showGeneralActivities(subId, partName) {
     showScreen('activity');
     document.getElementById('activity-title').innerText = partName;
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
 
-    // --- Back Button Logic ပြင်ဆင်ခြင်း ---
+    // --- Back Button Logic ပြင်ဆင်ခြင်း (Error ရှင်းလင်းပြီး) ---
     document.getElementById('activity-back-btn').onclick = () => {
-        // User က ဝယ်ထားတဲ့သူဆိုရင် မူလ Subject Menu ကိုသွားမယ်၊ Trial ကနေဝင်တာဆိုရင် Trial Menu ကိုပြန်သွားမယ်
-        const isPaid = userBought.includes('all') || userBought.includes(subId);
-        if (isPaid) {
+        const userId = tg.initDataUnsafe?.user?.id || 0;
+        const specialUsers = [7273479209]; 
+        const isSpecial = specialUsers.includes(userId);
+        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
+
+        // .includes အဟောင်းနေရာတွင် checkAccess အသစ်ဖြင့် အစားထိုးလိုက်ပါသည်
+        if (checkAccess(subId) || isSpecialSubject) {
             openSubjectMenu(currentSubject);
         } else {
             openTrialMenu();
