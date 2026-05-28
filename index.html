@@ -419,36 +419,40 @@ const subjectSetsConfig = {
 let selectedYear = "";
 let selectedOldSub = null;
 
-// ၁။ ဘာသာရပ် ၇ ခုကို ပြသခြင်း (Lock စနစ်ပါဝင်သည်)
-function showOldSubjects(year) {
-    selectedYear = year;
-    // Screen များ Switch လုပ်ခြင်း
-    document.getElementById('old-questions-main').style.display = 'none';
-    document.getElementById('old-subjects-screen').style.display = 'block';
-    document.getElementById('selected-year-title').innerText = year + " Questions";
-    
+function showOldQuestions(year) {
     const list = document.getElementById('old-subject-list');
     list.innerHTML = '';
     
     subjects.forEach(sub => {
-        // Home tab က logic အတိုင်း ဝယ်ယူထားမှု ရှိ/မရှိ စစ်ဆေးခြင်း
-        const userIdNum = parseInt(userId);
-        const isSpecial = specialUsers.includes(userIdNum);
-        const isPaid = userBought.includes('all') || userBought.includes(sub.id) || isSpecial;
-
-        const b = document.createElement('button');
-        // ဝယ်မထားရင် 'locked' class ထည့်ပြီး သော့ပုံစံပြမည်
-        b.className = `btn ${isPaid ? '' : 'locked'}`;
-        b.innerHTML = isPaid ? sub.name : `🔒 ${sub.name}`;
+        const isSpecial = specialUsers.includes(userId);
         
-        b.onclick = () => {
-            if (isPaid) {
-                showOldSets(sub); // ဝယ်ထားမှ Set screen သို့ သွားမည်
-            } else {
-                tg.showAlert(`⚠️ "${sub.name}" ကို ဝယ်ယူထားခြင်း မရှိသေးပါ။ Old Questions များကြည့်ရှုရန် ဝယ်ယူထားရန် လိုအပ်ပါသည်။`);
-            }
-        };
-        list.appendChild(b);
+        // ဒီနေရာလေး ပြောင်းသွားတာပါ (အရင်က .includes() နေရာမှာ checkAccess ကို သုံးလိုက်တာပါ)
+        let isPaid = checkAccess(sub.id); 
+        
+        if (isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(sub.id) || sub.id === 'bio' || sub.id === 'eco')) {
+            isPaid = true;
+        }
+
+        const card = document.createElement('div');
+        card.className = `subject-card ${isPaid ? '' : 'locked'}`;
+        card.innerHTML = `
+            <h3>${sub.name}</h3>
+            ${isPaid ? '' : '<div class="lock-icon">🔒</div>'}
+        `;
+        
+        if (isPaid) {
+            card.onclick = () => {
+                currentSubject = sub;
+                isAnswered = false;
+                // Old questions data လှမ်းယူမည့် logic (ဥပမာ- json file မှ)
+                tg.showAlert(`${year} ${sub.name} မေးခွန်းဟောင်းများ မကြာမီ လာမည်!`);
+            };
+        } else {
+            card.onclick = () => {
+                tg.showAlert("ဒီဘာသာရပ်ကို ဝယ်ယူထားခြင်း မရှိသေးပါ။ Unlock လုပ်ရန် ဆက်သွယ်ပါ။");
+            };
+        }
+        list.appendChild(card);
     });
 }
 
