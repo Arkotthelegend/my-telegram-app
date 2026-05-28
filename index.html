@@ -57,7 +57,7 @@
         .nav-active { opacity: 1; color: var(--accent); transform: scale(1.1); }
         
         .quiz-input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--accent); background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; font-size: 1rem; outline: none; }
-        .poem-content { background: var(--card); padding: 10px; border-radius: 15px; line-height: 1.8; white-space: pre-line; text-align: center; }
+        .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1.8; white-space: pre-line; text-align: center; }
           /* Flashcard အတွင်းစာသားများ ရှင်းလင်းစေရန် */
 .flash-face {
     display: flex;
@@ -361,12 +361,21 @@ const subjectSetsConfig = {
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-        const paidUsers = { 
-            "8432363664": ["all"],
-            "5593040432": ["all"],
-            "6912601908": ["phy"],
-            "1625758870": ["all"],
-        };
+      let paidUsers = {}; // အရင်ရှိပြီးသား စာရင်းဟောင်းကို ဖျက်လိုက်ပါ
+	  
+	  async function loadPaidUsers() {
+    const sheetURL = "https://script.google.com/macros/s/AKfycbztgxBY5ZycaEArInc1m07JJBlk2w5tHZindLhAKZltVZqDmV2gzLQBaQXeMLSQzop3/exec";
+    try {
+        const response = await fetch(sheetURL);
+        paidUsers = await response.json();
+        console.log("Database loaded:", paidUsers);
+        
+        // Data ရလာတာနဲ့ Home Screen ကို တစ်ခါတည်း Refresh လုပ်ပေးမည်
+        if (currentTab === 'home') renderSubjects();
+    } catch (e) {
+        console.error("Database error:", e);
+    }
+}
 
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ' },
@@ -1483,6 +1492,7 @@ window.onload = () => {
     loadGoals(); // ဒီ function ကနေတစ်ဆင့် displayDailyQuote ကို ခေါ်သွားမှာပါ
     updateCountdown(); // Profile tab မဟုတ်လည်း Streak UI ပေါ်နေစေရန်
 	updateStreak();
+	loadPaidUsers();
 };
        
 		// နေ့စဉ် Quote ပြောင်းလဲရန် Logic
