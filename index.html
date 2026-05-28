@@ -713,18 +713,147 @@ btn.onclick = () => {
             ["Tense", "Passive Voice", "Direct Indirect"].forEach(t => createBtn(t, content, () => tg.showAlert(t + " Coming Soon...")));
         }
 
-        function showENPoemOptions() {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = "Poems";
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ["Poem 1", "Poem 2", "Poem 3", "Poem 4"].forEach(p => createBtn(p, content, () => {
-                showScreen('poem');
-                document.getElementById('poem-title').innerText = p;
-                document.getElementById('poem-body').innerText = "ကဗျာစာသားများကို ဤနေရာတွင် ဖတ်ရှုနိုင်ပါသည်။";
-            }));
-        }
+       function showENPoemOptions() {
+    showScreen('activity');
+    document.getElementById('activity-title').innerText = "Poems";
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '';
+    document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+    // ကဗျာ (၄) ပုဒ်၏ စာသားအပြည့်အစုံ
+    const poemsData = {
+        "The Library": `
+            <div style="display: flex; justify-content: center;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
+                    <b>The Library</b>
+                    <i>by Barbara A. Huff</i>
+
+                    It looks like any building
+     When you pass it on the street,
+Made of stone and glass and marble,
+     Made of iron and concrete.
+ 
+But once inside you can ride
+     A camel or a train,
+Visit Rome, Siam, or Nome,
+     Feel a hurricane,
+Meet a king, learn to sing,
+     How to bake a pie,
+Go to sea, plant a tree,
+     Find how airplanes fly,
+Train a horse, and of course
+     Have all the dogs you’d like,
+See the moon, a sandy dune,
+     Or catch a whopping pike.
+Everything that books can bring
+     You’ll find inside these walls.
+A world is there for you to share
+     When adventure calls.
+ 
+You cannot tell its magic
+     By the way the building looks,
+But there’s wonderment within it,
+     The wonderment of books.
+                </div>
+            </div>`,
+            
+        "The Quiet Life": `
+            <div style="display: flex; justify-content: center;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
+                    <b>The Quiet Life (Ode on Solitude)</b>
+                    <i>by Alexander Pope</i>
+
+                    Happy the man, whose wish and care
+                    A few paternal acres bound,
+                    Content to breathe his native air,
+                    In his own ground.
+
+                    Whose herds with milk, whose fields with bread,
+                    Whose flocks supply him with attire,
+                    Whose trees in summer yield him shade,
+                    In winter fire.
+
+                    Blest, who can unconcernedly find
+                    Hours, days, and years slide soft away,
+                    In health of body, peace of mind,
+                    Quiet by day,
+
+                    Sound sleep by night; study and ease,
+                    Together mixed; sweet recreation;
+                    And innocence, which most does please,
+                    With meditation.
+
+                    Thus let me live, unseen, unknown;
+                    Thus unlamented let me die;
+                    Steal from the world, and not a stone
+                    Tell where I lie.
+                </div>
+            </div>`,
+            
+        "The Road Not Taken": `
+            <div style="display: flex; justify-content: center;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
+                    <b>The Road Not Taken</b>
+                    <i>by Robert Frost</i>
+
+                    Two roads diverged in a yellow wood,
+                    And sorry I could not travel both
+                    And be one traveler, long I stood
+                    And looked down one as far as I could
+                    To where it bent in the undergrowth;
+
+                    Then took the other, as just as fair,
+                    And having perhaps the better claim,
+                    Because it was grassy and wanted wear;
+                    Though as for that the passing there
+                    Had worn them really about the same,
+
+                    And both that morning equally lay
+                    In leaves no step had trodden black.
+                    Oh, I kept the first for another day!
+                    Yet knowing how way leads on to way,
+                    I doubted if I should ever come back.
+
+                    I shall be telling this with a sigh
+                    Somewhere ages and ages hence:
+                    Two roads diverged in a wood, and I—
+                    I took the one less traveled by,
+                    And that has made all the difference.
+                </div>
+            </div>`,
+            
+        "Windy Nights": `
+            <div style="display: flex; justify-content: center;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
+                    <b>Windy Nights</b>
+                    <i>by Robert Louis Stevenson</i>
+
+                    Whenever the moon and stars are set,
+                    Whenever the wind is high,
+                    All night long in the dark and wet,
+                    A man goes riding by.
+                    Late in the night when the fires are out,
+                    Why does he gallop and gallop about?
+
+                    Whenever the trees are crying aloud,
+                    And ships are tossed at sea,
+                    By, on the highway, low and loud,
+                    By at the gallop goes he.
+                    By at the gallop he goes, and then
+                    By he comes back at the gallop again.
+                </div>
+            </div>`
+    };
+
+    // ကဗျာခေါင်းစဉ်များဖြင့် ခလုတ်များ ဖန်တီးခြင်း
+    ["The Library", "The Quiet Life", "The Road Not Taken", "Windy Nights"].forEach(p => createBtn(p, content, () => {
+        showScreen('poem');
+        document.getElementById('poem-title').innerText = p;
+        
+        // poemsData ထဲမှ ကဗျာစာသားများကို ယူ၍ ပြသခြင်း
+        document.getElementById('poem-body').innerHTML = poemsData[p] || "<div style='text-align:center;'>ကဗျာစာသား မရှိသေးပါ။</div>";
+    }));
+}
 
         // --- Myanmar Specific ---
         function showMMQuizOptions(typeName) {
