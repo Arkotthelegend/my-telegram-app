@@ -361,19 +361,30 @@ const subjectSetsConfig = {
         const tg = window.Telegram.WebApp;
         tg.ready(); tg.expand();
 
-      let paidUsers = {}; // အရင်ရှိပြီးသား စာရင်းဟောင်းကို ဖျက်လိုက်ပါ
-	  
-	  async function loadPaidUsers() {
-    const sheetURL = "https://script.google.com/macros/s/AKfycbztgxBY5ZycaEArInc1m07JJBlk2w5tHZindLhAKZltVZqDmV2gzLQBaQXeMLSQzop3/exec";
+      // အပေါ်ပိုင်း कुठंတစ်နေရာမှာ ကြေညာထားရန်
+let paidUsers = {}; 
+let userBought = []; // လက်ရှိ user ဝယ်ထားတဲ့ စာရင်း
+
+async function loadPaidUsers() {
+    const sheetURL = "https://script.google.com/macros/s/AKfycbztgxBY5ZycaEArInc1m07JJBlk2w5tHZindLhAKZltVZqDmV2gzLQBaQXeMLSQzop3/exec"; // ဒီနေရာမှာ သင့် Link ထည့်ပါ
     try {
         const response = await fetch(sheetURL);
         paidUsers = await response.json();
-        console.log("Database loaded:", paidUsers);
         
-        // Data ရလာတာနဲ့ Home Screen ကို တစ်ခါတည်း Refresh လုပ်ပေးမည်
-        if (currentTab === 'home') renderSubjects();
+        // ၁။ လက်ရှိ ဝင်သုံးနေသူရဲ့ Telegram ID ကို ဆွဲထုတ်မယ် (String အနေနဲ့ ပြောင်းမယ်)
+        const userId = tg.initDataUnsafe?.user?.id?.toString() || "0";
+        
+        // ၂။ Sheet ထဲက Data နဲ့ လက်ရှိ ID ကို တိုက်စစ်ပြီး userBought ထဲ ထည့်မယ်
+        // (တကယ်လို့ ဝယ်မထားရင် အလွတ် [] လို့ပဲ သတ်မှတ်မယ်)
+        userBought = paidUsers[userId] || [];
+        
+        // ၃။ Data ဝင်သွားပြီဖြစ်တဲ့အတွက် Subject တွေကို ပြန်ဆွဲခိုင်းမယ် (သော့ပွင့်သွားပါပြီ)
+        renderSubjects(); 
+        
     } catch (e) {
         console.error("Database error:", e);
+        // Error တက်ရင် သိသာအောင် Alert ပြပေးထားနိုင်ပါတယ်
+        // tg.showAlert("Database ချိတ်ဆက်မှု အမှားအယွင်းရှိပါသည်။");
     }
 }
 
