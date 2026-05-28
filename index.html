@@ -741,17 +741,45 @@ btn.onclick = () => {
             });
         }
 
-        function showMMFlashcardOptions(typeName) {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = typeName;
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            
-            createBtn("စကားပြေ", content, () => showMMSubTopics(typeName, "စကားပြေ"));
-            createBtn("ကဗျာ", content, () => showMMSubTopics(typeName, "ကဗျာ"));
-            createBtn("ရေသည်", content, () => tg.showAlert("ရေသည်ပြဇာတ် မကြာမီလာမည်..."));
-        }
+       function showMMFlashcardOptions(type) {
+    showScreen('activity-screen');
+    document.getElementById('activity-title').innerText = type;
+    const list = document.getElementById('activity-list');
+    list.innerHTML = '';
+
+    if (type === 'အလင်္ကာ') {
+        // သင်အလိုရှိသော အလင်္ကာ အမျိုးအစားများ
+        const alinkaTypes = [
+            'ဥပမာအလင်္ကာ',
+            'ရူပကအလင်္ကာ',
+            'ဝင်္ကဝုတ္တိအလင်္ကာ',
+            'အတိဿယဝုတ္တိအလင်္ကာ',
+            'မြည်သံစွဲအလင်္ကာ'
+        ];
+
+        alinkaTypes.forEach(name => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = name;
+            btn.onclick = () => {
+                // ဒီနေရာမှာ နှိပ်လိုက်ရင် သက်ဆိုင်ရာ Flashcard တွေကို ပြပေးမယ့် function ခေါ်လို့ရပါတယ်
+                // လောလောဆယ် Alert အနေနဲ့ပဲ ပြထားပေးပါတယ်
+                alert(name + " ဆိုင်ရာ မေးခွန်းများ မကြာမီလာမည်...");
+            };
+            list.appendChild(btn);
+        });
+    } else {
+        // တခြား မြန်မာစာ ခေါင်းစဉ်များ (သဒ္ဒါ၊ ဝေါဟာရ စသည်ဖြင့်) အတွက် logic
+        const otherOptions = ['စကားပြေ', 'ကဗျာ' , 'ရေသည်'];
+        otherOptions.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.className = 'btn';
+            btn.innerText = opt;
+            btn.onclick = () => renderMMFlashcards(type, opt);
+            list.appendChild(btn);
+        });
+    }
+}
 
         function showMMSubTopics(typeName, category) {
             showScreen('activity');
