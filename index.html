@@ -362,12 +362,12 @@ const subjectSetsConfig = {
         tg.ready(); tg.expand();
 
       let paidUsers = {}; 
-        let userBought = []; // const အစား let ပြောင်းပေးရမည်
+        let userBought = {}; // const အစား let ပြောင်းပေးရမည်
 
         const userId = tg.initDataUnsafe?.user?.id?.toString() || "Guest";
 
         async function loadPaidUsers() {
-            const sheetURL = "https://script.google.com/macros/s/AKfycbztgxBY5ZycaEArInc1m07JJBlk2w5tHZindLhAKZltVZqDmV2gzLQBaQXeMLSQzop3/exec";
+            const sheetURL = "https://script.google.com/macros/s/AKfycbywFT-elmwvQOLoHS0RYZUdYl5WbdgB1q5pSjoJ5Krf_WvZLtyPRXhyPdSEr8vQEPFL/exec";
             
             // ၁။ ဖုန်းထဲမှာ အရင်က သိမ်းထားဖူးတဲ့ စာရင်းရှိလား အရင်စစ်မယ်
             const cachedData = localStorage.getItem('cached_paid_users');
@@ -526,6 +526,26 @@ function backToOldSets() {
     document.getElementById('old-sets-screen').style.display = 'block';
 }
 
+// သက်တမ်းကုန်ဆုံးမှု ရှိ/မရှိ စစ်ဆေးပေးမည့် Function
+function checkAccess(subId) {
+    // ယနေ့ ရက်စွဲကို ယူမည် (ဥပမာ - "2026-05-29")
+    const today = new Date().toISOString().split('T')[0]; 
+
+    // 'all' (ဘာသာစုံ) ဝယ်ထားပြီး သက်တမ်းမကုန်သေးရင် ခွင့်ပြုမည်
+    if (userBought['all'] && userBought['all'] >= today) {
+        return true;
+    }
+
+    // သက်ဆိုင်ရာ ဘာသာရပ်ကို ဝယ်ထားပြီး သက်တမ်းမကုန်သေးရင် ခွင့်ပြုမည်
+    if (userBought[subId] && userBought[subId] >= today) {
+        return true;
+    }
+
+    // သက်တမ်းကုန်သွားလျှင် (သို့) ဝယ်မထားလျှင် False ပြန်ပေးမည်
+    return false;
+}
+
+
    function renderSubjects() {
     const list = document.getElementById('subject-list');
     list.innerHTML = '';
@@ -533,7 +553,7 @@ function backToOldSets() {
     const isSpecial = specialUsers.includes(userId);
 
     subjects.forEach(sub => {
-        let isPaid = userBought.includes('all') || userBought.includes(sub.id);
+        let isPaid = checkAccess(sub.id);
 
         // Special User ဆိုလျှင် ၆ ဘာသာ ပွင့်ပေးမည်
         if (isSpecial) {
@@ -568,7 +588,7 @@ function unlockCard(div, sub) {
     const isSpecial = specialUsers.includes(userId);
 
     // ပုံမှန်ဝယ်ထားသူလား (သို့မဟုတ်) Special User ဖြစ်ပြီး ၆ ဘာသာထဲက တစ်ခုလား စစ်ဆေးခြင်း
-    const isPaidInCode = userBought.includes('all') || userBought.includes(sub.id);
+    const isPaidInCode = checkAccess(sub.id);
     const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(sub.id) || sub.id === 'bio' || sub.id === 'eco');
     
     const canAccess = isPaidInCode || isSpecialSubject;
@@ -1353,7 +1373,7 @@ function renderProfileData() {
     container.innerHTML = ''; 
     
     const bought = subjects.filter(s => {
-        const isPaidInCode = userBought.includes('all') || userBought.includes(s.id);
+        const isPaidInCode = checkAccess(s.id);
         const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(s.id) || s.id === 'bio' || s.id === 'eco');
         return isPaidInCode || isSpecialSubject;
     });
