@@ -249,7 +249,6 @@
     ⏳ ခန့်မှန်းခြေ စာမေးပွဲဖြေဆိုရန် ကျန်ရှိချိန်
 </div>
 <div id="exam-countdown"></div>
-        <div id="exam-countdown"></div>
     </div>
 </div>
 
@@ -734,7 +733,7 @@ btn.onclick = () => {
     const poemsData = {
         "The Library": `
             <div style="display: flex; justify-content: center;">
-                <div style="white-space: pre-line; text-align: left; line-height: 0;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
                    It looks like any building
      When you pass it on the street,
 Made of stone and glass and marble,
@@ -768,7 +767,7 @@ But there’s wonderment within it,
             
         "The Quiet Life": `
             <div style="display: flex; justify-content: center;">
-                <div style="white-space: pre-line; text-align: left; line-height: 0;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
                    Happy the man, whose wish and care
                     A few paternal acres bound,
                     Content to breathe his native air,
@@ -800,7 +799,7 @@ But there’s wonderment within it,
             
         "The Road Not Taken": `
             <div style="display: flex; justify-content: center;">
-                <div style="white-space: pre-line; text-align: left; line-height: 0;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
                    Two roads diverged in a yellow wood,
                     And sorry I could not travel both
                     And be one traveler, long I stood
@@ -831,7 +830,7 @@ But there’s wonderment within it,
             
         "Windy Nights": `
             <div style="display: flex; justify-content: center;">
-                <div style="white-space: pre-line; text-align: left; line-height: 0;">
+                <div style="white-space: pre-line; text-align: left; line-height: 2;">
                   Whenever the moon and stars are set,
                     Whenever the wind is high,
                     All night long in the dark and wet,
@@ -1306,6 +1305,23 @@ function renderProfileData() {
     const userName = tg.initDataUnsafe?.user?.first_name || "Scholar";
     const isSpecial = specialUsers.includes(userId);
     
+	const currentStreak = updateStreak();
+
+    // UI မှာ ပြမယ်
+    const streakCountEl = document.getElementById('streak-count');
+    const streakMsgEl = document.getElementById('streak-message');
+    
+    if(streakCountEl) {
+        streakCountEl.innerText = `${currentStreak} Days`;
+        
+        // Streak အရေအတွက်ပေါ်မူတည်ပြီး စာသားပြောင်းပေးလို့ရတယ်
+        if (currentStreak > 1) {
+            streakMsgEl.innerText = "အရမ်းတော်တယ်! ဆက်ကြိုးစားထားပါ။";
+        } else {
+            streakMsgEl.innerText = "နေ့တိုင်းစာလုပ်ပြီး မီးတောက်လေးကို ထိန်းထားပါ!";
+        }
+    }
+	
     // UI Elements များကို သတ်မှတ်ခြင်း
     document.getElementById('user-name').innerText = userName;
     document.getElementById('user-id-text').innerText = "ID: " + userId;
@@ -1343,7 +1359,10 @@ function renderProfileData() {
     const dynamicArea = document.getElementById('dynamic-content-area');
     dynamicArea.innerHTML = `
         <div id="level-container" class="${isSpecial ? 'premium-card' : ''}" style="background: var(--card); padding: 20px; border-radius: 15px; margin-top: 20px; text-align: center; border: 1px solid rgba(56, 189, 248, 0.2);">
-            
+            <div id="streak-icon" style="font-size: 50px; margin-bottom: 10px;">🔥</div>
+    <div style="font-size: 18px; color: var(--accent); font-weight: bold;">Daily Streak</div>
+    <div id="streak-count" style="font-size: 32px; font-weight: bold; margin: 10px 0;">0 Days</div>
+    <p id="streak-message" style="font-size: 14px; color: #94a3b8; margin: 0;">နေ့တိုင်းစာလုပ်ပြီး မီးတောက်လေးကို ထိန်းထားပါ!</p>
         </div>
         <button onclick="contactDeveloper()" style="width: 100%; background: #242F3D; color: #38BDF8; border: 1px solid #38BDF8; padding: 14px; border-radius: 12px; margin-top: 20px; font-weight: bold;">
             အမှားများတိုင်ကြားရန်
@@ -1502,10 +1521,37 @@ function contactDeveloper() {
     window.open(`https://t.me/${devUsername}?text=${message}`, '_blank');
 }
 
-
-
-
+function updateStreak() {
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
     
+    // သိမ်းထားတဲ့ အချက်အလက်တွေကို ဆွဲထုတ်မယ်
+    let lastLogin = localStorage.getItem('last_login_date'); // ဥပမာ - 1716892800000
+    let streak = parseInt(localStorage.getItem('streak_count')) || 0;
+
+    if (lastLogin) {
+        lastLogin = parseInt(lastLogin);
+        const diffInDays = (today - lastLogin) / (1000 * 60 * 60 * 24);
+
+        if (diffInDays === 1) {
+            // မနေ့ကဝင်ခဲ့တယ်၊ Streak ၁ တိုးမယ်
+            streak++;
+        } else if (diffInDays > 1) {
+            // တစ်ရက်ကျော်သွားပြီ၊ Streak ပြန်စမယ်
+            streak = 1;
+        }
+        // ဒီနေ့ ဝင်ပြီးသားဆိုရင်တော့ Streak မတိုးဘူး၊ ဒီအတိုင်းပဲထားမယ်
+    } else {
+        // ပထမဆုံးအကြိမ် ဝင်တာဆိုရင် ၁ ရက်လို့ သတ်မှတ်မယ်
+        streak = 1;
+    }
+
+    // အချက်အလက်အသစ်တွေကို ပြန်သိမ်းမယ်
+    localStorage.setItem('last_login_date', today);
+    localStorage.setItem('streak_count', streak);
+
+    return streak;
+}   
       
     </script>
 </body>
