@@ -1,6 +1,4 @@
-
-{
-  "Unit-4": [
+ [
     {"type": "mcq", "q": "After moving to a new city, it took me a while to make friends beyond a few casual ---.", "a": ["acquaintances", "colleagues", "companions"], "c": 0},
     {"type": "mcq", "q": "The ancient symbols on the cave walls shimmered ---, as if holding secrets from another world.", "a": ["supernaturally", "spiritually", "mystically"], "c": 2},
     {"type": "mcq", "q": "She was deeply --- by the kind words in the letter.", "a": ["touched", "moved", "affected"], "c": 0},
@@ -48,4 +46,4 @@
     {"type": "mcq", "q": "She felt a sense of --- as she walked through the quiet park.", "a": ["peace", "tranquility", "serenity"], "c": 1},
     {"type": "mcq", "q": "The experience was --- and one she would never forget.", "a": ["memorable", "unforgettable", "lasting"], "c": 1}
   ]
-}
+
