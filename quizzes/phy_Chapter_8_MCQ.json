@@ -1,303 +1,80 @@
-
 [
   {
     "type": "mcq",
-    "q": "The distance between two consecutive bright fringes or dark fringes is called _______.",
-    "a": ["fringe width", "grating spacing", "path difference"],
+    "q": "In wave optics, the principle explains how light propagates from a light source.",
+    "a": ["Huygens'", "Newton's", "Young's"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In Young’s double-slit experiment, the condition for constructive interference is d sin θ = _______.",
-    "a": ["mλ", "(m + 1/2)λ", "λ/2"],
+    "q": "The difference in states of the periodic waves at the same instant is the difference.",
+    "a": ["path", "phase", "state"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "For a bright fringe, the path difference is equal to",
+    "a": ["an integral number of wavelengths", "a half-integral number of wavelengths", "only odd integral number of wavelengths"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The bending of light around the corners of an obstacle is known as _______.",
-    "a": ["interference", "refraction", "diffraction"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following deals with wave optics?",
-    "a": ["Reflection only", "Interference and diffraction", "Ray approximation"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If the phase difference between two waves is 2π, the two positions are _______.",
-    "a": ["in phase", "completely out of phase", "opposite phase"],
+    "q": "The bending of waves around the corners of an obstacle is an example of of waves.",
+    "a": ["diffraction", "refraction", "reflection"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "A surface of constant phase is called a _______.",
-    "a": ["ray", "wavefront", "slit"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a single-slit diffraction pattern, the central maximum is _______ the secondary maxima.",
-    "a": ["narrower than", "wider and brighter than", "dimmer than"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "For two light sources to be coherent, they must have the same _______.",
-    "a": ["amplitude", "frequency", "intensity"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If the path difference is λ/2, the two waves will undergo _______ interference.",
-    "a": ["constructive", "destructive", "total"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The grating spacing d for a grating with N lines per metre is d = _______.",
-    "a": ["N", "1/N", "λ/N"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The ray approximation is valid only when the wavelength is _______ the size of the opening.",
-    "a": ["much smaller than", "much larger than", "equal to"],
+    "q": "The bending of waves through an aperture into the region of the geometrical shadow of the obstacle is an example of of waves.",
+    "a": ["diffraction", "refraction", "reflection"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "Newton's rings are an example of interference in _______.",
-    "a": ["thick lenses", "thin films", "prisms"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a diffraction grating, the fringes are _______ than those in a double-slit experiment.",
-    "a": ["wider", "sharper and narrower", "less intense"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A point source of light at a finite distance produces a _______ wavefront.",
-    "a": ["spherical", "plane", "cylindrical"],
+    "q": "In a single slit diffraction, the bright and dark fringes are created by the diffracted light waves.",
+    "a": ["diffraction", "interference", "refraction"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The color of light is determined by its _______.",
-    "a": ["velocity", "amplitude", "frequency"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "If the phase difference is π, the two waves are _______.",
-    "a": ["in phase", "completely out of phase", "in quadrature"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In Young’s experiment, the central fringe (m=0) is always _______.",
-    "a": ["dark", "bright", "colored"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Huygens's principle states that every point on a wavefront is a source of _______.",
-    "a": ["primary waves", "secondary wavelets", "rays"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Wave optics is also known as _______ optics.",
-    "a": ["geometrical", "physical", "ray"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Interference is the _______ of two or more waves.",
-    "a": ["separation", "superposition", "reflection"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The fringe width β is given by the formula β = _______.",
-    "a": ["d/λD", "λD/d", "λd/D"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In constructive interference, the path difference can be _______.",
-    "a": ["λ/2", "3λ/2", "2λ"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Light waves are _______ waves.",
-    "a": ["longitudinal", "transverse", "mechanical"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of these shows colors due to interference in thin films?",
-    "a": ["A prism", "A soap bubble", "A rainbow"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The resolving power of a telescope is limited by _______.",
-    "a": ["reflection", "refraction", "diffraction"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "When light passes from one medium to another, which property does not change?",
-    "a": ["Wavelength", "Speed", "Frequency"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The condition for m-th dark fringe in single-slit diffraction is a sin θ = _______.",
-    "a": ["mλ", "(m+1/2)λ", "λ/2"],
+    "q": "In single slit diffraction, the width of the central maximum will be if the wavelength of light increases.",
+    "a": ["larger", "smaller", "the same"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "If N is the number of lines per cm, the grating constant d is _______.",
-    "a": ["N", "1/N", "100/N"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A source at infinity produces a _______ wavefront.",
-    "a": ["spherical", "cylindrical", "plane"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "In destructive interference, the phase difference can be _______.",
-    "a": ["2π", "4π", "5π"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The amplitude of the resultant wave in constructive interference is _______.",
-    "a": ["minimum", "zero", "maximum"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Huygens's principle can be used to explain _______.",
-    "a": ["only reflection", "only refraction", "both reflection and refraction"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The intensity of light in an interference pattern is _______.",
-    "a": ["uniform everywhere", "zero everywhere", "redistributed"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Monochromatic light means light of _______.",
-    "a": ["single wavelength", "multiple colors", "high intensity"],
+    "q": "In single-slit diffraction, the width of the central maximum will be if the screen distance is increased.",
+    "a": ["larger", "smaller", "the same"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The fringe width increases if the distance between the screen and slits is _______.",
-    "a": ["decreased", "increased", "kept same"],
+    "q": "In single slit diffraction, the width of the central maximum will be if the slit width is increased.",
+    "a": ["larger", "smaller", "the same"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Diffraction is a _______ property of all waves.",
-    "a": ["rare", "characteristic", "minor"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In an oil film on water, the colors are due to _______.",
-    "a": ["diffraction", "dispersion", "interference"],
+    "q": "The diffraction grating has",
+    "a": ["one slit", "two slits", "many slits"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The path difference for the second bright fringe in Young's experiment is _______.",
-    "a": ["λ", "2λ", "3λ"],
+    "q": "A is an example of reflection gratings.",
+    "a": ["prism", "compact disc", "convex lens"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "For a given d and D, the fringe width is proportional to _______.",
-    "a": ["wavelength λ", "1/λ", "λ^2"],
+    "q": "For a dark fringe, the path difference is equal to",
+    "a": ["an integral number of wavelengths", "an odd integral number of wavelengths", "an odd integral multiple of half-wavelength"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "There are types of wavefronts.",
+    "a": ["two", "three", "four"],
     "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Secondary wavelets travel with the _______ as the primary wave.",
-    "a": ["same speed", "half speed", "double speed"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The phenomenon of interference was first demonstrated by _______.",
-    "a": ["Newton", "Huygens", "Young"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "In a single-slit diffraction pattern, as the slit width 'a' decreases, the central maximum _______.",
-    "a": ["becomes narrower", "becomes wider", "disappears"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The phase angle of a wave is measured in _______.",
-    "a": ["metres", "seconds", "radians or degrees"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "If the path difference is 3λ, the interference is _______.",
-    "a": ["constructive", "destructive", "partial"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "A grating can be used to measure the _______ of light.",
-    "a": ["velocity", "wavelength", "intensity"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The rays are always _______ to the wavefront.",
-    "a": ["parallel", "perpendicular", "at 45 degrees"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The wave model of light was proposed by _______.",
-    "a": ["Newton", "Huygens", "Einstein"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In destructive interference, the resultant amplitude is _______.",
-    "a": ["A1 + A2", "A1 - A2", "A1 x A2"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The grating constant d is the distance between _______.",
-    "a": ["the screen and grating", "two adjacent slits", "the source and grating"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If white light is used in Young's experiment, the central fringe is _______.",
-    "a": ["red", "blue", "white"],
-    "c": 2
   }
 ]
