@@ -1,302 +1,122 @@
 [
   {
     "type": "mcq",
-    "q": "The SI unit of thermal conductivity is _______.",
-    "a": ["J/kg·K", "W/m·K", "W/m²·K"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In which process is there no heat transfer into or out of the system?",
-    "a": ["Isothermal", "Isobaric", "Adiabatic"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which material is the best thermal conductor among the following?",
-    "a": ["Silver", "Gold", "Iron"],
+    "q": "The individual parts of a medium do not move as a whole in heat",
+    "a": ["conduction", "convection", "radiation"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "An object that absorbs all radiation that falls on it is called a _______.",
-    "a": ["Whitebody", "Blackbody", "Greybody"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In fluids, heat is mainly transferred by _______.",
-    "a": ["Conduction", "Convection", "Radiation"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The first law of thermodynamics is a statement of the conservation of _______.",
-    "a": ["Mass", "Momentum", "Energy"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A process occurring at constant pressure is called _______.",
-    "a": ["Isochoric", "Isobaric", "Isothermal"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A process occurring at constant volume is called _______.",
-    "a": ["Isochoric", "Isobaric", "Adiabatic"],
+    "q": "An isobaric process occurs at constant",
+    "a": ["pressure", "volume", "temperature"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a gasoline engine, the spark plug fires during the _______ process.",
-    "a": ["Intake", "Compression", "Power"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The gasoline engine is also known as a _______ engine.",
-    "a": ["Two-stroke", "Four-stroke", "Six-stroke"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The compression ratio of a diesel engine is typically _______ than that of a gasoline engine.",
-    "a": ["Lower", "Higher", "The same"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "During the intake stroke of a diesel engine, _______ is drawn into the cylinder.",
-    "a": ["Only air", "Only fuel", "Fuel-air mixture"],
+    "q": "In heat ____, heat is transferred by successive distribution among the adjacent parts.",
+    "a": ["conduction", "convection", "radiation"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "A device that converts heat into work is a _______.",
-    "a": ["Refrigerator", "Heat engine", "Heat pump"],
+    "q": "The isochoric process occurs at constant",
+    "a": ["pressure", "volume", "temperature"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The Carnot cycle consists of _______ isothermal and _______ adiabatic processes.",
-    "a": ["1, 3", "2, 2", "3, 1"],
+    "q": "In heat ____, heat is the flow of heat through a fluid by the movement of the fluid itself.",
+    "a": ["conduction", "convection", "radiation"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following is a good thermal insulator?",
-    "a": ["Copper", "Aluminium", "Styrofoam"],
+    "q": "The isothermal process occurs at a constant",
+    "a": ["pressure", "volume", "temperature"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Internal energy of a system is the sum of _______ of its molecules.",
-    "a": ["Kinetic energy only", "Potential energy only", "Kinetic and potential energies"],
+    "q": "Some of the weather conditions are created by heat",
+    "a": ["conduction", "convection", "radiation"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "For an ____ process, the change in internal energy is zero.",
+    "a": ["isobaric", "isochoric", "isothermal"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Heat added to a system (Q) is considered _______.",
-    "a": ["Positive", "Negative", "Zero"],
+    "q": "Heat ____ is a transfer of heat that does not require a material medium.",
+    "a": ["conduction", "convection", "radiation"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In the ____ process, there is no heat transfer into or out of the system.",
+    "a": ["isobaric", "adiabatic", "isothermal"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The transfer of energy by ____ does not require an intervening medium.",
+    "a": ["conduction", "convection", "radiation"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In the ____ process, the heat flow is zero.",
+    "a": ["isobaric", "adiabatic", "isothermal"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "An object which can absorb all the electromagnetic radiation falling upon it is a",
+    "a": ["white body", "blackbody", "grey body"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The heat, the work, and the change in internal energy are nonzero in",
+    "a": ["isobaric", "isochoric", "isothermal"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "Work done by a system (W) during expansion is considered _______.",
-    "a": ["Positive", "Negative", "Zero"],
+    "q": "In the intake stroke of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In the compression stroke of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The intake stroke of a gasoline engine is also called the _______ stroke.",
-    "a": ["Power", "Exhaust", "Suction"],
+    "q": "In the explosion process of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "In a diesel engine, fuel is ignited by _______.",
-    "a": ["A spark plug", "High temperature due to compression", "An external flame"],
+    "q": "In the power stroke of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The SI unit of heat is the _______.",
-    "a": ["Watt", "Pascal", "Joule"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A refrigerator is essentially a heat engine operating in _______.",
-    "a": ["Parallel", "Series", "Reverse"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Conduction is the transfer of heat _______.",
-    "a": ["By bulk motion of matter", "Through a vacuum", "Without bulk motion of the material"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "All bodies at a temperature above _______ emit radiation.",
-    "a": ["0°C", "0 K", "100°C"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The efficiency of a heat engine is the ratio of _______.",
-    "a": ["Work done to heat absorbed", "Heat absorbed to work done", "Heat rejected to heat absorbed"],
+    "q": "In the valve exhaust process of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In an isothermal process, the change in internal energy is _______.",
-    "a": ["Positive", "Negative", "Zero"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The transfer of heat from a cold body to a hot body requires _______.",
-    "a": ["No work", "External work", "A blackbody"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which law of thermodynamics defines entropy?",
-    "a": ["Zeroth Law", "First Law", "Second Law"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "For a diesel engine, the fuel is sprayed into the cylinder by the _______.",
-    "a": ["Carburetor", "Injector", "Spark plug"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Thermal conductivity is a property that describes a material's ability to _______.",
-    "a": ["Store heat", "Conduct heat", "Reflect heat"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which engine does not have a spark plug?",
-    "a": ["Gasoline engine", "Diesel engine", "Steam engine"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Heat flux density is proportional to the _______.",
-    "a": ["Pressure gradient", "Temperature gradient", "Volume gradient"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The surroundings of a system are _______.",
-    "a": ["Inside the system", "Part of the system", "Everything outside the system"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "In a gasoline engine, the petrol-air mixture enters through the _______ valve.",
-    "a": ["Exhaust", "Intake", "Safety"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The entropy of an isolated system _______.",
-    "a": ["Always decreases", "Remains constant", "Never decreases"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A blackbody is a perfect _______ of radiation.",
-    "a": ["Absorber only", "Emitter only", "Absorber and emitter"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Metals are good conductors of heat because they have many _______.",
-    "a": ["Protons", "Free electrons", "Neutrons"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which stroke follows the compression stroke in a four-stroke engine?",
-    "a": ["Intake", "Power", "Exhaust"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The area under a P-V curve represents the _______.",
-    "a": ["Heat added", "Internal energy", "Work done"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Thermodynamic equilibrium means macroscopic properties _______.",
-    "a": ["Change rapidly", "Do not change with time", "Are zero"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which law relates to the concept of temperature equilibrium?",
-    "a": ["Zeroth Law", "First Law", "Second Law"],
+    "q": "In the exhaust stroke of the gasoline engine, the piston",
+    "a": ["moves up", "moves down", "does not move"],
     "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The ratio of net work done to heat absorbed is the _______.",
-    "a": ["Power", "Entropy", "Efficiency"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "During expansion at constant temperature, a gas _______.",
-    "a": ["Does no work", "Absorbs heat", "Rejects heat"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A perfect heat engine would have an efficiency of _______.",
-    "a": ["50%", "100%", "0%"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Convection occurs in _______.",
-    "a": ["Solids only", "Fluids only", "Vacuum"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Heat transfer by radiation depends on the _______ of the surface.",
-    "a": ["Mass", "Temperature", "Density"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which process describes a gas being compressed without losing heat?",
-    "a": ["Adiabatic compression", "Isothermal compression", "Isobaric compression"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Work done on the system (W) is considered _______.",
-    "a": ["Positive", "Negative", "Zero"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The exhaust stroke of an engine serves to _______.",
-    "a": ["Draw in fuel", "Ignite fuel", "Expel burned gases"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is NOT a mode of heat transfer?",
-    "a": ["Conduction", "Condensation", "Radiation"],
-    "c": 1
   }
 ]
