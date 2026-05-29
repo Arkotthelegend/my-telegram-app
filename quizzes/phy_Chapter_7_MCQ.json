@@ -1,302 +1,338 @@
 [
   {
     "type": "mcq",
-    "q": "When the compound microscope is in a normal setting, the final image is at _______.",
-    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
+    "q": "In a camera, the focuses the light from the object on the film.",
+    "a": ["convex lens", "concave lens", "prism"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In a camera, the controls the light energy falling on the film.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The image formed on the film of a camera is _______.",
-    "a": ["real, erect and enlarged", "virtual, inverted and diminished", "real, inverted and diminished"],
+    "q": "In a camera, the is a circular opening through which the light passes.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "If the magnification of the objective is p and the magnifying power of the eyepiece is q, then the magnifying power of the compound microscope is _______.",
-    "a": ["p + q", "p^q", "pq"],
+    "q": "The aperture of a camera can be made wide or narrow by adjusting the expressed in terms of the",
+    "a": ["focusing ring", "diaphragm", "shutter speed"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The shutter speed is",
+    "a": ["exposure time", "metre per second", "megahertz"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The adjusts the distance between the lens and the film.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "For a farsighted person, the image of a near object is formed at a point",
+    "a": ["behind", "in front of", "on"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "For a farsighted person, the image of a distant object is formed at a point",
+    "a": ["behind", "in front of", "on"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "In a compound microscope, the first object must be placed _______ of the objective.",
+    "q": "For a nearsighted person, the image of a near object is formed at a point",
+    "a": ["behind", "in front of", "on"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "For a nearsighted person, the image of a distant object is formed the retina.",
+    "a": ["behind", "in front of", "on"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The opens and closes the eye.",
+    "a": ["eyelids", "iris", "cornea"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The is the coloured portion of the eye.",
+    "a": ["pupil", "iris", "cornea"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The controls the amount of light energy entering the eye.",
+    "a": ["pupil", "iris", "ciliary muscle"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The is the light-sensitive area of the cells.",
+    "a": ["retina", "iris", "cornea"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The can vary the thickness of the eyelens.",
+    "a": ["pupil", "iris", "ciliary muscle"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The yellow spot is on the",
+    "a": ["retina", "iris", "cornea"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The yellow spot which is the most light-sensitive spot is",
+    "a": ["in the eyelens", "on the retina", "between the eyelens and the retina"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If the magnification of the objective is p and the magnifying power of the eyepiece is q, then the magnifying power of the compound microscope is",
+    "a": ["p+q", "p^q", "pq"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The separation of the lenses of the compound microscope is",
+    "a": ["v0+u0", "ve+ue", "v0+ue"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "When the compound microscope is in a normal setting, the final image is at",
+    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "When the compound microscope is in a normal setting, the first image is at",
+    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "When the compound microscope is in a normal setting, its magnifying power is",
+    "a": ["m0*0.25Pe", "m0*25Pe", "m0*Pe"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In a compound microscope, the first object must be placed of the objective.",
     "a": ["at 2Fo", "beyond 2Fo", "between Fo and 2Fo"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "For a normal human eye, the near point is about _______.",
-    "a": ["10 cm", "25 cm", "50 cm"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The separation of the lenses of the astronomical telescope in normal adjustment is _______.",
-    "a": ["fo - fe", "fo + fe", "fo / fe"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The camera uses a _______ lens to form an image.",
-    "a": ["convex", "concave", "bifocal"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In an astronomical telescope, the magnifying power is M = _______.",
-    "a": ["fe / fo", "fo / fe", "fo + fe"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A simple microscope consists of a single _______ lens of short focal length.",
-    "a": ["diverging", "converging", "concave"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Myopia is corrected by using a _______ lens.",
-    "a": ["converging", "diverging", "cylindrical"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The separation of the lenses of the compound microscope is _______.",
-    "a": ["vo + uo", "ve + ue", "vo + ue"],
+    "q": "In a compound microscope, the first image must be adjusted of the eyepiece.",
+    "a": ["at 2Fe", "beyond 2Fe", "between Fe and Pe"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The image formed by a simple microscope is _______.",
-    "a": ["real, inverted and magnified", "virtual, erect and magnified", "real, erect and diminished"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Hypermetropia is corrected by using a _______ lens.",
-    "a": ["converging", "diverging", "concave"],
+    "q": "The eyepiece of the refracting astronomical telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The component in a camera that controls the time the light falls on the film is the _______.",
-    "a": ["diaphragm", "shutter", "aperture"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In an astronomical telescope, the final image is _______ with respect to the first object.",
-    "a": ["erect", "inverted", "laterally inverted"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a compound microscope, the first image must be adjusted _______ of the eyepiece.",
-    "a": ["at 2Fe", "beyond 2Fe", "between Fe and P"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The magnifying power of a simple microscope in normal use is M = _______.",
-    "a": ["D / f", "1 + D/f", "f / D"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which part of the eye acts like the diaphragm of a camera?",
-    "a": ["Retina", "Iris", "Pupil"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The focal length of the objective lens in an astronomical telescope is _______ than that of the eyepiece.",
-    "a": ["much larger", "much smaller", "equal"],
+    "q": "The eyepiece of the reflecting astronomical telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "When photographing in bright light, a _______ f-number must be used.",
-    "a": ["small", "large", "zero"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a Galilean telescope, the eyepiece is a _______ lens.",
-    "a": ["converging", "diverging", "plano-convex"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The first image formed by the objective of a compound microscope is _______.",
-    "a": ["virtual and erect", "real and inverted", "virtual and inverted"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "When a telescope is in normal adjustment, the final image is formed at _______.",
-    "a": ["the focus", "25 cm", "infinity"],
+    "q": "The objective of the reflecting astronomical telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The separation of lenses in a Galilean telescope is L = _______.",
-    "a": ["fo + fe", "fo - fe", "fo / fe"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The power of a lens P is given by _______.",
-    "a": ["1 / f", "f", "v / u"],
+    "q": "The eyepiece of the reflecting astronomical telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a myopic eye, the image of a distant object is formed _______ the retina.",
-    "a": ["on", "behind", "in front of"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The _______ acts as a screen in the human eye.",
-    "a": ["cornea", "iris", "retina"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The magnifying power of a compound microscope in normal setting is _______.",
-    "a": ["mo x 0.25 Pe", "mo x 25 Pe", "mo x Pe"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A terrestrial telescope uses an _______ lens to produce an erect image.",
-    "a": ["objective", "eyepiece", "erecting"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "When the compound microscope is in a normal setting, the first image is at _______.",
-    "a": ["infinity", "25 cm", "the focus of the eyepiece"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The crystalline lens of the eye is a _______ lens.",
-    "a": ["converging", "diverging", "concave"],
+    "q": "The objective of the terrestrial telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The size of the aperture in a camera is expressed in terms of _______.",
-    "a": ["metres", "f-number", "diopters"],
-    "c": 1
+    "q": "The eyepiece of the terrestrial telescope is",
+    "a": ["convex lens", "concave lens", "concave mirror"],
+    "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a hypermetropic eye, the image of a nearby object is formed _______ the retina.",
-    "a": ["in front of", "on", "behind"],
+    "q": "The objective lenses of the binoculars are",
+    "a": ["convex lenses", "concave lenses", "concave mirrors"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The eyelens lenses of the binoculars are",
+    "a": ["convex lenses", "concave lenses", "concave mirrors"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The is used to view object on the earth conveniently.",
+    "a": ["refracting telescope", "reflecting telescope", "terrestrial telescope"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "To focus a camera on a near object, the distance between the lens and the film must be _______.",
-    "a": ["increased", "decreased", "kept constant"],
+    "q": "Galileo invented the",
+    "a": ["refracting telescope", "reflecting telescope", "terrestrial telescope"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The power of a lens is measured in _______.",
-    "a": ["Watts", "Diopters", "Metres"],
+    "q": "Newton invented the",
+    "a": ["refracting telescope", "reflecting telescope", "terrestrial telescope"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "In an astronomical telescope, the objective lens forms a _______ image.",
-    "a": ["virtual and erect", "real and inverted", "real and erect"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The magnification of the objective of a compound microscope is mo = _______.",
-    "a": ["vo / uo", "uo / vo", "fo / fe"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The ability of the eye to change its focal length is called _______.",
-    "a": ["magnification", "accommodation", "resolution"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a camera, the _______ is a circular opening that controls light.",
-    "a": ["shutter", "diaphragm", "lens"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A person suffering from _______ cannot see nearby objects clearly.",
-    "a": ["Myopia", "Hypermetropia", "Cataract"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The eyepiece of any optical instrument is the lens _______.",
-    "a": ["near the object", "near the eye", "in the middle"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The image formed on the retina is _______.",
-    "a": ["real and erect", "virtual and inverted", "real and inverted"],
+    "q": "The magnification of the objective is p and the magnifying power of the eyepiece is q, then the magnifying power of the compound microscope is",
+    "a": ["p+q", "p^q", "pq"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "A magnifying glass is another name for a _______.",
-    "a": ["compound microscope", "simple microscope", "telescope"],
-    "c": 1
+    "q": "The separation of the lenses of the compound microscope is",
+    "a": ["v0+u0", "ve+ue", "v0+ue"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The final image in a Galilean telescope is _______.",
-    "a": ["erect", "inverted", "diminished"],
+    "q": "When the compound microscope is in a normal setting, the final image is at",
+    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "When photographing in dim light, a _______ aperture must be used.",
-    "a": ["narrow", "wide", "fixed"],
-    "c": 1
+    "q": "When the compound microscope is in a normal setting, the first image is at",
+    "a": ["infinity", "25 cm from the eyepiece", "the focus of the eyepiece"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The objective lens of a compound microscope has a _______ focal length.",
-    "a": ["long", "short", "very large"],
-    "c": 1
+    "q": "When the compound microscope is in a normal setting, its magnifying power is",
+    "a": ["m0*0.25Pe", "m0*25Pe", "m0*Pe"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "The near point of the eye is also called the least distance of _______ vision.",
-    "a": ["clear", "distinct", "blurred"],
-    "c": 1
+    "q": "In a compound microscope, the first object must be placed of the objective.",
+    "a": ["at 2Fo", "beyond 2Fo", "between Fo and 2Fo"],
+    "c": 2
   },
   {
     "type": "mcq",
-    "q": "In an astronomical telescope, the first image is formed at _______.",
-    "a": ["the focus of the objective", "the focus of the eyepiece", "infinity"],
+    "q": "In a compound microscope, the first image must be adjusted of the eyepiece.",
+    "a": ["at 2Fe", "beyond 2Fe", "between Fe and Pe"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In a camera, the focuses the light from the object on the film.",
+    "a": ["convex lens", "concave lens", "prism"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The length of a terrestrial telescope in normal adjustment is _______.",
-    "a": ["fo + fe", "fo + 4f + fe", "fo - fe"],
+    "q": "In a camera, the controls the light energy falling on the film.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which instrument employs total internal reflection using prisms?",
-    "a": ["Galilean telescope", "Prism binocular", "Simple microscope"],
+    "q": "In a camera, the is a circular opening through which the light passes.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The aperture of a camera can be made wide or narrow by adjusting the expressed in terms of the",
+    "a": ["focusing ring", "diaphragm", "shutter speed"],
     "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The shutter speed is",
+    "a": ["exposure time", "metre per second", "megahertz"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The adjusts the distance between the lens and the film.",
+    "a": ["focusing ring", "diaphragm", "aperture"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "For a farsighted person, the image of a near object is formed at a point",
+    "a": ["behind", "in front of", "on"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "For a farsighted person, the image of a distant object is formed at a point",
+    "a": ["behind", "in front of", "on"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "For a nearsighted person, the image of a near object is formed at a point",
+    "a": ["behind", "in front of", "on"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "For a nearsighted person, the image of a distant object is formed the retina.",
+    "a": ["behind", "in front of", "on"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The opens and closes the eye.",
+    "a": ["eyelids", "iris", "cornea"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The is the coloured portion of the eye.",
+    "a": ["pupil", "iris", "cornea"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The controls the amount of light energy entering the eye.",
+    "a": ["pupil", "iris", "ciliary muscle"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The is the light-sensitive area of the cells.",
+    "a": ["retina", "iris", "cornea"],
+    "c": 0
   }
 ]
