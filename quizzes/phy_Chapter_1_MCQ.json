@@ -1,128 +1,128 @@
 [
   {
     "type": "mcq",
-    "q": "In a _______ motion, the object just moves in a circle.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In _______ motion, the object rotates about an axis.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The rotation of the earth about its own axis is a _______ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The motion of the blades of a fan is a _______ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The motion of a Ferris wheel is a _______ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "_______ body is a body that does not deform or change shape.",
-    "a": ["An elastic", "A plastic", "A rigid"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The angular acceleration is equal to zero when there is no change in _______.",
-    "a": ["angular speed", "the direction of the rotation", "angular velocity"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular velocity of the second hand of the clock is _______ the clock face.",
+    "q": "The direction of the angular velocity of the second hand of the clock is ____ the clock face.",
     "a": ["into", "out of", "parallel"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The direction of the angular acceleration of the second hand of the clock is _______.",
-    "a": ["into the clock face", "out of the clock face", "none of these"],
+    "q": "If the angular speed is increasing, there is/are ____ acceleration(s).",
+    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The direction of the angular velocity of a disc speeding up clockwise is _______.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
-    "c": 0
+    "q": "The motion of a Ferris wheel is a ____ motion.",
+    "a": ["circular", "rotational", "linear"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The direction of the angular velocity of a disc slowing down clockwise is _______.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular acceleration of a disc speeding up clockwise is _______.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular acceleration of a disc slowing down clockwise is _______.",
+    "q": "The direction of the angular acceleration of a disc slowing down clockwise is ____.",
     "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "For uniform circular motion, the direction of the _______ is towards the centre of the circular path.",
+    "q": "The two acceleration vectors $\\vec{a}_C$ and $\\vec{a}_T$ are ____ to each other.",
+    "a": ["perpendicular", "parallel", "inclined an angle less than 90째"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In ____ motion, the object rotates about an axis.",
+    "a": ["circular", "rotational", "linear"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The direction of the angular acceleration of a disc speeding up clockwise is ____.",
+    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "For uniform circular motion, the direction of the ____ is towards the centre of the circular path.",
     "a": ["centripetal acceleration", "tangential acceleration", "tangential velocity"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "For uniform circular motion, the direction of the _______ is tangential to the circular path.",
-    "a": ["centripetal acceleration", "tangential acceleration", "tangential velocity"],
+    "q": "The rotation of the earth about its own axis is a ____ motion.",
+    "a": ["circular", "rotational", "linear"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The angle between $\\vec{a}$ and $\\vec{a}_C$ is ____.",
+    "a": ["less than 90째", "greater than 90째", "90째"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The direction of the angular velocity of a disc slowing down clockwise is ____.",
+    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In a ____ motion, the object just moves in a circle.",
+    "a": ["circular", "rotational", "linear"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "If the angular speed is decreasing, there is/are ____ acceleration(s).",
+    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The centripetal acceleration is present _______.",
+    "q": "The direction of the angular velocity of a disc speeding up clockwise is ____.",
+    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The motion of the blades of a fan is a ____ motion.",
+    "a": ["circular", "rotational", "linear"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If the angular speed is constant, there is/are ____ acceleration(s).",
+    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The centripetal acceleration is present ____ circular motion.",
     "a": ["only in uniform", "only in non-uniform", "in both uniform and non-uniform"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The two acceleration vectors $\\vec{a}_{C}$ and $\\vec{a}_{T}$ are _______ to each other.",
-    "a": ["perpendicular", "parallel", "inclined an angle less than 90°"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The angle between a and $a_{C}$ is _______.",
-    "a": ["less than 90°", "greater than 90°", "90°"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "If the angular speed is decreasing, there is/are _______ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
+    "q": "The angular acceleration is equal to zero when there is no change in ____.",
+    "a": ["angular speed", "the direction of the rotation", "angular velocity"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "If the angular speed is increasing, there is/are _______ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
+    "q": "For uniform circular motion, the direction of the ____ is tangential to the circular path.",
+    "a": ["centripetal acceleration", "tangential acceleration", "tangential velocity"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "If the angular speed is constant, there is/are _______ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
+    "q": "The direction of the angular acceleration of the second hand of the clock is ____.",
+    "a": ["into the clock face", "out of the clock face", "none of these"],
     "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "____ body is a body that does not deform or change shape.",
+    "a": ["An elastic", "A plastic", "A rigid"],
+    "c": 2
   }
 ]
