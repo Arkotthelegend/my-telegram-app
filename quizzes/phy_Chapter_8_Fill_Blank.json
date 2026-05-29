@@ -1,253 +1,66 @@
-
 [
-  {
-    "type": "blank",
-    "q": "The study of interference and diffraction deals with _______ optics.",
-    "c": "wave"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ is a surface of constant phase.",
-    "c": "wavefront"
-  },
-  {
-    "type": "blank",
-    "q": "The secondary wavelets have the same _______ as the primary wavelets.",
-    "c": "frequency"
-  },
-  {
-    "type": "blank",
-    "q": "In Young’s double-slit experiment, the central fringe is always _______.",
-    "c": "bright"
-  },
-  {
-    "type": "blank",
-    "q": "The distance between two consecutive bright fringes is called _______.",
-    "c": "fringe width"
-  },
-  {
-    "type": "blank",
-    "q": "Constructive interference occurs when the path difference is an _______ multiple of the wavelength.",
-    "c": "integer"
-  },
-  {
-    "type": "blank",
-    "q": "Destructive interference occurs when the path difference is an _______ multiple of λ/2.",
-    "c": "odd"
-  },
-  {
-    "type": "blank",
-    "q": "The phenomenon of bending of light around the corners of an obstacle is called _______.",
-    "c": "diffraction"
-  },
-  {
-    "type": "blank",
-    "q": "A diffraction _______ consists of a large number of equally spaced parallel slits.",
-    "c": "grating"
-  },
-  {
-    "type": "blank",
-    "q": "Two sources are said to be _______ if they emit waves of the same frequency and have a constant phase difference.",
-    "c": "coherent"
-  },
-  {
-    "type": "blank",
-    "q": "The ray approximation of geometrical optics is not valid for the _______ of light.",
-    "c": "interference"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ angle is one of the important characteristics of the periodic wave.",
-    "c": "phase"
-  },
-  {
-    "type": "blank",
-    "q": "If the phase difference is 0, 2π, 4π, ..., the two positions are in _______.",
-    "c": "phase"
-  },
-  {
-    "type": "blank",
-    "q": "The secondary wavelets spread out in all directions at the same _______ as the primary wavelet.",
-    "c": "speed"
-  },
-  {
-    "type": "blank",
-    "q": "For diffraction to be significant, the size of the slit must be _______ to the wavelength of light.",
-    "c": "comparable"
-  },
-  {
-    "type": "blank",
-    "q": "The pattern of bright and dark _______ is called an interference pattern.",
-    "c": "fringes"
-  },
-  {
-    "type": "blank",
-    "q": "Interference in _______ films is responsible for the colors in soap bubbles.",
-    "c": "thin"
-  },
-  {
-    "type": "blank",
-    "q": "The condition for the m-th order maximum in a grating is d sin θ = _______.",
-    "c": "mλ"
-  },
-  {
-    "type": "blank",
-    "q": "In a single-slit diffraction pattern, the _______ maximum is the brightest.",
-    "c": "central"
-  },
-  {
-    "type": "blank",
-    "q": "Light waves are _______ electromagnetic waves.",
-    "c": "transverse"
-  },
-  {
-    "type": "blank",
-    "q": "The distance between the slits in Young’s experiment is denoted by _______.",
-    "c": "d"
-  },
-  {
-    "type": "blank",
-    "q": "The fringe width β is given by the formula β = _______.",
-    "c": "λD/d"
-  },
-  {
-    "type": "blank",
-    "q": "When light travels from one medium to another, its _______ remains constant.",
-    "c": "frequency"
-  },
-  {
-    "type": "blank",
-    "q": "Newton’s _______ are formed by interference between light waves reflected from the upper and lower surfaces of the air gap.",
-    "c": "rings"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ approximation is valid when the wavelength is very small compared to the opening.",
-    "c": "ray"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ wavefront is produced by a source at a very large distance.",
-    "c": "plane"
-  },
-  {
-    "type": "blank",
-    "q": "Huygens's _______ states that every point on a wavefront is a source of secondary wavelets.",
-    "c": "principle"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ of light is determined by its frequency.",
-    "c": "color"
-  },
-  {
-    "type": "blank",
-    "q": "Physical optics is also known as _______ optics.",
-    "c": "wave"
-  },
-  {
-    "type": "blank",
-    "q": "In interference, the total _______ is conserved but redistributed.",
-    "c": "energy"
-  },
-  {
-    "type": "blank",
-    "q": "The central maximum of a diffraction pattern becomes _______ as the slit width decreases.",
-    "c": "wider"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ power of an optical instrument is limited by diffraction.",
-    "c": "resolving"
-  },
-  {
-    "type": "blank",
-    "q": "A grating with N lines per metre has a grating _______ d = 1/N.",
-    "c": "spacing"
-  },
-  {
-    "type": "blank",
-    "q": "Monochromatic light consists of waves of a _______ wavelength.",
-    "c": "single"
-  },
-  {
-    "type": "blank",
-    "q": "The path difference for the first dark fringe in a single-slit diffraction is _______.",
-    "c": "λ"
-  },
-  {
-    "type": "blank",
-    "q": "Interference and diffraction are _______ properties of waves.",
-    "c": "characteristic"
-  },
-  {
-    "type": "blank",
-    "q": "The intensity of light is proportional to the _______ of the amplitude.",
-    "c": "square"
-  },
-  {
-    "type": "blank",
-    "q": "In Young’s experiment, if the source is white light, the central fringe is _______.",
-    "c": "white"
-  },
-  {
-    "type": "blank",
-    "q": "The first order maximum occurs when m = _______.",
-    "c": "1"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ of the fringes depends on the wavelength of the light used.",
-    "c": "width"
-  },
-  {
-    "type": "blank",
-    "q": "An _______ film on water shows different colors due to interference.",
-    "c": "oil"
-  },
-  {
-    "type": "blank",
-    "q": "Wave optics can explain the _______ of light through small openings.",
-    "c": "propagation"
-  },
-  {
-    "type": "blank",
-    "q": "The distance from the slits to the screen is denoted by _______.",
-    "c": "D"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ difference is related to the path difference by (2π/λ) × path difference.",
-    "c": "phase"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ source is required to observe a stable interference pattern.",
-    "c": "coherent"
-  },
-  {
-    "type": "blank",
-    "q": "The diffraction pattern of a _______ opening is a series of concentric rings.",
-    "c": "circular"
-  },
-  {
-    "type": "blank",
-    "q": "If the path difference is (m + 1/2)λ, _______ interference occurs.",
-    "c": "destructive"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ of light in a medium is less than its speed in a vacuum.",
-    "c": "speed"
-  },
-  {
-    "type": "blank",
-    "q": "Diffraction _______ are much sharper and more intense than interference fringes.",
-    "c": "lines"
-  },
-  {
-    "type": "blank",
-    "q": "Wave optics is a more _______ theory than geometrical optics.",
-    "c": "general"
-  }
+  {"type": "blank", "q": "The study of interference and diffraction deals with _______.", "c": "wave"},
+  {"type": "blank", "q": "_______ optics is also known as physical optics.", "c": "Wave"},
+  {"type": "blank", "q": "In 1678, Christiaan Huygens introduced the _______ theory of light.", "c": "wave"},
+  {"type": "blank", "q": "Every point on a wavefront may be a source of the _______ wavelets.", "c": "secondary"},
+  {"type": "blank", "q": "A _______ is a surface associated with a propagating wave which is a locus of all the points in the wave that have the same phase.", "c": "wavefront"},
+  {"type": "blank", "q": "On a particular wavefront, at a given moment, all the particles of the medium are undergoing the same _______.", "c": "phase"},
+  {"type": "blank", "q": "The wavefront is always _______ to the direction of the propagation.", "c": "perpendicular"},
+  {"type": "blank", "q": "The spherical wavefront becomes a _______ wavefront when far from the source.", "c": "plane"},
+  {"type": "blank", "q": "The _______ angle is the position of a point on a reference circle of a waveform at an instant.", "c": "phase"},
+  {"type": "blank", "q": "The angular position of a point of a periodic wave is called the _______ angle.", "c": "phase"},
+  {"type": "blank", "q": "The difference in states of the periodic waves at the same instant is represented by the _______ difference.", "c": "phase"},
+  {"type": "blank", "q": "The _______ difference indicates the distance between two points measured along the direction of propagation of the wave through the medium.", "c": "path"},
+  {"type": "blank", "q": "Wave _______ occurs when two waves meet while travelling along the same medium.", "c": "interference"},
+  {"type": "blank", "q": "If light waves interfere with one another, the maximum and the minimum _______ of light are obtained alternately.", "c": "intensity"},
+  {"type": "blank", "q": "To observe the interference of light waves, the two sources of light must be _______ with respect to each other.", "c": "coherent"},
+  {"type": "blank", "q": "In 1801, Thomas Young obtained convincing evidence for the _______ nature of light.", "c": "wave"},
+  {"type": "blank", "q": "In a double-slit experiment, a series of alternative bright and dark lines are seen on the _______.", "c": "screen"},
+  {"type": "blank", "q": "A series of alternative bright and dark lines in the double-slit experiment are the result of the _______ phenomenon.", "c": "interference"},
+  {"type": "blank", "q": "When a plane wave passes through a slit, a _______ wavelet emerges from the slit.", "c": "circular"},
+  {"type": "blank", "q": "The _______ wavelet is emitted from a point on the plane wave according to Huygens' principle.", "c": "circular"},
+  {"type": "blank", "q": "When a circular wave passes through two slits, each slit acts as a _______ source of circular waves.", "c": "secondary"},
+  {"type": "blank", "q": "In a double-slit experiment, the _______ pattern will be displayed on the screen.", "c": "interference"},
+  {"type": "blank", "q": "In a double-slit experiment, the interference pattern consists of a series of bright and dark parallel lines called _______.", "c": "fringes"},
+  {"type": "blank", "q": "In a double-slit experiment, _______ interference occurs at the centre of the screen.", "c": "constructive"},
+  {"type": "blank", "q": "The bright fringe at the centre of the screen is called the _______ bright line.", "c": "central"},
+  {"type": "blank", "q": "If the path difference equals an integral number of wavelengths, the waves will interfere _______.", "c": "constructively"},
+  {"type": "blank", "q": "If the waves interfere constructively, a _______ fringe appears on the screen.", "c": "bright"},
+  {"type": "blank", "q": "If the path difference is an odd integral multiple of half-wavelength, the waves will interfere _______.", "c": "destructively"},
+  {"type": "blank", "q": "If the waves interfere destructively, a _______ fringe appears on the screen.", "c": "dark"},
+  {"type": "blank", "q": "_______ interference results in bright fringes.", "c": "Constructive"},
+  {"type": "blank", "q": "_______ interference results in dark fringes.", "c": "Destructive"},
+  {"type": "blank", "q": "The position of particular bright and dark fringes on the screen is given by the distance from the _______ bright fringe.", "c": "central"},
+  {"type": "blank", "q": "The zeroth order bright corresponds to the _______ bright line at $\\theta=0$.", "c": "central"},
+  {"type": "blank", "q": "The first-order bright fringes form on either side of the _______ line.", "c": "central"},
+  {"type": "blank", "q": "For a _______ fringe to be formed at a point, the path difference is an odd integral multiple of half wavelength.", "c": "dark"},
+  {"type": "blank", "q": "In a double-slits pattern, the value of m for the central bright fringe is _______.", "c": "0"},
+  {"type": "blank", "q": "In a double-slits pattern, the value of m for the first bright fringe is _______.", "c": "1"},
+  {"type": "blank", "q": "In a double-slits pattern, the value of m for the second bright fringe is _______.", "c": "2"},
+  {"type": "blank", "q": "In a double-slits pattern, the value of m for the first dark fringe is _______.", "c": "0"},
+  {"type": "blank", "q": "In a double-slits pattern, the value of m for the second dark fringe is _______.", "c": "1"},
+  {"type": "blank", "q": "The distance between two adjacent bright (or dark) fringes is called the _______ width.", "c": "fringe"},
+  {"type": "blank", "q": "The intensity of the dark fringe is _______.", "c": "zero"},
+  {"type": "blank", "q": "In diffraction, the amount of bending depends on the _______ of light relative to the size of the aperture.", "c": "wavelength"},
+  {"type": "blank", "q": "In diffraction, if the aperture is much _______ than the wavelength of light, the bending will be almost unnoticeable.", "c": "larger"},
+  {"type": "blank", "q": "Light waves _______ around the objects and create bright and dark fringes.", "c": "diffract"},
+  {"type": "blank", "q": "In the Fresnel diffraction, there is a/an _______ distance between the source and the screen from the obstacle.", "c": "finite"},
+  {"type": "blank", "q": "In the Fraunhofer diffraction, there is a/an _______ distance between the source and the screen from the obstacle.", "c": "infinite"},
+  {"type": "blank", "q": "In a single slit diffraction, the diffraction pattern consists of a _______ central portion.", "c": "bright"},
+  {"type": "blank", "q": "In a single slit diffraction, on either side of the central maximum, there are alternating bright and dark _______.", "c": "fringes"},
+  {"type": "blank", "q": "In a single slit diffraction, the bright central portion is called the central _______.", "c": "maximum"},
+  {"type": "blank", "q": "In a single slit diffraction, the bright and dark fringes are created by the _______ diffracted light waves.", "c": "interference"},
+  {"type": "blank", "q": "In a single slit diffraction, each successive bright fringe becomes _______ intense proceeding outward.", "c": "less"},
+  {"type": "blank", "q": "In a single slit diffraction, the first _______ are seen on either side of the central bright maximum.", "c": "minima"},
+  {"type": "blank", "q": "In a single slit diffraction, the position of a certain minimum is the distance from the _______ maximum.", "c": "central"},
+  {"type": "blank", "q": "The width of the central maximum is _______ times the position of the first minimum.", "c": "two"},
+  {"type": "blank", "q": "Most modern-day applications of slit interference use _______.", "c": "many"},
+  {"type": "blank", "q": "The diffraction grating is an important tool in _______ analysis.", "c": "optical"},
+  {"type": "blank", "q": "A diffraction grating consists of a large number of _______ slits of the same width separated by equal opaque spaces.", "c": "parallel"},
+  {"type": "blank", "q": "A diffraction grating can disperse light into its _______ components.", "c": "wavelength"},
+  {"type": "blank", "q": "The diffraction grating is used to resolve light into _______.", "c": "spectra"},
+  {"type": "blank", "q": "Diffraction grating is widely used as a _______ element in spectrographic instruments.", "c": "dispersive"},
+  {"type": "blank", "q": "A compact disc is an example of _______ gratings.", "c": "reflection"},
+  {"type": "blank", "q": "A reflection grating is a _______ surface having many fine grooves.", "c": "shiny"},
+  {"type": "blank", "q": "The tracks of a compact disc act as a diffraction grating, producing a separation of the colours of _______ light.", "c": "white"}
 ]
