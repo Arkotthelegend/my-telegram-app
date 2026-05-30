@@ -1,1 +1,473 @@
 
+[
+  {
+    "type": "blank",
+    "q": "The DNA transmits _______ information from parents to offspring.",
+    "c": "heritable"
+  },
+  {
+    "type": "blank",
+    "q": "Scientific research and the _______ of new tools and techniques have improved the quality of our lives.",
+    "c": "development"
+  },
+  {
+    "type": "blank",
+    "q": "Commercially cultivating _______ crops in Myanmar are mainly cereals, pules and oilseed crops.",
+    "c": "agricultural"
+  },
+  {
+    "type": "blank",
+    "q": "In _______ feedback, a product speeds up its own production.",
+    "c": "positive"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ of live unfolds as follows; biosphere, ecosystem, community, population, organism, organ system, organ, tissue and cell.",
+    "c": "hierarchy"
+  },
+  {
+    "type": "blank",
+    "q": "Maize is a _______ plant that prefers warm humid weather.",
+    "c": "tropical"
+  },
+  {
+    "type": "blank",
+    "q": "The global major _______ products can be broadly grouped into foods, fibers, fuels and raw materials.",
+    "c": "agricultural"
+  },
+  {
+    "type": "blank",
+    "q": "In Myanmar, most rice paddy is produced during _______ season.",
+    "c": "monsoon"
+  },
+  {
+    "type": "blank",
+    "q": "Natural selection is the _______ process that occurs when a population is exposed to environmental factors.",
+    "c": "evolutionary"
+  },
+  {
+    "type": "blank",
+    "q": "Darwin proposed natural _______ as the mechanism for evolutionary adaptation of population to their environments.",
+    "c": "selection"
+  },
+  {
+    "type": "blank",
+    "q": "The structure and function of biological _______ are interrelated.",
+    "c": "components"
+  },
+  {
+    "type": "blank",
+    "q": "Prokaryotic cells are _______ membrane – enclosed organelles.",
+    "c": "lack"
+  },
+  {
+    "type": "blank",
+    "q": "The cell is a basic unit structure and function of an _______.",
+    "c": "organism"
+  },
+  {
+    "type": "blank",
+    "q": "There are two dominant rice production systems; _______ low land and irrigated low land.",
+    "c": "rain fed"
+  },
+  {
+    "type": "blank",
+    "q": "At each level of _______ hierarchy, a correlation of structure and function can be observed.",
+    "c": "biological"
+  },
+  {
+    "type": "blank",
+    "q": "The scientific name of the rice is _______.",
+    "c": "Oryza sativa"
+  },
+  {
+    "type": "blank",
+    "q": "Maize is very sensitive to _______ or deficit soil moisture.",
+    "c": "excess"
+  },
+  {
+    "type": "blank",
+    "q": "Domain _______ and Bacteria consist of prokaryotes.",
+    "c": "Archaea"
+  },
+  {
+    "type": "blank",
+    "q": "Prokaryotic cells are lack membrane – enclosed _______.",
+    "c": "organelles"
+  },
+  {
+    "type": "blank",
+    "q": "Cell is the _______ level of organization that can perform all activities required for life.",
+    "c": "lowest"
+  },
+  {
+    "type": "blank",
+    "q": "In negative feedback, accumulation of the product _______ its production.",
+    "c": "slows"
+  },
+  {
+    "type": "blank",
+    "q": "Globally Myanmar is the _______ largest producer of pulses.",
+    "c": "third"
+  },
+  {
+    "type": "blank",
+    "q": "Biology is broadly divided into _______ key themes.",
+    "c": "five"
+  },
+  {
+    "type": "blank",
+    "q": "Organisms interact _______ with physical factors.",
+    "c": "continuously"
+  },
+  {
+    "type": "blank",
+    "q": "In feedback regulation, a process is regulated by its _______ or product.",
+    "c": "output"
+  },
+  {
+    "type": "blank",
+    "q": "The food that we _______ is the result of agriculture.",
+    "c": "consume"
+  },
+  {
+    "type": "blank",
+    "q": "Feedback is a type of _______ common to life at all levels, from molecules to ecosystem",
+    "c": "regulation"
+  },
+  {
+    "type": "blank",
+    "q": "Eukaryotic cells contain membrane enclosed organelles, including a DNA in _______.",
+    "c": "nucleus"
+  },
+  {
+    "type": "blank",
+    "q": "Domain _______ includes various protists as well as plants, fungi and animals.",
+    "c": "Eukarya"
+  },
+  {
+    "type": "blank",
+    "q": "The humming bird's anatomy allows the _______ to rotate at the shoulder.",
+    "c": "wings"
+  },
+  {
+    "type": "blank",
+    "q": "Evolution is the process of _______ that has transformed life on Earth.",
+    "c": "change"
+  },
+  {
+    "type": "blank",
+    "q": "Some of the energy produced by producers reaches to consumers and some is lost from _______ as heat.",
+    "c": "ecosystem"
+  },
+  {
+    "type": "blank",
+    "q": "The monsoon season is main _______ production season of Myanmar.",
+    "c": "rice"
+  },
+  {
+    "type": "blank",
+    "q": "Plants take up nutrients from the soil and _______ from the air and used energy from the sun.",
+    "c": "chemicals"
+  },
+  {
+    "type": "blank",
+    "q": "The structure and _______ of biological components are interrelated.",
+    "c": "function"
+  },
+  {
+    "type": "blank",
+    "q": "Maize is a _______ day plant that prefers warm humid weather.",
+    "c": "short"
+  },
+  {
+    "type": "blank",
+    "q": "Evolution is the process of change that has transformed _______ on Earth.",
+    "c": "life"
+  },
+  {
+    "type": "blank",
+    "q": "Plants take up _______ from the soil and chemical from the air and use energy from the sun.",
+    "c": "nutrients"
+  },
+  {
+    "type": "blank",
+    "q": "Evolution explains the evolutionary adaptation and the match of organisms to their _______.",
+    "c": "environment"
+  },
+  {
+    "type": "blank",
+    "q": "The genetic information is encoded in the _______ sequences of DNA.",
+    "c": "nucleotide"
+  },
+  {
+    "type": "blank",
+    "q": "The humming bird's _______ allows the wings to rotate at the shoulder.",
+    "c": "anatomy"
+  },
+  {
+    "type": "blank",
+    "q": "In _______ feedback, accumulation of the product slows its production.",
+    "c": "negative"
+  },
+  {
+    "type": "blank",
+    "q": "Biology has also helped us to understand the _______ of living things.",
+    "c": "characteristics"
+  },
+  {
+    "type": "blank",
+    "q": "Maize cannot withstand _______ at any stage of growth.",
+    "c": "frost"
+  },
+  {
+    "type": "blank",
+    "q": "All organisms require _______ for their life.",
+    "c": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ is a basic unit structure and function of an organism.",
+    "c": "cell"
+  },
+  {
+    "type": "blank",
+    "q": "Eukaryotic cells contain _______ enclosed organelles, including a DNA in nucleus.",
+    "c": "membrane"
+  },
+  {
+    "type": "blank",
+    "q": "Darwin proposed natural selection as the mechanism for _______ adaptation of population to their environment.",
+    "c": "evolutionary"
+  },
+  {
+    "type": "blank",
+    "q": "The wheat can be cultivated _______ a year.",
+    "c": "once"
+  },
+  {
+    "type": "blank",
+    "q": "Among the _______ countries, Myanmar is the leading pulse and bean producer.",
+    "c": "ASEAN"
+  },
+  {
+    "type": "blank",
+    "q": "Biology is also _______ to our everyday life.",
+    "c": "important"
+  },
+  {
+    "type": "blank",
+    "q": "Commercially cultivating agricultural crops in Myanmar are mainly cereals, _______ and oilseed crops.",
+    "c": "pulses"
+  },
+  {
+    "type": "blank",
+    "q": "Producers convert sunlight energy to chemical energy and the passed to _______.",
+    "c": "consumers"
+  },
+  {
+    "type": "blank",
+    "q": "The zero-tillage technique is a new method of _______ cultivation.",
+    "c": "wheat"
+  },
+  {
+    "type": "blank",
+    "q": "In Myanmar, other crops such as beans, pulses, oilseeds and maize are produced during the _______ and dry seasons.",
+    "c": "cool"
+  },
+  {
+    "type": "blank",
+    "q": "Domain Eukarya includes various _______ as well as plants, fungi and animals.",
+    "c": "protists"
+  },
+  {
+    "type": "blank",
+    "q": "Maize seeds should not be sown more _______ depth of soil.",
+    "c": "5-6 cm"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ transmits heritable information from parents to offspring.",
+    "c": "DNA"
+  },
+  {
+    "type": "blank",
+    "q": "Fields such as _______ and evolution give insight into the past and can help shape the future.",
+    "c": "genetics"
+  },
+  {
+    "type": "blank",
+    "q": "Energy flow through the _______.",
+    "c": "ecosystem"
+  },
+  {
+    "type": "blank",
+    "q": "Cells are either prokaryotic or _______.",
+    "c": "eukaryotic"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ method for cultivating rice is flooding the fields while, or after, setting the young seedlings.",
+    "c": "traditional"
+  },
+  {
+    "type": "blank",
+    "q": "There are two dominant rice production systems; rain fed lowland and _______ lowland.",
+    "c": "irrigated"
+  },
+  {
+    "type": "blank",
+    "q": "In positive feedback, a product _______ its own production.",
+    "c": "speeds up"
+  },
+  {
+    "type": "blank",
+    "q": "Natural selection is the evolutionary process that occurs when a population is exposed to _______ factors.",
+    "c": "environmental"
+  },
+  {
+    "type": "blank",
+    "q": "Rice production varies depending on its environment, in rain fed _______ rice, winter rice, deep water rice, upland rice and irrigates rice.",
+    "c": "lowland"
+  },
+  {
+    "type": "blank",
+    "q": "Research in ecology and _______ inform how we can protect this planet's precious biodiversity.",
+    "c": "conservation"
+  },
+  {
+    "type": "blank",
+    "q": "Life on _______ is simply amazing-diverse, resilient, powerful, intelligent and mystifying.",
+    "c": "Earth"
+  },
+  {
+    "type": "blank",
+    "q": "At each level of biological hierarchy, a _______ of structure and function can be observed.",
+    "c": "correlation"
+  },
+  {
+    "type": "blank",
+    "q": "Chemicals cycle occurs between _______ and the environment.",
+    "c": "organisms"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ cycle occurs between organisms and environment.",
+    "c": "chemical"
+  },
+  {
+    "type": "blank",
+    "q": "Biologists classify _______ according to a system of broader and broader groups.",
+    "c": "species"
+  },
+  {
+    "type": "blank",
+    "q": "The _____ information is encoded in the nucleotide sequences of DNA.",
+    "c": "genetic"
+  },
+  {
+    "type": "blank",
+    "q": "Producers convert energy from _______ to chemical energy.",
+    "c": "sunlight"
+  },
+  {
+    "type": "blank",
+    "q": "About _______ types of pulses are produced in Myanmar.",
+    "c": "18"
+  },
+  {
+    "type": "blank",
+    "q": "Feedback is a type of regulation common to lift at all levels, from molecules to _______.",
+    "c": "ecosystems"
+  },
+  {
+    "type": "blank",
+    "q": "All _______ requires energy for their life.",
+    "c": "organisms"
+  },
+  {
+    "type": "blank",
+    "q": "Zea mays is the scientific name of _______.",
+    "c": "maize"
+  },
+  {
+    "type": "blank",
+    "q": "Interactions among plants, animals, and other _______ affect the participants in varying ways.",
+    "c": "organisms"
+  },
+  {
+    "type": "blank",
+    "q": "Biology being the study of living things helps us to understand every _______ organism.",
+    "c": "living"
+  },
+  {
+    "type": "blank",
+    "q": "Triticum aestivum is the scientific name of the _______.",
+    "c": "wheat"
+  },
+  {
+    "type": "blank",
+    "q": "Humans, animals, and we depend on the agricultural products for _______ ourselves.",
+    "c": "sustaining"
+  },
+  {
+    "type": "blank",
+    "q": "Organisms interact continuously with _______ factors.",
+    "c": "physical"
+  },
+  {
+    "type": "blank",
+    "q": "Agriculture is defined to produce _______ which maintain life.",
+    "c": "commodities"
+  },
+  {
+    "type": "blank",
+    "q": "DNA sequences act as instructions to make a cells _______ production by being transcribed into mRNA.",
+    "c": "protein"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ season is main rice production season of Myanmar.",
+    "c": "monsoon"
+  },
+  {
+    "type": "blank",
+    "q": "Wheat is a _______ grain that is a worldwide staple food.",
+    "c": "cereal"
+  },
+  {
+    "type": "blank",
+    "q": "Advances in medicine, agriculture, biotechnology, and many other areas of biology have brought _______ in the quality of life.",
+    "c": "improvement"
+  },
+  {
+    "type": "blank",
+    "q": "Evolution explains the evolutionary _______ and the match of organisms to their environment.",
+    "c": "adaptation"
+  },
+  {
+    "type": "blank",
+    "q": "Over _______ of the world's workers are employed in agriculture.",
+    "c": "one-third"
+  },
+  {
+    "type": "blank",
+    "q": "The five key themes of biology are organization, information, energy and matter, _______, and evolution.",
+    "c": "interactions"
+  },
+  {
+    "type": "blank",
+    "q": "Domain _______ and Bacteria consist of prokaryotes.",
+    "c": "Archaea"
+  },
+  {
+    "type": "blank",
+    "q": "The cell is a basic unit structure and function of an _______.",
+    "c": "organism"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ season is main rice production season of Myanmar.",
+    "c": "monsoon"
+  }
+]
