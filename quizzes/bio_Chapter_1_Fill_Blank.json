@@ -469,5 +469,536 @@
     "type": "blank",
     "q": "The _______ season is main rice production season of Myanmar.",
     "c": "monsoon"
+  },
+  {
+    "type": "blank",
+    "q": "The word horticulture is derived from the Latin words, 'hortus' mean _______ and 'cultura' mean cultivation.",
+    "c": "garden"
+  },
+  {
+    "type": "blank",
+    "q": "Shrimp farming exist in either a _______ or freshwater environment.",
+    "c": "marine"
+  },
+  {
+    "type": "blank",
+    "q": "Integrated _______ farming is a system of producing fish in combination with other livestock farming.",
+    "c": "livestock"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics uses less _______ than traditional soil-based system.",
+    "c": "water"
+  },
+  {
+    "type": "blank",
+    "q": "Horticulture involves plant propagation and _______ to improve the plant growth.",
+    "c": "cultivation"
+  },
+  {
+    "type": "blank",
+    "q": "Aquaculture is the forming of aquatic _______.",
+    "c": "organisms"
+  },
+  {
+    "type": "blank",
+    "q": "Shrimp farming exist in either marine or _______ environment.",
+    "c": "freshwater"
+  },
+  {
+    "type": "blank",
+    "q": "Aquaculture, also known as _______.",
+    "c": "aquafarming"
+  },
+  {
+    "type": "blank",
+    "q": "Manure can be spread on fields to increase crop _______.",
+    "c": "yields"
+  },
+  {
+    "type": "blank",
+    "q": "Cultivation of marine organisms in artificial tanks, filled with seawater is termed _______ mariculture.",
+    "c": "onshore"
+  },
+  {
+    "type": "blank",
+    "q": "Among the ASEAN countries, Myanmar is the leading _______ and bean producer.",
+    "c": "pulse"
+  },
+  {
+    "type": "blank",
+    "q": "Postharvest physiology is the management of _______ crops to determine the best storage after harvest.",
+    "c": "harvested"
+  },
+  {
+    "type": "blank",
+    "q": "Yeast, one of the simplest _______, is used in the process of fermentation.",
+    "c": "eukaryoutes"
+  },
+  {
+    "type": "blank",
+    "q": "Landscape horticulture is the selection, production and care of plants used in _______ architecture.",
+    "c": "landscape"
+  },
+  {
+    "type": "blank",
+    "q": "The grazing of livestock is sometimes used as a way to control weeds and _______.",
+    "c": "undergrowth"
+  },
+  {
+    "type": "blank",
+    "q": "Fish farming is a type of aquaculture, which is controlled _______ and harvesting of aquatic animals.",
+    "c": "cultivation"
+  },
+  {
+    "type": "blank",
+    "q": "The blood and bone of _______ are also used as fertilizer.",
+    "c": "animals"
+  },
+  {
+    "type": "blank",
+    "q": "Olericulture is the _______ growing, dealing with the culture of non-woody plants for food.",
+    "c": "vegetable"
+  },
+  {
+    "type": "blank",
+    "q": "The bacterium _______ helps in the formation of curd from milk.",
+    "c": "lactobacillus"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics offer many advantage, notably a decrease in _______ usage in agriculture.",
+    "c": "water"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponic growing allows for faster growth and higher _______ than traditional soil-based growing systems.",
+    "c": "yields"
+  },
+  {
+    "type": "blank",
+    "q": "Arboriculture is the cultivation and care of individual trees, _______, vines and other perennial woody plants.",
+    "c": "shrubs"
+  },
+  {
+    "type": "blank",
+    "q": "Maize cannot withstand frost at any stage of _______.",
+    "c": "growth"
+  },
+  {
+    "type": "blank",
+    "q": "Aquaculture involves _______ freshwater, brackish water and salt water populations under controlled conditions.",
+    "c": "cultivating"
+  },
+  {
+    "type": "blank",
+    "q": "Microbes aid in the formation of _______ product like curd, cheese and yoghurt.",
+    "c": "dairy"
+  },
+  {
+    "type": "blank",
+    "q": "Arboriculture is the cultivation and care of individual trees, shrubs, vines and other perennial _______ plants.",
+    "c": "woody"
+  },
+  {
+    "type": "blank",
+    "q": "The grazing of livestock is sometimes used as a way to control _______ and undergrowth.",
+    "c": "weeds"
+  },
+  {
+    "type": "blank",
+    "q": "The majority of algae that are intentionally cultivated fall into the category of _______.",
+    "c": "macroalgae"
+  },
+  {
+    "type": "blank",
+    "q": "Manure can be spread on fields to _______ crop yields.",
+    "c": "increase"
+  },
+  {
+    "type": "blank",
+    "q": "Horticulture is _______ science of cultivating and growing plants.",
+    "c": "applied"
+  },
+  {
+    "type": "blank",
+    "q": "Cultivation of marine organisms in fish farms built on _______ water is known as inshore mariculture.",
+    "c": "littoral"
+  },
+  {
+    "type": "blank",
+    "q": "Some of the major types of _______ include olericulture, pomology, viticulture, floriculture, and arboriculture etc.",
+    "c": "horticulture"
+  },
+  {
+    "type": "blank",
+    "q": "Commercial fishing is the _______ of wild fish.",
+    "c": "harvesting"
+  },
+  {
+    "type": "blank",
+    "q": "Our food items come from _______ and animals.",
+    "c": "plants"
+  },
+  {
+    "type": "blank",
+    "q": "Turf management is the production and upkeep of _______, artificial and live, for use in recreation.",
+    "c": "turf"
+  },
+  {
+    "type": "blank",
+    "q": "The wheat can be cultivated once a _______.",
+    "c": "year"
+  },
+  {
+    "type": "blank",
+    "q": "The word horticulture is derives from the Latin words, 'hortus' mean garden and 'cultura' mean _______.",
+    "c": "cultivation"
+  },
+  {
+    "type": "blank",
+    "q": "Horticulture is the _______ of agriculture.",
+    "c": "cultivation"
+  },
+  {
+    "type": "blank",
+    "q": "Postharvest Physiology is the management of _______ horticultural crops to determine the best storage.",
+    "c": "harvested"
+  },
+  {
+    "type": "blank",
+    "q": "Without _______, the viability of life is not feasible.",
+    "c": "food"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ present in the soil act as a decomposing agent.",
+    "c": "microorganisms"
+  },
+  {
+    "type": "blank",
+    "q": "Shrimp farming is an aquaculture business, that producing shrimp or _______.",
+    "c": "prawns"
+  },
+  {
+    "type": "blank",
+    "q": "The blood and bone of animals are also used as _______.",
+    "c": "fertilizer"
+  },
+  {
+    "type": "blank",
+    "q": "Aquaculture is the farming of _______ organisms.",
+    "c": "aquatic"
+  },
+  {
+    "type": "blank",
+    "q": "Livestock contribute to conservation of _______ and genetic resources for food and agriculture.",
+    "c": "biodiversity"
+  },
+  {
+    "type": "blank",
+    "q": "The most common livestock animals are _______, sheep, goat, pig, horse, chicken and duck.",
+    "c": "cattle"
+  },
+  {
+    "type": "blank",
+    "q": "Plants are commonly grown hydroponically in a _______.",
+    "c": "greenhouse"
+  },
+  {
+    "type": "blank",
+    "q": "Maize seeds should not be _______ more than 5-6 cm depth of soil.",
+    "c": "sown"
+  },
+  {
+    "type": "blank",
+    "q": "Mariculture or marine farming is a specialized branch of _______.",
+    "c": "aquaculture"
+  },
+  {
+    "type": "blank",
+    "q": "Wheat is a cereal grain that is worldwide _______ food.",
+    "c": "staple"
+  },
+  {
+    "type": "blank",
+    "q": "Turf management is the production and upkeep of turf, _______ and live, for use in recreation.",
+    "c": "artificial"
+  },
+  {
+    "type": "blank",
+    "q": "Maize is a tropical plant that prefers warm _______ weather.",
+    "c": "humid"
+  },
+  {
+    "type": "blank",
+    "q": "Terrestrial or aquatic plants may grow with their _______ exposed to the nutritious liquid.",
+    "c": "roots"
+  },
+  {
+    "type": "blank",
+    "q": "Olericulture is the vegetable growing, dealing with the culture of non-woody plants for _______.",
+    "c": "foods"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics offer many advantages, notably a _______ in water usage in agriculture.",
+    "c": "decrease"
+  },
+  {
+    "type": "blank",
+    "q": "Aquaculture involves cultivating freshwater _______ and saltwater populations under semi-natural conditions.",
+    "c": "brackish water"
+  },
+  {
+    "type": "blank",
+    "q": "Sport stadiums, civilian landscaping and leisure are among the largest users of _______ management services.",
+    "c": "turf"
+  },
+  {
+    "type": "blank",
+    "q": "Plant, only is able to manufacture food through the process of _______.",
+    "c": "photosynthesis"
+  },
+  {
+    "type": "blank",
+    "q": "Maize is very sensitive to excess or deficit soil _______.",
+    "c": "moisture"
+  },
+  {
+    "type": "blank",
+    "q": "Floriculture is the growing and marketing of flowers and _______ plants for floristry.",
+    "c": "ornamental"
+  },
+  {
+    "type": "blank",
+    "q": "Horticulture is a branch of _______ and botany.",
+    "c": "agriculture"
+  },
+  {
+    "type": "blank",
+    "q": "Algaculture is the farming of algae species including microalgae and _______.",
+    "c": "macroalgae"
+  },
+  {
+    "type": "blank",
+    "q": "The zero-tillage technique is a new method of wheat cultivation that is used in the _______-Wheat cropping system.",
+    "c": "Rice"
+  },
+  {
+    "type": "blank",
+    "q": "Worldwide, fish species used in fish farming are, in order, carp, salmon, _______ and catfish.",
+    "c": "tilapia"
+  },
+  {
+    "type": "blank",
+    "q": "Animals such as horses, donkey and yaks can be used as _______ Labor.",
+    "c": "non-human"
+  },
+  {
+    "type": "blank",
+    "q": "Fish farming or _______ involves commercial breeding of fish.",
+    "c": "pisciculture"
+  },
+  {
+    "type": "blank",
+    "q": "A food that can produce heat or energy is _______ and fats.",
+    "c": "carbohydrates"
+  },
+  {
+    "type": "blank",
+    "q": "Meat from livestock can be raised for production of useful form of _______ and energy.",
+    "c": "protein"
+  },
+  {
+    "type": "blank",
+    "q": "The nutrients used in _______ systems can come from many different sources.",
+    "c": "hydroponic"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics uses less water than traditional _______ based system.",
+    "c": "soil"
+  },
+  {
+    "type": "blank",
+    "q": "Cultivation of marine organisms in enclosed sections of the open _______ is offshore mariculture.",
+    "c": "ocean"
+  },
+  {
+    "type": "blank",
+    "q": "Fish farming is a type of aquaculture, which is controlled cultivation and _______ of aquatic animals.",
+    "c": "harvesting"
+  },
+  {
+    "type": "blank",
+    "q": "Cultivation of marine organisms in _______ tanks, filled with seawater is termed onshore mariculture.",
+    "c": "artificial"
+  },
+  {
+    "type": "blank",
+    "q": "Aquafarming, also known as _______.",
+    "c": "aquaculture"
+  },
+  {
+    "type": "blank",
+    "q": "Food is one of the _______ requirements of life.",
+    "c": "major"
+  },
+  {
+    "type": "blank",
+    "q": "Floriculture is the growing and marketing of _______ and ornamental plants for floristry.",
+    "c": "flowers"
+  },
+  {
+    "type": "blank",
+    "q": "Algaculture is the farming of _______ species.",
+    "c": "algae"
+  },
+  {
+    "type": "blank",
+    "q": "The term livestock refer to any _______, land-living animal to provide meat, milk and egg.",
+    "c": "domesticated"
+  },
+  {
+    "type": "blank",
+    "q": "Fish farming as pisciculture involves _______ breeding of fish.",
+    "c": "commercial"
+  },
+  {
+    "type": "blank",
+    "q": "The microorganisms assist the production of _______ from dead and decaying organic matter.",
+    "c": "compost"
+  },
+  {
+    "type": "blank",
+    "q": "The term _______ refer to any domesticated, land-living animal to provide meat, milk and eggs.",
+    "c": "livestock"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics growing allows for faster _______ and higher yields than traditional soil-based growing systems.",
+    "c": "growth"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics is a method of growing plants without _______.",
+    "c": "soil"
+  },
+  {
+    "type": "blank",
+    "q": "Globally Myanmar is the third largest producer of _______.",
+    "c": "pulses"
+  },
+  {
+    "type": "blank",
+    "q": "The _______ used in hydroponic systems can come from many different sources.",
+    "c": "nutrients"
+  },
+  {
+    "type": "blank",
+    "q": "Viticulture is the production grapes, largely intended for _______.",
+    "c": "winemaking"
+  },
+  {
+    "type": "blank",
+    "q": "Terrestrial aquatic plants may grow with their roots exposed to the _______ liquid.",
+    "c": "nutritious"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics is a method of growing _______ without soil.",
+    "c": "plants"
+  },
+  {
+    "type": "blank",
+    "q": "Cultivation of marine organisms in enclosed sections of the open ocean is _______ mariculture.",
+    "c": "offshore"
+  },
+  {
+    "type": "blank",
+    "q": "Pomology is also called _______, it is production of fruits and nuts.",
+    "c": "fruiticulture"
+  },
+  {
+    "type": "blank",
+    "q": "Pomology is also called fruiticulture, it is production of fruits and _______.",
+    "c": "nuts"
+  },
+  {
+    "type": "blank",
+    "q": "Plants are commonly grown _______ in a greenhouse.",
+    "c": "hydroponically"
+  },
+  {
+    "type": "blank",
+    "q": "Hydroponics takes much less _______ to grow plants without soil.",
+    "c": "water"
+  },
+  {
+    "type": "blank",
+    "q": "In oyster farming _______ are bred and raised mainly for their pearls.",
+    "c": "oysters"
+  },
+  {
+    "type": "blank",
+    "q": "Mariculture or _______ farming is a specialized branch of aquaculture.",
+    "c": "marine"
+  },
+  {
+    "type": "blank",
+    "q": "The most common _______ animals are cattle, sheep, goats, pig, horse, chicken and duck.",
+    "c": "livestock"
+  },
+  {
+    "type": "blank",
+    "q": "Integrated fish farming is a system of producing fish in _______ with other agriculture farming.",
+    "c": "combination"
+  },
+  {
+    "type": "blank",
+    "q": "Landscape _______ is the selection, production and care of plants used in landscape architecture.",
+    "c": "Horticulture"
+  },
+  {
+    "type": "blank",
+    "q": "Viticulture is the production of _______ for wine making.",
+    "c": "grapes"
+  },
+  {
+    "type": "blank",
+    "q": "Horticulture involves plant _______ and cultivation to improve the plant growth.",
+    "c": "propagation"
+  },
+  {
+    "type": "blank",
+    "q": "Landscape Horticulture is the selection, production and care of plants used in landscape _______.",
+    "c": "architecture"
+  },
+  {
+    "type": "blank",
+    "q": "Postharvest Physiology is the management of harvested _______ crops to determine the best storage.",
+    "c": "horticultural"
+  },
+  {
+    "type": "blank",
+    "q": "Livestock are key drivers for _______ development in agriculture.",
+    "c": "sustainable"
+  },
+  {
+    "type": "blank",
+    "q": "Meat from livestock can be raised for production of _______ product such as yogurt, cheese and butter.",
+    "c": "dairy"
+  },
+  {
+    "type": "blank",
+    "q": "Commercial fishing is the harvesting of _______ fish.",
+    "c": "wild"
+  },
+  {
+    "type": "blank",
+    "q": "Macroalgae, commonly known as _______.",
+    "c": "seaweed"
   }
 ]
+
