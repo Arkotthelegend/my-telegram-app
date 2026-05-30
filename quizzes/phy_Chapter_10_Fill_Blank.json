@@ -1,253 +1,78 @@
-
 [
-  {
-    "type": "blank",
-    "q": "The SI unit of electrical resistance is the _______.",
-    "c": "ohm"
-  },
-  {
-    "type": "blank",
-    "q": "The rate at which electrical energy is dissipated in a resistor is called electrical _______.",
-    "c": "power"
-  },
-  {
-    "type": "blank",
-    "q": "Kirchhoff's _______ rule is based on the law of conservation of charge.",
-    "c": "first"
-  },
-  {
-    "type": "blank",
-    "q": "The electromotive force is not actually a _______.",
-    "c": "force"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ is an instrument used to measure an unknown resistance.",
-    "c": "Wheatstone bridge"
-  },
-  {
-    "type": "blank",
-    "q": "The internal resistance of a battery depends on its _______.",
-    "c": "size"
-  },
-  {
-    "type": "blank",
-    "q": "Electrical resistivity is a property of the _______ of the conductor.",
-    "c": "material"
-  },
-  {
-    "type": "blank",
-    "q": "The resistance of a conductor is _______ proportional to its length.",
-    "c": "directly"
-  },
-  {
-    "type": "blank",
-    "q": "The unit of electrical resistivity is _______.",
-    "c": "ohm-metre"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ is used to prevent excessive current from passing through electrical appliances.",
-    "c": "fuse"
-  },
-  {
-    "type": "blank",
-    "q": "The equivalent resistance of resistors in _______ is R = R1 + R2 + R3 + ...",
-    "c": "series"
-  },
-  {
-    "type": "blank",
-    "q": "Kirchhoff's _______ rule is based on the law of conservation of energy.",
-    "c": "second"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ of a battery is the potential difference across its terminals when no current is drawn.",
-    "c": "electromotive force"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ switches the current on and off to maintain a selected temperature.",
-    "c": "thermostat"
-  },
-  {
-    "type": "blank",
-    "q": "The resistance of a conductor is inversely proportional to its _______ area.",
-    "c": "cross-sectional"
-  },
-  {
-    "type": "blank",
-    "q": "In a _______ circuit, the potential difference across each resistor is the same.",
-    "c": "parallel"
-  },
-  {
-    "type": "blank",
-    "q": "The unit of electromotive force is the _______.",
-    "c": "volt"
-  },
-  {
-    "type": "blank",
-    "q": "Tungsten filament emits white light at a temperature of about _______.",
-    "c": "2500 °C"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ gas reduces the evaporation of the filament in a light bulb.",
-    "c": "inert"
-  },
-  {
-    "type": "blank",
-    "q": "A source of emf has an _______ resistance.",
-    "c": "internal"
-  },
-  {
-    "type": "blank",
-    "q": "The electrical power P is given by the product of _______ and current.",
-    "c": "voltage"
-  },
-  {
-    "type": "blank",
-    "q": "One kilowatt-hour is equal to _______ Joules.",
-    "c": "3.6 x 10^6"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ bridge is balanced when the galvanometer shows zero deflection.",
-    "c": "Wheatstone"
-  },
-  {
-    "type": "blank",
-    "q": "Materials that have zero resistance at very low temperatures are called _______.",
-    "c": "superconductors"
-  },
-  {
-    "type": "blank",
-    "q": "In an electric iron, the heating coil is insulated with _______.",
-    "c": "mica"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ resistance connected in parallel to a galvanometer converts it into an ammeter.",
-    "c": "shunt"
-  },
-  {
-    "type": "blank",
-    "q": "The internal resistance of a battery increases with its _______.",
-    "c": "lifetime"
-  },
-  {
-    "type": "blank",
-    "q": "The resistivity of most metals _______ with increasing temperature.",
-    "c": "increases"
-  },
-  {
-    "type": "blank",
-    "q": "The potential difference V across a resistor is equal to _______.",
-    "c": "IR"
-  },
-  {
-    "type": "blank",
-    "q": "Most of the electrical energy supplied to a resistor is converted into _______.",
-    "c": "heat"
-  },
-  {
-    "type": "blank",
-    "q": "An _______ is an instrument used to measure current.",
-    "c": "ammeter"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ is an instrument used to measure potential difference.",
-    "c": "voltmeter"
-  },
-  {
-    "type": "blank",
-    "q": "In a series circuit, the _______ is the same through all parts of the circuit.",
-    "c": "current"
-  },
-  {
-    "type": "blank",
-    "q": "The symbol for electrical resistivity is the Greek letter _______.",
-    "c": "rho"
-  },
-  {
-    "type": "blank",
-    "q": "The equivalent resistance of parallel resistors is always _______ than any individual resistance.",
-    "c": "smaller"
-  },
-  {
-    "type": "blank",
-    "q": "Nichrome is an alloy of nickel and _______.",
-    "c": "chromium"
-  },
-  {
-    "type": "blank",
-    "q": "The _______ point is a junction where three or more conductors meet.",
-    "c": "node"
-  },
-  {
-    "type": "blank",
-    "q": "The kilowatt-hour is the unit of electrical _______.",
-    "c": "energy"
-  },
-  {
-    "type": "blank",
-    "q": "A _______ can measure emf without drawing any current from the source.",
-    "c": "potentiometer"
-  },
-  {
-    "type": "blank",
-    "q": "The resistivity of a semiconductor _______ as temperature increases.",
-    "c": "decreases"
-  },
-  {
-    "type": "blank",
-    "q": "The total resistance of a circuit is called _______ resistance.",
-    "c": "equivalent"
-  },
-  {
-    "type": "blank",
-    "q": "A fuse wire is usually made of a _______ alloy.",
-    "c": "tin-lead"
-  },
-  {
-    "type": "blank",
-    "q": "The voltage used for domestic supply in Myanmar is _______.",
-    "c": "220 V"
-  },
-  {
-    "type": "blank",
-    "q": "Energy transformed is equal to Power multiplied by _______.",
-    "c": "time"
-  },
-  {
-    "type": "blank",
-    "q": "An _______ light bulb also produces heat energy.",
-    "c": "incandescent"
-  },
-  {
-    "type": "blank",
-    "q": "The reciprocal of resistance is called _______.",
-    "c": "conductance"
-  },
-  {
-    "type": "blank",
-    "q": "For a balanced bridge, the ratio of resistances P/Q = _______.",
-    "c": "R/S"
-  },
-  {
-    "type": "blank",
-    "q": "The terminal voltage V is equal to E - _______.",
-    "c": "Ir"
-  },
-  {
-    "type": "blank",
-    "q": "Internal resistance is regarded as being connected in _______ to the battery.",
-    "c": "series"
-  },
-  {
-    "type": "blank",
-    "q": "Electrical energy can be transformed into _______ energy in a motor.",
-    "c": "mechanical"
-  }
+  {"type": "blank", "q": "Many home appliances use the heat generated from the transformation from _______.", "c": "electrical energy"},
+  {"type": "blank", "q": "The _______ of electromotive force provides electrical energy.", "c": "source"},
+  {"type": "blank", "q": "Batteries and generators are _______ of electromotive force.", "c": "sources"},
+  {"type": "blank", "q": "When a potential difference is set up between the two ends of a _______, a current flows through it.", "c": "resistor"},
+  {"type": "blank", "q": "Batteries convert _______ energy to electrical energy.", "c": "chemical"},
+  {"type": "blank", "q": "A source of electromotive force converts energy from some other forms into _______.", "c": "electrical energy"},
+  {"type": "blank", "q": "A battery converts _______ energy into electrical energy.", "c": "chemical"},
+  {"type": "blank", "q": "In an electric generator, _______ energy is converted into electrical energy.", "c": "mechanical"},
+  {"type": "blank", "q": "A source of _______ force has a positive terminal and a negative terminal.", "c": "electromotive"},
+  {"type": "blank", "q": "The _______ charges are sent from the negative to the positive terminal within the battery.", "c": "positive"},
+  {"type": "blank", "q": "The electromotive force is the amount of _______ provided by the battery per unit charge to move round the complete circuit.", "c": "energy"},
+  {"type": "blank", "q": "The emf is measured in units of _______.", "c": "volt"},
+  {"type": "blank", "q": "The equivalent unit of the _______ is joule per coulomb (J C^-1).", "c": "emf"},
+  {"type": "blank", "q": "The internal resistance must be regarded as being connected in _______ to the battery.", "c": "series"},
+  {"type": "blank", "q": "The total work done in moving a unit positive charge round the complete circuit is the _______ of the battery.", "c": "emf"},
+  {"type": "blank", "q": "The potential difference across the terminals of a battery connected to an external circuit is the _______ voltage of the battery.", "c": "terminal"},
+  {"type": "blank", "q": "The electromotive force (emf) is the potential difference between the two terminals of a battery or a cell in a/an _______ circuit.", "c": "open"},
+  {"type": "blank", "q": "The terminal voltage (available voltage) is the potential difference between the two terminals of a battery or a cell in a/an _______ circuit.", "c": "closed"},
+  {"type": "blank", "q": "When two or more electromotive sources (batteries) are connected in series, the resultant emf is the _______ sum of the individual emfs.", "c": "algebraic"},
+  {"type": "blank", "q": "If the batteries are in series, and the currents leaving the batteries are in the same direction, such a connection of the batteries is called _______.", "c": "series aiding"},
+  {"type": "blank", "q": "If the batteries are in series aiding, the resultant emf is the _______ of the individual emfs.", "c": "sum"},
+  {"type": "blank", "q": "The resultant emf of the _______ combination is just the emf of a single battery.", "c": "parallel"},
+  {"type": "blank", "q": "To get maximum emf, the batteries must be in _______.", "c": "series aiding"},
+  {"type": "blank", "q": "To get minimum emf, the batteries must be in _______.", "c": "series opposing"},
+  {"type": "blank", "q": "To get the minimum internal resistance, the batteries must be in _______.", "c": "parallel"},
+  {"type": "blank", "q": "To get the emf of one battery, but for longer use, batteries must be in _______.", "c": "parallel"},
+  {"type": "blank", "q": "Electrical energy is the energy associated with the flow of _______ through any part of the circuit.", "c": "charge"},
+  {"type": "blank", "q": "Electrical energy can be generated from the _______ of emf.", "c": "sources"},
+  {"type": "blank", "q": "When a current passes through a resistor, the electrons collide with the _______ in the resistor.", "c": "atoms"},
+  {"type": "blank", "q": "When a current passes through a resistor, _______ energy is produced in the resistor.", "c": "heat"},
+  {"type": "blank", "q": "A resistor can convert electrical energy into _______ energy.", "c": "heat"},
+  {"type": "blank", "q": "If the voltage across a resistor is doubled, the energy used by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the current through a resistor is doubled, the energy used by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the resistance of a resistor connected to a certain voltage source is doubled, the energy used by it will be _______ the previous value.", "c": "half"},
+  {"type": "blank", "q": "An electric motor transforms electrical energy into _______ energy.", "c": "mechanical"},
+  {"type": "blank", "q": "The practical unit of electrical energy is _______.", "c": "kilowatt hour (kWh)"},
+  {"type": "blank", "q": "The SI unit of electrical energy is the _______.", "c": "joule"},
+  {"type": "blank", "q": "1 kWh is equivalent to _______ J.", "c": "3.6 x 10^6"},
+  {"type": "blank", "q": "Electrical _______ is the rate of transfer of electrical energy.", "c": "power"},
+  {"type": "blank", "q": "If the voltage across a resistor is doubled, the power consumed by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the current through a resistor is doubled, the power consumed by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the resistance of a resistor connected to a certain voltage source is doubled, the power consumed by it will be _______ the previous value.", "c": "half"},
+  {"type": "blank", "q": "The SI unit of electrical power is the _______.", "c": "watt"},
+  {"type": "blank", "q": "If 1 joule (J) of electrical energy is transferred in 1 second (s), the electrical power is _______.", "c": "1 watt"},
+  {"type": "blank", "q": "When a resistor is connected to a battery, the _______ energy is transformed into heat energy.", "c": "electrical"},
+  {"type": "blank", "q": "If the voltage across a resistor is doubled, the heat produced by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the current through a resistor is doubled, the heat produced by it will be _______ the previous value.", "c": "4 times"},
+  {"type": "blank", "q": "If the resistance of a resistor connected to a certain voltage source is doubled, the heat produced by it will be _______ the previous value.", "c": "half"},
+  {"type": "blank", "q": "The heat produced by a resistor connected to a certain voltage source is _______ proportional to the resistance of the resistor.", "c": "inversely"},
+  {"type": "blank", "q": "The heat produced by a resistor is directly proportional to the _______ of the current flowing through it.", "c": "square"},
+  {"type": "blank", "q": "The heat produced by a resistor is directly proportional to the _______ of the voltage.", "c": "square"},
+  {"type": "blank", "q": "The amount of heat produced by a resistor is _______ proportional to the time elapsed.", "c": "directly"},
+  {"type": "blank", "q": "Most of the electrical energy supplied to a resistor is converted into _______.", "c": "heat"},
+  {"type": "blank", "q": "The electric stove is designed to use the _______ effect of electric current.", "c": "heating"},
+  {"type": "blank", "q": "The electric cookers change electrical energy into _______ energy.", "c": "heat"},
+  {"type": "blank", "q": "The tungsten filament becomes _______ when a current flows through it.", "c": "hot"},
+  {"type": "blank", "q": "At the temperature of _______, tungsten emits white light.", "c": "2500 °C"},
+  {"type": "blank", "q": "Because of the inert gas, the light bulb can be used safely up to the temperature of _______.", "c": "2500 °C"},
+  {"type": "blank", "q": "The inert gas reduces the _______ of the filament in the light bulb.", "c": "evaporation"},
+  {"type": "blank", "q": "The electric light bulb converts electrical energy into heat and light energy.", "c": "heat"},
+  {"type": "blank", "q": "A small bulb consumes _______ Watts.", "c": "15-60"},
+  {"type": "blank", "q": "The bulb used for illuminating mainly has electrical power of the order of _______.", "c": "100 W"},
+  {"type": "blank", "q": "The heater coil of the electric stove consumes over _______ Watts.", "c": "600"},
+  {"type": "blank", "q": "When a current flows through the heater wire it produces _______ energy.", "c": "heat"},
+  {"type": "blank", "q": "In an electric iron, the heating coil is controlled by the _______.", "c": "thermostat"},
+  {"type": "blank", "q": "A _______ controls current on and off for maintaining the selected temperature in an electric iron.", "c": "thermostat"},
+  {"type": "blank", "q": "In an electric iron, a resistance wire and component makes the _______ of the heater element.", "c": "core"},
+  {"type": "blank", "q": "When a current flows through a resistance coil, it produces _______ energy.", "c": "heat"},
+  {"type": "blank", "q": "The electrical power of a laptop computer is _______ W.", "c": "15-65"},
+  {"type": "blank", "q": "The electrical power of a washing machine is _______ W.", "c": "400-1100"},
+  {"type": "blank", "q": "The electrical power of a refrigerator is _______ W.", "c": "100-250"},
+  {"type": "blank", "q": "The electrical power of electric appliances are _______ W.", "c": "100-250"},
+  {"type": "blank", "q": "The electrical power of an electric iron is _______ W.", "c": "750-1000"},
+  {"type": "blank", "q": "The electrical power of an electric stove is _______ W.", "c": "600-2000"},
+  {"type": "blank", "q": "Four 100 W lamps connected to 220 V mains line, _______ fuse should be fixed.", "c": "2 A"},
+  {"type": "blank", "q": "For appliances rated 1000 W connected to 220 V mains line, _______ fuse should be fixed.", "c": "5 A"}
 ]
