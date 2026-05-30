@@ -57,7 +57,7 @@
         .nav-active { opacity: 1; color: var(--accent); transform: scale(1.1); }
         
         .quiz-input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--accent); background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; font-size: 1rem; outline: none; }
-        .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1.8; white-space: pre-line; text-align: center; }
+        .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1; white-space: pre-line; text-align: center; }
           /* Flashcard အတွင်းစာသားများ ရှင်းလင်းစေရန် */
 .flash-face {
     display: flex;
@@ -589,7 +589,7 @@ function checkAccess(subId) {
         div.className = `subject-card ${isPaid ? '' : 'locked'} ${isSpecial && isPaid ? 'premium-card' : ''}`;
         div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
         
-        div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("Special User များသာ အသုံးပြုနိုင်ပါသည်။");
+        div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("ဘာသာရပ်၀ယ်ယူထားသူများသာ အသုံးပြုနိုင်ပါသည်။");
         list.appendChild(div);
     });
 }
