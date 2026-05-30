@@ -1,303 +1,152 @@
-
 [
   {
     "type": "mcq",
-    "q": "The capacitance of a parallel-plate capacitor is directly proportional to _______.",
-    "a": ["the distance between plates", "the area of the plates", "the potential difference"],
+    "q": "If the charge of one plate of a capacitor is +10 µC, the charge of the other plate is",
+    "a": ["+10 µC", "-10 µC", "0"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The SI unit of capacitance is the _______.",
-    "a": ["Coulomb", "Volt", "Farad"],
+    "q": "The capacitance of the capacitor can be altered mechanically.",
+    "a": ["film", "ceramic", "variable"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "A capacitor stores electrical energy in the form of an _______ field.",
-    "a": ["magnetic", "electric", "gravitational"],
+    "q": "If the area of each plate of the capacitor is increased, the capacitance",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The dielectric constant of a vacuum is",
+    "a": ["less than 1", "greater than 1", "1"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The ratio of the charge to the potential difference of the capacitor is",
+    "a": ["energy", "capacitance", "power"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which of the following capacitors uses the oxide layer as the dielectric?",
-    "a": ["Ceramic capacitor", "Paper capacitor", "Electrolytic capacitor"],
+    "q": "If different capacitors are in series, they have the same",
+    "a": ["charge", "potential difference", "energy"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The equivalent capacitance of three 12 µF capacitors in parallel is",
+    "a": ["1/4 µF", "36 µF", "4 µF"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "When a dielectric is inserted between the plates of a charged air capacitor disconnected from the power source, the potential difference",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The equivalent capacitance of three 12 µF series in parallel is",
+    "a": ["1/4 µF", "36 µF", "4 µF"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Capacitors in parallel all have the same _______.",
+    "q": "If the charge of the capacitor is increased, its capacitance",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The film capacitor uses plastic film as the",
+    "a": ["dielectric", "plates", "electrodes"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "If the charge of a capacitor is doubled, its energy will be",
+    "a": ["twice", "four times", "½ time"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The dielectric constant of air is",
+    "a": ["less than 1", "greater than 1", "1"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If different capacitors are in parallel, they have the same",
     "a": ["charge", "potential difference", "energy"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Capacitors in series all have the same _______.",
-    "a": ["charge", "potential difference", "capacitance"],
+    "q": "If the distance between the plates of the capacitor is increased, the capacitance",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "When a dielectric is inserted between the plates of a charged air capacitor disconnected from the power source, the charge",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "If the charge of the capacitor is increased, its potential difference",
+    "a": ["increases", "decreases", "remains the same"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The energy stored in a capacitor is U = _______.",
-    "a": ["CV", "1/2 CV", "1/2 CV^2"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The dielectric constant of a vacuum is exactly _______.",
-    "a": ["0", "1", "8.85 x 10^-12"],
+    "q": "The dielectric constant of glass is",
+    "a": ["less than 1", "greater than 1", "1"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "One farad is equal to _______.",
-    "a": ["1 V/C", "1 C/V", "1 J/C"],
+    "q": "If the charge of one plate of an unpolarized capacitor is +5 µC, the charge of the other is",
+    "a": ["+5 µC", "-5 µC", "0"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The equivalent capacitance Cp of capacitors in parallel is _______.",
-    "a": ["C1 + C2 + ...", "1/C1 + 1/C2 + ...", "C1 x C2"],
+    "q": "If the charge of one plate of a polarized capacitor is +5 µC, the charge of the other is",
+    "a": ["+5 µC", "-5 µC", "0"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The charge of a capacitor is the",
+    "a": ["magnitude of the charge on each plate", "sum of the charges on the two plates", "average charges on the two plates"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The capacitance of a parallel-plate capacitor is inversely proportional to _______.",
-    "a": ["the area of the plates", "the dielectric constant", "the distance between plates"],
-    "c": 2
+    "q": "The potential difference of a capacitor is the",
+    "a": ["potential of each plate", "potential difference between its plates", "average potential of its plates"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which component is originally known as a condenser?",
-    "a": ["Resistor", "Inductor", "Capacitor"],
-    "c": 2
+    "q": "When a dielectric is inserted between the plates of a charged air capacitor disconnected from the power source, the electric field between the plates",
+    "a": ["increases", "decreases", "remains the same"],
+    "c": 1
   },
   {
     "type": "mcq",
-    "q": "The electric potential at a point due to a charge Q at a distance r is _______.",
-    "a": ["1/4πε₀ (Q/r)", "1/4πε₀ (Q/r^2)", "1/4πε₀ (Q^2/r)"],
+    "q": "Insulating materials have values of dielectric constant",
+    "a": ["less than 1", "greater than 1", "1"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "If the dielectric is inserted between the plates of an air capacitor, the capacitance",
+    "a": ["increases", "decreases", "remains the same"],
     "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Electric field strength is a _______ quantity.",
-    "a": ["scalar", "vector", "dimensionless"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The potential at a point is a _______ quantity.",
-    "a": ["scalar", "vector", "fundamental"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Surface charge density σ is defined as _______.",
-    "a": ["Q / V", "Q / A", "Q / L"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Coulomb's law states that F is proportional to _______.",
-    "a": ["r^2", "1/r", "1/r^2"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "What happens to the capacitance when a dielectric material is inserted between the plates?",
-    "a": ["It decreases", "It increases", "It remains constant"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The failure of _______ capacitors can cause an explosion.",
-    "a": ["Mica", "Film", "Electrolytic"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Variable capacitors mostly use _______ as a dielectric.",
-    "a": ["Air", "Paper", "Ceramic"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The electric field inside a conductor in electrostatic equilibrium is _______.",
-    "a": ["Maximum", "Zero", "Uniform"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The unit of electric field strength is _______.",
-    "a": ["Volt", "Farad", "Volt per metre"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A dielectric is a/an _______ material.",
-    "a": ["conducting", "insulating", "semiconducting"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If C1 and C2 are in series, the equivalent capacitance Cs is _______.",
-    "a": ["C1 + C2", "(C1 + C2) / (C1C2)", "(C1C2) / (C1 + C2)"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Electric field lines end on _______ charges.",
-    "a": ["positive", "negative", "neutral"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The dielectric constant K is defined as _______.",
-    "a": ["C_vacuum / C_dielectric", "C_dielectric / C_vacuum", "C_dielectric x C_vacuum"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Mica capacitors are often used in _______ circuits.",
-    "a": ["low-frequency", "high-frequency", "DC only"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Surface charge density is greatest at _______.",
-    "a": ["flat surfaces", "sharp points", "hollow parts"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Like charges _______ each other.",
-    "a": ["attract", "repel", "neutralize"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The work done in moving a charge Q through a potential difference V is W = _______.",
-    "a": ["Q/V", "V/Q", "QV"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The value of 1/4πε₀ is _______ N m^2 C^-2.",
-    "a": ["8.85 x 10^-12", "9 x 10^9", "1.6 x 10^-19"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A _______ stores charge at a relatively low potential.",
-    "a": ["resistor", "capacitor", "switch"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Paper capacitors use thin sheets of _______ as electrodes.",
-    "a": ["paper", "plastic", "metal foil"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The charge on each capacitor in a series combination is _______.",
-    "a": ["different", "the same", "zero"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "An electric dipole consists of two _______ charges.",
-    "a": ["equal and same", "equal and opposite", "unequal"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The potential on the surface of a charged conductor is _______.",
-    "a": ["zero", "uniform", "maximum at center"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The capacitance of a parallel-plate capacitor with a dielectric is C = _______.",
-    "a": ["ε₀A/d", "Kε₀A/d", "ε₀d/A"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Electrostatics is the study of _______ charges.",
-    "a": ["moving", "stationary", "accelerating"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The constant ε₀ is the _______ of vacuum.",
-    "a": ["dielectric constant", "permeability", "permittivity"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The reciprocal of equivalent capacitance in series is the sum of the _______ of individual capacitances.",
-    "a": ["squares", "reciprocals", "roots"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Capacitors can block _______.",
-    "a": ["alternating current", "direct current", "both"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A lightning conductor works on the principle of _______.",
-    "a": ["electrostatic induction", "discharge from points", "capacitance"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The unit of surface charge density is _______.",
-    "a": ["C m", "C / m^2", "C / m^3"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Ceramic capacitors have _______ capacitance values.",
-    "a": ["unstable", "stable", "only high"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The energy density of a capacitor is proportional to _______.",
-    "a": ["E", "E^2", "1/E"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Total charge Q in parallel combination is _______.",
-    "a": ["Q1 = Q2", "Q1 + Q2 + ...", "1/Q1 + 1/Q2"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The potential at infinity is taken as _______.",
-    "a": ["one", "maximum", "zero"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "What is the capacitance of a conductor if 1C charge raises its potential by 1V?",
-    "a": ["1 Farad", "1 Coulomb", "1 Volt"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Electric field lines _______ cross each other.",
-    "a": ["always", "never", "sometimes"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Film capacitors use _______ as the dielectric.",
-    "a": ["metal", "plastic film", "ceramic"],
-    "c": 1
   }
 ]
