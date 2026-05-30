@@ -1016,11 +1016,7 @@ But there’s wonderment within it,
             });
 
             // Flashcards Division
-            createBtn('Flashcard (Definition)', content, () => {
-                initFlashcards(`${subId}_${partName}_Definition`.replace(/ /g, "_"));
-                document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
-            });
-            createBtn('Flashcard (Formula)', content, () => {
+            createBtn('Formula', content, () => {
                 initFlashcards(`${subId}_${partName}_Formula`.replace(/ /g, "_"));
                 document.getElementById('activity-back-btn').onclick = () => showPhyChemActivities(subId, partName);
             });
@@ -1173,9 +1169,6 @@ function showGeneralActivities(subId, partName) {
         let types = ['True_False', 'Fill_Blank', 'MCQ'];
         
         // Bio နဲ့ Eco ဖြစ်ပါက Definition (Flashcard) ခလုတ်ကို types ထဲ ထည့်ပေးမယ်
-        if (subId === 'bio' || subId === 'eco') {
-            types.push('Definition');
-        }
 
         types.forEach(type => {
             createBtn(type.replace('_', ' '), content, () => {
