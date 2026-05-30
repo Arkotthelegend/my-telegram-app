@@ -1,302 +1,230 @@
 [
   {
     "type": "mcq",
-    "q": "The current delivered by a battery is a _______ current.",
-    "a": ["alternating", "direct", "induced"],
+    "q": "The current delivered by a battery is",
+    "a": ["alternating current", "direct current", "induced current"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "A _______ is a device for generating alternating current.",
-    "a": ["motor", "battery", "AC generator"],
+    "q": "The current delivered by a generator is",
+    "a": ["alternating current", "direct current", "steady current"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The normal household electricity from a wall outlet is",
+    "a": ["direct current", "alternating current", "constant current"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A device used to measure very small current is",
+    "a": ["ammeter", "voltmeter", "galvanometer"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The SI unit of magnetic flux is the _______.",
-    "a": ["tesla", "weber", "henry"],
+    "q": "An AC generator is a device for generating",
+    "a": ["direct current", "alternating current", "constant voltage"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "A _______ is used to change the voltage of an alternating current.",
-    "a": ["resistor", "transformer", "capacitor"],
+    "q": "The frequency of the alternating current in Myanmar is",
+    "a": ["60 Hz", "50 Hz", "100 Hz"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The frequency of alternating current used in Myanmar is _______.",
-    "a": ["50 Hz", "60 Hz", "100 Hz"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The voltage used in Myanmar is between _______.",
-    "a": ["110V - 120V", "220V - 240V", "440V - 480V"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In an electric motor, electrical energy is used to rotate the _______ to provide mechanical energy.",
-    "a": ["brushes", "armature", "battery"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The core of a transformer is built up of thin iron sheets called _______.",
-    "a": ["lamination", "insulation", "induction"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "A _______ transformer is used to increase the voltage.",
-    "a": ["step-down", "step-up", "ideal"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "AC generators are also called _______.",
-    "a": ["alternators", "inductors", "rectifiers"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Magnetic flux density B is measured in _______.",
+    "q": "The SI unit of the magnetic flux density is the",
     "a": ["weber", "tesla", "henry"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "A generator is a device which converts _______ energy into electrical energy.",
-    "a": ["heat", "mechanical", "chemical"],
+    "q": "The SI unit of magnetic flux is the",
+    "a": ["tesla", "weber", "volt"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The current that flows in a flashlight is a _______ current.",
-    "a": ["alternating", "direct", "transient"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The current flowing in power lines is _______ current.",
-    "a": ["direct", "alternating", "steady"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In the ignition system of motorcars, sparking occurs at the _______.",
-    "a": ["battery", "sparking plug", "carburetor"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which law describes the direction of the induced current?",
-    "a": ["Ohm's law", "Lenz's law", "Coulomb's law"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A _______ is used to measure very small current.",
-    "a": ["voltmeter", "galvanometer", "ammeter"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The transformer coil connected to an electrical device is called the _______ coil.",
-    "a": ["primary", "secondary", "output"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The transformer coil connected to an alternating voltage source is called the _______ coil.",
-    "a": ["primary", "secondary", "output"],
+    "q": "The value of the permeability of vacuum is",
+    "a": ["4π x 10^-7 H/m", "8.85 x 10^-12 F/m", "3 x 10^8 m/s"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "A step-down transformer _______ the voltage.",
-    "a": ["increases", "decreases", "maintains"],
+    "q": "Which law gives the magnitude of the induced emf?",
+    "a": ["Lenz's law", "Faraday's law", "Ohm's law"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The current that flows in a cell phone is a _______ current.",
-    "a": ["alternating", "direct", "pulsating"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The current that flows in a laptop is a _______ current.",
-    "a": ["alternating", "direct", "pulsating"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Lenz's law is based on the law of conservation of _______.",
-    "a": ["charge", "energy", "mass"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If the magnetic field is perpendicular to the surface area, the magnetic flux is _______.",
-    "a": ["maximum", "zero", "constant"],
+    "q": "Which law gives the direction of the induced emf?",
+    "a": ["Lenz's law", "Faraday's law", "Ampere's law"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "If the magnetic field is parallel to the surface area, the magnetic flux is _______.",
-    "a": ["maximum", "zero", "constant"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The alternating current is universally used for _______ electricity.",
-    "a": ["industrial", "household", "chemical"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Eddy currents cause energy loss in the form of _______ in the transformer core.",
-    "a": ["heat", "light", "sound"],
+    "q": "An induction coil is also known as",
+    "a": ["Ruhmkorff spark coil", "transformer", "generator"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "One Weber is equal to one _______.",
-    "a": ["T m", "T / m^2", "T m^2"],
+    "q": "In an induction coil, which coil uses a thick wire?",
+    "a": ["primary coil", "secondary coil", "core"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In an induction coil, which coil uses a thin wire?",
+    "a": ["primary coil", "secondary coil", "core"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A device which converts mechanical energy into electrical energy is",
+    "a": ["motor", "generator", "transformer"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "A device which converts electrical energy into mechanical energy is",
+    "a": ["motor", "generator", "transformer"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "A device used to change the voltage of an alternating current is",
+    "a": ["generator", "transformer", "motor"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Transformers work on the principle of",
+    "a": ["self induction", "mutual induction", "Ohm's law"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The core of a transformer is built up of thin iron sheets to",
+    "a": ["increase resistance", "reduce eddy currents", "increase current"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The transformer coil connected to an alternating voltage source is called",
+    "a": ["secondary coil", "primary coil", "input coil"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The transformer coil connected to an electrical device is called",
+    "a": ["primary coil", "secondary coil", "output coil"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The magnetic flux is maximum when the magnetic field lines are",
+    "a": ["parallel to the surface", "perpendicular to the surface", "at 45 degrees"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The magnetic flux is minimum when the magnetic field lines are",
+    "a": ["parallel to the surface", "perpendicular to the surface", "at 90 degrees"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "What is the unit equivalent to Wb m^-2?",
+    "a": ["Tesla", "Weber", "Henry"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of these devices provides DC electricity?",
+    "a": ["Battery", "AC Generator", "Transformer"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The potential difference between the terminals of a battery in an open circuit is called",
+    "a": ["terminal voltage", "electromotive force", "induced emf"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The potential difference between the terminals of a battery in a closed circuit is called",
+    "a": ["electromotive force", "terminal voltage", "induced emf"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which connection of batteries provides the maximum emf?",
+    "a": ["series aiding", "series opposing", "parallel"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which connection of batteries provides the minimum internal resistance?",
+    "a": ["series aiding", "series opposing", "parallel"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "AC generators work on _______ law of electromagnetic induction.",
-    "a": ["Newton's", "Faraday's", "Ohm's"],
+    "q": "What is the practical unit of electrical energy?",
+    "a": ["Joule", "Kilowatt-hour", "Watt"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "In generators, mechanical energy is used to rotate the _______ to produce electrical energy.",
-    "a": ["brushes", "armature", "battery"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The lamination of the core reduces the energy loss due to _______.",
-    "a": ["resistance", "eddy currents", "friction"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The secondary wavelets have the same _______ as the primary wavelets.",
-    "a": ["frequency", "amplitude", "phase"],
+    "q": "What phenomenon occurs when a magnet is moved relative to a coil?",
+    "a": ["Electromagnetic induction", "Ohm's law", "Coulomb's law"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The secondary wavelets have the same _______ as the primary wavelets.",
-    "a": ["intensity", "speed", "size"],
+    "q": "The direction of induced current is such that it opposes the change in flux, according to",
+    "a": ["Faraday's law", "Lenz's law", "Ampere's law"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Which device uses direct current from a battery?",
-    "a": ["refrigerator", "flashlight", "washing machine"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a DC, the _______ flow steadily in the same direction all the time.",
-    "a": ["protons", "electrons", "neutrons"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The transformer ratio is given by Vs / Vp = _______.",
-    "a": ["Np / Ns", "Ns / Np", "Is / Ip"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "An electric motor converts electrical energy into _______ energy.",
-    "a": ["chemical", "mechanical", "heat"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The ignition system of motor cars uses an _______ coil.",
-    "a": ["resistance", "induction", "capacitance"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The ignition system sparking occurs between the two terminals of the _______.",
-    "a": ["battery", "sparking plug", "switch"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Transformers are used to provide the different _______ requirements of the appliances.",
-    "a": ["current", "voltage", "resistance"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a step-up transformer, Ns is _______ Np.",
-    "a": ["greater than", "less than", "equal to"],
+    "q": "In an induction coil, which coil is connected to the battery?",
+    "a": ["primary coil", "secondary coil", "the core"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a step-down transformer, Ns is _______ Np.",
-    "a": ["greater than", "less than", "equal to"],
+    "q": "The voltage used in Myanmar household is",
+    "a": ["110 V - 120 V", "220 V - 240 V", "380 V - 400 V"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "In an ideal transformer, the output power is _______ the input power.",
-    "a": ["less than", "greater than", "equal to"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The alternating current induced in a rotating coil varies _______ with time.",
-    "a": ["linearly", "sinusoidally", "randomly"],
+    "q": "Which of the following is a source of emf?",
+    "a": ["Resistor", "Battery", "Capacitor"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The current that flows in any appliance running on the batteries is _______ current.",
-    "a": ["alternating", "direct", "induced"],
+    "q": "When a current-carrying wire loop is moved near another, what is produced in the second loop?",
+    "a": ["Direct current", "Induced current", "Steady voltage"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "A rotating coil in a magnetic field is the basis of an _______.",
-    "a": ["DC motor", "AC generator", "battery"],
+    "q": "The eddy currents are reduced in transformers by using",
+    "a": ["thick wire", "thin iron sheets", "copper core"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Soft iron is used for the core of a transformer because it is easily _______.",
-    "a": ["heated", "magnetized", "broken"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The power loss in a transformer due to resistance of coils is called _______ loss.",
-    "a": ["iron", "copper", "eddy"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The process of electromagnetic induction was discovered by _______.",
-    "a": ["Newton", "Faraday", "Ohm"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The normal household electricity from a wall outlet is _______ current.",
-    "a": ["direct", "alternating", "steady"],
+    "q": "If the north pole of a magnet is moved towards the coil, the current viewed from the magnet flows in",
+    "a": ["clockwise direction", "anticlockwise direction", "no direction"],
     "c": 1
   }
 ]
