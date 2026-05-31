@@ -1,25 +1,4 @@
 
-[
-  {
-    "type": "mcq",
-    "q": "The main areas of cotton cultivation are central Myanmar around Mandalay, Magway and Sagaing Region.",
-    "a": ["cotton", "jute", "wool", "silk"],
-    "c": 0
-
-gemini-code-1780240776317.json
-19 KB
-Bio ch 1 mcq
-574677 — 10:15 PM
-Bio ch2
-[
-  {
-    "type": "tf",
-    "q": "One type of antibody made by paddy can deliver radioisotopes to tumour cells.",
-    "c": false
-  },
-
-gemini-code-1780242326816.json
-21 KB
 ﻿
 [
   {
