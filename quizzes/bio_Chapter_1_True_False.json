@@ -102,7 +102,6 @@
   {"type": "tf", "q": "Commercial fishing is the harvesting of wild fish.", "c": true},
   {"type": "tf", "q": "Pisciculture involves commercial breeding of fish.", "c": true},
   {"type": "tf", "q": "The most important fish species used in fish farming are, in order, carp, salmon, tilapia and catfish.", "c": true},
-  [
   {"type": "tf", "q": "The production of aquatic animals in enclosed section of the open ocean is called inshore mariculture.", "c": false},
   {"type": "tf", "q": "The global demand and production of livestock products are decreasing rapidly, due to the population growth.", "c": false},
   {"type": "tf", "q": "Caterpillars secrete fluid protein called silk and spin cocoon as a protective shell around the moth.", "c": false},
