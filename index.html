@@ -936,7 +936,7 @@ But there’s wonderment within it,
             const content = document.getElementById('activity-content');
             content.innerHTML = '';
             document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ['အပြော', 'အရေး', 'အဖတ်'].forEach(cat => {
+            ['အပြော', 'စကားပြေ' , 'ကဗျာ' , 'အဖတ်'].forEach(cat => {
                 createBtn(cat, content, () => {
                     initQuiz(`mm_${cat}_${typeName}`.replace(/\//g, "_").replace(/ /g, "_"));
                     document.getElementById('quiz-back-btn').onclick = () => showMMQuizOptions(typeName);
