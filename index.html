@@ -1149,7 +1149,7 @@ function showGeneralActivities(subId, partName) {
     };
     
     if(subId === 'math') {
-        const mathMarks = ['1_Mark', '2_Marks', '3_Marks', '5_Marks'];
+        const mathMarks = ['1_Mark', '2_Marks'];
         mathMarks.forEach(mark => {
             createBtn(mark.replace('_', ' '), content, () => {
                 const fileName = `math_${partName}_${mark}`.replace(/ /g, "_");
