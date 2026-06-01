@@ -350,8 +350,7 @@
 // ဘာသာရပ်အလိုက် ရှိမယ့် Set အရေအတွက်ကို ဒီမှာ စိတ်ကြိုက်ပြင်ပါ
 const subjectSetsConfig = {
     'mm': 5,    // မြန်မာစာအတွက် ၅ set
-    'en': 3,    // အင်္ဂလိပ်စာအတွက် ၃ set
-    'math': 10, // သင်္ချာအတွက် ၁၀ set
+    'en': 3,    // အင်္ဂလိပ်စာအတွက် ၃ set// သင်္ချာအတွက် ၁၀ set
     'phy': 4,
     'chem': 2,
     'bio': 6,
@@ -399,7 +398,6 @@ const subjectSetsConfig = {
         const subjects = [
             { id: 'mm', name: 'မြန်မာစာ' },
             { id: 'en', name: 'အင်္ဂလိပ်စာ' },
-            { id: 'math', name: 'သင်္ချာ', chapters: 11 },
             { id: 'phy', name: 'ရူပဗေဒ', chapters: 13 },
             { id: 'chem', name: 'ဓာတုဗေဒ', chapters: 8 },
             { id: 'bio', name: 'ဇီဝဗေဒ', chapters: 6 },
@@ -436,7 +434,7 @@ function showOldSubjects(year) {
         let isPaid = checkAccess(sub.id); 
         
         // Special User အတွက် စစ်ဆေးခြင်း
-        if (isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(sub.id) || sub.id === 'bio' || sub.id === 'eco')) {
+        if (isSpecial && (['mm', 'en', 'phy', 'chem'].includes(sub.id) || sub.id === 'bio' || sub.id === 'eco')) {
             isPaid = true;
         }
 
@@ -501,9 +499,7 @@ function showOldTypes(sub, setName) {
         types = [{id:'tf', n:'မှား/မှန်'}, {id:'blank', n:'ကွက်လပ်ဖြည့်'}, {id:'mcq', n:'ရွေးချယ်'}];
     } else if (sub.id === 'en') {
         types = [{id:'initial_letter', n:'Initial Letter'}, {id:'mcq', n:'MCQ'}, {id:'grammar', n:'Grammar'}];
-    } else if (sub.id === 'math') {
-        types = [{id:'1_mark', n:'1 Mark'}, {id:'2_marks', n:'2 Marks'}, {id:'3_marks', n:'3 Marks'}, {id:'5_marks', n:'5 Marks'}];
-    } else {
+    }  else {
         types = [{id:'tf', n:'True/False'}, {id:'blank', n:'Fill Blank'}, {id:'mcq', n:'MCQ'}];
     }
 
