@@ -1144,46 +1144,7 @@ function showGeneralActivities(subId, partName) {
         }
     };
     
-    if(subId === 'math') {
-        const mathMarks = ['1_Mark', '2_Marks'];
-        mathMarks.forEach(mark => {
-            createBtn(mark.replace('_', ' '), content, () => {
-                const fileName = `math_${partName}_${mark}`.replace(/ /g, "_");
-                if (mark === '1_Mark') {
-                    initQuiz(fileName);
-                    document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
-                } else {
-                    initFlashcards(fileName, mark.replace('_', ' '));
-                    // Flashcard ကနေထွက်ရင် ဒီ Menu ကိုပြန်လာဖို့
-                    const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
-                    flashExitBtn.onclick = () => { showScreen('activity'); showGeneralActivities(subId, partName); };
-                }
-            });
-        });
-    } else {
-        // အခြားဘာသာရပ်များအတွက် (Bio, Eco, etc.)
-        let types = ['True_False', 'Fill_Blank', 'MCQ'];
-        
-        // Bio နဲ့ Eco ဖြစ်ပါက Definition (Flashcard) ခလုတ်ကို types ထဲ ထည့်ပေးမယ်
-
-        types.forEach(type => {
-            createBtn(type.replace('_', ' '), content, () => {
-                const fileName = `${subId}_${partName}_${type}`.replace(/ /g, "_");
-                
-                if (type === 'Definition') {
-                    // Definition ဆိုရင် Flashcard နဲ့ပြမယ်
-                    initFlashcards(fileName, "Definition");
-                    // Flashcard ထဲက "ထွက်မည်" ကိုနှိပ်ရင် ဒီ Menu ကိုပြန်လာဖို့
-                    const flashExitBtn = document.querySelector('#flashcard-screen .back-btn');
-                    flashExitBtn.onclick = () => { showScreen('activity'); showGeneralActivities(subId, partName); };
-                } else {
-                    // ကျန်တာတွေကို Quiz နဲ့ပြမယ်
-                    initQuiz(fileName);
-                    document.getElementById('quiz-back-btn').onclick = () => showGeneralActivities(subId, partName);
-                }
-            });
-        });
-    }
+    
 }
         // --- Quiz Engine ---
       async function initQuiz(fileName) {
