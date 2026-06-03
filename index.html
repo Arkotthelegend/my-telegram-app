@@ -945,22 +945,11 @@ But there’s wonderment within it,
 
     if (typeName === "အလင်္ကာ") {
         // အလင်္ကာအတွက် သီးသန့်ခွဲထားသော ခလုတ် (၅) ခု
-        createBtn("ဥပမာအလင်္ကာ", content, () => {
-            // ဒီနေရာမှာ သက်ဆိုင်ရာ Flashcard ခေါ်မယ့် function ထည့်ရန်
-            tg.showAlert("ဥပမာအလင်္ကာ မကြာမီလာမည်...");
-        });
-        createBtn("ရူပကအလင်္ကာ", content, () => {
-            tg.showAlert("ရူပကအလင်္ကာ မကြာမီလာမည်...");
-        });
-        createBtn("ဝင်္ကဝုတ္တိအလင်္ကာ", content, () => {
-            tg.showAlert("ဝင်္ကဝုတ္တိအလင်္ကာ မကြာမီလာမည်...");
-        });
-        createBtn("အတိဿယဝုတ္တိအလင်္ကာ", content, () => {
-            tg.showAlert("အတိဿယဝုတ္တိအလင်္ကာ မကြာမီလာမည်...");
-        });
-        createBtn("မြည်သံစွဲအလင်္ကာ", content, () => {
-            tg.showAlert("မြည်သံစွဲအလင်္ကာ မကြာမီလာမည်...");
-        });
+        createBtn("ဥပမာအလင်္ကာ", content, () => initFlashcards("mm_ဥပမာအလင်္ကာ"));
+        createBtn("ရူပကအလင်္ကာ", content, () => initFlashcards("mm_ရူပကအလင်္ကာ"));
+        createBtn("ဝင်္ကဝုတ္တိအလင်္ကာ", content, () => initFlashcards("mm_ဝင်္ကဝုတ္တိအလင်္ကာ"));
+        createBtn("အတိဿယဝုတ္တိအလင်္ကာ", content, () => initFlashcards("mm_ရေသည်_ခက်ဆစ်"));
+        createBtn("မြည်သံစွဲအလင်္ကာ", content, () => initFlashcards("mm_မြည်သံစွဲအလင်္ကာ"));
 
     } else {
         // ကျန်တဲ့ စကားပြေ၊ ကဗျာ၊ ရေသည် များအတွက် မူလအတိုင်း
