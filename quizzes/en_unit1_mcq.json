@@ -7,7 +7,7 @@
     {"type": "mcq", "q": "The local --- is deeply influenced by traditions that have been passed down for generations.", "a": ["society", "environment", "culture"], "c": 2},
     {"type": "mcq", "q": "When traveling abroad, it's important to practice --- manners to show respect to people from different cultures.", "a": ["universal", "culture-specific", "respectful"], "c": 1},
     {"type": "mcq", "q": "It is important to understand what is --- behavior in different social settings.", "a": ["acceptable", "polite", "respectful"], "c": 0},
-    {"type": "mcq", "q": "The soft colors and comfortable seating helped to create a --- in the cafÃ©, making it a great place to unwind.", "a": ["cozy environment", "cheerful vibe", "pleasant atmosphere"], "c": 2},
+    {"type": "mcq", "q": "The soft colors and comfortable seating helped to create a --- in the cafe, making it a great place to unwind.", "a": ["cozy environment", "cheerful vibe", "pleasant atmosphere"], "c": 2},
     {"type": "mcq", "q": "Over the years, she has --- a wealth of knowledge about the subject.", "a": ["gained", "collected", "acquired"], "c": 2},
     {"type": "mcq", "q": "The city of Paris is the --- of many famous artists and writers throughout history.", "a": ["birthplace", "home", "residence"], "c": 0},
     {"type": "mcq", "q": "Children often --- the behaviors of adults as they learn how to interact with the world.", "a": ["copy", "imitate", "follow"], "c": 1},
