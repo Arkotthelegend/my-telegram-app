@@ -1,22 +1,22 @@
 [
   {
-    "q": "Despite my eagerness to help, they did not accept my offer. \n(Although __________________________________________________)",
+    "q": "Despite my eagerness to help, they did not accept my offer. (Although)",
     "a": "Although I was eager to help, they did not accept my offer."
   },
   {
-    "q": "The sunset was so beautiful that I couldn't stop staring. \n(It was such __________________________________________________)",
+    "q": "The sunset was so beautiful that I couldn't stop staring. (It was such)",
     "a": "It was such a beautiful sunset that I couldn't stop staring."
   },
   {
-    "q": "As soon as we reached the cinema, the movie had already started. \n(By the time __________________________________________________)",
+    "q": "As soon as we reached the cinema, the movie had already started. (By the time)",
     "a": "By the time we reached the cinema, the movie had already started."
   },
   {
-    "q": "We haven't seen each other for 10 years, so we have a lot to catch up on. \n(Since __________________________________________________)",
+    "q": "We haven't seen each other for 10 years, so we have a lot to catch up on. (Since)",
     "a": "Since we haven't seen each other for 10 years, we have a lot to catch up on."
   },
   {
-    "q": "Whenever I travel, I always bring a book with me. \n(Every time __________________________________________________)",
+    "q": "Whenever I travel, I always bring a book with me. (Every time)",
     "a": "Every time I travel, I always bring a book with me."
   },
   {
