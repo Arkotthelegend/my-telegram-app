@@ -44,23 +44,14 @@
     border-radius: 20px; 
 }
 
-.flash-face { 
-    position: absolute; 
-    width: 100%; 
-    height: 100%; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 1.4rem; 
-    border-radius: 20px; 
-    padding: 25px; 
-    text-align: center; 
-    box-sizing: border-box; 
-    border: 3px solid var(--accent, #3b82f6); 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15); 
-    
-    /* Lagging မဖြစ်အောင် Opacity နဲ့ Transform ကိုပဲ Transition ပေးထားပါတယ် */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+.flash-face {
+    display: flex;
+    flex-direction: column; /* စာသားများကို အပေါ်အောက် စီရန် */
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto; /* စာသားရှည်လျှင် scroll ဆွဲနိုင်ရန် */
+    word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
+    line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
 }
 
 /* --- ကတ်အရှေ့မျက်နှာပြင် (Sleek Dark Slate) --- */
@@ -68,6 +59,7 @@
     background: #0f172a; /* အရောင်ကို နည်းနည်းပြင်ထားပါတယ် */
     color: #ffffff; 
     opacity: 1;
+	border: 3px solid var(--accent, #3b82f6); 
     transform: scale(1);
     z-index: 2;
 }
@@ -77,6 +69,7 @@
     background: #2A0F0F; /* အရှေ့အရောင်နဲ့ ကွဲပြားအောင် ပိုရင့်တဲ့အရောင် သုံးထားပါတယ် */
     color: #f1f5f9; 
     opacity: 0;
+	border: 3px solid var(--accent, #F63B3B); 
     transform: scale(0.95); /* စစချင်းမှာ နည်းနည်းကျုံ့ထားပြီးမှ Pop-up ပုံစံ ပေါ်လာအောင်လို့ပါ */
     z-index: 1;
     pointer-events: none; /* ပုန်းနေချိန်မှာ Click နှိပ်လို့မရအောင် ပိတ်ထားတာပါ */
@@ -117,15 +110,7 @@
         .quiz-input { width: 100%; padding: 16px; border-radius: 12px; border: 2px solid var(--accent); background: var(--card); color: white; margin-bottom: 10px; box-sizing: border-box; font-size: 1rem; outline: none; }
         .poem-content { background: var(--card); padding: 20px; border-radius: 15px; line-height: 1; white-space: pre-line; text-align: center; }
           /* Flashcard အတွင်းစာသားများ ရှင်းလင်းစေရန် */
-.flash-face {
-    display: flex;
-    flex-direction: column; /* စာသားများကို အပေါ်အောက် စီရန် */
-    align-items: center;
-    justify-content: center;
-    overflow-y: auto; /* စာသားရှည်လျှင် scroll ဆွဲနိုင်ရန် */
-    word-break: break-word; /* စာလုံးများ ဘောင်ကျော်မသွားစေရန် */
-    line-height: 1.6; /* စာကြောင်းအကွာအဝေး ညှိရန် */
-}
+
 /* အဖြေမှန် Outline */
 .correct-answer {
     border: 2px solid #10b981 !important;
