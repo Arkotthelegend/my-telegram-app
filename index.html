@@ -741,57 +741,74 @@ btn.onclick = () => {
             }
         }
 
-        function showENGrammarOptions() {
+        ffunction showENGrammarOptions() {
     showScreen('activity');
     document.getElementById('activity-title').innerText = "Grammar";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
     document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
 
-    // Array of objects matching display titles to safe file IDs
+    // လူကြီးမင်း ပေးထားသော Grammar ခေါင်းစဉ်အသစ်များအားလုံး၏ စာရင်း
     const grammarTopics = [
-        { title: "When → By the time", id: "when_by_the_time" },
-        { title: "Using Participle (When → V-ing)", id: "using_participle" },
-        { title: "After", id: "after" },
-        { title: "Without", id: "without" },
-        { title: "But - Although - In spite of", id: "but_although_inspite_of" },
-        { title: "Emphasis", id: "emphasis" },
-        { title: "No sooner ... than", id: "no_sooner_than" },
-        { title: "Inversion", id: "inversion" },
-        { title: "Nouns in Apposition", id: "nouns_in_apposition" },
-        { title: "Double Negative Pattern", id: "double_negative" },
-        { title: "If → Unless (Unless = if + not)", id: "if_unless" },
-        { title: "Paired Conjunctions", id: "paired_conjunctions" },
-        { title: "The Parallel Structure", id: "parallel_structure" },
-        { title: "Degrees of comparison", id: "degrees_of_comparison" },
-        { title: "too ... to / (not) enough to / so ... that / such ... that", id: "too_to_so_that" },
-        { title: "Active → Passive", id: "active_passive" },
-        { title: "Passive → Active", id: "passive_active" },
-        { title: "People → No one", id: "people_no_one" },
-        { title: "Reported Speech", id: "reported_speech" },
-        { title: "Indirect → Direct Speech", id: "indirect_direct" },
-        { title: "no ⇌ not any", id: "no_not_any" },
-        { title: "Reason Conjunctions", id: "reason_conjunctions" },
-        { title: "Relative Pronouns", id: "relative_pronouns" },
-        { title: "It takes / It took", id: "it_takes_took" },
-        { title: "'So' and 'Neither'", id: "so_and_neither" },
-        { title: "as if / as though", id: "as_if_as_though" },
-        { title: "No matter", id: "no_matter" },
-        { title: "cause and effect", id: "cause_and_effect" },
-        { title: "Linking Phrases for Purpose (to / in order to / so as to / so that / in order that)", id: "linking_phrases_purpose" },
+        { title: "Past Simple", id: "past_simple" },
+        { title: "Present Simple", id: "present_simple" },
+        { title: "Present Continuous", id: "present_continuous" },
+        { title: "Past Continuous", id: "past_continuous" },
+        { title: "Present Perfect", id: "present_perfect" },
+        { title: "Present Perfect Continuous", id: "present_perfect_continuous" },
+        { title: "Future Simple", id: "future_simple" },
+        { title: "Going To", id: "going_to" },
+        { title: "Future Continuous", id: "future_continuous" },
+        { title: "Used To", id: "used_to" },
+        { title: "Modal Auxiliaries", id: "modal_auxiliaries" },
+        { title: "Nouns In Apposition", id: "nouns_in_apposition" },
+        { title: "Not + Any = No", id: "not_any_no" },
+        { title: "Active Voice and Passive Voice", id: "active_passive_voice" },
+        { title: "Impersonal Passive", id: "impersonal_passive" },
+        
+        // Conditional ၄ မျိုး ခွဲခြားထားခြင်း
+        { title: "Zero Conditional", id: "zero_conditional" },
+        { title: "First Conditional", id: "first_conditional" },
+        { title: "Second Conditional", id: "second_conditional" },
+        { title: "Third Conditional", id: "third_conditional" },
+        
+        { title: "Subordinating Conjunction", id: "subordinating_conjunction" },
+        { title: "Clauses Of Contact", id: "clauses_of_contact" },
+        { title: "As If / As Though", id: "as_if_as_though" },
+        { title: "Preposition and Conjunction for Purposes", id: "preposition_conjunction_purpose" },
+        { title: "Verbs of Cause and Effect", id: "verbs_cause_effect" },
+        { title: "Linking Words to Show Cause and Effect", id: "linking_words_cause_effect" },
+        { title: "As soon as / No sooner", id: "as_soon_as_no_sooner" },
+        { title: "Both ... and", id: "both_and" },
+        { title: "Not only ... But also", id: "not_only_but_also" },
+        { title: "Neither ... nor", id: "neither_nor" },
+        { title: "Either ... or", id: "either_or" },
+        { title: "So and Neither", id: "so_and_neither" },
+        { title: "So that", id: "so_that" },
+        { title: "Such that", id: "such_that" },
+        { title: "Too ... to / Enough to", id: "too_to_enough_to" },
+        { title: "Before + V-ing", id: "before_ving" },
+        { title: "After + V-ing", id: "after_ving" },
+        { title: "Without + V-ing", id: "without_ving" },
+        { title: "By + V-ing", id: "by_ving" },
         { title: "Introductory Phrases", id: "introductory_phrases" },
-        { title: "Relative Pronouns and Relative Adverbs", id: "relative_pronouns_adverbs" },
-        { title: "Relative Clauses", id: "relative_clauses" },
         { title: "Participle Phrases", id: "participle_phrases" },
-        { title: "Adjectives with Prepositions", id: "adjectives_with_prepositions" },
-        { title: "Subordinating Conjunctions in Adverbial Clauses", id: "subordinating_conjunctions" },
-        { title: "Conditionals (If-Clauses)", id: "conditionals" },
-        { title: "Verbs followed by a noun group and a bare infinitive", id: "verbs_noun_bare_infinitive" },
-        { title: "Verbs followed by a noun group and a to-infinitive", id: "verbs_noun_to_infinitive" },
-        { title: "can, should & must", id: "can_should_must" },
-        { title: "used to / be used to / get used to", id: "used_to" }
+        { title: "Gerund and Infinitive with 'to'", id: "gerund_infinitive" },
+        { title: "Verbs followed by a noun group", id: "verbs_followed_by_noun_group" },
+        { title: "Joining Sentences Using Relative Pronouns", id: "joining_relative_pronouns" },
+        { title: "Omission Of Relative Pronouns", id: "omission_relative_pronouns" },
+        { title: "It is / It was", id: "it_is_it_was" },
+        { title: "Double Negative Structure", id: "double_negative_structure" },
+        { title: "No Matter", id: "no_matter" },
+        { title: "Omission of Verbs", id: "omission_of_verbs" },
+        { title: "The more / The less", id: "the_more_the_less" },
+        { title: "As ... As", id: "as_as" },
+        { title: "Not as ... as", id: "not_as_as" },
+        { title: "Inversion (Full Verb Before Subject)", id: "inversion_full_verb" },
+        { title: "As and Like", id: "as_and_like" }
     ];
 
+    // ခလုတ်များ အလိုအလျောက် တည်ဆောက်ပြီး openFlashcard သို့ ချိတ်ဆက်ပေးခြင်း
     grammarTopics.forEach(topic => {
         createBtn(topic.title, content, () => openFlashcard(topic.id, topic.title));
     });
