@@ -742,23 +742,62 @@ btn.onclick = () => {
         }
 
         function showENGrammarOptions() {
-            showScreen('activity');
-            document.getElementById('activity-title').innerText = "Grammar";
-            const content = document.getElementById('activity-content');
-            content.innerHTML = '';
-            document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
-            ["When → By the time", "Using Participle (When → V-ing)", "After", "Without", "But - Although - In spite of", 
-    "Emphasis", "No sooner ... than", "Inversion", "Nouns in Apposition", "Double Negative Pattern", 
-    "If → Unless (Unless = if + not)", "Paired Conjunctions", "The Parallel Structure", "Degrees of comparison", 
-    "too ... to / (not) enough to / so ... that / such ... that", "Active → Passive", "Passive → Active", 
-    "People → No one", "Reported Speech", "Indirect → Direct Speech", "no ⇌ not any", "Reason Conjunctions", 
-    "Relative Pronouns", "It takes / It took", "'So' and 'Neither'", "as if / as though", "No matter", 
-    "cause and effect", "Linking Phrases for Purpose (to / in order to / so as to / so that / in order that)", 
-    "Introductory Phrases", "Relative Pronouns and Relative Adverbs", "Relative Clauses", "Participle Phrases", 
-    "Adjectives with Prepositions", "Subordinating Conjunctions in Adverbial Clauses", "Conditionals (If-Clauses)", 
-    "Verbs followed by a noun group and a bare infinitive", "Verbs followed by a noun group and a to-infinitive", 
-    "can, should & must", "used to / be used to / get used to"].forEach(t => createBtn(t, content, () => tg.showAlert(t + " Coming Soon...")));
-        }
+    showScreen('activity');
+    document.getElementById('activity-title').innerText = "Grammar";
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '';
+    document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+
+    // Array of objects containing the display title and the clean file ID
+    const grammarTopics = [
+        { title: "When → By the time", id: "when_by_the_time" },
+        { title: "Using Participle (When → V-ing)", id: "using_participle" },
+        { title: "After", id: "after" },
+        { title: "Without", id: "without" },
+        { title: "But - Although - In spite of", id: "but_although_inspite_of" },
+        { title: "Emphasis", id: "emphasis" },
+        { title: "No sooner ... than", id: "no_sooner_than" },
+        { title: "Inversion", id: "inversion" },
+        { title: "Nouns in Apposition", id: "nouns_in_apposition" },
+        { title: "Double Negative Pattern", id: "double_negative" },
+        { title: "If → Unless (Unless = if + not)", id: "if_unless" },
+        { title: "Paired Conjunctions", id: "paired_conjunctions" },
+        { title: "The Parallel Structure", id: "parallel_structure" },
+        { title: "Degrees of comparison", id: "degrees_of_comparison" },
+        { title: "too ... to / (not) enough to / so ... that / such ... that", id: "too_to_so_that" },
+        { title: "Active → Passive", id: "active_passive" },
+        { title: "Passive → Active", id: "passive_active" },
+        { title: "People → No one", id: "people_no_one" },
+        { title: "Reported Speech", id: "reported_speech" },
+        { title: "Indirect → Direct Speech", id: "indirect_direct" },
+        { title: "no ⇌ not any", id: "no_not_any" },
+        { title: "Reason Conjunctions", id: "reason_conjunctions" },
+        { title: "Relative Pronouns", id: "relative_pronouns" },
+        { title: "It takes / It took", id: "it_takes_took" },
+        { title: "'So' and 'Neither'", id: "so_and_neither" },
+        { title: "as if / as though", id: "as_if_as_though" },
+        { title: "No matter", id: "no_matter" },
+        { title: "cause and effect", id: "cause_and_effect" },
+        { title: "Linking Phrases for Purpose (to / in order to / so as to / so that / in order that)", id: "linking_phrases_purpose" },
+        { title: "Introductory Phrases", id: "introductory_phrases" },
+        { title: "Relative Pronouns and Relative Adverbs", id: "relative_pronouns_adverbs" },
+        { title: "Relative Clauses", id: "relative_clauses" },
+        { title: "Participle Phrases", id: "participle_phrases" },
+        { title: "Adjectives with Prepositions", id: "adjectives_with_prepositions" },
+        { title: "Subordinating Conjunctions in Adverbial Clauses", id: "subordinating_conjunctions" },
+        { title: "Conditionals (If-Clauses)", id: "conditionals" },
+        { title: "Verbs followed by a noun group and a bare infinitive", id: "verbs_noun_bare_infinitive" },
+        { title: "Verbs followed by a noun group and a to-infinitive", id: "verbs_noun_to_infinitive" },
+        { title: "can, should & must", id: "can_should_must" },
+        { title: "used to / be used to / get used to", id: "used_to" }
+    ];
+
+    // Loop through the objects and create buttons
+    grammarTopics.forEach(topic => {
+        createBtn(topic.title, content, () => openFlashcard(topic.id, topic.title));
+    });
+}
+
 
        function showENPoemOptions() {
     showScreen('activity');
