@@ -748,7 +748,7 @@ btn.onclick = () => {
     content.innerHTML = '';
     document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
 
-    // Array of objects containing the display title and the clean file ID
+    // Array of objects matching display titles to safe file IDs
     const grammarTopics = [
         { title: "When → By the time", id: "when_by_the_time" },
         { title: "Using Participle (When → V-ing)", id: "using_participle" },
@@ -792,10 +792,62 @@ btn.onclick = () => {
         { title: "used to / be used to / get used to", id: "used_to" }
     ];
 
-    // Loop through the objects and create buttons
     grammarTopics.forEach(topic => {
         createBtn(topic.title, content, () => openFlashcard(topic.id, topic.title));
     });
+}
+
+		async function openFlashcard(grammarId, grammarTitle) {
+    // Flashcard screen မပြခင် ခေတ္တ Loading ပြထားရန်
+    showScreen('activity');
+    const content = document.getElementById('activity-content');
+    content.innerHTML = '<div style="text-align:center; padding:20px; color:var(--primary);">⏳ Loading Flashcards...</div>';
+    document.getElementById('activity-title').innerText = grammarTitle;
+
+    try {
+        // 📂 ဖိုင်လမ်းကြောင်းကို quizzes/ အဖြစ် ပြောင်းထားပါသည်
+        const response = await fetch(`quizzes/${grammarId}.json`);
+        
+        if (!response.ok) {
+            throw new Error("Flashcard file not found");
+        }
+        
+        const data = await response.json();
+        
+        // 🔄 JSON ထဲက "q" နဲ့ "a" ကို မူလ App လည်ပတ်မှုနဲ့ ကိုက်ညီအောင် ချိတ်ဆက်ပေးခြင်း
+        currentFlashcards = data.map(item => ({
+            front: item.q, 
+            back: item.a
+        }));
+        
+        currentCardIndex = 0;
+        
+        if (!currentFlashcards || currentFlashcards.length === 0) {
+            content.innerHTML = '<div style="text-align:center; padding:20px; color:var(--danger);">⚠️ ဒီခေါင်းစဉ်အတွက် ကတ်ပြားများ မရှိသေးပါခင်ဗျာ။</div>';
+            return;
+        }
+        
+        // App ထဲတွင် ပါဝင်ပြီးသား Flashcard Screen ကို ဖွင့်လှစ်ပြသပေးခြင်း
+        showScreen('flashcard-screen');
+        document.getElementById('flashcard-title').innerText = grammarTitle;
+        
+        // Flashcard ရဲ့ နောက်ပြန်ဆုတ်ခလုတ်ကို Grammar စာမျက်နှာဆီ ပြန်လမ်းညွှန်ခြင်း
+        document.getElementById('flashcard-back-btn').onclick = () => showENGrammarOptions();
+        
+        // ကတ်ပြားများကို စတင် ဖော်ပြပေးခြင်း
+        showFlashcards();
+        
+    } catch (error) {
+        console.error(error);
+        // ဖိုင်မရှိသေးရင်ဖြစ်စေ၊ Error တက်ရင်ဖြစ်စေ Coming Soon အနေနဲ့ ပြသပေးပါမယ်
+        content.innerHTML = `
+            <div style="text-align:center; padding:30px; background:white; border-radius:15px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                <p style="color:var(--primary); font-weight:bold; margin:0 0 10px 0; font-size:1.2rem;">✨ Coming Soon ✨</p>
+                <p style="color:#777; font-size:0.9rem; margin:0 0 15px 0;">"${grammarTitle}" အတွက် လေ့ကျင့်ခန်းများကို မကြာမီ ထည့်သွင်းပေးသွားပါမည်။</p>
+                <p style="color:var(--danger); font-size:0.8rem; margin:0;"><code style="background:#fff0f0; padding:4px 8px; border-radius:6px;">quizzes/${grammarId}.json</code> ဖိုင် လိုအပ်ပါသည်။</p>
+            </div>`;
+        document.getElementById('activity-back-btn').onclick = () => showENGrammarOptions();
+    }
 }
 
 
