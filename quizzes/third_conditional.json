@@ -28,7 +28,7 @@
   {"q": "If I (know) you were in hospital, I (visit) you.", "a": "If I had known you were in hospital, I would have visited you."},
   {"q": "They (not get) lost if they (have) a map.", "a": "They would not have got lost if they had had a map."},
   {"q": "If you (listen) to my advice, you (succeed).", "a": "If you had listened to my advice, you would have succeeded."},
-  {"q": "If the car (not break) down, we (arrive) by noon.", "a": "If the car had not broken down, we would have arrived by noon."}
+  {"q": "If the car (not break) down, we (arrive) by noon.", "a": "If the car had not broken down, we would have arrived by noon."},
   {"q": "They missed the train because they left the house late.", "a": "If they hadn't left the house late, they wouldn't have missed the train."},
   {"q": "I didn't bring an umbrella, so I got wet in the rain.", "a": "If I had brought an umbrella, I wouldn't have got wet in the rain."},
   {"q": "He didn't study for the test, so he failed.", "a": "If he had studied for the test, he wouldn't have failed."},
