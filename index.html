@@ -836,7 +836,7 @@ btn.onclick = () => {
 
     // ခလုတ်များ အလိုအလျောက် တည်ဆောက်ပြီး openFlashcard သို့ ချိတ်ဆက်ပေးခြင်း
     grammarTopics.forEach(topic => {
-        createBtn(topic.title, content, () => openFlashcard(topic.id, topic.title));
+        createBtn(topic.title, content, () => initFlashcards(topic.id, topic.title));
     });
 }
 
