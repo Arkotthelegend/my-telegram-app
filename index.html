@@ -1220,7 +1220,7 @@ function showGeneralActivities(subId, partName) {
     // --- Back Button Logic ပြင်ဆင်ခြင်း (Error ရှင်းလင်းပြီး) ---
     document.getElementById('activity-back-btn').onclick = () => {
         const userId = tg.initDataUnsafe?.user?.id || 0;
-        const specialUsers = [7273479209]; 
+        const specialUsers = []; 
         const isSpecial = specialUsers.includes(userId);
         const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
 
