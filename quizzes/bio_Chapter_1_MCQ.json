@@ -31,7 +31,7 @@
   },
   {
     "type": "mcq",
-    "q": "Which of the following is Not a characteristic of fibre?",
+    "q": "Which of the following is not a characteristic of fibre?",
     "a": ["elongated", "thin wall", "small cavity", "tapering end"],
     "c": 1
   },
@@ -49,7 +49,7 @@
   },
   {
     "type": "mcq",
-    "q": "The wood \"horticulture\" has been derived from ______",
+    "q": "The word "horiculture" has been derived from ______",
     "a": ["Latin", "Greek", "French", "English"],
     "c": 0
   },
