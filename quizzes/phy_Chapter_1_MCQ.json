@@ -331,128 +331,332 @@
   },
   {
     "type": "mcq",
-    "q": "The direction of the angular velocity of the second hand of the clock is ____ the clock face.",
-    "a": ["into", "out of", "parallel"],
+    "q": "\"In a circular motion, the object just moves in a ________.\"",
+    "a": [
+      "circle",
+      "straight line",
+      "square",
+      "parabola"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "If the angular speed is increasing, there is/are ____ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The motion of a Ferris wheel is a ____ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular acceleration of a disc slowing down clockwise is ____.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The two acceleration vectors $\\vec{a}_C$ and $\\vec{a}_T$ are ____ to each other.",
-    "a": ["perpendicular", "parallel", "inclined an angle less than 90째"],
+    "q": "\"In rotational motion, the object rotates about an ________.\"",
+    "a": [
+      "axis",
+      "arc",
+      "edge",
+      "orbit"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In ____ motion, the object rotates about an axis.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular acceleration of a disc speeding up clockwise is ____.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
+    "q": "\"A rigid body is a body that does not ________ or change shape.\"",
+    "a": [
+      "deform",
+      "rotate",
+      "accelerate",
+      "move"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "For uniform circular motion, the direction of the ____ is towards the centre of the circular path.",
-    "a": ["centripetal acceleration", "tangential acceleration", "tangential velocity"],
+    "q": "\"In rotational motion, all the particles constituting it undergo circular motion about a ________ axis.\"",
+    "a": [
+      "common",
+      "separate",
+      "moving",
+      "vertical"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The rotation of the earth about its own axis is a ____ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The angle between $\\vec{a}$ and $\\vec{a}_C$ is ____.",
-    "a": ["less than 90째", "greater than 90째", "90째"],
+    "q": "\"If its angular velocity changes at a ________ rate, then we can say that the angular acceleration is constant...\"",
+    "a": [
+      "constant",
+      "varying",
+      "decreasing",
+      "increasing"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The direction of the angular velocity of a disc slowing down clockwise is ____.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In a ____ motion, the object just moves in a circle.",
-    "a": ["circular", "rotational", "linear"],
+    "q": "\"We can see that the equations of motion for constant angular acceleration are the same as those for linear motion, with the ________ quantities replaced with corresponding linear ones.\"",
+    "a": [
+      "angular",
+      "tangential",
+      "radial",
+      "scalar"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "If the angular speed is decreasing, there is/are ____ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular velocity of a disc speeding up clockwise is ____.",
-    "a": ["into the disc face", "out of the disc face", "parallel to the disc face"],
+    "q": "\"All particles of an object rotating around the axis of rotation move in a ________ path.\"",
+    "a": [
+      "circular",
+      "linear",
+      "random",
+      "elliptical"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The motion of the blades of a fan is a ____ motion.",
-    "a": ["circular", "rotational", "linear"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "If the angular speed is constant, there is/are ____ acceleration(s).",
-    "a": ["only centripetal", "only tangential", "both centripetal and tangential"],
+    "q": "\"All particles of the body move in a circle lying on a plane that is ________ to the axis...\"",
+    "a": [
+      "perpendicular",
+      "parallel",
+      "inclined",
+      "tangent"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The centripetal acceleration is present ____ circular motion.",
-    "a": ["only in uniform", "only in non-uniform", "in both uniform and non-uniform"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The angular acceleration is equal to zero when there is no change in ____.",
-    "a": ["angular speed", "the direction of the rotation", "angular velocity"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "For uniform circular motion, the direction of the ____ is tangential to the circular path.",
-    "a": ["centripetal acceleration", "tangential acceleration", "tangential velocity"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The direction of the angular acceleration of the second hand of the clock is ____.",
-    "a": ["into the clock face", "out of the clock face", "none of these"],
+    "q": "\"...the relation between arc length $s$ and angular displacement $\\theta$, measured in ________, is $s = r\\theta$.\"",
+    "a": [
+      "radian",
+      "degree",
+      "revolution",
+      "second"
+    ],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "____ body is a body that does not deform or change shape.",
-    "a": ["An elastic", "A plastic", "A rigid"],
-    "c": 2
+    "q": "\"The instantaneous angular velocity $\\omega$ of rotational object is the ________ for all the particles comprising the object.\"",
+    "a": [
+      "same",
+      "different",
+      "increasing",
+      "variable"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"Since the direction of linear velocity is tangent to the path, the linear velocity is also called ________ velocity.\"",
+    "a": [
+      "tangential",
+      "angular",
+      "radial",
+      "instantaneous"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"If the magnitude of the angular velocity of a rotating object changes, the magnitude of linear velocity will also change and the object will have a ________ acceleration.\"",
+    "a": [
+      "tangential",
+      "centripetal",
+      "radial",
+      "constant"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The tangential acceleration of a rotating object is a measure of how fast the ________ velocity changes.\"",
+    "a": [
+      "tangential",
+      "angular",
+      "radial",
+      "average"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The direction of the angular velocity vector is perpendicular to the plane of rotation, and along the ________ of rotation.\"",
+    "a": [
+      "axis",
+      "center",
+      "rim",
+      "radius"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The direction of angular velocity is usually specified by the ________ rule.\"",
+    "a": [
+      "right-hand",
+      "left-hand",
+      "similar-triangle",
+      "kinematic"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"When the angular velocity is increasing, the angular acceleration vector points in the ________ direction as the angular velocity.\"",
+    "a": [
+      "same",
+      "opposite",
+      "perpendicular",
+      "tangential"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"When the angular velocity is decreasing, the angular acceleration vector points in the ________ direction to the angular velocity.\"",
+    "a": [
+      "opposite",
+      "same",
+      "parallel",
+      "radial"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"An object that moves in a circle at constant speed $v$ is said to experience ________ circular motion.\"",
+    "a": [
+      "uniform",
+      "nonuniform",
+      "accelerated",
+      "rotational"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The magnitude of the velocity remains constant in this case, but the ________ of the velocity continuously changes...\"",
+    "a": [
+      "direction",
+      "magnitude",
+      "radius",
+      "rate"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"Therefore, this acceleration is centripetal acceleration or ________ acceleration...\"",
+    "a": [
+      "radial",
+      "tangential",
+      "angular",
+      "linear"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The triangle CAB of Figure 1.3(a) is geometrically ________ to vector triangle of Figure 1.3(b).\"",
+    "a": [
+      "similar",
+      "identical",
+      "perpendicular",
+      "equal"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"For uniform circular motion, the centripetal acceleration vector points towards the ________ of the circular path...\"",
+    "a": [
+      "centre",
+      "tangent",
+      "axis",
+      "rim"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"Hence, the centripetal acceleration and linear velocity are ________ to each other at every point in the path...\"",
+    "a": [
+      "perpendicular",
+      "parallel",
+      "opposite",
+      "tangent"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"In nonuniform circular motion, an object is moving in a circular path with a ________ speed...\"",
+    "a": [
+      "varying",
+      "constant",
+      "uniform",
+      "zero"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"Unlike tangential acceleration, ________ acceleration is present in both uniform and nonuniform circular motion.\"",
+    "a": [
+      "centripetal",
+      "angular",
+      "linear",
+      "constant"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"Note that the two acceleration vectors $\\vec{a}_C$ and $\\vec{a}_T$ are ________ to each other...\"",
+    "a": [
+      "perpendicular",
+      "parallel",
+      "opposite",
+      "analogous"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The resultant acceleration points at an ________ between $\\vec{a}_C$ and $\\vec{a}_T$.\"",
+    "a": [
+      "angle",
+      "axis",
+      "tangent",
+      "origin"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The direction of resultant acceleration $\\vec{a}$ is, $\\tan\\phi = \\frac{a_T}{________}$..\"",
+    "a": [
+      "a_C",
+      "a_T",
+      "a",
+      "r"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"A boy steps on a ________ which has a radius of 5 m and is at rest.\"",
+    "a": [
+      "merry-go-round",
+      "Ferris wheel",
+      "carousel",
+      "fan"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "\"The wheel of a car with radius 20 cm starts moving. The ________ acceleration provided by the engine is $12\\text{ rad s}^{-2}$.\"",
+    "a": [
+      "angular",
+      "tangential",
+      "centripetal",
+      "linear"
+    ],
+    "c": 0
   }
 ]
