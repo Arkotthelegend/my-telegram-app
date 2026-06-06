@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+	<script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            }
+        };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root { 
@@ -706,8 +715,8 @@ function loadQuestion() {
     const q = currentQuestions[currentIdx];
     
     // Progress နှင့် မေးခွန်းပြသခြင်း
-    document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
-    document.getElementById('question-box').innerText = q.q;
+    document.getElementById('quiz-progress').innerHTML = `${currentIdx + 1} / ${currentQuestions.length}`;
+    document.getElementById('question-box').innerHTML = q.q;
     
     const optDiv = document.getElementById('quiz-options'); 
     optDiv.innerHTML = '';
@@ -742,7 +751,7 @@ function loadQuestion() {
         opts.forEach((a, i) => {
             const btn = document.createElement('button'); 
             btn.className = 'btn option-btn'; 
-            btn.innerText = a;
+            btn.innerHTML = a;
        // loadQuestion() ထဲက MCQ/TF နှိပ်သည့်နေရာကို ဒီလိုပြင်ပါ
 btn.onclick = () => {
     if(isAnswered) return; 
@@ -1295,8 +1304,8 @@ function showGeneralActivities(subId, partName) {
     nextBtn.className = 'btn'; // Reset to default class first
 
     const q = currentQuestions[currentIdx];
-    document.getElementById('quiz-progress').innerText = `${currentIdx + 1} / ${currentQuestions.length}`;
-    document.getElementById('question-box').innerText = q.q;
+    document.getElementById('quiz-progress').innerHTML = `${currentIdx + 1} / ${currentQuestions.length}`;
+    document.getElementById('question-box').innerHTML = q.q;
     
     const optDiv = document.getElementById('quiz-options'); 
     optDiv.innerHTML = '';
