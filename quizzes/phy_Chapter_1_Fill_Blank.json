@@ -1,6 +1,106 @@
 [
   {
     "type": "blank",
+    "q": "The SI unit of angular velocity is _______.",
+    "c": "radian per second"
+  },
+  {
+    "type": "blank",
+    "q": "In a _______ motion, the object just moves in a circle.",
+    "c": "circular"
+  },
+  {
+    "type": "blank",
+    "q": "The direction of the tangential acceleration is _______ to the circular path.",
+    "c": "tangent"
+  },
+  {
+    "type": "blank",
+    "q": "The centripetal acceleration is in the _______ direction.",
+    "c": "radial"
+  },
+  {
+    "type": "blank",
+    "q": "In the right-hand rule for the direction of angular velocity, the fingers point in the direction of _______.",
+    "c": "rotation"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of linear displacement is _______.",
+    "c": "metre"
+  },
+  {
+    "type": "blank",
+    "q": "If the angular speed is increasing, the directions of tangential velocity and tangential acceleration are _______.",
+    "c": "the same"
+  },
+  {
+    "type": "blank",
+    "q": "A _______ body is a body that does not deform or change shape.",
+    "c": "rigid"
+  },
+  {
+    "type": "blank",
+    "q": "The ratio of the linear velocity to the angular velocity of a body in circular motion is the _______ of the circular path.",
+    "c": "radius"
+  },
+  {
+    "type": "blank",
+    "q": "The direction of the angular velocity is _______ to the plane of rotation.",
+    "c": "perpendicular"
+  },
+  {
+    "type": "blank",
+    "q": "In a non-uniform circular motion, an object moves in a circular path with a _______ speed.",
+    "c": "varying"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of angular displacement is _______.",
+    "c": "radian"
+  },
+  {
+    "type": "blank",
+    "q": "In a circular motion, the object just moves in a _______.",
+    "c": "circle"
+  },
+  {
+    "type": "blank",
+    "q": "If the angular velocity changes at a constant rate, the angular acceleration is _______.",
+    "c": "constant"
+  },
+  {
+    "type": "blank",
+    "q": "The centripetal acceleration is also known as _______ acceleration.",
+    "c": "radial"
+  },
+  {
+    "type": "blank",
+    "q": "The motion of artificial satellites going around the earth at a constant height is an example of _______ motion.",
+    "c": "circular"
+  },
+  {
+    "type": "blank",
+    "q": "When the angular velocity is _______, the angular acceleration and the angular velocity have the same direction.",
+    "c": "increasing"
+  },
+  {
+    "type": "blank",
+    "q": "A rigid body is a body that does not _______ or change shape.",
+    "c": "deform"
+  },
+  {
+    "type": "blank",
+    "q": "The SI unit of tangential acceleration is _______.",
+    "c": "metre per second squared"
+  },
+  {
+    "type": "blank",
+    "q": "In a _______ circular motion, there are tangential acceleration and centripetal acceleration.",
+    "c": "non-uniform"
+  },
+  {
+    "type": "blank",
     "q": "A rigid body is a body that does not deform or change ___.",
     "c": "shape"
   },
