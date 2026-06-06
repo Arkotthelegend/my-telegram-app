@@ -1,34 +1,334 @@
 [
-  { "type": "mcq", "q": "In rotational motion, all the particles constituting the rigid body undergo circular motion about a common _.", "a": ["point", "axis", "plane"], "c": 1 },
-  { "type": "mcq", "q": "The relation between arc length s and angular displacement $\\theta$ is given by the equation _.", "a": ["s = r / \\theta", "s = r\\theta", "s = \\theta / r"], "c": 1 },
-  { "type": "mcq", "q": "The tangential acceleration $a_T$ relates to angular acceleration $\\alpha$ by the equation _.", "a": ["a_T = r \\alpha", "a_T = \\alpha / r", "a_T = r / \\alpha"], "c": 0 },
-  { "type": "mcq", "q": "The direction of angular velocity is usually specified by the _ rule.", "a": ["left-hand", "right-hand", "corkscrew"], "c": 1 },
-  { "type": "mcq", "q": "A rigid body is defined as a body that does not _ or change shape.", "a": ["rotate", "deform", "accelerate"], "c": 1 },
-  { "type": "mcq", "q": "For an object rotating with a constant angular acceleration, the kinematic equations are analogous to those for _ motion.", "a": ["linear", "circular", "projectile"], "c": 0 },
-  { "type": "mcq", "q": "When angular velocity is increasing, the angular acceleration vector points in the _ direction as the angular velocity.", "a": ["opposite", "same", "perpendicular"], "c": 1 },
-  { "type": "mcq", "q": "If the magnitude of the angular velocity of a rotating object changes, the magnitude of linear velocity will also change and the object will have a _ acceleration.", "a": ["tangential", "centripetal", "constant"], "c": 0 },
-  { "type": "mcq", "q": "The thumb points in the direction of the _ vector.", "a": ["angular velocity", "tangential velocity", "angular displacement"], "c": 0 },
-  { "type": "mcq", "q": "The relation between the magnitude of the linear velocity v and the angular velocity $\\omega$ of a particle is _.", "a": ["v = r \\omega", "v = \\omega / r", "v = r / \\omega"], "c": 0 },
-  { "type": "mcq", "q": "The motion of a Ferris wheel is an example of _ motion.", "a": ["linear", "rotational", "translational"], "c": 1 },
-  { "type": "mcq", "q": "Average angular speed is calculated using the formula _.", "a": ["\\omega = (\\omega_0 + \\omega) / 2", "\\omega = (\\omega - \\omega_0) / 2", "\\omega = \\omega_0 \\cdot \\omega"], "c": 0 },
-  { "type": "mcq", "q": "If angular velocity is at a constant rate, we can say that the angular acceleration is _.", "a": ["zero", "constant", "variable"], "c": 1 },
-  { "type": "mcq", "q": "In the relation $s = r\\theta$, $r$ represents the _ of the circle.", "a": ["diameter", "radius", "circumference"], "c": 1 },
-  { "type": "mcq", "q": "The unit of angular displacement $\\theta$ is _.", "a": ["degrees", "radian", "meters"], "c": 1 },
-  { "type": "mcq", "q": "The tangential acceleration is always _ to the circular path.", "a": ["tangent", "perpendicular", "parallel"], "c": 0 },
-  { "type": "mcq", "q": "When a Ferris wheel starts from rest, its initial angular velocity $\\omega_0$ is _.", "a": ["0", "1", "1.5"], "c": 0 },
-  { "type": "mcq", "q": "The equation $\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$ is used to determine _.", "a": ["angular acceleration", "angular velocity", "time"], "c": 1 },
-  { "type": "mcq", "q": "Rotation of earth about its own axis creates the cycle of _.", "a": ["seasons", "day and night", "tides"], "c": 1 },
-  { "type": "mcq", "q": "All particles of a rotating object move in a circle lying on a plane that is _ to the axis.", "a": ["parallel", "perpendicular", "inclined"], "c": 1 },
-  { "type": "mcq", "q": "To find the number of revolutions, we must first find _.", "a": ["angular velocity", "angular displacement", "tangential acceleration"], "c": 1 },
-  { "type": "mcq", "q": "1 revolution is equal to _ radians.", "a": ["\\pi", "2\\pi", "3\\pi"], "c": 1 },
-  { "type": "mcq", "q": "The angular acceleration $\\alpha$ is expressed in _.", "a": ["rad s^{-1}", "rad s^{-2}", "m s^{-2}"], "c": 1 },
-  { "type": "mcq", "q": "The relation between linear and angular displacement is s = _.", "a": ["r\\theta", "r\\omega", "r\\alpha"], "c": 0 },
-  { "type": "mcq", "q": "The angular velocity vector is _ to the plane of rotation.", "a": ["parallel", "perpendicular", "equal"], "c": 1 },
-  { "type": "mcq", "q": "Tangential velocity is also called _.", "a": ["linear velocity", "angular velocity", "constant velocity"], "c": 0 },
-  { "type": "mcq", "q": "The equation $s = v_0t + \\frac{1}{2}at^2$ is for _ motion.", "a": ["angular", "rotational", "linear"], "c": 2 },
-  { "type": "mcq", "q": "The equation $\\theta = \\omega_0t + \\frac{1}{2}\\alpha t^2$ is for _ motion.", "a": ["linear", "rotational", "constant velocity"], "c": 1 },
-  { "type": "mcq", "q": "When angular velocity is decreasing, the angular acceleration vector points in the _ direction as the angular velocity.", "a": ["same", "opposite", "no"], "c": 1 },
-  { "type": "mcq", "q": "A merry-go-round with a radius of 5 m starts at rest and accelerates to 5 rad/s in 20 s. What is the angular displacement?.", "a": ["25 rad", "50 rad", "100 rad"], "c": 1 },
+  {
+    "type": "mcq",
+    "q": "Artificial satellites going around the earth at a constant height is given in the text as an example of which type of motion?",
+    "a": [
+      "Circular motion",
+      "Rotational motion",
+      "Linear motion with constant acceleration",
+      "Nonuniform linear motion"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "According to the textbook, which of the following is an explicit example of rotational motion?",
+    "a": [
+      "Artificial satellites going around the earth at a constant height",
+      "The motion of the blades of a fan",
+      "A particle moving along a straight line path",
+      "An object moving in a circle at constant speed"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "How is a rigid body defined in Section 1.1 of the textbook?",
+    "a": [
+      "A body that can change its shape depending on the external forces applied",
+      "A body that does not deform or change shape, where the distance between any two particles remains constant",
+      "A body whose particles all move in a straight line with constant linear velocity",
+      "A body that only undergoes uniform circular motion at all times"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In rotational motion, all the particles constituting the rigid body undergo circular motion about what?",
+    "a": [
+      "A moving point in space",
+      "A common axis",
+      "The outer edge of the body",
+      "A variable center of rotation"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Under what condition is a motion explicitly called \"rotational motion under constant angular acceleration\"?",
+    "a": [
+      "When the angular velocity changes at a constant rate",
+      "When the linear velocity remains completely constant",
+      "When the angular velocity is equal to zero at all times",
+      "When the centripetal acceleration vector is zero"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "What symbol represents the initial angular speed (magnitude of angular velocity of the object at $t = 0$)?",
+    "a": [
+      "$\\omega$",
+      "$\\omega_0$",
+      "$\\alpha$",
+      "$\\bar{\\omega}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which formula represents the average angular speed $\\bar{\\omega}$ as shown in Equation (1.2)?",
+    "a": [
+      "$\\bar{\\omega} = \\frac{\\omega - \\omega_0}{t}$",
+      "$\\bar{\\omega} = \\frac{\\omega + \\omega_0}{2}$",
+      "$\\bar{\\omega} = \\omega_0 t + \\frac{1}{2}\\alpha t^2$",
+      "$\\bar{\\omega} = \\omega_0^2 + 2\\alpha\\theta$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The kinematic equations for constant angular acceleration are analogous to those for linear motion, with the angular quantities replaced with what?",
+    "a": [
+      "Corresponding linear ones",
+      "Constant values of time",
+      "Tangential acceleration vectors",
+      "The radius of the circular path"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In Table 1.1, what is the angular motion equation analogous to the linear motion equation $v^2 = v_0^2 + 2as$?",
+    "a": [
+      "$\\omega = \\omega_0 + \\alpha t$",
+      "$\\theta = \\omega_0 t + \\frac{1}{2}\\alpha t^2$",
+      "$\\omega^2 = \\omega_0^2 + 2\\alpha\\theta$",
+      "$\\bar{\\omega} = \\frac{\\omega + \\omega_0}{2}$"
+    ],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Based on Example 1.1, if a Ferris wheel starts from rest and reaches an angular velocity of $1.5\\text{ rad s}^{-1}$ over a $10\\text{ s}$ period, what is its constant angular acceleration?",
+    "a": [
+      "$0.15\\text{ rad s}^{-2}$",
+      "$15\\text{ rad s}^{-2}$",
+      "$1.5\\text{ rad s}^{-2}$",
+      "$0.015\\text{ rad s}^{-2}$"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "According to Section 1.2, all particles of an object rotating around the axis of rotation move in what kind of path?",
+    "a": [
+      "A straight line path",
+      "A circular path",
+      "An elliptical path",
+      "A parabolic path"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "For a randomly shaped rigid body undergoing rotational motion, the particles move in circles lying on planes that have what relationship to the axis?",
+    "a": [
+      "They are parallel to the axis",
+      "They are perpendicular to the axis",
+      "They are inclined at an angle of $45^{\\circ}$ to the axis",
+      "They do not intersect the axis"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the relation between arc length $s$ and angular displacement $\\theta$ as defined in the text?",
+    "a": [
+      "$s = \\frac{\\theta}{r}$",
+      "$s = r\\theta$",
+      "$s = r^2\\theta$",
+      "$s = \\frac{r}{\\theta}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following statements is true regarding the instantaneous angular velocity $\\omega$ of a rotational object?",
+    "a": [
+      "It is different for every particle comprising the object",
+      "It is the same for all the particles comprising the object",
+      "It increases with the radius of the particle's path",
+      "It decreases as the distance from the axis increases"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Why is the linear velocity $v$ of a particle in a rotating object also called tangential velocity?",
+    "a": [
+      "Because it points directly toward the center of rotation",
+      "Because the direction of linear velocity is tangent to the path",
+      "Because its magnitude is equal to the angular acceleration",
+      "Because it is perpendicular to the plane of rotation"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What type of acceleration arises if the magnitude of the angular velocity of a rotating object changes?",
+    "a": [
+      "Centripetal acceleration",
+      "Tangential acceleration",
+      "Radial acceleration",
+      "Zero acceleration"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the formula that relates tangential acceleration $a_T$ to angular acceleration \\alpha?",
+    "a": [
+      "$a_T = \\frac{\\alpha}{r}$",
+      "$a_T = r\\alpha$",
+      "$a_T = r^2\\alpha$",
+      "$a_T = \\frac{r}{\\alpha}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The tangential acceleration of a rotating object is explicitly described as a measure of how fast what changes?",
+    "a": [
+      "The angular displacement changes",
+      "The tangential velocity changes",
+      "The radius of rotation changes",
+      "The centripetal acceleration changes"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "How is the direction of the angular velocity vector specified according to the textbook?",
+    "a": [
+      "By the left-hand rule",
+      "By the right-hand rule",
+      "By the direction of tangential acceleration",
+      "By the direction of centripetal acceleration"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "When the angular velocity of a rotating object is decreasing, in what direction does the angular acceleration vector point?",
+    "a": [
+      "In the same direction as the angular velocity",
+      "In the opposite direction to the angular velocity",
+      "Perpendicular to the angular velocity vector",
+      "Along the tangential velocity vector"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "An object that moves in a circle at a constant speed $v$ is said to experience what type of motion?",
+    "a": [
+      "Nonuniform circular motion",
+      "Uniform circular motion",
+      "Rotational motion under constant linear acceleration",
+      "Linear motion"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In uniform circular motion, what component of the velocity continuously changes to constitute an acceleration?",
+    "a": [
+      "The magnitude",
+      "The direction",
+      "Both magnitude and direction",
+      "Neither magnitude nor direction"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Where does the centripetal acceleration or radial acceleration vector $\\vec{a}_C$ point?",
+    "a": [
+      "Tangent to the circular path",
+      "Toward the centre of the circle",
+      "Away from the centre of the circle",
+      "Perpendicular to the axis of rotation along the z-axis"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What geometric relationship exists between triangle CAB and the vector triangle of Figure 1.3(b) during the derivation of centripetal acceleration?",
+    "a": [
+      "They are completely identical in size",
+      "They are geometrically similar",
+      "They are right-angled triangles with the same hypotenuse",
+      "They are perpendicular to each other"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the formula for centripetal acceleration $a_C$ in terms of linear speed $v$ and radius $r$?",
+    "a": [
+      "$a_C = \\frac{v}{r}$",
+      "$a_C = \\frac{v^2}{r}$",
+      "$a_C = r v^2$",
+      "$a_C = \\frac{r}{v^2}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the formula for centripetal acceleration $a_C$ when expressed in terms of angular velocity $\\omega$ as shown in Equation (1.8)?",
+    "a": [
+      "$a_C = r\\omega$",
+      "$a_C = r\\omega^2$",
+      "$a_C = \\frac{\\omega^2}{r}$",
+      "$a_C = \\frac{r}{\\omega^2}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In uniform circular motion, what is the spatial relationship between the centripetal acceleration vector and the linear velocity vector at every point?",
+    "a": [
+      "They are parallel to each other",
+      "They are perpendicular to each other",
+      "They point in opposite directions",
+      "They are inclined at an angle of $45^{\\circ}$"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In nonuniform circular motion, what causes the object to experience a changing angular speed and angular acceleration?",
+    "a": [
+      "Moving in a circular path with a varying speed",
+      "Moving in a straight line with constant velocity",
+      "The centripetal acceleration becoming zero",
+      "The radius of the path continuously changing"
+    ],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which acceleration is uniquely noted as being present in both uniform and nonuniform circular motion?",
+    "a": [
+      "Tangential acceleration",
+      "Centripetal acceleration",
+      "Constant angular acceleration",
+      "Linear acceleration only"
+    ],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "What is the mathematical equation for the magnitude of the resultant acceleration $a$ in nonuniform circular motion?",
+    "a": [
+      "$a = a_C + a_T$",
+      "$a = \\sqrt{a_C^2 + a_T^2}$",
+      "$a = a_C^2 + a_T^2$",
+      "$a = \\frac{a_T}{a_C}$"
+    ],
+    "c": 1
+  },
   {
     "type": "mcq",
     "q": "The direction of the angular velocity of the second hand of the clock is ____ the clock face.",
