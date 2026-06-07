@@ -908,7 +908,19 @@ btn.onclick = () => {
     document.getElementById('activity-title').innerText = "Poems";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-    document.getElementById('activity-back-btn').onclick = () => openSubjectMenu(currentSubject);
+   document.getElementById('activity-back-btn').onclick = () => {
+        const userId = tg.initDataUnsafe?.user?.id || 0;
+        const specialUsers = []; 
+        const isSpecial = specialUsers.includes(userId);
+        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
+
+        // .includes အဟောင်းနေရာတွင် checkAccess အသစ်ဖြင့် အစားထိုးလိုက်ပါသည်
+        if (checkAccess(subId) || isSpecialSubject) {
+            openSubjectMenu(currentSubject);
+        } else {
+            openTrialMenu();
+        }
+    };
 
     // ကဗျာ (၄) ပုဒ်၏ စာသားအပြည့်အစုံ
     const poemsData = {
