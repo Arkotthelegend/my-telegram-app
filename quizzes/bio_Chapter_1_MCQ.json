@@ -97,8 +97,8 @@
   },
   {
     "type": "mcq",
-    "q": "Which of the following one is protective food?",
-    "a": ["protein", "fats", "vititamins", "confectioneries"],
+    "q": "Which of the following is protective food?",
+    "a": ["protein", "fats", "vitamins", "confectioneries"],
     "c": 2
   },
   {
