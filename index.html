@@ -905,22 +905,25 @@ btn.onclick = () => {
 
        function showENPoemOptions() {
     showScreen('activity');
-    document.getElementById('activity-title').innerText = "Poems";
+    document.getElementById('activity-title').innerHTML = "Poems";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-   document.getElementById('activity-back-btn').onclick = () => {
-        const userId = tg.initDataUnsafe?.user?.id || 0;
-        const specialUsers = []; 
-        const isSpecial = specialUsers.includes(userId);
-        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
+  document.getElementById('activity-back-btn').onclick = () => {
+    const userId = tg.initDataUnsafe?.user?.id || 0;
+    const specialUsers = []; 
+    const isSpecial = specialUsers.includes(userId);
+    
+    // ပြင်ဆင်ချက်: subId အစား currentSubject.id ကို အသုံးပြုထားပါသည်
+    const currentId = currentSubject.id; 
+    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(currentId) || currentId === 'bio' || currentId === 'eco');
 
-        // .includes အဟောင်းနေရာတွင် checkAccess အသစ်ဖြင့် အစားထိုးလိုက်ပါသည်
-        if (checkAccess(subId) || isSpecialSubject) {
-            openSubjectMenu(currentSubject);
-        } else {
-            openTrialMenu();
-        }
-    };
+    // checkAccess ကိုလည်း currentId ဖြင့်သာ စစ်ဆေးပါမည်
+    if (checkAccess(currentId) || isSpecialSubject) {
+        openSubjectMenu(currentSubject);
+    } else {
+        openTrialMenu();
+    }
+};
 
     // ကဗျာ (၄) ပုဒ်၏ စာသားအပြည့်အစုံ
     const poemsData = {
