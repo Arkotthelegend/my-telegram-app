@@ -79,9 +79,9 @@
   },
   {
     "type": "mcq",
-    "q": "The world's third largest pulse producing country is",
+    "q": "The world's third largest pulse producing country is ____",
     "a": ["Myanmar", "India", "Canada", "Malaysia"],
-    "c": 2
+    "c": 0
   },
   {
     "type": "mcq",
