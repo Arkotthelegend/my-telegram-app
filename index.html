@@ -1846,6 +1846,16 @@ async function startDailyQuiz(subId) {
     backBtn.innerText = "ခဏစောင့်ပါ...";
     backBtn.disabled = true;
 
+    // အရေးကြီးသော ပြင်ဆင်ချက်: currentSubject ကို မှန်ကန်စွာ သတ်မှတ်ပေးခြင်း
+    // ဒါက App ဖွင့်ဖွင့်ချင်းမှာ currentSubject null ဖြစ်နေတဲ့ ပြဿနာကို ရှင်းပေးပါလိမ့်မယ်။
+    const selectedSub = subjects.find(s => s.id === subId);
+    if (selectedSub) {
+        currentSubject = selectedSub;
+    } else {
+        // အကယ်၍ ရှာမတွေ့ပါက ပုံသေတစ်ခု ထည့်ထားပေးပါမည် (Error ကာကွယ်ရန်)
+        currentSubject = { id: subId, name: subId };
+    }
+
     const filesToFetch = getFileNamesForSubject(subId);
     let allQuestionsPool = [];
 
@@ -1863,8 +1873,6 @@ async function startDailyQuiz(subId) {
                 const validQuestions = chapterQuestions.filter(item => {
                     return item.q && item.a && Array.isArray(item.a);
                 }).map(item => {
-                    // ဤနေရာသည် အသစ်ထည့်ထားသော အပိုင်းဖြစ်သည်
-                    // JSON တွင် type: "mcq" မပါခဲ့လျှင် Code က အလိုအလျောက် ထည့်ပေးမည်
                     if (!item.type) {
                         item.type = 'mcq';
                     }
