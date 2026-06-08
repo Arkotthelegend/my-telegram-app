@@ -1843,7 +1843,6 @@ function getFileNamesForSubject(subId) {
     return fileNames;
 }
 
-// နေ့စဉ် ဉာဏ်စမ်းကို စတင်မည့် အဓိက Function (Error စစ်ဆေးပေးမည့် စနစ်ပါဝင်သည်)
 async function startDailyQuiz(subId) {
     const filesToFetch = getFileNamesForSubject(subId);
     let allQuestionsPool = [];
@@ -1860,19 +1859,20 @@ async function startDailyQuiz(subId) {
 
         const chaptersData = await Promise.all(fetchPromises);
         
+        // --- ဤနေရာသည် Error အား ပြင်ဆင်ထားသည့် အပိုင်းဖြစ်သည် ---
         chaptersData.forEach((chapterQuestions) => {
-            // ဖိုင်ထဲက Data သည် Array အမှန်တကယ် ဖြစ်မဖြစ် အရင်စစ်ဆေးပါမည်
             if (Array.isArray(chapterQuestions)) {
-                // type: "mcq" မပါခဲ့ရင်တောင် ပုံမှန်မေးခွန်းအဖြစ် ယူဆပြီး ဆွဲယူပါမည် (!q.type ထည့်ထားသည်)
-                const validQuestions = chapterQuestions.filter(q => q.type === 'mcq' || q.type === 'math_show' || !q.type);
+                // မေးခွန်းစာသား (q) နှင့် ရွေးချယ်စရာ (a) ပါမှသာ မေးခွန်းစစ်စစ်အဖြစ် သတ်မှတ်မည်
+                const validQuestions = chapterQuestions.filter(item => {
+                    return item.q && item.a && Array.isArray(item.a);
+                });
                 allQuestionsPool = allQuestionsPool.concat(validQuestions);
             }
         });
+        // --------------------------------------------------
 
-        // မေးခွန်း ၃ ခု ရှိမရှိ စစ်ဆေးခြင်း
         if(allQuestionsPool.length < 3) {
-            // ဘယ်ဖိုင်ကို ရှာနေသလဲဆိုတာကိုပါ တွဲပြပေးပါမည်
-            tg.showAlert(`မေးခွန်းဖိုင်များ မတွေ့ပါ သို့မဟုတ် မပြည့်စုံပါ။\nရှာဖွေခဲ့သော ဥပမာဖိုင် - ${filesToFetch[0]}.json`);
+            tg.showAlert(`မေးခွန်းဖိုင်များ မတွေ့ပါ သို့မဟုတ် မပြည့်စုံပါ။`);
             document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
             document.getElementById('quiz-back-btn').disabled = false;
             return;
@@ -1897,7 +1897,6 @@ async function startDailyQuiz(subId) {
         loadQuestion();
 
     } catch (error) {
-        // Error အတိအကျကို ပြပေးမည့်နေရာ
         tg.showAlert("Code Error ဖြစ်နေပါသည်: " + error.message);
         document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
         document.getElementById('quiz-back-btn').disabled = false;
