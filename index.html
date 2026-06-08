@@ -699,11 +699,21 @@ function checkAccess(subId) {
 }
 
 
-   function renderSubjects() {
+// သော့ဖွင့်ပေးသည့် Function
+function unlockCard(div, sub) {
+    div.classList.remove('locked');
+    const lockSpan = div.querySelector('.lock-icon');
+    if (lockSpan) lockSpan.remove(); // သော့ပုံလေးကို ဖြုတ်လိုက်မည်
+    div.onclick = () => openSubjectMenu(sub);
+}
+
+        function renderSubjects() {
     const list = document.getElementById('subject-list');
     list.innerHTML = '';
-    const userId = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.id : 0;
-    const isSpecial = specialUsers.includes(userId);
+    
+    // specialUsers ကို အပေါ်မှာ Global ထားခဲ့ပြီးဖြစ်လို့ ဒီမှာ ထပ်ကြေညာစရာမလိုပါ
+    const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || "0";
+    const isSpecial = specialUsers.map(String).includes(currentUserId);
 
     subjects.forEach(sub => {
         let isPaid = checkAccess(sub.id);
@@ -711,7 +721,6 @@ function checkAccess(subId) {
         // Special User ဆိုလျှင် ၆ ဘာသာ ပွင့်ပေးမည်
         if (isSpecial) {
             const fiveSubjects = ['mm', 'en', 'math', 'phy', 'chem'];
-            // ရှေ့ ၅ ဘာသာ (သို့မဟုတ်) Bio/Eco တစ်ခုခု ဖြစ်ပါက ပွင့်မည်
             if (fiveSubjects.includes(sub.id) || sub.id === 'bio' || sub.id === 'eco') {
                 isPaid = true;
             }
@@ -726,17 +735,9 @@ function checkAccess(subId) {
     });
 }
 
-// သော့ဖွင့်ပေးသည့် Function
-function unlockCard(div, sub) {
-    div.classList.remove('locked');
-    const lockSpan = div.querySelector('.lock-icon');
-    if (lockSpan) lockSpan.remove(); // သော့ပုံလေးကို ဖြုတ်လိုက်မည်
-    div.onclick = () => openSubjectMenu(sub);
-}
-
-        function openSubjectMenu(sub) {
-    const userId = tg.initDataUnsafe?.user?.id || 0;
-    const isSpecial = specialUsers.includes(userId);
+function openSubjectMenu(sub) {
+    const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || "0";
+    const isSpecial = specialUsers.map(String).includes(currentUserId);
 
     // ပုံမှန်ဝယ်ထားသူလား (သို့မဟုတ်) Special User ဖြစ်ပြီး ၆ ဘာသာထဲက တစ်ခုလား စစ်ဆေးခြင်း
     const isPaidInCode = checkAccess(sub.id);
@@ -744,14 +745,13 @@ function unlockCard(div, sub) {
     
     const canAccess = isPaidInCode || isSpecialSubject;
 
-    // အကယ်၍ ဝယ်မထားဘဲ Menu ထဲရောက်နေလျှင် (Trial မဟုတ်လျှင်) ပြန်ထုတ်ရန်
+    // အကယ်၍ ဝယ်မထားဘဲ Menu ထဲရောက်နေလျှင် ပြန်ထုတ်ရန်
     if (!canAccess) {
         tg.showAlert("တစ်ဘာသာလုံးကို‌လေ့ကျင့်ဖို့ ဒီဘာသာရပ်ကိုဝယ်ယူလိုက်ပါ");
         showScreen('home');
         return;
     }
 
-    // --- ကျန်ရှိသော Menu ပြသသည့် မူလ Code များ ---
     currentSubject = sub;
     showScreen('menu');
     document.getElementById('menu-title').innerText = sub.name;
