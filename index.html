@@ -1842,43 +1842,42 @@ function getFileNamesForSubject(subId) {
     
     return fileNames;
 }
-
-
 async function startDailyQuiz(subId) {
+    // ၁။ အရင်ဆုံး ခလုတ်ကို Reset လုပ်ပါ (ဒုတိယအကြိမ်အတွက် အရေးကြီးသည်)
+    const backBtn = document.getElementById('quiz-back-btn');
+    backBtn.innerText = "ခဏစောင့်ပါ...";
+    backBtn.disabled = true;
+
     const filesToFetch = getFileNamesForSubject(subId);
     let allQuestionsPool = [];
-
-    document.getElementById('quiz-back-btn').innerText = "Loading...";
-    document.getElementById('quiz-back-btn').disabled = true;
 
     try {
         let fetchPromises = filesToFetch.map(fileName => {
             return fetch(`./quizzes/${fileName}.json`)
                 .then(res => res.ok ? res.json() : []) 
-                .catch(e => []); 
+                .catch(() => []); 
         });
 
         const chaptersData = await Promise.all(fetchPromises);
         
-        // --- ဤနေရာသည် Error အား ပြင်ဆင်ထားသည့် အပိုင်းဖြစ်သည် ---
         chaptersData.forEach((chapterQuestions) => {
             if (Array.isArray(chapterQuestions)) {
-                // မေးခွန်းစာသား (q) နှင့် ရွေးချယ်စရာ (a) ပါမှသာ မေးခွန်းစစ်စစ်အဖြစ် သတ်မှတ်မည်
                 const validQuestions = chapterQuestions.filter(item => {
                     return item.q && item.a && Array.isArray(item.a);
                 });
                 allQuestionsPool = allQuestionsPool.concat(validQuestions);
             }
         });
-        // --------------------------------------------------
 
         if(allQuestionsPool.length < 3) {
-            tg.showAlert(`မေးခွန်းဖိုင်များ မတွေ့ပါ သို့မဟုတ် မပြည့်စုံပါ။`);
-            document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
-            document.getElementById('quiz-back-btn').disabled = false;
+            tg.showAlert("မေးခွန်းဖိုင်များ မတွေ့ပါ သို့မဟုတ် မပြည့်စုံပါ။");
+            // Error တက်လည်း ခလုတ်ကို ပြန်ဖွင့်ပေးရမည်
+            backBtn.innerText = "ထွက်မည်";
+            backBtn.disabled = false;
             return;
         }
 
+        // ၂။ မေးခွန်းရွေးချယ်ခြင်း
         let seed = getDailySeed();
         let shuffled = [...allQuestionsPool];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -1890,20 +1889,20 @@ async function startDailyQuiz(subId) {
         currentQuestions = shuffled.slice(0, 3);
         currentIdx = 0;
         
-        document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
-        document.getElementById('quiz-back-btn').disabled = false;
-        document.getElementById('quiz-back-btn').onclick = () => showScreen('daily');
+        // ၃။ Quiz Screen သို့ မသွားခင် ခလုတ်ကို အဆင်သင့်ဖြစ်အောင် ပြန်ပြင်ခြင်း
+        backBtn.innerText = "ထွက်မည်";
+        backBtn.disabled = false;
+        backBtn.onclick = () => showScreen('daily');
 
         showScreen('quiz');
         loadQuestion();
 
     } catch (error) {
-        tg.showAlert("Code Error ဖြစ်နေပါသည်: " + error.message);
-        document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
-        document.getElementById('quiz-back-btn').disabled = false;
+        tg.showAlert("Error: " + error.message);
+        backBtn.innerText = "ထွက်မည်";
+        backBtn.disabled = false;
     }
 }
-
     </script>
 </body>
 </html>
