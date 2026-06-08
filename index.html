@@ -985,18 +985,20 @@ btn.onclick = () => {
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
    document.getElementById('activity-back-btn').onclick = () => {
-        const userId = tg.initDataUnsafe?.user?.id || 0;
-        const specialUsers = []; 
-        const isSpecial = specialUsers.includes(userId);
-        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
+    const userId = tg.initDataUnsafe?.user?.id || 0;
+    const specialUsers = []; 
+    const isSpecial = specialUsers.includes(userId);
+    
+    // ၁။ subId နေရာတွင် currentSubject သို့ ပြောင်းလဲလိုက်ပါသည်
+    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(currentSubject) || currentSubject === 'bio' || currentSubject === 'eco');
 
-        // .includes အဟောင်းနေရာတွင် checkAccess အသစ်ဖြင့် အစားထိုးလိုက်ပါသည်
-        if (checkAccess(subId) || isSpecialSubject) {
-            openSubjectMenu(currentSubject);
-        } else {
-            openTrialMenu();
-        }
-    };
+    // ၂။ checkAccess ထဲတွင်လည်း currentSubject ကို ပြောင်းသုံးထားပါတယ်
+    if (checkAccess(currentSubject) || isSpecialSubject) {
+        openSubjectMenu(currentSubject);
+    } else {
+        openTrialMenu(); // ဝယ်မထားသော Trial သမားများသည် ဤနေရာသို့ တိုက်ရိုက်ရောက်သွားမည်
+    }
+};
 
     // ကဗျာ (၄) ပုဒ်၏ စာသားအပြည့်အစုံ
     const poemsData = {
