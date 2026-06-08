@@ -1793,7 +1793,7 @@ const dailyQuizDB = {
     'en': [], 'eco': [], 'phy': [], 'chem': [], 'bio': []
 };
 
-// ၂။ နေ့စဉ် ရက်စွဲအလိုက် ကျပန်းနံပါတ်ထုတ်ပေးမည့် စနစ်
+// နေ့စဉ် ရက်စွဲအလိုက် ကျပန်းနံပါတ်ထုတ်ပေးမည့် စနစ်
 function getDailySeed() {
     const today = new Date();
     return today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
@@ -1804,35 +1804,107 @@ function seededRandom(seed) {
     return x - Math.floor(x);
 }
 
-// ၃။ Daily Quiz စတင်မည့် Function (မူရင်း Quiz Screen ကို အသုံးပြုထားသည်)
-function startDailyQuiz(subId) {
-    const allQs = dailyQuizDB[subId] || [];
+// သက်ဆိုင်ရာ ဘာသာရပ်အလိုက် JSON ဖိုင်နာမည်များ စုစည်းပေးမည့် Function
+function getFileNamesForSubject(subId) {
+    let fileNames = [];
     
-    // မေးခွန်း ၃ ခု မပြည့်သေးရင် ဝင်ခွင့်မပေးပါ
-    if(allQs.length < 3) {
-        tg.showAlert("ဤဘာသာရပ်အတွက် ဉာဏ်စမ်းမေးခွန်း ၃ ခု မပြည့်သေးပါ။");
-        return;
+    if (subId === 'phy' || subId === 'chem' || subId === 'bio' || subId === 'eco') {
+        // Physics, Chem, Bio, Eco အတွက် (ဥပမာ- phy_Chapter_1_MCQ မှ 13 အထိ)
+        const sub = subjects.find(s => s.id === subId);
+        const maxChap = sub ? sub.chapters : 10;
+        for (let i = 1; i <= maxChap; i++) {
+            fileNames.push(`${subId}_Chapter_${i}_MCQ`);
+        }
+    } 
+    else if (subId === 'math') {
+        // သင်္ချာအတွက် (ဥပမာ- math_Chapter_1_1_Mark)
+        for (let i = 1; i <= 10; i++) { // Chapter 10 ထိရှိသည်ဟု ယူဆ၍
+            fileNames.push(`math_Chapter_${i}_1_Mark`);
+        }
     }
-
-    // မေးခွန်းများကို နေ့စဉ် Seed သုံးပြီး မွှေနှောက်ခြင်း (Shuffle)
-    let seed = getDailySeed();
-    let shuffled = [...allQs];
-    for (let i = shuffled.length - 1; i > 0; i--) {
-        const r = seededRandom(seed + i);
-        const j = Math.floor(r * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    else if (subId === 'en') {
+        // English အတွက် (ဥပမာ- en_unit1_mcq)
+        for (let i = 1; i <= 12; i++) {
+            fileNames.push(`en_unit${i}_mcq`);
+        }
     }
-
-    // မူရင်း Quiz စနစ်သို့ မေးခွန်း ၃ ခု ထည့်သွင်းပေးခြင်း
-    currentQuestions = shuffled.slice(0, 3);
-    currentIdx = 0;
+    else if (subId === 'mm') {
+        // မြန်မာစာအတွက်က ဖိုင်နာမည် ကွဲပြားလွန်းသဖြင့် အမှန်ရွေးဖိုင်များကို သီးသန့်ထည့်ပေးရမည်
+        fileNames = [
+            "mm_အပြော_အမှန်ရွေး",
+            "mm_စကားပြေ_အမှန်ရွေး",
+            "mm_ကဗျာ_အမှန်ရွေး",
+			"mm_အဖတ်_အမှန်ရွေး"
+			
+            // လိုအပ်လျှင် မြန်မာစာ ဖိုင်နာမည်များကို ဤနေရာတွင် ထပ်တိုးပါ
+        ];
+    }
     
-    // နောက်သို့ ခလုတ်ကို နှိပ်လျှင် Daily Screen သို့ ပြန်သွားစေရန် ပြင်ဆင်ခြင်း
-    document.getElementById('quiz-back-btn').onclick = () => showScreen('daily');
+    return fileNames;
+}
 
-    // မူရင်း Quiz မျက်နှာပြင်ကို ခေါ်ယူခြင်း
-    showScreen('quiz');
-    loadQuestion();
+// နေ့စဉ် ဉာဏ်စမ်းကို စတင်မည့် အဓိက Function (ဖိုင်များမှ ဆွဲယူခြင်း)
+async function startDailyQuiz(subId) {
+    // ၁။ ယူရမည့် ဖိုင်နာမည်စာရင်းကို တောင်းခံခြင်း
+    const filesToFetch = getFileNamesForSubject(subId);
+    let allQuestionsPool = [];
+
+    // Loading ပြသခြင်း (ဖိုင်တွေ အများကြီးဆွဲရင် အချိန်ခဏကြာတတ်လို့ပါ)
+    document.getElementById('quiz-back-btn').innerText = "Loading...";
+    document.getElementById('quiz-back-btn').disabled = true;
+
+    try {
+        // ၂။ ဖိုင်အားလုံးကို လှမ်းခေါ်ခြင်း (Fetch)
+        let fetchPromises = filesToFetch.map(fileName => {
+            return fetch(`./quizzes/${fileName}.json`)
+                .then(res => res.ok ? res.json() : []) // ဖိုင်ရှိရင် data ယူမယ်၊ မရှိရင် လွတ်ထားမယ်
+                .catch(e => []); // Error တက်ရင် ကျော်သွားမယ်
+        });
+
+        // ၃။ ဖိုင်အားလုံး ဒေါင်းလုဒ်ပြီးသည်အထိ စောင့်ခြင်း
+        const chaptersData = await Promise.all(fetchPromises);
+        
+        // ၄။ ရလာတဲ့ မေးခွန်းတွေကို allQuestionsPool ထဲ ပေါင်းထည့်ခြင်း
+        chaptersData.forEach(chapterQuestions => {
+            // Flashcard တွေ မပါလာအောင် MCQ သို့မဟုတ် Math_show အမျိုးအစားကိုပဲ စစ်ထုတ် (Filter) ယူပါမယ်
+            const validQuestions = chapterQuestions.filter(q => q.type === 'mcq' || q.type === 'math_show');
+            allQuestionsPool = allQuestionsPool.concat(validQuestions);
+        });
+
+        // ၅။ မေးခွန်း ၃ ခု ရှိမရှိ စစ်ဆေးခြင်း
+        if(allQuestionsPool.length < 3) {
+            tg.showAlert("ဤဘာသာရပ်အတွက် မေးခွန်းဖိုင်များ မပြည့်စုံသေးပါ။");
+            document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
+            document.getElementById('quiz-back-btn').disabled = false;
+            return;
+        }
+
+        // ၆။ Seed သုံးပြီး ကျပန်းမွှေခြင်း (Shuffle)
+        let seed = getDailySeed();
+        let shuffled = [...allQuestionsPool];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const r = seededRandom(seed + i);
+            const j = Math.floor(r * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+
+        // ၇။ မေးခွန်း ၃ ခုကို ရွေးထုတ်ပြီး Quiz Screen သို့ လွှဲပြောင်းပေးခြင်း
+        currentQuestions = shuffled.slice(0, 3);
+        currentIdx = 0;
+        
+        // ခလုတ်ကို ပုံမှန်အတိုင်း ပြန်ထားခြင်း
+        document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
+        document.getElementById('quiz-back-btn').disabled = false;
+        document.getElementById('quiz-back-btn').onclick = () => showScreen('daily');
+
+        showScreen('quiz');
+        loadQuestion();
+
+    } catch (error) {
+        tg.showAlert("မေးခွန်းများကို ဆွဲယူရာတွင် အခက်အခဲရှိနေပါသည်။");
+        document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
+        document.getElementById('quiz-back-btn').disabled = false;
+    }
 }
 
     </script>
