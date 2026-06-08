@@ -474,6 +474,7 @@
     <script>
 		
 		const ADMIN_ID = 8432363664;
+const specialUsers = [7273479209];
 		
 		function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -735,8 +736,6 @@ function unlockCard(div, sub) {
 
         function openSubjectMenu(sub) {
     const userId = tg.initDataUnsafe?.user?.id || 0;
-    // Special Users ID စာရင်း (သင့် ID နှင့် ဝယ်ယူထားသူများ ID ထည့်ရန်)
-    const specialUsers = [7273479209]; 
     const isSpecial = specialUsers.includes(userId);
 
     // ပုံမှန်ဝယ်ထားသူလား (သို့မဟုတ်) Special User ဖြစ်ပြီး ၆ ဘာသာထဲက တစ်ခုလား စစ်ဆေးခြင်း
@@ -986,7 +985,6 @@ btn.onclick = () => {
     content.innerHTML = '';
   document.getElementById('activity-back-btn').onclick = () => {
     const userId = tg.initDataUnsafe?.user?.id || 0;
-    const specialUsers = []; 
     const isSpecial = specialUsers.includes(userId);
     
     // ပြင်ဆင်ချက်: subId အစား currentSubject.id ကို အသုံးပြုထားပါသည်
@@ -1320,7 +1318,6 @@ function showGeneralActivities(subId, partName) {
     // --- Back Button Logic ပြင်ဆင်ခြင်း (Error ရှင်းလင်းပြီး) ---
     document.getElementById('activity-back-btn').onclick = () => {
         const userId = tg.initDataUnsafe?.user?.id || 0;
-        const specialUsers = []; 
         const isSpecial = specialUsers.includes(userId);
         const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
 
@@ -1549,7 +1546,6 @@ function nextQuestion() {
             if(id === 'profile') renderProfileData();
         }
 // Special Users ID များစာရင်း (ဒီမှာ ID ထည့်ရုံနဲ့ Premium ဖြစ်ပြီး ၆ ဘာသာပွင့်ပါမယ်)
-const specialUsers = []; 
 
 function renderProfileData() {
     const userId = tg.initDataUnsafe?.user?.id || 0;
