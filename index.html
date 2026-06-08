@@ -73,7 +73,7 @@
 
 /* --- ကတ်အရှေ့မျက်နှာပြင် (Sleek Dark Slate) --- */
 .flash-front { 
-    background: #0f172a; /* အရောင်ကို နည်းနည်းပြင်ထားပါတယ် */
+    background: #0F242A; /* အရောင်ကို နည်းနည်းပြင်ထားပါတယ် */
     color: #ffffff; 
     opacity: 1;
 	border: 3px solid var(--accent, #3b82f6); 
@@ -83,7 +83,7 @@
 
 /* --- ကတ်အနောက်မျက်နှာပြင် (Distinct Dark Blue) --- */
 .flash-back { 
-    background: #0F212A; /* အရှေ့အရောင်နဲ့ ကွဲပြားအောင် ပိုရင့်တဲ့အရောင် သုံးထားပါတယ် */
+    background: #2A0F0F; /* အရှေ့အရောင်နဲ့ ကွဲပြားအောင် ပိုရင့်တဲ့အရောင် သုံးထားပါတယ် */
     color: #f1f5f9; 
     opacity: 0;
 	border: 3px solid var(--accent, #F63B3B); 
@@ -216,6 +216,54 @@
     margin-left: 5px;
 }
 
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+.sub-btn {
+    background-color: var(--card);
+    color: var(--white);
+    border: 2px solid var(--lock);
+    padding: 25px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.sub-btn:hover {
+    border-color: var(--accent);
+    background-color: #24334d;
+}
+.quiz-card {
+    background-color: var(--card);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent);
+}
+.quiz-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.option-item {
+    display: block;
+    background-color: #24324a;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.option-item:hover {
+    background-color: #2e3f5c;
+}
+.option-item input {
+    margin-right: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -232,6 +280,33 @@
     </div>
 </div>
         </div>
+		
+		<div id="daily-screen" class="screen">
+    <h2 style="text-align: center; color: var(--accent);">Daily Quiz (Free)</h2>
+    <p style="text-align: center; color: #94A3B8; font-size: 0.9rem; margin-top:-10px; margin-bottom: 20px;">နေ့စဉ် မေးခွန်းသစ် ၃ ခုကို ကျပန်းဖြေဆိုနိုင်ပါသည်။</p>
+    
+    <div style="padding: 15px;">
+        <div class="subject-card" onclick="startDailyQuiz('mm')">
+            <span>မြန်မာစာ</span> <span>➔</span>
+        </div>
+        <div class="subject-card" onclick="startDailyQuiz('en')">
+            <span>အင်္ဂလိပ်စာ</span> <span>➔</span>
+        </div>
+        <div class="subject-card" onclick="startDailyQuiz('phy')">
+            <span>ရူပဗေဒ</span> <span>➔</span>
+        </div>
+        <div class="subject-card" onclick="startDailyQuiz('chem')">
+            <span>ဓာတုဗေဒ</span> <span>➔</span>
+        </div>
+        <div class="subject-card" onclick="startDailyQuiz('bio')">
+            <span>ဇီဝဗေဒ</span> <span>➔</span>
+        </div>
+		<div class="subject-card" onclick="startDailyQuiz('eco')">
+            <span>ဘောဂဗေဒ</span> <span>➔</span>
+        </div>
+    </div>
+</div>>
+
 		
 	<div id="scroll-screen" class="screen">
     
@@ -391,6 +466,7 @@
 
     <div class="nav">
         <div class="nav-item nav-active" onclick="changeTab('home', this)">🏠</div>
+		<div class="nav-item" onclick="changeTab('daily', this)">📝</div>
         <div class="nav-item" onclick="changeTab('middle', this)">⏳</div>
         <div class="nav-item" onclick="changeTab('profile', this)">👤</div>
     </div>
@@ -905,25 +981,22 @@ btn.onclick = () => {
 
        function showENPoemOptions() {
     showScreen('activity');
-    document.getElementById('activity-title').innerHTML = "Poems";
+    document.getElementById('activity-title').innerText = "Poems";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-  document.getElementById('activity-back-btn').onclick = () => {
-    const userId = tg.initDataUnsafe?.user?.id || 0;
-    const specialUsers = []; 
-    const isSpecial = specialUsers.includes(userId);
-    
-    // ပြင်ဆင်ချက်: subId အစား currentSubject.id ကို အသုံးပြုထားပါသည်
-    const currentId = currentSubject.id; 
-    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(currentId) || currentId === 'bio' || currentId === 'eco');
+   document.getElementById('activity-back-btn').onclick = () => {
+        const userId = tg.initDataUnsafe?.user?.id || 0;
+        const specialUsers = []; 
+        const isSpecial = specialUsers.includes(userId);
+        const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(subId) || subId === 'bio' || subId === 'eco');
 
-    // checkAccess ကိုလည်း currentId ဖြင့်သာ စစ်ဆေးပါမည်
-    if (checkAccess(currentId) || isSpecialSubject) {
-        openSubjectMenu(currentSubject);
-    } else {
-        openTrialMenu();
-    }
-};
+        // .includes အဟောင်းနေရာတွင် checkAccess အသစ်ဖြင့် အစားထိုးလိုက်ပါသည်
+        if (checkAccess(subId) || isSpecialSubject) {
+            openSubjectMenu(currentSubject);
+        } else {
+            openTrialMenu();
+        }
+    };
 
     // ကဗျာ (၄) ပုဒ်၏ စာသားအပြည့်အစုံ
     const poemsData = {
@@ -1708,6 +1781,60 @@ function updateStreak() {
     return streak;
 }
       
+	  // ၁။ Daily Quiz အတွက် မေးခွန်းများ စုစည်းထားမည့် နေရာ
+// သင့်ရဲ့ မူရင်း JSON ပုံစံအတိုင်း (q, type, a, c) အတိအကျ သုံးထားပါတယ်
+const dailyQuizDB = {
+    'mm': [
+        { q: "မြန်မာစာ မေးခွန်း ၁", type: "mcq", a: ["က", "ခ", "ဂ", "ဃ"], c: 0 },
+        { q: "မြန်မာစာ မေးခွန်း ၂", type: "mcq", a: ["က", "ခ", "ဂ", "ဃ"], c: 1 },
+        { q: "မြန်မာစာ မေးခွန်း ၃", type: "mcq", a: ["က", "ခ", "ဂ", "ဃ"], c: 2 },
+        { q: "မြန်မာစာ မေးခွန်း ၄", type: "mcq", a: ["က", "ခ", "ဂ", "ဃ"], c: 3 }
+    ],
+    'en': [], 'eco': [], 'phy': [], 'chem': [], 'bio': []
+};
+
+// ၂။ နေ့စဉ် ရက်စွဲအလိုက် ကျပန်းနံပါတ်ထုတ်ပေးမည့် စနစ်
+function getDailySeed() {
+    const today = new Date();
+    return today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+}
+
+function seededRandom(seed) {
+    const x = Math.sin(seed) * 10000;
+    return x - Math.floor(x);
+}
+
+// ၃။ Daily Quiz စတင်မည့် Function (မူရင်း Quiz Screen ကို အသုံးပြုထားသည်)
+function startDailyQuiz(subId) {
+    const allQs = dailyQuizDB[subId] || [];
+    
+    // မေးခွန်း ၃ ခု မပြည့်သေးရင် ဝင်ခွင့်မပေးပါ
+    if(allQs.length < 3) {
+        tg.showAlert("ဤဘာသာရပ်အတွက် ဉာဏ်စမ်းမေးခွန်း ၃ ခု မပြည့်သေးပါ။");
+        return;
+    }
+
+    // မေးခွန်းများကို နေ့စဉ် Seed သုံးပြီး မွှေနှောက်ခြင်း (Shuffle)
+    let seed = getDailySeed();
+    let shuffled = [...allQs];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const r = seededRandom(seed + i);
+        const j = Math.floor(r * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    // မူရင်း Quiz စနစ်သို့ မေးခွန်း ၃ ခု ထည့်သွင်းပေးခြင်း
+    currentQuestions = shuffled.slice(0, 3);
+    currentIdx = 0;
+    
+    // နောက်သို့ ခလုတ်ကို နှိပ်လျှင် Daily Screen သို့ ပြန်သွားစေရန် ပြင်ဆင်ခြင်း
+    document.getElementById('quiz-back-btn').onclick = () => showScreen('daily');
+
+    // မူရင်း Quiz မျက်နှာပြင်ကို ခေါ်ယူခြင်း
+    showScreen('quiz');
+    loadQuestion();
+}
+
     </script>
 </body>
 </html>
