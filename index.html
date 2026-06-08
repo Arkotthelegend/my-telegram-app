@@ -1843,43 +1843,41 @@ function getFileNamesForSubject(subId) {
     return fileNames;
 }
 
-// နေ့စဉ် ဉာဏ်စမ်းကို စတင်မည့် အဓိက Function (ဖိုင်များမှ ဆွဲယူခြင်း)
+// နေ့စဉ် ဉာဏ်စမ်းကို စတင်မည့် အဓိက Function (Error စစ်ဆေးပေးမည့် စနစ်ပါဝင်သည်)
 async function startDailyQuiz(subId) {
-    // ၁။ ယူရမည့် ဖိုင်နာမည်စာရင်းကို တောင်းခံခြင်း
     const filesToFetch = getFileNamesForSubject(subId);
     let allQuestionsPool = [];
 
-    // Loading ပြသခြင်း (ဖိုင်တွေ အများကြီးဆွဲရင် အချိန်ခဏကြာတတ်လို့ပါ)
     document.getElementById('quiz-back-btn').innerText = "Loading...";
     document.getElementById('quiz-back-btn').disabled = true;
 
     try {
-        // ၂။ ဖိုင်အားလုံးကို လှမ်းခေါ်ခြင်း (Fetch)
         let fetchPromises = filesToFetch.map(fileName => {
             return fetch(`./quizzes/${fileName}.json`)
-                .then(res => res.ok ? res.json() : []) // ဖိုင်ရှိရင် data ယူမယ်၊ မရှိရင် လွတ်ထားမယ်
-                .catch(e => []); // Error တက်ရင် ကျော်သွားမယ်
+                .then(res => res.ok ? res.json() : []) 
+                .catch(e => []); 
         });
 
-        // ၃။ ဖိုင်အားလုံး ဒေါင်းလုဒ်ပြီးသည်အထိ စောင့်ခြင်း
         const chaptersData = await Promise.all(fetchPromises);
         
-        // ၄။ ရလာတဲ့ မေးခွန်းတွေကို allQuestionsPool ထဲ ပေါင်းထည့်ခြင်း
-        chaptersData.forEach(chapterQuestions => {
-            // Flashcard တွေ မပါလာအောင် MCQ သို့မဟုတ် Math_show အမျိုးအစားကိုပဲ စစ်ထုတ် (Filter) ယူပါမယ်
-            const validQuestions = chapterQuestions.filter(q => q.type === 'mcq' || q.type === 'math_show');
-            allQuestionsPool = allQuestionsPool.concat(validQuestions);
+        chaptersData.forEach((chapterQuestions) => {
+            // ဖိုင်ထဲက Data သည် Array အမှန်တကယ် ဖြစ်မဖြစ် အရင်စစ်ဆေးပါမည်
+            if (Array.isArray(chapterQuestions)) {
+                // type: "mcq" မပါခဲ့ရင်တောင် ပုံမှန်မေးခွန်းအဖြစ် ယူဆပြီး ဆွဲယူပါမည် (!q.type ထည့်ထားသည်)
+                const validQuestions = chapterQuestions.filter(q => q.type === 'mcq' || q.type === 'math_show' || !q.type);
+                allQuestionsPool = allQuestionsPool.concat(validQuestions);
+            }
         });
 
-        // ၅။ မေးခွန်း ၃ ခု ရှိမရှိ စစ်ဆေးခြင်း
+        // မေးခွန်း ၃ ခု ရှိမရှိ စစ်ဆေးခြင်း
         if(allQuestionsPool.length < 3) {
-            tg.showAlert("ဤဘာသာရပ်အတွက် မေးခွန်းဖိုင်များ မပြည့်စုံသေးပါ။");
+            // ဘယ်ဖိုင်ကို ရှာနေသလဲဆိုတာကိုပါ တွဲပြပေးပါမည်
+            tg.showAlert(`မေးခွန်းဖိုင်များ မတွေ့ပါ သို့မဟုတ် မပြည့်စုံပါ။\nရှာဖွေခဲ့သော ဥပမာဖိုင် - ${filesToFetch[0]}.json`);
             document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
             document.getElementById('quiz-back-btn').disabled = false;
             return;
         }
 
-        // ၆။ Seed သုံးပြီး ကျပန်းမွှေခြင်း (Shuffle)
         let seed = getDailySeed();
         let shuffled = [...allQuestionsPool];
         for (let i = shuffled.length - 1; i > 0; i--) {
@@ -1888,11 +1886,9 @@ async function startDailyQuiz(subId) {
             [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
         }
 
-        // ၇။ မေးခွန်း ၃ ခုကို ရွေးထုတ်ပြီး Quiz Screen သို့ လွှဲပြောင်းပေးခြင်း
         currentQuestions = shuffled.slice(0, 3);
         currentIdx = 0;
         
-        // ခလုတ်ကို ပုံမှန်အတိုင်း ပြန်ထားခြင်း
         document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
         document.getElementById('quiz-back-btn').disabled = false;
         document.getElementById('quiz-back-btn').onclick = () => showScreen('daily');
@@ -1901,7 +1897,8 @@ async function startDailyQuiz(subId) {
         loadQuestion();
 
     } catch (error) {
-        tg.showAlert("မေးခွန်းများကို ဆွဲယူရာတွင် အခက်အခဲရှိနေပါသည်။");
+        // Error အတိအကျကို ပြပေးမည့်နေရာ
+        tg.showAlert("Code Error ဖြစ်နေပါသည်: " + error.message);
         document.getElementById('quiz-back-btn').innerText = "ထွက်မည်";
         document.getElementById('quiz-back-btn').disabled = false;
     }
@@ -1910,3 +1907,4 @@ async function startDailyQuiz(subId) {
     </script>
 </body>
 </html>
+\
