@@ -981,22 +981,23 @@ btn.onclick = () => {
 
        function showENPoemOptions() {
     showScreen('activity');
-    document.getElementById('activity-title').innerText = "Poems";
+    document.getElementById('activity-title').innerHTML = "Poems";
     const content = document.getElementById('activity-content');
     content.innerHTML = '';
-   document.getElementById('activity-back-btn').onclick = () => {
+  document.getElementById('activity-back-btn').onclick = () => {
     const userId = tg.initDataUnsafe?.user?.id || 0;
     const specialUsers = []; 
     const isSpecial = specialUsers.includes(userId);
     
-    // ၁။ subId နေရာတွင် currentSubject သို့ ပြောင်းလဲလိုက်ပါသည်
-    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(currentSubject) || currentSubject === 'bio' || currentSubject === 'eco');
+    // ပြင်ဆင်ချက်: subId အစား currentSubject.id ကို အသုံးပြုထားပါသည်
+    const currentId = currentSubject.id; 
+    const isSpecialSubject = isSpecial && (['mm', 'en', 'math', 'phy', 'chem'].includes(currentId) || currentId === 'bio' || currentId === 'eco');
 
-    // ၂။ checkAccess ထဲတွင်လည်း currentSubject ကို ပြောင်းသုံးထားပါတယ်
-    if (checkAccess(currentSubject) || isSpecialSubject) {
+    // checkAccess ကိုလည်း currentId ဖြင့်သာ စစ်ဆေးပါမည်
+    if (checkAccess(currentId) || isSpecialSubject) {
         openSubjectMenu(currentSubject);
     } else {
-        openTrialMenu(); // ဝယ်မထားသော Trial သမားများသည် ဤနေရာသို့ တိုက်ရိုက်ရောက်သွားမည်
+        openTrialMenu();
     }
 };
 
