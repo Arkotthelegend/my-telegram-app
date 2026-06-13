@@ -1,31 +1,31 @@
 [
   {
     "type": "mcq",
-    "q": "The one which is not a renewable energy is",
+    "q": "The one which is not a renewable energy is ____",
     "a": ["geothermal power", "biomass power", "nuclear power"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "The is the main source of energy.",
+    "q": "The ____ is the main source of energy.",
     "a": ["sun", "fossil fuel", "biomass"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The is not a fossil fuel.",
+    "q": "The ____ is not a fossil fuel.",
     "a": ["uranium", "coal", "natural gas"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "is the main constituent of these fossil fuels.",
+    "q": "____ is the main constituent of these fossil fuels.",
     "a": ["Hydrogen", "Oxygen", "Carbon"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "A large amount of energy is stored in the fossil fuels.",
+    "q": "A large amount of ____ energy is stored in the fossil fuels.",
     "a": ["nuclear", "chemical", "electrical"],
     "c": 1
   },
@@ -37,19 +37,19 @@
   },
   {
     "type": "mcq",
-    "q": "A solar cell is not a diode.",
+    "q": "A solar cell is not a ____ diode.",
     "a": ["semiconductor", "p-n junction", "vacuum"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "When wind speed doubles, wind power potential increases by a factor of",
+    "q": "When wind speed doubles, wind power potential increases by a factor of ____ ",
     "a": ["2", "4", "8"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Wind power increases to times when the blade length is doubled,",
+    "q": "Wind power increases to ____ times when the blade length is doubled,",
     "a": ["2", "4", "8"],
     "c": 1
   },
