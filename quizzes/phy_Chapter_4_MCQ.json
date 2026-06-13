@@ -55,13 +55,13 @@
   },
   {
     "type": "mcq",
-    "q": "In the impoundment facility, the produces electricity.",
+    "q": "In the impoundment facility, the ____ produces electricity.",
     "a": ["generator", "turbine", "penstock"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The hydropower facility that does not need a dam is the facility.",
+    "q": "The hydropower facility that does not need a dam is the ____ facility.",
     "a": ["impoundment", "diversion", "pumped storage"],
     "c": 1
   },
@@ -73,25 +73,25 @@
   },
   {
     "type": "mcq",
-    "q": "Tides occur due to the gravitational pull of mainly the on the spinning earth.",
+    "q": "Tides occur due to the gravitational pull of mainly the ____ on the spinning earth.",
     "a": ["sun", "moon", "stars"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The is used for converting vegetable oils, animal fats and greases into biodiesel.",
+    "q": "The ____ is used for converting vegetable oils, animal fats and greases into biodiesel.",
     "a": ["Fermentation", "Transesterification", "Gasification"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "Biomass is a type of renewable energy from the ecosystem.",
+    "q": "____ is a type of renewable energy from the ecosystem.",
     "a": ["Geothermal", "Wind", "Biomass"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Biomass contains.",
+    "q": "Biomass contains ____.",
     "a": ["Biomass", "cooling", "chemical"],
     "c": 2
   }
