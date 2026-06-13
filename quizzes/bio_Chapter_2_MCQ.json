@@ -140,7 +140,7 @@
   },
   {
     "type": "mcq",
-    "q": "Special nonsense nucleotide sequence at the ends of chromosomes are created and controlled by enzyme",
+    "q": "Special nonsense nucleotide sequence at the ends of chromosomes are created and controlled by ____ enzyme",
     "a": ["topoisomerase", "helicase", "telomerase", "primase"],
     "c": 2
   },
@@ -255,7 +255,7 @@
   {
     "type": "mcq",
     "q": "The actual site of protein synthesis is the ________.",
-    "a": ["mitochondria", "nucleus", "ribosome", "Chloroplast"],
+    "a": ["mitochondria", "nucleus", "ribosome", "chloroplast"],
     "c": 2
   },
   {
