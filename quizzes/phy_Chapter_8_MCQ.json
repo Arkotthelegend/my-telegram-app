@@ -1,43 +1,43 @@
 [
   {
     "type": "mcq",
-    "q": "In wave optics, the principle explains how light propagates from a light source.",
+    "q": "In wave optics, the ____ principle explains how light propagates from a light source.",
     "a": ["Huygens'", "Newton's", "Young's"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The difference in states of the periodic waves at the same instant is the difference.",
+    "q": "The difference in states of the periodic waves at the same instant is the difference ____?.",
     "a": ["path", "phase", "state"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "For a bright fringe, the path difference is equal to",
+    "q": "For a bright fringe, the path difference is equal to ____?",
     "a": ["an integral number of wavelengths", "a half-integral number of wavelengths", "only odd integral number of wavelengths"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The bending of waves around the corners of an obstacle is an example of of waves.",
+    "q": "The bending of waves around the corners of an obstacle is an example of of waves ___?",
     "a": ["diffraction", "refraction", "reflection"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "The bending of waves through an aperture into the region of the geometrical shadow of the obstacle is an example of of waves.",
+    "q": "The bending of waves through an aperture into the region of the geometrical shadow of the obstacle is an example of of waves ____?",
     "a": ["diffraction", "refraction", "reflection"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In a single slit diffraction, the bright and dark fringes are created by the diffracted light waves.",
+    "q": "In a single slit diffraction, the bright and dark fringes are created by the diffracted ____ light waves.",
     "a": ["diffraction", "interference", "refraction"],
     "c": 0
   },
   {
     "type": "mcq",
-    "q": "In single slit diffraction, the width of the central maximum will be if the wavelength of light increases.",
+    "q": "In single slit diffraction, the width of the central maximum will be ____ if the wavelength of light increases.",
     "a": ["larger", "smaller", "the same"],
     "c": 0
   },
@@ -49,31 +49,31 @@
   },
   {
     "type": "mcq",
-    "q": "In single slit diffraction, the width of the central maximum will be if the slit width is increased.",
+    "q": "In single slit diffraction, the width of the central maximum will be ____ if the slit width is increased.",
     "a": ["larger", "smaller", "the same"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "The diffraction grating has",
+    "q": "The diffraction grating has ____?",
     "a": ["one slit", "two slits", "many slits"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "A is an example of reflection gratings.",
+    "q": " ____ is an example of reflection gratings.",
     "a": ["prism", "compact disc", "convex lens"],
     "c": 1
   },
   {
     "type": "mcq",
-    "q": "For a dark fringe, the path difference is equal to",
+    "q": "For a dark fringe, the path difference is equal to ____?",
     "a": ["an integral number of wavelengths", "an odd integral number of wavelengths", "an odd integral multiple of half-wavelength"],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "There are types of wavefronts.",
+    "q": "There are ____ types of wavefronts.",
     "a": ["two", "three", "four"],
     "c": 0
   }
