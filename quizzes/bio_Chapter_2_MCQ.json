@@ -175,8 +175,8 @@
   },
   {
     "type": "mcq",
-    "q": "Unwinding of helical DNA is done by ________ enzyme.",
-    "a": ["Ligase", "helicase", "topoisomerase", "polymerase"],
+    "q": "Unwinding of helical DNA is done by enzyme called ____.",
+    "a": ["ligase", "helicase", "topoisomerase", "polymerase"],
     "c": 1
   },
   {
@@ -271,7 +271,7 @@
   },
   {
     "type": "mcq",
-    "q": "In the two newly strands of DNA replication, one strand is purely a new one and the other is an old one, it is called",
+    "q": "In the two newly strands of DNA replication, one strand is purely a new one and the other is an old one, it is called ____",
     "a": ["non conservative", "conservative", "semiconservative", "changeable"],
     "c": 2
   },
@@ -349,8 +349,8 @@
   },
   {
     "type": "mcq",
-    "q": "The preexisting chain actually consists of RNA primer produced by an enzyme",
-    "a": ["Ligase", "helicase", "primase", "polymerase"],
+    "q": "The preexisting chain actually consists of RNA primer produced by an enzyme called ____",
+    "a": ["ligase", "helicase", "primase", "polymerase"],
     "c": 2
   },
   {
