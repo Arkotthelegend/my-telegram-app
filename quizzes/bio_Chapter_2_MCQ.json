@@ -118,5 +118,605 @@
   {"type": "mcq", "q": "During translation, the uncharged tRNA exits the:", "a": ["E site", "P site", "A site"], "c": 0},
   {"type": "mcq", "q": "The protein, once released, will eventually fold into its:", "a": ["three-dimensional shape", "linear sequence", "double-helix structure"], "c": 0},
   {"type": "mcq", "q": "Transgenic animals are used to produce:", "a": ["pharmaceutical products", "industrial dyes", "raw minerals"], "c": 0},
-  {"type": "mcq", "q": "What is an important implication of the universality of the genetic code?", "a": ["gene technology, such as cloning", "decreased protein synthesis", "mutation of all species"], "c": 0}
+  {"type": "mcq", "q": "What is an important implication of the universality of the genetic code?", "a": ["gene technology, such as cloning", "decreased protein synthesis", "mutation of all species"], "c": 0},
+  {
+    "type": "mcq",
+    "q": "DNA is hereditary material responsible for passing genetic information",
+    "a": ["from cell to cell", "from generation to generation", "Both A and B", "None of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In RNA, uracil pairs with",
+    "a": ["adenine", "thymine", "cytosine", "duanine"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In DNA replication, leading strand takes place",
+    "a": ["5'-3' direction", "3'-5' direction", "Randomly", "various forms"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The nitrogenous base Adenine can pair with",
+    "a": ["Cytosine", "Thymine", "Guanine", "Adenine"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "One type of antibody made by ________ can deliver radioisotopes to tumour cells.",
+    "a": ["paddy", "wheat", "corn", "barley"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The short fragment of DNA produced in the lagging strand during duplication is known as",
+    "a": ["Leading strand", "RNA primer", "recombinant DNA", "Okazaki fragments"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "A nucleotide in DNA is composed of",
+    "a": ["ribose sugar, a phosphate group and a nitrogen base", "Only a deoxyribose sugar and phosphate group", "deoxyribose sugar, a phosphate group and a nitrogen base", "Only a deoxyribose sugar and a nitrogen base"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "How many steps are involved in protein synthesis?",
+    "a": ["two", "three", "four", "five"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In total, there are around 3.2 billion base pairs in the DNA of a typical",
+    "a": ["animal cell", "plant cell", "invertebrate cell", "mammalian cell"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Unwinding of helical DNA is done by ________ enzyme.",
+    "a": ["Ligase", "helicase", "topoisomerase", "polymerase"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The strand of DNA which does not code for anything is called ________.",
+    "a": ["antisense strand", "template strand", "coding strand", "non-coding strand"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Benefits of genetic engineering for crops are ________.",
+    "a": ["increased dought tolerance", "increase yield", "increased resistance to pets", "all of these"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The first antibody was produced by genetic engineering in ________.",
+    "a": ["1960 s", "1970s", "1980 s", "1990 s"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Each end of the replication bubble is",
+    "a": ["replication fork", "Y-shaped region", "region of new DNA elongation", "All of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is correct?",
+    "a": ["mRNA (messenger RNA)", "tRNA (transfer RNA)", "rRNA (ribosomal RNA)", "mRNA (matured RNA)"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following nitrogen base is not present in DNA?",
+    "a": ["Adenine", "Guanine", "Uracil", "Thymine"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Each time the DNA replicates, some nucleotides from the chromosome are",
+    "a": ["renew", "repair", "develop", "lost"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Name the RNA molecules which are carries specific amino acid to mRNA at ribosome?",
+    "a": ["Transfer RNA", "Ribosomal RNA", "Messenger RNA", "All of the above"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following statement is true?",
+    "a": ["A and T are joined by 3 Hydrogen bond while C and G with 2 Hydrogen bond", "A and G are joined by 2 Hydrogen bond while T and C with 3 Hydrogen bond", "A and C are joined by 3 Hydrogen bond while T and G with 2 Hydrogen bond", "A and T are joined by 2 Hydrogen bond while C and G with 3 Hydrogen bond"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "A codon contains how many nucleotides?",
+    "a": ["one", "two", "three", "Four"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Molecular biology is seeks to understand the biological activity of cells including",
+    "a": ["biomolecular synthesis", "modification", "mechanism and interactions", "All of these"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The small opening of the DNA helix, where replication occurs known as",
+    "a": ["replication centre", "duplication fork", "replication fork", "replication opening"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Transcription is the process of copying sequence of",
+    "a": ["mRNA to DNA", "tRNA to mRNA", "DNA to tRNA", "DNA to mRNA"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Special nonsense nucleotide sequence at the ends of chromosomes are created and controlled by ____ enzyme",
+    "a": ["topoisomerase", "helicase", "telomerase", "primase"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "DNA replication begins at",
+    "a": ["Origin of replication", "special site", "end of replication bubbles", "All of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In the two newly strands of DNA replication, one strand is purely a new one and the other is an old one, it is called",
+    "a": ["non conservative", "conservative", "semiconservative", "changeable"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The central dogma of molecular biology stated that genetic information flow from",
+    "a": ["RNA to DNA to Protein", "RNA to Protein to DNA", "DNA to Protein to RNA", "DNA to RNA to Protein"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "DNA strands run ________ In relation to each other.",
+    "a": ["parallel", "antiparallel", "both A and B", "None of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The combination of four nucleotides could produce ________ possible combination.",
+    "a": ["3", "20", "64", "None of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The termination codon is not",
+    "a": ["UAA", "UAG", "UGA", "AUG"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "RNA is the genetic material of",
+    "a": ["All virus", "certain viruses", "virus only", "All of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is help in the formation of replication fork?",
+    "a": ["Helicase", "topoisomerase", "Ligase", "polymerase"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Golden rice is developed through ________.",
+    "a": ["agriculture", "horticulture", "tissue culture", "genetic engineering"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Genetic code is continuous, that read a series of three letter codons without,",
+    "a": ["overlap", "punctuation", "spaces", "all of these"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following enzymes unwinds the parental double helix at the replication fork?",
+    "a": ["primase", "DNA polymerase I", "Helicase", "DNA polymerase III"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Researchers knew that there are only ________ nucleotides in RNA.",
+    "a": ["one", "three", "four", "twenty"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "DNA replication is made by a ________ method.",
+    "a": ["conservative", "semiconservative", "nonconservative", "unstable"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following type of RNA is can fold back on itself?",
+    "a": ["mRNA", "rRNA", "tRNA", "None of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The preexisting chain actually consists of RNA primer produced by an enzyme",
+    "a": ["Ligase", "helicase", "primase", "polymerase"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "To produce transgenic animals, a foreign gene is inserted into the genome of animal ________.",
+    "a": ["body", "blood", "sperm", "oocyte"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The steps of protein synthesis are",
+    "a": ["transcription", "translation", "elongation", "Both A and B"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following binding site is attached to the large sub-unit of ribosome?",
+    "a": ["mRNA", "rRNA", "tRNA", "none of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The actual site of protein synthesis is the ________.",
+    "a": ["mitochondria", "nucleus", "ribosome", "chloroplast"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is correct?",
+    "a": ["Adenine always pair with Thymine", "DNA is double helix", "Guanine always pair with Cytosine", "None of the above"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "A transgenic food crop that may help in problem of night blindness is ________.",
+    "a": ["corn", "soybean", "Golden rice", "Wheat"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The sugar in RNA is",
+    "a": ["hexose", "ribose", "fructose", "deoxyribose"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "By convention, the sequence of a DNA strand is always written in the",
+    "a": ["5' to 3' direction", "3' to 5' direction", "Both A or B", "None of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "DNA replication was predicted by",
+    "a": ["Watson", "Crick", "Watson and Crick", "Melselson"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which type of vitamin deficiency can lead to blindness?",
+    "a": ["vitamin A", "vitamin B", "vitamin C", "vitamin D"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is not true to the nature of genetic code?",
+    "a": ["codons are overlapping", "without spaces", "nearly universal", "codon is triplet"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is used to carry genetic information copied from DNA?",
+    "a": ["mRNA", "tRNA", "rRNA", "all of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "How many types of nitrogenous bases are present in nucleic acid?",
+    "a": ["3", "4", "5", "6"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "In DNA replication, the two strands of a daughter DNA molecules are derived as follows.",
+    "a": ["both strands from parent DNA", "both strands synthesized as templates on parents.", "both strands synthesized on RNA templates on parent strand.", "One strand from parent DNA and the other fleshy synthesis."],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The codon is a",
+    "a": ["singlet", "duplet", "triplet", "quadruplet"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Nucleic acids are direct the process of",
+    "a": ["photosynthesis", "excretion", "protein synthesis", "circulation"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "One type of antibody made by ________ can be used to treat genital herpes.",
+    "a": ["corn", "soybeans", "wheat", "rice"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The discontinuously synthesized fragments are joined by.",
+    "a": ["DNA ligase", "DNA polymerase I", "DNA polymerase III", "topoisomerase"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following are assist in replication of DNA?",
+    "a": ["proteins and enzymes", "enzymes and lipid", "lipid and protein", "protein and carbohydrate"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The initiation codon is",
+    "a": ["UAA", "UAG", "UGA", "AUG"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is not part of protein synthesis?",
+    "a": ["replication", "translation", "transcription", "termination"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "DNA polymerase synthesizes a new strand",
+    "a": ["DNA in 5'-3' direction", "mRNA in 3'-5' direction", "DNA in 3'-5' direction", "mRNA in 5'-3' direction"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is carrying out mismatch repair sing of DNA strand?",
+    "a": ["DNA polymerase I", "DNA polymerase II", "DNA polymerase III", "None of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The type of coiling in DNA is",
+    "a": ["opposite", "zig-zag", "right-handed", "left-handed"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The nucleotides that found in DNA are organized into codes and combination of codon is called",
+    "a": ["genetic code", "Gene", "coding region", "all of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following statement is true?",
+    "a": ["two DNA strands are antiparallel and non-complementary", "two DNA strands are antiparallel and complementary", "two DNA strands are parallel and non-complementary", "two DNA strands are parallel and complementary"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The fragments of DNA are joined together by which of the following enzyme.",
+    "a": ["DNA polymerase", "DNA ligase", "Endonuclease", "primase"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Name of the protein, which is responsible for the synthesizing an RNA primer?",
+    "a": ["Ligase", "Helicase", "Primase", "Topoisomerase"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Name the RNA molecule which takes part in the ribosome?",
+    "a": ["mRNA", "bRNA", "rRNA", "tRNA"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The function of mRNA is?",
+    "a": ["Reads the codon on mRNA", "Carries the amino acid", "Acts as the template for translation", "Component of ribosome"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Name the RNA molecules which take part in the formation of the ribosome?",
+    "a": ["tRNA", "mRNA", "rRNA", "dRNA"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The two separate strands of DNA are joined only with",
+    "a": ["hydrogen bond", "ionic bond", "non covalent bond", "None of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The separate two parental strands of DNA act as",
+    "a": ["anticodon", "codon", "template", "scaffolding"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Thymine in DNA is replaced by ________.",
+    "a": ["Adenine in RNA", "Guanine in RNA", "Cytosine in RNA", "Uracil in RNA"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Proteins are made up of which of the following?",
+    "a": ["amino acids", "nucleic acids", "nuclease", "none of these"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In total, there are around 3.2 billion base pairs in the DNA of a typical",
+    "a": ["animal cell", "plant cell", "invertebrate cell", "mammalian cell"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is TURE for DNA?",
+    "a": ["Adenine pairs with cytosine", "Cytosine pairs with Adenine", "Thymine pairs with Guanine", "Adenine pairs with Thymine"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following vector can insert the recombinant gene into a target cell?",
+    "a": ["harmless virus", "liposome", "plasmid of bacteria", "all of these"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Protein synthesis takes place it ________.",
+    "a": ["nucleoplasm", "cytoplasm", "Both A and B", "none of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following enzyme is a kind of proofreading that correcting the error?",
+    "a": ["Primase", "DNA polymerase I", "Ligase", "DNA polymerase III"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Enzyme ________ take place the relieves over winding strain of replication fork.",
+    "a": ["topoisomerase", "DNA polymerase I", "DNA polymerase III", "DNA ligase"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is attached to the small sub-unit of ribosome?",
+    "a": ["rRNA", "mRNA", "tRNA", "none of these"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "In RNA, uracil pairs with",
+    "a": ["guanine", "cytosine", "adenine", "thymine"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Purine derivative among the following base is",
+    "a": ["Cytosine", "Thymine", "Guanine", "Uracil"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Molecular biology is the branch of",
+    "a": ["biochemistry", "biotechnology", "microbiology", "biology"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The milk produced by transgenic female animal contained human ________.",
+    "a": ["lipids", "insulin", "fats", "growth protein"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The termination phase begins when a stop codon on the ________ is reached.",
+    "a": ["tRNA", "rRNA", "mRNA", "sRNA"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The second stage of protein synthesis is ________.",
+    "a": ["initiation", "elongation", "translation", "transcription"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The amino acid coded by the start codon for protein synthesis is",
+    "a": ["Valine", "Methionine", "Arginine", "Tyrosine"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Almost all organisms build proteins with the",
+    "a": ["genetic code", "nucleotides", "polypeptide", "nitrogen bases"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The binding sites for tRNA on large subunit of ribosome are ________.",
+    "a": ["A site", "E site", "P site", "all of the above"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "In the initiation phase, start codon is ________.",
+    "a": ["AUG", "UAA", "UAG", "UGA"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following type of RNA, reads the codon on mRNA?",
+    "a": ["Messenger RNA", "Ribosomal RNA", "Transfer RNA", "None of these"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is incorrect?",
+    "a": ["two DNA strands are antiparallel and non-complementary", "two DNA strands are antiparallel and complementary", "two DNA strands are parallel and non-complementary", "two DNA strands are parallel and complementary"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "DNA replication is making of an exact copy of the",
+    "a": ["RNA molecule", "DNA molecule", "nucleus", "amino acid"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is intermediate element to relieve tension on tight helix?",
+    "a": ["polymerase", "topoisomerase", "helicase", "Ligase"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "How many codons are needed to specify three amino acids?",
+    "a": ["3", "6", "9", "12"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "DNA is a double helix structure consisting of ________ polynucleotides strands.",
+    "a": ["two", "four", "eight", "many"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In DNA, the enzyme which breaks the hydrogen bond is",
+    "a": ["topoisomerase", "ligase", "polymerase", "helicase"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which base is present in RNA, but not in DNA?",
+    "a": ["Adenine", "Guanine", "cytosine", "Uracil"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Which of the following is the master blueprint for life?",
+    "a": ["DNA", "mRNA", "tRNA", "rRNA"],
+    "c": 0
+  }
 ]
