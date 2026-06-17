@@ -25,7 +25,7 @@
   {"type": "tf", "q": "Eukaryotic cells are lack membrane-enclosed organelles.", "c": false},
   {"type": "tf", "q": "Domain Eukarya includes various groups of protists as well as plants, bacteria and animals.", "c": false},
   {"type": "tf", "q": "The word “horticulture” is derives from latin words.", "c": true},
-  {"type": "tf", "q": "Arboriculture is the selection, production and care of plants used in landscape architecture.", "c": true},
+  {"type": "tf", "q": "Arboriculture is the selection, production and care of plants used in landscape architecture.", "c": false},
   {"type": "tf", "q": "Feedback is a type of regulation common to life at all levels, from molecules to ecosystems.", "c": true},
   {"type": "tf", "q": "Cells are neither prokaryotic nor eukaryotic.", "c": false},
   {"type": "tf", "q": "Maize can withstand frost at any stage of growth.", "c": false},
