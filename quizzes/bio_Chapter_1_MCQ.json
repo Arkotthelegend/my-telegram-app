@@ -91,7 +91,7 @@
   },
   {
     "type": "mcq",
-    "q": "A drug used to treat malaria is obtained from the",
+    "q": "A drug used to treat malaria is obtained from the _____",
     "a": ["periwinkles tree", "willow bark", "cinchona tree", "none of these"],
     "c": 2
   },
@@ -115,13 +115,13 @@
   },
   {
     "type": "mcq",
-    "q": "The scientific name of teak is",
+    "q": "The scientific name of teak is _____",
     "a": ["Xylia dolabriformis", "Dipterocarpus tuberculatus", "Tectona grandis", "Gossypium spp."],
     "c": 2
   },
   {
     "type": "mcq",
-    "q": "Lactobacillus helps in the formation of following products except form",
+    "q": "Lactobacillus helps in the formation of following products except from _____",
     "a": ["curd", "cheese", "yoghurt", "egg"],
     "c": 3
   },
@@ -133,7 +133,7 @@
   },
   {
     "type": "mcq",
-    "q": "Pisciculture involves commercial breeding of fish in",
+    "q": "Pisciculture involves commercial breeding of fish in _____",
     "a": ["fish tanks", "fish ponds", "both A and B", "none of these"],
     "c": 2
   },
@@ -199,7 +199,7 @@
   },
   {
     "type": "mcq",
-    "q": "The source of medicine that is effective against Hodgkin disease is obtained from",
+    "q": "The source of medicine that is effective against Hodgkin disease is obtained from _____",
     "a": ["opium poppy", "Cinchona tree", "periwinkle", "willow tree"],
     "c": 2
   },
