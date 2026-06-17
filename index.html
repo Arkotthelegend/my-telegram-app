@@ -264,6 +264,22 @@
     margin-right: 10px;
 }
 
+.shuffle-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.shuffle-active {
+    background: var(--accent);
+    color: white;
+}
+
     </style>
 </head>
 <body>
@@ -448,7 +464,10 @@
         </div>
 
         <div id="flashcard-screen" class="screen">
-            <h2 id="flash-title" style="text-align: center; color: var(--accent); margin-bottom: 5px;">Flashcard</h2>
+            <div style="text-align: center; margin-bottom: 5px;">
+    <h2 id="flash-title" style="display: inline-block; color: var(--accent); margin: 0;">Flashcard</h2>
+    <button id="shuffle-toggle-btn" class="shuffle-btn" onclick="toggleFlashcardShuffle()">🔄 ပုံမှန်</button>
+</div>
             <p id="flash-count" style="text-align: center; color: #94A3B8; margin: 0;">1 / 1</p>
             
             <div class="flash-container" onclick="flipCard()">
@@ -838,42 +857,67 @@ function loadQuestion() {
     } 
     // --- အခြားပုံမှန် မေးခွန်းများ (MCQ, True/False) ---
     else if (q.type === 'mcq' || q.type === 'tf') {
-        let opts = q.type === 'tf' ? ["မှန် (TRUE)", "မှား (FALSE)"] : q.a;
+    let opts = [];
+    let correctIdx = 0;
+
+    if (q.type === 'tf') {
+        opts = ["မှန် (TRUE)", "မှား (FALSE)"];
+        // 🌟 စာသား "true" ရော Boolean true ပါ အလုပ်လုပ်အောင် ပြင်ဆင်ခြင်း
+        correctIdx = (q.c === true || q.c === "true" || q.c === 0 || q.c === "မှန်") ? 0 : 1;
+    } else {
+        // MCQ 
+        // 🌟 အဖြေမှန်စာသားကို ယူတဲ့အခါ trim() သုံးပြီး ရှေ့နောက် Space တွေကို ဖြတ်ပါ
+        let originalCorrectAnswer = String(q.a[q.c]).trim(); 
+        opts = [...q.a]; 
+
+        // ရွေးချယ်စရာများကို မွှေနှောက်ခြင်း
+        for (let i = opts.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [opts[i], opts[j]] = [opts[j], opts[i]];
+        }
+
+        // 🌟 trim() သုံးပြီး မြန်မာစာသားချင်း အတိအကျ ပြန်ရှာခြင်း
+        correctIdx = opts.map(opt => String(opt).trim()).indexOf(originalCorrectAnswer);
+        
+        // တကယ်လို့ ရှာမတွေ့ရင် (Encoding လွဲနေရင်) default အနေနဲ့ 0 ပဲ ထားလိုက်ခြင်းမျိုး မဖြစ်အောင် စစ်ပါ
+        if (correctIdx === -1) {
+            console.error("အဖြေမှန်စာသားကို ရှာမတွေ့ပါ - မြန်မာစာ Encoding ကို စစ်ဆေးပါ");
+            // အဖြေမှန်ကို ရှာမတွေ့ရင် မူရင်းအတိုင်း ပြန်သုံးဖို့ (Fallback)
+            opts = [...q.a];
+            correctIdx = q.c;
+        }
+    }
+
         opts.forEach((a, i) => {
             const btn = document.createElement('button'); 
             btn.className = 'btn option-btn'; 
-            btn.innerHTML = a;
-       // loadQuestion() ထဲက MCQ/TF နှိပ်သည့်နေရာကို ဒီလိုပြင်ပါ
-btn.onclick = () => {
-    if(isAnswered) return; 
-    isAnswered = true;
+            btn.innerHTML = a; // သင်္ချာသင်္ကေတများအတွက် innerHTML ကိုဆက်သုံးပါ
+            
+            btn.onclick = () => {
+                if(isAnswered) return; 
+                isAnswered = true;
 
-    let correctIdx = q.type === 'tf' ? (q.c === true ? 0 : 1) : q.c;
-    const options = document.querySelectorAll('.option-btn');
+                const options = document.querySelectorAll('.option-btn');
 
-    if (i === correctIdx) {
-        // အဖြေမှန်ကို နှိပ်ခဲ့လျှင် - အဖြေမှန် တစ်ခုတည်းကိုသာ အစိမ်းပြမည်
-        options[correctIdx].classList.add('correct-answer');
-    } else {
-        // အဖြေမှားကို နှိပ်ခဲ့လျှင် - အဖြေမှားများကို အနီပြပြီး အဖြေမှန်ကို အစိမ်းပြမည်
-        options.forEach((b, idx) => {
-            if(idx === correctIdx) {
-                b.classList.add('correct-answer');
-            } else {
-                b.classList.add('wrong-answer');
-            }
-        });
-    }
+                // အဖြေမှန်/မှား စစ်ဆေးခြင်း
+                if (i === correctIdx) {
+                    options[i].classList.add('correct-answer');
+                } else {
+                    options.forEach((b, idx) => {
+                        if(idx === correctIdx) b.classList.add('correct-answer');
+                        else if(idx === i) b.classList.add('wrong-answer');
+                    });
+                }
 
-    // နောက်ထပ် နှိပ်လို့မရအောင် အကုန်ပိတ်မည်
-    options.forEach(b => b.disabled = true);
+                // ခလုတ်အားလုံးကို ပိတ်မည်
+                options.forEach(b => b.disabled = true);
 
-    // ခလုတ်ကို "ထွက်မည်" ပုံစံအတိုင်း ပြသမည်
-    const nextBtn = document.getElementById('next-btn');
-    nextBtn.style.display = 'block';
-    nextBtn.className = 'next-btn-styled'; 
-    nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
-};
+                // Next Button ကို Display ပေးပြီး ပုံစံပြောင်းမည်
+                const nextBtn = document.getElementById('next-btn');
+                nextBtn.style.display = 'block';
+                nextBtn.className = 'next-btn-styled'; 
+                nextBtn.innerText = 'နောက်တစ်ပုဒ်သို့ ⮕';
+            };
             optDiv.appendChild(btn);
         });
     } 
@@ -1948,6 +1992,57 @@ async function startDailyQuiz(subId) {
 function updateRandomizeSetting() {
     const isRandom = document.getElementById('random-switch').checked;
     localStorage.setItem('randomQuizSetting', isRandom ? 'true' : 'false');
+}
+
+// Flashcard မူလဒေတာကို သိမ်းထားရန်
+let originalFlashCards = [];
+let isFlashcardShuffled = false;
+
+// မူလ initFlashcards function ကို အောက်ပါအတိုင်း အစားထိုးပါ
+async function initFlashcards(fileName, markTitle = "Flashcard") {
+    currentFlashMark = markTitle; 
+    try {
+        const res = await fetch(`./quizzes/${fileName}.json`);
+        if(!res.ok) throw new Error();
+        
+        const data = await res.json();
+        originalFlashCards = [...data]; // မူလအစီအစဉ်ကို သိမ်းထားမယ်
+        
+        // ယခင်က Shuffle ဖွင့်ထားခဲ့ရင် ဆက်ဖွင့်ထားပေးမယ်
+        if (isFlashcardShuffled) {
+            flashCards = shuffleArray([...originalFlashCards]);
+        } else {
+            flashCards = [...originalFlashCards];
+        }
+        
+        flashIdx = 0;
+        showScreen('flashcard');
+        updateFlashUI();
+    } catch (e) { 
+        tg.showAlert("ဖိုင်မတွေ့သေးပါ- " + fileName); 
+    }
+}
+
+// ခလုတ်နှိပ်လိုက်ရင် အလုပ်လုပ်မည့် Function
+function toggleFlashcardShuffle() {
+    const btn = document.getElementById('shuffle-toggle-btn');
+    isFlashcardShuffled = !isFlashcardShuffled; // အခြေအနေကို ပြောင်းမယ်
+    
+    if (isFlashcardShuffled) {
+        btn.classList.add('shuffle-active');
+        btn.innerText = "🔀 မွှေနှောက်";
+        // မွှေနှောက်လိုက်မယ်
+        flashCards = shuffleArray([...originalFlashCards]);
+    } else {
+        btn.classList.remove('shuffle-active');
+        btn.innerText = "🔄 ပုံမှန်";
+        // မူလအစီအစဉ်အတိုင်း ပြန်ထားမယ်
+        flashCards = [...originalFlashCards];
+    }
+    
+    // Index ပြန်စပြီး UI Update လုပ်မယ်
+    flashIdx = 0;
+    updateFlashUI();
 }
     </script>
 </body>
