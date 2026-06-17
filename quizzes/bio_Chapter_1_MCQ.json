@@ -357,13 +357,13 @@
     "type": "mcq",
     "q": "Globally Myanmar is the ______ largest producer of pulses.",
     "a": ["first", "second", "third", "fourth"],
-    "c": 1
+    "c": 2
   },
   {
     "type": "mcq",
     "q": "Organisms interact continuously with ______.",
     "a": ["physical factors", "chemical factors", "biotic factors", "None of these"],
-    "c": 2
+    "c": 0
   },
   {
     "type": "mcq",
@@ -501,7 +501,7 @@
     "type": "mcq",
     "q": "China and India are manufactured more than ______ of the world silk production",
     "a": ["60%", "70%", "80%", "90%"],
-    "c": 2
+    "c": 3
   },
   {
     "type": "mcq",
