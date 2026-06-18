@@ -16,6 +16,28 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
+
+		/* ============================================================
+           🚀 PREMIUM NATIVE APP LOOK & FEEL FIXES (GLOBAL)
+           ============================================================ */
+        /* ၁။ ဘယ်နေရာနှိပ်နှိပ် အပြာရောင် စတုဂံကွက် မှိန်မှိန် ပေါ်လာခြင်းကို လုံးဝဖျောက်ရန် */
+        * {
+            -webkit-tap-highlight-color: transparent !important;
+            -webkit-tap-highlight-color: rgba(0,0,0,0) !important;
+            outline: none !important;
+        }
+        /* ၂။ ဖုန်းမှာ ဖိထားရင် စာသား/ပုံတွေ Blue Highlight (Select) ဖြစ်သွားတာကို တားဆီးရန် */
+        body, div, span, button, img, a, .subject-card, .option-item, .nav-item {
+            -webkit-touch-callout: none !important;
+            -webkit-user-select: none !important;
+            user-select: none !important;
+        }
+        /* ၃။ မေးခွန်းစာရိုက်ကွက် (Input) များတွင် စာရိုက်ရလွယ်ကူအောင် Select ပေးထားခြင်း */
+        input, textarea, .quiz-input {
+            -webkit-user-select: auto !important;
+            user-select: auto !important;
+        }
+		
         :root { 
             --bg: #0F172A; --card: #1E293B; --accent: #38BDF8; 
             --white: #ffffff; --lock: #475569; --success: #10B981; --error: #EF4444;
@@ -281,20 +303,7 @@
 }
 
 		/* ၁။ နှိပ်လိုက်လျှင် ပေါ်လာသော အပြာရောင် Tap Highlight ကို ဖျောက်ရန် */
-* {
-    -webkit-tap-highlight-color: transparent !important;
-}
 
-/* ၂။ ဖိထားလျှင် ပုံများ၊ စာများ အရောင်ခြယ် (Select) မိသွားခြင်းကို တားဆီးရန် */
-body, button, img, .card, .option-btn {
-    -webkit-touch-callout: none; /* iOS Safari အတွက် */
-    -webkit-user-select: none; /* Safari အတွက် */
-    -khtml-user-select: none; /* Konqueror HTML အတွက် */
-    -moz-user-select: none; /* Firefox အတွက် */
-    -ms-user-select: none; /* Internet Explorer/Edge အတွက် */
-    user-select: none; /* ပုံမှန် Browser များအတွက် */
-    outline: none !important; /* ခလုတ်များဘေးရှိ Focus ဘောင်ကို ဖျောက်ရန် */
-}
     </style>
 </head>
 <body>
