@@ -280,6 +280,21 @@
     color: white;
 }
 
+		/* ၁။ နှိပ်လိုက်လျှင် ပေါ်လာသော အပြာရောင် Tap Highlight ကို ဖျောက်ရန် */
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* ၂။ ဖိထားလျှင် ပုံများ၊ စာများ အရောင်ခြယ် (Select) မိသွားခြင်းကို တားဆီးရန် */
+body, button, img, .card, .option-btn {
+    -webkit-touch-callout: none; /* iOS Safari အတွက် */
+    -webkit-user-select: none; /* Safari အတွက် */
+    -khtml-user-select: none; /* Konqueror HTML အတွက် */
+    -moz-user-select: none; /* Firefox အတွက် */
+    -ms-user-select: none; /* Internet Explorer/Edge အတွက် */
+    user-select: none; /* ပုံမှန် Browser များအတွက် */
+    outline: none !important; /* ခလုတ်များဘေးရှိ Focus ဘောင်ကို ဖျောက်ရန် */
+}
     </style>
 </head>
 <body>
