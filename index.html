@@ -302,7 +302,29 @@
     color: white;
 }
 
-		/* ၁။ နှိပ်လိုက်လျှင် ပေါ်လာသော အပြာရောင် Tap Highlight ကို ဖျောက်ရန် */
+.timer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* ညာဘက်သို့ ကပ်ထားရန် */
+    margin-top: 15px;
+    gap: 8px;
+}
+.timer-btn {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+.timer-display {
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-family: monospace;
+    font-weight: bold;
+    display: none; /* အချိန်မစခင် ဖျောက်ထားမည် */
+}
 
     </style>
 </head>
@@ -509,12 +531,19 @@
         </div>
 
         <div id="quiz-screen" class="screen">
-            <div id="quiz-progress" style="text-align: center; color: var(--accent); font-weight: bold; margin-bottom: 10px;"></div>
-            <div id="question-box" style="font-size: 1.2rem; text-align: center; margin: 20px 0; line-height: 1.5;"></div>
-            <div id="quiz-options"></div>
-            <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
-            <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
-        </div>
+    <div id="quiz-progress" style="text-align: center; color: var(--accent); font-weight: bold; margin-bottom: 10px;"></div>
+    <div id="question-box" style="font-size: 1.2rem; text-align: center; margin: 20px 0; line-height: 1.5;"></div>
+    <div id="quiz-options"></div>
+    <button id="next-btn" class="btn next-btn" onclick="nextQuestion()">နောက်တစ်ပုဒ်သို့ ➔</button>
+    <button class="btn back-btn" id="quiz-back-btn">ထွက်မည်</button>
+	<div class="timer-wrapper" id="timer-wrapper">
+        <span id="timer-display" class="timer-display">00:00</span>
+        <button id="timer-start-btn" class="timer-btn" onclick="toggleTimer()">⏱ အချိန်မှတ်မည်</button>
+        <button id="timer-reset-btn" class="timer-btn" onclick="resetTimer()" style="display: none;">🔄 ပြန်စမည်</button>
+    </div>
+	<div class="markcount" id="markcount">
+	<span id="score-display" style="display: block; text-align: center; margin: 15px auto; font-weight: bold; background: transparent;border: 1px solid var(--accent); color: var(--accent); padding: 10px 40px; border-radius: 20px; font-size: 16px; width: fit-content;"> ရမှတ်: 0</span>
+</div>
 
         <div id="poem-screen" class="screen">
             <h2 id="poem-title" style="text-align: center; color: var(--accent);"></h2>
@@ -1510,6 +1539,8 @@ function showGeneralActivities(subId, partName) {
         // Logic အသစ်- အဖြေမှန်ရင် အစိမ်းပဲပြ၊ မှားမှ အကုန်ပြ
         if (i === correctIdx) {
             options[i].classList.add('correct-answer');
+			score++;
+    document.getElementById('score-display').innerText = `ရမှတ်: ${score}`;
         } else {
             options.forEach((b, idx) => {
                 if(idx === correctIdx) b.classList.add('correct-answer');
@@ -1546,6 +1577,8 @@ function showGeneralActivities(subId, partName) {
         // အဖြေစစ်ဆေးခြင်း
         if(input.value.trim().toLowerCase() === q.c.toString().toLowerCase()) {
             tg.showAlert("မှန်ကန်ပါသည်။ ✅");
+			score++;
+    document.getElementById('score-display').innerText = `ရမှတ်: ${score}`;
         } else {
             tg.showAlert("အဖြေမှန်မှာ: " + q.c);
         }
@@ -1573,6 +1606,11 @@ function selectOption(index) {
     // အဖြေမှန်ကို အစိမ်းရောင်ပြပါ
     options[q.answer].classList.add('correct-answer');
 
+ if (index == q.answer) {
+        options[index].classList.add('correct-answer');
+		score++;
+    document.getElementById('score-display').innerText = `ရမှတ်: ${score}`;
+    }
     // ရွေးလိုက်တဲ့အဖြေက မှားနေရင် အနီရောင်ပြပါ
     if (index !== q.answer) {
         options[index].classList.add('wrong-answer');
@@ -1598,12 +1636,22 @@ function nextQuestion() {
     if (currentIdx < currentQuestions.length - 1) {
         currentIdx++;
         loadQuestion();
-    } else {
-        // မေးခွန်းကုန်ပြီဆိုရင် finishQuiz ကိုမသွားတော့ဘဲ ဂုဏ်ယူကြောင်းစာ ပြမည်
+    } else { 
         tg.showAlert("ဂုဏ်ယူပါသည်။ မေးခွန်းများအားလုံး ဖြေဆိုပြီးပါပြီ 🎉");
         
         // နောက်ထပ်နှိပ်စရာ မေးခွန်းမရှိတော့တဲ့အတွက် "နောက်တစ်ပုဒ်သို့" ခလုတ်ကို ဖျောက်ထားလိုက်ပါမည်
         document.getElementById('next-btn').style.display = 'none';
+
+        // --- ⏱ Timer ကို ရပ်တန့်မည့် Code ---
+        if (isTimerRunning) {
+            clearInterval(quizTimerInterval);
+            isTimerRunning = false;
+            // ခလုတ်စာသားကို ပြောင်းပြီး ထပ်နှိပ်လို့မရအောင် ပိတ်ထားပါမည်
+            const startBtn = document.getElementById('timer-start-btn');
+            startBtn.innerText = "⏹ ပြီးဆုံးပါပြီ";
+            startBtn.disabled = true; 
+            startBtn.style.opacity = "0.5"; // ပိတ်ထားကြောင်း သိသာစေရန် မှိန်ထားမည်
+        }
     }
 }
 
@@ -1619,6 +1667,10 @@ function nextQuestion() {
         }
 
         function showScreen(id) {
+		
+		if (id !== 'quiz') {
+        resetTimer(); 
+    }
             document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
             document.getElementById(id + '-screen').classList.add('active-screen');
         }
@@ -2067,6 +2119,58 @@ function toggleFlashcardShuffle() {
     // Index ပြန်စပြီး UI Update လုပ်မယ်
     flashIdx = 0;
     updateFlashUI();
+}
+// --- Timer Variables ---
+let quizTimerInterval = null;
+let quizSeconds = 0;
+let isTimerRunning = false;
+let score = 0; // 🎯 ရမှတ်သိမ်းဆည်းရန် Variable အသစ်
+
+// Timer အဖွင့်/အပိတ် လုပ်မည့် Function
+function toggleTimer() {
+    if (isTimerRunning) {
+        // အချိန် ခဏရပ်မည်
+        clearInterval(quizTimerInterval);
+        isTimerRunning = false;
+        document.getElementById('timer-start-btn').innerText = "▶ ဆက်မှတ်မည်";
+    } else {
+        // အချိန် စမှတ်မည်
+        isTimerRunning = true;
+        document.getElementById('timer-display').style.display = 'inline';
+        document.getElementById('timer-reset-btn').style.display = 'inline';
+        document.getElementById('timer-start-btn').innerText = "⏸ ခဏရပ်မည်";
+        
+        quizTimerInterval = setInterval(() => {
+            quizSeconds++;
+            const m = Math.floor(quizSeconds / 60).toString().padStart(2, '0');
+            const s = (quizSeconds % 60).toString().padStart(2, '0');
+            document.getElementById('timer-display').innerText = `${m}:${s}`;
+        }, 1000);
+    }
+}
+
+
+// ပြန်စသည့်အခါ ရမှတ်ကိုပါ ၀ ပြန်ဖြစ်စေရန် resetTimer() ကို ပြင်ဆင်ခြင်း
+function resetTimer() {
+    clearInterval(quizTimerInterval);
+    isTimerRunning = false;
+    quizSeconds = 0;
+    
+    document.getElementById('timer-display').innerText = "00:00";
+    document.getElementById('timer-display').style.display = 'none';
+    document.getElementById('timer-reset-btn').style.display = 'none';
+    
+    const startBtn = document.getElementById('timer-start-btn');
+    startBtn.innerText = "⏱ အချိန်မှတ်မည်";
+    startBtn.removeAttribute('disabled');
+    startBtn.disabled = false; 
+    startBtn.style.opacity = "1";
+    startBtn.style.cursor = "pointer";
+    startBtn.style.pointerEvents = "auto";
+
+    // 🎯 ရမှတ်ကို ၀ ပြန်ပြောင်းပြီး Screen ပေါ်မှာ ပြန်ပြင်ပေးရန်
+    score = 0;
+    document.getElementById('score-display').innerText = "ရမှတ်: 0";
 }
     </script>
 </body>
