@@ -37,7 +37,7 @@
   {"type": "blank", "q": "The light energy supplies sufficient energy to the junction of solar cells to create several _______ pairs.", "c": "electron-hole"},
   {"type": "blank", "q": "When electron-hole pairs are produced in the solar cell, a _______ flows in the external circuit connected to the p-n junction.", "c": "current"},
   {"type": "blank", "q": "The individual solar cells can be combined to form modules known as _______.", "c": "solar panels"},
-  {"type": "blank", "q": "When solar cells are combined into a large solar panel, considerable amounts of _______ energy can be generated.", "c": "electrical"},
+  {"type": "blank", "q": "When solar cells are combined into a large solar panel, considerable amounts of _______ energy can be generated.", "c": "renewable"},
   {"type": "blank", "q": "The solar _______ gathers the heat from solar radiation and transfers the heat to water.", "c": "collector"},
   {"type": "blank", "q": "In a solar heating system, the heated water flows out of the _______ to a hot water tank and is used as necessary.", "c": "collector"},
   {"type": "blank", "q": "_______ collectors are the most common type of solar collector.", "c": "Flat plate"},
