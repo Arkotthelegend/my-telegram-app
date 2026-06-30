@@ -29,7 +29,7 @@
   {"type": "blank", "q": "At the earth's surface solar radiation has an intensity of approximately _______ on a clear day at solar noon in the summer months.", "c": "1000 W m^-2"},
   {"type": "blank", "q": "The conversion of light energy into electrical energy is called the _______ effect.", "c": "photovoltaic"},
   {"type": "blank", "q": "When semiconductor materials are exposed to light, some _______ of light are absorbed by the semiconductor crystal.", "c": "photons"},
-  {"type": "blank", "q": "Absorption of photons by the semiconductor causes a significant number of _______ in the crystal.", "c": "electron-hole pairs"},
+  {"type": "blank", "q": "Absorption of photons by the semiconductor causes a significant number of _______ in the crystal.", "c": "free electrons"},
   {"type": "blank", "q": "A solar cell is also known as a _______ cell.", "c": "photovoltaic"},
   {"type": "blank", "q": "A _______ converts light energy into electrical energy.", "c": "solar cell"},
   {"type": "blank", "q": "A solar cell is basically a _______ diode.", "c": "p-n junction"},
