@@ -1,503 +1,127 @@
-
 [
-  {
-    "type": "tf",
-    "q": "The ecosystems also show variations with respect to physical parameters like moisture, temperature, altitude, precipitation etc.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "One of the major reasons of habitat destruction is due to the dam construction.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "There is no genetic diversity within each population.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "High demand from expanding illegal wildlife market in neighboring countries is rapidly threatening the endangered wildlife of Myanmar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The core of demand for rhinoceros' horns, tiger bones, and other animal products arises out of the practice of traditional Chinese medicine.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Species diversity is defined as the number of genus and abundance of each species that lives in a particular location.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The term \"biodiversity\" refers to the variety and variability among living organisms and the biological complexes in which they occur.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Wilson who is now known as \"Father of Biodiversity\".",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Deforestation and damming rivers are some of the significant causes of biodiversity loss globally.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Dry forest occurs where rainfall is usually more than 400 mm a year.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Seeds in a seed bank are kept in cold, dark conditions.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Ex situ methods are the ways of conservation of species which take place in the natural habitat of the organism.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "About 1000 mammal species are recorded in Myanmar.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In captive breeding programmes, individuals of an endangered species are bred in zoos and parks.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Wildlife trade cannot be differentiated in legal and illegal trade.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Pangolins are the only scaly mammal on earth.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "There is enough space or resources in zoos and parks for all the endangered species.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Wildlife trade can involve the living or dead individuals or other products of wild plants and animals.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Every living species has an intrinsic value.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The increases of world's population will cause additional strains on resources.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The clearing of land for agriculture, housing, transport, leisure, facilities and industry are promotes vegetation.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "An accounting for 20% of all illegal wildlife is the pangolin.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Some organisms in an ecosystem live in interdependence sharing living space, shelter and available food.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Healthy ecosystem and rich biodiversity will contribute to climate stability.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The red data symbolizes the warning signal for those species, which are endangered.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Many ecosystems like desert, rain forests and mangroves, exhibit a vast diversity of life farms residing in their respective ecosystems.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "In seed bank, the catabolism of the seed slows down, so the seed is prevented from germinating.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In upland areas, shifting cultivation does not significantly affect the natural environment.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity is very important for the well-being of our planet, human health, food security, economy and livelihoods.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The most trafficked animal in the world is the tiger.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Genetic diversity is the variety of species within genes.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "About 39 mammal species and 38 plants species are globally threatened.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Fallow land is covered the most of the Myanmar's forest area.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "An ecosystem is a population of organisms and their physical environment interacting each other's together.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "If biodiversity is reduced in one area, the natural balance may not be destroyed elsewhere.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Ecosystem with high species diversity is more able to resist changes.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The genetic diversity that exists between varieties of cultivated plants and domesticated animals is obvious.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Climate change is a growing threat to biodiversity.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Pollution is a growing threat on both land and in aquatic ecosystems.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "A variety of human activities does not threaten the Myanmar's agrobiodiversity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Habitat size and number of species are not systematically related.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "In the last year, more than one million pangolins were poached and killed for their scales.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The total area of Myanmar's forest is 290,410 km2 which is 34% of the total land area.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Overhunting threatens one-third of endangered invertebrates, as well as other groups.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Global biodiversity does not loss through natural environmental changes.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Ecosystems with limited diversity tend to be more stable than ones with high species diversity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The number of species in an ecosystem is known as species richness.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Wildlife trade refers to the commerce of products that are derived from domesticated animals or plants.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The storage of seeds is one of the most widespread and valuable in situ approaches to conservation.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity ensures natural sustainability for all life on the earth.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity can be defined as the totality of genes, species and ecosystem of a region.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "38% of Myanmar's forest area is mixed deciduous forest.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity provides ecosystem services like providing carbon dioxide, pollinating crops and controlling flood.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The two main conservation methods are in situ and ex situ conservation methods.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The common name of Kyelait is Irrawaddy dolphin.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Overhunting threatens two-third of endanger vertebrates, as well as other groups.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Invasive Alien species (IAS) can also introduced intentionally by tourists.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The same habitats are home for a wide range of species.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "There are thought to be about 242,000 species of flowering plant.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Destruction of the natural environment leads to gobal loss of biodiversity.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "There are now though to be about 242,000 species of Angiosperms.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The best way to conserve any species is to keep it outside their natural habitat.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Maintaining the natural habitat means that all the \"life support systems\" are provided.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "There is 50% of the world's flowering plant species could disappear within the next 25 years.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Reintroduction programs of captive breeding can be very expensive and time consuming.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Diminishing ocean temperatures and rising Arctic sea ice affects marine biodiversity.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The illegal wildlife trade has been emergence of new infectious disease.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Over exploitation also called overharvesting, it will be able to replenish.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "More people decreased demand for food, water, housing, energy, healthcare, transportation, and more.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity is being reduced through human activities such as overexploitation, deforestation and pollution.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Rich biodiversity allows small - scale ecosystem to function and self-regulation.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Black Orchid and Rhododendron are endangered flower species of Myanmar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Genetic pollution indicates the loss of identity of wild plant species.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The common name of Linpai is Burmese star Tortoise.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Genetic pollution is desirable ger gene flow into wild population.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Climate is a minor factor in the distribution of species across the globe.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Over exploitation can lead to the destruction of the resource.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Overlogging is a form of over exploitation causes by legal logging activities.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Little is known about the status of invasive alien species in Myanmar.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Conservation means keeping and protecting a living and changing environment.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "More than 16 billion people rely on forests for their livelihoods.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Biodiversity can be defined as the degree of an ecosystem of life forms in variation.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Factors causing habitat destruction are overpopulation, deforestation, pollution and global warming.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Physically larger species are more sensitive to reduction in habitat area.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The urbanization can significantly affect the natural environment.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "The loss of biodiversity affects the lives of more than 1 billion people living in di lands.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Mix deciduous forest is the smallest amount of Myanmar's forest area.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Habitat destruction has not played a key role in extinction.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Factor such as the extension of planting trees, dams and canal construction ar major threats to the agrobiodiversity of Myanmar.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Habitat loss occurs when natural environments are transformed to serve humar needs.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Pollution is caused by controlled pesticide and herbicide uses.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Seed banks have been set up to help conserve normal plant species.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "The diversity of ecological complexity includes variation in ecological niches, trophic structure, food-chains and nutrient cycling etc.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Ex situ, methods are the ways to conserve animal and plants inside their natural habitats.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "One of the techniques, used in captive breeding programs is embryo transfer to a surround mother.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Seed banks protect and save plant genetic diversity.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Health ecosystem and rich biodiversity will not be protecting fresh water resources.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Myanmar has diverse geographical features and climate from tropical coral reefs to alpine habitats.",
-    "c": true
-  },
-  {
-    "type": "tf",
-    "q": "Species diversity not only considers richness, but also includes a measure of the evenness of the abundance of the same species.",
-    "c": false
-  },
-  {
-    "type": "tf",
-    "q": "Genetic diversity refers to variety of genetic information contained in all of the individual living things.",
-    "c": true
-  }
-]
+    {"type": "tf", "q": "The term ‘Biodiversity’ was coined by Edward O. Wilson in 1985.", "c": false},
+    {"type": "tf", "q": "Biodiversity can be defined as the totality of genes, species and ecosystem of a region.", "c": true},
+    {"type": "tf", "q": "Biodiversity plays a significant role in maintaining the balance of the ecosystem.", "c": true},
+    {"type": "tf", "q": "Ecosystem diversity is usually taken to include diversity at three levels: variation in ecosystems, species number, and genetic variation.", "c": true},
+    {"type": "tf", "q": "An ecosystem is a community of organisms and their physical environment interacting each other’s together.", "c": true},
+    {"type": "tf", "q": "The diversity of ecological complexity includes variations in ecological niches, trophic structure, food-webs and nutrient cycling.", "c": true},
+    {"type": "tf", "q": "Species richness only considers the measure of the evenness of the abundance of the different species.", "c": false},
+    {"type": "tf", "q": "The more species there are, and the more evenly the numbers of organisms are distributed among the different species, the greater the species diversity.", "c": true},
+    {"type": "tf", "q": "Ecosystems with high species diversity tend to be more stable than ones with limited diversity because they are more able to resist changes.", "c": true},
+    {"type": "tf", "q": "Genetic diversity refers to the variety of genetic information contained in all of the individual plants, animals, fungi and microorganisms.", "c": true},
+    {"type": "tf", "q": "The genetic diversity that exists in natural populations is always obvious.", "c": false},
+    {"type": "tf", "q": "Genetic differences between populations of the same species exist because populations may be adapted slightly differently in different parts of their ranges.", "c": true},
+    {"type": "tf", "q": "Genetic diversity is important in providing populations with the ability to adapt to changes in temperature, salinity, humidity and rainfall.", "c": true},
+    {"type": "tf", "q": "Large-scale ecosystems can function and self-regulate only when biodiversity is reduced.", "c": false},
+    {"type": "tf", "q": "If biodiversity is reduced in one area, the natural balance may be destroyed elsewhere.", "c": true},
+    {"type": "tf", "q": "Each species in an ecosystem has a specific niche which is a role to play.", "c": true},
+    {"type": "tf", "q": "Rich biodiversity will support a larger number of plant species and, therefore, a greater variety of crops.", "c": true},
+    {"type": "tf", "q": "Healthy ecosystems aid in breaking down pollutants.", "c": true},
+    {"type": "tf", "q": "Healthy ecosystems and rich biodiversity provide nutrient storage and recycling.", "c": true},
+    {"type": "tf", "q": "Rich biodiversity contributes to climate stability.", "c": true},
+    {"type": "tf", "q": "Healthy ecosystems slow down the recovery from natural disasters.", "c": false},
+    {"type": "tf", "q": "Biodiversity is very important for food security, economy and livelihoods.", "c": true},
+    {"type": "tf", "q": "All organisms in an ecosystem live in interdependence sharing living space, shelter and available food.", "c": true},
+    {"type": "tf", "q": "The term ‘Biodiversity’ refers to the variety and variability among living organisms and the ecological complexes in which they occur.", "c": true},
+    {"type": "tf", "q": "Myanmar is the largest country in mainland Southeast Asia with a land area of 676,577 $km^{2}$.", "c": true},
+    {"type": "tf", "q": "Myanmar's large latitudinal range of 2,100 km contributes to its diversity of topography and habitats.", "c": true},
+    {"type": "tf", "q": "The diverse habitats of Myanmar are home for a narrow range of species.", "c": false},
+    {"type": "tf", "q": "Forest ecosystems are a carbon sink and stabilize soils.", "c": true},
+    {"type": "tf", "q": "By slowing water flow due to increased infiltration, forests help regulate the seasonal flow of water downstream.", "c": true},
+    {"type": "tf", "q": "Forests support base flow in streams by recharging sources of groundwater.", "c": true},
+    {"type": "tf", "q": "Forests help to maintain the functioning of dam and reservoir infrastructure by impeding the loss of soils.", "c": true},
+    {"type": "tf", "q": "Forest constitutes the dominant vegetation type in Myanmar.", "c": true},
+    {"type": "tf", "q": "The total area of forest in Myanmar is 290,410 $km^{2}$, which is 50% of the total land area.", "c": false},
+    {"type": "tf", "q": "Only half of Myanmar's forest is described as closed forest.", "c": true},
+    {"type": "tf", "q": "Rainfall and elevation strongly influence the distribution of different vegetation types in Myanmar.", "c": true},
+    {"type": "tf", "q": "Dry forest occurs where rainfall is usually less than 400 mm a year and support xerophytic types of vegetation.", "c": true},
+    {"type": "tf", "q": "Mixed Deciduous Forest accounts for 38% of Forest Areas in Myanmar.", "c": true},
+    {"type": "tf", "q": "Fallow Land accounts for 10% of forest areas in Myanmar.", "c": false},
+    {"type": "tf", "q": "The International Union for Conservation of Nature and Natural Resources (IUCN) publishes the Red Data Book.", "c": true},
+    {"type": "tf", "q": "The Red Data Book includes the list of only animal species that are extinct.", "c": false},
+    {"type": "tf", "q": "The red data symbolizes the warning signal for those species which are endangered.", "c": true},
+    {"type": "tf", "q": "Myanmar is a moderately biodiverse country with about 250 mammal species.", "c": true},
+    {"type": "tf", "q": "More than 1,000 birds are recorded in Myanmar.", "c": true},
+    {"type": "tf", "q": "Among species in Myanmar, 39 species of mammals and 38 species of plants are globally threatened.", "c": true},
+    {"type": "tf", "q": "The scientific name of Kanyin is *Dipterocarpus alatus*.", "c": true},
+    {"type": "tf", "q": "Mahogany has the scientific name *Swietenia macrophylla* and its IUCN status is Endangered.", "c": true},
+    {"type": "tf", "q": "Kyauk Htinn shuu has the common name Mann’s plum yew and its scientific name is *Cephalotaxus mannii*.", "c": true},
+    {"type": "tf", "q": "The Black Orchid (*Paphiopedilum wardii*) is listed as Endangered by the IUCN.", "c": false},
+    {"type": "tf", "q": "The scientific name of Taung Zalat Ni is *Rhododendron arboreum*.", "c": true},
+    {"type": "tf", "q": "The Asian Elephant (*Elephas maximus*) is classified as Critically Endangered by the IUCN.", "c": false},
+    {"type": "tf", "q": "The scientific name for Eld’s Deer is *Rucervus eldii thamin*.", "c": true},
+    {"type": "tf", "q": "Irrawaddy Dolphin has the scientific name *Orcaella brevirostris*.", "c": true},
+    {"type": "tf", "q": "Green Peafowl (*Pavo muticus*) is known in Myanmar as Daun.", "c": true},
+    {"type": "tf", "q": "The Burmese Star Tortoise (*Geochelone platynota*) has the IUCN status of Critically Endangered.", "c": true},
+    {"type": "tf", "q": "More than 3 billion people depend on marine and coastal biodiversity for their livelihoods.", "c": true},
+    {"type": "tf", "q": "The loss of biodiversity affects the lives of more than 1.6 billion people living in dry lands.", "c": false},
+    {"type": "tf", "q": "Ecosystems and species are being lost only by the direct action of humans.", "c": false},
+    {"type": "tf", "q": "Habitat loss and the degradation of the environment is one of the five major threats to biodiversity.", "c": true},
+    {"type": "tf", "q": "The effects of invasive alien species on native species is a major threat to biodiversity.", "c": true},
+    {"type": "tf", "q": "Habitat destruction leads to habitat loss which has played a key role in extinction.", "c": true},
+    {"type": "tf", "q": "Habitat fragmentation occurs when habitats become divided into small areas.", "c": true},
+    {"type": "tf", "q": "Physically larger species and those living at higher latitudes are more sensitive to reduction in habitat area.", "c": false},
+    {"type": "tf", "q": "Dam construction and encroaching are major reasons for habitat destruction.", "c": true},
+    {"type": "tf", "q": "Most cultivation in Myanmar employs techniques that cannot degrade the natural environment.", "c": false},
+    {"type": "tf", "q": "Shifting cultivation in upland areas and gold mining are examples of land-use change that degrade the environment.", "c": true},
+    {"type": "tf", "q": "Habitat loss is the most significant cause of biodiversity loss globally.", "c": true},
+    {"type": "tf", "q": "The replacement of local landraces with modern varieties is a threat to agrobiodiversity.", "c": true},
+    {"type": "tf", "q": "Urbanization and overgrazing are major threats to the agrobiodiversity of Myanmar.", "c": true},
+    {"type": "tf", "q": "Pollution is a growing threat only in aquatic ecosystems.", "c": false},
+    {"type": "tf", "q": "Invasive alien species (IAS) can be introduced unintentionally by tourists or through the transport of cargo.", "c": true},
+    {"type": "tf", "q": "Water-hyacinth is an invasive alien plant species in Myanmar.", "c": true},
+    {"type": "tf", "q": "Genetic pollution indicates the loss of identity of wild plant species as a result of transfer of genes from crop plants.", "c": true},
+    {"type": "tf", "q": "Significant reproductive barriers exist between most wild species and crop plants.", "c": true},
+    {"type": "tf", "q": "Gene flow is expected to have its greatest effect on weed species that are closely related to crop plants.", "c": true},
+    {"type": "tf", "q": "It is easily possible to recall genetically engineered organisms back to the laboratory once released into the field.", "c": false},
+    {"type": "tf", "q": "Wind, rain, and insect pollinators can carry genetically altered pollen into adjoining fields.", "c": true},
+    {"type": "tf", "q": "Overexploitation refers to the destruction of a resource because it will be unable to replenish.", "c": true},
+    {"type": "tf", "q": "Overfishing is the removal of a species of fish at a rate greater than the species can replenish its population naturally.", "c": true},
+    {"type": "tf", "q": "Overlogging is a form of overexploitation caused only by illegal logging activities.", "c": false},
+    {"type": "tf", "q": "Overhunting threatens one-third of endangered vertebrates.", "c": true},
+    {"type": "tf", "q": "Bushmeat provides increased opportunity for transmission of several zoonotic viruses from animal hosts to humans.", "c": true},
+    {"type": "tf", "q": "Rising ocean temperatures and diminishing Arctic sea ice affects marine biodiversity.", "c": true},
+    {"type": "tf", "q": "Human overpopulation leads to additional strains on resources and spikes in pollution.", "c": true},
+    {"type": "tf", "q": "Wildlife trade refers only to the commerce of live animals.", "c": false},
+    {"type": "tf", "q": "Illegal wildlife trade contributes directly to the loss of species and habitat destruction.", "c": true},
+    {"type": "tf", "q": "Smuggled wildlife is an increasing global demand for exotic pets, food, and jewelry.", "c": true},
+    {"type": "tf", "q": "Pangolins are the only scaly mammal on earth and account for as much as 20% of all illegal wildlife trade.", "c": true},
+    {"type": "tf", "q": "The primary drivers of the intercontinental pangolin trade are pangolin meat and scales.", "c": true},
+    {"type": "tf", "q": "Wildlife smuggling affects biodiversity by putting a strain on the environment's resources through interspecific competition.", "c": true},
+    {"type": "tf", "q": "Outbreaks of zoonotic diseases including COVID-19 and SARS have been linked to live wildlife markets.", "c": true},
+    {"type": "tf", "q": "Wildlife trade hotspots are places where targeted action for protection is particularly worthwhile.", "c": true},
+    {"type": "tf", "q": "CITES is an international law for wildlife protection.", "c": true},
+    {"type": "tf", "q": "Myanmar enacted the Protected Areas Law in 2018.", "c": true},
+    {"type": "tf", "q": "Conservation means keeping and protecting a living and changing environment.", "c": true},
+    {"type": "tf", "q": "Active intervention is required to restore areas and to protect native species.", "c": true},
+    {"type": "tf", "q": "The Broadly Utilitarian reason for conservation states that every species has a right to live.", "c": false},
+    {"type": "tf", "q": "Narrowly Utilitarian products include food, fibres, drugs and medicines obtained from biodiversity.", "c": true},
+    {"type": "tf", "q": "Broadly Utilitarian benefits include ecosystem services like providing oxygen and controlling floods.", "c": true},
+    {"type": "tf", "q": "The Ethical Utilitarian view suggests every living species has an intrinsic value.", "c": true},
+    {"type": "tf", "q": "There are mainly four conservation methods: in situ, ex situ, in vivo, and ex vivo.", "c": false},
+    {"type": "tf", "q": "In situ methods are the ways of conservation of species which take place in the natural habitat of the organism.", "c": true},
+    {"type": "tf", "q": "Maintaining the natural habitat means that all ‘life support systems’ are provided.", "c": true},
+    {"type": "tf", "q": "Keeping organisms in situ means putting them in the ecosystem where they belong.", "c": true},
+    {"type": "tf", "q": "Active management of nature reserves involves the continuous monitoring and maintenance of effective boundaries.", "c": true},
+    {"type": "tf", "q": "Ex situ methods conserve animals and plants within their natural habitats.", "c": false},
+    {"type": "tf", "q": "Ex situ conservation methods are usually used as a last resort.", "c": true},
+    {"type": "tf", "q": "The three methods of ex situ conservation are captive breeding, storage of seeds in the seed bank and cultivation in botanical garden.", "c": true},
+    {"type": "tf", "q": "In captive breeding programmes, individuals of endangered species are bred in zoos and parks.", "c": true},
+    {"type": "tf", "q": "Artificial insemination and embryo transfer are techniques used in captive breeding.", "c": true},
+    {"type": "tf", "q": "Cryogenics involves freezing eggs, sperm cells and embryos for future use.", "c": true},
+    {"type": "tf", "q": "Keeping a pedigree in captive breeding is intended to encourage inbreeding.", "c": false},
+    {"type": "tf", "q": "Reintroduction programmes can be very expensive and time consuming and they may fail.", "c": true},
+    {"type": "tf", "q": "It has been estimated that 25% of the world’s flowering plant species could disappear within the next 50 years.", "c": true},
+    {"type": "tf", "q": "Seeds in a seed bank are dried and then stored at a temperature of $14 ^{\\circ}C$.", "c": false},
+    {"type": "tf", "q": "Seed metabolism slows down in cold, dark conditions, preventing seeds from germinating.", "c": true},
+    {"type": "tf", "q": "Saved and viable seeds contain a treasure trove of useful genes for developing improved varieties of food crops.", "c": true},
+    {"type": "tf", "q": "About 80,000 plant species are grown in botanical gardens all over the world.", "c": true},
+    {"type": "tf", "q": "One of the major objectives of botanical gardens is to create and support collections of native taxa.", "c": true},
+    {"type": "tf", "q": "In Myanmar, 42 protected areas have been established.", "c": true},
+    {"type": "tf", "q": "Scientific reserves are held for protection of features for ‘scientific study, research, education, and the benefit of the country’.", "c": true},
+    {"type": "tf", "q": "Settlement and resource harvesting is allowed in a national park.", "c": false},
+    {"type": "tf", "q": "A marine national park is a permanent marine reservation for the conservation of species.", "c": true},
+    {"type": "tf", "q": "Nature reserve is a protected area of importance for flora, fauna, or features of geological or other special interest.", "c": true},
+    {"type": "tf", "q": "In a wildlife sanctuary, capturing, killing and poaching of animals is strictly prohibited.", "c": true},
+    {"type": "tf", "q": "Community forest involves sustainable forest management and utilization activities with the local community.", "c": true}
+  ]
