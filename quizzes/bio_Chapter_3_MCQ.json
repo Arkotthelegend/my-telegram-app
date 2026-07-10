@@ -1,603 +1,117 @@
-
 [
-  {
-    "type": "mcq",
-    "q": "Which chamber of the heart pumps oxygenated blood to the body?",
-    "a": ["Left ventricle", "Right ventricle", "Left atrium", "Right atrium"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which part of the plant is responsible for the uptake of water and miner",
-    "a": ["leaves", "roots", "shoots", "branch"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The main force driving water movement from the roots to the leaves is",
-    "a": ["osmosis", "humidity", "gravity", "potential gradient"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Most water travels via the apoplastic pathway, which is the series of space running through the",
-    "a": ["hollow tubes", "dead cells", "cellulose cell walls", "all of the above"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Food synthesized in the leaves passes downwards or upwards in the of the phloem.",
-    "a": ["tracheids", "parenchyma", "vessels", "sieve tube"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following blood vessels carries the blood away from the heart toward the cells of body?",
-    "a": ["Arteries", "veins", "Both A and B", "All the above"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which blood vessel carries deoxygenated blood from the heart to the lung?",
-    "a": ["Pulmonary vein", "Pulmonary artery", "Coronary artery", "Aorta"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following environmental factors can increase the transpiration rate!",
-    "a": ["High light intensity", "High humidity", "Low temperature", "Low wind speed"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Plants can be very large; however, their branching shape helps to keep the surface area to volume ratio",
-    "a": ["large", "small", "narrow", "insufficient"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which blood vessel carries oxygenated blood from the lungs to the heart?",
-    "a": ["pulmonary artery", "coronary artery", "pulmonary vein", "aorta"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The dissolving mineral ions are transported in the",
-    "a": ["xylem tissue", "phloem tissue", "pholem fibre", "sieve tube"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In apoplastic pathway, water can move from cell wall to cell wall directly or throug the",
-    "a": ["intercellular spaces", "plasmodesmata", "casparian strip", "cytoplasm"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The uptake of water can be passive transport such as",
-    "a": ["Transpiration", "Translocation", "Osmosis", "None of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The movement of dissolved substances through a plant is also termed as",
-    "a": ["transpiration", "transportation", "translocation", "none of the above"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is responsible for the transports water and inorganic ions from roots to all parts of plants?",
-    "a": ["phloem", "xylem", "mesophyll", "epidermis"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In an experiment of transpiration pull, a thistle funnel is filled with",
-    "a": ["mercury", "sap", "water", "air"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The rate of transpiration is almost zero at",
-    "a": ["evening", "night", "morning", "day"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following structures allows water and solutes to move by symplastic pathway?",
-    "a": ["cell walls", "plasmodesmata", "dead cells", "cell membrane"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following substances is transported in the xylem?",
-    "a": ["water", "mineral", "water and minerals", "none of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The main types of blood vessel is/ are",
-    "a": ["arteries", "veins", "capillaries", "all of these"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "What is the main function of arteries in the body?",
-    "a": ["carries blood to the heart", "exchange of gases", "transport the wastes", "carries blood away from the heart"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "How does water enter the symplastic pathway?",
-    "a": ["Through the plasmodesmata", "Through the cell wall", "Through the cell membrane", "Through the xylem"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which chamber of the heart receives deoxygenated blood from the head, arms and chest?",
-    "a": ["left atrium", "right atrium", "left ventricle", "right ventricle"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The right atrium receives the deoxygenated blood from the head, neck and chest, through the",
-    "a": ["superior vena cava", "lungs", "pulmonary vein", "all of these"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The very smallest branches of the arterial system are",
-    "a": ["arterioles", "b, aorta", "coronary", "None of the above"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is responsible for the transport of water and minerals in plants?",
-    "a": ["epidermis", "xylem", "phloem", "mesophyll"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The cells in the spongy mesophyll layers are",
-    "a": ["tightly packed", "without spaces", "not tightly packed", "none of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following animal has an open circulatory system?",
-    "a": ["fish", "bird", "spider", "mammal"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Glucose can be moved through the as part of sucrose-molecule.",
-    "a": ["phloem", "xylem", "stomata", "guard cells"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which blood vessel bringing oxygenated blood to the cardiac muscle?",
-    "a": ["Pulmonary artery", "Pulmonary vein", "Coronary artery", "Aorta"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following animal has a closed circulatory system with double circuit?",
-    "a": ["fish", "insect", "spider", "bird"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following plant structures regulates transpiration rate?",
-    "a": ["phloem vessel", "stomata", "Xylem vessel", "root hairs"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The type of open circulatory system is found in arthropods such as",
-    "a": ["insects", "spiders", "crabs", "all of the above"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The dissolved organic compounds are transported in the",
-    "a": ["vessel", "tracheid", "xylem tissue", "phloem tissue"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Transpiration is the movement or loss of",
-    "a": ["water from the soil to the roots", "water from the roots to the stem", "water vapour from the leaves", "oxygen from the leaves"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following animal have a double circulatory system?",
-    "a": ["insects and spiders", "spiders and crabs", "crabs and birds", "birds and mammals"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Most of the water flow in the roots occurs via the",
-    "a": ["apoplast", "symplast", "active transport", "none of the"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Plants make their own organic molecules, using the process of",
-    "a": ["transpiration", "translocation", "photosynthesis", "diffusion"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following plant organs has a symplastic pathway?",
-    "a": ["leaves", "stems", "roots", "flowers"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "In hot conditions, transpiration plays an important role in cooling the",
-    "a": ["leaves", "plant", "flower", "shoot"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Casparian strips are found in",
-    "a": ["epidermis", "hypodermis", "endodermis", "cortex"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The components of phloem tissue are living cells except",
-    "a": ["sieve tube", "phloem fibre", "companion cell", "phloem parenchyma"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following valve is controls the opening between right atrium and right ventricle.",
-    "a": ["Mitral valve", "Tricuspid valves", "Bicuspid valve", "Semilunar valves"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "A thick muscular wall of the arteries helps control the flow of blood by",
-    "a": ["dilating", "widening or narrowing", "constricting", "All the above"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The components of phloem tissue are",
-    "a": ["companion cell", "Phloem parenchyma", "sieve tube and phloem fibre", "all the above"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which type of cell in the phloem tissue has a nucleus?",
-    "a": ["parenchyma cells", "companion cells", "phloem fibre", "sieve tube"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Both upward and downward movements of photosynthetic products, may take place at the in the phloem.",
-    "a": ["same time", "separate time", "special time", "several time"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The artery carrying deoxygenated blood from the heart to the lungs.",
-    "a": ["coronary", "pulmonary", "umbilical", "pulmonary"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The photosynthetic products, carbohydrates are transported out of the leaf in the form of to the stem.",
-    "a": ["glucose", "sucrose", "A or B", "none of these"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following animal has a closed circulatory system with single circuit?",
-    "a": ["bird", "fish", "mammal", "arthropod"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Water and dissolved salts from the soil travel upwards through the of the xylem.",
-    "a": ["vessels", "parenchyma", "fibres", "sieve tube"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The cardiovascular system is made up of",
-    "a": ["the heart", "blood vessels", "the blood", "all of these"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The passage of blood through the vessels is called",
-    "a": ["arteries", "veins", "circulation", "capillaries"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The left atrium receives oxygenated blood from the lungs, through the",
-    "a": ["superior vena cava", "lungs", "pulmonary vein", "none of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following atrium receives oxygenated blood from the lungs through pulmonary vein?",
-    "a": ["Right ventricle", "Right atrium", "Right atrium", "Left atrium"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following has the thickened wall?",
-    "a": ["Right atrium", "Right ventricle", "left atrium", "Left ventricle"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "How many sets of valves are present in the heart?",
-    "a": ["two sets", "three sets", "four sets", "none of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following valve is located between the right atrium and right ventricle!",
-    "a": ["Tricuspid valves", "Mitral valve", "Semilunar valves", "Bicuspid valve"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The left atrioventricular valve is called",
-    "a": ["tricupsid valve", "semilunar valves", "bicuspid valve", "none of the above"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The function of valve is prevention of back flow of blood from the right ventricle into the right atrium.",
-    "a": ["semilunar", "mitral", "bicuspid", "tricuspid"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The function of valve is prevention of back flow of blood from the left ventricle into the left atrium.",
-    "a": ["semilunar", "bicuspid", "tricuspid", "none of these"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which valve separates the left atrium from left ventricle?",
-    "a": ["Mitral valve", "Pulmonary valve", "Tricuspid valve", "Aortic valve"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following valves are pocket-like valves?",
-    "a": ["Tricuspid valves", "Bicuspid valves", "Semilunar valves", "Mitral valves"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following blood vessels carries the oxygenated blood?",
-    "a": ["Capillaries", "veins", "Arteries", "All the above"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is true about the pulmonary artery?",
-    "a": ["carries deoxygenated blood from the heart to the lungs", "carries oxygenated blood from the heart to the lungs", "carries deoxygenated blood from the lungs to the heart", "carries oxygenated blood from the lungs to the heart."],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "During pregnancy, the artery carries deoxygenated blood from the foetus to the placenta.",
-    "a": ["pulmonary", "coronary", "umbilical", "None of the above"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is the large artery in the body?",
-    "a": ["Pulmonary artery", "Carotid artery", "Coronary artery", "Aorta"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following blood vessel carries the blood back towards the heart?",
-    "a": ["veins", "Arteries", "Both A and B", "All the above"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In demonstration of transpiration pull, the bottom of the funnel is immersed in a bowl of",
-    "a": ["leafy twig", "mercury", "vacuum", "water"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "In mass transport system, a suitable transport medium is.",
-    "a": ["air", "fluid", "solid", "vapour"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Respiration supplies energy for the other reactions of life, but it produces toxit waste product",
-    "a": ["carbon", "carbon monoxide", "hydrogen", "carbon dioxide"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "In multicellular animals, many chemical reactions take place inside ever microscopic",
-    "a": ["cell", "tissue", "organ", "all of these"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "In large multicellular organisms, the surface area to volume ratio is",
-    "a": ["high", "large", "many", "low"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "In many large animals, including transport system.",
-    "a": ["some vertebrate", "some invertebrate", "all vertebrate", "all invertebrate"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Ascent of sap mostly occurs due to",
-    "a": ["translocation pull", "evaporation pull", "transpiration pull", "condensation pull"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Transpiration helps the shape and structure of plant parts by keeping cell.",
-    "a": ["turgid", "flaccid", "loose", "week"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "Transpiration supplies water for",
-    "a": ["evaporation", "photosynthesis", "flaccid", "turgid"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The ash and sugar content of the fruit increases with the increase in",
-    "a": ["photosynthesis", "respiration", "translocation", "transpiration"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "If water vapour is lost due to excessive transpiration, the amounts of water in its cells will",
-    "a": ["increase", "decrease", "improve", "rises"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which one of the following does not affect the rate of transpiration?",
-    "a": ["wind speed", "humidity", "light intensity", "age of plant"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Most transpiration takes place through the",
-    "a": ["xylem", "stomata", "endodermis", "hypodermis"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Transpiration rate may also be increased by an increasing in",
-    "a": ["wind speed", "temperature", "Both A or B", "none of"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following factors can increase transpiration rate?",
-    "a": ["low temperature", "high humidity", "low light intensity", "very dry condition"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The walls of the mesophyll cells are wet and some of this water evaporates into",
-    "a": ["epidermis", "endodermis", "guard cells", "air space"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The air in the internal spaces of the leaf has contacted with the air outside of the leaf through the",
-    "a": ["vacuole", "xylem", "stomata", "phloem"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "A smaller amount of water travels via the symplastic pathway, which is the",
-    "a": ["vacuole of the cells", "cytoplasm", "Plasmodesmata", "all of the above"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "This is not part of apoplast.",
-    "a": ["cell wall", "dead cells", "hollow tube", "sieve tube"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The water is free to move between the cells except through the",
-    "a": ["epidermis", "endodermis", "xylem", "vessels"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "The movement of water in cell wall and intercellular space is called as",
-    "a": ["antiport", "apoplast", "symport", "symplast"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is not a factor of casparian strip?",
-    "a": ["waxy band", "waterproof", "cytoplasm", "suberin"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following statements is true about the casparian strip?",
-    "a": ["prevents movement of water and solutes in apoplast", "prevents movement of water and solutes in symplast", "It is located in the plasma membrane", "It is located in the cell wall"],
-    "c": 0
-  },
-  {
-    "type": "mcq",
-    "q": "The uptake of minerals can be passive transport such as",
-    "a": ["Osmosis", "Diffusion", "Both A and B", "None of the abov"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is not related to pholem?",
-    "a": ["Sieve tube", "tracheid", "companion cell", "phloem fibre"],
-    "c": 1
-  },
-  {
-    "type": "mcq",
-    "q": "Xylem tissue contains",
-    "a": ["sieve tube", "companion cell", "sleve plate", "empty hollow o"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "Which of the following is responsible for the transport of sucrose and amino acids from leaves to all parts of plant?",
-    "a": ["photosynthesis", "xylem", "phloem", "all of these"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "Leaves are very thin and have a large surface area inside them in contact with the",
-    "a": ["xylem", "phloem", "air spaces", "stomata"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The plant body spread out to obtain the from environments.",
-    "a": ["carbon dioxide", "light and water", "inorganic ions", "all of these"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "The most plants have extensive branching bodies with",
-    "a": ["stems", "shoots", "leaves", "branches"],
-    "c": 2
-  },
-  {
-    "type": "mcq",
-    "q": "The main photosynthetic organs are the",
-    "a": ["plants", "flowers", "light", "leaves"],
-    "c": 3
-  },
-  {
-    "type": "mcq",
-    "q": "In mass transport system, a suitable transport medium is",
-    "a": ["air", "fluid", "solid", "vapour"],
-    "c": 1
-  }
-]
+    {"type": "mcq", "q": "What is the source of carbon for plants to make their own organic molecules?", "a": ["Light", "Carbon dioxide", "Inorganic mineral ions"], "c": 1},
+    {"type": "mcq", "q": "What is the source of energy for the process of photosynthesis?", "a": ["Glucose", "Carbon dioxide", "Light"], "c": 2},
+    {"type": "mcq", "q": "Which organs in plants have evolved a large surface area to volume ratio for efficient capturing of $CO_2$ and light?", "a": ["Roots", "Stems", "Leaves"], "c": 2},
+    {"type": "mcq", "q": "What does a large surface area to volume ratio in leaves mean for $CO_2$?", "a": ["Less area for collection", "More area for collection and less distance to diffuse out", "More area for collection and less distance to diffuse into the leaf"], "c": 2},
+    {"type": "mcq", "q": "Most plants have extensive branching bodies and extensive root systems to obtain which of the following?", "a": ["Only carbon dioxide", "Water and mineral salts", "Only glucose"], "c": 1},
+    {"type": "mcq", "q": "Glucose can be moved through the phloem as part of which molecule?", "a": ["Starch", "Cellulose", "Sucrose"], "c": 2},
+    {"type": "mcq", "q": "In what form do sugars usually change for storage in a potato tuber?", "a": ["Glucose", "Starch", "Sucrose"], "c": 1},
+    {"type": "mcq", "q": "Plants can rely on which process to supply their cells with oxygen and remove carbon dioxide?", "a": ["Active transport", "Diffusion", "Osmosis"], "c": 1},
+    {"type": "mcq", "q": "What is the characteristic of mesophyll cells in leaves regarding their arrangement?", "a": ["Tightly packed", "No spaces around them", "Not tightly packed and have many spaces around them"], "c": 2},
+    {"type": "mcq", "q": "Which transport system carries water and inorganic ions from the roots to all parts of the plant?", "a": ["Phloem", "Xylem", "Sieve tube"], "c": 1},
+    {"type": "mcq", "q": "Which transport system carries substances such as sucrose and amino acids from the leaves?", "a": ["Xylem", "Tracheid", "Phloem"], "c": 2},
+    {"type": "mcq", "q": "Xylem tissue contains dead, empty hollow cells with no ___.", "a": ["Cell walls", "End walls", "Cytoplasm"], "c": 1},
+    {"type": "mcq", "q": "Unlike xylem vessels, sieve tubes are ___ cells and contain cytoplasm.", "a": ["Dead", "Hollow", "Living"], "c": 2},
+    {"type": "mcq", "q": "What are sieve tube walls made of?", "a": ["Lignin", "Cellulose", "Suberin"], "c": 1},
+    {"type": "mcq", "q": "What is associated with each sieve tube in the phloem?", "a": ["Xylem fibre", "Tracheid", "Companion cell"], "c": 2},
+    {"type": "mcq", "q": "Within a plant, how are mineral ions and organic compounds transported?", "a": ["As solids", "Dissolved in water", "As gases"], "c": 1},
+    {"type": "mcq", "q": "The uptake of water is a passive process and occurs by ___.", "a": ["Active transport", "Osmosis", "Diffusion"], "c": 1},
+    {"type": "mcq", "q": "What is the movement where protoplasm is involved called?", "a": ["Apoplast", "Symplast", "Osmosis"], "c": 1},
+    {"type": "mcq", "q": "In passive absorption, water moves through which part of the root?", "a": ["Protoplasm", "Apoplast", "Vacuole"], "c": 1},
+    {"type": "mcq", "q": "The apoplast path includes the cell wall and ___.", "a": ["Plasmodesmata", "Intercellular spaces", "Cytoplasm"], "c": 1},
+    {"type": "mcq", "q": "When transpiration rates are high, most water travels via which pathway?", "a": ["Symplastic", "Apoplastic", "Active"], "c": 1},
+    {"type": "mcq", "q": "Why does water move by diffusion in the apoplastic pathway?", "a": ["It passes through a partially permeable membrane", "It does not pass through a partially permeable membrane", "It is driven by ATP"], "c": 1},
+    {"type": "mcq", "q": "Where does water travel in the apoplastic pathway?", "a": ["Through the cytoplasm", "Through cellulose cell walls, dead cells, and hollow tubes", "Through the plasmodesmata"], "c": 1},
+    {"type": "mcq", "q": "What blocks the apoplastic pathway when water reaches the endodermis?", "a": ["Sieve plate", "Casparian strip", "Tracheid"], "c": 1},
+    {"type": "mcq", "q": "The Casparian strip is made of a thick, waterproof, waxy band of ___.", "a": ["Cellulose", "Lignin", "Suberin"], "c": 2},
+    {"type": "mcq", "q": "What is the symplastic pathway comprised of?", "a": ["Cell walls and intercellular spaces", "Cytoplasm and plasmodesmata or vacuole", "Dead cells and hollow tubes"], "c": 1},
+    {"type": "mcq", "q": "How does water move into the cell in the symplastic pathway?", "a": ["By osmosis", "By diffusion", "By active transport"], "c": 0},
+    {"type": "mcq", "q": "Water can move between cells in the symplastic pathway through the ___.", "a": ["Casparian strip", "Intercellular spaces", "Plasmodesmata"], "c": 2},
+    {"type": "mcq", "q": "Which pathway for water movement is slower?", "a": ["Apoplastic pathway", "Symplastic pathway", "Passive pathway"], "c": 1},
+    {"type": "mcq", "q": "In active absorption, water first enters the ___ and passes from one cell to another.", "a": ["Cell wall", "Cell sap", "Apoplast"], "c": 1},
+    {"type": "mcq", "q": "The air in the internal spaces of the leaf contacts the air outside through small pores called ___.", "a": ["Lenticels", "Stomata", "Xylem"], "c": 1},
+    {"type": "mcq", "q": "What is the process where water eventually evaporates and diffuses out of the leaf?", "a": ["Translocation", "Transpiration", "Photosynthesis"], "c": 1},
+    {"type": "mcq", "q": "In which condition does transpiration take place more quickly?", "a": ["High humidity", "Low humidity", "No light"], "c": 1},
+    {"type": "mcq", "q": "How does increasing wind speed affect the transpiration rate?", "a": ["Decreases it", "Increases it", "Has no effect"], "c": 1},
+    {"type": "mcq", "q": "In most plants, when do stomata generally close?", "a": ["During the day", "At night", "In low humidity"], "c": 1},
+    {"type": "mcq", "q": "Why must stomata be opened during the day?", "a": ["To release oxygen only", "To allow $CO_2$ to diffuse into the leaf", "To prevent water loss"], "c": 1},
+    {"type": "mcq", "q": "What happens to the plant when water loss by transpiration exceeds the rate of uptake?", "a": ["Cells become more turgid", "Cells become less turgid and the plant wilts", "Photosynthesis increases"], "c": 1},
+    {"type": "mcq", "q": "Ascent of sap mostly occurs due to ___ exerted by transpiration of water.", "a": ["Root pressure", "Transpiration pull", "Osmotic potential"], "c": 1},
+    {"type": "mcq", "q": "Transpiration can bring down the temperature of a plant by how much?", "a": ["$1^{\\circ}-5^{\\circ}C$", "$10^{\\circ}-15^{\\circ}C$", "$20^{\\circ}-25^{\\circ}C$"], "c": 1},
+    {"type": "mcq", "q": "What type of tissue development is essential for providing rigidity and strength to the plant?", "a": ["Meristematic tissue", "Vascular tissue", "Mechanical tissue"], "c": 2},
+    {"type": "mcq", "q": "How are mineral salts mostly distributed in the plant?", "a": ["By diffusion", "By rising column of sap", "By phloem translocation"], "c": 1},
+    {"type": "mcq", "q": "The loss of water through transpiration has what effect on mineral salt concentration in the plant?", "a": ["Decreases it", "Increases it", "Stops it"], "c": 1},
+    {"type": "mcq", "q": "Transpiration helps in the better development of which system required for support and absorption?", "a": ["Shoot system", "Root system", "Reproductive system"], "c": 1},
+    {"type": "mcq", "q": "What happens to the ash and sugar content of fruit with the increase in transpiration?", "a": ["Increases", "Decreases", "Remains constant"], "c": 0},
+    {"type": "mcq", "q": "Excessive transpiration induces what kind of resistance in plants?", "a": ["Resistance to pests", "Resistance to moderate drought", "Resistance to sunlight"], "c": 1},
+    {"type": "mcq", "q": "Transpiration helps the shape and structure of plant parts by keeping cells ___.", "a": ["Flaccid", "Plasmolysed", "Turgid"], "c": 2},
+    {"type": "mcq", "q": "Transpiration supplies what essential component for photosynthesis?", "a": ["Water", "Sugar", "Minerals"], "c": 0},
+    {"type": "mcq", "q": "In the demonstration of transpiration pull, loss of water from the twig produces a ___ in the thistle funnel.", "a": ["Pressure", "Vacuum", "Gas"], "c": 1},
+    {"type": "mcq", "q": "What substance is drawn up in the thistle funnel due to transpiration pull in the experiment?", "a": ["Oil", "Mercury", "Alcohol"], "c": 1},
+    {"type": "mcq", "q": "A plant may compromise by partially or completely closing its stomata in which conditions?", "a": ["Humid conditions", "Very dry conditions", "Windy conditions"], "c": 1},
+    {"type": "mcq", "q": "What is the movement of dissolved substances through a plant called?", "a": ["Transpiration", "Translocation", "Diffusion"], "c": 1},
+    {"type": "mcq", "q": "In which form are carbohydrates transported out of the leaf?", "a": ["Glucose", "Sucrose", "Starch"], "c": 1},
+    {"type": "mcq", "q": "Dissolved salts and food pass through which cells of the phloem?", "a": ["Tracheids", "Sieve tubes", "Phloem fibres"], "c": 1},
+    {"type": "mcq", "q": "Which of the following is NOT a component of phloem tissue?", "a": ["Sieve tube", "Companion cell", "Xylem vessel"], "c": 2},
+    {"type": "mcq", "q": "Which phloem component is a dead cell?", "a": ["Sieve tube", "Companion cell", "Phloem fibre"], "c": 2},
+    {"type": "mcq", "q": "What are the cell septate walls in the phloem known as?", "a": ["Casparian strips", "Sieve plates", "Tracheids"], "c": 1},
+    {"type": "mcq", "q": "Sieve tubes or sieve cells have no ___.", "a": ["Cytoplasm", "Nucleus", "Cell wall"], "c": 1},
+    {"type": "mcq", "q": "How are sieve cells kept alive if they have no nuclei?", "a": ["By photosynthesis", "By nucleated companion cells", "By phloem fibres"], "c": 1},
+    {"type": "mcq", "q": "Where are the profuse cytoplasmic connections in phloem located?", "a": ["Between xylem and phloem", "Between sieve and companion cells", "In the sieve plates"], "c": 1},
+    {"type": "mcq", "q": "In the translocation process, food may travel to which areas?", "a": ["Only upwards to fruits", "Only downwards to roots", "Both upward and downward"], "c": 2},
+    {"type": "mcq", "q": "Large multicellular animals have evolved transport systems because as organisms get larger, they have higher ___.", "a": ["Photosynthetic rates", "Metabolic rates", "Transpiration rates"], "c": 1},
+    {"type": "mcq", "q": "In many large animals, the circulatory system is in the form of a ___.", "a": ["Diffusion system", "Mass transport system", "Osmotic system"], "c": 1},
+    {"type": "mcq", "q": "Single-celled organisms have a ___ surface area to volume ratio.", "a": ["Low", "High", "Medium"], "c": 1},
+    {"type": "mcq", "q": "What toxic waste product of respiration needs to be removed from multicellular animal cells?", "a": ["Glucose", "Oxygen", "Carbon dioxide"], "c": 2},
+    {"type": "mcq", "q": "A mass transport system involves a mechanism for moving materials fast enough, such as ___.", "a": ["Diffusion", "Pumping of the heart", "Osmosis"], "c": 1},
+    {"type": "mcq", "q": "In which system does blood pumped by a tubular heart leave open-ended vessels?", "a": ["Closed circulatory system", "Open circulatory system", "Single circulatory system"], "c": 1},
+    {"type": "mcq", "q": "What are the pores through which blood re-enters the vessel in an open system?", "a": ["Stomata", "Ostia", "Sieve pores"], "c": 1},
+    {"type": "mcq", "q": "Open circulatory systems are found in most ___.", "a": ["Vertebrates", "Fish", "Arthropods"], "c": 2},
+    {"type": "mcq", "q": "What is a main advantage of a closed circulatory system?", "a": ["Pressure can be increased", "Blood moves slower", "It uses less energy"], "c": 0},
+    {"type": "mcq", "q": "A single circulatory system is found in which organism?", "a": ["Birds", "Mammals", "Fish"], "c": 2},
+    {"type": "mcq", "q": "In a fish heart, how many times does blood pass through the heart in one cycle?", "a": ["Once", "Twice", "Three times"], "c": 0},
+    {"type": "mcq", "q": "Which circulation carries oxygenated blood to the body cells?", "a": ["Pulmonary circulation", "Systemic circulation", "Single circulation"], "c": 1},
+    {"type": "mcq", "q": "Which circulation carries deoxygenated blood to the lungs?", "a": ["Pulmonary circulation", "Systemic circulation", "Arterial circulation"], "c": 0},
+    {"type": "mcq", "q": "Why do birds and mammals need a double circulatory system?", "a": ["They have a low metabolic rate", "They maintain a constant body temperature", "They live in water"], "c": 1},
+    {"type": "mcq", "q": "In a double circulatory system, blood passes through the heart ___.", "a": ["Once", "Twice", "Continuously"], "c": 1},
+    {"type": "mcq", "q": "The human heart is a muscular pump with how many chambers?", "a": ["Two", "Three", "Four"], "c": 2},
+    {"type": "mcq", "q": "The upper two chambers of the heart are called the ___.", "a": ["Ventricles", "Atria", "Aortas"], "c": 1},
+    {"type": "mcq", "q": "The right atrium receives deoxygenated blood from which vessel?", "a": ["Pulmonary artery", "Aorta", "Superior vena cava"], "c": 2},
+    {"type": "mcq", "q": "Which chamber receives oxygenated blood from the lungs via pulmonary veins?", "a": ["Right atrium", "Left atrium", "Left ventricle"], "c": 1},
+    {"type": "mcq", "q": "The heart is made of a unique type of muscle known as ___ muscle.", "a": ["Skeletal", "Smooth", "Cardiac"], "c": 2},
+    {"type": "mcq", "q": "Cardiac muscle is supplied with oxygenated blood by which arteries?", "a": ["Pulmonary arteries", "Coronary arteries", "Carotid arteries"], "c": 1},
+    {"type": "mcq", "q": "What respiratory pigment in cardiac muscle has a stronger affinity for oxygen than haemoglobin?", "a": ["Myoglobin", "Chlorophyll", "Bilirubin"], "c": 0},
+    {"type": "mcq", "q": "The muscular wall of which ventricle is much thicker?", "a": ["Right ventricle", "Left ventricle", "Both are equal"], "c": 1},
+    {"type": "mcq", "q": "What prevents deoxygenated and oxygenated blood from mixing in the heart?", "a": ["Tricuspid valve", "Muscular septum", "Semilunar valve"], "c": 1},
+    {"type": "mcq", "q": "What is the name of the right atrioventricular valve?", "a": ["Bicuspid valve", "Mitral valve", "Tricuspid valve"], "c": 2},
+    {"type": "mcq", "q": "What is the name of the left atrioventricular valve?", "a": ["Tricuspid valve", "Bicuspid valve", "Semilunar valve"], "c": 1},
+    {"type": "mcq", "q": "What structures prevent atrioventricular valve flaps from turning inside out?", "a": ["Septum", "Cordae tendineae", "Aorta"], "c": 1},
+    {"type": "mcq", "q": "Which vessels carry blood away from the heart?", "a": ["Veins", "Arteries", "Capillaries"], "c": 1},
+    {"type": "mcq", "q": "Which artery carries deoxygenated blood?", "a": ["Aorta", "Pulmonary artery", "Coronary artery"], "c": 1},
+    {"type": "mcq", "q": "What is the central space inside a blood vessel called?", "a": ["Lumen", "Lacteal", "Septum"], "c": 0},
+    {"type": "mcq", "q": "The return of elastic fibers in artery walls to their original length is called ___.", "a": ["Systole", "Recoil", "Diastole"], "c": 1},
+    {"type": "mcq", "q": "Which vessels carry blood back towards the heart?", "a": ["Arteries", "Arterioles", "Veins"], "c": 2},
+    {"type": "mcq", "q": "Which vein carries oxygen-rich blood?", "a": ["Vena cava", "Pulmonary vein", "Umbilical vein"], "c": 1},
+    {"type": "mcq", "q": "What is the function of one-way valves in veins?", "a": ["Increase pressure", "Prevent backflow", "Speed up flow"], "c": 1},
+    {"type": "mcq", "q": "Capillary walls consist of just how many cell layers?", "a": ["One thin cell", "Three thick cells", "Five layers"], "c": 0},
+    {"type": "mcq", "q": "What is the liquid part of the blood?", "a": ["Platelets", "Plasma", "Leucocytes"], "c": 1},
+    {"type": "mcq", "q": "Approximately how many erythrocytes are there per $mm^3$ of blood?", "a": ["500", "5,000", "5 million"], "c": 2},
+    {"type": "mcq", "q": "What pigment gives erythrocytes their red colour?", "a": ["Myoglobin", "Haemoglobin", "Chlorophyll"], "c": 1},
+    {"type": "mcq", "q": "Mature erythrocytes do not contain a ___.", "a": ["Cell wall", "Nucleus", "Cytoplasm"], "c": 1},
+    {"type": "mcq", "q": "What is the main function of leucocytes?", "a": ["Carry oxygen", "Clot blood", "Defend the body against infection"], "c": 2},
+    {"type": "mcq", "q": "Platelets are tiny fragments of large cells called ___.", "a": ["Erythrocytes", "Megakaryocytes", "Leucocytes"], "c": 1},
+    {"type": "mcq", "q": "What substance causes smooth muscle contraction in torn blood vessels to narrow them?", "a": ["Thrombin", "Fibrin", "Serotonin"], "c": 2},
+    {"type": "mcq", "q": "Which enzyme starts the sequence of chemical changes that clot the blood?", "a": ["Thromboplastin", "Amylase", "Lipase"], "c": 0},
+    {"type": "mcq", "q": "Thrombin acts on fibrinogen to convert it into which insoluble substance?", "a": ["Prothrombin", "Fibrin", "Serotonin"], "c": 1},
+    {"type": "mcq", "q": "Contractions of the heart are called ___.", "a": ["Systole", "Diastole", "Pulse"], "c": 0},
+    {"type": "mcq", "q": "The heart's natural pacemaker is the ___.", "a": ["Atrioventricular node", "Bundle of His", "Sinoatrial node"], "c": 2},
+    {"type": "mcq", "q": "Excitation spreads from the SAN to which other area of similar tissue?", "a": ["Purkyne tissue", "Atrioventricular node", "Left atrium"], "c": 1},
+    {"type": "mcq", "q": "The wave of excitation is carried to the Purkyne tissue by the ___.", "a": ["Bundle of His", "Casparian strip", "Vena cava"], "c": 0},
+    {"type": "mcq", "q": "Cardiac muscle cells contract without external stimulus, meaning they are ___.", "a": ["Metabolic", "Myogenic", "Myoglobin"], "c": 1},
+    {"type": "mcq", "q": "One cycle of systole and diastole makes up a single heartbeat, lasting about how long in humans?", "a": ["0.13 seconds", "0.8 seconds", "1.2 seconds"], "c": 1},
+    {"type": "mcq", "q": "What is the watery liquid called that is found between the capillaries and the cells?", "a": ["Lymph", "Tissue fluid", "Plasma"], "c": 1},
+    {"type": "mcq", "q": "Most water from tissue fluid reenters capillaries by ___.", "a": ["Diffusion", "Active transport", "Osmosis"], "c": 2},
+    {"type": "mcq", "q": "Lymphatic vessels that carry fats from the villi of the small intestine are called ___.", "a": ["Arterioles", "Venules", "Lacteals"], "c": 2},
+    {"type": "mcq", "q": "What structures filter dead cells and bacteria before lymph passes back into the blood?", "a": ["Valves", "Lymph nodes", "Lacteals"], "c": 1},
+    {"type": "mcq", "q": "Where does lymph pass back into the blood system?", "a": ["Aorta", "Subclavian veins", "Pulmonary artery"], "c": 1}
+  ]
