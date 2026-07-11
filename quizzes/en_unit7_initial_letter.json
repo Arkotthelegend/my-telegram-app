@@ -1,44 +1,502 @@
-
 [
-  { "q": "One of the s_____ problems of the company is that staffs do not accomplish their tasks.", "c": "serious", "type": "blank" },
-  { "q": "C______ change is the effect of carbon dioxide emissions in industrialising countries.", "c": "Climate", "type": "blank" },
-  { "q": "E_________ are communities of organisms and their physical environments interacting together.", "c": "Ecosystems", "type": "blank" },
-  { "q": "It is a place to relax and recharge your batteries in peaceful s___________.", "c": "surroundings", "type": "blank" },
-  { "q": "Both the water and the air in their neighbourhood were c___________ for them to live.", "c": "contaminated", "type": "blank" },
-  { "q": "There are h________ chemicals that can cause death if we are careless.", "c": "hazardous", "type": "blank" },
-  { "q": "A h_____ is anything which can harm or damage someone or something.", "c": "hazard", "type": "blank" },
-  { "q": "Household combustion devices, motor vehicles, industrial facilities and forest fires are causes of air p_________.", "c": "population", "type": "blank" },
-  { "q": "The destruction of forests is contributing to the g_________ effect.", "c": "greenhouse", "type": "blank" },
-  { "q": "According to scientists, the a_________ is getting warmer year after year.", "c": "atmosphere", "type": "blank" },
-  { "q": "Global warming and its adverse effects are the major e____________ problems facing us.", "c": "environmental", "type": "blank" },
-  { "q": "The introduction of harmful s_________ into the air is called air pollution.", "c": "substances", "type": "blank" },
-  { "q": "In every summer, hot season, we hear the news of w_________ in some part of the world.", "c": "wildfires", "type": "blank" },
-  { "q": "V______ eruptions can result in additional threats such as floods, mudslides, power outages, etc.", "c": "Volcanic", "type": "blank" },
-  { "q": "We are now finding out the effects of ozone d_______ in the northern hemisphere.", "c": "depletion", "type": "blank" },
-  { "q": "One of the c___________ of global warming in mountain regions is increasing risk of infectious diseases.", "c": "consequences", "type": "blank" },
-  { "q": "The ozone layer protects the harmful u__________ rays of the sun.", "c": "ultraviolet", "type": "blank" },
-  { "q": "Economics of Myanmar mainly depends on a___________ sector.", "c": "agricultural", "type": "blank" },
-  { "q": "Polluted water includes toxic c________, bacteria and parasites.", "c": "chemicals", "type": "blank" },
-  { "q": "Polluted water or i_____ water can cause many diseases such as cholera, typhoid, and polio.", "c": "impure", "type": "blank" },
-  { "q": "The process of making the earth's t______ contaminated with hazardous substances is called soil pollution.", "c": "topsoil", "type": "blank" },
-  { "q": "We should educate the farmers to use fertilisers and p_________ effectively and safely.", "c": "pesticides", "type": "blank" },
-  { "q": "Water pollution, air pollution and soil d__________ pose enormous threat to human health.", "c": "degradation", "type": "blank" },
-  { "q": "The problem of that industry is how to get rid of d______ wastes without harm.", "c": "digital", "type": "blank" },
-  { "q": "The disposals of wastes in the ground are referred to as l________.", "c": "landfills", "type": "blank" },
-  { "q": "D___________ occurs when a forested area is transformed into a non-forested area.", "c": "Deforestation", "type": "blank" },
-  { "q": "Their efforts i________ more and more as the competition is approaching.", "c": "intensify", "type": "blank" },
-  { "q": "Future food and n__________ security is more critical in a world of uncontrollable population growth.", "c": "nutritional", "type": "blank" },
-  { "q": "U___________ of the town can only occur if large employers move into the area.", "c": "Urbanization", "type": "blank" },
-  { "q": "The process of developing industries in a country is called i_______________.", "c": "industrialisation", "type": "blank" },
-  { "q": "The machines that use powerful motors are one of the p______ sources of noise pollution.", "c": "primary", "type": "blank" },
-  { "q": "After he was sick, he felt p_______ weakness.", "c": "physical", "type": "blank" },
-  { "q": "P____________ harm can include name calling, bully and harassment.", "c": "Psychological", "type": "blank" },
-  { "q": "If we do exercise, our heartbeat and respiration will a________ and we can sweat.", "c": "accelerate", "type": "blank" },
-  { "q": "These shoes are too small and they c_______ my feet and it makes my toes pain.", "c": "constrict", "type": "blank" },
-  { "q": "Light pollution is the overuse or under-use of a_________ outdoor light.", "c": "artificial", "type": "blank" },
-  { "q": "Depression, aggression, i_________ , frustration and anxiety are some of emotional problems.", "c": "irritation", "type": "blank" },
-  { "q": "He always feels sleepy during the day becomes active at night. He is n_______.", "c": "nocturnal", "type": "blank" },
-  { "q": "Tiger is d_____ because they are more active during the day than at night.", "c": "diurnal", "type": "blank" },
-  { "q": "To avoid d_________ in her classroom, she sets strict rules on cleaning up after free time.", "c": "disorder(s)", "type": "blank" },
-  { "q": "If you have sleep d__________, you cannot concentrate on your lessons well", "c": "deprivation", "type": "blank" }
+  {
+    "type": "blank",
+    "q": "Our way of life has caused many serious environmental problems such as global warming and c___ change.",
+    "a": "climate"
+  },
+  {
+    "type": "blank",
+    "q": "As a result, the world's e___ are changing faster than ever before.",
+    "a": "ecosystems"
+  },
+  {
+    "type": "blank",
+    "q": "Millions of people are now inhaling polluted air, drinking impure water, and consuming c___ foods.",
+    "a": "contaminated"
+  },
+  {
+    "type": "blank",
+    "q": "These issues are a result of p___, which is now seen as a major hazard to our environment.",
+    "a": "pollution"
+  },
+  {
+    "type": "blank",
+    "q": "Pollution is directly linked to the g___ effect.",
+    "a": "greenhouse"
+  },
+  {
+    "type": "blank",
+    "q": "The earth's atmosphere contains some minor gases such as c___ dioxide.",
+    "a": "carbon"
+  },
+  {
+    "type": "blank",
+    "q": "Methane, nitrous oxide, ozone, fluorinated compounds, and water v___ are greenhouse gases.",
+    "a": "vapour"
+  },
+  {
+    "type": "blank",
+    "q": "These gases act as a b___ in trapping some of the sun's heat.",
+    "a": "blanket"
+  },
+  {
+    "type": "blank",
+    "q": "The planet's temperature is kept at a s___ level (around 15.5°C).",
+    "a": "safe"
+  },
+  {
+    "type": "blank",
+    "q": "The amount of greenhouse gases in the atmosphere is increasing because of h___ activities.",
+    "a": "human"
+  },
+  {
+    "type": "blank",
+    "q": "Environmental pollution can be classified into f___ major types.",
+    "a": "five"
+  },
+  {
+    "type": "blank",
+    "q": "Air pollution can be defined as the introduction of h___ substances into the air.",
+    "a": "harmful"
+  },
+  {
+    "type": "blank",
+    "q": "It occurs due to human activities such as f___ burning, logging, farming, and mining.",
+    "a": "fuel"
+  },
+  {
+    "type": "blank",
+    "q": "It can also be caused by natural events such as w___ and volcanic eruptions.",
+    "a": "wildfires"
+  },
+  {
+    "type": "blank",
+    "q": "This leads to an increase in global t___.",
+    "a": "temperature"
+  },
+  {
+    "type": "blank",
+    "q": "This brings about many environmental problems such as floods, a___ rain and ozone depletion.",
+    "a": "acid"
+  },
+  {
+    "type": "blank",
+    "q": "With the rise in global temperature, the ice at the p___ melts.",
+    "a": "poles"
+  },
+  {
+    "type": "blank",
+    "q": "Melting ice causes sea levels to r___, flooding many coastal regions.",
+    "a": "rise"
+  },
+  {
+    "type": "blank",
+    "q": "Acid rain occurs when smoke and f___ from traffic and factories mix with the water vapour.",
+    "a": "fumes"
+  },
+  {
+    "type": "blank",
+    "q": "Acid rain harms not only humans and wildlife but also b___.",
+    "a": "buildings"
+  },
+  {
+    "type": "blank",
+    "q": "The ozone layer protects the earth from the harmful u___ rays of the sun.",
+    "a": "ultraviolet"
+  },
+  {
+    "type": "blank",
+    "q": "Ozone depletion occurs when some greenhouse gases like C___ are released into the atmosphere.",
+    "a": "CFCs"
+  },
+  {
+    "type": "blank",
+    "q": "Air pollutants can cause severe health problems such as a___ and lung cancer.",
+    "a": "asthma"
+  },
+  {
+    "type": "blank",
+    "q": "Water pollution is the addition of u___ substances in water.",
+    "a": "undesirable"
+  },
+  {
+    "type": "blank",
+    "q": "We produce too much waste, like m___ waste, agricultural and industrial runoff.",
+    "a": "mining"
+  },
+  {
+    "type": "blank",
+    "q": "Polluted water includes toxic chemicals, bacteria and p___.",
+    "a": "parasites"
+  },
+  {
+    "type": "blank",
+    "q": "These pollutants can devastate the ecosystems of a___ life.",
+    "a": "aquatic"
+  },
+  {
+    "type": "blank",
+    "q": "Water pollutants also cause some harmful diseases such as d___.",
+    "a": "dysentery"
+  },
+  {
+    "type": "blank",
+    "q": "Nearly 4,000 children die every day from drinking i___ water.",
+    "a": "impure"
+  },
+  {
+    "type": "blank",
+    "q": "Soil pollution means the process of making the earth's t___ contaminated.",
+    "a": "topsoil"
+  },
+  {
+    "type": "blank",
+    "q": "Hazardous substances include fertilisers, p___ and wastes.",
+    "a": "pesticides"
+  },
+  {
+    "type": "blank",
+    "q": "Moreover, many factories are disposing of their c___ wastes, which leak into soil layers.",
+    "a": "chemical"
+  },
+  {
+    "type": "blank",
+    "q": "Consequently, the f___ of the earth's soil is being degraded gradually.",
+    "a": "fertility"
+  },
+  {
+    "type": "blank",
+    "q": "These chemicals also contaminate the u___ water.",
+    "a": "underground"
+  },
+  {
+    "type": "blank",
+    "q": "D___ wastes and rubbish from landfills are other causes of soil pollution.",
+    "a": "Digital"
+  },
+  {
+    "type": "blank",
+    "q": "D___ is another significant factor that causes soil erosion.",
+    "a": "Deforestation"
+  },
+  {
+    "type": "blank",
+    "q": "As a result of this, our planet loses millions of t___ of topsoil each year.",
+    "a": "tons"
+  },
+  {
+    "type": "blank",
+    "q": "Trees keep the land f___, but with fewer and fewer trees, the soil will be blown away.",
+    "a": "fertile"
+  },
+  {
+    "type": "blank",
+    "q": "The soil will be blown away by w___ or washed away by rain.",
+    "a": "wind"
+  },
+  {
+    "type": "blank",
+    "q": "Unhealthy soil will intensify the existing threat of food and nutritional i___.",
+    "a": "insecurity"
+  },
+  {
+    "type": "blank",
+    "q": "Noise, commonly defined as unwanted or e___ sound, is another environmental pollutant.",
+    "a": "excessive"
+  },
+  {
+    "type": "blank",
+    "q": "Noise pollution is born of u___, industrialisation and technological advances.",
+    "a": "urbanisation"
+  },
+  {
+    "type": "blank",
+    "q": "The primary sources of noise pollution include c___ sites and industrial areas.",
+    "a": "construction"
+  },
+  {
+    "type": "blank",
+    "q": "Forms of transport such as a___, trains and aeroplanes also contribute to noise pollution.",
+    "a": "automobiles"
+  },
+  {
+    "type": "blank",
+    "q": "Noise causes physical and p___ harm.",
+    "a": "psychological"
+  },
+  {
+    "type": "blank",
+    "q": "It reduces the q___ of life for those who are exposed to it.",
+    "a": "quality"
+  },
+  {
+    "type": "blank",
+    "q": "In response to loud noise, heartbeat and r___ accelerate.",
+    "a": "respiration"
+  },
+  {
+    "type": "blank",
+    "q": "In response to loud noise, blood vessels c___.",
+    "a": "constrict"
+  },
+  {
+    "type": "blank",
+    "q": "In the long run, noise can cause h___, hearing loss, and emotional problems.",
+    "a": "hypertension"
+  },
+  {
+    "type": "blank",
+    "q": "Emotional problems include depression, a___, irritation, frustration, and anxiety.",
+    "a": "aggression"
+  },
+  {
+    "type": "blank",
+    "q": "Light pollution is the overuse or under-use of a___ outdoor light.",
+    "a": "artificial"
+  },
+  {
+    "type": "blank",
+    "q": "Diurnal means active during d___.",
+    "a": "daytime"
+  },
+  {
+    "type": "blank",
+    "q": "Nocturnal means active during n___.",
+    "a": "nighttime"
+  },
+  {
+    "type": "blank",
+    "q": "Crepuscular means active during the t___ hours of dawn and dusk.",
+    "a": "twilight"
+  },
+  {
+    "type": "blank",
+    "q": "Animals such as lions, tigers, cows, deer and birds are d___.",
+    "a": "diurnal"
+  },
+  {
+    "type": "blank",
+    "q": "Leopards, cats, snakes, bats, and owls are n___.",
+    "a": "nocturnal"
+  },
+  {
+    "type": "blank",
+    "q": "Moths, some species of honey bees, and a few species of bats and owls are c___.",
+    "a": "crepuscular"
+  },
+  {
+    "type": "blank",
+    "q": "Light that is too bright can damage our v___.",
+    "a": "vision"
+  },
+  {
+    "type": "blank",
+    "q": "Insufficient light can also have ill e___.",
+    "a": "effects"
+  },
+  {
+    "type": "blank",
+    "q": "A bright light has been found to cause sleep disorders such as sleep d___.",
+    "a": "deprivation"
+  },
+  {
+    "type": "blank",
+    "q": "This in turn causes stress, h___ and increasing anxiety.",
+    "a": "headaches"
+  },
+  {
+    "type": "blank",
+    "q": "Bright artificial night light has been found to upset the food-hunting p___ of many nocturnal creatures.",
+    "a": "pattern"
+  },
+  {
+    "type": "blank",
+    "q": "We must reduce our use of f___ fuels and promote the use of friendly sources of energy.",
+    "a": "fossil"
+  },
+  {
+    "type": "blank",
+    "q": "We must promote the use of friendly sources of e___.",
+    "a": "energy"
+  },
+  {
+    "type": "blank",
+    "q": "Friendly sources of energy include the sun, w___ and water.",
+    "a": "wind"
+  },
+  {
+    "type": "blank",
+    "q": "Although it is impossible to shut down factories, there should be stricter l___ to prevent them from polluting.",
+    "a": "laws"
+  },
+  {
+    "type": "blank",
+    "q": "Forests must be p___ because trees take in carbon dioxide.",
+    "a": "protected"
+  },
+  {
+    "type": "blank",
+    "q": "Fewer fertilisers and pesticides should be used in a___.",
+    "a": "agriculture"
+  },
+  {
+    "type": "blank",
+    "q": "We should also try to produce less waste, and recycle lots of things that we t___ away.",
+    "a": "throw"
+  },
+  {
+    "type": "blank",
+    "q": "We should be j___ in using light during the night as well as day.",
+    "a": "judicious"
+  },
+  {
+    "type": "blank",
+    "q": "If we do not do something to combat pollution, we will all face d___ consequences.",
+    "a": "dire"
+  },
+  {
+    "type": "blank",
+    "q": "What will happen to you if you i___ too much smoke from the air?",
+    "a": "inhale"
+  },
+  {
+    "type": "blank",
+    "q": "Why are t___ important for the environment?",
+    "a": "trees"
+  },
+  {
+    "type": "blank",
+    "q": "Take a moment and look at our s___ – the air we breathe, the water we drink.",
+    "a": "surroundings"
+  },
+  {
+    "type": "blank",
+    "q": "The air we b___ is part of our surroundings.",
+    "a": "breathe"
+  },
+  {
+    "type": "blank",
+    "q": "The earth's atmosphere contains some minor gases such as f___ compounds.",
+    "a": "fluorinated"
+  },
+  {
+    "type": "blank",
+    "q": "In other words, these gases act like the g___ of a greenhouse.",
+    "a": "glass"
+  },
+  {
+    "type": "blank",
+    "q": "These gases act as a blanket in trapping some of the sun's heat and preventing it from e___ back into space.",
+    "a": "escaping"
+  },
+  {
+    "type": "blank",
+    "q": "In this way, the planet's temperature is kept at a safe l___.",
+    "a": "level"
+  },
+  {
+    "type": "blank",
+    "q": "As a result, the greenhouse effect is becoming s___.",
+    "a": "stronger"
+  },
+  {
+    "type": "blank",
+    "q": "This in turn is making our planet w___ than usual.",
+    "a": "warmer"
+  },
+  {
+    "type": "blank",
+    "q": "Thus, pollution is mainly r___ for many environmental problems.",
+    "a": "responsible"
+  },
+  {
+    "type": "blank",
+    "q": "Air pollution can be defined as the introduction of harmful substances into the a___.",
+    "a": "air"
+  },
+  {
+    "type": "blank",
+    "q": "The construction of r___ and buildings contributes to air pollution.",
+    "a": "roads"
+  },
+  {
+    "type": "blank",
+    "q": "Flooding many coastal regions leads to loss of p___ and life.",
+    "a": "property"
+  },
+  {
+    "type": "blank",
+    "q": "Acid rain is one of the c___ of air pollution.",
+    "a": "consequences"
+  },
+  {
+    "type": "blank",
+    "q": "When this mixture falls back to the g___, it harms not only humans and wildlife.",
+    "a": "ground"
+  },
+  {
+    "type": "blank",
+    "q": "The ozone layer is part of the earth's a___ that protects the earth.",
+    "a": "atmosphere"
+  },
+  {
+    "type": "blank",
+    "q": "Moreover, air pollutants can cause many severe health problems such as eye i___.",
+    "a": "irritation"
+  },
+  {
+    "type": "blank",
+    "q": "Air pollutants can cause severe health problems such as a___, asthma and lung cancer.",
+    "a": "allergies"
+  },
+  {
+    "type": "blank",
+    "q": "We use huge amounts of n___ resources and produce too much waste.",
+    "a": "natural"
+  },
+  {
+    "type": "blank",
+    "q": "Different types of waste are dumped into water b___ such as lakes, rivers, seas and oceans.",
+    "a": "bodies"
+  },
+  {
+    "type": "blank",
+    "q": "Water pollutants also cause some harmful diseases such as c___.",
+    "a": "cholera"
+  },
+  {
+    "type": "blank",
+    "q": "According to the United Nations P___, nearly 4,000 children die every day.",
+    "a": "Programme"
+  },
+  {
+    "type": "blank",
+    "q": "The excessive use of fertilisers and pesticides in agriculture leads to soil d___.",
+    "a": "degradation"
+  },
+  {
+    "type": "blank",
+    "q": "Cultural activities like f___ are primary sources of noise pollution.",
+    "a": "festivals"
+  },
+  {
+    "type": "blank",
+    "q": "In response to loud noise, the skin p___ and muscles tense.",
+    "a": "pales"
+  },
+  {
+    "type": "blank",
+    "q": "In the long run, noise can cause emotional problems such as i___ and frustration.",
+    "a": "irritation"
+  },
+  {
+    "type": "blank",
+    "q": "Some people find that they can work better during the d___ than during the night.",
+    "a": "day"
+  },
+  {
+    "type": "blank",
+    "q": "On the other hand, there are some people who find that they work better during the n___ than during the day.",
+    "a": "night"
+  }
 ]
