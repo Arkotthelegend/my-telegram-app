@@ -2,501 +2,501 @@
   {
     "type": "blank",
     "q": "She smiled with genuine h___ when she saw the cute puppy.",
-    "a": "happiness"
+    "c": "happiness"
   },
   {
     "type": "blank",
     "q": "You can find the exact d___ of the word in the dictionary.",
-    "a": "definition"
+    "c": "definition"
   },
   {
     "type": "blank",
     "q": "The car traveled at a c___ speed on the empty highway.",
-    "a": "constant"
+    "c": "constant"
   },
   {
     "type": "blank",
     "q": "Use a ruler to m___ the length of the paper.",
-    "a": "measure"
+    "c": "measure"
   },
   {
     "type": "blank",
     "q": "After a large meal, the cat purred in complete c___.",
-    "a": "contentment"
+    "c": "contentment"
   },
   {
     "type": "blank",
     "q": "Taking final exams can be a very s___ experience for students.",
-    "a": "stressful"
+    "c": "stressful"
   },
   {
     "type": "blank",
     "q": "He felt very r___ after taking a long, warm bath.",
-    "a": "relaxed"
+    "c": "relaxed"
   },
   {
     "type": "blank",
     "q": "The elderly p___ receives a monthly check from the government.",
-    "a": "pensioner"
+    "c": "pensioner"
   },
   {
     "type": "blank",
     "q": "The s___ are conducting chemical experiments in the laboratory.",
-    "a": "scientists"
+    "c": "scientists"
   },
   {
     "type": "blank",
     "q": "If you work hard, you can a___ your long-term goals.",
-    "a": "achieve"
+    "c": "achieve"
   },
   {
     "type": "blank",
     "q": "The store offers high-quality shoes at a r___ price.",
-    "a": "reasonable"
+    "c": "reasonable"
   },
   {
     "type": "blank",
     "q": "I a___ it will rain today because the sky is very dark.",
-    "a": "assume"
+    "c": "assume"
   },
   {
     "type": "blank",
     "q": "We had a very e___ time riding the rollercoasters at the park.",
-    "a": "enjoyable"
+    "c": "enjoyable"
   },
   {
     "type": "blank",
     "q": "Lack of sunlight in winter makes some people feel d___.",
-    "a": "depressed"
+    "c": "depressed"
   },
   {
     "type": "blank",
     "q": "She is highly p___ about animal rights and volunteers weekly.",
-    "a": "passionate"
+    "c": "passionate"
   },
   {
     "type": "blank",
     "q": "Completing a difficult puzzle gives a great sense of s___.",
-    "a": "satisfaction"
+    "c": "satisfaction"
   },
   {
     "type": "blank",
     "q": "The ancient city was once a p___ trading hub full of merchants.",
-    "a": "prosperous"
+    "c": "prosperous"
   },
   {
     "type": "blank",
     "q": "Showing k___ to strangers can make the world a better place.",
-    "a": "kindness"
+    "c": "kindness"
   },
   {
     "type": "blank",
     "q": "The young athlete has the p___ to become a world champion.",
-    "a": "potential"
+    "c": "potential"
   },
   {
     "type": "blank",
     "q": "Child p___ study how kids learn, think, and develop over time.",
-    "a": "psychologists"
+    "c": "psychologists"
   },
   {
     "type": "blank",
     "q": "It was very g___ of him to pay for everyone's dinner.",
-    "a": "generous"
+    "c": "generous"
   },
   {
     "type": "blank",
     "q": "They gave her a gift to show their a___ for her hard work.",
-    "a": "appreciation"
+    "c": "appreciation"
   },
   {
     "type": "blank",
     "q": "A foreign language can sometimes be a b___ to effective communication.",
-    "a": "barrier"
+    "c": "barrier"
   },
   {
     "type": "blank",
     "q": "He looked with e___ at his neighbor's brand new sports car.",
-    "a": "envy"
+    "c": "envy"
   },
   {
     "type": "blank",
     "q": "After days in the hot desert, they were d___ a cool drink of water.",
-    "a": "desiring"
+    "c": "desiring"
   },
   {
     "type": "blank",
     "q": "During the house fire, they lost all their worldly p___.",
-    "a": "possessions"
+    "c": "possessions"
   },
   {
     "type": "blank",
     "q": "College provides many wonderful o___ for personal growth.",
-    "a": "opportunities"
+    "c": "opportunities"
   },
   {
     "type": "blank",
     "q": "He struggled with a complex of i___ compared to his older, smarter brother.",
-    "a": "inferiority"
+    "c": "inferiority"
   },
   {
     "type": "blank",
     "q": "She hung her head in d___ after losing the championship match.",
-    "a": "dejection"
+    "c": "dejection"
   },
   {
     "type": "blank",
     "q": "Regular exercise can help alleviate mild symptoms of clinical d___.",
-    "a": "depression"
+    "c": "depression"
   },
   {
     "type": "blank",
     "q": "We need to r___ the broken window before winter arrives.",
-    "a": "replace"
+    "c": "replace"
   },
   {
     "type": "blank",
     "q": "I sent a card to express my deepest s___ for their tragic loss.",
-    "a": "sympathy"
+    "c": "sympathy"
   },
   {
     "type": "blank",
     "q": "Nurses need to be highly e___ when caring for scared, sick patients.",
-    "a": "empathetic"
+    "c": "empathetic"
   },
   {
     "type": "blank",
     "q": "Running and swimming are great forms of p___ exercise.",
-    "a": "physical"
+    "c": "physical"
   },
   {
     "type": "blank",
     "q": "Solving crosswords helps keep your m___ agility sharp as you age.",
-    "a": "mental"
+    "c": "mental"
   },
   {
     "type": "blank",
     "q": "Clean water is v___ for the survival of all living creatures.",
-    "a": "vital"
+    "c": "vital"
   },
   {
     "type": "blank",
     "q": "It is an u___ fact that the Earth orbits the Sun.",
-    "a": "undeniable"
+    "c": "undeniable"
   },
   {
     "type": "blank",
     "q": "Eating vegetables and exercising daily keeps you h___.",
-    "a": "healthy"
+    "c": "healthy"
   },
   {
     "type": "blank",
     "q": "Make sure the printer is securely c___ to the computer.",
-    "a": "connected"
+    "c": "connected"
   },
   {
     "type": "blank",
     "q": "After a twelve-hour shift, she suffered from extreme f___.",
-    "a": "fatigue"
+    "c": "fatigue"
   },
   {
     "type": "blank",
     "q": "A good massage can help relieve muscle t___ in your back.",
-    "a": "tension"
+    "c": "tension"
   },
   {
     "type": "blank",
     "q": "Pregnant women sometimes c___ strange combinations of food at midnight.",
-    "a": "crave"
+    "c": "crave"
   },
   {
     "type": "blank",
     "q": "Cotton is a breathable m___ perfect for making summer clothing.",
-    "a": "material"
+    "c": "material"
   },
   {
     "type": "blank",
     "q": "It is absolutely n___ to bring your passport when traveling internationally.",
-    "a": "necessary"
+    "c": "necessary"
   },
   {
     "type": "blank",
     "q": "Stagnant, dirty water b___ mosquitoes during the hot summer months.",
-    "a": "breeds"
+    "c": "breeds"
   },
   {
     "type": "blank",
     "q": "The villain's ultimate downfall was caused by his insatiable g___ for power.",
-    "a": "greed"
+    "c": "greed"
   },
   {
     "type": "blank",
     "q": "He groaned in f___ when the computer crashed before he saved his essay.",
-    "a": "frustration"
+    "c": "frustration"
   },
   {
     "type": "blank",
     "q": "The luxury sedan is spacious enough to seat five adults c___.",
-    "a": "comfortably"
+    "c": "comfortably"
   },
   {
     "type": "blank",
     "q": "They couldn't afford to eat at such an e___ downtown restaurant.",
-    "a": "expensive"
+    "c": "expensive"
   },
   {
     "type": "blank",
     "q": "Billionaires often dock their massive luxury y___ in Monaco.",
-    "a": "yachts"
+    "c": "yachts"
   },
   {
     "type": "blank",
     "q": "She spent her entire paycheck on a pair of high-end d___ shoes.",
-    "a": "designer"
+    "c": "designer"
   },
   {
     "type": "blank",
     "q": "Try to maintain a p___ attitude even when things get difficult.",
-    "a": "positive"
+    "c": "positive"
   },
   {
     "type": "blank",
     "q": "The harsh review focused only on the n___ aspects of the movie.",
-    "a": "negative"
+    "c": "negative"
   },
   {
     "type": "blank",
     "q": "Carbon, gold, and oxygen are all chemical e___.",
-    "a": "elements"
+    "c": "elements"
   },
   {
     "type": "blank",
     "q": "You might e___ a wild bear if you hike deep into the woods.",
-    "a": "encounter"
+    "c": "encounter"
   },
   {
     "type": "blank",
     "q": "He was highly d___ when his favorite football team lost the finals.",
-    "a": "disappointed"
+    "c": "disappointed"
   },
   {
     "type": "blank",
     "q": "Don't feel d___ about the mistake; you will do better next time.",
-    "a": "downhearted"
+    "c": "downhearted"
   },
   {
     "type": "blank",
     "q": "They decided to a___ a rescue dog from the local animal shelter.",
-    "a": "adopt"
+    "c": "adopt"
   },
   {
     "type": "blank",
     "q": "She found it very difficult to c___ with the sudden changes at work.",
-    "a": "cope"
+    "c": "cope"
   },
   {
     "type": "blank",
     "q": "He will a___ to break the world record for holding his breath underwater.",
-    "a": "attempt"
+    "c": "attempt"
   },
   {
     "type": "blank",
     "q": "Please r___ to this email invitation by Friday at the latest.",
-    "a": "respond"
+    "c": "respond"
   },
   {
     "type": "blank",
     "q": "Looking at old childhood photographs brings back fond m___.",
-    "a": "memories"
+    "c": "memories"
   },
   {
     "type": "blank",
     "q": "The bright yellow paint gave the living room a very c___ atmosphere.",
-    "a": "cheerful"
+    "c": "cheerful"
   },
   {
     "type": "blank",
     "q": "The police are currently investigating two separate i___ of theft.",
-    "a": "incidents"
+    "c": "incidents"
   },
   {
     "type": "blank",
     "q": "Many people traveled out West to seek their f___ during the Gold Rush.",
-    "a": "fortunes"
+    "c": "fortunes"
   },
   {
     "type": "blank",
     "q": "Practicing m___ can help you stay fully present and focused.",
-    "a": "mindfulness"
+    "c": "mindfulness"
   },
   {
     "type": "blank",
     "q": "The coastal town was heavily damaged by a s___ tropical storm.",
-    "a": "severe"
+    "c": "severe"
   },
   {
     "type": "blank",
     "q": "Modern vaccines have successfully eradicated many dangerous d___.",
-    "a": "diseases"
+    "c": "diseases"
   },
   {
     "type": "blank",
     "q": "People with d___ need to carefully monitor their blood sugar levels.",
-    "a": "diabetes"
+    "c": "diabetes"
   },
   {
     "type": "blank",
     "q": "She practices daily m___ in silence to clear her mind.",
-    "a": "meditation"
+    "c": "meditation"
   },
   {
     "type": "blank",
     "q": "The two warring nations finally signed a treaty of p___.",
-    "a": "peace"
+    "c": "peace"
   },
   {
     "type": "blank",
     "q": "The trapped miners d___ needed fresh air and drinking water.",
-    "a": "desperately"
+    "c": "desperately"
   },
   {
     "type": "blank",
     "q": "One major b___ of daily walking is improved cardiovascular health.",
-    "a": "benefit"
+    "c": "benefit"
   },
   {
     "type": "blank",
     "q": "The standardized test evaluates both your reading speed and c___.",
-    "a": "comprehension"
+    "c": "comprehension"
   },
   {
     "type": "blank",
     "q": "The teacher asked the students to work in p___ for the speaking assignment.",
-    "a": "pairs"
+    "c": "pairs"
   },
   {
     "type": "blank",
     "q": "The two sisters look so s___ that people often think they are twins.",
-    "a": "similar"
+    "c": "similar"
   },
   {
     "type": "blank",
     "q": "I ordered an e___ large pizza to make sure we could feed everyone.",
-    "a": "extra"
+    "c": "extra"
   },
   {
     "type": "blank",
     "q": "Public speaking causes a lot of nervous a___ for some people.",
-    "a": "anxiety"
+    "c": "anxiety"
   },
   {
     "type": "blank",
     "q": "Don't w___ about the exam; you studied very hard all week.",
-    "a": "worry"
+    "c": "worry"
   },
   {
     "type": "blank",
     "q": "The brave firefighters handled the dangerous s___ perfectly.",
-    "a": "situation"
+    "c": "situation"
   },
   {
     "type": "blank",
     "q": "The crowd cheered with great e___ as the rock band took the stage.",
-    "a": "enthusiasm"
+    "c": "enthusiasm"
   },
   {
     "type": "blank",
     "q": "She has over ten years of professional e___ working in marketing.",
-    "a": "experience"
+    "c": "experience"
   },
   {
     "type": "blank",
     "q": "They trained intensely for months in order to win the dance c___.",
-    "a": "competition"
+    "c": "competition"
   },
   {
     "type": "blank",
     "q": "The marathon runners collapsed at the finish line, completely e___.",
-    "a": "exhausted"
+    "c": "exhausted"
   },
   {
     "type": "blank",
     "q": "Santa Claus famously gives coal to children who have been n___.",
-    "a": "naughty"
+    "c": "naughty"
   },
   {
     "type": "blank",
     "q": "The famous rock band released three multi-platinum studio a___.",
-    "a": "albums"
+    "c": "albums"
   },
   {
     "type": "blank",
     "q": "The parents watched with immense p___ as their daughter walked across the stage.",
-    "a": "pride"
+    "c": "pride"
   },
   {
     "type": "blank",
     "q": "The beautiful wedding c___ took place in a historic old church.",
-    "a": "ceremony"
+    "c": "ceremony"
   },
   {
     "type": "blank",
     "q": "They thoughtfully d___ five bags of old clothes to the local charity.",
-    "a": "donated"
+    "c": "donated"
   },
   {
     "type": "blank",
     "q": "The Red Cross quickly provided warm shelter for the v___ of the earthquake.",
-    "a": "victims"
+    "c": "victims"
   },
   {
     "type": "blank",
     "q": "She spent the lazy Sunday afternoon r___ a mystery novel on the porch.",
-    "a": "reading"
+    "c": "reading"
   },
   {
     "type": "blank",
     "q": "The hidden door surprisingly opened to a secret stone p___ beneath the castle.",
-    "a": "passage"
+    "c": "passage"
   },
   {
     "type": "blank",
     "q": "There is no fast, c___ solution to such a complex global problem.",
-    "a": "clear-cut"
+    "c": "clear-cut"
   },
   {
     "type": "blank",
     "q": "The dedicated construction w___ wore a bright yellow hard hat for safety.",
-    "a": "worker"
+    "c": "worker"
   },
   {
     "type": "blank",
     "q": "The doctor carefully e___ the patient's injured arm for fractures.",
-    "a": "examined"
+    "c": "examined"
   },
   {
     "type": "blank",
     "q": "The popular band r___ their highly anticipated new album last Friday.",
-    "a": "released"
+    "c": "released"
   },
   {
     "type": "blank",
     "q": "He decided to study hard and pursue a successful c___ in software engineering.",
-    "a": "career"
+    "c": "career"
   },
   {
     "type": "blank",
     "q": "The massive repairs were safely u___ by a team of skilled mechanics.",
-    "a": "undertaken"
+    "c": "undertaken"
   },
   {
     "type": "blank",
     "q": "The investigative journalist r___ the truth about the scandal in her latest article.",
-    "a": "revealed"
+    "c": "revealed"
   },
   {
     "type": "blank",
     "q": "After her high school g___, she plans to travel across Europe.",
-    "a": "graduation"
+    "c": "graduation"
   }
 ]
