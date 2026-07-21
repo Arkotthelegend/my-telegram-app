@@ -1,0 +1,407 @@
+/* theme-infinity.css - Onyx Matte (Minimalist, Lag-Free, Stealth) */
+body[data-theme="infinity"] {
+  /* === BASE COLORS - Solid Matte === */
+  --t-bg: #000000;           /* Pitch Black Background */
+  --t-card: #121212;         /* Matte Dark Grey for Cards */
+
+  /* === ACCENTS - Crisp White & Greys === */
+  --t-accent: #FFFFFF;       /* Pure White for active/focus */
+  --t-accent2: #A0A0A0;      /* Muted Grey */
+  --t-success: #4CAF50;      /* Flat Green for correct answers */
+  --t-danger: #F44336;       /* Flat Red for wrong answers */
+
+  /* === BORDERS - Clean and Sharp === */
+  --t-border-home: #FFFFFF;   
+  --t-border-old: #888888;    
+  --t-border-daily: #CCCCCC;  
+
+  --t-border-subtle: #262626; /* Very subtle border for separation */
+  --t-text-main: #FFFFFF;
+  --t-text-muted: #737373;
+}
+
+/* === NAV BAR — Flat & Clean === */
+body[data-theme="infinity"] .nav {
+    background: var(--t-bg) !important;
+    border-top: 1px solid var(--t-border-subtle) !important;
+    box-shadow: none !important; /* No shadow */
+}
+
+body[data-theme="infinity"] .nav-item {
+    color: var(--t-text-muted) !important;
+    transition: color 0.2s ease;
+    text-shadow: none !important;
+}
+
+body[data-theme="infinity"] .nav-item:hover {
+    color: var(--t-accent) !important;
+}
+
+body[data-theme="infinity"] .nav-item.active {
+    color: var(--t-accent) !important;
+    font-weight: 700;
+}
+
+/* Remove gradient indicator, use solid dot or line */
+body[data-theme="infinity"] .nav-item.active::before {
+    background: var(--t-accent) !important;
+    height: 2px !important;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .nav-icon {
+    filter: none !important; /* Removed drop-shadow */
+}
+
+/* === BACKGROUND - Solid Black === */
+body[data-theme="infinity"] {
+    background: var(--t-bg) !important;
+    background-attachment: scroll; /* Better performance than fixed */
+}
+
+/* === SCREENS === */
+body[data-theme="infinity"] #math-solution-screen,
+body[data-theme="infinity"] #grammar-note-screen { 
+    background: var(--t-bg) !important; 
+}
+
+/* === CARDS - Flat Matte Plate === */
+body[data-theme="infinity"] .subject-card { 
+    background: var(--t-card) !important;
+    border-radius: 12px;
+    box-shadow: none !important; /* No shadow */
+    transition: border-color 0.2s ease;
+    border: 1px solid var(--t-border-subtle) !important;
+}
+
+/* Removed the ::before texture completely */
+body[data-theme="infinity"] .subject-card::before {
+    display: none !important; 
+}
+
+body[data-theme="infinity"] .subject-card:hover {
+    transform: none !important; /* No movement to prevent lag */
+    border-color: var(--t-accent2) !important;
+}
+
+/* === SUBJECT LIST BORDERS === */
+body[data-theme="infinity"] #subject-list .subject-card { 
+    border: 1px solid var(--t-border-home) !important; 
+}
+body[data-theme="infinity"] #subject-list .subject-card span:last-child { 
+    color: var(--t-border-home) !important; 
+}
+
+body[data-theme="infinity"] #old-subject-list .subject-card { 
+    border: 1px solid var(--t-border-old) !important; 
+}
+body[data-theme="infinity"] #old-subject-list .subject-card span:last-child { 
+    color: var(--t-border-old) !important; 
+}
+
+body[data-theme="infinity"] #daily-screen .subject-card { 
+    border: 1px solid var(--t-border-daily) !important; 
+}
+body[data-theme="infinity"] #daily-screen .subject-card span:last-child { 
+    color: var(--t-border-daily) !important; 
+}
+
+/* === BUTTONS - Minimalist Solid === */
+body[data-theme="infinity"] .btn { 
+    background: #1A1A1A !important; 
+    color: var(--t-text-main) !important; 
+    border: 1px solid var(--t-border-subtle) !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    font-weight: 600;
+}
+
+/* Removed button texture */
+body[data-theme="infinity"] .btn::after {
+    display: none !important;
+}
+
+body[data-theme="infinity"] .btn:hover {
+    border-color: var(--t-accent) !important;
+}
+
+body[data-theme="infinity"] .back-btn { 
+    background: transparent !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    color: var(--t-text-muted) !important; 
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .next-btn-styled, 
+body[data-theme="infinity"] .next-btn { 
+    background: var(--t-accent) !important; 
+    color: var(--t-bg) !important; /* Black text on white button */
+    font-weight: 700;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .option-btn { 
+    background: var(--t-card) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    color: var(--t-text-main) !important;
+    transition: background 0.1s ease;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .option-btn:hover,
+body[data-theme="infinity"] .option-btn:active {
+    border-color: var(--t-accent) !important;
+    background: #202020 !important;
+}
+
+/* === ANSWER STATES - Flat Colors === */
+body[data-theme="infinity"] .correct-answer { 
+    background: #0D2912 !important; /* Flat dark green */
+    border: 1px solid var(--t-success) !important; 
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .wrong-answer { 
+    background: #3B0909 !important; /* Flat dark red */
+    border: 1px solid var(--t-danger) !important; 
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+/* === FLASHCARDS === */
+body[data-theme="infinity"] .flash-front { 
+    border: 1px solid var(--t-accent) !important; 
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .flash-back { 
+    border: 1px solid var(--t-text-muted) !important; 
+    box-shadow: none !important;
+}
+
+/* === PROFILE CARD === */
+body[data-theme="infinity"] .profile-info-card { 
+    background: var(--t-card) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important; 
+}
+
+/* Removed Profile Card Gradient Line */
+body[data-theme="infinity"] .profile-info-card::before {
+    display: none !important;
+}
+
+/* === EXAM COUNTDOWN === */
+body[data-theme="infinity"] #exam-countdown { 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important; 
+    background: var(--t-card) !important;
+}
+
+body[data-theme="infinity"] .countdown-value { 
+    color: var(--t-accent) !important;
+    text-shadow: none !important;
+    font-weight: 700;
+}
+
+/* === BADGES & BUY === */
+body[data-theme="infinity"] .bought-badge { 
+    color: var(--t-bg) !important; 
+    border: none !important; 
+    box-shadow: none !important;
+    background: var(--t-accent) !important;
+    font-weight: 600;
+}
+
+body[data-theme="infinity"] .buy-btn { 
+    background: transparent !important; 
+    color: var(--t-accent) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important;
+}
+
+/* === FORM ELEMENTS === */
+body[data-theme="infinity"] .gender-container input:checked + .slider { 
+    background-color: var(--t-accent) !important; 
+    box-shadow: none !important;
+}
+
+/* Custom knob color for slider */
+body[data-theme="infinity"] .gender-container input:checked + .slider:before {
+    background-color: var(--t-bg) !important; 
+}
+
+body[data-theme="infinity"] .quiz-input:focus { 
+    border-color: var(--t-accent) !important; 
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .quiz-card { 
+    border-left: 3px solid var(--t-accent) !important; 
+    box-shadow: none !important;
+}
+
+/* === CONTENT BOXES === */
+body[data-theme="infinity"] #grammar-note-content, 
+body[data-theme="infinity"] #math-solution-content { 
+    border: 1px solid var(--t-border-subtle) !important; 
+    background: var(--t-card) !important;
+    box-shadow: none !important;
+}
+
+/* === SCROLLBAR - Minimal === */
+body[data-theme="infinity"] .mjx-container::-webkit-scrollbar-thumb, 
+body[data-theme="infinity"] .math-scroll-container::-webkit-scrollbar-thumb { 
+    background: var(--t-accent2) !important; 
+    border-radius: 4px;
+}
+
+body[data-theme="infinity"] ::-webkit-scrollbar { 
+    width: 6px; 
+}
+body[data-theme="infinity"] ::-webkit-scrollbar-track { 
+    background: var(--t-bg); 
+}
+body[data-theme="infinity"] ::-webkit-scrollbar-thumb { 
+    background: #333333; 
+    border-radius: 4px; 
+}
+body[data-theme="infinity"] ::-webkit-scrollbar-thumb:hover { 
+    background: var(--t-accent2); 
+}
+
+/* === CHECKLIST === */
+body[data-theme="infinity"] #checklist-container input[type="checkbox"] { 
+    accent-color: var(--t-accent) !important; 
+}
+
+/* === TIMER & SHUFFLE === */
+body[data-theme="infinity"] .timer-btn,
+body[data-theme="infinity"] .shuffle-btn { 
+    background: transparent !important; 
+    color: var(--t-text-muted) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .shuffle-active { 
+    background: var(--t-accent) !important; 
+    color: var(--t-bg) !important;
+    box-shadow: none !important;
+    border: 1px solid var(--t-accent) !important;
+}
+
+/* === MIDDLE SCREEN & MOTIVATION === */
+body[data-theme="infinity"] #middle-screen > div > div:first-child, 
+body[data-theme="infinity"] #motivation-box { 
+    background: var(--t-card) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important; 
+    backdrop-filter: none !important; /* Removed blur for lag fix */
+}
+
+/* === CONTACT & QUIZ MODE === */
+body[data-theme="infinity"] .contact-btn { 
+    color: var(--t-text-main) !important; 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important; 
+    background: transparent !important;
+}
+
+body[data-theme="infinity"] #quiz-mode-box { 
+    border: 1px solid var(--t-border-subtle) !important; 
+    box-shadow: none !important; 
+    background: var(--t-card) !important;
+}
+
+/* === INPUTS & TEXTAREAS === */
+body[data-theme="infinity"] input,
+body[data-theme="infinity"] textarea,
+body[data-theme="infinity"] select {
+    background: var(--t-card) !important;
+    border: 1px solid var(--t-border-subtle) !important;
+    color: var(--t-text-main) !important;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] input:focus,
+body[data-theme="infinity"] textarea:focus,
+body[data-theme="infinity"] select:focus {
+    border-color: var(--t-accent) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* === MODAL OVERLAY - No Blur === */
+body[data-theme="infinity"] .modal-overlay,
+body[data-theme="infinity"] .overlay {
+    background: rgba(0, 0, 0, 0.9) !important; /* Solid dark transparent */
+    backdrop-filter: none !important; /* Key for performance */
+}
+
+/* === DIVIDERS === */
+body[data-theme="infinity"] hr,
+body[data-theme="infinity"] .divider {
+    border: none !important;
+    height: 1px !important;
+    background: var(--t-border-subtle) !important;
+}
+
+/* === TEXT HIERARCHY === */
+body[data-theme="infinity"] .text-muted,
+body[data-theme="infinity"] .text-secondary {
+    color: var(--t-text-muted) !important;
+}
+
+body[data-theme="infinity"] .text-primary {
+    color: var(--t-text-main) !important;
+}
+
+/* === SPECIAL: Subject Card Icons/Arrows === */
+body[data-theme="infinity"] #subject-list .subject-card span:last-child,
+body[data-theme="infinity"] #old-subject-list .subject-card span:last-child,
+body[data-theme="infinity"] #daily-screen .subject-card span:last-child {
+    text-shadow: none !important; /* Removed glow */
+}
+
+/* Infinity Theme - Switch & Tracker */
+body[data-theme="infinity"] {
+    --switch-bg-off: #121212;
+    --switch-border-off: #262626;
+    --switch-bg-on: #FFFFFF;
+    --switch-knob-off: #737373;
+    --switch-knob-on: #000000;
+    
+    --tracker-bg: #121212;
+    --tracker-border: #262626;
+    --tracker-text: #FFFFFF;
+    --tracker-check-accent: #FFFFFF;
+    
+    --toggle-inner-bg: #121212;
+    --toggle-inner-border: #262626;
+    --toggle-label-color: #FFFFFF;
+}
+
+/* Infinity Theme - Theme Shop */
+body[data-theme="infinity"] .theme-shop-card {
+    background: var(--t-card, #121212);
+    border-color: var(--t-border-subtle, #262626) !important;
+    box-shadow: none !important;
+}
+
+body[data-theme="infinity"] .theme-shop-card .theme-name {
+    color: var(--t-text-main, #FFFFFF);
+}
+
+body[data-theme="infinity"] .theme-shop-card .theme-price {
+    color: var(--t-text-muted, #737373);
+}
+
+/* Infinity Theme - Score Display */
+body[data-theme="infinity"] {
+    --score-bg: #121212;
+    --score-border: #FFFFFF;
+    --score-text: #FFFFFF;
+}
