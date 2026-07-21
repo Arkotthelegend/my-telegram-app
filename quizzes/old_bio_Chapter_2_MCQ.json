@@ -1,0 +1,128 @@
+[
+  {
+    "type": "mcq",
+    "q": "The pyrimidine bases are cytosine and _____. (2026)",
+    "a": ["adenine", "guanine", "thymine", "purine"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The two strands of a _____ molecule are not identical but are complementary to each other. (2025)",
+    "a": ["RNA", "sugar", "DNA", "nucleotide"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Adenine and thymine are joined by _____ bonds. (2025)",
+    "a": ["carbon", "hydrogen", "nitrogen", "phosphate"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "DNA is a double helix structure consisting of _____ polynucleotide strands. (2024)",
+    "a": ["two", "three", "four", "many"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "_____ bonds link each complementary base pair in the structure of DNA. (2024)",
+    "a": ["Hydrogen", "Covalent", "Ionic", "Polar"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Base pairing leads to DNA being able to replicate and to transfer information to _____. (2025)",
+    "a": ["rRNA", "codon", "tRNA", "mRNA"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Single-stranded binding _____ act as scaffolding, holding the two strands apart. (2026)",
+    "a": ["enzymes", "DNA", "proteins", "RNA"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "_____ enzyme unwinds parental double helix at replication forks. (2025)",
+    "a": ["Helicase", "Topoisomerase", "Primase", "DNA ligase"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "_____ enzyme unwind the double helix and unzip the two parental strands. (2025)",
+    "a": ["Topoisomerase", "DNA ligase", "Helicase", "DNA polymerase"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "DNA polymerase replicates the _____ original strands differently. (2025)",
+    "a": ["two", "three", "four", "many"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "DNA replication is the making of an exact copy of the _____ molecule. (2024)",
+    "a": ["sugar", "nucleotide", "RNA", "DNA"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "In transcription _____ is synthesized based on the template of a gene. (2026, 2025)",
+    "a": ["mRNA", "IRNA", "rRNA", "codon"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "In transcription, mRNA is synthesized based on the _____ template of a gene. (2025)",
+    "a": ["RNA", "tRNA", "rRNA", "DNA"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "The central dogma of molecular biology stated that genetic information flows from DNA to _____. (2025)",
+    "a": ["Protein", "Amino acid", "Molecule", "Nucleotide"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "The two steps in protein synthesis are transcription and _____. (2024, 2025)",
+    "a": ["initiation", "elongation", "translation", "termination"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "Transcription occurs in the _____ of the cell. (2026, 2024, 2025)",
+    "a": ["cytoplasm", "ribosome", "nucleus", "vacuole"],
+    "c": 2
+  },
+  {
+    "type": "mcq",
+    "q": "The second stage of protein synthesis is _____. (2025)",
+    "a": ["translation", "elongation", "initiation", "description"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "Each _____ carries the specific amino acid at a time at its acceptor stem. (2025)",
+    "a": ["mRNA", "RNA", "tRNA", "codon"],
+    "c": 3
+  },
+  {
+    "type": "mcq",
+    "q": "Vitamin A deficiency can cause _____. (2025)",
+    "a": ["night blindness", "heart disease", "blindness", "lung disease"],
+    "c": 0
+  },
+  {
+    "type": "mcq",
+    "q": "One type of antibody made by _____ can deliver radioisotopes to tumour cells. (2026, 2025)",
+    "a": ["wheat", "paddy", "barley", "com"],
+    "c": 1
+  },
+  {
+    "type": "mcq",
+    "q": "The orange pigment beta-carotene which can be converted into _____. (2024)",
+    "a": ["vitamin A", "vitamin B", "vitamin C", "vitamin D"],
+    "c": 0
+  }
+]
