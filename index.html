@@ -175,23 +175,31 @@
     #flashcard-screen > div:first-child { width: 100%; } /* Title Area */
     
     .flash-container { 
-        width: 100%; max-width: 350px; /* ဖုန်းအကြီး/အသေး အားလုံးနှင့် အချိုးကျစေရန် */
-        height: 280px; /* တိကျသော အချိုးအစား သတ်မှတ်ခြင်း */
-        margin: auto 0; /* အလယ်ဗဟို၌ နေရာယူစေရန် */
-        cursor: pointer; perspective: 1000px; 
-    }
+    width: 100%; 
+    max-width: 600px; /* 💻 Laptop မှာ ပိုကြီးပြန်ရန် */
+    height: 400px; /* 💻 Laptop မှာ ပိုမြင့်ပြန်ရန် */
+    margin: 20px auto; /* ⬅️ အလယ်ဗဟိုကို အလျားလိုက်လည်းရောက်၊ အပေါ်အောက်လည်း အကွာအဝေးရှိ */
+    cursor: pointer; 
+    perspective: 1000px; 
+}
+	   
     .flash-card { 
         width: 100%; height: 100%; position: relative; border-radius: 20px; 
         transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); transform-style: preserve-3d; 
     }
     .flash-face { 
-        position: absolute; width: 100%; height: 100%; 
-        display: flex !important; align-items: center !important; justify-content: center !important; 
-        font-size: 1.15rem !important; border-radius: 20px; padding: 20px !important; text-align: center; 
-        backface-visibility: hidden; -webkit-backface-visibility: hidden; /* 3D လှည့်ရာတွင် အနောက်ဘက်မမြင်ရအောင် ကာကွယ်ခြင်း */
-        transform: translate3d(0,0,0);
-        overflow: hidden !important; /* စာသားများလျှင် ရုပ်ဆိုးမသွားစေရန် */
-    }
+    position: absolute; width: 100%; height: 100%; 
+    display: flex !important; align-items: center !important; justify-content: center !important; 
+    font-size: clamp(1.15rem, 2.5vw, 1.8rem) !important; /* 📱 Phone = 1.15rem, 💻 Laptop = 1.8rem */
+    border-radius: 20px; 
+    padding: clamp(20px, 4vw, 40px) !important; /* 💻 Laptop မှာ padding ပိုကြီးရန် */
+    text-align: center; 
+    backface-visibility: hidden; 
+    -webkit-backface-visibility: hidden;
+    transform: translate3d(0,0,0);
+    overflow: hidden !important;
+}
+	   
     .flash-front { background: #1E293B; border: 2px solid #00D5FF; color: #fff; }
     .flash-back { background: #1E293B; border: 2px solid #EF4444; color: #fff; transform: rotateY(180deg); }
     .is-flipped { transform: rotateY(180deg); }
