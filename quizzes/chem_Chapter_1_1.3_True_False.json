@@ -13,7 +13,7 @@
     {"type": "tf", "q": "Lewis structures are three-dimensional representations of how valence shell electrons are arranged.", "c": false},
     {"type": "tf", "q": "Expanded valence shell molecules occur when the central atom has valence electrons of more than $8$.", "c": true},
     {"type": "tf", "q": "The Valence Shell Electron Pair Repulsion ($VSEPR$) theory is used to predict the shape of covalent molecules.", "c": true},
-    {"type": "tf", "q": "Repulsive interactions of electron pairs decrease in the order: lone pair-lone pair $>$ lone pair-bonding pair $>$ bonding pair-bonding pair.", "c": false},
+    {"type": "tf", "q": "Repulsive interactions of electron pairs decrease in the order: lone pair-lone pair $>$ lone pair-bonding pair $>$ bonding pair-bonding pair.", "c": true},
     {"type": "tf", "q": "Lone pairs of electrons in a molecule occupy more space compared with the bonding pairs of electrons.", "c": true},
     {"type": "tf", "q": "All diatomic molecules are linear.", "c": true},
     {"type": "tf", "q": "A triatomic molecule of $AX_2$ type always has a bent shape.", "c": false},
