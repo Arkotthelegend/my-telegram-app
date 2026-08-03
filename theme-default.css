@@ -16,11 +16,7 @@ body[data-theme="default"] {
 
   --t-border-subtle: #1A1A2E; /* Subtle border for clean UI - adjusted for black bg */
 }
-body[data-theme="default"] {
-    --score-bg: #000000;
-    --score-border: #10B981;
-    --score-text: #047857;
-}
+
 
 body[data-theme="default"] {
     /* OLED-friendly pure black gradient */
