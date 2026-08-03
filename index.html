@@ -2938,7 +2938,7 @@ function showDefinitionDetail(subId, chapterName, data, index) {
 
 async function loadKeyTerms(subId, chapterName) {
     try {
-        const fileName = `${subId}_${chapterName}_keyterms`.replace(/ /g, "_");
+        const fileName = `${subId}_${chapterName}_definition`.replace(/ /g, "_");
         const res = await fetch(`./quizzes/${fileName}.json`);
         if (!res.ok) throw new Error();
         const data = await res.json();
