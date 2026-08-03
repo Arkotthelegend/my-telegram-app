@@ -1,0 +1,30 @@
+[
+  {
+    "name": "\\( H_{cond} = k A \\frac{T_2 - T_1}{l} \\)",
+    "content": "Heat conduction"
+  },
+  {
+    "name": "\\( H_{conv} = q A (T_2 - T_1) \\)",
+    "content": "Heat convection"
+  },
+  {
+    "name": "\\( H_{rad} = e \\sigma A T^4 \\)",
+    "content": "Heat radiation"
+  },
+  {
+    "name": "\\( \\Delta U = Q - W \\)",
+    "content": "First law of thermodynamics"
+  },
+  {
+    "name": "\\( \\eta = \\frac{W}{Q_H} \\)",
+    "content": "Heat engine efficiency"
+  },
+  {
+    "name": "\\( \\eta = 1 - \\frac{Q_C}{Q_H} \\)",
+    "content": "Heat engine efficiency (in terms of heat)"
+  },
+  {
+    "name": "\\( \\eta_c = 1 - \\frac{T_C}{T_H} \\)",
+    "content": "Carnot heat engine efficiency"
+  }
+]

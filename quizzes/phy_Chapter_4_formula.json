@@ -1,0 +1,14 @@
+[
+  {
+    "name": "\\( P = \\eta \\rho \\dot{V} g h \\)",
+    "content": "Useful power output of a hydroelectric turbine"
+  },
+  {
+    "name": "\\( P = \\frac{1}{2} \\rho A v^3 \\)",
+    "content": "Wind power incident on a rotor area"
+  },
+  {
+    "name": "\\( V = A v t \\)",
+    "content": "Volume of air passing through area A in time t"
+  }
+]

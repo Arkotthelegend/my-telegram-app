@@ -1,0 +1,34 @@
+[
+  {
+    "name": "$I = \\frac{E}{R + r}$",
+    "content": "Electromotive Force (emf)"
+  },
+  {
+    "name": "$I = \\frac{E_1 + E_2}{R + r_1 + r_2}$",
+    "content": "Batteries in series aiding"
+  },
+  {
+    "name": "$I = \\frac{E_1 - E_2}{R + r_1 + r_2}$",
+    "content": "Batteries in series opposing ($E_1 > E_2$)"
+  },
+  {
+    "name": "$I = \\frac{E}{R + \\frac{r}{2}}$",
+    "content": "Batteries in parallel"
+  },
+  {
+    "name": "$W = VIt = I^2Rt = \\frac{V^2}{R}t$",
+    "content": "Electrical energy"
+  },
+  {
+    "name": "$P = VI = I^2R = \\frac{V^2}{R}$",
+    "content": "Electrical power"
+  },
+  {
+    "name": "$W = JH$",
+    "content": "Joule's law of electricity and heat (Work-Heat relation)"
+  },
+  {
+    "name": "$H = \\frac{I^2Rt}{J}$",
+    "content": "Heat produced by electric current"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "$I_v = \\frac{\\Phi}{\\Omega}$",
+    "content": "Luminous intensity"
+  },
+  {
+    "name": "$E_v = \\frac{I_v \\cos \\theta}{r^2}$",
+    "content": "Illuminance"
+  },
+  {
+    "name": "$MP = \\frac{v_o}{u_o} \\times \\frac{25}{u_e}$",
+    "content": "Magnifying power of a compound microscope"
+  },
+  {
+    "name": "$MP = \\frac{v_o}{u_e}$",
+    "content": "Magnifying power of an astronomical telescope"
+  }
+]

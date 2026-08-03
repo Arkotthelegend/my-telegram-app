@@ -1,0 +1,10 @@
+[
+  {
+    "name": "$V_R = V_S - V_F$",
+    "content": "Voltage across the current limiting resistor"
+  },
+  {
+    "name": "$R = \\frac{V_R}{I} = \\frac{V_S - V_F}{I}$",
+    "content": "Current limiting resistance"
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "name": "\\omega = \\omega_0 + \\alpha t",
+    "content": "Kinematic equation for angular velocity"
+  },
+  {
+    "name": "\\theta = \\omega_0 t + \\frac{1}{2} \\alpha t^2",
+    "content": "Kinematic equation for angular displacement"
+  },
+  {
+    "name": "\\omega^2 = \\omega_0^2 + 2 \\alpha \\theta",
+    "content": "Kinematic equation relating angular velocity, acceleration, and displacement"
+  },
+  {
+    "name": "\\bar{\\omega} = \\frac{\\omega + \\omega_0}{2}",
+    "content": "Equation for average angular velocity"
+  },
+  {
+    "name": "a = \\sqrt{a_C^2 + a_T^2}",
+    "content": "Magnitude of resultant acceleration"
+  },
+  {
+    "name": "\\tan \\phi = \\frac{a_T}{a_C}",
+    "content": "Direction of resultant acceleration"
+  },
+  {
+    "name": "a_C = \\frac{v^2}{r}",
+    "content": "Centripetal acceleration in terms of linear velocity"
+  },
+  {
+    "name": "a_C = r \\omega^2",
+    "content": "Centripetal acceleration in terms of angular velocity"
+  },
+  {
+    "name": "s = r \\theta",
+    "content": "Relation between linear displacement and angular displacement"
+  },
+  {
+    "name": "v = r \\omega",
+    "content": "Relation between linear velocity and angular velocity"
+  },
+  {
+    "name": "a_T = r \\alpha",
+    "content": "Relation between tangential acceleration and angular acceleration"
+  }
+]

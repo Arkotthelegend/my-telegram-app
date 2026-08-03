@@ -1,0 +1,22 @@
+[
+  {
+    "name": "F_{net} = ma",
+    "content": "Newton's second law"
+  },
+  {
+    "name": "F_c = m a_c = \\frac{m v^2}{r}",
+    "content": "Magnitude of the centripetal force"
+  },
+  {
+    "name": "F_c = m r \\omega^2",
+    "content": "Magnitude of the centripetal force in terms of angular velocity"
+  },
+  {
+    "name": "F_f = \\frac{m v^2}{r}",
+    "content": "Force for a car of mass m and speed v on a path of radius r"
+  },
+  {
+    "name": "\\tan \\theta = \\frac{v^2}{rg}",
+    "content": "Banking angle of a road chosen for the limiting speed v"
+  }
+]
