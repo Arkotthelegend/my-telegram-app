@@ -1292,7 +1292,7 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         </div>
 		
 		<div id="theme-shop-screen" class="screen">
-    <h2 style="text-align: center; color: var(--accent);">🎨 Lheme Shop</h2>
+    <h2 style="text-align: center; color: var(--accent);">🎨 Theme Shop</h2>
     <p style="text-align: center; color: #94A3B8; font-size: 0.9rem; margin-top:-10px; margin-bottom: 20px;">သင့်အကြိုက်ဆုံး အရောင်ကို ရွေးချယ်ပါ</p>
     <div id="theme-list" style="padding: 0 10px;"></div>
     <button class="btn back-btn" onclick="showScreen('profile')">နောက်သို့</button>
@@ -1355,13 +1355,13 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         </select>
     </div>
     
-    <!-- Legend -->
+        <!-- Legend -->
     <div style="background: var(--card-bg); padding: 10px; border-radius: 10px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
-        <b style="color: var(--accent); font-weight: 800;">🏅အဆင့်သတ်မှတ်ခြင်း</b><br>
-        ① အဖြေမှန်နှုန်းအများဆုံး<br>
-        ② အချိန်အနည်းဆုံး<br>
-        ③ မေးခွန်းဖြေဆိုမှုအများဆုံး<br>
-		အပေါ်ကဦးစား‌ပေးအစီအစဉ်အတိုင်းအဆင့်သတ်မှတ်ပေးမှာဖြစ်ပါတယ်
+        <b style="color: var(--accent); font-weight: 800;">🏅အဆင့်သတ်မှတ်ခြင်း (Fair Rank System)</b><br>
+        ① မေးခွန်းအရေအတွက် (40%) — များများဖြေထားရင် ပိုကောင်းသည်<br>
+        ② အဖြေမှန်နှုန်း (40%) — မှန်နှုန်းမြင့်ရင် ပိုကောင်းသည်<br>
+        ③ အချိန်မြန်မှု (20%) — တစ်ပုဒ်ချင်းအချိန်နည်းရင် ပိုကောင်းသည်<br>
+        <span style="color: var(--accent);">⚠️ Daily Quiz ဖြေဆိုထားသူများ Rank ထဲမပါပါ</span>
     </div>
     
     <div id="leaderboard-loading" style="text-align: center; color: #94A3B8; padding: 30px; display: none;">ဆွဲယူနေသည်...</div>
@@ -1784,12 +1784,13 @@ function renderBestScores(bestScoresObj, containerId, filterOld) {
     let keys = Object.keys(bestScoresObj);
 
     // Filter Old vs New
-    keys = keys.filter(key => {
+       keys = keys.filter(key => {
         const item = bestScoresObj[key];
         const isOld = item.isOld || key.startsWith('old_');
-        return filterOld ? isOld : !isOld;
+        const isDaily = key.startsWith('daily_');
+        if (filterOld) return isOld;
+        return !isOld && !isDaily;
     });
-
     // Hide sub-chapters and Myanmar individual title/chapter quizzes
     keys = keys.filter(key => !isSubChapter(key) && !isMyanmarIndividualQuiz(key));
 
