@@ -1102,6 +1102,25 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 .article-content p:last-child {
     margin-bottom: 0;
 }
+
+	   /* ===== OLD QUESTIONS BUTTON THEME ===== */
+.old-btn {
+    background: #7C3AED !important;        /* Violet */
+    border: 1px solid #A855F7 !important;  /* Purple border */
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25) !important;
+}
+.old-btn:active {
+    transform: scale(0.97);
+    background: #6D28D9 !important;
+}
+
+/* Old-menu back button also tinted purple */
+#old-menu-screen .back-btn {
+    background: linear-gradient(135deg, #4C1D95, #7C3AED) !important;
+    border-color: #A855F7 !important;
+    color: #FFFFFF !important;
+}
 	   
 </style>
 <base target="_blank">
@@ -2153,10 +2172,7 @@ const oldENGrammarTopics = [
 // မေးခွန်းဟောင်းအတွက် သီးသန့် Button ဖန်တီးပေးသည့် Function
 function createOldBtn(txt, parent, act) {
     const b = document.createElement('button');
-    b.className = 'btn';
-    b.style.background = '#38BDF8'; 
-    b.style.border = '1px solid #22c55e';
-    b.style.color = '#000000';
+    b.className = 'btn old-btn';   // ⬅️ uses the purple theme
     b.innerText = txt;
     b.onclick = act;
     parent.appendChild(b);
@@ -2342,8 +2358,6 @@ function showOldMMChapters(typeName, cat) {
     list.innerHTML = '';
     document.getElementById('old-menu-title').innerText = `${cat} (${typeName})`;
     document.getElementById('old-menu-back-btn').onclick = () => showOldMMQuizOptions(typeName);
-
-    // ❌ The green "All" button block is removed here
 
     ['အခန်း ၁', 'အခန်း ၂', 'အခန်း ၃'].forEach(chapter => {
         createOldBtn(chapter, list, () => {
