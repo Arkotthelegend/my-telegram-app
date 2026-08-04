@@ -2983,13 +2983,26 @@ async function loadFormulas(subId, chapterName) {
         
         data.forEach(item => {
             const card = document.createElement('div');
+            // Use the same card style as your screenshot (2-col grid is handled by CSS on #activity-content)
             card.style.cssText = 'background: var(--detail-bg); padding: 20px; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--detail-border); width: 100%; max-width: 100%; margin-left: auto; margin-right: auto; text-align: center; box-sizing: border-box;';
+            
+            // Wrap formula in math-scroll-container so wide equations scroll on mobile instead of breaking
             card.innerHTML = `
-                <div style="color: var(--detail-accent-text); font-weight: bold; margin-bottom: 10px; font-size: 1.1rem; text-align: center;">${item.name}</div>
-                <div style="color: var(--detail-secondary-text); line-height: 1.6; white-space: pre-wrap; text-align: center;">${item.content}</div>
+                <div class="math-scroll-container" style="margin-bottom: 10px; font-size: 1.1rem; color: var(--detail-accent-text); font-weight: bold;">
+                    ${item.name}
+                </div>
+                <div style="color: var(--detail-secondary-text); line-height: 1.6; font-size: 0.95rem;">
+                    ${item.content}
+                </div>
             `;
             content.appendChild(card);
         });
+
+        // ⬅️ THIS IS THE KEY: Tell MathJax to render the newly added formulas
+        if (window.MathJax && MathJax.typesetPromise) {
+            await MathJax.typesetPromise([content]);
+        }
+
     } catch (e) {
         tg.showAlert("Formula file not found for " + chapterName);
     }
