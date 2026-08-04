@@ -1355,13 +1355,13 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         </select>
     </div>
     
-    <!-- Legend -->
+       <!-- Legend -->
     <div style="background: var(--card-bg); padding: 10px; border-radius: 10px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.75rem; color: var(--text-muted); line-height: 1.5;">
-        <b style="color: var(--accent); font-weight: 800;">🏅အဆင့်သတ်မှတ်ခြင်း</b><br>
-        ① အဖြေမှန်နှုန်းအများဆုံး<br>
-        ② အချိန်အနည်းဆုံး<br>
-        ③ မေးခွန်းဖြေဆိုမှုအများဆုံး<br>
-		အပေါ်ကဦးစား‌ပေးအစီအစဉ်အတိုင်းအဆင့်သတ်မှတ်ပေးမှာဖြစ်ပါတယ်
+        <b style="color: var(--accent); font-weight: 800;">🏅အဆင့်သတ်မှတ်ခြင်း (Fair Rank System)</b><br>
+        ① မေးခွန်းအရေအတွက် (40%) — များများဖြေထားရင် ပိုကောင်းသည်<br>
+        ② အဖြေမှန်နှုန်း (40%) — မှန်နှုန်းမြင့်ရင် ပိုကောင်းသည်<br>
+        ③ အချိန်မြန်မှု (20%) — တစ်ပုဒ်ချင်းအချိန်နည်းရင် ပိုကောင်းသည်<br>
+        <span style="color: var(--accent);">⚠️ Daily Quiz ဖြေဆိုထားသူများ Rank ထဲမပါပါ</span>
     </div>
     
     <div id="leaderboard-loading" style="text-align: center; color: #94A3B8; padding: 30px; display: none;">ဆွဲယူနေသည်...</div>
@@ -1784,10 +1784,12 @@ function renderBestScores(bestScoresObj, containerId, filterOld) {
     let keys = Object.keys(bestScoresObj);
 
     // Filter Old vs New
-    keys = keys.filter(key => {
+       keys = keys.filter(key => {
         const item = bestScoresObj[key];
         const isOld = item.isOld || key.startsWith('old_');
-        return filterOld ? isOld : !isOld;
+        const isDaily = key.startsWith('daily_');
+        if (filterOld) return isOld;
+        return !isOld && !isDaily;
     });
 
     // Hide sub-chapters and Myanmar individual title/chapter quizzes
@@ -1897,10 +1899,11 @@ async function loadUserStats() {
     const container = document.getElementById('stat-subjects');
     container.innerHTML = '';
 
-       const keys = Object.keys(bestScoresObj).filter(key => {
+           const keys = Object.keys(bestScoresObj).filter(key => {
         const item = bestScoresObj[key];
         const isOld = item.isOld || key.startsWith('old_');
-        return !isOld && !isSubChapter(key) && !isMyanmarIndividualQuiz(key);
+        const isDaily = key.startsWith('daily_');
+        return !isOld && !isDaily && !isSubChapter(key) && !isMyanmarIndividualQuiz(key);
     });
 
     // Overall card elements
@@ -4330,19 +4333,42 @@ function switchStatsTab(tabName) {
     }
 }
 
-		function calculateRankScore(totalScore, totalPossible, totalTime) {
-    if (totalPossible === 0) return { acc: 0, totalTime: 999999 };
+function calculateRankScore(totalScore, totalPossible, totalTime) {
+    if (totalPossible === 0) return { composite: -1, acc: 0, avgTime: 999, volume: 0 };
+    
     const accuracy = totalScore / totalPossible;
-    return { acc: accuracy, totalTime: totalTime > 0 ? totalTime : 999999 };
+    const avgTimePerQ = totalTime / totalPossible;
+    
+    // Volume: logarithmic curve (0 → 1). 10 Qs ≈ 0.39, 50 ≈ 0.63, 100 ≈ 0.74, 200 ≈ 0.85, 500+ = 1.0
+    const volumeScore = Math.min(Math.log(totalPossible + 1) / Math.log(501), 1);
+    
+    // Speed: optimal ~20s/q, linear penalty, zero at 120s/q
+    const timeScore = Math.max(0, Math.min(1, 1 - ((avgTimePerQ - 20) / 100)));
+    
+    // Composite: 40% accuracy + 40% volume + 20% speed
+    const composite = (accuracy * 0.40) + (volumeScore * 0.40) + (timeScore * 0.20);
+    
+    return {
+        composite: composite,
+        acc: accuracy,
+        avgTime: avgTimePerQ,
+        volume: totalPossible,
+        volumeScore: volumeScore,
+        timeScore: timeScore
+    };
 }
-
 
 function sortLeaderboard(entries) {
     return entries.sort((a, b) => {
         const ra = a.rankData, rb = b.rankData;
+        // 1) Composite score (higher is better)
+        if (rb.composite !== ra.composite) return rb.composite - ra.composite;
+        // 2) Tie-break: accuracy
         if (rb.acc !== ra.acc) return rb.acc - ra.acc;
-        if (ra.totalTime !== rb.totalTime) return ra.totalTime - rb.totalTime;
-        return b.totalScore - a.totalScore;
+        // 3) Tie-break: total questions answered (more is better)
+        if (rb.volume !== ra.volume) return rb.volume - ra.volume;
+        // 4) Tie-break: average time per question (less is better)
+        return ra.avgTime - rb.avgTime;
     });
 }
 		
@@ -4382,7 +4408,13 @@ async function loadLeaderboard() {
         const userMap = {};
         const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || 'unknown';
         
-        data.rows.forEach(row => {
+                // 🚫 Exclude Daily Quiz entries from leaderboard ranking
+        const filteredRows = data.rows.filter(row => {
+            const qf = row.quizFile || '';
+            return !qf.startsWith('daily_');
+        });
+
+        filteredRows.forEach(row => {
             const uid = row.userId || 'unknown';
             const uname = row.userName || 'Anonymous';
             if (!userMap[uid]) {
@@ -4422,19 +4454,17 @@ function renderLeaderboard(entries, currentUserId, subject) {
     const medals = ['🥇', '🥈', '🥉'];
     const TOP_N = 10;
     
-    // Find current user's position in full sorted list
     let myRank = -1;
     const myEntryIndex = entries.findIndex(e => e.userId === currentUserId);
     if (myEntryIndex !== -1) myRank = myEntryIndex + 1;
     
-    // Slice to Top 10 only
     const topEntries = entries.slice(0, TOP_N);
     
     topEntries.forEach((entry, index) => {
         const rank = index + 1;
         const isMe = entry.userId === currentUserId;
         const acc = Math.round(entry.rankData.acc * 100);
-        const timeStr = formatTime(entry.totalTime);
+        const avgTimeStr = Math.round(entry.rankData.avgTime) + 's';
         
         const div = document.createElement('div');
         div.className = `leaderboard-item ${isMe ? 'is-me' : ''}`;
@@ -4453,11 +4483,12 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${entry.quizCount} quizzes · ${entry.totalScore}/${entry.totalPossible} · ⏱ ${timeStr}
+                    ${entry.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
                 </div>
             </div>
             <div class="leaderboard-score-box">
                 <div class="leaderboard-acc">${acc}%</div>
+                <div class="leaderboard-detail">${entry.quizCount} quizzes</div>
             </div>
             <div class="leaderboard-medal">${medal}</div>
         `;
@@ -4465,11 +4496,10 @@ function renderLeaderboard(entries, currentUserId, subject) {
         listDiv.appendChild(div);
     });
     
-    // If current user is outside Top 10, show them separately at bottom
     if (myRank > TOP_N && currentUserId !== 'unknown') {
         const me = entries[myEntryIndex];
         const acc = Math.round(me.rankData.acc * 100);
-        const timeStr = formatTime(me.totalTime);
+        const avgTimeStr = Math.round(me.rankData.avgTime) + 's';
         const nameInitial = (me.userName || 'A').charAt(0).toUpperCase();
         
         let displayName = me.userName || 'Anonymous';
@@ -4488,16 +4518,36 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${me.quizCount} quizzes · ${me.totalScore}/${me.totalPossible} · ⏱ ${timeStr}
+                    ${me.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
                 </div>
             </div>
             <div class="leaderboard-score-box">
                 <div class="leaderboard-acc">${acc}%</div>
+                <div class="leaderboard-detail">${me.quizCount} quizzes</div>
             </div>
         `;
         listDiv.appendChild(div);
     }
     
+    if (myRank === -1 && currentUserId !== 'unknown') {
+        const div = document.createElement('div');
+        div.className = 'leaderboard-item is-me';
+        div.style.marginTop = '20px';
+        div.style.opacity = '0.7';
+        div.innerHTML = `
+            <div class="leaderboard-rank rank-other">-</div>
+            <div class="leaderboard-avatar" style="background: var(--card-bg); color: var(--text-muted);">?</div>
+            <div class="leaderboard-info">
+                <div class="leaderboard-name" style="color: var(--text-muted);">You (No data)</div>
+                <div class="leaderboard-meta">ဒီဘာသာရပ်အတွက် မေးခွန်းမဖြေဆိုရသေးပါ (Daily Quiz မပါ)</div>
+            </div>
+            <div class="leaderboard-score-box">
+                <div class="leaderboard-acc" style="color: var(--text-muted);">-%</div>
+            </div>
+        `;
+        listDiv.appendChild(div);
+    }
+}
     // If user has no data at all
     if (myRank === -1 && currentUserId !== 'unknown') {
         const div = document.createElement('div');
