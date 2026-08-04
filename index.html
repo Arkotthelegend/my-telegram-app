@@ -2968,6 +2968,18 @@ function showKeyTermDetail(subId, chapterName, data, index) {
     div.innerText = data[index].content;
     content.appendChild(div);
 }
+
+		function wrapLatex(formula) {
+    formula = formula.trim();
+    // Already wrapped? Leave it alone
+    if (formula.startsWith('\\(') && formula.endsWith('\\)')) return formula;
+    if (formula.startsWith('$') && formula.endsWith('$')) return formula;
+    if (formula.startsWith('\\[') && formula.endsWith('\\]')) return formula;
+    if (formula.startsWith('$$') && formula.endsWith('$$')) return formula;
+    // Otherwise wrap with inline math delimiters
+    return `\\(${formula}\\)`;
+}
+
 async function loadFormulas(subId, chapterName) {
     try {
         const fileName = `${subId}_${chapterName}_formula`.replace(/ /g, "_");
@@ -2983,7 +2995,6 @@ async function loadFormulas(subId, chapterName) {
         
         data.forEach(item => {
             const card = document.createElement('div');
-            // ⬇️ KEY FIX: Force full width so it doesn't squeeze into 2-col grid
             card.style.cssText = `
                 grid-column: 1 / -1;
                 background: var(--detail-bg); 
@@ -2997,7 +3008,7 @@ async function loadFormulas(subId, chapterName) {
             
             card.innerHTML = `
                 <div class="math-scroll-container" style="text-align: center; margin-bottom: 10px;">
-                    ${item.name}
+                    ${wrapLatex(item.name)}
                 </div>
                 <div style="color: var(--detail-secondary-text); text-align: center; font-size: 0.95rem; line-height: 1.5;">
                     ${item.content}
@@ -3006,7 +3017,6 @@ async function loadFormulas(subId, chapterName) {
             content.appendChild(card);
         });
 
-        // Render MathJax after inserting into DOM
         if (window.MathJax && MathJax.typesetPromise) {
             await MathJax.typesetPromise([content]);
         }
