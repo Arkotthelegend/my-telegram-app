@@ -1663,8 +1663,28 @@ function getStatDisplayName(key, item) {
     return item.chapter || '';
 }
 async function submitScore(timeTaken = 0) {
+    // 🚫 Do NOT save Daily Quiz data to statistics
+    if (currentQuizFile && currentQuizFile.startsWith('daily_')) {
+        console.log("Daily Quiz data not saved to sheet.");
+        resetTimer();
+        return;
+    }
+
     if (!currentQuizFile || !currentQuestions || currentQuestions.length === 0) {
         console.warn("submitScore skipped: no quiz data");
+        return;
+    }
+    
+    const isRandom = localStorage.getItem('randomQuizSetting') !== 'false';
+    if (!isRandom) {
+        console.log("Stats not saved: Random mode is OFF");
+        resetTimer();
+        return;
+    }
+    
+    if (!isTimerRunning) {
+        console.log("Stats not saved: Timer not running or was stopped");
+        resetTimer();
         return;
     }
     
