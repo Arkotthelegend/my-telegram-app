@@ -403,17 +403,20 @@ input:checked + .slider:before {
 
         /* ၁။ Free Trial နှင့် အခြား Menu ခလုတ်များအားလုံးကို ၂ ကော်လံ ခွဲခြင်း */
         #activity-content, #menu-content, #old-type-list {
-            display: grid !important;
-            grid-template-columns: repeat(2, 1fr) !important;
-            gap: 10px !important;
-        }
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    grid-auto-rows: 1fr !important;
+}
         #activity-content .btn, #menu-content .btn, #old-type-list .btn {
-            margin: 0 !important;
-            height: 100% !important;
-            font-size: 0.95rem !important;
-            padding: 12px 10px !important;
-        }
-
+    margin: 0 !important;
+    height: 100% !important;
+    font-size: 0.95rem !important;
+    padding: 12px 10px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
         /* ၂။ Daily Study Tracker ကို ၂ ကော်လံ ခွဲခြင်း */
         #checklist-container {
             display: grid !important;
@@ -567,7 +570,7 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
 }
 .subject-card, .btn, .option-btn, .flash-face, .profile-info-card, #exam-countdown, #motivation-box, #quiz-mode-box {
-    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 body[data-theme] {
@@ -1115,33 +1118,33 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
     <div class="container">
         <div id="home-screen" class="screen active-screen">
     <!-- Two Tabs -->
-    <div style="display: flex; gap: 10px; margin-bottom: 20px; padding: 0 5px;">
-        <button id="home-tab-current" class="btn" style="flex:1; background: var(--accent); color: #000;" onclick="switchHomeTab('current')">Grade 12 ဘာသာရပ်များ</button>
-        <button id="home-tab-old" class="btn" style="flex:1; background: #1E293B; color: var(--white); opacity: 0.6;" onclick="switchHomeTab('old')">မေးခွန်းဟောင်း</button>
-    </div>
+  <div style="display: flex; gap: 10px; margin-bottom: 20px; padding: 0 5px;">
+    <button id="home-tab-current" class="btn" style="flex:1; background: var(--accent); color: #000;" onclick="switchHomeTab('current')">လက်ရှိဘာသာရပ်များ</button>
+    <button id="home-tab-old" class="btn" style="flex:1; background: #1E293B; color: var(--white); opacity: 0.6;" onclick="switchHomeTab('old')">မေးခွန်းဟောင်းများ</button>
+</div>
     
     <!-- Current Subjects Section -->
-    <div id="home-current-section">
+       <!-- Current Subjects Section -->
+    <div id="home-current-section" style="margin-top: 5px;">
         <div id="subject-list"></div>
-        <div style="padding: 20px; margin-top: 10px;">
-            <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
-                🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
-            </button>
-            <div id="admin-announcement" style="margin-top: 20px; padding: 15px; background: rgba(56, 189, 248, 0.1); border-radius: 12px; border: 1px solid var(--accent); color: var(--accent); font-size: 0.9rem; text-align: center; display: none;">
-            </div>
-        </div>
     </div>
     
     <!-- Old Questions Section -->
     <div id="home-old-section" style="display: none;">
-        <div id="old-subjects-screen" style="padding: 15px;">
+        <div id="old-subjects-screen">
             <div id="old-subject-list"></div>
         </div>
-
         <div id="old-types-screen" style="display:none; padding: 15px;">
-            <h3 id="selected-sub-title" style="text-align: center; color: var(--accent);"></h3>
-            <div id="old-type-list"></div>
-            <button class="btn back-btn" onclick="backToOldSubjects()">နောက်သို့</button>
+            ...
+        </div>
+    </div>
+
+    <!-- Free Trial Button (visible on both tabs now) -->
+    <div style="padding: 20px; margin-top: 10px;">
+        <button class="btn" style="background: linear-gradient(135deg, #10B981, #059669); font-weight: bold; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);" onclick="openTrialMenu()">
+            🎁 ဘာသာရပ်များကို အစမ်းသုံးရန်
+        </button>
+        <div id="admin-announcement" style="margin-top: 20px; padding: 15px; background: rgba(56, 189, 248, 0.1); border-radius: 12px; border: 1px solid var(--accent); color: var(--accent); font-size: 0.9rem; text-align: center; display: none;">
         </div>
     </div>
 </div>
@@ -2138,7 +2141,7 @@ const oldENGrammarTopics = [
 // App စတင်သည်နှင့် Old Subjects များကို အသင့်တည်ဆောက်ထားရန်
 function initOldSubjects() {
     const list = document.getElementById('old-subject-list');
-    if (!list) return; // Check for safety
+    if (!list) return;
     list.innerHTML = '';
 
     subjects.forEach(sub => {
@@ -2151,17 +2154,10 @@ function initOldSubjects() {
         }
 
         const card = document.createElement('div');
-        card.className = `subject-card ${isPaid ? '' : 'locked'}`;
-        // အစိမ်းနုရောင်
-        card.style.background = 'linear-gradient(135deg, #4ade80, #22c55e)';
-        card.style.boxShadow = '0 4px 15px rgba(34, 197, 94, 0.3)';
-        card.style.border = '1px solid #16a34a';
-        card.style.color = '#064e3b'; 
-
-        card.innerHTML = `
-            <span>${sub.name}</span>
-            ${isPaid ? '<span>➔</span>' : '<span class="lock-icon">🔒</span>'}
-        `;
+        card.className = `subject-card ${isPaid ? '' : 'locked'} ${isSpecial && isPaid ? 'premium-card' : ''}`;
+        
+        // Same HTML structure as renderSubjects()
+        card.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
 
         card.onclick = () => {
             if (isPaid) {
