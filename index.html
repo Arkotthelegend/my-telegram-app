@@ -402,13 +402,13 @@ input:checked + .slider:before {
            ============================================================ */
 
         /* ၁။ Free Trial နှင့် အခြား Menu ခလုတ်များအားလုံးကို ၂ ကော်လံ ခွဲခြင်း */
-        #activity-content, #menu-content, #old-type-list {
+       #activity-content, #menu-content, #old-menu-content {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 10px !important;
     grid-auto-rows: 1fr !important;
 }
-        #activity-content .btn, #menu-content .btn, #old-type-list .btn {
+#activity-content .btn, #menu-content .btn, #old-menu-content .btn {
     margin: 0 !important;
     height: 100% !important;
     font-size: 0.95rem !important;
@@ -1130,16 +1130,16 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
     </div>
     
     <!-- Old Questions Section -->
-    <div id="home-old-section" style="display: none;">
+        <div id="home-old-section" style="display: none;">
         <div id="old-subjects-screen">
             <div id="old-subject-list"></div>
         </div>
-       <div id="old-types-screen" style="display:none; padding: 15px;">
-    <h2 id="selected-sub-title" style="text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
-    <div id="old-type-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; grid-auto-rows: 1fr;"></div>
-    <button class="btn back-btn" onclick="backToOldSubjects()">နောက်သို့</button>
-</div>
     </div>
+			<div id="old-menu-screen" class="screen">
+    <h2 id="old-menu-title" style="text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
+    <div id="old-menu-content" style="padding: 0 10px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; grid-auto-rows: 1fr;"></div>
+    <button class="btn back-btn" id="old-menu-back-btn" style="margin-top: 20px;">နောက်သို့</button>
+</div>
 
     <!-- Free Trial Button (visible on both tabs now) -->
     <div style="padding: 20px; margin-top: 10px;">
