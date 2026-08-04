@@ -4331,9 +4331,28 @@ function switchStatsTab(tabName) {
 }
 
 		function calculateRankScore(totalScore, totalPossible, totalTime) {
-    if (totalPossible === 0) return { acc: 0, totalTime: 999999 };
+    if (totalPossible === 0) return { composite: -1, acc: 0, avgTime: 999, volume: 0 };
+    
     const accuracy = totalScore / totalPossible;
-    return { acc: accuracy, totalTime: totalTime > 0 ? totalTime : 999999 };
+    const avgTimePerQ = totalTime / totalPossible;
+    
+    // Volume: logarithmic curve (0 → 1). 10 Qs ≈ 0.39, 50 ≈ 0.63, 100 ≈ 0.74, 200 ≈ 0.85, 500+ = 1.0
+    const volumeScore = Math.min(Math.log(totalPossible + 1) / Math.log(501), 1);
+    
+    // Speed: optimal ~20s/q, linear penalty, zero at 120s/q
+    const timeScore = Math.max(0, Math.min(1, 1 - ((avgTimePerQ - 20) / 100)));
+    
+    // Composite: 40% accuracy + 40% volume + 20% speed
+    const composite = (accuracy * 0.40) + (volumeScore * 0.40) + (timeScore * 0.20);
+    
+    return {
+        composite: composite,
+        acc: accuracy,
+        avgTime: avgTimePerQ,
+        volume: totalPossible,
+        volumeScore: volumeScore,
+        timeScore: timeScore
+    };
 }
 
 
