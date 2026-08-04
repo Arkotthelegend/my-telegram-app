@@ -2293,25 +2293,7 @@ function showOldMMChapters(typeName, cat) {
     document.getElementById('old-menu-title').innerText = `${cat} (${typeName})`;
     document.getElementById('old-menu-back-btn').onclick = () => showOldMMQuizOptions(typeName);
 
-    const allBtn = document.createElement('button');
-    allBtn.className = 'btn';
-    allBtn.innerText = `${cat}အကုန်လေ့ကျင့်မည်`;
-    allBtn.style.background = '#00FF80';
-    allBtn.style.color = '#000000';
-    allBtn.style.border = 'none';
-    allBtn.style.boxShadow = '0 4px 15px rgba(0, 213, 255, 0.3)';
-    allBtn.style.marginBottom = '5px';
-    allBtn.style.fontWeight = 'bold';
-    allBtn.style.gridColumn = '1 / -1';
-    allBtn.onclick = () => {
-        const fileName = `old_mm_${cat}_all_${typeName}`.replace(/\//g, "_").replace(/ /g, "_");
-        initQuiz(fileName);
-        document.getElementById('quiz-back-btn').onclick = () => {
-            showScreen('old-menu');
-            showOldMMChapters(typeName, cat);
-        };
-    };
-    list.appendChild(allBtn);
+    // ❌ The green "All" button block is removed here
 
     ['အခန်း ၁', 'အခန်း ၂', 'အခန်း ၃'].forEach(chapter => {
         createOldBtn(chapter, list, () => {
