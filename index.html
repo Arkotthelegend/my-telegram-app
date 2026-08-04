@@ -2162,6 +2162,51 @@ function createOldBtn(txt, parent, act) {
     parent.appendChild(b);
 }
 
+		let isOldQuestionFlow = false;
+
+function setOldQuestionContext(active) {
+    isOldQuestionFlow = active;
+}
+
+function updateOldQuestionBadges() {
+    // Remove any existing badges first
+    document.querySelectorAll('.old-question-badge').forEach(el => el.remove());
+    
+    if (!isOldQuestionFlow) return;
+    
+    // Quiz screen
+    const quizScreen = document.getElementById('quiz-screen');
+    if (quizScreen && quizScreen.classList.contains('active-screen')) {
+        const badge = document.createElement('div');
+        badge.className = 'old-question-badge';
+        badge.innerText = '📜 မေးခွန်းဟောင်း';
+        badge.style.cssText = 'position:absolute; top:5px; right:10px; background:linear-gradient(135deg,#A855F7,#7C3AED); color:#fff; padding:3px 10px; border-radius:10px; font-size:0.7rem; font-weight:700; z-index:40; border:1px solid rgba(255,255,255,0.2); pointer-events:none;';
+        quizScreen.appendChild(badge);
+    }
+    
+    // Flashcard screen
+    const flashScreen = document.getElementById('flashcard-screen');
+    if (flashScreen && flashScreen.classList.contains('active-screen')) {
+        const wrap = document.createElement('div');
+        wrap.className = 'old-question-badge';
+        wrap.style.cssText = 'text-align:center; margin-bottom:8px;';
+        wrap.innerHTML = '<span style="display:inline-block; background:linear-gradient(135deg,#A855F7,#7C3AED); color:#fff; padding:4px 12px; border-radius:12px; font-size:0.75rem; font-weight:700; pointer-events:none;">📜 မေးခွန်းဟောင်း</span>';
+        const firstDiv = flashScreen.querySelector('div');
+        if (firstDiv) flashScreen.insertBefore(wrap, firstDiv);
+        else flashScreen.prepend(wrap);
+    }
+    
+    // Math solution screen
+    const mathScreen = document.getElementById('math-solution-screen');
+    if (mathScreen && mathScreen.classList.contains('active-screen')) {
+        const badge = document.createElement('div');
+        badge.className = 'old-question-badge';
+        badge.innerText = '📜 မေးခွန်းဟောင်း';
+        badge.style.cssText = 'position:absolute; top:10px; right:10px; background:linear-gradient(135deg,#A855F7,#7C3AED); color:#fff; padding:3px 10px; border-radius:10px; font-size:0.7rem; font-weight:700; z-index:40; border:1px solid rgba(255,255,255,0.2); pointer-events:none;';
+        mathScreen.appendChild(badge);
+    }
+}
+		
 		function initOldSubjects() {
     const list = document.getElementById('old-subject-list');
     if (!list) return;
@@ -2184,6 +2229,7 @@ function createOldBtn(txt, parent, act) {
             if (isPaid) {
                 currentSubject = sub;
                 isAnswered = false;
+				setOldQuestionContext(true);
                 showScreen('old-menu');   // ⬅️ Go to separate screen
                 showOldMenu(sub);
             } else {
@@ -2195,11 +2241,15 @@ function createOldBtn(txt, parent, act) {
 }
 
 function backToOldSubjects() {
+	setOldQuestionContext(false);
     showScreen('home');
     switchHomeTab('old');
 }
 
 function showOldMenu(sub) {
+    document.getElementById('old-menu-title').innerHTML = 
+        `<div style="font-size:0.85rem;color:#A855F7;margin-bottom:4px;">📜 မေးခွန်းဟောင်း</div>` +
+        `<div style="color:var(--accent);">${sub.name}</div>`;
     document.getElementById('old-menu-title').innerText = sub.name;
     const list = document.getElementById('old-menu-content');
     list.innerHTML = '';
@@ -2403,12 +2453,16 @@ function unlockCard(div, sub) {
         div.className = `subject-card ${isPaid ? '' : 'locked'} ${isSpecial && isPaid ? 'premium-card' : ''}`;
         div.innerHTML = `<span>${sub.name} ${isPaid ? '' : '🔒'}</span> <span>➔</span>`;
         
-        div.onclick = () => isPaid ? openSubjectMenu(sub) : tg.showAlert("ဘာသာရပ်၀ယ်ယူထားသူများသာ အသုံးပြုနိုင်ပါသည်။");
+                div.onclick = () => {
+            setOldQuestionContext(false);      // ⬅️ ADD THIS LINE
+            isPaid ? openSubjectMenu(sub) : tg.showAlert("ဘာသာရပ်၀ယ်ယူထားသူများသာ အသုံးပြုနိုင်ပါသည်။");
+        };
         list.appendChild(div);
     });
 }
 
 function openSubjectMenu(sub) {
+	setOldQuestionContext(false);  
     const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || "0";
     const isSpecial = specialUsers.map(String).includes(currentUserId);
 
@@ -3150,6 +3204,7 @@ async function loadFormulas(subId, chapterName) {
   // --- Trial System Functions ---
 
 function openTrialMenu() {
+	setOldQuestionContext(false);
     showScreen('activity');
     document.getElementById('activity-title').innerText = "Free Trial (စမ်းသုံးရန်)";
     const content = document.getElementById('activity-content');
@@ -3593,20 +3648,23 @@ function nextQuestion() {
             const b = document.createElement('button'); b.className = 'btn'; b.innerText = txt; b.onclick = act; parent.appendChild(b);
         }
 
-        function showScreen(id) {
-		
-		if (id !== 'quiz') {
+      function showScreen(id) {
+    if (id !== 'quiz') {
         resetTimer(); 
     }
-            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
-            document.getElementById(id + '-screen').classList.add('active-screen');
-        }
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active-screen'));
+    document.getElementById(id + '-screen').classList.add('active-screen');
+    
+    // Refresh old-question badge whenever screen changes
+    updateOldQuestionBadges();
+}
 
         function changeTab(id, el) {
     showScreen(id);
     document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('nav-active'));
     el.classList.add('nav-active');
     if(id === 'home') {
+		setOldQuestionContext(false); 
         renderSubjects();
         backToOldSubjects();
         switchHomeTab('current');
