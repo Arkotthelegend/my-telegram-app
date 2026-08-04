@@ -1292,7 +1292,7 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         </div>
 		
 		<div id="theme-shop-screen" class="screen">
-    <h2 style="text-align: center; color: var(--accent);">🎨 Theme Shop</h2>
+    <h2 style="text-align: center; color: var(--accent);">🎨 Lheme Shop</h2>
     <p style="text-align: center; color: #94A3B8; font-size: 0.9rem; margin-top:-10px; margin-bottom: 20px;">သင့်အကြိုက်ဆုံး အရောင်ကို ရွေးချယ်ပါ</p>
     <div id="theme-list" style="padding: 0 10px;"></div>
     <button class="btn back-btn" onclick="showScreen('profile')">နောက်သို့</button>
@@ -1897,10 +1897,11 @@ async function loadUserStats() {
     const container = document.getElementById('stat-subjects');
     container.innerHTML = '';
 
-       const keys = Object.keys(bestScoresObj).filter(key => {
+           const keys = Object.keys(bestScoresObj).filter(key => {
         const item = bestScoresObj[key];
         const isOld = item.isOld || key.startsWith('old_');
-        return !isOld && !isSubChapter(key) && !isMyanmarIndividualQuiz(key);
+        const isDaily = key.startsWith('daily_');
+        return !isOld && !isDaily && !isSubChapter(key) && !isMyanmarIndividualQuiz(key);
     });
 
     // Overall card elements
@@ -4451,19 +4452,17 @@ function renderLeaderboard(entries, currentUserId, subject) {
     const medals = ['🥇', '🥈', '🥉'];
     const TOP_N = 10;
     
-    // Find current user's position in full sorted list
     let myRank = -1;
     const myEntryIndex = entries.findIndex(e => e.userId === currentUserId);
     if (myEntryIndex !== -1) myRank = myEntryIndex + 1;
     
-    // Slice to Top 10 only
     const topEntries = entries.slice(0, TOP_N);
     
     topEntries.forEach((entry, index) => {
         const rank = index + 1;
         const isMe = entry.userId === currentUserId;
         const acc = Math.round(entry.rankData.acc * 100);
-        const timeStr = formatTime(entry.totalTime);
+        const avgTimeStr = Math.round(entry.rankData.avgTime) + 's';
         
         const div = document.createElement('div');
         div.className = `leaderboard-item ${isMe ? 'is-me' : ''}`;
@@ -4482,11 +4481,12 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${entry.quizCount} quizzes · ${entry.totalScore}/${entry.totalPossible} · ⏱ ${timeStr}
+                    ${entry.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
                 </div>
             </div>
             <div class="leaderboard-score-box">
                 <div class="leaderboard-acc">${acc}%</div>
+                <div class="leaderboard-detail">${entry.quizCount} quizzes</div>
             </div>
             <div class="leaderboard-medal">${medal}</div>
         `;
@@ -4494,11 +4494,10 @@ function renderLeaderboard(entries, currentUserId, subject) {
         listDiv.appendChild(div);
     });
     
-    // If current user is outside Top 10, show them separately at bottom
     if (myRank > TOP_N && currentUserId !== 'unknown') {
         const me = entries[myEntryIndex];
         const acc = Math.round(me.rankData.acc * 100);
-        const timeStr = formatTime(me.totalTime);
+        const avgTimeStr = Math.round(me.rankData.avgTime) + 's';
         const nameInitial = (me.userName || 'A').charAt(0).toUpperCase();
         
         let displayName = me.userName || 'Anonymous';
@@ -4517,17 +4516,17 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${me.quizCount} quizzes · ${me.totalScore}/${me.totalPossible} · ⏱ ${timeStr}
+                    ${me.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
                 </div>
             </div>
             <div class="leaderboard-score-box">
                 <div class="leaderboard-acc">${acc}%</div>
+                <div class="leaderboard-detail">${me.quizCount} quizzes</div>
             </div>
         `;
         listDiv.appendChild(div);
     }
     
-    // If user has no data at all
     if (myRank === -1 && currentUserId !== 'unknown') {
         const div = document.createElement('div');
         div.className = 'leaderboard-item is-me';
@@ -4538,7 +4537,7 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-avatar" style="background: var(--card-bg); color: var(--text-muted);">?</div>
             <div class="leaderboard-info">
                 <div class="leaderboard-name" style="color: var(--text-muted);">You (No data)</div>
-                <div class="leaderboard-meta">ဒီဘာသာရပ်အတွက် မေးခွန်းမဖြေဆိုရသေးပါ</div>
+                <div class="leaderboard-meta">ဒီဘာသာရပ်အတွက် မေးခွန်းမဖြေဆိုရသေးပါ (Daily Quiz မပါ)</div>
             </div>
             <div class="leaderboard-score-box">
                 <div class="leaderboard-acc" style="color: var(--text-muted);">-%</div>
