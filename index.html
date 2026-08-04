@@ -1119,7 +1119,7 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         <div id="home-screen" class="screen active-screen">
     <!-- Two Tabs -->
   <div style="display: flex; gap: 10px; margin-bottom: 20px; padding: 0 5px;">
-    <button id="home-tab-current" class="btn" style="flex:1; background: var(--accent); color: #000;" onclick="switchHomeTab('current')">လက်ရှိဘာသာရပ်များ</button>
+    <button id="home-tab-current" class="btn" style="flex:1; background: var(--accent); color: #000;" onclick="switchHomeTab('current')">Grade 12 ဘာသာရပ်များ</button>
     <button id="home-tab-old" class="btn" style="flex:1; background: #1E293B; color: var(--white); opacity: 0.6;" onclick="switchHomeTab('old')">မေးခွန်းဟောင်းများ</button>
 </div>
     
@@ -4359,9 +4359,14 @@ function switchStatsTab(tabName) {
 function sortLeaderboard(entries) {
     return entries.sort((a, b) => {
         const ra = a.rankData, rb = b.rankData;
+        // 1) Composite score (higher is better)
+        if (rb.composite !== ra.composite) return rb.composite - ra.composite;
+        // 2) Tie-break: accuracy
         if (rb.acc !== ra.acc) return rb.acc - ra.acc;
-        if (ra.totalTime !== rb.totalTime) return ra.totalTime - rb.totalTime;
-        return b.totalScore - a.totalScore;
+        // 3) Tie-break: total questions answered (more is better)
+        if (rb.volume !== ra.volume) return rb.volume - ra.volume;
+        // 4) Tie-break: average time per question (less is better)
+        return ra.avgTime - rb.avgTime;
     });
 }
 		
@@ -4401,7 +4406,12 @@ async function loadLeaderboard() {
         const userMap = {};
         const currentUserId = tg.initDataUnsafe?.user?.id?.toString() || 'unknown';
         
-        data.rows.forEach(row => {
+         const filteredRows = data.rows.filter(row => {
+            const qf = row.quizFile || '';
+            return !qf.startsWith('daily_');
+        });
+
+        filteredRows.forEach(row => {
             const uid = row.userId || 'unknown';
             const uname = row.userName || 'Anonymous';
             if (!userMap[uid]) {
