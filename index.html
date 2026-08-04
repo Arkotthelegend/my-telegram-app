@@ -2983,22 +2983,30 @@ async function loadFormulas(subId, chapterName) {
         
         data.forEach(item => {
             const card = document.createElement('div');
-            // Use the same card style as your screenshot (2-col grid is handled by CSS on #activity-content)
-            card.style.cssText = 'background: var(--detail-bg); padding: 20px; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--detail-border); width: 100%; max-width: 100%; margin-left: auto; margin-right: auto; text-align: center; box-sizing: border-box;';
+            // ⬇️ KEY FIX: Force full width so it doesn't squeeze into 2-col grid
+            card.style.cssText = `
+                grid-column: 1 / -1;
+                background: var(--detail-bg); 
+                padding: 20px; 
+                border-radius: 16px; 
+                margin-bottom: 12px; 
+                border: 1px solid var(--detail-border); 
+                width: 100%; 
+                box-sizing: border-box;
+            `;
             
-            // Wrap formula in math-scroll-container so wide equations scroll on mobile instead of breaking
             card.innerHTML = `
-                <div class="math-scroll-container" style="margin-bottom: 10px; font-size: 1.1rem; color: var(--detail-accent-text); font-weight: bold;">
+                <div class="math-scroll-container" style="text-align: center; margin-bottom: 10px;">
                     ${item.name}
                 </div>
-                <div style="color: var(--detail-secondary-text); line-height: 1.6; font-size: 0.95rem;">
+                <div style="color: var(--detail-secondary-text); text-align: center; font-size: 0.95rem; line-height: 1.5;">
                     ${item.content}
                 </div>
             `;
             content.appendChild(card);
         });
 
-        // ⬅️ THIS IS THE KEY: Tell MathJax to render the newly added formulas
+        // Render MathJax after inserting into DOM
         if (window.MathJax && MathJax.typesetPromise) {
             await MathJax.typesetPromise([content]);
         }
