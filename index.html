@@ -1134,9 +1134,11 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         <div id="old-subjects-screen">
             <div id="old-subject-list"></div>
         </div>
-        <div id="old-types-screen" style="display:none; padding: 15px;">
-            ...
-        </div>
+       <div id="old-types-screen" style="display:none; padding: 15px;">
+    <h2 id="selected-sub-title" style="text-align: center; color: var(--accent); margin-bottom: 20px;"></h2>
+    <div id="old-type-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; grid-auto-rows: 1fr;"></div>
+    <button class="btn back-btn" onclick="backToOldSubjects()">နောက်သို့</button>
+</div>
     </div>
 
     <!-- Free Trial Button (visible on both tabs now) -->
