@@ -4463,7 +4463,7 @@ function renderLeaderboard(entries, currentUserId, subject) {
         const rank = index + 1;
         const isMe = entry.userId === currentUserId;
         const acc = Math.round(entry.rankData.acc * 100);
-        const avgTimeStr = Math.round(entry.rankData.avgTime) + 's';
+        const totalTimeStr = formatTime(entry.totalTime); // ⬅️ Total time instead of avg
         
         const div = document.createElement('div');
         div.className = `leaderboard-item ${isMe ? 'is-me' : ''}`;
@@ -4482,7 +4482,7 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${entry.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
+                    ${entry.totalPossible} Qs · ${acc}% correct · ⏱ ${totalTimeStr}
                 </div>
             </div>
             <div class="leaderboard-score-box">
@@ -4495,10 +4495,11 @@ function renderLeaderboard(entries, currentUserId, subject) {
         listDiv.appendChild(div);
     });
     
+    // Current user outside Top 10
     if (myRank > TOP_N && currentUserId !== 'unknown') {
         const me = entries[myEntryIndex];
         const acc = Math.round(me.rankData.acc * 100);
-        const avgTimeStr = Math.round(me.rankData.avgTime) + 's';
+        const totalTimeStr = formatTime(me.totalTime); // ⬅️ Total time instead of avg
         const nameInitial = (me.userName || 'A').charAt(0).toUpperCase();
         
         let displayName = me.userName || 'Anonymous';
@@ -4517,7 +4518,7 @@ function renderLeaderboard(entries, currentUserId, subject) {
             <div class="leaderboard-info">
                 <div class="leaderboard-name">${displayName}</div>
                 <div class="leaderboard-meta">
-                    ${me.totalPossible} Qs · ${acc}% correct · ⏱ ${avgTimeStr}/q
+                    ${me.totalPossible} Qs · ${acc}% correct · ⏱ ${totalTimeStr}
                 </div>
             </div>
             <div class="leaderboard-score-box">
@@ -4528,6 +4529,7 @@ function renderLeaderboard(entries, currentUserId, subject) {
         listDiv.appendChild(div);
     }
     
+    // No data state
     if (myRank === -1 && currentUserId !== 'unknown') {
         const div = document.createElement('div');
         div.className = 'leaderboard-item is-me';
