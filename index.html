@@ -105,8 +105,24 @@
         box-sizing: border-box !important;
     }
     .container {
-        padding: 20px; flex: 1; overflow-y: auto; padding-bottom: 110px; 
-    }
+    padding: 20px; 
+    flex: 1; 
+    overflow-y: auto; 
+    padding-bottom: 110px;
+    max-width: 600px !important;  /* ⬅️ Prevents stretching on laptop */
+    margin-left: auto !important;  /* ⬅️ Centers the content */
+    margin-right: auto !important;
+}
+
+/* Images won't explode on big screens */
+#article-detail-body img,
+.poem-content img,
+.flash-face img {
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 400px;  /* ⬅️ Limits image height on desktop */
+    object-fit: contain;
+}
     
     .screen { display: none; }
     .active-screen { display: block; }
@@ -1139,6 +1155,13 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 	   #article-detail-body img {
     pointer-events: none !important;
     cursor: default !important;
+}
+	   /* Keep modals/popups from stretching */
+#math-solution-screen,
+#grammar-note-screen {
+    max-width: 600px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
 }
 </style>
 <base target="_blank">
