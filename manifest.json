@@ -1,0 +1,21 @@
+{
+  "name": "Reed Education",
+  "short_name": "Reed Edu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B0F19",
+  "theme_color": "#00D5FF",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/192/0B0F19/00D5FF?text=RE",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://via.placeholder.com/512/0B0F19/00D5FF?text=RE",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
