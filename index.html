@@ -1121,7 +1121,24 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
     border-color: #A855F7 !important;
     color: #FFFFFF !important;
 }
-	   
+	   /* Article Images */
+#article-detail-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    display: block;
+    margin: 16px auto;
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: auto;
+}
+
+
+	   #article-detail-body img {
+    pointer-events: none !important;
+    cursor: default !important;
+}
 </style>
 <base target="_blank">
 <base target="_blank">
@@ -1478,27 +1495,21 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
     <button class="btn back-btn" onclick="showENPoemOptions()">နောက်သို့</button>
 </div>
 
-		<!-- Articles Screen -->
-<!-- Articles Screen -->
+<!-- Articles List Screen -->
 <div id="articles-screen" class="screen">
     <h2 style="text-align: center; color: var(--accent);">📰 News</h2>
-    <div id="articles-content" style="padding: 15px;">
-        
-        <!-- Article 1 -->
-        <div class="article-card">
-            <div class="article-title" onclick="toggleArticle('art1')">
-                <span>Rank ထဲဝင်အောင် ၊ Best Score တွေကိုမှတ်အောင်ဘယ်လိုလုပ်ရမလဲ</span>
-                <span class="article-arrow" id="arrow-art1">▼</span>
-            </div>
-            <div class="article-content" id="art1">
-                <p>၁။ ကျပန်းခလုပ်ကိုဖွင့်ထားပါ ။</p>
-                <p>၂။ မေးခွန်းကိုပြီးအောင်ဖြေပါ ။</p>
-                <p>၃။ Timer ကိုဖွင့်ထားပါ ။</p>
-                <p>၄။ တစ်ဝက်တပျက်နဲ့ Timer ကိုလုံးဝမရပ်ရပါ ။ ရပ်ခဲ့ရင်ဘောင်မဝင်တော့ပါဘူး</p>
-                <p>၅။ sub-chapter တွေဖြစ်တဲ့ 1.1,2.3 စတာတွေကိုဖြေရင်လည်းမမှတ်ပါဘူး ။ အခန်းအစအဆုံးဖြေရပါမယ် ။ မြန်မာစာဆိုရင်လည်း ခလုပ်အစိမ်းနဲ့မေးခွန်းတွေကိုပဲမှတ်သားပါတယ် ။</p>
-            </div>
-        </div>
+    <div id="articles-list" style="padding: 15px;">
+        <div style="text-align: center; color: var(--text-muted); padding: 40px;">ဆွဲယူနေသည်...</div>
+    </div>
+</div>
 
+<!-- Article Detail Screen -->
+<div id="article-detail-screen" class="screen">
+    <div style="padding: 20px; padding-bottom: 100px;">
+        <button class="btn back-btn" onclick="showScreen('articles')" style="margin-bottom: 15px; width: auto; display: inline-block;">← နောက်သို့</button>
+        <h2 id="article-detail-title" style="color: var(--accent); margin-bottom: 10px; font-size: 1.2rem; line-height: 1.4;"></h2>
+        <div id="article-detail-date" style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 20px;"></div>
+        <div id="article-detail-body" style="background: var(--card-bg); padding: 20px; border-radius: 16px; border: 1px solid var(--accent); line-height: 1.8; color: var(--white); font-size: 0.95rem;"></div>
     </div>
 </div>
 		
@@ -1623,17 +1634,18 @@ function parseQuizFile(fileName) {
     return { subject, chapter: parts.slice(1, -1).join('_').replace(/_/g, ' ') || 'General', type: parts[parts.length - 1] || 'Quiz', isOld };
 }
 
-		// Detect Myanmar individual title/chapter quizzes (skip from stats)
-// The combined "all" quiz (e.g. mm_စကားပြေ_all_အမှန်ရွေး) is allowed
 function isMyanmarIndividualQuiz(fileName) {
     if (!fileName || typeof fileName !== 'string') return false;
-    if (!fileName.startsWith('mm_')) return false;
+    // 🆕 Catch both current (mm_) and old (old_mm_) Myanmar quizzes
+    const isMm = fileName.startsWith('mm_') || fileName.startsWith('old_mm_');
+    if (!isMm) return false;
+    // ✅ Allow combined "all" quizzes (e.g. mm_စကားပြေ_all_မှား_မှန်)
     if (fileName.includes('_all_')) return false;
-    // 🆕 ရေသည် is a category-level quiz, not an individual chapter/title
+    // ✅ Allow ရေသည် (no sub-chapters)
     if (fileName.includes('_ရေသည်_')) return false;
+    // ❌ Everything else is individual chapter/title → skip from rank/stats
     return true;
 }
-		
 // ─── Submit Score ───
 // ─── Local Stats Helpers ───
 function getLocalStats() {
@@ -1687,6 +1699,13 @@ async function submitScore(timeTaken = 0) {
     // 🚫 Do NOT save Daily Quiz data to statistics
     if (currentQuizFile && currentQuizFile.startsWith('daily_')) {
         console.log("Daily Quiz data not saved to sheet.");
+        resetTimer();
+        return;
+    }
+
+	 // 🚫 Do NOT save Myanmar individual chapter/title quizzes
+    if (isMyanmarIndividualQuiz(currentQuizFile)) {
+        console.log("Stats not saved: Myanmar individual chapter/title quiz");
         resetTimer();
         return;
     }
@@ -2052,6 +2071,127 @@ function getSubjectName(id) {
         
         content.classList.add('open');
         arrow.classList.add('open');
+    }
+}
+		// ===== ARTICLES SYSTEM (JSON Based) =====
+let articlesIndex = [];
+
+async function loadArticlesIndex() {
+    const container = document.getElementById('articles-list');
+    container.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 40px;">ဆွဲယူနေသည်...</div>';
+    
+    try {
+        const res = await fetch('./articles/index.json');
+        if (!res.ok) throw new Error();
+        articlesIndex = await res.json();
+        renderArticlesList();
+    } catch (e) {
+        container.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 40px;">ဆောင်းပါးများ မရရှိသေးပါ</div>';
+    }
+}
+
+function renderArticlesList() {
+    const container = document.getElementById('articles-list');
+    container.innerHTML = '';
+    
+    if (!articlesIndex || articlesIndex.length === 0) {
+        container.innerHTML = '<div style="text-align: center; color: var(--text-muted); padding: 40px;">ဆောင်းပါးများ မရှိသေးပါ</div>';
+        return;
+    }
+    
+    articlesIndex.forEach(article => {
+        const div = document.createElement('div');
+        div.style.cssText = 'background: var(--card-bg); border-radius: 14px; margin-bottom: 12px; border: 1px solid #334155; overflow: hidden; cursor: pointer; transition: transform 0.1s ease;';
+        div.innerHTML = `
+            <div style="padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; pointer-events: none;">
+                <div style="flex: 1; min-width: 0;">
+                    <div style="font-weight: 700; color: var(--white); font-size: 1rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${article.title}</div>
+                    ${article.date ? `<div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px;">${article.date}</div>` : ''}
+                </div>
+                <span style="color: var(--accent); font-size: 1.2rem; margin-left: 10px;">➔</span>
+            </div>
+        `;
+        
+        div.onmousedown = () => div.style.transform = 'scale(0.98)';
+        div.onmouseup = () => div.style.transform = 'scale(1)';
+        div.onmouseleave = () => div.style.transform = 'scale(1)';
+        div.onclick = () => openArticleDetail(article.id);
+        container.appendChild(div);
+    });
+}
+
+async function openArticleDetail(articleId) {
+    try {
+        const res = await fetch(`./articles/${articleId}.json`);
+        if (!res.ok) throw new Error();
+        const article = await res.json();
+        
+        document.getElementById('article-detail-title').innerText = article.title;
+        document.getElementById('article-detail-date').innerText = article.date || '';
+        
+        const bodyDiv = document.getElementById('article-detail-body');
+        bodyDiv.innerHTML = '';
+        
+        // Helper to render each block
+        const renderBlock = (block) => {
+            // Case 1: Plain text paragraph
+            if (typeof block === 'string') {
+                const p = document.createElement('p');
+                p.style.margin = '0 0 14px 0';
+                p.style.lineHeight = '1.8';
+                p.style.color = 'var(--white)';
+                p.innerText = block;
+                return p;
+            }
+            
+            // Case 2: Image object
+            if (typeof block === 'object' && block.type === 'image') {
+                const wrapper = document.createElement('div');
+                wrapper.style.cssText = 'margin: 16px 0; text-align: center;';
+                
+                const img = document.createElement('img');
+                img.src = block.src;
+                img.alt = block.caption || 'Image';
+                img.style.cssText = 'width: 100%; max-width: 100%; border-radius: 12px; display: block; border: 1px solid #334155;';
+        
+                
+                wrapper.appendChild(img);
+                
+                // Optional caption
+                if (block.caption) {
+                    const cap = document.createElement('div');
+                    cap.style.cssText = 'margin-top: 8px; font-size: 0.8rem; color: var(--text-muted); font-style: italic;';
+                    cap.innerText = block.caption;
+                    wrapper.appendChild(cap);
+                }
+                
+                return wrapper;
+            }
+            
+            // Case 3: Raw HTML fallback (for advanced use)
+            if (typeof block === 'object' && block.type === 'html') {
+                const div = document.createElement('div');
+                div.style.margin = '0 0 14px 0';
+                div.innerHTML = block.value;
+                return div;
+            }
+            
+            return document.createElement('span');
+        };
+        
+        // Support both old array format and new mixed format
+        if (Array.isArray(article.content)) {
+            article.content.forEach(block => {
+                bodyDiv.appendChild(renderBlock(block));
+            });
+        } else if (typeof article.content === 'string') {
+            // Legacy single-string HTML support
+            bodyDiv.innerHTML = article.content;
+        }
+        
+        showScreen('article-detail');
+    } catch (e) {
+        tg.showAlert("ဆောင်းပါး ဖွင့်ရာတွင် အမှားတစ်ခု ဖြစ်သွားပါသည်။");
     }
 }
 		
@@ -3684,6 +3824,7 @@ function nextQuestion() {
         switchHomeTab('current');
     }
     if(id === 'profile') renderProfileData();
+			    if(id === 'articles') loadArticlesIndex();
 }
 
 function switchHomeTab(tab) {
@@ -4472,8 +4613,13 @@ async function loadLeaderboard() {
         
          const filteredRows = data.rows.filter(row => {
             const qf = row.quizFile || '';
-            return !qf.startsWith('daily_');
+            // Exclude Daily Quiz
+            if (qf.startsWith('daily_')) return false;
+            // 🆕 Exclude Myanmar individual chapter/title quizzes
+            if (isMyanmarIndividualQuiz(qf)) return false;
+            return true;
         });
+
 
         filteredRows.forEach(row => {
             const uid = row.userId || 'unknown';
