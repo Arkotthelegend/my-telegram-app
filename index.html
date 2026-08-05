@@ -1327,7 +1327,11 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 					 </div>
 					 
             </div> 
-			<div id="dynamic-content-area"></div>
+			<<div id="dynamic-content-area">
+    <button class="btn profile-stats-btn" onclick="showStatsScreen()">📊 My Statistics</button>
+    <button class="btn profile-theme-btn" onclick="openThemeShop()">🎨 Theme Shop</button>
+    <button class="btn" style="background: #1E293B; border: 1px solid #00D5FF; color: #00D5FF; margin-top: 10px;" onclick="openChannel()">📢 Join Our Channel</button>
+</div>
         </div>
 		
 		<div id="theme-shop-screen" class="screen">
@@ -4793,8 +4797,8 @@ function renderLeaderboard(entries, currentUserId, subject) {
         }
     });
 }
-	if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').catch(console.error);
+	function openChannel() {
+    tg.openTelegramLink('https://t.me/REED_education');
 }
     </script>
 	
