@@ -1564,13 +1564,16 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 </div>
 
     <script>
-
 if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
     document.body.innerHTML = `
     <style>
         .ld-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0B0F19; color: #fff; min-height: 100vh; overflow-y: auto; }
         .ld-wrap { max-width: 600px; margin: 0 auto; padding: 40px 20px 100px; text-align: center; }
-        .ld-hero-icon { font-size: 4rem; margin-bottom: 10px; }
+        
+        /* LOGO */
+        .ld-logo { width: 90px; height: 90px; border-radius: 22px; margin: 0 auto 16px; object-fit: cover; border: 2px solid #00D5FF; box-shadow: 0 0 25px rgba(0,213,255,0.15); }
+        .ld-logo-fallback { width: 90px; height: 90px; border-radius: 22px; margin: 0 auto 16px; background: linear-gradient(135deg, #00D5FF, #0066FF); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: #000; border: 2px solid #00D5FF; }
+        
         .ld-hero h1 { color: #00D5FF; font-size: 2rem; margin: 0 0 8px; letter-spacing: 0.5px; }
         .ld-hero p { color: #94A3B8; font-size: 1.05rem; margin: 0 0 20px; line-height: 1.5; }
         .ld-badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
@@ -1592,10 +1595,15 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
         .ld-step-num { background: #00D5FF; color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; }
         .ld-step-text { color: #CBD5E1; font-size: 0.95rem; }
         .ld-step-text b { color: #fff; display: block; margin-bottom: 2px; }
-        .ld-countdown { display: flex; justify-content: center; gap: 15px; margin: 25px 0; }
-        .ld-cd-box { background: #162235; border: 1px solid #334155; border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 60px; }
-        .ld-cd-val { font-size: 1.5rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
+        
+        /* COUNTDOWN (now at bottom) */
+        .ld-countdown-wrap { background: linear-gradient(145deg, #0F172A, #162235); border: 1px solid #00D5FF; border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,213,255,0.08); }
+        .ld-countdown-label { color: #00D5FF; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .ld-countdown { display: flex; justify-content: center; gap: 12px; }
+        .ld-cd-box { background: #0B0F19; border: 1px solid #334155; border-radius: 12px; padding: 12px 14px; text-align: center; min-width: 55px; }
+        .ld-cd-val { font-size: 1.4rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
         .ld-cd-lbl { font-size: 0.65rem; color: #94A3B8; text-transform: uppercase; margin-top: 4px; letter-spacing: 1px; }
+        
         .ld-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(11,15,25,0.95); backdrop-filter: blur(10px); border-top: 1px solid #1E293B; padding: 16px 20px 24px; display: flex; flex-direction: column; gap: 10px; z-index: 100; box-sizing: border-box; }
         .ld-btn { display: block; width: 100%; padding: 16px; border-radius: 14px; font-weight: 700; font-size: 1rem; text-decoration: none; text-align: center; border: none; cursor: pointer; transition: transform 0.1s; }
         .ld-btn:active { transform: scale(0.97); }
@@ -1607,10 +1615,19 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
             .ld-hero h1 { font-size: 1.6rem; }
             .ld-grid { gap: 8px; }
             .ld-card { padding: 14px; }
+            .ld-cd-box { min-width: 48px; padding: 10px 8px; }
+            .ld-cd-val { font-size: 1.2rem; }
         }
     </style>
     <div class="ld-page">
         <div class="ld-wrap">
+            
+            <!-- LOGO -->
+            <!-- 🔄 REPLACE src BELOW WITH YOUR LOGO IMAGE URL (e.g. ./logo.png or https://yourcdn.com/logo.png) -->
+            <img src="./logo.png" alt="REED Education Logo" class="ld-logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+            <div id="logo-fallback" class="ld-logo-fallback" style="display:none;">📚</div>
+            
+            <!-- HERO -->
             <div class="ld-hero">
                 <h1>REED Education</h1>
                 <p>Grade 12 Matriculation Prep App<br>မြန်မာစာ · အင်္ဂလိပ်စာ · သင်္ချာ · ရူပဗေဒ · ဓာတုဗေဒ · ဇီဝဗေဒ · ဘောဂဗေဒ</p>
@@ -1621,16 +1638,7 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
                 </div>
             </div>
 
-            <div class="ld-section">
-                <h2>⏳ Exam Countdown</h2>
-                <div class="ld-countdown">
-                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-d">00</div><div class="ld-cd-lbl">Days</div></div>
-                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-h">00</div><div class="ld-cd-lbl">Hrs</div></div>
-                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-m">00</div><div class="ld-cd-lbl">Mins</div></div>
-                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-s">00</div><div class="ld-cd-lbl">Secs</div></div>
-                </div>
-            </div>
-
+            <!-- FEATURES -->
             <div class="ld-section">
                 <h2>✨ What You Get</h2>
                 <div class="ld-grid">
@@ -1667,6 +1675,7 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
                 </div>
             </div>
 
+            <!-- SUBJECTS -->
             <div class="ld-section">
                 <h2>📖 All Subjects</h2>
                 <div class="ld-subjects">
@@ -1677,11 +1686,10 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
                     <div class="ld-sub"><span class="ld-sub-ico">🧪</span> ဓာတုဗေဒ</div>
                     <div class="ld-sub"><span class="ld-sub-ico">🧬</span> ဇီဝဗေဒ</div>
                     <div class="ld-sub"><span class="ld-sub-ico">📊</span> ဘောဂဗေဒ</div>
-                    <div class="ld-sub"><span class="ld-sub-ico">🌍</span> ပထဝီ (Coming Soon)</div>
-					<div class="ld-sub"><span class="ld-sub-ico">🏳️</span> သမိုင်း ( Coming Soon)</div>
                 </div>
             </div>
 
+            <!-- HOW IT WORKS -->
             <div class="ld-section">
                 <h2>🚀 How to Start</h2>
                 <div class="ld-steps">
@@ -1700,12 +1708,25 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
                 </div>
             </div>
 
+            <!-- EXAM COUNTDOWN (MOVED TO BOTTOM) -->
+            <div class="ld-countdown-wrap">
+                <div class="ld-countdown-label">⏳ ခန့်မှန်းခြေ စာမေးပွဲဖြေဆိုရန် ကျန်ရှိချိန်</div>
+                <div class="ld-countdown">
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-d">00</div><div class="ld-cd-lbl">Days</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-h">00</div><div class="ld-cd-lbl">Hrs</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-m">00</div><div class="ld-cd-lbl">Mins</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-s">00</div><div class="ld-cd-lbl">Secs</div></div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
             <div class="ld-footer">
                 <p>Need help? Contact <a href="https://t.me/minaphayarkot" target="_blank">@minaphayarkot</a></p>
                 <p style="margin-top:6px;">© 2026 REED Education</p>
             </div>
         </div>
 
+        <!-- STICKY CTA -->
         <div class="ld-cta">
             <a href="https://t.me/reededucation_bot" class="ld-btn ld-btn-primary">📱 Open App in Telegram</a>
             <a href="https://t.me/REED_education" class="ld-btn ld-btn-secondary">📢 Join Telegram Channel</a>
@@ -1713,7 +1734,7 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
     </div>
     `;
     
-    // Countdown timer logic (moved OUTSIDE the HTML string)
+    // Countdown timer logic
     (function(){
         const examDate = new Date("March 9, 2027 09:00:00").getTime();
         function update(){
