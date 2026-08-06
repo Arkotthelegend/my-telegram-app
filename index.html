@@ -1748,15 +1748,14 @@ if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
     </div>
     `;
 
-	    
-    // Countdown timer logic
-        // Scroll reveal animation
-    (function(){
+	    function(){
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     })();
+    // Countdown timer logic
+    (function(){
         const examDate = new Date("March 9, 2027 09:00:00").getTime();
         function update(){
             const now = new Date().getTime();
