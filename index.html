@@ -1571,9 +1571,9 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 		if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
         document.body.innerHTML = `
     <style>
-        .ld-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0B0F19; color: #fff; min-height: 100vh; overflow-y: auto; position: relative; }
-        .ld-wrap { max-width: 600px; margin: 0 auto; padding: 40px 20px 140px; text-align: center; position: relative; z-index: 1; }
-        
+        .ld-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0B0F19; color: #fff; min-height: 100vh; overflow-y: auto; overflow-x: hidden; position: relative; }
+		.ld-wrap { max-width: 600px; margin: 0 auto; padding: 30px 16px 140px; text-align: center; position: relative; z-index: 1; overflow-x: hidden; }
+		
         @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
         .reveal { opacity:0; transform:translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
         .reveal.active { opacity:1; transform:translateY(0); }
@@ -1584,14 +1584,14 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         .ld-logo-fallback { width: 100px; height: 100px; border-radius: 24px; margin: 0 auto 20px; background: linear-gradient(135deg, #00D5FF, #0066FF); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: #000; border: 2px solid rgba(0,213,255,0.4); box-shadow: 0 0 40px rgba(0,213,255,0.15); }
         
         .ld-hero { animation: fadeInUp 0.8s ease-out; position: relative; z-index: 1; }
-        .ld-hero h1 { font-size: 2.6rem; margin: 0 0 12px; letter-spacing: -0.5px; background: linear-gradient(135deg, #00D5FF 0%, #00FF9D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .ld-hero p { color: #94A3B8; font-size: 1.1rem; margin: 0 auto 24px; line-height: 1.6; max-width: 90%; }
+        .ld-hero h1 { font-size: clamp(1.8rem, 8vw, 2.6rem); margin: 0 0 12px; letter-spacing: -0.5px; background: linear-gradient(135deg, #00D5FF 0%, #00FF9D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+		.ld-hero p { color: #94A3B8; font-size: 1.1rem; margin: 0 auto 24px; line-height: 1.6; max-width: 90%; }
         
-        .ld-statbar { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; animation: fadeInUp 0.8s ease-out 0.1s both; }
-        .ld-stat-item { text-align: center; }
-        .ld-stat-num { font-size: 1.7rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
-        .ld-stat-label { font-size: 0.7rem; color: #64748B; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
-        .ld-stat-div { width: 1px; background: #1E293B; }
+ .ld-statbar { display: flex; justify-content: center; gap: 12px; flex-wrap: nowrap; margin-bottom: 24px; animation: fadeInUp 0.8s ease-out 0.1s both; }
+.ld-stat-item { text-align: center; flex: 1; min-width: 0; }
+.ld-stat-num { font-size: 1.2rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
+.ld-stat-label { font-size: 0.6rem; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.ld-stat-div { width: 1px; background: #1E293B; flex-shrink: 0; align-self: stretch; margin: 4px 0; }
         
         .ld-section { margin-bottom: 40px; text-align: left; }
         .ld-section h2 { color: #00D5FF; font-size: 1.2rem; margin-bottom: 16px; text-align: center; }
@@ -1619,9 +1619,9 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
         .ld-countdown-wrap { background: linear-gradient(145deg, #0F172A, #162235); border: 1px solid #00D5FF; border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,213,255,0.08); }
         .ld-countdown-label { color: #00D5FF; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
         .ld-countdown { display: flex; justify-content: center; gap: 12px; }
-        .ld-cd-box { background: #0B0F19; border: 1px solid #334155; border-radius: 12px; padding: 12px 14px; text-align: center; min-width: 55px; }
-        .ld-cd-val { font-size: 1.4rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
-        .ld-cd-lbl { font-size: 0.65rem; color: #94A3B8; text-transform: uppercase; margin-top: 4px; letter-spacing: 1px; }
+        .ld-cd-box { background: #0B0F19; border: 1px solid #334155; border-radius: 10px; padding: 10px 6px; text-align: center; min-width: 44px; flex: 1; }
+.ld-cd-val { font-size: 1.2rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
+.ld-cd-lbl { font-size: 0.65rem; color: #94A3B8; text-transform: uppercase; margin-top: 4px; letter-spacing: 1px; }
         
         .ld-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(11,15,25,0.8); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(30,41,59,0.6); padding: 16px 20px 28px; display: flex; flex-direction: column; gap: 10px; z-index: 100; box-sizing: border-box; }
         .ld-btn { display: block; width: 100%; padding: 16px; border-radius: 14px; font-weight: 700; font-size: 1rem; text-decoration: none; text-align: center; border: none; cursor: pointer; transition: transform 0.1s; }
