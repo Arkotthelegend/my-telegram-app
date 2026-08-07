@@ -1568,7 +1568,186 @@ body[data-theme="infinity"] { --t-accent-contrast: #FFFFFF; }
 
     <script>
 
-		
+		if (!window.Telegram?.WebApp?.initDataUnsafe?.user?.id) {
+        document.body.innerHTML = `
+    <style>
+        .ld-page { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #0B0F19; color: #fff; min-height: 100vh; overflow-y: auto; position: relative; }
+        .ld-wrap { max-width: 600px; margin: 0 auto; padding: 40px 20px 140px; text-align: center; position: relative; z-index: 1; }
+        
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+        .reveal { opacity:0; transform:translateY(24px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
+        .reveal.active { opacity:1; transform:translateY(0); }
+        
+        .ld-glow-bg { position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 700px; height: 500px; background: radial-gradient(circle, rgba(0,213,255,0.10) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        
+        .ld-logo { width: 100px; height: 100px; border-radius: 24px; margin: 0 auto 20px; object-fit: cover; border: 2px solid rgba(0,213,255,0.4); box-shadow: 0 0 40px rgba(0,213,255,0.15), 0 8px 32px rgba(0,0,0,0.4); animation: fadeInUp 0.6s ease-out; }
+        .ld-logo-fallback { width: 100px; height: 100px; border-radius: 24px; margin: 0 auto 20px; background: linear-gradient(135deg, #00D5FF, #0066FF); display: flex; align-items: center; justify-content: center; font-size: 2.5rem; font-weight: 800; color: #000; border: 2px solid rgba(0,213,255,0.4); box-shadow: 0 0 40px rgba(0,213,255,0.15); }
+        
+        .ld-hero { animation: fadeInUp 0.8s ease-out; position: relative; z-index: 1; }
+        .ld-hero h1 { font-size: 2.6rem; margin: 0 0 12px; letter-spacing: -0.5px; background: linear-gradient(135deg, #00D5FF 0%, #00FF9D 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .ld-hero p { color: #94A3B8; font-size: 1.1rem; margin: 0 auto 24px; line-height: 1.6; max-width: 90%; }
+        
+        .ld-statbar { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 40px; animation: fadeInUp 0.8s ease-out 0.1s both; }
+        .ld-stat-item { text-align: center; }
+        .ld-stat-num { font-size: 1.7rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
+        .ld-stat-label { font-size: 0.7rem; color: #64748B; text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+        .ld-stat-div { width: 1px; background: #1E293B; }
+        
+        .ld-section { margin-bottom: 40px; text-align: left; }
+        .ld-section h2 { color: #00D5FF; font-size: 1.2rem; margin-bottom: 16px; text-align: center; }
+        .ld-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .ld-card { background: linear-gradient(145deg, #162235, #0F172A); border: 1px solid rgba(30,41,59,0.8); border-radius: 20px; padding: 24px 18px; text-align: center; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); position: relative; overflow: hidden; }
+        .ld-card::before { content:''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, #00D5FF, transparent); opacity: 0; transition: opacity 0.3s; }
+        .ld-card:hover { transform: translateY(-6px); border-color: rgba(0,213,255,0.3); box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 20px rgba(0,213,255,0.08); }
+        .ld-card:hover::before { opacity: 1; }
+        .ld-card-icon { font-size: 2rem; margin-bottom: 12px; display: block; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+        .ld-card-title { font-weight: 700; font-size: 0.95rem; color: #fff; margin-bottom: 4px; }
+        .ld-card-desc { font-size: 0.8rem; color: #94A3B8; line-height: 1.4; }
+        
+        .ld-subjects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        .ld-sub { background: linear-gradient(90deg, #162235, #0F172A); border-left: 3px solid #00D5FF; padding: 16px; border-radius: 12px; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 10px; transition: all 0.2s ease; border: 1px solid rgba(30,41,59,0.6); border-left-width: 3px; }
+        .ld-sub:hover { transform: translateX(4px); border-color: rgba(0,213,255,0.4); background: linear-gradient(90deg, #162235, #1E293B); }
+        .ld-sub-ico { font-size: 1.3rem; }
+        
+        .ld-steps { background: linear-gradient(145deg, #0F172A, #162235); border-radius: 16px; padding: 20px; border: 1px solid #334155; }
+        .ld-step { display: flex; align-items: center; gap: 15px; margin-bottom: 16px; }
+        .ld-step:last-child { margin-bottom: 0; }
+        .ld-step-num { background: #00D5FF; color: #000; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; flex-shrink: 0; }
+        .ld-step-text { color: #CBD5E1; font-size: 0.95rem; }
+        .ld-step-text b { color: #fff; display: block; margin-bottom: 2px; }
+        
+        .ld-countdown-wrap { background: linear-gradient(145deg, #0F172A, #162235); border: 1px solid #00D5FF; border-radius: 16px; padding: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 20px rgba(0,213,255,0.08); }
+        .ld-countdown-label { color: #00D5FF; font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; letter-spacing: 0.5px; }
+        .ld-countdown { display: flex; justify-content: center; gap: 12px; }
+        .ld-cd-box { background: #0B0F19; border: 1px solid #334155; border-radius: 12px; padding: 12px 14px; text-align: center; min-width: 55px; }
+        .ld-cd-val { font-size: 1.4rem; font-weight: 800; color: #00D5FF; font-family: monospace; }
+        .ld-cd-lbl { font-size: 0.65rem; color: #94A3B8; text-transform: uppercase; margin-top: 4px; letter-spacing: 1px; }
+        
+        .ld-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(11,15,25,0.8); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-top: 1px solid rgba(30,41,59,0.6); padding: 16px 20px 28px; display: flex; flex-direction: column; gap: 10px; z-index: 100; box-sizing: border-box; }
+        .ld-btn { display: block; width: 100%; padding: 16px; border-radius: 14px; font-weight: 700; font-size: 1rem; text-decoration: none; text-align: center; border: none; cursor: pointer; transition: transform 0.1s; }
+        .ld-btn:active { transform: scale(0.97); }
+        .ld-btn-primary { background: #00D5FF; color: #000; }
+        .ld-btn-secondary { background: transparent; color: #00D5FF; border: 2px solid #00D5FF; }
+        .ld-footer { text-align: center; color: #64748B; font-size: 0.8rem; margin-top: 10px; padding-bottom: 20px; }
+        .ld-footer a { color: #00D5FF; text-decoration: none; }
+        
+        @media (max-width: 400px) {
+            .ld-hero h1 { font-size: 2rem; }
+            .ld-grid { gap: 8px; }
+            .ld-card { padding: 18px 14px; }
+            .ld-cd-box { min-width: 48px; padding: 10px 8px; }
+            .ld-cd-val { font-size: 1.2rem; }
+        }
+    </style>
+    <div class="ld-page">
+        <div class="ld-glow-bg"></div>
+        <div class="ld-wrap">
+            
+            <img src="./logo.jpg" alt="REED Education Logo" class="ld-logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+            <div id="logo-fallback" class="ld-logo-fallback" style="display:none;">📚</div>
+            
+            <div class="ld-hero">
+                <h1>REED Education</h1>
+                <p>Grade 12 Matriculation Prep App<br>မြန်မာစာ · အင်္ဂလိပ်စာ · သင်္ချာ · ရူပဗေဒ · ဓာတုဗေဒ · ဇီဝဗေဒ · ဘောဂဗေဒ</p>
+            </div>
+
+            <div class="ld-statbar">
+                <div class="ld-stat-item"><div class="ld-stat-num">7</div><div class="ld-stat-label">Subjects</div></div>
+                <div class="ld-stat-div"></div>
+                <div class="ld-stat-item"><div class="ld-stat-num">20K+</div><div class="ld-stat-label">Obj Questions</div></div>
+                <div class="ld-stat-div"></div>
+                <div class="ld-stat-item"><div class="ld-stat-num">📄</div><div class="ld-stat-label">Old Questions</div></div>
+                <div class="ld-stat-div"></div>
+                <div class="ld-stat-item"><div class="ld-stat-num">🏆</div><div class="ld-stat-label">Rankings</div></div>
+            </div>
+
+            <div class="ld-section reveal">
+                <h2>✨ What You Get</h2>
+                <div class="ld-grid">
+                    <div class="ld-card"><span class="ld-card-icon">📝</span><div class="ld-card-title">Daily Quiz</div><div class="ld-card-desc">3 free random questions every day for every subject</div></div>
+                    <div class="ld-card"><span class="ld-card-icon">🗂️</span><div class="ld-card-title">Daily Practice</div><div class="ld-card-desc">Paid 20,000+ Objective Questions</div></div>
+                    <div class="ld-card"><span class="ld-card-icon">📊</span><div class="ld-card-title">Smart Stats</div><div class="ld-card-desc">Track accuracy, speed & progress per subject</div></div>
+                    <div class="ld-card"><span class="ld-card-icon">🏅</span><div class="ld-card-title">Leaderboard</div><div class="ld-card-desc">Compete with friends on accuracy & speed</div></div>
+                    <div class="ld-card"><span class="ld-card-icon">📰</span><div class="ld-card-title">News & Articles</div><div class="ld-card-desc">Read study tips and subject articles</div></div>
+                    <div class="ld-card"><span class="ld-card-icon">✅</span><div class="ld-card-title">Study Tracker</div><div class="ld-card-desc">Daily checklist to keep your prep on track</div></div>
+                </div> 
+            </div>
+
+            <div class="ld-section reveal">
+                <h2>📖 All Subjects</h2>
+                <div class="ld-subjects">
+                    <div class="ld-sub"><span class="ld-sub-ico">🇲🇲</span> မြန်မာစာ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">🇬🇧</span> အင်္ဂလိပ်စာ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">🔢</span> သင်္ချာ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">⚛️</span> ရူပဗေဒ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">🧪</span> ဓာတုဗေဒ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">🧬</span> ဇီဝဗေဒ</div>
+                    <div class="ld-sub"><span class="ld-sub-ico">📊</span> ဘောဂဗေဒ</div>
+                </div>
+            </div>
+
+            <div class="ld-section reveal">
+                <h2>How to Start</h2>
+                <div class="ld-steps">
+                    <div class="ld-step"><div class="ld-step-num">1</div><div class="ld-step-text"><b>Open in Telegram</b>Click the button below to launch the app</div></div>
+                    <div class="ld-step"><div class="ld-step-num">2</div><div class="ld-step-text"><b>Pick a Subject</b>Choose from 7 Grade 12 subjects</div></div>
+                    <div class="ld-step"><div class="ld-step-num">3</div><div class="ld-step-text"><b>Practice Daily</b>Quizzes, flashcards & past year questions</div></div>
+                </div>
+            </div>
+
+            <div class="ld-countdown-wrap reveal">
+                <div class="ld-countdown-label">⏳ ခန့်မှန်းခြေ စာမေးပွဲဖြေဆိုရန် ကျန်ရှိချိန်</div>
+                <div class="ld-countdown">
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-d">00</div><div class="ld-cd-lbl">Days</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-h">00</div><div class="ld-cd-lbl">Hrs</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-m">00</div><div class="ld-cd-lbl">Mins</div></div>
+                    <div class="ld-cd-box"><div class="ld-cd-val" id="ld-s">00</div><div class="ld-cd-lbl">Secs</div></div>
+                </div>
+            </div>
+
+            <div class="ld-footer">
+                <p>Need help? Contact <a href="https://t.me/minaphayarkot" target="_blank">@minaphayarkot</a></p>
+                <p style="margin-top:6px;">© 2026 REED Education</p>
+            </div>
+        </div>
+
+        <div class="ld-cta">
+            <a href="https://t.me/reededucation_bot" class="ld-btn ld-btn-primary">📱 Open App in Telegram</a>
+            <a href="https://t.me/REED_education" class="ld-btn ld-btn-secondary">📢 Join Telegram Channel</a>
+        </div>
+    </div>
+    `;
+    
+    // Scroll reveal animation
+    (function(){
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('active'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+
+    // Countdown timer logic
+    (function(){
+        const examDate = new Date("March 9, 2027 09:00:00").getTime();
+        function update(){
+            const now = new Date().getTime();
+            const diff = examDate - now;
+            if(diff <= 0) return;
+            const d = Math.floor(diff / (1000*60*60*24));
+            const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+            const s = Math.floor((diff % (1000*60)) / 1000);
+            const el = document.getElementById('ld-d');
+            if(!el) return;
+            el.innerText = String(d).padStart(2,'0');
+            document.getElementById('ld-h').innerText = String(h).padStart(2,'0');
+            document.getElementById('ld-m').innerText = String(m).padStart(2,'0');
+            document.getElementById('ld-s').innerText = String(s).padStart(2,'0');
+        }
+        update();
+        setInterval(update, 1000);
+    })();
+}
 		const ADMIN_ID = 8432363664;
 		const CB = '?v=2'; // ⬅️ Increment this number (v=3, v=4...) every time you push an update
 const specialUsers = [5593040432,1709037573,5186599374];
