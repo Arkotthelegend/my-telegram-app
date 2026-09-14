@@ -7,9 +7,10 @@
   const TILE = 40;
   const MAP_LEFT = (W - COLS * TILE) / 2;
   const WAVES = 8;
-  const START_GOLD = 200;
   const START_LIVES = 15;
+  const MAX_LEVEL = 3;
 
+  // Path tiles (column, row). Enemies walk these. Towers cannot be placed here.
   const PATH = [
     [0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1],
     [7, 2], [7, 3], [7, 4],
@@ -19,15 +20,27 @@
     [7, 8], [7, 9], [7, 10],
     [6, 10], [5, 10], [4, 10], [3, 10], [2, 10], [1, 10], [0, 10]
   ];
-
   const PATH_SET = new Set(PATH.map(([c, r]) => `${c},${r}`));
 
+  // ADD / EDIT TOWERS HERE
+  // sprite = filename in assets/ without .png
   const TOWERS = {
-    pencil: { id: 'pencil', name: 'Pencil', icon: '✏️', cost: 50, dmg: 14, range: 100, rate: 420, color: 0xf4c430, splash: 0 },
-    book: { id: 'book', name: 'Book', icon: '📘', cost: 90, dmg: 26, range: 120, rate: 640, color: 0x4ea8de, splash: 0 },
-    calc: { id: 'calc', name: 'Calc', icon: '🧮', cost: 140, dmg: 18, range: 108, rate: 860, color: 0x34d399, splash: 52 }
+    sword: { id: 'sword', name: 'Sword', sprite: 'sword', dmg: 24, range: 72, rate: 360, color: 0x86efac, splash: 0, slow: 1, shot: 0x86efac },
+    gunner: { id: 'gunner', name: 'Gunner', sprite: 'gunner', dmg: 15, range: 145, rate: 500, color: 0xfbbf24, splash: 0, slow: 1, shot: 0xfde68a },
+    tank: { id: 'tank', name: 'Tank', sprite: 'tank', dmg: 12, range: 98, rate: 880, color: 0x94a3b8, splash: 58, slow: 0.55, shot: 0xcbd5e1 }
   };
 
+  // ADD / EDIT MONSTERS HERE
+  // hpMul / spdMul scale with the wave. bounty is score only (cannot buy with it).
+  const MONSTERS = {
+    homework: { id: 'homework', name: 'Homework', icon: '📝', hpMul: 1.2, spdMul: 0.85, bounty: 10 },
+    quiz: { id: 'quiz', name: 'Quiz', icon: '❓', hpMul: 1, spdMul: 1, bounty: 14 },
+    exam: { id: 'exam', name: 'Exam', icon: '📄', hpMul: 0.8, spdMul: 1.28, bounty: 18 }
+  };
+  const WAVE_MONSTERS = ['homework', 'quiz', 'exam'];
+
+  // ADD / EDIT QUESTIONS HERE
+  // c = index of the correct answer in a (0, 1, or 2)
   const QUESTIONS = [
     { q: '12 × 8 = ?', a: ['86', '96', '108'], c: 1 },
     { q: 'Water’s chemical formula is…', a: ['CO2', 'H2O', 'O2'], c: 1 },
@@ -50,6 +63,26 @@
     return PATH.map(([c, r]) => tileCenter(c, r));
   }
 
+  function loadArt(scene) {
+    scene.load.image('sword', 'assets/sword.png');
+    scene.load.image('gunner', 'assets/gunner.png');
+    scene.load.image('tank', 'assets/tank.png');
+  }
+
+  class BootScene extends Phaser.Scene {
+    constructor() {
+      super('boot');
+    }
+
+    preload() {
+      loadArt(this);
+    }
+
+    create() {
+      this.scene.start('menu');
+    }
+  }
+
   class MenuScene extends Phaser.Scene {
     constructor() {
       super('menu');
@@ -57,17 +90,17 @@
 
     create() {
       this.cameras.main.setBackgroundColor('#0b0f19');
-      this.add.text(W / 2, 150, '📚', { fontSize: '64px' }).setOrigin(0.5);
-      this.add.text(W / 2, 230, 'STUDY DEFENSE', {
+      this.add.image(W / 2, 168, 'sword').setDisplaySize(92, 140);
+      this.add.text(W / 2, 250, 'STUDY DEFENSE', {
         fontFamily: 'Arial, sans-serif',
-        fontSize: '34px',
+        fontSize: '32px',
         fontStyle: 'bold',
         color: '#00d5ff'
       }).setOrigin(0.5);
 
-      this.add.text(W / 2, 290, 'An educational tower defense.\nPlace study tools. Stop the exam rush.\nAnswer bonus questions for gold.', {
+      this.add.text(W / 2, 318, 'Answer a question to place or upgrade\na fighter. Kills add bounty (score only).', {
         fontFamily: 'Arial, sans-serif',
-        fontSize: '16px',
+        fontSize: '15px',
         color: '#9fb0c7',
         align: 'center',
         lineSpacing: 6
@@ -81,9 +114,9 @@
         color: '#0b0f19'
       }).setOrigin(0.5);
 
-      this.add.text(W / 2, 540, '1. Pick a tool at the bottom\n2. Tap a grass tile to place it\n3. Survive 8 waves', {
+      this.add.text(W / 2, 540, 'Sword: short range, hard hits\nGunner: long range\nTank: splash + slow', {
         fontFamily: 'Arial, sans-serif',
-        fontSize: '15px',
+        fontSize: '14px',
         color: '#64748b',
         align: 'center',
         lineSpacing: 6
@@ -104,10 +137,11 @@
       this.hideOverlay('quiz');
       this.hideOverlay('end');
       this.cameras.main.setBackgroundColor('#0b0f19');
-      this.gold = START_GOLD;
+      this.bounty = 0;
       this.lives = START_LIVES;
       this.wave = 0;
-      this.selected = 'pencil';
+      this.selected = 'sword';
+      this.qIndex = 0;
       this.towers = [];
       this.enemies = [];
       this.shots = [];
@@ -120,13 +154,15 @@
       this.waveSpeed = 0;
       this.waveKind = 'homework';
       this.ended = false;
+      this.pending = null;
+      this.ghost = null;
       this.waypoints = pathPoints();
 
       this.drawMap();
       this.buildHud();
       this.buildShop();
       this.input.on('pointerdown', this.onTap, this);
-      this.nextWaveSoon(600);
+      this.nextWaveSoon(2800);
     }
 
     drawMap() {
@@ -138,13 +174,8 @@
           const path = PATH_SET.has(`${c},${r}`);
           g.fillStyle(path ? 0x2a1f14 : 0x163024, 1);
           g.fillRoundedRect(x + 2, y + 2, TILE - 4, TILE - 4, 6);
-          if (!path) {
-            g.fillStyle(0x1c3d2d, 1);
-            g.fillCircle(x + TILE / 2, y + 11, 2);
-          }
         }
       }
-
       const start = tileCenter(PATH[0][0], PATH[0][1]);
       const end = tileCenter(PATH[PATH.length - 1][0], PATH[PATH.length - 1][1]);
       this.add.text(start.x, start.y - 28, 'START', {
@@ -156,7 +187,7 @@
     buildHud() {
       this.add.rectangle(W / 2, 36, W - 20, 56, 0x162235, 1).setStrokeStyle(1, 0x2a3d57);
       this.waveText = this.add.text(24, 36, '', { fontSize: '15px', fontStyle: 'bold', color: '#e2e8f0' }).setOrigin(0, 0.5);
-      this.goldText = this.add.text(W / 2, 36, '', { fontSize: '15px', fontStyle: 'bold', color: '#fbbf24' }).setOrigin(0.5);
+      this.bountyText = this.add.text(W / 2, 36, '', { fontSize: '15px', fontStyle: 'bold', color: '#fbbf24' }).setOrigin(0.5);
       this.lifeText = this.add.text(W - 24, 36, '', { fontSize: '15px', fontStyle: 'bold', color: '#fb7185' }).setOrigin(1, 0.5);
       this.refreshHud();
     }
@@ -164,8 +195,8 @@
     buildShop() {
       const y = 668;
       this.add.rectangle(W / 2, y + 28, W - 16, 148, 0x122033, 1).setStrokeStyle(1, 0x2a3d57);
-      this.add.text(24, y - 28, 'TOOLS', { fontSize: '12px', fontStyle: 'bold', color: '#00d5ff' });
-      this.shopHints = this.add.text(W - 24, y - 28, 'Tap a tool, then a grass tile', {
+      this.add.text(24, y - 28, 'FIGHTERS', { fontSize: '12px', fontStyle: 'bold', color: '#00d5ff' });
+      this.shopHints = this.add.text(W - 24, y - 28, 'Answer a question to place', {
         fontSize: '11px', color: '#64748b'
       }).setOrigin(1, 0);
 
@@ -175,9 +206,9 @@
         const box = this.add.rectangle(x, y + 36, 100, 92, 0x1e3a5f, 1)
           .setStrokeStyle(2, 0x2a3d57)
           .setInteractive({ useHandCursor: true });
-        this.add.text(x, y + 8, t.icon, { fontSize: '26px' }).setOrigin(0.5);
-        this.add.text(x, y + 38, t.name, { fontSize: '13px', fontStyle: 'bold', color: '#e2e8f0' }).setOrigin(0.5);
-        this.add.text(x, y + 58, `$${t.cost}`, { fontSize: '12px', color: '#fbbf24' }).setOrigin(0.5);
+        this.add.image(x, y + 12, t.sprite).setDisplaySize(34, 52);
+        this.add.text(x, y + 52, t.name, { fontSize: '13px', fontStyle: 'bold', color: '#e2e8f0' }).setOrigin(0.5);
+        this.add.text(x, y + 68, 'Quiz to place', { fontSize: '10px', color: '#94a3b8' }).setOrigin(0.5);
         box.on('pointerdown', (p) => {
           p.event.stopPropagation();
           this.selected = t.id;
@@ -190,7 +221,7 @@
 
     refreshHud() {
       this.waveText.setText(`Wave ${Math.min(this.wave, WAVES)}/${WAVES}`);
-      this.goldText.setText(`Gold ${this.gold}`);
+      this.bountyText.setText(`Bounty ${this.bounty}`);
       this.lifeText.setText(`♥ ${this.lives}`);
     }
 
@@ -209,41 +240,89 @@
       const r = Math.floor((pointer.y - MAP_TOP) / TILE);
       if (c < 0 || r < 0 || c >= COLS || r >= ROWS) return;
       if (PATH_SET.has(`${c},${r}`)) return;
-      if (this.towers.some((t) => t.c === c && t.r === r)) return;
 
-      const spec = TOWERS[this.selected];
-      if (this.gold < spec.cost) {
-        this.flashHint('Not enough gold');
+      const existing = this.towers.find((t) => t.c === c && t.r === r);
+      if (existing) {
+        this.askUpgrade(existing);
         return;
       }
-      this.gold -= spec.cost;
-      this.placeTower(c, r, spec);
-      this.refreshHud();
+
+      const spec = TOWERS[this.selected];
+      this.askPlace(c, r, spec);
+    }
+
+    askPlace(c, r, spec) {
+      const { x, y } = tileCenter(c, r);
+      this.clearGhost();
+      this.ghost = this.add.image(x, y, spec.sprite).setDisplaySize(30, 46).setAlpha(0.45);
+      this.pending = { type: 'place', c, r, spec };
+      this.askQuestion(`Place ${spec.name}?`, () => {
+        this.placeTower(c, r, spec);
+        this.flashHint(`${spec.name} deployed`);
+      }, () => {
+        this.flashHint('Wrong answer. Tower not placed.');
+      });
+    }
+
+    askUpgrade(tower) {
+      if (tower.level >= MAX_LEVEL) {
+        this.flashHint(`${tower.spec.name} is max level`);
+        this.towers.forEach((t) => t.ring.setVisible(false));
+        tower.ring.setVisible(true);
+        this.time.delayedCall(700, () => tower.ring.setVisible(false));
+        return;
+      }
+      this.pending = { type: 'upgrade', tower };
+      this.askQuestion(`Upgrade ${tower.spec.name} to Lv${tower.level + 1}?`, () => {
+        this.upgradeTower(tower);
+        this.flashHint(`${tower.spec.name} → Lv${tower.level}`);
+      }, () => {
+        this.flashHint('Wrong answer. No upgrade.');
+      });
     }
 
     placeTower(c, r, spec) {
       const { x, y } = tileCenter(c, r);
-      const ring = this.add.circle(x, y, spec.range, spec.color, 0.08);
-      const body = this.add.circle(x, y, 15, spec.color, 1);
-      const icon = this.add.text(x, y, spec.icon, { fontSize: '16px' }).setOrigin(0.5);
+      const ring = this.add.circle(x, y, spec.range, spec.color, 0.1);
+      const sprite = this.add.image(x, y, spec.sprite).setDisplaySize(34, 52);
+      const badge = this.add.text(x + 14, y - 22, '1', {
+        fontSize: '10px', fontStyle: 'bold', color: '#0b0f19', backgroundColor: '#00d5ff', padding: { x: 3, y: 1 }
+      }).setOrigin(0.5);
       ring.setVisible(false);
-      body.setInteractive({ useHandCursor: true });
-      body.on('pointerdown', (p) => {
+      sprite.setInteractive({ useHandCursor: true });
+      const tower = { c, r, x, y, spec: { ...spec }, ring, sprite, badge, cooldown: 0, level: 1 };
+      sprite.on('pointerdown', (p) => {
         p.event.stopPropagation();
-        this.towers.forEach((t) => t.ring.setVisible(false));
-        ring.setVisible(true);
-        this.time.delayedCall(700, () => ring.setVisible(false));
+        if (this.busy || this.ended) return;
+        this.askUpgrade(tower);
       });
-      this.towers.push({
-        c, r, x, y, spec, ring, body, icon, cooldown: 0
-      });
+      this.towers.push(tower);
+    }
+
+    upgradeTower(tower) {
+      tower.level += 1;
+      tower.spec.dmg = Math.round(tower.spec.dmg * 1.28);
+      tower.spec.range = Math.round(tower.spec.range * 1.12);
+      tower.spec.rate = Math.max(220, Math.round(tower.spec.rate * 0.88));
+      if (tower.spec.splash) tower.spec.splash = Math.round(tower.spec.splash * 1.1);
+      tower.ring.setRadius(tower.spec.range);
+      tower.badge.setText(String(tower.level));
+      tower.ring.setVisible(true);
+      this.time.delayedCall(700, () => tower.ring.setVisible(false));
+    }
+
+    clearGhost() {
+      if (this.ghost) {
+        this.ghost.destroy();
+        this.ghost = null;
+      }
     }
 
     flashHint(msg) {
       this.shopHints.setText(msg);
-      this.time.delayedCall(900, () => {
+      this.time.delayedCall(1200, () => {
         if (this.shopHints && this.shopHints.active) {
-          this.shopHints.setText('Tap a tool, then a grass tile');
+          this.shopHints.setText('Answer a question to place');
         }
       });
     }
@@ -261,7 +340,7 @@
       }
       this.waveHp = 20 + this.wave * 10;
       this.waveSpeed = 34 + this.wave * 3;
-      this.waveKind = this.wave % 3 === 0 ? 'exam' : this.wave % 2 === 0 ? 'quiz' : 'homework';
+      this.waveKind = WAVE_MONSTERS[(this.wave - 1) % WAVE_MONSTERS.length];
       this.spawnLeft = 4 + this.wave;
       this.spawnTimer = 0;
       this.spawning = true;
@@ -270,12 +349,7 @@
     }
 
     spawnEnemy() {
-      const kind = this.waveKind;
-      const meta = {
-        homework: { icon: '📝', label: 'HW', hpMul: 1.2, spdMul: 0.85, gold: 6 },
-        quiz: { icon: '❓', label: 'Quiz', hpMul: 1, spdMul: 1, gold: 8 },
-        exam: { icon: '📄', label: 'Exam', hpMul: 0.8, spdMul: 1.25, gold: 10 }
-      }[kind];
+      const meta = MONSTERS[this.waveKind] || MONSTERS.homework;
       const start = this.waypoints[0];
       const hp = Math.round(this.waveHp * meta.hpMul);
       const body = this.add.circle(start.x, start.y, 13, 0xf87171, 1);
@@ -287,8 +361,10 @@
         y: start.y,
         hp,
         maxHp: hp,
+        baseSpeed: this.waveSpeed * meta.spdMul,
         speed: this.waveSpeed * meta.spdMul,
-        gold: meta.gold,
+        slowUntil: 0,
+        bounty: meta.bounty,
         wp: 0,
         body,
         icon,
@@ -301,6 +377,7 @@
     update(_, delta) {
       if (this.ended || this.busy) return;
       const dt = Math.min(delta, 40) / 1000;
+      const now = this.time.now;
 
       if (this.spawning) {
         this.spawnTimer -= delta;
@@ -312,7 +389,7 @@
         if (this.spawnLeft <= 0) this.spawning = false;
       }
 
-      this.updateEnemies(dt);
+      this.updateEnemies(dt, now);
       this.updateTowers(delta);
       this.updateShots(dt);
 
@@ -321,9 +398,10 @@
       }
     }
 
-    updateEnemies(dt) {
+    updateEnemies(dt, now) {
       for (const e of this.enemies) {
         if (e.dead) continue;
+        e.speed = now < e.slowUntil ? e.baseSpeed * 0.55 : e.baseSpeed;
         const target = this.waypoints[e.wp + 1];
         if (!target) {
           this.leak(e);
@@ -373,14 +451,15 @@
     }
 
     fire(tower, enemy) {
-      const shot = this.add.circle(tower.x, tower.y, 4, 0xfff1a8, 1);
+      const shot = this.add.circle(tower.x, tower.y, 4, tower.spec.shot, 1);
       this.shots.push({
         x: tower.x,
         y: tower.y,
         target: enemy,
-        speed: 320,
+        speed: tower.spec.id === 'sword' ? 420 : 320,
         dmg: tower.spec.dmg,
         splash: tower.spec.splash,
+        slow: tower.spec.slow,
         gfx: shot
       });
     }
@@ -414,22 +493,23 @@
         for (const e of this.enemies) {
           if (e.dead) continue;
           if (Math.hypot(e.x - shot.x, e.y - shot.y) <= shot.splash) {
-            this.hurt(e, shot.dmg);
+            this.hurt(e, shot.dmg, shot.slow);
           }
         }
       } else if (shot.target && !shot.target.dead) {
-        this.hurt(shot.target, shot.dmg);
+        this.hurt(shot.target, shot.dmg, shot.slow);
       }
     }
 
-    hurt(enemy, dmg) {
+    hurt(enemy, dmg, slow) {
       enemy.hp -= dmg;
+      if (slow && slow < 1) enemy.slowUntil = this.time.now + 900;
       if (enemy.hp <= 0) this.kill(enemy);
     }
 
     kill(enemy) {
       enemy.dead = true;
-      this.gold += enemy.gold;
+      this.bounty += enemy.bounty;
       this.refreshHud();
       this.tweens.add({
         targets: [enemy.body, enemy.icon],
@@ -459,14 +539,12 @@
 
     onWaveCleared() {
       this.waveActive = false;
-      this.busy = true;
-      this.gold += 20 + this.wave * 4;
-      this.refreshHud();
       if (this.wave >= WAVES) {
         this.finish(true);
         return;
       }
-      this.time.delayedCall(350, () => this.offerQuiz());
+      this.flashHint(`Wave ${this.wave} cleared`);
+      this.nextWaveSoon(900);
     }
 
     showOverlay(id) {
@@ -483,13 +561,15 @@
       el.style.display = 'none';
     }
 
-    offerQuiz() {
-      const q = QUESTIONS[(this.wave - 1) % QUESTIONS.length];
-      const quiz = document.getElementById('quiz');
-      const box = document.getElementById('quiz-answers');
+    askQuestion(title, onYes, onNo) {
+      if (this.busy) return;
+      const q = QUESTIONS[this.qIndex % QUESTIONS.length];
+      this.qIndex += 1;
+      this.busy = true;
+      document.getElementById('quiz-kicker').textContent = title;
       document.getElementById('quiz-q').textContent = q.q;
+      const box = document.getElementById('quiz-answers');
       box.innerHTML = '';
-      quiz.style.display = 'flex';
       q.a.forEach((choice, i) => {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -498,15 +578,11 @@
           ev.preventDefault();
           ev.stopPropagation();
           this.hideOverlay('quiz');
-          if (i === q.c) {
-            this.gold += 40;
-            this.flashHint('Correct! +40 gold');
-          } else {
-            this.flashHint('Nice try. Next wave!');
-          }
-          this.refreshHud();
+          this.clearGhost();
+          this.pending = null;
           this.busy = false;
-          this.nextWaveSoon(700);
+          if (i === q.c) onYes();
+          else onNo();
         });
         box.appendChild(btn);
       });
@@ -518,12 +594,11 @@
       this.ended = true;
       this.busy = true;
       this.hideOverlay('quiz');
+      this.clearGhost();
       document.getElementById('end-title').textContent = won ? 'You passed!' : 'Study more';
       document.getElementById('end-msg').textContent = won
-        ? `All ${WAVES} waves cleared. The exam rush is over.`
-        : `Reached wave ${this.wave}. Place more tools and try again.`;
-      const end = document.getElementById('end');
-      end.style.display = 'flex';
+        ? `All ${WAVES} waves cleared. Bounty ${this.bounty}.`
+        : `Reached wave ${this.wave}. Bounty ${this.bounty}. Answer more questions to place fighters.`;
       const btn = document.getElementById('end-btn');
       btn.onclick = (ev) => {
         ev.preventDefault();
@@ -544,6 +619,6 @@
       mode: Phaser.Scale.FIT,
       autoCenter: Phaser.Scale.CENTER_BOTH
     },
-    scene: [MenuScene, GameScene]
+    scene: [BootScene, MenuScene, GameScene]
   });
 })();
