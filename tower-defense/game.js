@@ -7,8 +7,8 @@
   const TILE = 40;
   const MAP_LEFT = (W - COLS * TILE) / 2;
   const WAVES = 8;
-  const START_GOLD = 120;
-  const START_LIVES = 12;
+  const START_GOLD = 200;
+  const START_LIVES = 15;
 
   const PATH = [
     [0, 1], [1, 1], [2, 1], [3, 1], [4, 1], [5, 1], [6, 1], [7, 1],
@@ -23,9 +23,9 @@
   const PATH_SET = new Set(PATH.map(([c, r]) => `${c},${r}`));
 
   const TOWERS = {
-    pencil: { id: 'pencil', name: 'Pencil', icon: '✏️', cost: 50, dmg: 10, range: 92, rate: 520, color: 0xf4c430, splash: 0 },
-    book: { id: 'book', name: 'Book', icon: '📘', cost: 90, dmg: 20, range: 112, rate: 760, color: 0x4ea8de, splash: 0 },
-    calc: { id: 'calc', name: 'Calc', icon: '🧮', cost: 140, dmg: 16, range: 100, rate: 980, color: 0x34d399, splash: 46 }
+    pencil: { id: 'pencil', name: 'Pencil', icon: '✏️', cost: 50, dmg: 14, range: 100, rate: 420, color: 0xf4c430, splash: 0 },
+    book: { id: 'book', name: 'Book', icon: '📘', cost: 90, dmg: 26, range: 120, rate: 640, color: 0x4ea8de, splash: 0 },
+    calc: { id: 'calc', name: 'Calc', icon: '🧮', cost: 140, dmg: 18, range: 108, rate: 860, color: 0x34d399, splash: 52 }
   };
 
   const QUESTIONS = [
@@ -101,6 +101,8 @@
     }
 
     create() {
+      this.hideOverlay('quiz');
+      this.hideOverlay('end');
       this.cameras.main.setBackgroundColor('#0b0f19');
       this.gold = START_GOLD;
       this.lives = START_LIVES;
@@ -256,10 +258,10 @@
         this.finish(true);
         return;
       }
-      this.waveHp = 28 + this.wave * 14;
-      this.waveSpeed = 42 + this.wave * 4;
+      this.waveHp = 20 + this.wave * 10;
+      this.waveSpeed = 34 + this.wave * 3;
       this.waveKind = this.wave % 3 === 0 ? 'exam' : this.wave % 2 === 0 ? 'quiz' : 'homework';
-      this.spawnLeft = 5 + this.wave;
+      this.spawnLeft = 4 + this.wave;
       this.spawnTimer = 0;
       this.spawning = true;
       this.refreshHud();
@@ -464,18 +466,35 @@
       this.time.delayedCall(350, () => this.offerQuiz());
     }
 
+    showOverlay(id) {
+      const el = document.getElementById(id);
+      el.hidden = false;
+      el.classList.add('open');
+      el.style.display = 'flex';
+    }
+
+    hideOverlay(id) {
+      const el = document.getElementById(id);
+      el.hidden = true;
+      el.classList.remove('open');
+      el.style.display = 'none';
+    }
+
     offerQuiz() {
       const q = QUESTIONS[(this.wave - 1) % QUESTIONS.length];
       const quiz = document.getElementById('quiz');
       const box = document.getElementById('quiz-answers');
       document.getElementById('quiz-q').textContent = q.q;
       box.innerHTML = '';
+      quiz.style.display = 'flex';
       q.a.forEach((choice, i) => {
         const btn = document.createElement('button');
         btn.type = 'button';
         btn.textContent = choice;
-        btn.addEventListener('click', () => {
-          quiz.hidden = true;
+        btn.addEventListener('click', (ev) => {
+          ev.preventDefault();
+          ev.stopPropagation();
+          this.hideOverlay('quiz');
           if (i === q.c) {
             this.gold += 40;
             this.flashHint('Correct! +40 gold');
@@ -488,24 +507,27 @@
         });
         box.appendChild(btn);
       });
-      quiz.hidden = false;
+      this.showOverlay('quiz');
     }
 
     finish(won) {
       if (this.ended) return;
       this.ended = true;
       this.busy = true;
-      const end = document.getElementById('end');
+      this.hideOverlay('quiz');
       document.getElementById('end-title').textContent = won ? 'You passed!' : 'Study more';
       document.getElementById('end-msg').textContent = won
         ? `All ${WAVES} waves cleared. The exam rush is over.`
         : `Reached wave ${this.wave}. Place more tools and try again.`;
+      const end = document.getElementById('end');
+      end.style.display = 'flex';
       const btn = document.getElementById('end-btn');
-      btn.onclick = () => {
-        end.hidden = true;
+      btn.onclick = (ev) => {
+        ev.preventDefault();
+        this.hideOverlay('end');
         this.scene.restart();
       };
-      end.hidden = false;
+      this.showOverlay('end');
     }
   }
 

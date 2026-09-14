@@ -21,16 +21,16 @@ html, body {
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 10;
-  display: flex;
+  z-index: 20;
+  display: none;
   align-items: center;
   justify-content: center;
   padding: 20px;
   background: rgba(7, 11, 20, 0.72);
 }
 
-.overlay[hidden] {
-  display: none;
+.overlay.open {
+  display: flex;
 }
 
 .card {
