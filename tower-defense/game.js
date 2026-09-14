@@ -112,6 +112,7 @@
       this.enemies = [];
       this.shots = [];
       this.busy = false;
+      this.waveActive = false;
       this.spawning = false;
       this.spawnLeft = 0;
       this.spawnTimer = 0;
@@ -264,6 +265,7 @@
       this.spawnLeft = 4 + this.wave;
       this.spawnTimer = 0;
       this.spawning = true;
+      this.waveActive = true;
       this.refreshHud();
     }
 
@@ -314,7 +316,7 @@
       this.updateTowers(delta);
       this.updateShots(dt);
 
-      if (!this.spawning && this.enemies.length === 0 && this.wave > 0 && !this.ended) {
+      if (this.waveActive && !this.spawning && this.enemies.length === 0 && !this.ended) {
         this.onWaveCleared();
       }
     }
@@ -456,6 +458,7 @@
     }
 
     onWaveCleared() {
+      this.waveActive = false;
       this.busy = true;
       this.gold += 20 + this.wave * 4;
       this.refreshHud();
