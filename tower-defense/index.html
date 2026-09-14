@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#0B0F19">
+  <title>Study Defense</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game"></div>
+
+  <div id="quiz" class="overlay" hidden>
+    <div class="card">
+      <p class="kicker" id="quiz-kicker">Answer to unlock</p>
+      <p id="quiz-q"></p>
+      <div id="quiz-answers"></div>
+    </div>
+  </div>
+
+  <div id="end" class="overlay" hidden>
+    <div class="card">
+      <h2 id="end-title"></h2>
+      <p id="end-msg"></p>
+      <button id="end-btn" type="button">Play again</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
